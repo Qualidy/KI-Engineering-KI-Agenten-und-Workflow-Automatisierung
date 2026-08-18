@@ -1,0 +1,84 @@
+title: KI- und Automatisierungs-Landkarte für deinen Arbeitsbereich
+difficulty: 4
+question: |
+  **Szenario:** Du arbeitest in einem Unternehmen, das sich vorgenommen hat, „endlich etwas mit KI
+  zu machen". Die Geschäftsführung hat ein Budget freigegeben und erwartet in vier Wochen einen
+  Vorschlag, **wo** es sich lohnt. Bisher gibt es nur Schlagworte und die Sorge einiger
+  Beschäftigter, ersetzt zu werden. Deine Aufgabe ist die Grundlagenarbeit: eine belastbare
+  Landkarte, welche Aufgaben in einem Bereich wie stark von KI oder Automatisierung profitieren.
+
+  ```text
+  Rahmenbedingungen:
+  Bereich frei waehlbar (Vertrieb, HR, Buchhaltung, Support, Einkauf, Produktion).
+  Team von 6 bis 10 Personen.
+  Vorhandene Werkzeuge: Microsoft 365, Postfach, Excel, ein Fachsystem.
+  Kein eigenes Entwicklungsteam, kein Budget fuer Individualsoftware.
+  ```
+
+  Arbeite mit einem KI-Werkzeug (Copilot, ChatGPT oder Claude) – aber liefere gegen **klare
+  Anforderungen**.
+
+  ---
+
+  **Runde 1 – Aufgaben erfassen und einordnen.** Wähle einen Bereich und liste **mindestens zehn
+  konkrete Aufgaben** auf, die dort regelmäßig anfallen. Formuliere sie als Tätigkeit, nicht als
+  Thema („Eingangsrechnungen prüfen und kontieren", nicht „Buchhaltung"). Ordne jeder Aufgabe zu:
+
+  - Wie oft fällt sie an (täglich, wöchentlich, monatlich)?
+  - Wie stark ist sie **regelbasiert** (immer gleicher Ablauf) oder **urteilsbasiert** (jeder Fall
+    ist anders)?
+  - Welches KI-Teilgebiet könnte helfen (Sprachverarbeitung, Erkennen von Dokumenten,
+    Einordnen, Erzeugen von Text) – oder reicht klassische Automatisierung ohne KI?
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Landkarte muss **alle vier** Kriterien
+  erfüllen. Lass sie von deinem KI-Werkzeug gegenprüfen und schließe Lücken selbst:
+
+  1. Mindestens **zwei** Aufgaben sind als „braucht **keine** KI, klassische Automatisierung
+     genügt" markiert – mit Begründung.
+  2. Mindestens **zwei** Aufgaben sind als „für KI **nicht** geeignet" markiert, weil sie
+     Verantwortung, Vertraulichkeit oder rechtliche Verbindlichkeit betreffen.
+  3. Für jede als KI-geeignet markierte Aufgabe ist benannt, **wer das Ergebnis prüft**.
+  4. Keine Aufgabe ist doppelt oder so vage formuliert, dass man sie nicht bewerten kann.
+
+  **Runde 3 – Der Realitätsschock.** Du stellst die Landkarte im Team vor. Zwei Reaktionen kommen
+  garantiert: „Das ersetzt doch nur unsere Arbeit" und „Bei uns ist jeder Fall ein Sonderfall, das
+  funktioniert nie." Nimm beide Einwände ernst:
+
+  - Überarbeite die Landkarte so, dass für die drei aussichtsreichsten Aufgaben klar wird, welcher
+    **Teil** der Aufgabe unterstützt wird und welcher beim Menschen bleibt.
+  - Prüfe den Einwand „jeder Fall ist ein Sonderfall" ehrlich nach: Bei welcher deiner Aufgaben
+    trifft er tatsächlich zu? Streiche diese Aufgabe oder schränke sie ein.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Geschäftsführung will „das größte Projekt zuerst",
+  weil das den sichtbarsten Effekt hätte. Lass dir von deinem KI-Werkzeug Pro und Contra geben,
+  entscheide dann begründet für **eine** Startaufgabe – und **widersprich** der Vorgabe oder dem
+  KI-Vorschlag, wenn das größte Projekt zugleich das riskanteste ist. Begründe deine
+  Empfehlung mit Nutzen, Aufwand und Fehlerfolgen.
+
+  **Deliverable:**
+
+  1. KI- und Automatisierungs-Landkarte als Tabelle (mindestens zehn Aufgaben, alle Spalten gefüllt)
+  2. ausgefüllte Checkliste der vier Pflichtkriterien
+  3. überarbeitete Fassung nach den beiden Team-Einwänden
+  4. begründete Empfehlung für **eine** Startaufgabe, inklusive der abgelehnten Alternative
+
+  **Fertig bist du erst, wenn** alle vier Pflichtkriterien erfüllt sind, deine Landkarte sowohl
+  KI-taugliche als auch bewusst KI-untaugliche Aufgaben enthält, und deine Startempfehlung erklärt,
+  warum du **nicht** das größte Projekt gewählt hast (oder warum doch).
+tip: |
+  Der Lernwert steckt in Runde 2 und 3, nicht im langen Sammeln. Wer nur auflistet, was KI
+  „auch könnte", produziert eine Wunschliste. Wertvoll wird die Landkarte durch die
+  Gegenprobe: Was braucht gar keine KI? Was darf keine KI übernehmen? Und wer prüft das Ergebnis?
+  Achte in Runde 4 darauf, dass „größter Nutzen" und „bester Start" selten dasselbe sind – ein
+  gescheitertes Prestigeprojekt verbrennt die Bereitschaft für alle weiteren.
+solution: |
+  Bewertungskriterien: (1) mindestens zehn **als Tätigkeit** formulierte Aufgaben mit plausibler
+  Einordnung nach Häufigkeit, Regelhaftigkeit und passendem KI-Teilgebiet; (2) alle vier
+  Pflichtkriterien nachweislich erfüllt, insbesondere die bewusst als „ohne KI" und „nicht für KI
+  geeignet" markierten Aufgaben mit tragfähiger Begründung; (3) die überarbeitete Fassung trennt
+  bei den Top-Aufgaben sauber zwischen unterstütztem Teil und menschlichem Teil und entkräftet den
+  Sonderfall-Einwand nicht pauschal, sondern aufgabenbezogen; (4) die Startempfehlung wägt Nutzen,
+  Aufwand und Fehlerfolgen ab und übernimmt die Vorgabe „größtes Projekt zuerst" nicht ungeprüft.
+
+  Lernziel: KI und Automatisierung sauber voneinander und von menschlicher Verantwortung
+  abgrenzen – und aus einer Ideensammlung eine begründete Entscheidung machen.

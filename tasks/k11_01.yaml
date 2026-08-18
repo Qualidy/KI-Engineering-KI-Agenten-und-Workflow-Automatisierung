@@ -1,0 +1,30 @@
+title: Welcher Copilot-Zugang passt?
+difficulty: 1
+question: |
+  Ordne jeder Aufgabe den passenden Zugang zu: **Copilot Chat** (Browser oder Teams)
+  oder **Copilot in der App** (Word, Excel, Outlook, Teams-Besprechung).
+
+  1. Einen 24-seitigen Projektbericht, der gerade offen ist, auf eine Seite kürzen
+  2. Herausfinden, was in den letzten drei Wochen im Kanal Lagerumbau besprochen wurde
+  3. Einen Antwortentwurf auf eine gerade eingegangene Kundenmail erzeugen
+  4. Zwei Angebotsvorlagen aus SharePoint miteinander vergleichen
+  5. Aus einer markierten Tabelle eine Formel für die Marge erzeugen
+  6. Nach einer Besprechung die offenen Aufgaben mit Verantwortlichen festhalten
+
+  Notiere zu jeder Zuordnung in einem Halbsatz, **woran** du sie erkannt hast.
+tip: |
+  Frage dich: Steht der Inhalt schon offen vor mir – oder muss ich mehrere Quellen
+  zusammenziehen, die ich erst benennen muss?
+solution: |
+  | Aufgabe | Zugang | Erkennungsmerkmal |
+  |---|---|---|
+  | Bericht kürzen | Copilot in Word | Dokument ist offen, Ergebnis soll ins Dokument |
+  | Kanalverlauf auswerten | Copilot Chat | mehrere verstreute Quellen, kein offenes Dokument |
+  | Antwortentwurf | Copilot in Outlook | Kontext ist die offene Nachricht |
+  | Zwei Vorlagen vergleichen | Copilot Chat | zwei Dateien müssen als Kontext benannt werden |
+  | Formel erzeugen | Copilot in Excel | Bezug auf markierten Tabellenbereich |
+  | Offene Aufgaben festhalten | Copilot in der Teams-Besprechung | Gesprächsinhalt als Quelle |
+
+  Faustregel: **Ein offenes Objekt** führt zu Copilot in der App, **mehrere zu benennende
+  Quellen** führen zu Copilot Chat. Beide Wege liefern übrigens unterschiedliche Ergebnisse
+  für denselben Auftrag – das ist normal, weil sie unterschiedlichen Kontext sehen.

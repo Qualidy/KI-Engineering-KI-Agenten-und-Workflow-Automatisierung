@@ -1,0 +1,32 @@
+title: Chat, Assistent oder Agent?
+difficulty: 1
+question: |
+  Ordne jede Situation einer der drei Stufen zu: **Chat**, **Assistent** oder **Agent**.
+  Begründe jeweils in einem Satz, welcher Baustein den Ausschlag gibt.
+
+  1. Du lässt dir in einem Chatfenster eine Gliederung für eine Präsentation erstellen.
+  2. Copilot fasst dir einen E-Mail-Verlauf mit elf Nachrichten aus deinem Postfach zusammen.
+  3. Ein System nimmt eine Krankmeldung entgegen, trägt sie in die Abwesenheitsliste ein,
+     benachrichtigt die Führungskraft und meldet dir den Vollzug.
+  4. Du fügst einen Vertragstext in ein Chatfenster ein und lässt dir die Kündigungsfristen nennen.
+  5. Ein selbst gebauter Assistent beantwortet Fragen zur Reisekostenrichtlinie und nennt dabei
+     immer den Abschnitt, aus dem die Antwort stammt.
+  6. Ein System prüft nachts alle offenen Rechnungen, erstellt Mahnentwürfe und legt sie zur
+     Freigabe in einen Ordner.
+tip: |
+  Zwei Fragen führen dich sicher zur Antwort: Greift das System auf etwas zu, das du ihm nicht
+  selbst hineinkopiert hast? Und tut es danach noch etwas anderes, als zu antworten?
+solution: |
+  | Nr. | Einordnung | Ausschlaggebend |
+  |---|---|---|
+  | 1 | Chat | kein Zugriff, keine Handlung, reine Texterzeugung |
+  | 2 | Assistent | Zugriff auf Kontext (Postfach), aber es wird nur geantwortet |
+  | 3 | Agent | mehrere Schritte, Werkzeuge, Handlung mit Außenwirkung |
+  | 4 | Chat | der Kontext kommt von dir, nicht aus einem Zugriff |
+  | 5 | Assistent | Wissensanbindung mit Fundstelle, aber keine Handlung |
+  | 6 | Agent | eigenständiger Ablauf über mehrere Schritte, endet vor der Freigabe |
+
+  Beachte den Unterschied zwischen 5 und 6: Eine Wissensanbindung allein macht noch keinen
+  Agenten. Erst Werkzeuge, mehrere Schritte und ein verfolgtes Ziel tun das. Und Nummer 6 zeigt,
+  dass ein Agent nicht bis zum Schluss durchlaufen muss – die Freigabe bleibt bewusst beim
+  Menschen.

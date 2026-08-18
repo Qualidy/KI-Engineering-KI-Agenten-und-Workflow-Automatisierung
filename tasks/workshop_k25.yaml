@@ -1,0 +1,85 @@
+title: Werkstattbedarf digital erfassen – ein Flow durch Microsoft 365
+difficulty: 4
+question: |
+  **Szenario:** Die Werkstatt eines mittelständischen Betriebs bestellt Kleinmaterial bisher über
+  Zettel am Schwarzen Brett. Zweimal pro Woche sammelt eine Kollegin die Zettel ein, tippt sie in
+  eine Excel-Datei und mailt sie an den Einkauf. Zettel gehen verloren, niemand weiß, was schon
+  bestellt ist, und wenn die Kollegin im Urlaub ist, passiert nichts. Du baust den Ablauf komplett
+  in Microsoft 365 nach – mit einem Datenrückgrat, das auch ohne dich weiterläuft.
+
+  ```text
+  Rahmendaten:
+  Betrieb mit 80 Beschaeftigten, davon 25 in der Werkstatt.
+  Etwa 40 Materialanforderungen pro Woche, Werte zwischen 5 und 900 Euro.
+  Beteiligte: Antragstellende, Werkstattleitung, Einkauf, Buchhaltung.
+  Regel im Haus: ab 250 Euro muss die Werkstattleitung zustimmen.
+  Werkzeuge: Microsoft 365 mit Forms, SharePoint, Teams, Outlook, Planner.
+  ```
+
+  ---
+
+  **Runde 1 – Datenrückgrat und Erfassung bauen.** Lege eine SharePoint-Liste `Materialbedarf` an
+  mit mindestens den Spalten Titel, Menge, Einzelpreis, Gesamtwert, Kostenstelle, Antragsteller,
+  Status (Offen, In Bestellung, Erledigt, Abgelehnt), Bemerkung. Lege eine zweite Liste
+  `Kostenstellen` mit Kürzel und Verantwortlichem an und füll sie mit fünf erfundenen Einträgen.
+  Baue ein Microsoft Form als Erfassungsformular und einen Flow, der jede Antwort als Element in
+  `Materialbedarf` schreibt, die Kostenstelle über `Elemente abrufen` mit Filterabfrage nachschlägt
+  und den Gesamtwert berechnet. Teste mit mindestens fünf Antworten.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Flow muss **alle vier** Kriterien erfüllen:
+
+  1. Der Antragsteller steht in einer **eigenen Spalte** – nicht nur in `Erstellt von`.
+  2. Die Kostenstelle wird über eine **Filterabfrage** nachgeschlagen; ein unbekanntes Kürzel führt
+     zu Status `Abgelehnt` und einer Rückmeldung per Mail, nicht zu einem Abbruch.
+  3. Es wird **erst gespeichert, dann benachrichtigt** – und die Teams-Nachricht enthält einen Link
+     auf das Listenelement.
+  4. Ab 250 Euro Gesamtwert wird zusätzlich eine Planner-Aufgabe für die Werkstattleitung erzeugt,
+     darunter nicht.
+
+  **Runde 3 – Die Komplikation.** Der Einkauf meldet zwei Dinge: Erstens will die Buchhaltung die
+  Daten wöchentlich in Excel, weil sie damit weiterrechnet. Zweitens sind in zwei Wochen sechs
+  Anforderungen doppelt eingegangen, weil Leute das Formular zweimal abgeschickt haben. Erweitere
+  deine Lösung: Ergänze einen geplanten Flow, der freitags die Anforderungen der Woche in eine
+  Excel-Tabelle in SharePoint schreibt – und finde einen Weg, Doppeleinträge zu erkennen, bevor sie
+  gespeichert werden. Dokumentiere, warum du Excel hier als **Ziel**, aber nicht als Datenspeicher
+  verwendest.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die IT sagt: „Baut das bitte so, dass es unter einem
+  Dienstkonto läuft." Die Werkstattleitung sagt: „Zu kompliziert, das kann doch einfach auf
+  deinem Konto laufen." Hole dir von einem KI-Werkzeug Argumente für beide Seiten – und
+  entscheide dann begründet. **Widersprich** der Seite, die du für falsch hältst, ausdrücklich und
+  benenne die konkreten Folgen: Wer sieht die Fehlermeldung, wer steht im Protokoll, was passiert
+  bei Urlaub, Wechsel oder Kennwortänderung? Falls du kein Dienstkonto einrichten kannst,
+  beschreibe die Übergangslösung und ihre Restrisiken.
+
+  **Deliverable:**
+
+  1. lauffähiger Erfassungs-Flow plus SharePoint-Listen `Materialbedarf` und `Kostenstellen`
+     mit Testdaten
+  2. Nachweis der vier Pflichtkriterien, je Kriterium ein Ausführungsverlauf oder Listenauszug
+  3. geplanter Wochen-Flow nach Excel plus deine Lösung gegen Doppeleinträge
+  4. einseitige Entscheidungsnotiz zur Identitätsfrage mit benannten Folgen und Restrisiken
+
+  **Fertig bist du erst, wenn** mindestens fünf Testanforderungen korrekt in der Liste stehen,
+  ein Antrag mit unbekannter Kostenstelle sauber abgelehnt wurde statt den Flow abzubrechen, eine
+  Anforderung über 250 Euro eine Planner-Aufgabe erzeugt hat, der Wochen-Flow eine Excel-Zeile
+  geschrieben hat und deine Entscheidungsnotiz benennt, wer den Flow übernimmt, wenn du zwei
+  Wochen ausfällst.
+tip: |
+  Runde 1 ist Handwerk, der Lernwert steckt in Runde 3 und 4. Doppeleinträge sind der klassische
+  Grund, warum sauber gebaute Flows in der Praxis unbrauchbare Daten produzieren – prüfe vor dem
+  Schreiben mit einer Filterabfrage auf gleichen Antragsteller, gleiches Material und gleichen Tag.
+  Und in Runde 4 gibt es keine bequeme Antwort: Der Flow auf deinem Konto ist in zehn Minuten
+  gebaut und in sechs Monaten ein Problem. Beschreibe diesen Zeitversatz ausdrücklich.
+solution: |
+  Bewertungskriterien: (1) Erfassung läuft Ende zu Ende, die Kostenstelle wird per Filterabfrage
+  nachgeschlagen und der unbekannte Fall ist als **Fachfall** behandelt, nicht als Fehler;
+  (2) alle vier Pflichtkriterien sind nachgewiesen, insbesondere eigene Antragsteller-Spalte,
+  Reihenfolge speichern-dann-melden und die 250-Euro-Verzweigung; (3) der Wochen-Flow nutzt Excel
+  als Auswertungsziel und die Begründung trennt Datenspeicher von Auswertung, die Dublettenprüfung
+  greift vor dem Schreiben; (4) die Entscheidungsnotiz wägt Dienstkonto gegen persönliches Konto
+  mit konkreten Folgen für Protokoll, Fehlerbenachrichtigung und Vertretung ab und übernimmt keine
+  der beiden Vorgaben ungeprüft.
+
+  Lernziel: Einen echten Ablauf allein mit Microsoft-365-Bausteinen tragfähig bauen – und die
+  Identitäts- und Betreibbarkeitsfrage als Teil des Bauens begreifen, nicht als Nachgedanken.

@@ -1,0 +1,28 @@
+title: Fehlerbild dem Fehler zuordnen
+difficulty: 1
+question: |
+  Fünf Teilnehmende haben den Flow aus dem Kapitel gebaut und beschreiben jeweils ein Symptom.
+  Benenne für jedes Symptom die **wahrscheinlichste Ursache** und den **ersten Klick**, mit dem
+  du sie prüfst.
+
+  1. „Im Ausführungsverlauf steht überhaupt nichts, obwohl ich mir eine Mail geschickt habe."
+  2. „Der Lauf ist grün, aber die Datei in OneDrive hat 0 Byte."
+  3. „Ich habe eine Mail mit drei Anhängen geschickt und drei Teams-Nachrichten bekommen."
+  4. „Der Flow läuft, aber erst zwei Minuten nach der Mail."
+  5. „Beim zweiten Test ist der Schritt `Datei erstellen` rot geworden, beim ersten nicht."
+tip: |
+  Unterscheide streng zwischen drei Kategorien: Der Trigger hat nicht ausgelöst, der Trigger hat
+  ausgelöst aber Daten fehlen, oder eine Aktion sitzt an der falschen Stelle in der Verschachtelung.
+solution: |
+  | Nr. | Ursache | Erster Klick |
+  |---|---|---|
+  | 1 | Trigger hat nicht ausgelöst: falscher Ordner, zu strenger Betrefffilter, `Nur mit Anlagen` auf `Ja` bei Mail ohne Anhang oder Trigger-Bedingung immer `false` | Trigger-Karte öffnen, `Erweiterte Optionen anzeigen`, Filterfelder prüfen |
+  | 2 | `Anlagen einschließen` steht auf `Nein` – der Flow startet, liefert aber keinen Dateiinhalt | Trigger-Karte, Feld `Anlagen einschließen` auf `Ja` |
+  | 3 | Die Teams-Aktion liegt innerhalb von `Auf jedes anwenden` | Designer öffnen, Einrückung prüfen, Aktion aus der Schleifenkarte herausziehen |
+  | 4 | kein Fehler: der Trigger prüft das Postfach in Takten, nicht in Echtzeit | Ausführungsverlauf, Startzeit mit Empfangszeit vergleichen |
+  | 5 | gleicher Dateiname wie im ersten Test, die Datei existiert schon | Lauf öffnen, `Datei erstellen` anklicken, Eingaben prüfen und Dateinamen eindeutig machen |
+
+  Punkt 4 ist der lehrreichste: Nicht jede Verzögerung ist ein Fehler. Wer sie für einen hält, baut
+  am funktionierenden Flow herum und verschlimmert ihn. Punkt 5 zeigt, warum der Blick in die
+  **Eingaben** eines Schrittes wichtiger ist als die Fehlermeldung selbst – dort steht der Dateiname,
+  der die Kollision verursacht.

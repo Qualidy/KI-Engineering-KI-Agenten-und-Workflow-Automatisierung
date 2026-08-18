@@ -1,0 +1,78 @@
+title: Werkzeug-Spielregeln für ein Team
+difficulty: 4
+question: |
+  **Szenario:** In deinem Bereich hat sich Wildwuchs eingestellt. Ein Teil des Teams arbeitet mit
+  Copilot, ein anderer mit einem privaten ChatGPT-Konto, zwei Personen nutzen ein Werkzeug, das
+  niemand kennt. Letzte Woche wurde ein Angebotstext samt Kalkulation in ein öffentliches Werkzeug
+  kopiert. Es gab keinen Schaden, aber Aufregung. Die Bereichsleitung will keine Verbotsliste,
+  sondern eine **Spielregel-Seite**, die im Alltag tatsächlich benutzt wird.
+
+  ```text
+  Rahmen:
+  Team mit 12 Personen, Microsoft 365 vorhanden.
+  Copilot-Lizenzen nur fuer 5 Personen, weitere sind angefragt.
+  Haeufige Aufgaben: Angebote, Kundenkorrespondenz, Recherche,
+  Protokolle, Auswertungen in Excel.
+  Du darfst das Szenario durch deinen eigenen Bereich ersetzen.
+  ```
+
+  ---
+
+  **Runde 1 – Aufgaben und Werkzeuge kartieren.** Sammle **mindestens acht** konkrete Aufgaben aus
+  dem Bereich. Ordne jeder Aufgabe zu: Welche Daten sind im Spiel, braucht sie Zugriff auf eure
+  Ablage, kommt sie wiederkehrend vor, welches Werkzeug passt? Notiere zu jeder Zeile eine
+  Begründung in einem Satz. Nutze dafür das Auswahlraster aus dem Kapitel.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Die Spielregeln müssen **alle vier** Kriterien
+  erfüllen:
+
+  1. Es gibt eine Regel für **vertrauliche Inhalte**, die ohne juristische Begriffe auskommt und
+     an einem Beispiel zeigt, wie anonymisiert wird.
+  2. Mindestens **zwei** Aufgaben sind ausdrücklich als „KI hier nicht einsetzen" markiert, mit
+     Begründung.
+  3. Für jede Aufgabe ist benannt, **wer das Ergebnis freigibt**, bevor es das Haus verlässt.
+  4. Die Seite kommt ohne den Satz „X ist das beste Werkzeug" aus und enthält keine Aussage über
+     ein Werkzeug, das ihr nicht nutzt.
+
+  **Runde 3 – Die Komplikation.** Die zusätzlichen Copilot-Lizenzen werden abgelehnt: Es bleibt
+  bei fünf. Gleichzeitig kündigt eine Kollegin an, sie werde weiter ihr privates Konto nutzen,
+  weil sie „sonst nicht arbeiten kann". Überarbeite die Spielregeln: Welche Aufgaben verschieben
+  sich zu den fünf Lizenzinhabern, welche lassen sich anonymisiert im öffentlichen Werkzeug
+  erledigen, und was tust du, damit die private Nutzung nicht heimlich weiterläuft? Formuliere
+  eine Regelung, die die Kollegin akzeptieren kann, ohne dass ihr die Datenregel aufgebt.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Bereichsleitung will „ein Werkzeug für alle,
+  Schluss mit dem Durcheinander". Lass dir von einem KI-Werkzeug die Argumente für die
+  Vereinheitlichung und für einen gemischten Betrieb geben. Entscheide dann selbst und
+  **widersprich** begründet, wenn du die Einheitslösung für falsch hältst. Deine Empfehlung muss
+  benennen, was die unterlegene Variante besser gekonnt hätte, und welche Aufgabe nach deiner
+  Entscheidung schlechter läuft als vorher.
+
+  **Deliverable:**
+
+  1. Aufgaben-Werkzeug-Karte mit mindestens acht Zeilen und Begründungsspalte
+  2. Spielregel-Seite (eine Seite) mit Datenregel, Freigaben und Negativliste
+  3. überarbeitete Fassung nach dem Lizenzengpass aus Runde 3
+  4. begründete Empfehlung aus Runde 4 samt benanntem Nachteil der eigenen Entscheidung
+
+  **Fertig bist du erst, wenn** jede Zeile der Karte eine Begründung hat, die Datenregel an einem
+  eigenen Beispiel vorführt, wie anonymisiert wird, mindestens zwei Aufgaben bewusst ohne KI
+  bleiben, die Lizenzlösung ohne heimliche Privatnutzung auskommt, und deine Empfehlung offen
+  benennt, was sie kostet.
+tip: |
+  Der Lernwert liegt in Runde 3. Regeln, die im Alltag nicht durchhaltbar sind, erzeugen genau das,
+  was sie verhindern sollen: Nutzung im Verborgenen. Eine Regel, die knappe Lizenzen ignoriert,
+  wird umgangen – eine, die einen gangbaren Weg anbietet, wird befolgt. In Runde 4 ist die
+  Versuchung groß, der Vereinheitlichung zuzustimmen, weil sie ordentlich klingt. Prüfe erst, ob
+  ein Werkzeug alle Aufgabentypen aus deiner Karte wirklich abdeckt.
+solution: |
+  Bewertungskriterien: (1) mindestens acht konkrete Aufgaben mit sauberer Zuordnung nach Datenlage,
+  Kontextbedarf und Wiederholung, jeweils begründet; (2) alle vier Pflichtkriterien erfüllt,
+  insbesondere das vorgeführte Anonymisierungsbeispiel und die benannten Freigaben; (3) die
+  Überarbeitung löst den Lizenzengpass praktisch, statt ihn zu beklagen, und bietet der Kollegin
+  einen erlaubten Weg an; (4) die Empfehlung aus Runde 4 wägt ab, übernimmt die Vorgabe
+  Einheitswerkzeug nicht ungeprüft und benennt ehrlich, welche Aufgabe darunter leidet.
+
+  Lernziel: Werkzeugauswahl als Frage von Daten, Kontext und Aufgabe behandeln statt als
+  Produktvorliebe – und Regeln so schreiben, dass sie unter realen Lizenz- und Alltagsbedingungen
+  eingehalten werden können.

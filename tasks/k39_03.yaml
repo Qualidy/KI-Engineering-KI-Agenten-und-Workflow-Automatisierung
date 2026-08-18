@@ -1,0 +1,49 @@
+title: KI-Rohentwurf erzeugen und faktisch prüfen
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Wähle einen Abschnitt deiner Doku, für den du bisher nur Stichpunkte hast – zum Beispiel
+     Abschnitt 3 Flow-Beschreibung oder Abschnitt 7 Betriebshinweise.
+  2. Lass daraus einen Rohentwurf erzeugen:
+
+     ```text
+     Formuliere aus meinen Stichpunkten einen zusammenhaengenden
+     Dokumentationsabschnitt fuer die Zielgruppe [Nachfolgende oder IT oder
+     Fachbereich]. Regeln: Ergaenze keine Inhalte, die nicht in den
+     Stichpunkten stehen. Markiere jede fehlende Angabe mit LUECKE und einer
+     kurzen Frage. Keine Werbesprache, sachlicher Ton, du-Form vermeiden.
+     Stichpunkte:
+     [deine Stichpunkte]
+     ```
+
+  3. Gehe den Entwurf **Satz für Satz** durch und markiere jede Aussage mit P für geprüft, F für
+     falsch oder E für ergänzt ohne Grundlage. Prüfe dabei tatsächlich im Werkzeug nach: Feldnamen,
+     Schrittnamen, Empfänger, Zahlen.
+  4. Erstelle die Endfassung: falsche Aussagen korrigieren, unbelegte Aussagen streichen oder
+     durch einen ehrlichen Hinweis ersetzen.
+  5. Notiere, wie viele Sätze du korrigieren oder streichen musstest.
+tip: |
+  Achte besonders auf Sätze, die sehr souverän klingen und Details enthalten, die du nie geliefert
+  hast: „Die Verarbeitung erfolgt in der Regel innerhalb von zwei Minuten", „Ein Protokoll wird in
+  der Liste Protokoll gespeichert". Das sind typische Ergänzungen ohne Grundlage.
+solution: |
+  Qualitätskriterien: (1) der Prompt enthält die Anweisung, nichts zu ergänzen, und die
+  Lückenmarkierung; (2) jeder Satz des Entwurfs ist einzeln bewertet, nicht der Abschnitt als
+  Ganzes; (3) mindestens eine Ergänzung ohne Grundlage wurde gefunden oder es ist begründet, warum
+  keine vorlag; (4) die Endfassung enthält keine unbelegte Aussage, offene Punkte sind als solche
+  benannt.
+
+  Beispiel für ein gutes Ergebnis:
+
+  Aus 14 Sätzen des Rohentwurfs waren 11 geprüft korrekt, 2 falsch und 1 unbelegt ergänzt.
+
+  - Falsch: „Der Flow prüft, ob die Rechnungsnummer bereits existiert." Diese Prüfung ist geplant,
+    aber nicht gebaut. Korrigiert und in Abschnitt 8 als offener Punkt aufgenommen.
+  - Falsch: „Benachrichtigungen gehen an das Team." Sie gehen an eine benannte Person. Korrigiert.
+  - Unbelegt ergänzt: „Die Verarbeitung dauert in der Regel unter einer Minute." Nie gemessen.
+    Gestrichen und ersetzt durch „Zur Verarbeitungsdauer liegt keine Messung vor."
+
+  Die Lehre: Der Rohentwurf hat sprachlich Zeit gespart und inhaltlich drei Fehler eingebaut. Ohne
+  satzweise Prüfung wären alle drei in der Doku stehen geblieben – und eine erfundene Beschreibung
+  ist schlimmer als eine fehlende, weil Nachfolgende ihr glauben.

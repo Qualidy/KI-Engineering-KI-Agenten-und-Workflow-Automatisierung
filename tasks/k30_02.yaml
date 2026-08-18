@@ -1,0 +1,58 @@
+title: Einen Prompt flowtauglich machen
+difficulty: 2
+question: |
+  Ein Kollege hat diesen Prompt in eine Prompt-Aktion eingesetzt. Der Flow bricht in etwa jedem
+  vierten Durchlauf ab, und die Zuordnungen sind uneinheitlich.
+
+  ```text
+  Schau dir bitte diese Nachricht an und sag mir, worum es geht und wie
+  dringend es ist. Wenn du eine Kundennummer findest, nenne sie auch.
+  Danke!
+  ```
+
+  1. Benenne **mindestens vier** konkrete Mängel, die diesen Prompt für den Einsatz im Flow
+     untauglich machen.
+  2. Schreibe den Prompt vollständig neu, sodass er im Flow zuverlässig funktioniert.
+  3. Erkläre in zwei Sätzen, warum der Flow überhaupt abbricht und nicht einfach ein schlechtes
+     Ergebnis liefert.
+tip: |
+  Denke daran, dass hinter der Prompt-Aktion eine Aktion steht, die die Ausgabe zerlegen soll. Alles,
+  was ein Mensch beim Lesen mühelos überliest, ist für diese Aktion ein Formatfehler.
+solution: |
+  **Mängel:** (1) Kein festes Ausgabeformat, die Antwort ist Fließtext. (2) Keine geschlossene Liste
+  erlaubter Kategorien, das Modell erfindet bei jedem Durchlauf neue Bezeichnungen. (3) Keine
+  Definition von „dringend", also keine Vergleichbarkeit zwischen zwei Nachrichten. (4) Keine Regel
+  für fehlende Angaben, deshalb wird eine nicht vorhandene Kundennummer notfalls erfunden. (5) Keine
+  Rolle und kein Kontext. Höflichkeitsfloskeln wie „Danke" laden das Modell zusätzlich zu einer
+  gesprächigen Antwort ein.
+
+  **Neufassung:**
+
+  ```text
+  Du bist Sachbearbeiter im Kundenservice eines Bueromoebelhaendlers.
+  Ordne die folgende Kundennachricht ein.
+
+  Erlaubte Kategorien, waehle genau eine:
+  Reklamation, Angebotsanfrage, Rechnungsfrage, Terminfrage, Sonstiges
+
+  Erlaubte Dringlichkeit, waehle genau eine: hoch, mittel, niedrig
+  Hoch gilt nur bei Lieferstopp, Fristsetzung oder Kuendigung.
+
+  Erfinde nichts. Fehlende Angaben werden als null ausgegeben.
+  Antworte ausschliesslich mit diesem JSON, ohne Einleitung:
+
+  {
+    "kategorie": "eine der erlaubten Kategorien",
+    "dringlichkeit": "eine der erlaubten Stufen",
+    "kundennummer": "gefundene Nummer oder null",
+    "konfidenz": 0.0
+  }
+
+  Nachricht:
+  [Mailtext aus dem Flow]
+  ```
+
+  **Warum der Flow abbricht:** Die nachfolgende Aktion `JSON analysieren` erwartet eine Ausgabe, die
+  exakt zum hinterlegten Schema passt. Liefert das Modell stattdessen einen Fließtext oder stellt es
+  dem JSON einen einleitenden Satz voran, schlägt das Zerlegen fehl und der gesamte Durchlauf
+  scheitert – nicht, weil das Ergebnis inhaltlich schlecht wäre, sondern weil es formal unlesbar ist.

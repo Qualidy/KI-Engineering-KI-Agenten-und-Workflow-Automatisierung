@@ -1,0 +1,38 @@
+title: Betriebsblatt-Kopf für deinen Flow ausfüllen
+difficulty: 1
+question: |
+  Fülle die ersten sechs Zeilen des Betriebsblatts für dein Projekt aus:
+
+  1. Flow-Name und Zweck in einem Satz
+  2. Verantwortliche Person und Vertretung – jeweils mit Namen, nicht „das Team"
+  3. Unter welchem Konto bzw. mit welcher Verbindung der Flow läuft
+  4. Welchen Trigger er hat und wie oft er typischerweise ausgeführt wird
+
+  Ergänze einen Satz zu der Frage: Was passiert mit dem Flow, wenn du in drei Monaten die
+  Abteilung wechselst?
+tip: |
+  Prüfe bei der Vertretung nicht nur, ob die Person zuständig sein soll, sondern ob sie die
+  nötigen Zugänge tatsächlich hat. Eine Vertretung ohne Zugriff ist keine.
+solution: |
+  Qualitätskriterien: (1) Verantwortliche und Vertretung sind einzelne Personen; (2) das Konto
+  bzw. die Verbindung ist konkret benannt, nicht „mein Zugang"; (3) der Satz zum Wechsel benennt
+  eine echte Folge und eine Maßnahme.
+
+  Beispiel für ein gutes Ergebnis:
+
+  ```text
+  Flow-Name:           Kontaktanfragen Vorsortierung
+  Zweck:               Formularanfragen kategorisieren, in Liste eintragen,
+                       Eingang bestaetigen
+  Verantwortlich:      A. Beispiel   Vertretung: B. Muster
+  Laeuft unter Konto:  persoenliches Konto A. Beispiel,
+                       Miteigentuemer B. Muster ergaenzt
+  Ausfuehrung:         Trigger neue Forms-Antwort, etwa 15 mal pro Woche
+  ```
+
+  Satz zum Wechsel: „Der Flow läuft über meine persönliche Verbindung zum Formular. Bei einem
+  Wechsel würde er abbrechen, deshalb ist B. Muster als Miteigentümer eingetragen und das
+  Formular ist an eine Gruppe statt an mein Konto gebunden."
+
+  Schwach wäre: „Verantwortlich: Team Vertrieb, Vertretung: wird noch geklärt." Damit ist niemand
+  zuständig.

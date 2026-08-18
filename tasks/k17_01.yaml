@@ -1,0 +1,32 @@
+title: Prozess, Workflow oder gar nichts davon?
+difficulty: 1
+question: |
+  Ordne jede Aussage zu: Beschreibt sie einen **Geschäftsprozess**, einen **Workflow**
+  oder ist sie nur ein **Thema** ohne konkreten Ablauf?
+
+  1. „Von der Bewerbung bis zur Einstellung."
+  2. „Wenn eine Bewerbung im Postfach eintrifft, wird die PDF in den Ordner der Stelle
+     gelegt und die Fachabteilung erhält eine Nachricht."
+  3. „Wir digitalisieren das Personalwesen."
+  4. „Bei Betrag über 5000 Euro geht die Rechnung zusätzlich an die Leitung Finanzen."
+  5. „Der komplette Beschaffungsvorgang inklusive Reklamationen."
+  6. „Irgendwas mit KI im Einkauf."
+
+  Notiere zu jeder Zuordnung eine kurze Begründung.
+tip: |
+  Prüfe zwei Dinge: Gibt es einen erkennbaren **Auslöser**? Und ist die Regel so eindeutig,
+  dass zwei Personen sie identisch anwenden würden?
+solution: |
+  | Nr. | Einordnung | Begründung |
+  |---|---|---|
+  | 1 | Geschäftsprozess | Ende-zu-Ende-Blick, keine Schritte, keine Regeln benannt |
+  | 2 | Workflow | klarer Auslöser, klare Schritte, eindeutig ausführbar |
+  | 3 | Thema | kein Auslöser, kein Ergebnis, keine Regel – nur eine Absicht |
+  | 4 | Workflow | eindeutige Regel mit Schwellenwert und Zuständigkeit |
+  | 5 | Geschäftsprozess | umfasst bewusst alle Sonderfälle, deshalb zu unscharf zum Bauen |
+  | 6 | Thema | Schlagwort ohne Aufgabe |
+
+  Der Lernpunkt: Nur die Zeilen 2 und 4 sind automatisierbar. Die Zeilen 1 und 5 sind
+  wichtig, um den Überblick zu behalten, taugen aber nicht als Bauauftrag. Die Zeilen 3
+  und 6 sind Aufträge, die man **zurückgeben** muss – mit der Bitte, einen konkreten
+  Ablauf zu benennen.

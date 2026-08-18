@@ -1,0 +1,45 @@
+title: Die KI als kritischer Fragesteller
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Beschreibe dein Projekt in etwa zehn Sätzen: Problem, Lösung, KI-Anteil, Nutzenzahl, Grenzen.
+  2. Gib diesen Auftrag:
+
+     ```text
+     Du bist eine skeptische Fuehrungskraft und eine kritische Fachkollegin in
+     einer Person. Stelle mir acht kritische Fragen zu diesem Projekt, davon
+     mindestens zwei zu Datenschutz und Verantwortung, zwei zum Nutzen und
+     seiner Herleitung, zwei zum Betrieb bei Ausfall oder Personalwechsel.
+     Stelle nur Fragen, keine Ratschlaege.
+     Projekt: [deine Beschreibung]
+     ```
+
+  3. Beantworte **mindestens vier** Fragen schriftlich in je zwei bis drei Sätzen. Mindestens eine
+     Antwort muss die Form haben: „Das haben wir bewusst nicht automatisiert, weil …"
+  4. Markiere die Frage, die du **nicht** gut beantworten konntest, und notiere, was du dafür
+     nachliefern oder klären musst.
+tip: |
+  Die unbeantwortbare Frage ist der Gewinn dieser Übung. Sie zeigt dir vorher, wo deine Unterlagen
+  eine Lücke haben – und es ist wesentlich angenehmer, das jetzt zu merken als in der Fragerunde.
+solution: |
+  Qualitätskriterien: (1) mindestens vier schriftlich ausformulierte Antworten, jede mit konkretem
+  Bezug auf dein Projekt statt allgemeiner Aussagen; (2) eine Antwort begründet ausdrücklich eine
+  bewusst nicht automatisierte Entscheidung; (3) die schwache Stelle ist benannt, nicht
+  weggeschrieben; (4) keine Antwort behauptet eine Zahl, die nicht in deinen Unterlagen steht.
+
+  Beispiele für gute Antworten:
+
+  Frage: „Was passiert, wenn die KI eine Anfrage falsch einordnet?"
+  Antwort: „Die Kategorie ist ein Vorschlag; die Teamleitung bestätigt sie, bevor der Fall
+  zugewiesen wird. Unklare Fälle bekommen den Status Prüfung erforderlich und bleiben in der Liste
+  sichtbar. In 20 Testfällen waren 18 Kategorien korrekt, beide Fehler betrafen Mischanfragen."
+
+  Frage: „Warum genehmigt der Flow nicht selbst?"
+  Antwort: „Das haben wir bewusst nicht automatisiert, weil die Zuweisung an ein Team eine
+  Verantwortungsentscheidung ist und ein Fehler dort mehr Zeit kostet, als die Freigabe spart. Die
+  Freigabe dauert unter einer Minute pro Fall."
+
+  Beispiel für eine erkannte Schwachstelle: „Frage nach der Löschfrist für die Zusammenfassungen
+  konnte ich nicht beantworten – in der Liste gibt es keine Regel dafür. Nachzuliefern: Löschfrist
+  festlegen und im Datenschutz-Abschnitt der Doku ergänzen."

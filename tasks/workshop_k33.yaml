@@ -1,0 +1,104 @@
+title: Agent und Flow zusammenschalten und verantwortbar machen
+difficulty: 4
+question: |
+  **Szenario:** Die Steinhauser Elektrotechnik GmbH betreibt einen Innendienst mit vier Personen, die
+  täglich rund 80 Statusanfragen zu Aufträgen beantworten – telefonisch, per Mail und im Teams-Chat.
+  Ein Agent soll diese Auskünfte übernehmen und dafür einen Flow aufrufen, der die Auftragsliste
+  durchsucht. Die IT-Leitung hat zugestimmt, aber zwei Bedingungen gestellt: Es muss jederzeit
+  nachvollziehbar sein, wer welche Auskunft bekommen hat, und der Agent darf niemandem etwas zeigen,
+  was diese Person nicht ohnehin sehen darf.
+
+  ```text
+  Rahmendaten:
+  SharePoint-Liste Auftraege mit rund 2400 aktiven Eintraegen.
+  Felder: Auftragsnummer, Kunde, Kundenbetreuer, Status, Liefertermin, Notiz.
+  Status aus fester Liste: offen, in Arbeit, wartet auf Kunde, erledigt, storniert.
+  Nutzerkreis: 60 Personen im Innen- und Aussendienst.
+  Regel im Haus: Ein Aussendienstler sieht nur Auftraege seiner eigenen Kunden.
+  Der Liefertermin ist bei etwa jedem fuenften Auftrag noch nicht gesetzt.
+  Vorhanden: Microsoft 365, Teams, Power Automate, SharePoint.
+  ```
+
+  Ohne Copilot-Studio-Zugang entwirfst du den Agenten als Dokument und simulierst die Flow-Rückgaben
+  von Hand in ChatGPT oder Claude.
+
+  ---
+
+  **Runde 1 – Architektur und Datenvertrag.** Entscheide begründet, welches der drei Muster aus
+  Abschnitt 33.1 du einsetzt. Schreibe dann den vollständigen Datenvertrag zwischen Agent und Flow:
+  Eingaben mit Formaten und Pflichtangaben, Ausgaben mit Wertebereichen, und für **jeden** denkbaren
+  Fehlfall die Regel, wie darüber gesprochen wird. Ergänze die Instruktion des Agenten um die Passagen,
+  die diesen Vertrag auf der Sprachseite durchsetzen.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Lösung muss **alle vier** erfüllen. Weise jede
+  Erfüllung konkret nach:
+
+  1. **Rechte:** Es ist festgelegt, unter welcher Identität der Flow läuft, und der Flow prüft die
+     Berechtigung der anfragenden Person, bevor er Inhalte zurückgibt. Ein Außendienstler darf
+     nachweislich keine fremden Aufträge sehen.
+  2. **Protokoll:** Eine Protokollzeile ist mit allen Feldern ausformuliert und an einem echten
+     Beispielvorgang ausgefüllt.
+  3. **Lücken:** Für einen fehlenden Liefertermin und für einen nicht gefundenen Auftrag ist der
+     Antworttext des Agenten wörtlich vorgegeben.
+  4. **Notbremse:** Abschaltwege, zwei benannte Rollen, Umgang mit laufenden Vorgängen und
+     Information der Nutzenden sind schriftlich festgelegt.
+
+  **Runde 3 – Die Komplikation.** Nach zwei Wochen Betrieb kommen drei Meldungen:
+
+  - Ein Außendienstler hat über den Agenten den Status eines Auftrags eines fremden Kunden erfahren.
+    Die Prüfung ergibt: Der Flow läuft unter der Verbindung der Person, die ihn gebaut hat, und diese
+    Person sieht alle Aufträge.
+  - Bei Aufträgen ohne gesetzten Liefertermin nennt der Agent regelmäßig eine „voraussichtliche"
+    Kalenderwoche, die in keinem Feld steht. Zwei Kunden wurden daraufhin falsch informiert.
+  - Die Innendienstleitung möchte wissen, warum ein bestimmter Kunde am 12. des Monats eine falsche
+    Auskunft bekommen hat. Im Protokoll steht nur der Zeitpunkt und die Auftragsnummer.
+
+  Behandle die drei Meldungen getrennt. Beim ersten entscheidest du zwischen Dienstkonto und Prüfung
+  je Aufruf und begründest die Wahl. Beim zweiten reparierst du beide Seiten der Naht, nicht nur eine.
+  Beim dritten ergänzt du das Protokoll so, dass genau diese Frage künftig beantwortbar ist – und sagst,
+  welche der ergänzten Angaben selbst datenschutzrelevant sind.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Vertriebsleitung möchte den Agenten erweitern: Er
+  soll Liefertermine nicht nur nennen, sondern auf Kundenwunsch auch **verschieben** können, weil das
+  „nur ein Feld in der Liste" sei. Lass dir vom KI-Werkzeug Pro und Contra geben, entscheide begründet
+  und **widersprich**, wenn die Argumentation Unumkehrbarkeit, Außenwirkung und Mengenbegrenzung
+  übergeht. Formuliere eine Variante, die den Wunsch aufnimmt, ohne die Grenzen der Autonomie zu
+  überschreiten.
+
+  **Deliverable:**
+
+  1. Architekturentscheidung mit Begründung plus vollständiger Datenvertrag und die zugehörigen
+     Instruktionspassagen
+  2. ausgefüllte Pflichtkriterien-Checkliste mit einer beispielhaft ausgefüllten Protokollzeile und
+     den wörtlichen Antworttexten für die beiden Lückenfälle
+  3. Version 2 nach Runde 3 mit getrennter Antwort auf alle drei Meldungen
+  4. begründete Entscheidung zur Terminverschiebung inklusive der abgelehnten Variante und einer
+     tragfähigen Alternative
+
+  **Fertig bist du erst, wenn** dein Entwurf benennt, unter welcher Identität der Flow läuft und wie
+  die Berechtigung geprüft wird, die Protokollzeile Modell- und Promptstand enthält, der Antworttext
+  für den fehlenden Liefertermin keine Vermutung zulässt und deine Notbremse einen Abschaltweg
+  beschreibt, der ohne die bauende Person funktioniert.
+tip: |
+  Der Lernwert liegt in Runde 3. Der erste Befund ist der klassische Rechte-Umweg: Technisch
+  funktioniert alles, fachlich ist es ein Datenschutzvorfall. Ein Dienstkonto allein löst das nicht –
+  es verlagert das Problem nur, solange der Flow nicht prüft, wer fragt. Der zweite Befund zeigt,
+  warum ein Datenvertrag beide Seiten braucht: Der Flow muss `null` liefern statt eines Näherungswerts,
+  und die Instruktion muss das Formulieren von Vermutungen ausdrücklich verbieten. Wer nur eine Seite
+  repariert, bekommt das Problem in anderer Form zurück. In Runde 4 gilt: Ein Feld zu ändern ist
+  technisch trivial und fachlich eine Zusage an einen Kunden – genau die Sorte Aktion, die ein Gate
+  braucht.
+solution: |
+  Bewertungskriterien: (1) die Musterwahl ist begründet und der Datenvertrag deckt Eingaben, Ausgaben,
+  Wertebereiche und alle Fehlfälle ab, wobei die Instruktionspassagen den Vertrag auf der Sprachseite
+  tatsächlich durchsetzen; (2) alle vier Pflichtkriterien sind konkret belegt, insbesondere eine
+  ausgefüllte Protokollzeile und wörtliche Antworttexte statt allgemeiner Absichtserklärungen;
+  (3) Version 2 behandelt die drei Meldungen getrennt, wählt beim Rechteproblem eine Lösung mit
+  Berechtigungsprüfung je Aufruf statt nur eines Kontowechsels, repariert die Lückenformulierung auf
+  beiden Seiten der Naht und benennt beim Protokoll ausdrücklich die datenschutzrelevanten Ergänzungen;
+  (4) die Entscheidung zur Terminverschiebung wägt Unumkehrbarkeit, Außenwirkung und Menge ab und
+  bietet eine Alternative wie einen Änderungsvorschlag mit Freigabe durch den Kundenbetreuer.
+
+  Lernziel: eine Kombination aus Agent und Flow so bauen, dass Identität, Rechte, Datenübergabe,
+  Protokollierung und Abschaltbarkeit geklärt sind, bevor sie mit echten Menschen und echten Daten
+  in Berührung kommt.

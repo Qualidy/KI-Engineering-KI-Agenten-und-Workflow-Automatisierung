@@ -1,0 +1,46 @@
+title: Steckbrief schreiben und von der KI zerlegen lassen
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude) und bezieht sich auf **deinen
+  eigenen Arbeitsbereich**.
+
+  1. Wähle eine Tätigkeit aus deinem Alltag, die regelmäßig anfällt und dich stört. Formuliere sie als
+     Verb plus Gegenstand.
+  2. Fülle den Use-Case-Steckbrief aus Abschnitt 34.5 vollständig aus. Kein Feld bleibt leer – wo du
+     etwas nicht weißt, schreibst du `unbekannt, zu klären mit [Rolle]`.
+  3. Lass den Steckbrief kritisch prüfen:
+
+     ```text
+     Pruefe diesen Use-Case-Steckbrief als kritischer Projektleiter.
+     Nenne die drei schwaechsten Felder und sage jeweils, welche Frage
+     unbeantwortet bleibt. Nenne ausserdem zwei Risiken, die im Steckbrief
+     fehlen. Mache keine Verbesserungsvorschlaege, stelle nur Fragen.
+     ```
+
+  4. Beantworte die gestellten Fragen und überarbeite den Steckbrief.
+  5. Prüfe zuletzt selbst: Ist dein Erfolgskriterium wirklich messbar, und könntest du die
+     Vorher-Messung ab morgen beginnen? Wenn nicht, schärfe es nach.
+tip: |
+  Der Auftrag „stelle nur Fragen, mache keine Vorschläge" ist bewusst gewählt. Ein KI-Werkzeug füllt
+  Lücken sonst mit plausiblen Annahmen – und die stehen dann in deinem Steckbrief, ohne dass jemand
+  sie geprüft hat. Fragen zwingen dich, die Antwort selbst zu beschaffen.
+solution: |
+  Bewertungskriterien für einen guten Steckbrief:
+
+  - **Kurztitel** ist eine Tätigkeit mit Objekt, kein Thema, und passt in acht Wörter.
+  - **Zeitaufwand heute** enthält eine Zahl je Fall und eine Wochensumme. Fehlt sie, ist der spätere
+    Nutzennachweis unmöglich.
+  - **KI-Anteil** benennt genau eine der acht Einsatzstellen aus Kap. 29. Steht dort etwas wie „die KI
+    bearbeitet den Vorgang", ist der Schritt zu groß geschnitten.
+  - **Rückfallweg** nennt eine Rolle und beschreibt, was mit unsicheren Fällen passiert.
+  - **Außerhalb** enthält mindestens zwei konkrete Abgrenzungen. Ein leeres Feld hier ist der
+    verlässlichste Vorbote von ausuferndem Umfang.
+  - **Erfolgskriterium** enthält Zahl, Bezugsgröße und Frist. „Schneller" oder „besser" genügt nicht.
+
+  Typische Schwachstellen, die die Prüfung aufdeckt: Der Zeitaufwand ist geschätzt statt gemessen.
+  Der Entscheidungspunkt ist nicht besetzt – es steht keine Person dort. Die Datenlage wird
+  optimistisch beschrieben, obwohl die Daten in Mailanhängen liegen. Und die rechtlichen Punkte sind
+  mit „unkritisch" abgehakt, obwohl personenbezogene Daten verarbeitet werden.
+
+  Ein gutes Ergebnis zeigt beide Fassungen und benennt konkret, welche Frage aus Schritt 3 welche
+  Änderung ausgelöst hat.

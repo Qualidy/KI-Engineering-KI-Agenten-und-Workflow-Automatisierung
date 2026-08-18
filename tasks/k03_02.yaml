@@ -1,0 +1,30 @@
+title: Risiko, Auswirkung und Gegenmaßnahme
+difficulty: 2
+question: |
+  Für jede der folgenden Situationen: Benenne das **Hauptrisiko** aus Abschnitt 3.3 oder 3.4,
+  beschreibe in einem Satz die **konkrete Auswirkung**, und formuliere **eine** Gegenmaßnahme,
+  die im Ablauf verankert ist – nicht nur ein guter Vorsatz.
+
+  1. Ein Ablauf entwirft Mahnschreiben und trägt Beträge und Fristen automatisch ein.
+  2. Ein System sortiert Bewerbungen vor und legt eine Rangfolge an.
+  3. Ein Agent recherchiert selbstständig in mehreren Quellen und verschickt das Ergebnis.
+  4. Die gesamte Angebotserstellung läuft über ein einziges externes KI-Werkzeug.
+  5. Nach acht Monaten ohne Beanstandung gibt das Team KI-Entwürfe ohne Lesen frei.
+tip: |
+  Der Unterschied zwischen einer echten Gegenmaßnahme und einem Vorsatz: Eine Gegenmaßnahme
+  funktioniert auch dann, wenn die betroffene Person müde, im Urlaub oder neu im Team ist.
+  „Wir passen besser auf" ist kein Mechanismus.
+solution: |
+  | Situation | Hauptrisiko | Auswirkung | Verankerte Gegenmaßnahme |
+  |---|---|---|---|
+  | 1 Mahnschreiben | Halluzination | erfundene oder vertauschte Beträge und Fristen gehen an Kunden | Betrag und Frist nicht aus dem Modell, sondern regelbasiert aus dem Quellsystem einsetzen |
+  | 2 Bewerbungen vorsortieren | Bias | ganze Gruppen fallen systematisch früher heraus | keine Rangfolge durch KI; Auswahl bleibt beim Menschen, siehe Kapitel 4 und Kapitel 14 |
+  | 3 Agent verschickt selbst | Kontrollverlust | niemand kann nachvollziehen, welche Quelle zur Aussage führte | Protokollierung aller Werkzeugaufrufe und Freigabe vor jedem Versand |
+  | 4 Ein einziges Werkzeug | Anbieterabhängigkeit | Ausfall oder Preisänderung legt den Angebotsprozess lahm | Rückfallebene als dokumentierter manueller Weg, Prompts und Vorlagen extern gesichert |
+  | 5 Freigabe ohne Lesen | Automatisierungsverzerrung | der Kontrollpunkt existiert nur formal | fester Stichprobenanteil mit definierter Prüfliste, Nacharbeitsquote wird mitgezählt |
+
+  Zwei Muster sind übertragbar. Erstens: Zahlen, Fristen und Namen sollten möglichst nie aus
+  einem Sprachmodell stammen, sondern regelbasiert eingesetzt werden – das entfernt die
+  gefährlichste Halluzinationsquelle vollständig. Zweitens: Jede Gegenmaßnahme, die eine
+  Verhaltensänderung verlangt, verfällt mit der Zeit. Wirksam sind nur Maßnahmen, die im Ablauf
+  selbst stecken.

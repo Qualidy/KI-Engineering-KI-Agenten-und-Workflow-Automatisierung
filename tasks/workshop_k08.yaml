@@ -1,0 +1,75 @@
+title: Einsatzkatalog und Grenzen für deinen Bereich
+difficulty: 4
+question: |
+  **Szenario:** Dein Bereich soll KI „strukturiert einsetzen". Die Leitung erwartet einen
+  **Einsatzkatalog**: Welche Aufgaben werden künftig mit KI-Unterstützung erledigt, in welcher
+  Rolle, mit welcher Prüfung und wo ist Schluss. Anlass ist ein konkreter Vorfall: In einer
+  Kundenantwort stand eine Kulanzzusage, die niemand freigegeben hatte. Der Kollege hatte den
+  Entwurf aus einem KI-Werkzeug übernommen und nur überflogen.
+
+  ```text
+  Rahmen:
+  Bereich frei waehlbar (Vertrieb, HR, Buchhaltung, Support, Einkauf).
+  8 bis 12 Beschaeftigte, gemischte Erfahrung mit KI-Werkzeugen.
+  Es gibt keine Vorgaben ausser der allgemeinen Datenschutzregel des Hauses.
+  Der Katalog soll ohne Schulung verstaendlich sein.
+  ```
+
+  ---
+
+  **Runde 1 – Katalog aufbauen.** Sammle **mindestens zehn** wiederkehrende Aufgaben deines
+  Bereichs. Ordne jeder Aufgabe zu: passendes Rollenmuster (Kap. 8.2), was der Mensch liefert, was
+  die KI liefert, wer prüft und woran geprüft wird. Formuliere zu **mindestens vier** Aufgaben
+  einen einsatzfertigen Beispielprompt mit Rolle, Aufgabe, Kontextplatzhaltern in eckigen
+  Klammern, Format und mindestens einer Einschränkung.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Der Katalog muss **alle vier** Kriterien erfüllen:
+
+  1. Zu jeder Aufgabe ist die Frage **Prüfbarkeit** beantwortet: Woran erkennt jemand, dass das
+     Ergebnis falsch ist?
+  2. Mindestens **drei** Aufgaben sind mit einer der harten Grenzen aus Abschnitt 8.4 verknüpft
+     und tragen die passende Gegenmaßnahme.
+  3. Mindestens **zwei** Aufgaben stehen auf einer ausdrücklichen Negativliste, mit Begründung.
+  4. Kein Prompt im Katalog enthält vertrauliche Angaben; überall stehen Platzhalter.
+
+  **Runde 3 – Die Komplikation.** Der Vorfall wiederholt sich in abgewandelter Form: Eine
+  Mitarbeiterin nutzt deinen Katalogprompt für Angebotstexte, das Ergebnis enthält eine
+  Lieferzeitangabe, die nirgends herkam, und geht ungeprüft hinaus. Analysiere ehrlich: Lag es am
+  Prompt, an der fehlenden Prüfung, an der Rollenwahl oder an der Aufgabe selbst? Überarbeite den
+  betroffenen Katalogeintrag **und** mindestens zwei weitere Einträge, bei denen dasselbe
+  passieren könnte. Ergänze eine Regel, die verhindert, dass eine Prüfung im Zeitdruck ausfällt.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Leitung zieht die Konsequenz: „Ab sofort geht
+  jeder KI-Entwurf durch das Vier-Augen-Prinzip." Lass dir von deinem KI-Werkzeug Argumente für
+  und gegen diese Regel geben. Entscheide dann selbst und **widersprich** begründet, wenn die
+  Regel deinen Bereich lahmlegen würde. Formuliere eine abgestufte Freigaberegel: Welche Ergebnisse
+  gehen ohne zweite Person hinaus, welche nicht – und woran macht ihr die Grenze fest?
+
+  **Deliverable:**
+
+  1. Einsatzkatalog mit mindestens zehn Aufgaben und allen Spalten
+  2. vier einsatzfertige Beispielprompts mit Platzhaltern
+  3. Analyse und überarbeitete Einträge aus Runde 3, inklusive Regel gegen ausgefallene Prüfungen
+  4. abgestufte Freigaberegel aus Runde 4 mit Begründung
+
+  **Fertig bist du erst, wenn** jede Aufgabe eine beantwortete Prüfbarkeitsfrage hat, die
+  Negativliste mindestens zwei begründete Einträge enthält, die Analyse aus Runde 3 eine Ursache
+  benennt statt Schuld zuzuweisen, und deine Freigaberegel an einem Beispiel zeigt, welcher
+  Entwurf ohne zweite Person hinausgehen darf.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Die bequeme Antwort auf den Vorfall lautet „besser prüfen" –
+  sie ändert nichts, weil sie niemandem sagt, was konkret zu tun ist. Frage stattdessen: Hätte ein
+  anderer Prompt den Fehler verhindert? Wäre eine andere Rolle richtiger gewesen? Und in Runde 4:
+  Eine Regel, die alles gleich behandelt, wird bei Zeitdruck als Erstes gebrochen. Abstufung ist
+  nicht Nachlässigkeit, sondern die Voraussetzung dafür, dass die wichtigen Prüfungen stattfinden.
+solution: |
+  Bewertungskriterien: (1) mindestens zehn Aufgaben mit passendem Rollenmuster, klarer Trennung
+  zwischen menschlichem und maschinellem Anteil und benannter prüfender Person; (2) alle vier
+  Pflichtkriterien erfüllt, insbesondere die beantwortete Prüfbarkeitsfrage und die Negativliste;
+  (3) die Analyse in Runde 3 identifiziert eine konkrete Ursache und überträgt die Korrektur auf
+  vergleichbare Einträge, statt nur den einen Fall zu reparieren; (4) die Freigaberegel unterscheidet
+  nachvollziehbar nach Außenwirkung und Rückholbarkeit und begründet den Widerspruch zur pauschalen
+  Vier-Augen-Vorgabe.
+
+  Lernziel: Rollenmuster und harte Grenzen zu einem Katalog verbinden, der im Alltag benutzbar ist –
+  und Verantwortung so verankern, dass sie auch unter Zeitdruck nicht stillschweigend entfällt.

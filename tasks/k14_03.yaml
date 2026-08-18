@@ -1,0 +1,53 @@
+title: Interviewleitfaden mit belastbaren Beobachtungsankern
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug. Sie enthält keine personenbezogenen Daten.
+
+  Gegeben ist dieses Anforderungsprofil für die Stelle Sachbearbeitung Auftragsabwicklung bei der
+  Musterhandel GmbH:
+
+  ```text
+  Muss-Anforderungen:
+  1. Auftraege vollstaendig und fehlerfrei erfassen, auch unter Zeitdruck
+  2. Liefertermine zwischen Lager, Spedition und Kunde abstimmen
+  3. Reklamationen sachlich aufnehmen und an die richtige Stelle weitergeben
+  4. Auswertungen in Excel erstellen und Auffaelligkeiten erkennen
+  ```
+
+  1. Erstelle mit dem Prompt-Muster aus dem Kapitel einen strukturierten Interviewleitfaden für
+     45 Minuten.
+  2. Prüfe jeden Beobachtungsanker mit dem Zwei-Personen-Test: Würden zwei Gesprächsführende
+     unabhängig voneinander dieselbe Stufe ankreuzen? Streiche oder ersetze alle Anker, die den
+     Test nicht bestehen.
+  3. Prüfe den Leitfaden auf unzulässige Fragen und auf Fangfragen. Notiere jeden Fund.
+  4. Ergänze eine kurze Regel, wie die Bewertung nach dem Gespräch abläuft, damit die Gespräche
+     vergleichbar bleiben.
+tip: |
+  Sprachmodelle formulieren Anker gern mit Eigenschaftswörtern: „wirkt souverän", „zeigt
+  Teamfähigkeit", „arbeitet strukturiert". Das sind Urteile, keine Beobachtungen. Verlange in der
+  Nachschärfung ausdrücklich Verhaltensbeschreibungen mit einem beobachtbaren Handeln als Subjekt.
+solution: |
+  Beispiel für Anforderung 2, Terminabstimmung:
+
+  ```text
+  Hauptfrage: Schildern Sie eine Situation, in der ein zugesagter Termin nicht
+  zu halten war. Was haben Sie konkret getan?
+  Nachfrage 1: Wen haben Sie in welcher Reihenfolge informiert?
+  Nachfrage 2: Woran haben Sie gemerkt, dass der Termin kippt?
+  Anker unzureichend: Nennt keine Beteiligten oder wartet auf Anweisung von aussen.
+  Anker ausreichend: Nennt Kunde und eine interne Stelle und einen neuen Termin.
+  Anker stark: Nennt alle Beteiligten, benennt den Zeitpunkt der Erkennung, nennt
+  einen konkreten Ersatzvorschlag und beschreibt die Rueckmeldung an den Kunden.
+  ```
+
+  Bewertungskriterien: (1) Zu jeder der vier Muss-Anforderungen gibt es genau eine
+  verhaltensbasierte Hauptfrage und zwei Nachfragen, die auf Handeln und nicht auf Meinung zielen.
+  (2) Alle Anker beschreiben beobachtbares Verhalten; Formulierungen wie „wirkt strukturiert" oder
+  „ist belastbar" sind ersetzt. (3) Der Leitfaden enthält keine Fragen zu Familienplanung,
+  Gesundheit, Herkunft, Religion, Parteizugehörigkeit oder Vermögensverhältnissen und keine
+  Fangfragen. (4) Die Bewertungsregel legt fest, dass beide Gesprächsführenden unabhängig und
+  vor dem Austausch bewerten, und dass die Bewertung von Menschen erfolgt.
+
+  Der eigentliche Lernwert liegt in Schritt 2. Erfahrungsgemäß fallen beim ersten Durchlauf
+  mindestens die Hälfte der Anker durch den Zwei-Personen-Test – und genau diese Anker sind der
+  Grund, warum unstrukturierte Auswahlgespräche zu Entscheidungen führen, die niemand begründen kann.

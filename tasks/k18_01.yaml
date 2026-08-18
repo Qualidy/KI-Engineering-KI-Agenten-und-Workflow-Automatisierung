@@ -1,0 +1,34 @@
+title: Welcher Trigger passt?
+difficulty: 1
+question: |
+  Wähle für jede Aufgabe die passende Trigger-Art: **Ereignis**, **Zeitplan**,
+  **manueller Start** oder **eingehender Aufruf**. Begründe jeweils in einem Satz.
+
+  1. Sobald eine neue Datei in einer SharePoint-Bibliothek liegt, soll eine Nachricht
+     in Teams erscheinen.
+  2. Jeden Montag um 7 Uhr soll eine Übersicht der offenen Freigaben verschickt werden.
+  3. Eine Sachbearbeiterin will für einen einzelnen Kunden ein Willkommensschreiben
+     erzeugen lassen.
+  4. Das Webshop-System soll nach jeder Bestellung sofort eine Meldung an den Ablauf
+     senden.
+  5. Alle Freigaben, die seit mehr als drei Tagen offen sind, sollen angemahnt werden.
+  6. Wenn ein Formular ausgefüllt abgeschickt wird, soll ein Eintrag in einer Liste
+     entstehen.
+tip: |
+  Zwei Aufgaben sehen wie Ereignisse aus, sind aber keine. Frage dich: Gibt es einen
+  Moment, in dem ein System etwas melden **kann** – oder muss jemand regelmäßig nachsehen?
+solution: |
+  | Nr. | Trigger-Art | Begründung |
+  |---|---|---|
+  | 1 | Ereignis | das Quellsystem kennt den Moment „neue Datei" |
+  | 2 | Zeitplan | fester Zeitpunkt, kein auslösendes Ereignis |
+  | 3 | manueller Start | ein Mensch entscheidet über Zeitpunkt und Kunde |
+  | 4 | eingehender Aufruf | ein Fremdsystem sendet aktiv eine Nachricht |
+  | 5 | Zeitplan | „seit mehr als drei Tagen offen" ist kein Ereignis, sondern ein Rundgang |
+  | 6 | Ereignis | das Formularsystem meldet den Abschluss |
+
+  Die lehrreiche Zeile ist Nummer 5: „Nichts ist passiert" kann kein System melden.
+  Ablaufende Fristen und ausbleibende Reaktionen brauchen immer einen Zeitplan-Trigger,
+  der eine Liste durchsieht. Nummer 4 zeigt den Unterschied zwischen Abfragen und
+  Gemeldet-werden: Der eingehende Aufruf ist sofort da, ein Ereignis-Trigger mit
+  Abfrageintervall braucht möglicherweise Minuten.

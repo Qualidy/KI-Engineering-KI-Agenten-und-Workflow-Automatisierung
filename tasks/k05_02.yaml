@@ -1,0 +1,39 @@
+title: Varianz messen und einfangen
+difficulty: 2
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Stelle in **drei getrennten, neuen Chats** exakt dieselbe Anfrage:
+
+     ```text
+     Nenne drei Gruende, warum ein Team eine Urlaubsplanung digitalisieren sollte.
+     ```
+
+     Notiere, worin sich die drei Antworten unterscheiden: Anzahl, Reihenfolge, Wortwahl, Länge,
+     inhaltliche Schwerpunkte.
+
+  2. Wiederhole dasselbe dreimal mit einer engeren Fassung:
+
+     ```text
+     Nenne genau drei Gruende, warum ein Team eine Urlaubsplanung digitalisieren sollte.
+     Format: eine nummerierte Liste, pro Punkt maximal 12 Woerter, keine Einleitung,
+     kein Schlusssatz.
+     ```
+
+  3. Beantworte schriftlich: Was hat sich durch die zweite Fassung verändert – und was
+     **nicht**?
+tip: |
+  Achte darauf, wirklich neue Chats zu öffnen. Hängst du die Frage im selben Chat an, sieht das
+  Werkzeug die vorherige Antwort im Kontextfenster und variiert schon deshalb anders.
+solution: |
+  Typisches Ergebnis:
+
+  - **Fassung 1:** Der Inhalt ist meist ähnlich, die Form schwankt stark – mal drei Stichpunkte,
+    mal drei Absätze mit Einleitung. Die Reihenfolge der Argumente wechselt.
+  - **Fassung 2:** Anzahl, Länge und Struktur sind über alle drei Durchläufe stabil. Die
+    **Formulierung** bleibt trotzdem unterschiedlich.
+
+  Genau das ist die Lehre: Ein Format lässt sich erzwingen, exakte Wortgleichheit nicht. Für die
+  spätere Arbeit mit KI in Abläufen heißt das, dass du dich auf **Struktur** verlassen darfst und
+  auf **Wortlaut** nie. Wer eine Auswertung baut, die auf einer bestimmten Formulierung beruht,
+  baut auf Sand.

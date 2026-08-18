@@ -1,0 +1,42 @@
+title: Vorlage sezieren und übernehmen
+difficulty: 3
+question: |
+  Vorlagen sind Gerüste, keine fertigen Lösungen. Das prüfst du nach.
+
+  1. Gehe zu `Vorlagen` und suche nach `Anhang`. Wähle eine Vorlage, die E-Mail-Anhänge in
+     OneDrive oder SharePoint ablegt.
+  2. **Bevor** du sie erstellst: Notiere in einer Tabelle jeden beteiligten Connector, ob er
+     Standard oder Premium ist, und welcher Schritt Trigger und welcher Aktion ist.
+  3. Erstelle den Flow aus der Vorlage, benenne ihn sofort um in `21 Vorlagenanalyse` und öffne
+     jeden Schritt. Notiere für jedes Pflichtfeld, ob der Vorlagenwert für dich passt oder
+     angepasst werden müsste.
+  4. Schalte den Flow über `Meine Flows → ... → Ausschalten` aus. Er soll nicht laufen.
+  5. Beantworte schriftlich: Welche Schritte der Vorlage brauchst du nicht, und was würdest du
+     ergänzen?
+tip: |
+  Achte besonders auf den Schritt, in dem der Dateiname gebildet wird, und auf die Schleife über die
+  Anhänge. Genau dort weichen Vorlagen am häufigsten von dem ab, was du wirklich willst.
+solution: |
+  Erwartete Schrittfolge einer typischen Vorlage:
+
+  ```text
+  Flow: 21 Vorlagenanalyse   (automatisierter Cloud-Flow)
+    Trigger: Bei Eingang einer neuen E-Mail V3  (Outlook, Standard)
+      Nur mit Anlagen: Ja
+      Anlagen einschliessen: Ja
+    Aktion: Auf jedes anwenden ueber Anlagen
+      Aktion: Datei erstellen  (OneDrive for Business oder SharePoint, Standard)
+        Ordnerpfad: aus der Vorlage, meist anzupassen
+        Dateiname: Name der Anlage
+        Dateiinhalt: Inhalt der Anlage
+  ```
+
+  Bewertungskriterien: (1) alle Connectoren benannt und korrekt als Standard eingeordnet – Outlook,
+  OneDrive for Business, SharePoint und Teams sind Standard; (2) Trigger von Aktion unterschieden;
+  (3) mindestens zwei Felder identifiziert, die zwingend angepasst werden müssen, typischerweise
+  Ordnerpfad und Zielbibliothek; (4) der Flow ist ausgeschaltet.
+
+  Typische Erkenntnisse: Vorlagen legen alle Anhänge ab, auch Signaturbilder und Logos. Sie bauen
+  keinen sprechenden Dateinamen, sondern übernehmen den Originalnamen – zwei Rechnungen mit dem Namen
+  `Rechnung.pdf` überschreiben sich dann. Und sie filtern den Absender nicht, sodass jede Mail mit
+  Anhang den Flow auslöst. Genau diese drei Punkte baust du in Kapitel 22 bewusst selbst.

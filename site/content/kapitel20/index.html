@@ -1,0 +1,1849 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel19/">
+      
+      
+        <link rel="next" href="../kapitel21/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-20-werkzeuglandschaft-power-automate-zapier-make" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Block 4 · Einstieg in Workflow-Automatisierung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 17 – Workflow-Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 18 – Trigger, Aktionen und Daten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 19 – Logikbausteine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#201-drei-werkzeuge-ein-prinzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      20.1 Drei Werkzeuge, ein Prinzip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#202-positionierung-und-starken" class="md-nav__link">
+    <span class="md-ellipsis">
+      20.2 Positionierung und Stärken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#203-vergleich-nach-kriterien" class="md-nav__link">
+    <span class="md-ellipsis">
+      20.3 Vergleich nach Kriterien
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#204-auswahlkriterien-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      20.4 Auswahlkriterien-Matrix
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#205-wo-low-code-endet" class="md-nav__link">
+    <span class="md-ellipsis">
+      20.5 Wo Low-Code endet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#206-schatten-it-und-die-frage-wem-eine-verbindung-gehort" class="md-nav__link">
+    <span class="md-ellipsis">
+      20.6 Schatten-IT und die Frage, wem eine Verbindung gehört
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-20-werkzeuglandschaft-power-automate-zapier-make">Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make<a class="headerlink" href="#kapitel-20-werkzeuglandschaft-power-automate-zapier-make" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Warum alle drei Werkzeuge <strong>dasselbe Grundprinzip</strong> nutzen und sich trotzdem deutlich unterscheiden</li>
+<li>Wie <strong>Power Automate</strong>, <strong>Zapier</strong> und <strong>Make</strong> positioniert sind und wo jeweils ihre Stärke liegt</li>
+<li>Nach welchen <strong>Kriterien</strong> du vergleichst – von Integrationstiefe bis Betrieb</li>
+<li>Wie du mit einer <strong>Auswahlmatrix</strong> zu einer begründeten Entscheidung kommst</li>
+<li>Wann <strong>Low-Code an Grenzen stößt</strong> und die IT eingebunden werden muss</li>
+<li>Was <strong>Schatten-IT</strong> ist und warum die Frage „wem gehört diese Verbindung" so wichtig ist</li>
+</ul>
+</div>
+<hr />
+<h2 id="201-drei-werkzeuge-ein-prinzip">20.1 Drei Werkzeuge, ein Prinzip<a class="headerlink" href="#201-drei-werkzeuge-ein-prinzip" title="Permanent link">&para;</a></h2>
+<p>Alle drei Werkzeuge folgen dem Bauplan aus den Kapiteln 18 und 19: ein Auslöser, eine Kette von Aktionen, Logikbausteine dazwischen, Verbindungen zu Fremdsystemen. Wer das Prinzip verstanden hat, findet sich in jedem der drei zurecht – die Begriffe unterscheiden sich, die Denkweise nicht.</p>
+<table>
+<thead>
+<tr>
+<th>Begriff</th>
+<th>Power Automate</th>
+<th>Zapier</th>
+<th>Make</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Der Ablauf heißt</td>
+<td>Flow</td>
+<td>Zap</td>
+<td>Szenario</td>
+</tr>
+<tr>
+<td>Der Auslöser heißt</td>
+<td>Trigger</td>
+<td>Trigger</td>
+<td>Trigger-Modul</td>
+</tr>
+<tr>
+<td>Ein Schritt heißt</td>
+<td>Aktion</td>
+<td>Action</td>
+<td>Modul</td>
+</tr>
+<tr>
+<td>Die Anbindung heißt</td>
+<td>Connector und Verbindung</td>
+<td>App und Connection</td>
+<td>App und Connection</td>
+</tr>
+<tr>
+<td>Die Darstellung ist</td>
+<td>Liste von Schritten</td>
+<td>Liste von Schritten</td>
+<td>frei angeordnetes Diagramm</td>
+</tr>
+</tbody>
+</table>
+<p>Der wichtigste gemeinsame Baustein ist die <strong>Verbindung</strong> (englisch <em>Connection</em>): eine gespeicherte Anmeldung an ein Fremdsystem, mit der der Ablauf dort im Namen einer Person oder eines Kontos handelt. Verbindungen sind der Kern fast aller Betriebsprobleme – dazu Abschnitt 20.6.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Die Werkzeugfrage ist selten die schwierige Frage. Ein schlecht aufgenommener Prozess (Kap. 17) und fehlende Datenklarheit (Kap. 18) lassen sich mit keinem Werkzeug retten. Entscheide erst, <strong>was</strong> automatisiert werden soll, dann <strong>womit</strong>.</p>
+</div>
+<hr />
+<h2 id="202-positionierung-und-starken">20.2 Positionierung und Stärken<a class="headerlink" href="#202-positionierung-und-starken" title="Permanent link">&para;</a></h2>
+<p><strong>Power Automate</strong> ist Teil der Microsoft-Power-Platform und damit tief in Microsoft 365 verwoben. Ein Ablauf greift auf SharePoint, Outlook, Teams, Excel, Forms und Microsoft Lists zu, ohne dass zusätzliche Verträge nötig sind, und arbeitet innerhalb derselben Berechtigungswelt. Zwei Dinge kann nur Power Automate: <strong>Genehmigungen</strong> als eigenen Baustein mit Erinnerung und Protokoll (Kap. 27) und <strong>Desktop-Automatisierung</strong>, also das Steuern von Programmen ohne Schnittstelle über Maus, Tastatur und Bildschirmelemente – das, was üblicherweise als <strong>RPA</strong> (Robotic Process Automation) bezeichnet wird.</p>
+<p><strong>Zapier</strong> ist das Werkzeug mit dem breitesten <strong>App-Katalog</strong>. Für Nischenanwendungen aus Marketing, Vertrieb, Buchhaltung oder Projektmanagement gibt es dort am häufigsten eine fertige Anbindung. Die Bedienung ist sehr einfach: ein Auslöser, eine Handvoll Schritte, fertig in wenigen Minuten. Genau diese Einfachheit ist auch die Grenze – tiefe Verzweigungen und Schleifen sind möglich, aber nicht die Stärke.</p>
+<p><strong>Make</strong> setzt auf eine <strong>visuelle Szenario-Ansicht</strong>: Module werden auf einer Fläche angeordnet und mit Linien verbunden, Verzweigungen laufen sichtbar auseinander. Für Abläufe mit mehreren Wegen und Datenumformungen ist das die klarste Darstellung der drei. Make ist außerdem stark bei der Arbeit mit Datenstrukturen und bietet feine Kontrolle über Fehlerbehandlung pro Modul.</p>
+<div class="admonition example">
+<p class="admonition-title">Dasselbe Vorhaben, drei Wege</p>
+<p>Aufgabe: Eingehende Rechnung ablegen, in eine Liste schreiben, Freigabe einholen.</p>
+<ul>
+<li><strong>Power Automate:</strong> naheliegende Wahl, weil Postfach, Ablage und Liste ohnehin in Microsoft 365 liegen und die Genehmigung ein fertiger Baustein ist. Kein zusätzlicher Anbieter, kein zusätzlicher Vertrag.</li>
+<li><strong>Zapier:</strong> sinnvoll, wenn Ablage und Freigabe in Nicht-Microsoft-Werkzeugen stattfinden, etwa in einem Projektwerkzeug mit eigener Aufgabenverwaltung.</li>
+<li><strong>Make:</strong> sinnvoll, wenn die Rechnung aus mehreren Quellen kommt und je Lieferant unterschiedlich verarbeitet wird – die Verzweigungen bleiben im Diagramm lesbar.</li>
+</ul>
+<p>Alle drei lösen die Aufgabe. Der Unterschied liegt nicht im Können, sondern in Aufwand, Kosten und Betriebsverantwortung.</p>
+</div>
+<hr />
+<h2 id="203-vergleich-nach-kriterien">20.3 Vergleich nach Kriterien<a class="headerlink" href="#203-vergleich-nach-kriterien" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>Power Automate</th>
+<th>Zapier</th>
+<th>Make</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integrationstiefe in Microsoft 365</td>
+<td>sehr hoch, inklusive Berechtigungen und Genehmigungen</td>
+<td>mittel, über Standardanbindungen</td>
+<td>mittel, über Standardanbindungen</td>
+</tr>
+<tr>
+<td>Breite des App-Katalogs</td>
+<td>groß, Schwerpunkt Unternehmenssysteme</td>
+<td>am größten, viele Nischenanwendungen</td>
+<td>groß, technisch orientiert</td>
+</tr>
+<tr>
+<td>Verzweigungslogik und Übersicht</td>
+<td>vollständig, Darstellung als lange Liste</td>
+<td>einfache Verzweigungen, bewusst schlicht</td>
+<td>stärkste Übersicht durch Szenario-Diagramm</td>
+</tr>
+<tr>
+<td>Umgang mit Datenstrukturen</td>
+<td>gut, über Ausdrücke</td>
+<td>begrenzt</td>
+<td>sehr gut, feingranular</td>
+</tr>
+<tr>
+<td>Desktop-Automatisierung und RPA</td>
+<td>ja, als Desktop-Flow</td>
+<td>nein</td>
+<td>nein</td>
+</tr>
+<tr>
+<td>Datenhaltung und Serverstandort</td>
+<td>folgt der Region des Mandanten, EU-Regionen verfügbar</td>
+<td>überwiegend Anbieterinfrastruktur, Standort prüfen</td>
+<td>EU-Region wählbar, Anbieter mit europäischem Ursprung</td>
+</tr>
+<tr>
+<td>Auftragsverarbeitung nach DSGVO</td>
+<td>über bestehende Rahmenverträge meist abgedeckt</td>
+<td>eigener Vertrag nötig</td>
+<td>eigener Vertrag nötig</td>
+</tr>
+<tr>
+<td>Preis- und Lizenzlogik</td>
+<td>teils in M365-Lizenzen enthalten, Premium-Anbindungen kosten extra</td>
+<td>Staffelung nach Anzahl ausgeführter Abläufe</td>
+<td>Staffelung nach Anzahl ausgeführter Schritte</td>
+</tr>
+<tr>
+<td>Lernkurve für Fachanwender</td>
+<td>mittel, viele Begriffe und Ausdrücke</td>
+<td>flach, schnelle erste Erfolge</td>
+<td>mittel bis steil, dafür sehr transparent</td>
+</tr>
+<tr>
+<td>Betrieb und Governance</td>
+<td>Umgebungen, Richtlinien, zentrale Übersicht möglich</td>
+<td>wenig zentrale Steuerung, oft persönliche Konten</td>
+<td>Team- und Rechteverwaltung vorhanden</td>
+</tr>
+</tbody>
+</table>
+<p>Drei Punkte aus dieser Tabelle verdienen besondere Aufmerksamkeit.</p>
+<p>Erstens die <strong>Kostenlogik</strong>. Zapier zählt im Kern ausgeführte Abläufe, Make zählt einzelne Schritte. Derselbe Ablauf kann daher je Werkzeug völlig unterschiedlich zu Buche schlagen – besonders wenn er eine Schleife über viele Elemente enthält (Kap. 19). Rechne vor der Entscheidung mit realistischen Mengen, nicht mit dem Testfall.</p>
+<p>Zweitens die <strong>Datenfrage</strong>. Bei Zapier und Make laufen deine Inhalte durch die Systeme eines zusätzlichen Anbieters. Das ist zulässig, erfordert aber einen Vertrag zur Auftragsverarbeitung, eine Prüfung des Serverstandorts und eine Bewertung, welche Datenarten dort verarbeitet werden dürfen (Kap. 4). Bei Power Automate bleiben die Daten in der Regel innerhalb der bestehenden Microsoft-365-Vereinbarung – das ist der praktische Hauptvorteil in deutschen Unternehmen.</p>
+<p>Drittens die <strong>Lernkurve</strong>. Zapier ist am schnellsten zu bedienen, Make am transparentesten, Power Automate am mächtigsten. Für einen Kurs wie diesen ist Power Automate die richtige Wahl, weil dort das gesamte Spektrum vorkommt – von der einfachen Regel bis zur Genehmigung mit Protokoll.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Vergleichstabellen im Internet sind fast immer veraltet und häufig von einem Anbieter finanziert. Funktionsumfang, Tarifstufen und Regionen ändern sich mehrmals im Jahr. Nutze eine Tabelle wie diese als <strong>Fragenkatalog</strong>, nicht als Faktenblatt – und prüfe die drei Punkte Kosten, Datenstandort und Vertragslage immer aktuell beim Anbieter selbst.</p>
+</div>
+<hr />
+<h2 id="204-auswahlkriterien-matrix">20.4 Auswahlkriterien-Matrix<a class="headerlink" href="#204-auswahlkriterien-matrix" title="Permanent link">&para;</a></h2>
+<p>Für eine begründete Entscheidung gewichtest du die Kriterien nach deinem Fall und bewertest jedes Werkzeug von 1 bis 5. Die Gewichtung ist der eigentliche fachliche Beitrag – sie macht sichtbar, was dir wichtig ist.</p>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>Gewicht</th>
+<th>Power Automate</th>
+<th>Zapier</th>
+<th>Make</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Systeme liegen in Microsoft 365</td>
+<td>3</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Nischenanwendung muss angebunden werden</td>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Personenbezogene Daten im Ablauf</td>
+<td>3</td>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Viele Verzweigungen und Sonderwege</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Schnelles Ergebnis ohne IT-Beteiligung</td>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Betrieb über Jahre und Vertretungsregelung</td>
+<td>3</td>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Gewichtete Summe</strong></td>
+<td></td>
+<td><strong>57</strong></td>
+<td><strong>40</strong></td>
+<td><strong>48</strong></td>
+</tr>
+</tbody>
+</table>
+<p>So liest du das Ergebnis: Bei einem Vorhaben mit personenbezogenen Daten in einer Microsoft-365-Landschaft gewinnt Power Automate deutlich. Verschiebst du das Gewicht auf „Nischenanwendung" und „schnelles Ergebnis" – etwa bei einer kleinen Marketingautomatisierung ohne Personendaten –, dreht sich das Bild zugunsten von Zapier. Die Matrix liefert keine Wahrheit, sondern eine <strong>nachvollziehbare Begründung</strong>, die man auch in einem halben Jahr noch verstehen kann.</p>
+<p>Ein pragmatischer Zusatz: Es muss nicht ein Werkzeug für alles sein. Viele Organisationen betreiben Power Automate als Standard für interne, datensensible Abläufe und lassen daneben ein zweites Werkzeug für abgegrenzte Fälle zu. Wichtig ist, dass diese Aufteilung <strong>entschieden</strong> und aufgeschrieben ist – nicht zufällig entstanden.</p>
+<hr />
+<h2 id="205-wo-low-code-endet">20.5 Wo Low-Code endet<a class="headerlink" href="#205-wo-low-code-endet" title="Permanent link">&para;</a></h2>
+<p><strong>Low-Code</strong> heißt: Abläufe entstehen durch Konfigurieren statt durch Programmieren. Das trägt weit, aber nicht beliebig weit. Diese Anzeichen bedeuten, dass du die IT einbinden solltest:</p>
+<ul>
+<li>Der Ablauf braucht eine <strong>Anbindung, die es nicht gibt</strong>, und du fängst an, Schnittstellen von Hand aufzurufen und Anmeldeverfahren nachzubauen (Kap. 26).</li>
+<li>Der Ablauf hat <strong>mehr als etwa 30 Schritte</strong> oder mehr als zwei Verschachtelungsebenen. Dann ist er nicht mehr wartbar (Kap. 19).</li>
+<li>Der Ablauf greift auf <strong>Daten mit hohem Schutzbedarf</strong> zu: Gesundheitsdaten, Bewerberdaten, Entgeltdaten, Kundenverträge.</li>
+<li>Der Ablauf soll <strong>verbindliche Entscheidungen</strong> treffen: Zahlungen anweisen, Verträge kündigen, Bewerber ablehnen.</li>
+<li>Es hängen <strong>andere Abteilungen</strong> davon ab oder er läuft in einem Bereich mit Nachweispflichten.</li>
+<li>Es gibt <strong>Premium- oder Lizenzbedarf</strong>, Adminrechte oder eine neue Umgebung.</li>
+</ul>
+<pre class="mermaid"><code>flowchart TD
+    A([Automatisierungsidee]) --&gt; B([Nur eigene Daten und eigene Systeme])
+    B --&gt;|ja| C([Selbst bauen und dokumentieren])
+    B --&gt;|nein| D([Personenbezug oder verbindliche Entscheidung])
+    D --&gt;|nein| E([Selbst bauen und IT informieren])
+    D --&gt;|ja| F([Vorab mit IT und Fachbereich klaeren])</code></pre>
+<p>Die IT einzubinden ist keine Niederlage und kein Kontrollverlust. In der Praxis ist es der einzige Weg, dass ein Ablauf einen Personalwechsel, eine Systemumstellung und eine Datenschutzprüfung übersteht. Umgekehrt gilt aber auch: Wer für jede Ablage-Automatisierung ein Freigabeverfahren verlangt, erzeugt genau die Umgehungen, die im nächsten Abschnitt beschrieben werden.</p>
+<hr />
+<h2 id="206-schatten-it-und-die-frage-wem-eine-verbindung-gehort">20.6 Schatten-IT und die Frage, wem eine Verbindung gehört<a class="headerlink" href="#206-schatten-it-und-die-frage-wem-eine-verbindung-gehort" title="Permanent link">&para;</a></h2>
+<p><strong>Schatten-IT</strong> bezeichnet Werkzeuge und Abläufe, die im Fachbereich entstehen, ohne dass IT, Datenschutz oder Einkauf davon wissen. Bei Automatisierungswerkzeugen ist das besonders naheliegend: Ein kostenloser Tarif ist in fünf Minuten eingerichtet, und schon fließen Unternehmensdaten über ein System, das nie geprüft wurde.</p>
+<table>
+<thead>
+<tr>
+<th>Risiko</th>
+<th>Was konkret passiert</th>
+<th>Praktische Gegenmaßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Personenabhängigkeit</td>
+<td>Ablauf läuft unter einem persönlichen Konto und stoppt beim Austritt</td>
+<td>Abläufe auf ein Funktionskonto oder eine Teamumgebung stellen</td>
+</tr>
+<tr>
+<td>Unbekannte Datenflüsse</td>
+<td>niemand weiß, welche Daten wohin gehen</td>
+<td>einfaches Verzeichnis der Abläufe mit Datenarten führen</td>
+</tr>
+<tr>
+<td>Fehlende Verträge</td>
+<td>Auftragsverarbeitung ungeklärt, Datenschutzverstoß möglich</td>
+<td>vor Produktivnutzung Vertragslage klären (Kap. 4)</td>
+</tr>
+<tr>
+<td>Kein Betrieb</td>
+<td>Fehler bleiben unbemerkt, niemand ist zuständig</td>
+<td>Verantwortliche Rolle plus Vertretung schriftlich festlegen (Kap. 19)</td>
+</tr>
+<tr>
+<td>Doppelte Lösungen</td>
+<td>drei Abteilungen bauen denselben Ablauf dreimal</td>
+<td>Abläufe sichtbar machen, bevor neu gebaut wird</td>
+</tr>
+<tr>
+<td>Kostenüberraschung</td>
+<td>Tarifgrenze wird erreicht, Abläufe stoppen mitten im Monat</td>
+<td>Verbrauch abschätzen und beobachten</td>
+</tr>
+</tbody>
+</table>
+<p>Die praktisch wichtigste Einzelfrage lautet: <strong>Wem gehört die Verbindung?</strong> Wenn du einen Ablauf mit deiner eigenen Anmeldung an das Postfach, die Ablage oder das Fachsystem baust, handelt der Ablauf mit <strong>deinen</strong> Rechten und unter <strong>deinem</strong> Namen. Drei Folgen ergeben sich daraus:</p>
+<ol>
+<li>Der Ablauf kann alles, was du kannst – auch versehentlich mehr, als er sollte.</li>
+<li>Verlierst du eine Berechtigung oder änderst du dein Kennwort, bricht der Ablauf ab.</li>
+<li>Verlässt du das Unternehmen, stirbt der Ablauf mit deinem Konto – oft unbemerkt.</li>
+</ol>
+<p>Für alles, was länger als ein Experiment leben soll, gilt daher: Verbindung auf ein <strong>Funktionskonto</strong> oder eine geteilte Umgebung umstellen, Miteigentümer eintragen, und in einer kurzen Betriebsnotiz festhalten, welche Verbindungen der Ablauf nutzt und mit welchen Rechten. Wie das in Power Automate konkret aussieht, folgt in Kapitel 21; die Betriebsseite vertiefst du in Kapitel 38.</p>
+<div class="admonition tip">
+<p class="admonition-title">Der pragmatische Weg</p>
+<p>Verbiete nichts, was du nicht ersetzen kannst. Bewährt hat sich diese Reihenfolge: Erstens ein <strong>erlaubter Spielplatz</strong> für Selbstversuche mit unkritischen Daten. Zweitens eine kurze, verständliche Regel, ab wann ein Ablauf gemeldet werden muss – zum Beispiel „sobald andere Personen darauf angewiesen sind oder personenbezogene Daten verarbeitet werden". Drittens ein sichtbares Verzeichnis, in dem Abläufe auffindbar sind. Damit entstehen Automatisierungen weiter im Fachbereich, aber sie bleiben auffindbar und übergebbar.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Alle drei Werkzeuge nutzen dasselbe Prinzip aus Trigger, Aktionen und Logik – nur die Begriffe und Darstellungen unterscheiden sich.</li>
+<li><strong>Power Automate</strong> punktet mit Microsoft-365-Tiefe, Genehmigungen und Desktop-Automatisierung, <strong>Zapier</strong> mit dem breitesten App-Katalog und der flachsten Lernkurve, <strong>Make</strong> mit der klarsten visuellen Darstellung verzweigter Abläufe.</li>
+<li>Vergleiche entlang fester Kriterien: Integrationstiefe, App-Katalog, Datenhaltung und Serverstandort, Auftragsverarbeitung, Verzweigungslogik, Kostenlogik, Lernkurve, Betrieb.</li>
+<li>Die <strong>Kostenlogik</strong> unterscheidet sich grundlegend – Abläufe zählen ist nicht dasselbe wie Schritte zählen; rechne mit realistischen Mengen.</li>
+<li>Eine <strong>Auswahlmatrix</strong> mit Gewichtung liefert keine Wahrheit, aber eine nachvollziehbare Begründung.</li>
+<li><strong>Low-Code endet</strong> bei fehlenden Anbindungen, hoher Komplexität, schutzbedürftigen Daten und verbindlichen Entscheidungen – dort gehört die IT dazu.</li>
+<li>Die entscheidende Betriebsfrage ist, <strong>wem eine Verbindung gehört</strong>: persönliche Konten machen Abläufe unsichtbar und sterblich.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Welches Werkzeug für welchen Fall?</summary>
+<p>Ordne jedem Vorhaben das naheliegendste Werkzeug zu: <strong>Power Automate</strong>, <strong>Zapier</strong>
+oder <strong>Make</strong>. Begründe jeweils mit <strong>einem</strong> Kriterium aus dem Kapitel.</p>
+<ol>
+<li>Eingehende Bewerbungen aus dem Postfach in eine SharePoint-Bibliothek ablegen und
+   der Fachabteilung eine Teams-Nachricht senden.</li>
+<li>Aus einem kleinen Nischenwerkzeug für Veranstaltungsanmeldungen Teilnehmerdaten in
+   ein Newsletter-Werkzeug übertragen, ohne Personalbezug zu Beschäftigten.</li>
+<li>Ein Ablauf, der je nach Lieferant sieben unterschiedliche Wege nimmt und dessen
+   Verzweigungen mit dem Einkauf abgestimmt werden müssen.</li>
+<li>Ein älteres Warenwirtschaftsprogramm ohne Schnittstelle soll bedient werden.</li>
+<li>Urlaubsanträge mit Freigabe, Erinnerung und nachvollziehbarem Protokoll.</li>
+<li>Ein Marketingteam will in einer Stunde ausprobieren, ob sich ein Ablauf überhaupt lohnt.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte auf zwei Signalwörter: „ohne Schnittstelle" und „Protokoll". Beide zeigen sehr
+eindeutig auf ein bestimmtes Werkzeug.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Werkzeug</th>
+<th>Entscheidendes Kriterium</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Power Automate</td>
+<td>Integrationstiefe in Microsoft 365, dazu Bewerberdaten mit hohem Schutzbedarf</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Zapier</td>
+<td>breitester App-Katalog, Nischenanwendung ist dort am wahrscheinlichsten fertig angebunden</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Make</td>
+<td>visuelle Szenario-Ansicht macht sieben Wege für Nicht-Fachleute lesbar</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Power Automate</td>
+<td>Desktop-Automatisierung, nur dort verfügbar</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Power Automate</td>
+<td>Genehmigungsbaustein mit Erinnerung und Protokoll</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Zapier</td>
+<td>flachste Lernkurve, schnelles Ergebnis ohne IT-Beteiligung</td>
+</tr>
+</tbody>
+</table>
+<p>Zwei Ergänzungen: Bei Nummer 2 ist die Einschränkung „ohne Personalbezug zu
+Beschäftigten" der Grund, warum die Wahl vertretbar ist – bei Personendaten müsste die
+Vertragslage geprüft werden. Bei Nummer 6 ist Zapier für den <strong>Versuch</strong> richtig, für den
+Dauerbetrieb wäre die Frage neu zu stellen. Ein Werkzeug für den Test ist nicht
+automatisch das Werkzeug für den Betrieb.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Auswahlmatrix mit eigener Gewichtung</summary>
+<p>Nimm ein konkretes Vorhaben aus deinem Arbeitsbereich – gern das aus Kapitel 17.</p>
+<ol>
+<li>Wähle <strong>sechs</strong> Kriterien aus dem Kapitel, die für dein Vorhaben wirklich relevant
+   sind. Streiche bewusst Kriterien, die in deinem Fall keine Rolle spielen.</li>
+<li>Vergib Gewichte von 1 bis 3 und begründe jedes Gewicht in einem Halbsatz.</li>
+<li>Bewerte Power Automate, Zapier und Make je Kriterium mit 1 bis 5 und bilde die
+   gewichteten Summen.</li>
+<li>Verändere dann <strong>ein</strong> Gewicht so, dass ein anderes Werkzeug gewinnt. Beschreibe in
+   zwei Sätzen, welche Annahme über dein Vorhaben sich damit geändert hat.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Erkenntnisgewinn liegt in Teilaufgabe 4. Wenn du kein Gewicht findest, das das
+Ergebnis dreht, ist deine Entscheidung robust – dann schreibe genau das auf. Wenn schon
+eine kleine Verschiebung das Ergebnis kippt, hängt die Wahl an einer Annahme, die du
+besser vorher prüfst.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien für eine gute Bearbeitung:</p>
+<ul>
+<li>Die Kriterienauswahl passt zum Vorhaben, und <strong>gestrichene</strong> Kriterien sind benannt.
+  Wer alle zehn Kriterien mitschleppt, hat nicht entschieden, sondern abgeschrieben.</li>
+<li>Gewichte sind begründet, nicht gleichverteilt. Bei Vorhaben mit Personenbezug muss
+  „Datenhaltung und Auftragsverarbeitung" mit 3 gewichtet sein.</li>
+<li>Die Bewertungen sind konsistent mit der Vergleichstabelle des Kapitels; Abweichungen
+  sind begründet, etwa weil im eigenen Haus eine bestimmte Lizenz fehlt.</li>
+<li>Die Sensitivitätsprüfung in Teilaufgabe 4 nennt eine <strong>fachliche</strong> Annahme, nicht nur
+  eine Zahl.</li>
+</ul>
+<p>Beispielhaftes Ergebnis: Ein Vorhaben zur Ablage von Angeboten in SharePoint gewinnt
+Power Automate klar. Erhöht man das Gewicht von „Nischenanwendung muss angebunden werden"
+auf 3 – weil das CRM doch ein Fremdsystem ohne Standardanbindung ist –, rückt Zapier oder
+Make nach vorn. Die geänderte Annahme lautet: Das CRM ist nicht Teil der
+Microsoft-Landschaft. Diese Annahme lässt sich mit einem Blick in die Connector-Liste
+klären, und genau das sollte vor der Entscheidung geschehen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Die Werkzeugempfehlung der KI auf die Probe stellen</summary>
+<p>Diese Übung machst du in einem KI-Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li>Lass dir eine Empfehlung geben. Beschreibe dein Vorhaben knapp und fordere ausdrücklich
+   eine Begründung je Kriterium:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Ich moechte eingehende Rechnungen aus einem Sammelpostfach ablegen, in einer
+Liste erfassen und eine Freigabe einholen. Wir arbeiten mit Microsoft 365.
+Vergleiche Power Automate, Zapier und Make anhand dieser Kriterien und
+begruende jede Bewertung: Integrationstiefe, Datenhaltung, Verzweigungslogik,
+Kostenlogik, Betrieb. Nenne am Ende eine Empfehlung und die aus deiner Sicht
+groesste Unsicherheit deiner Aussagen.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Prüfe die Antwort auf <strong>drei Arten von Schwächen</strong>: veraltete oder unbelegte
+   Aussagen zu Funktionsumfang und Tarifen, fehlende Unterscheidung zwischen Test und
+   Dauerbetrieb, sowie Aussagen zu Datenschutz und Serverstandort, die so pauschal nicht
+   stimmen können.</li>
+<li>Notiere <strong>drei Fragen</strong>, die du nur beim Anbieter selbst oder bei deiner IT klären
+   kannst.</li>
+<li>Widersprich der Empfehlung in einem kurzen Absatz mit einem Argument, das die KI nicht
+   genannt hat – oder begründe, warum du ihr trotz der gefundenen Schwächen folgst.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte besonders auf Zahlen. Sobald die Antwort konkrete Tarifstufen, Ausführungsgrenzen
+oder Preise nennt, ist Vorsicht geboten: Diese Angaben ändern sich mehrmals im Jahr und
+gehören zum unzuverlässigsten Teil des Modellwissens. Prüfe auch, ob die Antwort den
+Unterschied zwischen „Abläufe zählen" und „Schritte zählen" überhaupt erwähnt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Befunde:</p>
+<ul>
+<li><strong>Unbelegte Zahlen:</strong> Tarifgrenzen, Preise und Ausführungslimits werden häufig konkret
+  genannt und sind oft überholt – sie stammen aus dem Trainingsstand, nicht aus einer
+  Quelle (Kap. 5).</li>
+<li><strong>Fehlende Kostenlogik:</strong> Der Unterschied zwischen der Zählung nach Abläufen und nach
+  Schritten fehlt meist, obwohl er bei Schleifen über die tatsächlichen Kosten entscheidet.</li>
+<li><strong>Pauschale Datenschutzaussagen:</strong> „ist DSGVO-konform" ist inhaltsleer. Konformität
+  hängt am Vertrag zur Auftragsverarbeitung, an der Region und an den verarbeiteten
+  Datenarten – nicht am Produkt (Kap. 4).</li>
+<li><strong>Kein Betriebsblick:</strong> Wem die Verbindung gehört, wer vertritt und was beim Austritt
+  passiert, kommt fast nie vor, obwohl das über die Lebensdauer eines Ablaufs entscheidet.</li>
+<li><strong>Empfehlung ohne Bedingung:</strong> Eine brauchbare Empfehlung nennt ihre Annahmen. Fehlen
+  sie, ist sie nicht überprüfbar.</li>
+</ul>
+<p><strong>Gute Fragen an Anbieter oder IT:</strong> (1) In welcher Region liegt unser Mandant, und gibt
+es für Zapier oder Make einen Vertrag zur Auftragsverarbeitung? (2) Welche Connectoren
+gelten in unserer Lizenz als Premium? (3) Dürfen wir Verbindungen auf ein Funktionskonto
+legen, und wer verwaltet dessen Kennwort?</p>
+<p>Ein gutes Widerspruchsargument ist der Betrieb über Jahre: Auch wenn ein anderes Werkzeug
+schneller zum ersten Ergebnis führt, entscheidet, ob der Ablauf einen Personalwechsel und
+eine Datenschutzprüfung übersteht. Das nennt eine KI selten von sich aus, weil es nicht
+aus dem Funktionsvergleich stammt, sondern aus der Organisation.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Werkzeugauswahl mit Entscheidungsvorlage</summary>
+<p><strong>Szenario:</strong> Bei der Nordwind Handel GmbH ist die Automatisierung außer Kontrolle geraten.
+Drei Abteilungen haben unabhängig voneinander begonnen, und niemand hat den Überblick. Die
+Geschäftsführung will in zwei Wochen eine Entscheidungsvorlage: ein Standardwerkzeug,
+klare Regeln und ein Umgang mit dem Bestehenden. Du erstellst diese Vorlage.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Bestandsaufnahme:
+Marketing nutzt Zapier im Gratistarif, privat angemeldet mit der
+  Mailadresse einer Werkstudentin, ueberfuehrt Formulardaten in ein
+  Newsletter-Werkzeug. Enthaelt Namen und Mailadressen von Kunden.
+Vertrieb nutzt Make, bezahlt ueber die Firmenkreditkarte eines
+  Teamleiters, verteilt Anfragen aus dem Webformular an Zustaendige.
+Buchhaltung hat zwei Power-Automate-Flows, angelegt vom
+  Auszubildenden, der im September das Unternehmen verlaesst.
+Vorhandene Lizenzen: Microsoft 365 Business Premium fuer alle.
+IT: zwei Personen, sehr ausgelastet, bisher nicht beteiligt.
+Datenschutzbeauftragte: extern, einmal im Monat im Haus.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Bestand und Kriterien.</strong> Erstelle zwei Artefakte. Erstens ein
+<strong>Ablaufverzeichnis</strong> mit den Spalten <code>Ablauf | Abteilung | Werkzeug | verarbeitete
+Datenarten | Verbindung gehört wem | Risiko</code>. Zweitens eine <strong>Kriterienliste</strong> mit
+Gewichtung für die Werkzeugentscheidung, ausdrücklich abgeleitet aus der Lage bei
+Nordwind – nicht aus einer allgemeinen Liste. Begründe jedes Gewicht.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Entscheidungsvorlage muss <strong>alle vier</strong>
+Kriterien erfüllen:</p>
+<ol>
+<li>Es gibt eine <strong>gewichtete Matrix</strong> über alle drei Werkzeuge mit gewichteten Summen und
+   einer eindeutigen Empfehlung für ein Standardwerkzeug.</li>
+<li>Für <strong>jeden</strong> der drei Bestandsfälle ist entschieden: weiterbetreiben, umbauen oder
+   abschalten – jeweils mit Begründung, Termin und verantwortlicher Rolle.</li>
+<li>Die Frage „wem gehört die Verbindung" ist für jeden Bestandsfall beantwortet und für
+   die Zukunft geregelt.</li>
+<li>Es gibt eine <strong>verständliche Meldeschwelle</strong> in maximal drei Sätzen: ab wann muss ein
+   selbst gebauter Ablauf gemeldet werden? Sie muss so formuliert sein, dass sie ohne
+   Rückfrage anwendbar ist.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Zwei Dinge kommen dazwischen. Erstens teilt die IT mit,
+dass sie keine neue Umgebung einrichten und keine zusätzlichen Werkzeuge betreuen kann –
+Kapazität für zwei Personentage, nicht mehr. Zweitens stellt sich heraus, dass der
+Make-Ablauf des Vertriebs eine Anbindung an ein Fremd-CRM nutzt, für die es in Power
+Automate keine Standardanbindung gibt. Überarbeite deine Vorlage: Halte an einem
+Standardwerkzeug fest oder lasse eine begründete Ausnahme zu – und beschreibe, unter
+welchen Bedingungen eine Ausnahme gilt und wie sie überprüft wird.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Geschäftsführung will „alles auf Power
+Automate, das ist ja bezahlt". Lass dir von einem KI-Werkzeug Argumente für beide Seiten
+geben. Entscheide dann begründet und <strong>widersprich</strong> entweder der Geschäftsführung oder
+dem KI-Vorschlag. Rechne dabei gegen: Aufwand für den Umbau, Risiko des Weiterbetriebs
+und die zwei Personentage der IT. Benenne ausdrücklich, welchen Bestandsfall du <strong>sofort</strong>
+abschaltest, auch wenn das kurzfristig Arbeit von Hand bedeutet.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Ablaufverzeichnis und begründete Kriterienliste mit Gewichtung</li>
+<li>gewichtete Auswahlmatrix mit Empfehlung plus ausgefüllte Checkliste der vier
+   Pflichtkriterien</li>
+<li>Maßnahmenplan je Bestandsfall mit Entscheidung, Termin, Rolle und Aufwandsschätzung</li>
+<li>Entscheidungsvorlage von maximal zwei Seiten für die Geschäftsführung, inklusive
+   abgelehnter Alternative, Ausnahmeregel und Meldeschwelle</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> jeder der drei Bestandsfälle eine terminierte Entscheidung
+mit Verantwortlicher hat, die Meldeschwelle ohne Rückfrage anwendbar ist, dein Plan mit
+zwei Personentagen IT-Kapazität auskommt, und deine Vorlage klar sagt, welcher Ablauf
+sofort stoppt und warum.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der eigentliche Lernwert liegt in Runde 3 und 4. Runde 3 zerstört die bequeme Antwort „ein
+Werkzeug für alles": Sobald eine Anbindung fehlt und die IT keine Kapazität hat, brauchst
+du eine Ausnahmeregel, die missbrauchsfest ist – sonst ist das Standardwerkzeug nach einem
+Jahr wieder eine von drei Lösungen. In Runde 4 ist der Zapier-Fall des Marketings der
+Prüfstein: Kundendaten laufen über ein privat angemeldetes Konto einer Werkstudentin. Wer
+hier auf ein geordnetes Migrationsprojekt setzt statt sofort zu stoppen, hat Risiko und
+Bequemlichkeit verwechselt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Das Ablaufverzeichnis benennt für alle drei Fälle Datenarten und
+Eigentümer der Verbindung und stuft das Risiko nachvollziehbar ab – der Zapier-Fall mit
+Kundendaten über ein privates Konto ist als höchstes Risiko erkannt; (2) alle vier
+Pflichtkriterien sind erfüllt, die Matrix ist gerechnet und die Meldeschwelle ist in
+einfacher Sprache formuliert und ohne Rückfrage anwendbar; (3) die Ausnahmeregel nach
+Runde 3 ist an überprüfbare Bedingungen gebunden – etwa keine personenbezogenen Daten,
+benannter Verantwortlicher, Firmenkonto, jährliche Überprüfung – und nicht als „im
+Einzelfall entscheiden" formuliert; (4) die Entscheidung in Runde 4 ist gerechnet statt
+behauptet, hält der Vorgabe „alles auf Power Automate" begründet stand oder widerspricht
+ihr, und benennt eine sofortige Abschaltung mit der Bereitschaft, kurzfristig manuelle
+Arbeit hinzunehmen.</p>
+<p>Lernziel: Eine Werkzeugentscheidung so treffen und dokumentieren, dass sie fachlich
+begründet, betrieblich tragfähig und gegenüber der Leitung vertretbar ist – und dabei
+Schatten-IT nicht durch Verbote, sondern durch klare Eigentümerschaft, Meldeschwellen und
+überprüfbare Ausnahmen in den Griff bekommen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel19/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 19 – Logikbausteine">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 19 – Logikbausteine
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel21/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 21 – Einführung in Power Automate">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 21 – Einführung in Power Automate
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

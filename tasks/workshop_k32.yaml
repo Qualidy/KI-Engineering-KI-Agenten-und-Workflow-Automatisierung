@@ -1,0 +1,98 @@
+title: Einen Auskunftsagenten entwerfen, testen und begrenzen
+difficulty: 4
+question: |
+  **Szenario:** Die Personalabteilung der Kandelbach Sanitär GmbH beantwortet jeden Tag dieselben
+  Fragen: Urlaubsanträge, Krankmeldung, Reisekosten, Homeoffice-Regelung, Zeiterfassung. Zwei
+  Beschäftigte verbringen damit einen erheblichen Teil ihrer Arbeitszeit. Ein Agent soll das
+  auffangen. Die Personalleitung ist einverstanden, hat aber eine klare Ansage: „Wenn der Ding etwas
+  Falsches über Kündigungsfristen erzählt, schalten wir ihn sofort ab."
+
+  ```text
+  Rahmendaten:
+  340 Beschaeftigte, davon rund 120 im Aussendienst.
+  Wissensbasis: SharePoint-Website Personal mit 14 Dokumenten, teils aus 2021 bis 2026,
+  darunter drei Fassungen der Homeoffice-Regelung ohne erkennbare Gueltigkeitsangabe.
+  Haeufigste Fragen: Urlaub, Krankmeldung, Reisekosten, Homeoffice, Zeiterfassung.
+  Vorhanden: Microsoft 365, Teams, Power Automate, SharePoint.
+  Der Agent soll spaeter in Teams veroeffentlicht werden.
+  ```
+
+  Ohne Zugang zu Copilot Studio arbeitest du mit dem Ersatzweg aus Abschnitt 32.6: Agent als Dokument
+  entwerfen und in ChatGPT oder Claude als Projekt nachbauen. Erzeuge dir die Wissensdokumente
+  fiktiv – auch die drei widersprüchlichen Fassungen der Homeoffice-Regelung.
+
+  ---
+
+  **Runde 1 – Agent entwerfen und bauen.** Lege fest: Name, Beschreibung, vollständige Instruktion
+  mit Antwortregeln, mindestens fünf Nicht-Zuständigkeiten und einer Regel für Nicht-Wissen. Liste die
+  Wissensquellen auf und begründe für jede, warum sie als SharePoint-Quelle oder als Upload eingebunden
+  wird. Entwirf zwei Themen mit je mindestens sechs Trigger-Phrasen, davon eines für den Weg zu einem
+  Menschen. Baue den Agenten anschließend und teste ihn mit acht Fragen.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Agent muss **alle vier** erfüllen. Weise jede
+  Erfüllung mit einer konkreten Frage und der erhaltenen Antwort nach:
+
+  1. Bei jeder inhaltlichen Antwort wird eine **Fundstelle** genannt.
+  2. Eine Frage knapp **außerhalb der Zuständigkeit** wird zurückgewiesen, nicht beantwortet.
+  3. Eine Frage, deren Antwort **in keiner Quelle steht**, führt zu einem ausdrücklichen „weiß ich
+     nicht" plus Verweis auf eine zuständige Stelle – nicht zu einer plausibel klingenden Auskunft.
+  4. Keine Wissensquelle enthält Inhalte, die nicht alle Beschäftigten sehen dürfen. Prüfe das
+     ausdrücklich für jeden Upload.
+
+  **Runde 3 – Die Komplikation.** Der Testbetrieb mit zwölf Kolleginnen und Kollegen bringt drei
+  Befunde:
+
+  - Auf die Frage nach der Homeoffice-Regelung gibt der Agent je nach Formulierung unterschiedliche
+    Antworten – er zieht mal die Fassung von 2021, mal die von 2026 heran, ohne das zu kennzeichnen.
+  - Auf die Frage „Wie lange ist meine Kündigungsfrist?" antwortet er mit einer allgemeinen
+    gesetzlichen Regel, obwohl das nicht in der Wissensbasis steht und für Einzelfälle falsch ist.
+  - Drei Personen berichten, sie hätten die Antwort des Agenten ungeprüft an Kunden bzw. an ihr Team
+    weitergegeben, weil sie „so sicher klang".
+
+  Behandle die drei Befunde getrennt. Beim ersten prüfst du ausdrücklich, ob das ein Instruktions-
+  oder ein Wissensbasisproblem ist – und ziehe die Konsequenz. Beim zweiten formulierst du eine
+  Abgrenzung, die auch dann greift, wenn die Frage anders gestellt wird. Beim dritten entwirfst du
+  eine Maßnahme, die nicht nur aus einem Hinweistext besteht.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Geschäftsführung möchte denselben Agenten zusätzlich
+  auf der öffentlichen Karriere-Website einbinden, damit Bewerbende Fragen stellen können – „das ist
+  ja derselbe Inhalt". Lass dir vom KI-Werkzeug Pro und Contra geben, entscheide begründet und
+  **widersprich**, wenn die Argumentation die Unterschiede zwischen angemeldeten Beschäftigten und
+  anonymen Besuchern übergeht. Formuliere, was ein Agent für die Karriereseite anders haben müsste –
+  oder warum es ein eigener Agent sein muss.
+
+  **Deliverable:**
+
+  1. Agenten-Entwurf mit Name, Beschreibung, vollständiger Instruktion, Wissensquellenliste mit
+     Begründung je Quelle und zwei Themen samt Trigger-Phrasen
+  2. Testprotokoll über mindestens acht Fragen mit Antwort und Bewertung, plus ausgefüllte
+     Pflichtkriterien-Checkliste mit Belegzitaten
+  3. Version 2 nach Runde 3 mit getrennter Antwort auf alle drei Befunde
+  4. begründete Entscheidung zur Karriere-Website inklusive der verworfenen Variante
+
+  **Fertig bist du erst, wenn** dein Testprotokoll für jedes der vier Pflichtkriterien eine konkrete
+  Frage und die zugehörige Antwort enthält, Version 2 das Widerspruchsproblem bei der
+  Homeoffice-Regelung an der Wissensbasis und nicht nur in der Instruktion löst, und deine Entscheidung
+  in Runde 4 benennt, welche konkrete Wissensquelle für anonyme Besucher gesperrt werden müsste.
+tip: |
+  Der Lernwert liegt in Runde 3. Der erste Befund ist der lehrreichste: Drei widersprüchliche Fassungen
+  in der Quelle sind kein Instruktionsproblem. Keine Formulierung der Welt bringt den Agenten dazu,
+  verlässlich die gültige Fassung zu wählen, wenn die Quelle selbst nicht sagt, welche gilt. Die
+  Reparatur findet in SharePoint statt, nicht in Copilot Studio – veraltete Fassungen archivieren und
+  eine Gültigkeitsangabe ergänzen. Der zweite Befund zeigt, dass ein Agent auch ohne Wissensquelle
+  antwortet, wenn die Grenze nicht ausdrücklich gezogen ist. Der dritte ist ein Vertrauensproblem und
+  braucht eine Maßnahme im Antwortverhalten selbst, etwa eine sichtbare Fundstelle bei jeder Antwort
+  und einen ausdrücklichen Hinweis bei verbindlichen Themen – nicht nur eine Schulungsmail.
+solution: |
+  Bewertungskriterien: (1) die Instruktion beantwortet alle fünf Fragen aus Abschnitt 32.2, enthält
+  mindestens fünf tragfähige Nicht-Zuständigkeiten und eine Regel für Nicht-Wissen, und die
+  Wissensquellenwahl ist je Quelle mit Blick auf Berechtigungen begründet; (2) das Testprotokoll belegt
+  alle vier Pflichtkriterien mit konkreten Fragen und Antworten statt mit Behauptungen; (3) Version 2
+  ordnet die drei Befunde richtig zu – Wissensbasis, fehlende Abgrenzung, Vertrauensverhalten – und
+  behandelt den ersten nicht als Prompt-Problem; (4) die Entscheidung zur Karriere-Website
+  unterscheidet zwischen angemeldeter und anonymer Nutzung, benennt konkret die betroffenen Quellen
+  und Aktionen und übernimmt die Annahme „derselbe Inhalt" nicht ungeprüft.
+
+  Lernziel: einen Agenten so entwerfen, dass seine Grenzen genauso belastbar sind wie seine Antworten
+  – und erkennen, welche Probleme in der Wissensbasis, in der Instruktion oder im Umgang der Nutzenden
+  liegen.

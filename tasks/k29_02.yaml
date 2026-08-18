@@ -1,0 +1,42 @@
+title: Antimuster erkennen und reparieren
+difficulty: 2
+question: |
+  Ein Kollege zeigt dir stolz seinen neuen Flow für Eingangsrechnungen:
+
+  ```text
+  Trigger: Neue Datei in der Bibliothek Eingangsrechnungen
+  Schritt 1: KI liest das Dokument und gibt Lieferant, Betrag und Faelligkeit aus
+  Schritt 2: KI prueft, ob der Betrag mit der Bestellung uebereinstimmt
+  Schritt 3: Bei Uebereinstimmung wird die Rechnung als freigegeben markiert
+  Schritt 4: Der Flow sendet eine Zahlungsbestaetigung an den Lieferanten
+  ```
+
+  1. Benenne, welche der vier Antimuster aus Abschnitt 29.4 hier vorkommen – und in welchem Schritt.
+  2. Schreibe den Ablauf so um, dass er das Muster „deterministisch außen, KI innen" erfüllt.
+  3. Ergänze mindestens zwei der fünf Muster für den Umgang mit Unsicherheit und sage, wo genau sie
+     ansetzen.
+tip: |
+  Achte besonders auf Schritt 2 und Schritt 4. Der eine lässt die KI etwas tun, was sie prinzipiell
+  nicht zuverlässig kann; der andere hat Außenwirkung.
+solution: |
+  **Antimuster:** Schritt 2 ist „KI rechnet" – ein Betragsvergleich ist ein exakter Vorgang und
+  gehört in einen Ausdruck oder eine Prüfung gegen das Bestellsystem. Schritt 3 ist „KI entscheidet
+  ohne Prüfung", weil die Freigabe allein auf der KI-Ausgabe beruht. Schritt 4 ist „KI erzeugt
+  Kundenkommunikation ohne Freigabe", hier sogar mit finanzieller Außenwirkung.
+
+  **Überarbeiteter Ablauf:**
+
+  ```text
+  Trigger: Neue Datei in der Bibliothek Eingangsrechnungen
+  Schritt 1: KI extrahiert Lieferant, Betrag, Faelligkeit, Rechnungsnummer plus Konfidenz je Feld
+  Schritt 2: Flow schlaegt die Bestellung anhand der Rechnungsnummer nach
+  Schritt 3: Ausdruck vergleicht die Betraege exakt
+  Schritt 4: Bedingung Konfidenz hoch und Betrag stimmt   dann Genehmigung an die Buchhaltung
+             sonst Eintrag in der Pruefliste mit Zustaendigem
+  Schritt 5: Erst nach Genehmigung Statuswechsel und Benachrichtigung
+  Schritt 6: KI-Ausgabe, Zeitpunkt und Entscheidung werden protokolliert
+  ```
+
+  **Muster für Unsicherheit:** Konfidenzschwelle in Schritt 4, Rückfallweg über die Prüfliste,
+  Freigabe-Gate in Schritt 5, Protokollierung in Schritt 6. Wer nur zwei nennt, sollte Schwelle und
+  Freigabe-Gate wählen – sie fangen den größten Schaden ab.

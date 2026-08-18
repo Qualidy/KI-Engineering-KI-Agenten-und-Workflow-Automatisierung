@@ -1,0 +1,34 @@
+title: Testdatensatz anlegen
+difficulty: 2
+question: |
+  Lege für dein Projekt einen echten Testdatensatz an – nicht als Beschreibung, sondern als
+  benutzbares Material (Formularantworten, Dateien, Mails an ein Testpostfach, Zeilen in einer
+  Testliste).
+
+  1. Erstelle **mindestens fünf** Testfälle: drei Normalfälle, einen Grenzfall, einen Negativfall.
+  2. Markiere alle Testdaten erkennbar, zum Beispiel mit dem Präfix TEST.
+  3. Anonymisiere alles, was aus echten Fällen übernommen ist: Namen, Mailadressen, Nummern,
+     Beträge – aber behalte die ursprüngliche **Struktur** und die schrägen Formate bei.
+  4. Notiere pro Testfall in einer Zeile, welches Ergebnis du erwartest.
+tip: |
+  Die wertvollsten Testdaten sind die hässlichen: Umlaute, doppelte Leerzeichen, abgeschnittene
+  Betreffzeilen, ein leeres Pflichtfeld, ein Betrag mit Punkt statt Komma. Genau daran scheitern
+  Flows im Alltag.
+solution: |
+  Qualitätskriterien: (1) die Testdaten existieren tatsächlich und sind ohne Vorbereitung
+  wiederverwendbar; (2) keine personenbezogenen Echtdaten mehr enthalten; (3) Grenz- und
+  Negativfall sind fachlich sinnvoll und nicht künstlich unmöglich; (4) zu jedem Fall steht ein
+  erwartetes Ergebnis.
+
+  Beispiel für ein gutes Ergebnis (Projekt: Rechnungseingang):
+
+  | Nr | Art | Testmaterial | Erwartetes Ergebnis |
+  |---|---|---|---|
+  | 1 | Normal | TEST-Rechnung PDF, Nummer R-1001, 1.190,00 EUR, Lieferant Muster GmbH | Ablage in Testordner, Listeneintrag mit allen drei Feldern |
+  | 2 | Normal | TEST-Rechnung PDF, Nummer R-1002, 89,90 EUR | wie Fall 1 |
+  | 3 | Normal | TEST-Rechnung mit zwei Seiten | wie Fall 1, Betrag von Seite 1 |
+  | 4 | Grenz | Lieferantenname mit Umlaut und Zusatz e. K., Betrag 1190.00 mit Punkt | Felder unverfälscht, Betrag als Zahl erkannt |
+  | 5 | Negativ | Mail ohne Anhang, Betreff TEST leere Mail | kein Listeneintrag mit Status Neu, sondern Hinweis an mich mit Grund |
+
+  Wer nur Fall 1 dreimal baut, hat fünf Testdaten und einen Test. Die Aussagekraft entsteht durch
+  Fall 4 und 5.

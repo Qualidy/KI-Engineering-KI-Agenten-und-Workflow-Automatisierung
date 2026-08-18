@@ -1,0 +1,34 @@
+title: Einstiegssatz und Lösung in drei Sätzen
+difficulty: 1
+question: |
+  Formuliere den Anfang deiner Präsentation.
+
+  1. Ein **Einstiegssatz**, der das Problem konkret macht – ohne Fachjargon, ohne Vorrede zum
+     Unternehmen, möglichst mit einer Zahl oder einem Beispiel.
+  2. Die **Lösung in genau drei Sätzen**: Was löst den Ablauf aus, was passiert automatisch
+     (inklusive KI-Anteil), wer entscheidet weiterhin was.
+  3. Lies beides laut und kürze alles, was du beim Sprechen nicht flüssig sagen kannst.
+tip: |
+  Streiche jeden Satz, der mit „Ich möchte heute vorstellen" oder „Zunächst ein paar Worte zu"
+  beginnt. Die erste Minute gehört dem Problem, nicht der Einleitung.
+solution: |
+  Qualitätskriterien: (1) der Einstiegssatz nennt einen konkreten Zustand, keine Absicht;
+  (2) die drei Sätze enthalten Trigger, automatischen Teil und menschlichen Entscheidungspunkt –
+  in dieser Reihenfolge; (3) kein Werkzeugname ersetzt die Beschreibung der Wirkung.
+
+  Beispiel für ein gutes Ergebnis:
+
+  Einstiegssatz: „Eine Kundenanfrage lag bei uns im Schnitt anderthalb Tage im Sammelpostfach,
+  bevor überhaupt jemand entschieden hat, wer sie bearbeitet."
+
+  Lösung in drei Sätzen:
+  „Ausgelöst wird der Ablauf durch jede neue Antwort in unserem Kontaktformular.
+  Automatisch wird das Anliegen einer von vier Kategorien zugeordnet, mit zwei Sätzen
+  zusammengefasst und mit Status Neu in unsere Liste eingetragen; der Absender bekommt sofort eine
+  Eingangsbestätigung.
+  Über die Kategorie entscheidet weiterhin die Teamleitung – sie bestätigt oder korrigiert den
+  Vorschlag, bevor der Fall zugewiesen wird."
+
+  Schwach wäre: „Wir haben mit Power Automate und KI einen Workflow gebaut, der eingehende
+  Anfragen effizienter verarbeitet." Diese Fassung nennt Werkzeuge und Absichten, aber nichts
+  Vorstellbares.

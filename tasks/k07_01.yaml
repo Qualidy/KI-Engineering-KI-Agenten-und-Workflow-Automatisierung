@@ -1,0 +1,30 @@
+title: Welches Werkzeug für welche Aufgabe?
+difficulty: 1
+question: |
+  Ordne jeder Aufgabe zu, welches Werkzeug passt: **Copilot mit Zugriff auf Unternehmensdaten**,
+  **ein öffentliches Werkzeug** (ChatGPT, Claude) oder **ein eigener Agent mit Wissensanbindung**.
+  Begründe jeweils in einem Satz.
+
+  1. Einen Besprechungsverlauf aus Teams zusammenfassen und Aufgaben ableiten.
+  2. Eine Gliederung für einen Vortrag über Projektmanagement erstellen.
+  3. Beschäftigten immer wieder dieselben Fragen zur Reisekostenrichtlinie beantworten.
+  4. Einen englischen Fachartikel verständlich zusammenfassen.
+  5. Prüfen, ob in eurem Angebotsordner schon ein Angebot für einen bestimmten Kunden liegt.
+  6. Aus einer anonymisierten Kundenbeschwerde einen Antwortentwurf formulieren.
+tip: |
+  Stelle bei jeder Aufgabe zuerst die Frage aus dem Kapitel: Braucht die Antwort Zugriff auf eure
+  Ablage – oder liefere ich alles Nötige selbst mit?
+solution: |
+  | Nr. | Werkzeug | Begründung |
+  |---|---|---|
+  | 1 | Copilot mit Datenzugriff | Der Besprechungsverlauf liegt in eurem System, ohne Zugriff geht es nicht |
+  | 2 | öffentliches Werkzeug | reine Allgemeinaufgabe, keine internen Daten im Spiel |
+  | 3 | eigener Agent mit Wissensanbindung | wiederkehrend, feste Quelle, Antwort mit Fundstelle nötig |
+  | 4 | öffentliches Werkzeug | der Text wird mitgeliefert, kein interner Bezug |
+  | 5 | Copilot mit Datenzugriff | setzt Suche in eurer Ablage und eure Berechtigungen voraus |
+  | 6 | öffentliches Werkzeug möglich | durch die Anonymisierung fällt der schützenswerte Teil weg |
+
+  Fall 3 und Fall 5 sehen sich ähnlich, unterscheiden sich aber im Aufwand: Eine einmalige Suche
+  erledigt Copilot, eine hundertfach wiederkehrende Auskunft rechtfertigt einen eigenen Agenten.
+  Bei Fall 6 ist die Anonymisierung die Bedingung – ohne sie wandert die Aufgabe in die erste
+  Spalte.

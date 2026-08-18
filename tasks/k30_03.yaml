@@ -1,0 +1,45 @@
+title: Strukturierte KI-Ausgabe im Flow verarbeiten
+difficulty: 3
+question: |
+  Diese Übung baust du in **Power Automate**. Steht dir AI Builder nicht zur Verfügung, nutze den
+  Ersatzweg aus Abschnitt 30.5.
+
+  1. Lege einen manuell auslösbaren Cloud-Flow an: `Power Automate → Erstellen → Sofortiger Cloud-Flow`.
+  2. Füge eine `Verfassen`-Aktion mit einem erfundenen Nachrichtentext ein, zum Beispiel:
+
+     ```text
+     Guten Tag, unsere Lieferung zur Bestellung 44182 ist seit zehn Tagen
+     ueberfaellig. Wir brauchen die Ware bis Freitag, sonst stornieren wir.
+     ```
+
+  3. Setze den KI-Schritt ein – entweder als echte Prompt-Aktion mit dem Prompt aus Abschnitt 30.3
+     oder als zweite `Verfassen`-Aktion, in die du eine im Chatwerkzeug erzeugte JSON-Ausgabe kopierst.
+  4. Füge `JSON analysieren` an und erzeuge das Schema über `Beispielnutzlast zum Generieren des
+     Schemas verwenden`.
+  5. Baue eine `Bedingung`: Ist die Konfidenz mindestens 0,85 **und** die Kategorie nicht `Sonstiges`,
+     sende dir selbst eine Mail mit Kategorie und Dringlichkeit. Andernfalls sende eine Mail mit dem
+     Betreff `Pruefung noetig`.
+  6. Teste den Flow zweimal: einmal mit dem obigen Text, einmal mit einem bewusst leeren oder
+     unsinnigen Text.
+
+  Notiere, was bei Durchlauf zwei passiert ist und an welcher Stelle genau.
+tip: |
+  Achte beim Schema darauf, dass `konfidenz` als Zahl und nicht als Zeichenkette erkannt wird. Wenn
+  deine Bedingung immer denselben Zweig nimmt, vergleichst du wahrscheinlich Text statt Zahl.
+solution: |
+  Ein gelungenes Ergebnis zeigt drei Dinge:
+
+  - **Durchlauf eins** läuft in den Ja-Zweig. Kategorie `Reklamation`, Dringlichkeit `hoch`, weil im
+    Text eine Frist gesetzt wird – genau die Regel aus dem Prompt.
+  - **Durchlauf zwei** endet je nach Aufbau entweder im Nein-Zweig mit niedriger Konfidenz oder mit
+    einem Fehler in `JSON analysieren`. Beides ist ein gültiges Ergebnis und die eigentliche
+    Erkenntnis der Übung: Ein leerer Text ist kein Sonderfall der KI, sondern ein Fall für eine
+    deterministische Vorprüfung, bevor überhaupt ein KI-Aufruf stattfindet.
+  - Der **Datentyp** der Konfidenz ist entscheidend. Als Zeichenkette verglichen ist `0.9` kleiner als
+    `0.85`, weil zeichenweise verglichen wird. Im Schema muss der Typ `number` stehen, oder du wandelst
+    im Ausdruck mit `float(...)` um.
+
+  Wer die Übung erweitern will: Setze Prompt-Aktion und `JSON analysieren` in einen `Bereich` und
+  hänge einen zweiten `Bereich` mit `Nach Fehler ausführen` an, der bei Formatfehlern eine Mail mit
+  dem Betreff `Formatfehler` schickt. Damit ist der Flow gegen die häufigste Ausfallursache
+  produktiver KI-Schritte abgesichert.

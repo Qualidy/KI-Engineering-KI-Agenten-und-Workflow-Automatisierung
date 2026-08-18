@@ -1,0 +1,29 @@
+title: Statuscodes richtig deuten
+difficulty: 1
+question: |
+  Dein Flow ruft einen externen Dienst über die Aktion `HTTP-Anforderung (HTTP)` auf. Ordne jeder
+  Rückmeldung den passenden Statuscode zu (200, 400, 401, 404, 429, 500) und nenne die **erste**
+  Maßnahme.
+
+  1. Der Flow läuft in einer Schleife über 800 Datensätze; ab dem 61. Durchlauf bricht er ab.
+  2. Der Dienst antwortet: Feld `betrag` fehlt im Anfragekörper.
+  3. Der Schlüssel in der Kopfzeile wurde beim Anbieter neu erzeugt, im Flow steht der alte.
+  4. In der URL steht `/v1/kurs` statt `/v1/kurse`.
+  5. Der Dienst hat eine Störung und meldet einen internen Fehler.
+  6. Alles funktioniert, die Antwort enthält die erwarteten Felder.
+tip: |
+  Merke dir die Hunderter: 200er = Erfolg, 400er = deine Anfrage war das Problem,
+  500er = der Anbieter hat das Problem.
+solution: |
+  | Fall | Code | Erste Maßnahme |
+  |---|---|---|
+  | 1. Abbruch ab dem 61. Aufruf | 429 | Ratenbegrenzung: Nebenläufigkeit senken, Wiederholungsrichtlinie, Aufrufe bündeln |
+  | 2. Pflichtfeld fehlt | 400 | Anfragekörper prüfen, Wiederholen hilft nicht |
+  | 3. Alter Schlüssel | 401 | Zugangsdaten in der sicheren Ablage aktualisieren |
+  | 4. Tippfehler in der URL | 404 | Endpunkt prüfen |
+  | 5. Störung beim Anbieter | 500 | wiederholen, danach an verantwortliche Person melden |
+  | 6. Alles in Ordnung | 200 | nichts |
+
+  Wichtigste Unterscheidung: Bei 429 und 500 ist **Wiederholen** sinnvoll, bei 400, 401 und 404
+  nicht – dort ändert sich beim fünften Versuch nichts. Genau darauf stellst du die
+  Wiederholungsrichtlinie ein.

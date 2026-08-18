@@ -1,0 +1,43 @@
+title: Vom schwachen zum tragfähigen Auftrag
+difficulty: 2
+question: |
+  Diese Übung machst du direkt am Werkzeug (Copilot Chat, alternativ ChatGPT oder Claude
+  mit manuell eingefügtem Text).
+
+  Ausgangspunkt ist ein bewusst schwacher Auftrag:
+
+  ```text
+  Fass das mal zusammen.
+  ```
+
+  1. Wähle ein echtes, unkritisches Dokument aus deinem Arbeitsumfeld – zum Beispiel ein
+     Protokoll oder eine interne Anleitung. Enthält es personenbezogene oder vertrauliche
+     Angaben, ersetze sie durch Platzhalter wie `[Kundenname]`.
+  2. Schreibe den Auftrag neu, sodass er **alle fünf** Bausteine enthält: Rolle, Aufgabe,
+     Kontextquelle, Format, Einschränkung.
+  3. Führe beide Aufträge aus und vergleiche die Ergebnisse.
+  4. Notiere drei konkrete Unterschiede.
+tip: |
+  Die wirkungsvollste Einschränkung ist fast immer dieselbe: das Verbot, Angaben zu
+  ergänzen, die nicht in der Quelle stehen. Ergänze sie um eine Anweisung, was bei
+  fehlenden Angaben passieren soll.
+solution: |
+  So sieht ein tragfähiger Auftrag aus:
+
+  ```text
+  Rolle: Du bist Assistenz der Bereichsleitung.
+  Aufgabe: Fasse das angehaengte Protokoll fuer eine Person zusammen, die nicht
+  teilgenommen hat.
+  Kontext: Nutze ausschliesslich die angehaengte Datei. Die Leserin kennt das
+  Projekt, aber nicht die Details.
+  Format: Drei Abschnitte mit je maximal 50 Woertern
+  Ergebnis, offene Punkte, naechster Schritt. Danach eine Tabelle
+  Aufgabe, Verantwortlich, Termin.
+  Einschraenkung: Ergaenze nichts, was nicht im Protokoll steht. Fehlende
+  Angaben markiere mit unklar.
+  ```
+
+  Typische Unterschiede: (1) Der schwache Auftrag liefert eine gleichmäßige Nacherzählung,
+  der starke eine nach Zweck gewichtete Auswahl. (2) Nur der starke Auftrag macht Lücken
+  sichtbar, statt sie plausibel zu füllen. (3) Das Ergebnis des starken Auftrags ist ohne
+  Nachbearbeitung weiterverwendbar, weil das Format vorgegeben war.

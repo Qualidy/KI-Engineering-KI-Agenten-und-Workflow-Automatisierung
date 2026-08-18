@@ -1,0 +1,39 @@
+title: Sieben Prüfschritte an einem Entwurf
+difficulty: 1
+question: |
+  Ein Kollege hat mit Copilot diesen Antwortentwurf an einen Kunden erzeugt. Vorgegeben hatte er
+  nur: „Reklamation, Ware beschädigt angekommen, wir prüfen".
+
+  ```text
+  Betreff: Ihre Reklamation
+  Sehr geehrte Frau Berger,
+  vielen Dank fuer Ihre Nachricht und entschuldigen Sie bitte vielmals die
+  entstandenen Unannehmlichkeiten. Selbstverstaendlich werden wir Ihnen die
+  beschaedigte Ware kostenfrei ersetzen und die Ersatzlieferung umgehend
+  veranlassen. Zudem erstatten wir Ihnen die Frachtkosten in Hoehe von 49 Euro.
+  Wir melden uns zeitnah bei Ihnen.
+  Beste Gruesse
+  Ihr Team
+  ```
+
+  Wende die Prüfliste aus dem Kapitel an. Notiere je Prüfschritt, ob der Text ihn besteht,
+  und benenne den konkreten Fund.
+tip: |
+  Achte besonders auf Prüfschritt 2. Der Auftrag lautete „wir prüfen" – alles, was darüber
+  hinausgeht, hat das Werkzeug selbst hinzugefügt.
+solution: |
+  | Prüfschritt | Ergebnis | Fund |
+  |---|---|---|
+  | 1 Fakten | nicht bestanden | 49 Euro Frachtkosten sind frei erfunden |
+  | 2 Zusagen | nicht bestanden | kostenfreier Ersatz und Erstattung waren nicht vorgegeben |
+  | 3 Vollständigkeit | nicht bestanden | die eigentliche Aussage „wir prüfen" fehlt vollständig |
+  | 4 Ton und Adressat | nicht bestanden | doppelte Entschuldigung vor jeder Prüfung |
+  | 5 Wording | nicht bestanden | „zeitnah" ohne Datum, „Beste Grüße", „Ihr Team" ohne Namen |
+  | 6 Eigenständigkeit | nicht bestanden | passt unverändert zu jedem beliebigen Händler |
+  | 7 Verantwortung | nicht bestanden | enthält Verpflichtungen, die der Absender nicht eingehen darf |
+
+  Tragfähige Korrektur: „Vielen Dank für Ihre Nachricht. Wir prüfen den Transportschaden und
+  benötigen dafür Fotos der Verpackung. Eine Rückmeldung zum weiteren Vorgehen erhalten Sie bis
+  Donnerstag, 12. März." Der Text ist kürzer, verbindlich und enthält keine Zusage, die noch
+  nicht entschieden ist. Die Lehre: Ein Entwurf, der freundlicher klingt als der Auftrag es
+  hergibt, ist kein guter Entwurf, sondern ein Risiko.

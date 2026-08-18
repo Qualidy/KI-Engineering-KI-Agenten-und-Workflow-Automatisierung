@@ -1,0 +1,46 @@
+title: Anhänge filtern statt in der Schleife prüfen
+difficulty: 2
+question: |
+  Du baust in Power Automate. Ziel ist ein Flow, der nur PDF-Anhänge ablegt und die leere Liste
+  saubermacht statt sie zu ignorieren.
+
+  1. Nimm den Flow aus Kapitel 22 oder baue einen neuen mit dem Trigger
+     `Bei Eingang einer neuen E-Mail (V3)`, `Nur mit Anlagen` = `Ja`, `Anlagen einschließen` = `Ja`.
+  2. Füge **vor** der Schleife die Aktion `Array filtern` ein, benenne sie `Nur PDF-Anhaenge` und
+     filtere die Anlagen darauf, dass der Name auf `.pdf` endet.
+  3. Setze die Schleife anschließend auf die **Ausgabe des Filters** statt auf die Anlagen.
+  4. Füge nach dem Filter eine `Bedingung` ein: Ist die gefilterte Liste leer, beende den Flow über
+     `Beenden` mit Status `Erfolgreich`. Andernfalls läuft die Schleife.
+  5. Teste zwei Fälle: Mail mit einem PDF und einem Bild im Anhang, Mail mit ausschließlich einem
+     Bild im Anhang. Halte fest, was im Ausführungsverlauf jeweils passiert.
+tip: |
+  Die Länge einer gefilterten Liste bekommst du mit `length` über die Ausgabe der Filteraktion.
+  Achte im Ausdruck darauf, dass Leerzeichen im Schrittnamen zu Unterstrichen werden.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Flow: 24 PDF-Filter
+    Trigger: Neue Mail mit Anlagen
+    Aktion: Array filtern   -> Nur PDF-Anhaenge
+      Von: Anlagen
+      Bedingung: endsWith von name ist gleich .pdf
+    Bedingung: Sind PDF vorhanden
+      Ausdruck: @{length(body('Nur_PDF-Anhaenge'))} ist groesser als 0
+      Wenn ja
+        Aktion: Auf jedes anwenden   Von: Ausgabe von Nur PDF-Anhaenge
+          Aktion: Anhang speichern
+      Wenn nein
+        Aktion: Beenden   Status: Erfolgreich
+  ```
+
+  Erwartete Beobachtungen: Bei der Mail mit PDF und Bild läuft die Schleife genau **einmal**, obwohl
+  zwei Anlagen ankamen – im Verlauf steht `1 von 1` in der Schleifenkarte. Bei der Mail mit nur einem
+  Bild ist die gefilterte Liste leer, der Flow endet im `Wenn nein`-Zweig und der Lauf ist trotzdem
+  **grün**.
+
+  Der Lernpunkt: Ohne die Bedingung wäre der zweite Fall ebenfalls grün gewesen – aber ohne jeden
+  Hinweis darauf, dass nichts passiert ist. Eine Schleife über eine leere Liste ist der stillste
+  Fehler in Power Automate, weil sie keinen Fehler erzeugt. Wer stattdessen die Prüfung auf `.pdf`
+  in die Schleife legt, bekommt dasselbe Ergebnis, aber einen Verlauf voller übersprungener
+  Durchläufe und keine Möglichkeit, den leeren Fall zu erkennen.

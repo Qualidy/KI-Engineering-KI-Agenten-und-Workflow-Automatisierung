@@ -1,0 +1,36 @@
+title: Machbarkeits-Schnelltest für deine Projektidee
+difficulty: 1
+question: |
+  Notiere deine bevorzugte Projektidee in einem Satz. Prüfe sie danach gegen die fünf
+  Auswahlkriterien und vergib jeweils **Ja**, **Teilweise** oder **Nein**:
+
+  1. Datenzugriff heute vorhanden
+  2. Prozess verstanden, ohne Rückfrage bei Dritten beschreibbar
+  3. Ergebnis eines Durchlaufs von dir selbst prüfbar
+  4. Rechtlich unkritisch
+  5. Kein Wartezustand durch Dritte
+
+  Schreibe zum Schluss einen Satz: Bleibst du bei der Idee, verkleinerst du sie, oder
+  wechselst du?
+tip: |
+  Sei bei Kriterium 1 streng. „Ich könnte den Zugang beantragen" ist ein Nein, nicht ein
+  Teilweise.
+solution: |
+  Qualitätskriterien: (1) alle fünf Kriterien sind bewertet, nicht nur die bequemen;
+  (2) jede Bewertung hat eine kurze Begründung mit einem konkreten Bezug (Systemname,
+  Postfach, Liste); (3) die Schlussfolgerung passt zur Bewertung – ein Nein bei Datenzugriff,
+  Rechtslage oder Fremdabhängigkeit führt zu Verkleinern oder Wechseln.
+
+  Beispiel für ein gutes Ergebnis:
+
+  | Kriterium | Bewertung | Begründung |
+  |---|---|---|
+  | Datenzugriff | Ja | Sammelpostfach und SharePoint-Liste habe ich selbst |
+  | Prozess verstanden | Ja | ich führe ihn seit zwei Jahren selbst aus |
+  | Ergebnis prüfbar | Ja | ich sehe sofort, ob Betrag und Lieferant stimmen |
+  | Rechtlich unkritisch | Teilweise | Lieferantendaten sind Firmendaten, aber Ansprechpartner-Namen sind personenbezogen |
+  | Keine Fremdabhängigkeit | Nein | ERP-Anbindung bräuchte einen Premium-Connector |
+
+  Schlussfolgerung: „Ich bleibe bei der Idee, streiche aber die ERP-Anbindung und ersetze sie
+  durch eine Prüfliste in SharePoint." Genau diese Reduktion ist das Lernziel – nicht ein
+  Fünffach-Ja.

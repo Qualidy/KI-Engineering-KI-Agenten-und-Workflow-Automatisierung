@@ -1,172 +1,221 @@
-# Kapitel 1 – Berufsbildung und Umschulung
+# Kapitel 1 – Was ist Künstliche Intelligenz?
 
-<div class="kurs-progress">
-  <div class="step active"></div>
-  <div class="step"></div>
-  <div class="step"></div>
-  <div class="step"></div>
-  <div class="step"></div>
-  <div class="step"></div>
-  <div class="step"></div>
-  <div class="step"></div>
-  <div class="step"></div>
-  <div class="step"></div>
-</div>
+{{ progress(1) }}
 
 <div class="lernziele" markdown>
 <h3>Was du in diesem Kapitel lernst</h3>
 
-- Was das duale System der Berufsausbildung ist und welche Rollen die Beteiligten haben
-- Wie die Umschulung zum Fachinformatiker strukturiert ist und welche **vier Fachrichtungen** es gibt
-- Welche Unterschiede zwischen regulärer Berufsausbildung (3 Jahre) und Umschulung (2 Jahre) bestehen
-- Was einen geeigneten Praktikumsbetrieb ausmacht und welche Anforderungen er erfüllen muss
+- Was mit **Künstlicher Intelligenz (KI)** gemeint ist und wie sie sich von klassischer Software unterscheidet
+- Warum es **keine** einheitliche Definition gibt und was der „KI-Effekt" damit zu tun hat
+- Welche **Teilgebiete** die KI hat (Machine Learning, Deep Learning, NLP, Computer Vision) und wie sie zusammenhängen
+- Der Unterschied zwischen **schwacher** und **starker** KI – und wo wir heute realistisch stehen
+- Warum **generative KI** der Baustein ist, auf dem KI-Agenten aufsetzen
+- Wo dir KI im Arbeitsalltag begegnet und welche Rolle sie in automatisierten Abläufen spielt
 </div>
 
 ---
 
 ## So gehst du vor
 
-1. Lies die Kapitelinhalte und präge dir die Struktur des dualen Systems ein.
-2. Bearbeite die **Kurzübungen** der Reihe nach – von Grundlagen bis Experte.
-3. Arbeite die **Workshop-Aufgabe** durch. Sie vertieft das Gelernte an einem zusammenhängenden Szenario.
+1. Lies die Kapitelinhalte und präge dir die zentralen Begriffe ein.
+2. Bearbeite die **Kurzübungen** – mindestens eine davon setzt du direkt in einem KI-Werkzeug um (Microsoft Copilot, ChatGPT oder Claude).
+3. Arbeite die **Workshop-Aufgabe** durch. Sie verknüpft das Gelernte mit deinem eigenen Arbeitsumfeld.
 
 ---
 
-## 1.1 Das duale System der Berufsausbildung
+## 1.1 Was ist Künstliche Intelligenz?
 
-In Deutschland ist die **berufliche Ausbildung** in der Regel **dual** organisiert: Sie findet an **zwei Lernorten** statt – im **Betrieb** und in der **Berufsschule** (oder vergleichbarer Einrichtung). Beide Orte ergänzen sich und sind rechtlich miteinander verknüpft.
+**Künstliche Intelligenz** ist ein Teilgebiet der Informatik, das sich mit Systemen beschäftigt, die Aufgaben lösen, für die man normalerweise **menschliche Intelligenz** voraussetzt: Sprache verstehen, Muster erkennen, Entscheidungen treffen, aus Erfahrung lernen.
+
+Wichtig ist die Betonung auf **„für die man menschliche Intelligenz voraussetzt"**. KI muss nicht denken wie ein Mensch – sie muss nur ein Ergebnis liefern, das wir sonst nur von intelligenten Menschen erwarten würden. Ein Taschenrechner rechnet schneller als jeder Mensch, gilt aber nicht als KI, weil das Vorgehen fest vorgegeben ist. Ein System, das aus tausenden E-Mails **selbst lernt**, welche Spam sind, gilt als KI.
+
+### Der entscheidende Unterschied: Regeln oder Lernen
+
+| Klassische Software | KI-System |
+|---|---|
+| Folgt fest programmierten **Regeln** (`wenn … dann …`) | **Lernt Muster** aus Daten und Beispielen |
+| Verhalten ist vollständig vorhersehbar | Verhalten ist **statistisch**, nicht immer identisch |
+| Entwickler beschreibt jeden Fall | Entwickler stellt **Daten** und ein Lernverfahren bereit |
+| Fehler = Programmierfehler (Bug) | Fehler = ungünstige Daten oder Grenzfall |
+| Beispiel: Taschenrechner, Buchhaltungssoftware | Beispiel: Spam-Filter, Sprachassistent, Copilot |
+
+!!! info "Merksatz"
+    Klassische Software wird **programmiert**, KI wird **trainiert**. Statt „Sag dem Computer genau, was er tun soll" heißt es bei KI: „Zeig dem Computer viele Beispiele, damit er das Muster selbst findet."
+
+Diese Unterscheidung ist für den ganzen Kurs zentral. Ein automatisierter Ablauf, wie du ihn ab Block 4 selbst baust, ist klassische Software: exakt vorhersehbar. Ein KI-Baustein darin ist es nicht. Wer beides kombiniert, muss wissen, welcher Teil zuverlässig ist und welcher geprüft werden muss.
+
+### Warum es keine eindeutige Definition gibt
+
+„Künstliche Intelligenz" ist ein **bewegliches Ziel**. Sobald ein Problem gelöst ist, wirkt es plötzlich nicht mehr wie „echte" Intelligenz – dieses Phänomen nennt man den **KI-Effekt**: *„KI ist alles, was noch nicht funktioniert."*
+
+!!! example "Der KI-Effekt in der Praxis"
+    - In den 1990er-Jahren galt „ein Computer schlägt den Schachweltmeister" als Beweis für Intelligenz. Heute sagt man: „Das ist doch nur Rechenleistung."
+    - Spracherkennung, Gesichtserkennung, Übersetzung – alles galt einmal als KI-Meilenstein und wird heute als selbstverständliche Funktion wahrgenommen.
+
+    Für die Praxis ist die genaue Definition zweitrangig. Entscheidend ist die Leitfrage: **Lernt das System aus Daten, oder folgt es festen Regeln?**
+
+---
+
+## 1.2 Das Paradigma „Daten statt Regeln" – durchgerechnet
+
+Um den Unterschied wirklich zu verstehen, betrachten wir dieselbe Aufgabe zweimal: **Erkenne, ob eine E-Mail Spam ist.**
+
+**Ansatz 1 – klassische Regeln, von Hand programmiert:**
+
+```text
+WENN Betreff enthaelt "Gewinn" ODER "gratis" ODER "!!!"
+   DANN markiere als Spam
+```
+
+Das Problem: Spammer schreiben „G-r-a-t-i-s" oder „Gew1nn". Für jede neue Masche muss ein Mensch eine neue Regel ergänzen. Das Regelwerk wird unübersichtlich und ist immer einen Schritt hinterher.
+
+**Ansatz 2 – KI, aus Daten gelernt:**
+
+Man gibt dem System **10.000 E-Mails**, jeweils markiert mit „Spam" oder „kein Spam". Das Verfahren zählt, welche Merkmale bei Spam häufiger vorkommen, und leitet daraus **Wahrscheinlichkeiten** ab. Trifft eine neue E-Mail ein, berechnet es: „Mit 92 Prozent Wahrscheinlichkeit Spam."
 
 ```mermaid
 flowchart LR
-    A([Betrieb]) <-->|Ausbildung im Alltag| B([Auszubildende Person])
-  C([Berufsschule / Bildungsträger]) <-->|Theorie & Grundlagen| B
-    A --- D([Ausbildungsvertrag])
-    C --- D
+    A([10.000 markierte E-Mails]) --> B([Lernverfahren zaehlt Muster])
+    B --> C([Modell])
+    D([Neue E-Mail]) --> C
+    C --> E([92 Prozent Spam-Wahrscheinlichkeit])
 ```
 
-**Zentrale Beteiligte im dualen System:**
+!!! info "Warum das mächtiger ist"
+    Taucht eine neue Spam-Masche auf, muss niemand eine Regel schreiben – man ergänzt einfach neue **Beispiele** und trainiert nach. Das System passt sich an, statt starr zu bleiben. Genau dieser Wechsel von „Regeln von Hand" zu „Muster aus Daten" ist der Kern moderner KI.
 
-| Beteiligter | Rolle |
-|---|---|
-| Auszubildende Person | Lernt berufliche Handlungsfähigkeit, erfüllt Pflichten aus dem Ausbildungsvertrag |
-| Ausbildungsbetrieb | Verantwortet die betriebliche Ausbildung, stellt Ausbilder und Arbeitsplatz |
-| Berufsschule / Bildungsträger | Unterrichtet berufsbezogene und allgemeine Inhalte |
-| Kammer (z. B. IHK) | Prüft Ausbildungsbetriebe, berät, führt Prüfungen durch |
-| Bundesministerium / Landesregierung | Schreibt Ausbildungsordnungen und Rahmenlehrpläne |
-
-!!! info "Vier Fachrichtungen beim Fachinformatiker"
-    Seit der **Fachinformatikerausbildungsverordnung (FIAusbV, 2020)** gliedert sich der Beruf in **vier Fachrichtungen**. Allen gemeinsam ist ein fachrichtungsübergreifender Teil; ab der Spezialisierung unterscheiden sich Schwerpunktinhalte und **Teil 2 der Abschlussprüfung**:
-
-    | Fachrichtung | Kurz | Schwerpunkt (Auswahl) |
-    |---|---|---|
-    | Anwendungsentwicklung | AE | Software konzipieren, entwickeln, Qualität sichern |
-    | Systemintegration | SI | IT-Systeme, Netzwerke, Administration |
-    | Daten- und Prozessanalyse | DPA | Prozesse und Daten analysieren, optimieren, Datenschutz |
-    | Digitale Vernetzung | DV | Vernetzte Systeme planen, errichten, betreiben (IoT/Industrie 4.0) |
-
-    In der **Umschulung** werden häufig noch **AE** und **SI** angeboten – prüfe beim Bildungsträger und bei Betrieben, welche Fachrichtungen verfügbar sind.
+Beachte aber die Kehrseite, die dich durch den ganzen Kurs begleitet: Das Ergebnis ist eine **Wahrscheinlichkeit**, keine Gewissheit. 92 Prozent heißt eben auch: In manchen Fällen liegt das System falsch. Wer KI in einen Ablauf einbaut, muss deshalb immer die Frage beantworten: Was passiert im Fehlerfall?
 
 ---
 
-## 1.2 Deine Rolle in der Umschulung
+## 1.3 Die Teilgebiete der KI
 
-Als **Umschüler** zum Fachinformatiker durchläufst du ein beschleunigtes Qualifizierungsprogramm. Du bist keine „klassische" Auszubildende Person im ersten Lehrjahr – dein Werdegang, deine Vorerfahrung und der zeitliche Ablauf unterscheiden sich von einer regulären Ausbildung.
-
-**Typischer Ablauf der Umschulung IT:**
-
-1. **Unterrichtsphase** beim Bildungsträger (oft online): Grundlagen, WISO, Fachinhalte, Prüfungsvorbereitung
-2. **Praktikumsphase** im Betrieb: Anwendung des Gelernten, betriebliche Ausbildung, Vorbereitung auf die Abschlussprüfung
-3. **Abschlussprüfung** vor der zuständigen Stelle (in der Regel IHK)
+KI ist ein Oberbegriff. Darunter liegen mehrere ineinander verschachtelte Teilgebiete:
 
 ```mermaid
 flowchart TD
-    A([Start Umschulung]) --> B[Unterrichtsphase\nBildungsträger]
-    B --> C[Praktikumsphase\nim Betrieb]
-    C --> D([Abschlussprüfung\nFachinformatiker])
+    A([Kuenstliche Intelligenz]) --> B([Machine Learning])
+    A --> D([Wissensbasierte Systeme])
+    B --> C([Deep Learning])
+    C --> E([Sprachverarbeitung NLP])
+    C --> F([Computer Vision])
+    C --> G([Generative KI und LLMs])
 ```
 
-**Deine Rolle bedeutet:**
+| Teilgebiet | Worum es geht | Beispiel | Bezug zu diesem Kurs |
+|---|---|---|---|
+| Machine Learning (ML) | Systeme lernen Muster aus Daten | Kreditwürdigkeit einschätzen | Grundlage |
+| Deep Learning | ML mit tiefen neuronalen Netzen | Bilderkennung, Sprachmodelle | Fundament der Agenten |
+| Sprachverarbeitung (NLP) | Verarbeitung natürlicher Sprache | Übersetzung, Chatbots | Kernstück |
+| Computer Vision | Verstehen von Bildern und Videos | Belegerkennung, Qualitätsprüfung | Dokumentenverarbeitung (Kap. 31) |
+| Generative KI | Erzeugen neuer Inhalte | Text, Bild, Code (Copilot, ChatGPT) | genau hier |
 
-- Du bist **Lernende Person** mit eigenverantwortlichem Lernen – besonders in der Online-Unterrichtsphase
-- Du absolvierst später ein **Betriebspraktikum**. Anders als ein regulärer Azubi hast du dort **keinen Ausbildungsvertrag** und **keine Ausbildungsvergütung** – deine Finanzierung läuft weiter über die Agentur für Arbeit bzw. den Bildungsträger
-- Du trägst Verantwortung für deinen **Lernfortschritt**, die **Vorbereitung auf den Praktikumsbetrieb** und die **Abschlussprüfung**
+Wichtig ist die **Verschachtelung**: Deep Learning ist ein Teil von Machine Learning, Machine Learning ist ein Teil von KI. NLP und Computer Vision sind **Anwendungsfelder**, die heute meist mit Deep Learning umgesetzt werden. Bis in die 1980er-Jahre dominierten dagegen **wissensbasierte Systeme** (Expertensysteme), die auf handgeschriebenen Regeln beruhten – ohne Lernen.
 
-!!! warning "Umschüler-Praktikum ≠ Ausbildungsverhältnis"
-    Wichtige Unterscheidung für dieses Modul:
-
-    - **Als Umschüler** bei einem Bildungsträger machst du ein **unbezahltes Betriebspraktikum**: kein Ausbildungsvertrag mit dem Betrieb, keine Ausbildungsvergütung, keine Sozialversicherung aus einer Beschäftigung.
-    - **Ein regulärer Azubi** hat einen **Ausbildungsvertrag**, bekommt **Ausbildungsvergütung** und ist sozialversicherungspflichtig.
-
-    Die WISO-Inhalte zu **Ausbildungsvertrag, Entgeltabrechnung und Sozialversicherung** lernst du am Beispiel des **regulären Ausbildungsverhältnisses** – das ist Prüfungsstoff und gilt für dein späteres Beschäftigungsverhältnis. Wo es ausdrücklich um deine eigene Umschüler-Situation geht, ist das gesondert gekennzeichnet.
+!!! tip "Einordnung der Werkzeuge dieses Kurses"
+    **Microsoft Copilot**, **ChatGPT** und **Claude** basieren auf **großen Sprachmodellen** (Large Language Models, LLMs) und gehören damit zur **generativen KI** – unten rechts in der Grafik. Sie erzeugen Texte, Zusammenfassungen, Code und Auswertungen auf Basis deiner Eingaben. Wie das technisch funktioniert, vertiefst du in Kapitel 5; was daraus einen **Agenten** macht, in Kapitel 6.
 
 ---
 
-## 1.3 Reguläre Ausbildung vs. Umschulung
+## 1.4 Schwache und starke KI
 
-| Merkmal | Reguläre Berufsausbildung | Umschulung Fachinformatiker |
+| Merkmal | Schwache KI (Narrow AI) | Starke KI (General AI) |
 |---|---|---|
-| Dauer | In der Regel **3 Jahre** | In der Regel **2 Jahre** |
-| Zielgruppe | Meist Jugendliche nach Schule | Erwachsene mit Berufserfahrung oder abgeschlossener Erstausbildung |
-| Einstieg | Direkt nach Schule oder früh im Lebenslauf | Nach Qualifizierungsvoraussetzungen (z. B. Arbeitsagentur, Bildungsgutschein) |
-| Lernorte | Betrieb und Berufsschule parallel | Zunächst Bildungsträger, später Praktikumsbetrieb |
-| Finanzierung | Ausbildungsvergütung vom Betrieb | Durchgehend über Agentur (ALG/Bürgergeld/Übergangsgeld) + Bildungsgutschein; Betriebspraktikum unbezahlt |
-| Tempo | Gleichmäßiger Jahresrhythmus über 3 Jahre | Verdichteter Stoff, höheres Lerntempo |
+| Fähigkeit | Löst **eine** Klasse von Aufgaben | Beliebige Aufgaben wie ein Mensch |
+| Beispiel | Übersetzer, Copilot, Navigation, Schach-KI | existiert **nicht**, Forschungsvision |
+| Übertragbarkeit | kann Gelerntes kaum auf Fremdes übertragen | flexibel wie menschliche Intelligenz |
+| Bewusstsein | nein | hypothetisch |
+| Stand heute | **alle** heutigen Systeme | nicht erreicht |
 
-**Gemeinsamkeiten:**
+Zwischen beiden gibt es keine Skala, die man einfach hochzählt. Auch ein sehr fähiges System wie Copilot ist **schwache KI** – es ist erstaunlich breit einsetzbar (Text, Auswertung, Zusammenfassung), aber es „versteht" nicht im menschlichen Sinn und kann sich kein eigenes Ziel setzen.
 
-- Gleiche **Abschlussprüfung** nach der Ausbildungsordnung Fachinformatiker (vor der IHK)
-- **Dualer Charakter**: Verbindung von Theorie und betrieblicher Praxis
-- Orientierung an denselben **Ausbildungsinhalten** (Ausbildungsordnung / Rahmenlehrplan)
+!!! warning "Häufiges Missverständnis"
+    Dass ein KI-Werkzeug flüssig und „klug" antwortet, verleitet zur Annahme, es „denke". Tatsächlich berechnet es das **wahrscheinlich passende nächste Wort** auf Basis riesiger Textmengen (Details in Kap. 5). Es hat kein Bewusstsein, keine Absichten und kein echtes Weltverständnis. Diese Einordnung ist entscheidend, um Ergebnisse **richtig einzuschätzen und zu prüfen**.
 
-!!! note "Kein Ausbildungsvertrag im Umschüler-Praktikum"
-    Der **Ausbildungsvertrag** und die **BBiG-Rechte eines Azubis** gehören zum regulären Ausbildungsverhältnis – **nicht** zum unbezahlten Umschüler-Praktikum. Mit dem Praktikumsbetrieb besteht nur ein **Praktikumsvertrag**.
-
-!!! warning "Nicht „weniger Ausbildung""
-    Die Umschulung ist **zeitlich verkürzt**, nicht inhaltlich „abgespeckt". Du musst vergleichbare Kompetenzen in weniger Zeit aufbauen – das erfordert strukturiertes und selbstgesteuertes Lernen.
+!!! info "Und die Superintelligenz?"
+    In den Medien ist oft von „Superintelligenz" die Rede – einer KI, die den Menschen in **allen** Bereichen übertrifft. Das ist eine **hypothetische** Stufe jenseits der starken KI und gehört in die Zukunfts- und Risikodebatte, nicht in die heutige betriebliche Praxis.
 
 ---
 
-## 1.4 Der Praktikumsbetrieb
+## 1.5 Generative KI: der Baustein, auf dem Agenten aufsetzen
 
-Der **Praktikumsbetrieb** ist der Ort deiner **betrieblichen Praxisphase** während der Umschulung. Du schließt mit ihm in der Regel einen **Praktikumsvertrag** (kein Ausbildungsvertrag) – das Praktikum ist **unbezahlt**. Trotzdem sollte der Betrieb fachlich und organisatorisch geeignet sein, damit du echte Praxis für Prüfung und Beruf sammelst.
+**Generative KI** erzeugt neue Inhalte, statt nur bestehende einzuordnen. Das ist der Unterschied zwischen „Ist diese E-Mail Spam?" (einordnen) und „Schreibe eine Antwort auf diese E-Mail" (erzeugen).
 
-**Anforderungen an einen geeigneten Praktikumsbetrieb (Auswahl):**
+| Aufgabentyp | Was das System tut | Beispiel |
+|---|---|---|
+| Einordnen (Klassifikation) | wählt eine von wenigen vorgegebenen Kategorien | Spam / kein Spam, Reklamation / Anfrage |
+| Vorhersagen (Regression) | schätzt einen Zahlenwert | erwarteter Umsatz im nächsten Monat |
+| Erzeugen (Generierung) | produziert neuen Text, Bild oder Code | Antwortentwurf, Zusammenfassung, Formel |
 
-| Anforderung | Erklärung |
-|---|---|
-| Fachliche Eignung | Betrieb arbeitet real im Bereich deiner Fachrichtung (AE, SI, DPA, DV) |
-| Passende Tätigkeiten | Aufgaben mit Bezug zu den Ausbildungsinhalten, nicht nur „Zuschauen" |
-| Betreuung | Feste Ansprechperson/Mentor, die dich anleitet |
-| Ausstattung | Arbeitsplatz, Zugänge, Technik für sinnvolles Arbeiten |
-| Praktikumsdauer | Ausreichend lang für einen echten Kompetenzaufbau |
-| Absprache mit Bildungsträger | Praktikumsvertrag, Ziele und Nachweise abgestimmt |
+Für diesen Kurs ist die Generierung der wichtigste Fall – aber Einordnen bleibt relevant: Genau diese Fähigkeit setzt du später in automatisierten Abläufen ein, etwa um eingehende Anfragen automatisch dem richtigen Team zuzuweisen (Kap. 29).
 
-!!! info "Abgrenzung zum Ausbildungsbetrieb"
-    Ein **regulärer Ausbildungsbetrieb** (für Azubis) muss zusätzlich strengere BBiG-Anforderungen erfüllen: **Ausbildungsvertrag**, **Ausbildungsbefähigung** der Kammer, **betrieblicher Ausbildungsplan** und **Ausbildungsvergütung**. Diese lernst du in Kapitel 2 und 3 kennen – sie gelten für das **Ausbildungsverhältnis**, nicht für dein unbezahltes Umschüler-Praktikum.
+!!! example "Erste praktische Erfahrung"
+    Öffne dein KI-Werkzeug und gib ein:
 
-**Worauf du bei der Betriebswahl achten solltest:**
+    ```text
+    Erklaere einer Kollegin ohne IT-Hintergrund in fuenf Saetzen, was Kuenstliche
+    Intelligenz ist und wie sie sich von normaler Software unterscheidet.
+    Nutze ein Alltagsbeispiel.
+    ```
 
-- **Fachrichtung passend?** Passt der Betrieb zu deiner Zielrichtung (AE, SI, DPA oder DV)?
-- **Ausbildungsstruktur:** Gibt es feste Ausbildungsinhalte, Mentoring, Zeit für Lernen?
-- **Technologie-Stack:** Welche Sprachen, Frameworks, Infrastruktur werden genutzt?
-- **Ausbilder:** Wer ist ausbildungsbefähigt und wie viel Zeit steht für Anleitung zur Verfügung?
-- **Übernahmechancen:** Gibt es Perspektive nach der Prüfung?
+    Beobachte die Antwort – und schärfe dann nach:
 
-!!! info "Suche früh starten"
-    Auch wenn der Praktikumsbetrieb später beginnt: **Bewerbungen, Netzwerken und Kammerberatung** solltest du frühzeitig starten. Ein passender Betrieb ist entscheidend für Prüfungserfolg und Karrierestart.
+    ```text
+    Kuerze auf drei Saetze und ersetze das Beispiel durch eines aus dem
+    Kundenservice.
+    ```
+
+    Zwei Dinge werden sofort sichtbar: Erstens liefert das Werkzeug **sprachlich sauberen** Text – aber ob Beispiel und Ton passen, entscheidest **du**. Zweitens verbessert der **präzisere zweite Auftrag** das Ergebnis gezielt. Dieses schrittweise Steuern von Aufträgen ist **Prompt-Design** und wird ab Kapitel 9 systematisch aufgebaut.
+
+---
+
+## 1.6 Wo dir KI im Arbeitsalltag begegnet
+
+KI steckt heute in vielen Werkzeugen, oft unsichtbar:
+
+| Bereich | Sichtbare Funktion | Dahinterliegendes KI-Feld |
+|---|---|---|
+| Suche und Empfehlungen | Produktvorschläge, Auto-Vervollständigung | ML, NLP |
+| Kommunikation | Spam-Filter, Antwortvorschläge, Übersetzung | NLP |
+| Office und Produktivität | Zusammenfassungen, Textentwürfe, Formeln | generative KI |
+| Analyse | Prognosen, Erkennen von Auffälligkeiten | ML |
+| Dokumente | Belegerkennung, Feldextraktion, Untertitel | Computer Vision, NLP |
+
+Interessant wird es, wenn KI nicht mehr nur als Chatfenster genutzt wird, sondern **in Abläufe eingebaut** ist: Eine Reklamation trifft ein, wird automatisch eingeordnet, zusammengefasst, an die richtige Person weitergeleitet – und erst die Freigabe erfolgt durch einen Menschen. Genau diese Verbindung von KI und Automatisierung ist das Ziel dieses Kurses.
+
+```mermaid
+flowchart LR
+    A([Reklamation trifft ein]) --> B([KI ordnet ein und fasst zusammen])
+    B --> C([Ablauf leitet weiter])
+    C --> D([Mensch prueft und gibt frei])
+```
+
+!!! warning "Verantwortung von Anfang an"
+    KI liefert **Entwürfe und Vorschläge**, keine geprüften Wahrheiten. Fakten, Ton und Freigabe bleiben immer beim Menschen. Diese Haltung begleitet dich durch den ganzen Kurs – von den Risiken in Kapitel 3 bis zu den Freigabepunkten in deinem eigenen Projekt in Block 7.
+
+---
+
+## Zusammenfassung
+
+- KI löst Aufgaben, die man sonst menschlicher Intelligenz zuschreibt – der Kern ist **Lernen aus Daten statt fester Regeln**.
+- Eine feste Definition gibt es nicht (**KI-Effekt**); die praktische Leitfrage lautet: Lernt das System aus Daten?
+- Teilgebiete sind verschachtelt: **Deep Learning** liegt in **Machine Learning**, das wiederum in **KI**. Copilot, ChatGPT und Claude sind **generative KI**.
+- Alle heutigen Systeme sind **schwache KI** – sie berechnen Wahrscheinlichkeiten und „denken" nicht.
+- KI-Ergebnisse sind **statistisch**: Wer KI in Abläufe einbaut, muss den Fehlerfall mitplanen.
+- Der Kurs verbindet beides: **verlässliche Automatisierung** außen, **KI-Bausteine** innen, **Mensch** an den Entscheidungspunkten.
 
 ---
 
 ## Kurzübungen
 
-{{ task(file="tasks/tag1_01.yaml") }}
+{{ task(file="tasks/k01_01.yaml") }}
 
-{{ task(file="tasks/tag1_02.yaml") }}
+{{ task(file="tasks/k01_02.yaml") }}
 
-{{ task(file="tasks/tag1_03.yaml") }}
+{{ task(file="tasks/k01_03.yaml") }}
 
 ---
 
 ## Workshop
 
-{{ task(file="tasks/workshop_k1.yaml") }}
+{{ task(file="tasks/workshop_k01.yaml") }}

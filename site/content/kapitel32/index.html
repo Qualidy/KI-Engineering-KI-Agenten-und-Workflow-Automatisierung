@@ -1,0 +1,1847 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel31/">
+      
+      
+        <link rel="next" href="../kapitel33/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 32 – Eigene Agenten bauen mit Copilot Studio - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-32-eigene-agenten-bauen-mit-copilot-studio" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Block 6 · Kombination von KI & Workflow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 29 – KI-Bausteine im Workflow: Muster und Einsatzstellen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel30/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 30 – AI Builder und KI-Aktionen in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 31 – Dokumentenverarbeitung automatisieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#321-was-copilot-studio-ist-und-wann-sich-ein-eigener-agent-lohnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      32.1 Was Copilot Studio ist – und wann sich ein eigener Agent lohnt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#322-instruktionen-schreiben" class="md-nav__link">
+    <span class="md-ellipsis">
+      32.2 Instruktionen schreiben
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#323-wissensquellen-anbinden" class="md-nav__link">
+    <span class="md-ellipsis">
+      32.3 Wissensquellen anbinden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#324-themen-oder-generative-antworten" class="md-nav__link">
+    <span class="md-ellipsis">
+      32.4 Themen oder generative Antworten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#325-aktionen-einen-flow-als-werkzeug-anbinden" class="md-nav__link">
+    <span class="md-ellipsis">
+      32.5 Aktionen: einen Flow als Werkzeug anbinden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#326-testen-veroffentlichen-absichern" class="md-nav__link">
+    <span class="md-ellipsis">
+      32.6 Testen, veröffentlichen, absichern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel33/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 33 – Agent und Workflow verbinden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel34/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-32-eigene-agenten-bauen-mit-copilot-studio">Kapitel 32 – Eigene Agenten bauen mit Copilot Studio<a class="headerlink" href="#kapitel-32-eigene-agenten-bauen-mit-copilot-studio" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie du in <strong>Copilot Studio</strong> einen eigenen Agenten anlegst und wofür Name und Beschreibung zählen</li>
+<li>Wie du <strong>Instruktionen</strong> schreibst, die im Dauerbetrieb tragen</li>
+<li>Wie du <strong>Wissensquellen</strong> anbindest und was dabei mit den Berechtigungen passiert</li>
+<li>Der Unterschied zwischen <strong>Themen mit Trigger-Phrasen</strong> und <strong>generativen Antworten</strong></li>
+<li>Wie du einen <strong>Power-Automate-Flow als Aktion</strong> des Agenten anbindest</li>
+<li>Wie du testest, veröffentlichst, den Agenten <strong>absicherst</strong> und schlechte Antworten reparierst</li>
+</ul>
+</div>
+<hr />
+<h2 id="321-was-copilot-studio-ist-und-wann-sich-ein-eigener-agent-lohnt">32.1 Was Copilot Studio ist – und wann sich ein eigener Agent lohnt<a class="headerlink" href="#321-was-copilot-studio-ist-und-wann-sich-ein-eigener-agent-lohnt" title="Permanent link">&para;</a></h2>
+<p><strong>Copilot Studio</strong> ist die Werkbank der Power Platform für eigene Agenten. Was du in Kap. 6 als Anatomie eines Agenten kennengelernt hast – Ziel, Instruktion, Wissen, Werkzeuge – baust du hier zusammen, ohne zu programmieren.</p>
+<p>Ein eigener Agent lohnt sich, wenn drei Bedingungen zusammenkommen: Es gibt <strong>wiederkehrende Fragen</strong>, es gibt <strong>eine verlässliche Wissensquelle</strong>, und es gibt <strong>viele Fragende</strong>. Fehlt eine davon, ist der Agent der falsche Weg. Für eine Frage, die dreimal im Jahr gestellt wird, genügt ein gepflegtes Dokument. Für eine Frage, deren Antwort niemand aufgeschrieben hat, hilft auch ein Agent nicht – er erfindet dann eine Antwort (Kap. 5).</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Nutzerfrage]) --&gt; B([Agent mit Instruktion])
+    B --&gt; C([Wissensquellen durchsuchen])
+    B --&gt; D([Aktion als Flow aufrufen])
+    C --&gt; E([Antwort mit Quellenangabe])
+    D --&gt; E</code></pre>
+<p>Das Anlegen selbst dauert Minuten: <code>Copilot Studio → Erstellen → Neuer Agent</code>. Du vergibst einen Namen, eine Beschreibung und die Sprache. Beide Textfelder sind wichtiger, als sie aussehen. Der <strong>Name</strong> erscheint überall dort, wo Menschen mit dem Agenten sprechen – er sollte den Zuständigkeitsbereich nennen, nicht witzig sein. Die <strong>Beschreibung</strong> erklärt in ein bis zwei Sätzen, wofür der Agent zuständig ist und wofür nicht; sie ist die erste Erwartungssteuerung.</p>
+<table>
+<thead>
+<tr>
+<th>Feld</th>
+<th>Schwach</th>
+<th>Tragfähig</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Hilfsbereiter Helfer</td>
+<td>Reisekosten-Assistent</td>
+</tr>
+<tr>
+<td>Beschreibung</td>
+<td>Beantwortet alle Fragen rund um die Firma</td>
+<td>Beantwortet Fragen zur Reisekostenrichtlinie und zum Abrechnungsablauf. Nicht zuständig für Einzelfallentscheidungen und Auszahlungen.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="322-instruktionen-schreiben">32.2 Instruktionen schreiben<a class="headerlink" href="#322-instruktionen-schreiben" title="Permanent link">&para;</a></h2>
+<p>Die <strong>Instruktion</strong> ist die dauerhafte Anweisung an den Agenten – das, was du in Kap. 10 als Systemprompt und Custom Instructions kennengelernt hast, hier als festes Feld. Sie unterscheidet sich in einem Punkt grundlegend von einem Prompt im Chat: Sie wird für <strong>jede</strong> Frage jedes Nutzers wirksam, auch für die, die du dir nicht vorgestellt hast.</p>
+<p>Eine tragfähige Instruktion beantwortet fünf Fragen: Wer bist du? Für wen arbeitest du? Woher nimmst du deine Antworten? Wie antwortest du? Und vor allem: Was tust du <strong>nicht</strong>?</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist der Reisekosten-Assistent der Kandelbach Sanitaer GmbH.
+Du hilfst Beschaeftigten bei Fragen zur Reisekostenrichtlinie und zum
+Abrechnungsablauf.
+
+Antworten:
+- Stuetze dich ausschliesslich auf die hinterlegten Wissensquellen.
+- Nenne bei jeder Antwort die Fundstelle, also Dokument und Abschnitt.
+- Antworte in hoechstens fuenf Saetzen, sachlich und in der Du-Form.
+- Bei Betraegen und Fristen zitiere den Wortlaut der Richtlinie.
+
+Das tust du nicht:
+- Du beantwortest keine Fragen zu Gehalt, Arbeitsvertraegen oder Personalakten.
+- Du entscheidest keine Einzelfaelle und sagst keine Erstattung zu.
+- Du gibst keine steuerliche oder rechtliche Beratung.
+
+Wenn du etwas nicht in den Wissensquellen findest, sage das ausdruecklich und
+verweise auf die Reisekostenstelle unter [Kontaktadresse].
+</code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Der wertvollste Teil jeder Agenten-Instruktion ist die Liste dessen, was der Agent <strong>nicht</strong> tut. Ohne sie antwortet er auch auf Fragen, für die er nie gedacht war – und zwar mit derselben Selbstsicherheit wie auf die Fragen, für die er gebaut wurde.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Beispiele schlagen Adjektive</p>
+<p>„Antworte freundlich und präzise" steuert wenig. Ein Beispiel steuert viel: Nimm eine echte Frage, schreibe die Musterantwort daneben und lege beides in die Instruktion. Zwei bis drei solcher Paare verändern das Antwortverhalten spürbarer als jede Formulierungsverfeinerung (Kap. 9).</p>
+</div>
+<hr />
+<h2 id="323-wissensquellen-anbinden">32.3 Wissensquellen anbinden<a class="headerlink" href="#323-wissensquellen-anbinden" title="Permanent link">&para;</a></h2>
+<p>Ein Agent ohne Wissensquellen ist ein allgemeines Sprachmodell mit einer Rollenbeschreibung – er weiß nichts über euer Unternehmen. Erst die Wissensquellen machen ihn nützlich. Copilot Studio kennt mehrere Arten:</p>
+<table>
+<thead>
+<tr>
+<th>Quelle</th>
+<th>Wofür geeignet</th>
+<th>Worauf du achten musst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SharePoint-Website</strong></td>
+<td>gepflegte Richtlinien, Handbücher, Intranet</td>
+<td>Umfang begrenzen, sonst zieht der Agent Veraltetes heran</td>
+</tr>
+<tr>
+<td><strong>Hochgeladene Dateien</strong></td>
+<td>abgeschlossene Dokumente, die sich selten ändern</td>
+<td>Aktualisierung ist manuell, Versionsstand im Blick behalten</td>
+</tr>
+<tr>
+<td><strong>Öffentliche Website</strong></td>
+<td>öffentlich zugängliche Produkt- und Serviceinfos</td>
+<td>nur was auch öffentlich sein soll</td>
+</tr>
+</tbody>
+</table>
+<p>Der Punkt, der in der Praxis die meisten Diskussionen auslöst, sind die <strong>Berechtigungen</strong>. Bei einer SharePoint-Quelle gilt in der Regel: Der Agent zeigt einer Person nur Inhalte, auf die diese Person ohnehin Zugriff hat. Die bestehenden Berechtigungen werden also respektiert, nicht ausgehebelt. Bei <strong>hochgeladenen Dateien</strong> ist das anders – eine Datei, die du in den Agenten lädst, ist für alle sichtbar, die den Agenten nutzen dürfen, unabhängig davon, wer auf das Original zugreifen darf.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: die stille Rechteausweitung</p>
+<p>Genau hier entstehen Datenschutzvorfälle. Jemand lädt eine Übersichtstabelle mit Personaldaten hoch, weil der Agent damit besser antwortet – und öffnet sie damit für den gesamten Nutzerkreis. Regel: <strong>Lade nichts hoch, was nicht ohnehin alle sehen dürfen.</strong> Alles Übrige bindest du als SharePoint-Quelle ein, damit die dortigen Berechtigungen greifen. Bei personenbezogenen Daten kommt die Frage nach Rechtsgrundlage und Zweckbindung dazu (Kap. 4).</p>
+</div>
+<p>Für die Antwortqualität ist die <strong>Qualität der Quelle</strong> ausschlaggebend. Ein Agent auf einer SharePoint-Website mit drei Fassungen derselben Richtlinie aus verschiedenen Jahren wird sie vermischen. Vor dem Anbinden lohnt sich deshalb immer eine Aufräumrunde: Veraltetes archivieren, Dubletten entfernen, Zuständigkeit für die Pflege festlegen.</p>
+<hr />
+<h2 id="324-themen-oder-generative-antworten">32.4 Themen oder generative Antworten<a class="headerlink" href="#324-themen-oder-generative-antworten" title="Permanent link">&para;</a></h2>
+<p>Copilot Studio kann auf zwei Wegen antworten, und du solltest bewusst entscheiden, welcher Weg wofür zuständig ist.</p>
+<p><strong>Themen</strong> sind vorgeplante Gesprächsverläufe. Sie starten über <strong>Trigger-Phrasen</strong> – Beispielformulierungen, an denen der Agent erkennt, dass dieses Thema gemeint ist. Danach folgt ein festgelegter Ablauf: Fragen stellen, Antworten sammeln, eine Aktion auslösen, eine feste Antwort geben.</p>
+<p><strong>Generative Antworten</strong> entstehen dagegen aus den Wissensquellen, ohne vorgeplanten Verlauf. Der Agent sucht, findet und formuliert.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Thema</th>
+<th>Generative Antwort</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verlauf</td>
+<td>vorgeplant, immer gleich</td>
+<td>frei formuliert</td>
+</tr>
+<tr>
+<td>Zuverlässigkeit</td>
+<td>hoch, weil festgelegt</td>
+<td>schwankend</td>
+</tr>
+<tr>
+<td>Aufwand</td>
+<td>je Thema spürbar</td>
+<td>einmalig für alle Fragen</td>
+</tr>
+<tr>
+<td>Passend für</td>
+<td>verbindliche Auskünfte, Vorgänge mit festen Schritten</td>
+<td>breite Wissensfragen</td>
+</tr>
+</tbody>
+</table>
+<p>Die Faustregel lautet: <strong>Alles, was verbindlich ist oder etwas auslöst, gehört in ein Thema.</strong> Eine Krankmeldung, eine Urlaubsanfrage, eine Bestellung – hier willst du einen festen Ablauf mit festen Rückfragen. Alles, was reine Auskunft ist, überlässt du den generativen Antworten.</p>
+<p>Trigger-Phrasen brauchen Vielfalt. Menschen fragen nicht so, wie Prozessverantwortliche formulieren. Für ein Thema zur Reisekostenabrechnung genügen <code>Reisekostenabrechnung einreichen</code> und <code>Wie reiche ich eine Reisekostenabrechnung ein</code> nicht – ergänze <code>Fahrtkosten abrechnen</code>, <code>Beleg für Dienstreise einreichen</code>, <code>Wo trage ich meine Hotelrechnung ein</code>. Fünf bis zehn deutlich unterschiedliche Formulierungen sind ein guter Startwert.</p>
+<hr />
+<h2 id="325-aktionen-einen-flow-als-werkzeug-anbinden">32.5 Aktionen: einen Flow als Werkzeug anbinden<a class="headerlink" href="#325-aktionen-einen-flow-als-werkzeug-anbinden" title="Permanent link">&para;</a></h2>
+<p>Der Schritt vom Auskunftsgeber zum handelnden Agenten sind <strong>Aktionen</strong>. Eine Aktion ist ein Werkzeug, das der Agent aufrufen kann – am häufigsten ein Power-Automate-Flow.</p>
+<p>Der Ablauf beim Anbinden:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>1. Flow bauen mit dem Trigger fuer Copilot
+2. Eingaben definieren, zum Beispiel Vorgangsnummer als Text
+3. Flow arbeiten lassen, etwa Status in einer Liste nachschlagen
+4. Ausgaben definieren, zum Beispiel Status und Liefertermin
+5. In Copilot Studio unter Aktionen den Flow auswaehlen
+6. Beschreiben, wann der Agent die Aktion nutzen soll
+7. Im Testfenster mit einer echten Frage pruefen
+</code></pre></div></td></tr></table></div>
+<p>Punkt 6 ist der entscheidende und wird am häufigsten unterschätzt. Die Beschreibung der Aktion ist das, woran der Agent erkennt, ob dieses Werkzeug zur Frage passt. „Vorgangsstatus" ist zu wenig. Besser: „Ruft den aktuellen Bearbeitungsstatus und den geplanten Liefertermin zu einer Vorgangsnummer ab. Nutze diese Aktion, wenn nach dem Stand einer konkreten Bestellung oder Reklamation gefragt wird und eine Vorgangsnummer vorliegt."</p>
+<p>Genauso wichtig sind die <strong>Eingaben</strong>. Fehlt die Vorgangsnummer, darf der Agent sie nicht erfinden, sondern muss nachfragen. Schreibe das ausdrücklich in die Instruktion. Was auf der anderen Seite passiert – Rechte, Protokollierung, Datenverträge zwischen Agent und Flow – vertiefst du in Kap. 33.</p>
+<hr />
+<h2 id="326-testen-veroffentlichen-absichern">32.6 Testen, veröffentlichen, absichern<a class="headerlink" href="#326-testen-veroffentlichen-absichern" title="Permanent link">&para;</a></h2>
+<p>Im <strong>Testfenster</strong> rechts in Copilot Studio sprichst du mit dem Agenten, während du ihn baust. Teste nicht nur die Fragen, für die du ihn gebaut hast. Ein brauchbarer Testsatz enthält immer vier Sorten Fragen: die erwartete Standardfrage, eine ungewöhnlich formulierte Variante davon, eine Frage, die knapp außerhalb der Zuständigkeit liegt, und eine, deren Antwort in keiner Wissensquelle steht.</p>
+<p>Das <strong>Veröffentlichen</strong> macht den Agenten für andere nutzbar. Üblich sind ein eigener Kanal in Microsoft Teams oder die Einbettung auf einer Website. Die Entscheidung hat Folgen: In Teams handeln Nutzende mit ihrer Identität, auf einer öffentlichen Website in der Regel anonym – und dann darf der Agent keine internen Wissensquellen und keine Aktionen mit Schreibrechten haben.</p>
+<div class="admonition warning">
+<p class="admonition-title">Absicherung: die vier Fragen vor dem Veröffentlichen</p>
+<p><strong>Was darf der Agent nicht?</strong> Steht die Liste in der Instruktion, und hält er sich im Test daran?</p>
+<p><strong>Was passiert bei Nicht-Wissen?</strong> Der Agent muss sagen, dass er es nicht weiß, statt eine plausible Antwort zu bauen. Prüfe das mit einer bewusst unbeantwortbaren Frage.</p>
+<p><strong>Wie kommt jemand zu einem Menschen?</strong> Es braucht einen ausdrücklichen Weg – eine Kontaktadresse, ein Thema <code>Mit einem Menschen sprechen</code>, ein Verweis auf die zuständige Stelle. Ohne diesen Weg wird der Agent zur Sackgasse.</p>
+<p><strong>Ist der Themenbereich begrenzt?</strong> Ein Agent, der zu allem etwas sagt, verliert seine Verlässlichkeit. Grenze ihn ein und weise Fragen außerhalb der Zuständigkeit ausdrücklich zurück.</p>
+</div>
+<p>Schlechte Antworten haben fast immer eine von drei Ursachen. Sie zu unterscheiden spart viel Zeit:</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Wahrscheinliche Ursache</th>
+<th>Was hilft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antwort ist inhaltlich falsch oder veraltet</td>
+<td>Wissensbasis ist unvollständig, veraltet oder widersprüchlich</td>
+<td>Quelle aufräumen, Dubletten entfernen, Pflege festlegen</td>
+</tr>
+<tr>
+<td>Antwort ist inhaltlich richtig, aber im Ton oder Format unpassend</td>
+<td>Instruktion ist zu vage</td>
+<td>Format, Länge und Ton konkret vorschreiben</td>
+</tr>
+<tr>
+<td>Antwort ist beliebig oder weicht aus</td>
+<td>fehlende Beispiele und keine Abgrenzung</td>
+<td>Musterfragen mit Musterantworten ergänzen, Nicht-Zuständigkeiten benennen</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Falls dir Copilot Studio nicht zur Verfügung steht</p>
+<p>Du kannst dieses Kapitel vollständig ohne Zugang durcharbeiten – der schwierige Teil ist ohnehin nicht das Klicken, sondern der Entwurf. Gehe so vor:</p>
+<ol>
+<li>Entwirf den Agenten als <strong>Dokument</strong>: Name, Beschreibung, vollständige Instruktion einschließlich der Nicht-Zuständigkeiten, Liste der Wissensquellen mit Begründung, drei Themen mit je fünf Trigger-Phrasen, eine Aktion mit Ein- und Ausgaben.</li>
+<li>Baue ihn in ChatGPT oder Claude nach: als Projekt mit hinterlegten Anweisungen und Dateien oder über Custom Instructions. Lade dort nur unkritische Beispieldokumente hoch.</li>
+<li>Teste ihn mit deinem Testsatz aus vier Fragensorten und protokolliere die Antworten.</li>
+</ol>
+<p>Das Ergebnis ist übertragbar: Instruktion, Wissensquellen und Themen sind dieselben Bausteine. Steht Copilot Studio später bereit, ist der Entwurf in einer Stunde eingerichtet.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ein eigener Agent lohnt sich nur bei <strong>wiederkehrenden Fragen, verlässlicher Quelle und vielen Fragenden</strong>.</li>
+<li>Die <strong>Instruktion</strong> trägt den Agenten – am wichtigsten ist die ausdrückliche Liste dessen, was er nicht tut.</li>
+<li><strong>Wissensquellen</strong> entscheiden über die Qualität; hochgeladene Dateien sind für alle Nutzenden sichtbar und können Rechte still ausweiten.</li>
+<li><strong>Themen mit Trigger-Phrasen</strong> für alles Verbindliche und Auslösende, <strong>generative Antworten</strong> für Auskunftsfragen.</li>
+<li>Ein <strong>Flow als Aktion</strong> macht den Agenten handlungsfähig; die Beschreibung der Aktion entscheidet, ob er sie richtig einsetzt.</li>
+<li>Vor dem Veröffentlichen: Grenzen prüfen, Verhalten bei Nicht-Wissen prüfen, <strong>Weg zum Menschen</strong> sicherstellen, Themenbereich begrenzen.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Thema oder generative Antwort?</summary>
+<p>Ein Agent für den Innendienst eines Baustoffhändlers soll folgende Anliegen bedienen. Entscheide
+jeweils, ob du ein <strong>Thema mit Trigger-Phrasen</strong> anlegst oder es bei einer <strong>generativen Antwort</strong>
+aus den Wissensquellen belässt. Begründe in einem Satz.</p>
+<ol>
+<li>„Wie lange sind die Zahlungsziele für Neukunden?"</li>
+<li>„Ich möchte eine Reklamation melden."</li>
+<li>„Wo finde ich die aktuelle Preisliste?"</li>
+<li>„Bitte den Liefertermin zu Vorgang 44182 nachschlagen."</li>
+<li>„Welche Sicherheitsvorgaben gelten beim Betreten des Lagers?"</li>
+<li>„Ich möchte mit einer Person aus dem Innendienst sprechen."</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die Faustregel aus dem Kapitel: Alles, was verbindlich ist oder etwas auslöst, gehört in ein Thema.
+Reine Auskunft bleibt bei generativen Antworten.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Anliegen</th>
+<th>Weg</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Zahlungsziele</td>
+<td>generative Antwort</td>
+<td>reine Auskunft aus der Richtlinie</td>
+</tr>
+<tr>
+<td>2 Reklamation melden</td>
+<td>Thema</td>
+<td>löst einen Vorgang aus, braucht feste Rückfragen</td>
+</tr>
+<tr>
+<td>3 Preisliste finden</td>
+<td>generative Antwort</td>
+<td>Verweis auf ein Dokument, keine Aktion</td>
+</tr>
+<tr>
+<td>4 Liefertermin nachschlagen</td>
+<td>Thema mit Aktion</td>
+<td>ruft einen Flow auf, braucht die Vorgangsnummer als Eingabe</td>
+</tr>
+<tr>
+<td>5 Sicherheitsvorgaben</td>
+<td>generative Antwort</td>
+<td>Auskunft, sollte aber die Quelle nennen</td>
+</tr>
+<tr>
+<td>6 Zu einem Menschen</td>
+<td>Thema</td>
+<td>fester Weg zur Weiterleitung, darf nicht dem Zufall überlassen bleiben</td>
+</tr>
+</tbody>
+</table>
+<p>Fall 5 ist der Grenzfall und zeigt eine wichtige Unterscheidung: Sicherheitsvorgaben sind zwar
+Auskunft, aber folgenreiche Auskunft. Hier lohnt es sich, in der Instruktion vorzuschreiben, dass
+bei solchen Themen immer der Wortlaut zitiert und die Fundstelle genannt wird – statt gleich ein
+eigenes Thema zu bauen. Fall 6 wird am häufigsten vergessen und ist die wichtigste Absicherung
+gegen einen Agenten, der zur Sackgasse wird.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Eine Instruktion reparieren</summary>
+<p>Für einen Agenten, der Fragen zur betrieblichen Altersvorsorge beantworten soll, wurde diese
+Instruktion hinterlegt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist ein hilfsbereiter Assistent fuer unsere Mitarbeitenden.
+Beantworte alle Fragen freundlich, kompetent und ausfuehrlich.
+Nutze dein Wissen, um bestmoeglich zu helfen.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Benenne <strong>mindestens fünf</strong> Mängel und sage jeweils, welche Fehlfunktion daraus im Betrieb folgt.</li>
+<li>Schreibe die Instruktion vollständig neu. Sie muss die fünf Fragen aus Abschnitt 32.2 beantworten
+   und mindestens vier ausdrückliche Nicht-Zuständigkeiten enthalten.</li>
+<li>Formuliere drei Testfragen, mit denen du prüfst, ob deine Neufassung wirkt – davon eine, die
+   knapp außerhalb der Zuständigkeit liegt.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte besonders auf den Satz „Nutze dein Wissen". Er ist der folgenreichste Fehler in dieser
+Instruktion, obwohl er harmlos klingt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p><strong>Mängel:</strong> (1) Kein Zuständigkeitsbereich – der Agent antwortet auf alles, auch auf Gehalts- und
+Vertragsfragen. (2) „Nutze dein Wissen" fordert das Modell ausdrücklich auf, aus dem Trainingswissen
+zu antworten statt aus den Wissensquellen – das ist die direkte Einladung zur Halluzination
+(Kap. 5). (3) Keine Quellenangabe gefordert, Antworten sind nicht nachprüfbar. (4) Keine
+Nicht-Zuständigkeiten, also keine Grenze. (5) Kein Verhalten bei Nicht-Wissen definiert. (6) Kein
+Format und keine Länge, „ausführlich" führt bei Vorsorgethemen zu unbrauchbar langen Antworten.
+(7) Kein Weg zu einem Menschen.</p>
+<p><strong>Neufassung, Beispiel:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist der Vorsorge-Assistent der Kandelbach Sanitaer GmbH.
+Du beantwortest Fragen zur betrieblichen Altersvorsorge fuer Beschaeftigte.
+
+Antworten:
+- Stuetze dich ausschliesslich auf die hinterlegten Wissensquellen.
+- Nenne bei jeder Antwort Dokument und Abschnitt als Fundstelle.
+- Antworte in hoechstens fuenf Saetzen, sachlich, in der Du-Form.
+- Zitiere Betraege, Fristen und Prozentsaetze im Wortlaut.
+
+Das tust du nicht:
+- Du gibst keine steuerliche oder rechtliche Beratung.
+- Du machst keine Aussagen zu individuellen Rentenhoehen oder Prognosen.
+- Du beantwortest keine Fragen zu Gehalt, Vertrag oder Personalakte.
+- Du empfiehlst keine Anbieter und keine konkrete Anlageentscheidung.
+
+Findest du etwas nicht in den Wissensquellen, sage das ausdruecklich und
+verweise auf die Personalabteilung unter [Kontaktadresse].
+</code></pre></div></td></tr></table></div>
+<p><strong>Testfragen:</strong> (a) „Ab wann kann ich in die Entgeltumwandlung einsteigen?" prüft die
+Standardauskunft samt Fundstelle. (b) „Wie viel Rente bekomme ich später ungefähr?" liegt knapp
+außerhalb und muss zurückgewiesen werden. (c) „Wie hoch war die letzte Gehaltserhöhung?" prüft die
+harte Abgrenzung. Eine gute Lösung erkennt, dass Frage (b) die interessanteste ist, weil sie
+thematisch passt und trotzdem nicht beantwortet werden darf.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Einen Agenten bauen und an seine Grenzen bringen</summary>
+<p>Diese Übung machst du am Werkzeug. Mit Zugang zu Copilot Studio baust du dort. Ohne Zugang nutzt du
+den Ersatzweg aus Abschnitt 32.6 in ChatGPT oder Claude.</p>
+<ol>
+<li>Erzeuge dir zuerst eine Wissensbasis. Lasse dir in einem Chatwerkzeug eine fiktive
+   Reisekostenrichtlinie erstellen:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Schreibe eine fiktive Reisekostenrichtlinie einer mittelstaendischen Firma
+auf etwa einer Seite. Enthalten sein muessen Kilometerpauschale,
+Uebernachtungsgrenzen, Verpflegungspauschalen, Fristen fuer die Einreichung
+und ein kurzer Abschnitt zum Abrechnungsablauf. Lass zwei Punkte bewusst
+ungeregelt, zum Beispiel Auslandsreisen und Bahncard-Kosten.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Lege den Agenten an: Name, Beschreibung, vollständige Instruktion mit mindestens drei
+   Nicht-Zuständigkeiten und einer Regel für den Fall, dass etwas nicht in der Quelle steht.</li>
+<li>Binde die Richtlinie als Wissensquelle ein.</li>
+<li>Teste mit vier Fragen: eine Standardfrage, eine ungewöhnlich formulierte Variante davon, eine
+   knapp außerhalb der Zuständigkeit, und eine zu einem der bewusst ungeregelten Punkte.</li>
+<li>Notiere zu jeder Antwort: Wurde die Fundstelle genannt? Wurde die Grenze eingehalten? Wurde
+   Nicht-Wissen zugegeben oder etwas erfunden?</li>
+<li>Verbessere Instruktion oder Wissensquelle an genau der Stelle, die im Test versagt hat, und
+   wiederhole den Test.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die vierte Frage ist der Kern der Übung. Ein Agent, der bei einem ungeregelten Punkt eine plausible
+Antwort formuliert, ist gefährlicher als einer, der gar nichts sagt – weil niemand die Lücke
+bemerkt. Achte darauf, ob deine Instruktion diesen Fall wirklich abfängt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen und die richtige Reaktion:</p>
+<ul>
+<li><strong>Standardfrage</strong> wird meist gut beantwortet. Fehlt die Fundstelle, ist die Instruktion an dieser
+  Stelle nicht bindend genug formuliert – ergänze, dass jede Antwort mit dem Abschnittsnamen endet.</li>
+<li><strong>Umformulierte Variante</strong> zeigt, ob die Wissenssuche greift. Scheitert sie, liegt es meist an
+  einer Quelle, die den Begriff des Fragenden nicht enthält. Ein zusätzlicher Abschnitt mit
+  Synonymen in der Richtlinie hilft mehr als jede Instruktionsänderung.</li>
+<li><strong>Frage außerhalb der Zuständigkeit</strong> muss zurückgewiesen werden. Wird sie beantwortet, fehlt die
+  passende Nicht-Zuständigkeit oder sie ist zu allgemein formuliert.</li>
+<li><strong>Ungeregelter Punkt</strong> ist der Härtetest. Ohne ausdrückliche Regel erfindet der Agent hier oft
+  eine plausible Auskunft, etwa eine Pauschale, die nirgends steht. Die wirksame Reparatur ist
+  zweiteilig: eine bindende Regel in der Instruktion für Nicht-Wissen, und ein Verweis auf eine
+  zuständige Stelle, damit die Antwort trotzdem hilft.</li>
+</ul>
+<p>Ein gutes Ergebnis zeigt den Vorher-Nachher-Vergleich: die problematische Antwort aus Durchlauf
+eins, die konkrete Änderung, und die Antwort aus Durchlauf zwei. Wer nur schreibt „hat danach
+funktioniert", hat die Ursache nicht benannt.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Einen Auskunftsagenten entwerfen, testen und begrenzen</summary>
+<p><strong>Szenario:</strong> Die Personalabteilung der Kandelbach Sanitär GmbH beantwortet jeden Tag dieselben
+Fragen: Urlaubsanträge, Krankmeldung, Reisekosten, Homeoffice-Regelung, Zeiterfassung. Zwei
+Beschäftigte verbringen damit einen erheblichen Teil ihrer Arbeitszeit. Ein Agent soll das
+auffangen. Die Personalleitung ist einverstanden, hat aber eine klare Ansage: „Wenn der Ding etwas
+Falsches über Kündigungsfristen erzählt, schalten wir ihn sofort ab."</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+340 Beschaeftigte, davon rund 120 im Aussendienst.
+Wissensbasis: SharePoint-Website Personal mit 14 Dokumenten, teils aus 2021 bis 2026,
+darunter drei Fassungen der Homeoffice-Regelung ohne erkennbare Gueltigkeitsangabe.
+Haeufigste Fragen: Urlaub, Krankmeldung, Reisekosten, Homeoffice, Zeiterfassung.
+Vorhanden: Microsoft 365, Teams, Power Automate, SharePoint.
+Der Agent soll spaeter in Teams veroeffentlicht werden.
+</code></pre></div></td></tr></table></div>
+<p>Ohne Zugang zu Copilot Studio arbeitest du mit dem Ersatzweg aus Abschnitt 32.6: Agent als Dokument
+entwerfen und in ChatGPT oder Claude als Projekt nachbauen. Erzeuge dir die Wissensdokumente
+fiktiv – auch die drei widersprüchlichen Fassungen der Homeoffice-Regelung.</p>
+<hr />
+<p><strong>Runde 1 – Agent entwerfen und bauen.</strong> Lege fest: Name, Beschreibung, vollständige Instruktion
+mit Antwortregeln, mindestens fünf Nicht-Zuständigkeiten und einer Regel für Nicht-Wissen. Liste die
+Wissensquellen auf und begründe für jede, warum sie als SharePoint-Quelle oder als Upload eingebunden
+wird. Entwirf zwei Themen mit je mindestens sechs Trigger-Phrasen, davon eines für den Weg zu einem
+Menschen. Baue den Agenten anschließend und teste ihn mit acht Fragen.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Dein Agent muss <strong>alle vier</strong> erfüllen. Weise jede
+Erfüllung mit einer konkreten Frage und der erhaltenen Antwort nach:</p>
+<ol>
+<li>Bei jeder inhaltlichen Antwort wird eine <strong>Fundstelle</strong> genannt.</li>
+<li>Eine Frage knapp <strong>außerhalb der Zuständigkeit</strong> wird zurückgewiesen, nicht beantwortet.</li>
+<li>Eine Frage, deren Antwort <strong>in keiner Quelle steht</strong>, führt zu einem ausdrücklichen „weiß ich
+   nicht" plus Verweis auf eine zuständige Stelle – nicht zu einer plausibel klingenden Auskunft.</li>
+<li>Keine Wissensquelle enthält Inhalte, die nicht alle Beschäftigten sehen dürfen. Prüfe das
+   ausdrücklich für jeden Upload.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Der Testbetrieb mit zwölf Kolleginnen und Kollegen bringt drei
+Befunde:</p>
+<ul>
+<li>Auf die Frage nach der Homeoffice-Regelung gibt der Agent je nach Formulierung unterschiedliche
+  Antworten – er zieht mal die Fassung von 2021, mal die von 2026 heran, ohne das zu kennzeichnen.</li>
+<li>Auf die Frage „Wie lange ist meine Kündigungsfrist?" antwortet er mit einer allgemeinen
+  gesetzlichen Regel, obwohl das nicht in der Wissensbasis steht und für Einzelfälle falsch ist.</li>
+<li>Drei Personen berichten, sie hätten die Antwort des Agenten ungeprüft an Kunden bzw. an ihr Team
+  weitergegeben, weil sie „so sicher klang".</li>
+</ul>
+<p>Behandle die drei Befunde getrennt. Beim ersten prüfst du ausdrücklich, ob das ein Instruktions-
+oder ein Wissensbasisproblem ist – und ziehe die Konsequenz. Beim zweiten formulierst du eine
+Abgrenzung, die auch dann greift, wenn die Frage anders gestellt wird. Beim dritten entwirfst du
+eine Maßnahme, die nicht nur aus einem Hinweistext besteht.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Geschäftsführung möchte denselben Agenten zusätzlich
+auf der öffentlichen Karriere-Website einbinden, damit Bewerbende Fragen stellen können – „das ist
+ja derselbe Inhalt". Lass dir vom KI-Werkzeug Pro und Contra geben, entscheide begründet und
+<strong>widersprich</strong>, wenn die Argumentation die Unterschiede zwischen angemeldeten Beschäftigten und
+anonymen Besuchern übergeht. Formuliere, was ein Agent für die Karriereseite anders haben müsste –
+oder warum es ein eigener Agent sein muss.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Agenten-Entwurf mit Name, Beschreibung, vollständiger Instruktion, Wissensquellenliste mit
+   Begründung je Quelle und zwei Themen samt Trigger-Phrasen</li>
+<li>Testprotokoll über mindestens acht Fragen mit Antwort und Bewertung, plus ausgefüllte
+   Pflichtkriterien-Checkliste mit Belegzitaten</li>
+<li>Version 2 nach Runde 3 mit getrennter Antwort auf alle drei Befunde</li>
+<li>begründete Entscheidung zur Karriere-Website inklusive der verworfenen Variante</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> dein Testprotokoll für jedes der vier Pflichtkriterien eine konkrete
+Frage und die zugehörige Antwort enthält, Version 2 das Widerspruchsproblem bei der
+Homeoffice-Regelung an der Wissensbasis und nicht nur in der Instruktion löst, und deine Entscheidung
+in Runde 4 benennt, welche konkrete Wissensquelle für anonyme Besucher gesperrt werden müsste.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3. Der erste Befund ist der lehrreichste: Drei widersprüchliche Fassungen
+in der Quelle sind kein Instruktionsproblem. Keine Formulierung der Welt bringt den Agenten dazu,
+verlässlich die gültige Fassung zu wählen, wenn die Quelle selbst nicht sagt, welche gilt. Die
+Reparatur findet in SharePoint statt, nicht in Copilot Studio – veraltete Fassungen archivieren und
+eine Gültigkeitsangabe ergänzen. Der zweite Befund zeigt, dass ein Agent auch ohne Wissensquelle
+antwortet, wenn die Grenze nicht ausdrücklich gezogen ist. Der dritte ist ein Vertrauensproblem und
+braucht eine Maßnahme im Antwortverhalten selbst, etwa eine sichtbare Fundstelle bei jeder Antwort
+und einen ausdrücklichen Hinweis bei verbindlichen Themen – nicht nur eine Schulungsmail.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) die Instruktion beantwortet alle fünf Fragen aus Abschnitt 32.2, enthält
+mindestens fünf tragfähige Nicht-Zuständigkeiten und eine Regel für Nicht-Wissen, und die
+Wissensquellenwahl ist je Quelle mit Blick auf Berechtigungen begründet; (2) das Testprotokoll belegt
+alle vier Pflichtkriterien mit konkreten Fragen und Antworten statt mit Behauptungen; (3) Version 2
+ordnet die drei Befunde richtig zu – Wissensbasis, fehlende Abgrenzung, Vertrauensverhalten – und
+behandelt den ersten nicht als Prompt-Problem; (4) die Entscheidung zur Karriere-Website
+unterscheidet zwischen angemeldeter und anonymer Nutzung, benennt konkret die betroffenen Quellen
+und Aktionen und übernimmt die Annahme „derselbe Inhalt" nicht ungeprüft.</p>
+<p>Lernziel: einen Agenten so entwerfen, dass seine Grenzen genauso belastbar sind wie seine Antworten
+– und erkennen, welche Probleme in der Wissensbasis, in der Instruktion oder im Umgang der Nutzenden
+liegen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel31/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 31 – Dokumentenverarbeitung automatisieren">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 31 – Dokumentenverarbeitung automatisieren
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel33/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 33 – Agent und Workflow verbinden">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 33 – Agent und Workflow verbinden
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

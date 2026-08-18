@@ -1,0 +1,1842 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel34/">
+      
+      
+        <link rel="next" href="../kapitel36/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 35 – Den eigenen Use Case auswählen und schärfen - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-35-den-eigenen-use-case-auswahlen-und-scharfen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Block 7 · Projektarbeit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#351-der-rahmen-dein-projekt-in-sechs-etappen" class="md-nav__link">
+    <span class="md-ellipsis">
+      35.1 Der Rahmen: dein Projekt in sechs Etappen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-auswahlkriterien-fur-ein-machbares-projekt" class="md-nav__link">
+    <span class="md-ellipsis">
+      35.2 Auswahlkriterien für ein machbares Projekt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#353-scope-festlegen-die-nicht-ziele-liste" class="md-nav__link">
+    <span class="md-ellipsis">
+      35.3 Scope festlegen – die Nicht-Ziele-Liste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#354-ist-prozess-kurz-und-ehrlich-aufnehmen" class="md-nav__link">
+    <span class="md-ellipsis">
+      35.4 Ist-Prozess kurz und ehrlich aufnehmen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#355-zielbild-und-messbares-erfolgskriterium" class="md-nav__link">
+    <span class="md-ellipsis">
+      35.5 Zielbild und messbares Erfolgskriterium
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#356-der-projektsteckbrief-als-startdokument" class="md-nav__link">
+    <span class="md-ellipsis">
+      35.6 Der Projektsteckbrief als Startdokument
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="35.6 Der Projektsteckbrief als Startdokument">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#typische-scope-fallen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typische Scope-Fallen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 37 – Umsetzung: bauen, iterieren, testen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 39 – Dokumentation der Projektarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 40 – Präsentation und Ausblick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-35-den-eigenen-use-case-auswahlen-und-scharfen">Kapitel 35 – Den eigenen Use Case auswählen und schärfen<a class="headerlink" href="#kapitel-35-den-eigenen-use-case-auswahlen-und-scharfen" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie dein Projekt in <strong>sechs Etappen</strong> abläuft und was am Ende vorliegen muss</li>
+<li>Nach welchen <strong>Auswahlkriterien</strong> du ein in der verfügbaren Zeit machbares Vorhaben erkennst</li>
+<li>Wie du den <strong>Scope</strong> festlegst – vor allem über eine ausdrückliche <strong>Nicht-Ziele-Liste</strong></li>
+<li>Wie du den <strong>Ist-Prozess</strong> kurz und ehrlich aufnimmst, ohne in eine Prozessanalyse abzugleiten</li>
+<li>Wie aus einem Zielbild ein <strong>messbares Erfolgskriterium</strong> wird</li>
+<li>Wie du den <strong>Projektsteckbrief</strong> als Startdokument aufsetzt und typische Scope-Fallen vermeidest</li>
+</ul>
+</div>
+<hr />
+<h2 id="351-der-rahmen-dein-projekt-in-sechs-etappen">35.1 Der Rahmen: dein Projekt in sechs Etappen<a class="headerlink" href="#351-der-rahmen-dein-projekt-in-sechs-etappen" title="Permanent link">&para;</a></h2>
+<p>Ab hier hörst du auf, Beispiele nachzubauen. Du wählst einen <strong>eigenen Workflow mit KI-Unterstützung</strong>, planst ihn, baust ihn, dokumentierst ihn und stellst ihn vor. Die Kapitel 35 bis 40 sind die Etappen dieses einen Projekts.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Use Case schaerfen]) --&gt; B([Design])
+    B --&gt; C([Bauen und Testen])
+    C --&gt; D([Betrieb und Uebergabe])
+    D --&gt; E([Dokumentation])
+    E --&gt; F([Praesentation])</code></pre>
+<p>Diese Kapitel liefern keine neuen Werkzeugfunktionen mehr. Alles Handwerkliche hast du: Prozessaufnahme und Automatisierungspotenzial (Kap. 17), Trigger, Aktionen und Logik (Kap. 18, 19), Power Automate von der ersten Aktion bis zur Fehlerbehandlung (Kap. 21–28), KI-Bausteine im Flow und eigene Agenten (Kap. 29–33), Ideenbewertung und Steckbrief (Kap. 34). Was jetzt dazukommt, ist <strong>Methodik</strong>: Vorlagen, Reihenfolgen und Qualitätskriterien, mit denen aus einer Idee ein Ergebnis wird, das jemand anders weiterbetreiben kann.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Der häufigste Grund, warum eine Projektarbeit scheitert, ist nicht fehlende Technik. Es ist ein <strong>zu großer oder zu unscharfer Zuschnitt</strong>. Ein kleines, fertiges und dokumentiertes Ergebnis ist deutlich mehr wert als ein großes, halb gebautes.</p>
+</div>
+<hr />
+<h2 id="352-auswahlkriterien-fur-ein-machbares-projekt">35.2 Auswahlkriterien für ein machbares Projekt<a class="headerlink" href="#352-auswahlkriterien-fur-ein-machbares-projekt" title="Permanent link">&para;</a></h2>
+<p>Du hast in Kapitel 34 Ideen bewertet und priorisiert. Diese Bewertung fragt nach <strong>Nutzen, Aufwand, Risiko und Akzeptanz</strong>. Für die Projektarbeit kommt eine zweite, härtere Prüfung dazu: Lässt sich das Vorhaben in der Zeit, die du hast, tatsächlich zu Ende bringen? Fünf Kriterien entscheiden darüber.</p>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>Prüffrage</th>
+<th>Wenn nicht erfüllt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Datenzugriff vorhanden</strong></td>
+<td>Kommst du heute – ohne neue Freigabe – an die Daten und Systeme heran?</td>
+<td>Ersatzquelle wählen, z. B. eine eigene SharePoint-Liste oder Excel-Datei mit Testdaten</td>
+</tr>
+<tr>
+<td><strong>Prozess verstanden</strong></td>
+<td>Kannst du den Ablauf ohne Rückfrage bei Dritten in acht Schritten aufschreiben?</td>
+<td>anderen Prozess wählen oder nur den Teil nehmen, den du selbst ausführst</td>
+</tr>
+<tr>
+<td><strong>Ergebnis prüfbar</strong></td>
+<td>Kannst du bei einem Durchlauf selbst beurteilen, ob das Ergebnis richtig ist?</td>
+<td>Aufgabe zu unscharf, engeren Ausschnitt suchen</td>
+</tr>
+<tr>
+<td><strong>Rechtlich unkritisch</strong></td>
+<td>Keine Bewerberauswahl, keine Bonitätsentscheidung, keine Gesundheitsdaten (Kap. 4, Kap. 14)</td>
+<td>Use Case wechseln oder auf einen reinen Entwurfsschritt mit Freigabe reduzieren</td>
+</tr>
+<tr>
+<td><strong>Kein Wartezustand durch Dritte</strong></td>
+<td>Kommst du voran, ohne auf eine Genehmigung, eine Lizenz oder eine IT-Einrichtung zu warten?</td>
+<td>Vorhaben so umbauen, dass der wartende Teil ein Nicht-Ziel wird</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>„Die IT richtet mir bis nächste Woche den Zugang ein" ist der klassische Projektkiller. Solange ein Zugang nicht existiert, ist er <strong>nicht</strong> Teil deines Plans. Baue dein Projekt so, dass es mit den Zugängen läuft, die du <strong>heute</strong> hast – und notiere den fehlenden Zugang als Annahme (Kap. 36).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Der Machbarkeits-Schnelltest</p>
+<p>Beantworte alle fünf Prüffragen mit Ja, Teilweise oder Nein. Ein einziges Nein bei Datenzugriff, Rechtslage oder Fremdabhängigkeit reicht aus, um die Idee für dieses Projekt zu verwerfen – nicht für immer, aber für jetzt. Zwei „Teilweise" sind ein Hinweis, den Zuschnitt zu verkleinern.</p>
+</div>
+<hr />
+<h2 id="353-scope-festlegen-die-nicht-ziele-liste">35.3 Scope festlegen – die Nicht-Ziele-Liste<a class="headerlink" href="#353-scope-festlegen-die-nicht-ziele-liste" title="Permanent link">&para;</a></h2>
+<p><strong>Scope</strong> heißt: Was gehört zum Projekt und was ausdrücklich nicht. Der zweite Teil ist der wichtigere. Ohne aufgeschriebene Nicht-Ziele wächst ein Vorhaben während der Umsetzung immer weiter – jeder gute Zusatzwunsch klingt einzeln vernünftig.</p>
+<table>
+<thead>
+<tr>
+<th>Im Scope (Beispiel Rechnungseingang)</th>
+<th>Ausdrücklich nicht im Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mails an ein Sammelpostfach als Auslöser</td>
+<td>andere Eingangskanäle wie Post oder Portal-Downloads</td>
+</tr>
+<tr>
+<td>PDF-Anhänge auf SharePoint ablegen</td>
+<td>Ablösung der bestehenden Ordnerstruktur</td>
+</tr>
+<tr>
+<td>KI liest Rechnungsnummer, Betrag, Lieferant aus</td>
+<td>Kontierungsvorschlag oder Buchung im Fachsystem</td>
+</tr>
+<tr>
+<td>Eintrag in einer Prüfliste mit Status</td>
+<td>Anbindung an das ERP-System</td>
+</tr>
+<tr>
+<td>Benachrichtigung an die zuständige Person</td>
+<td>automatische Freigabe ohne menschliche Prüfung</td>
+</tr>
+</tbody>
+</table>
+<p>Eine Nicht-Ziel-Zeile hat immer zwei Teile: <strong>was</strong> nicht gemacht wird und <strong>warum</strong>. „Keine ERP-Anbindung, weil kein Zugang und kein Premium-Connector verfügbar ist" ist eine Entscheidung. „Keine ERP-Anbindung" allein ist eine Lücke, die dir später jemand als Versäumnis vorhält.</p>
+<div class="admonition example">
+<p class="admonition-title">Ein zu großes Vorhaben auf einen sinnvollen ersten Schnitt reduzieren</p>
+<p>Ausgangsidee: „Wir automatisieren die komplette Urlaubsverwaltung inklusive Vertretungsregelung, Kalendersynchronisation und Resturlaubsberechnung."</p>
+<p>Erster Schnitt in vier Reduktionsschritten:</p>
+<ol>
+<li><strong>Ein Kanal statt aller:</strong> nur Anträge über ein Microsoft Form, nicht per Mail und nicht per Zuruf.</li>
+<li><strong>Ein Fall statt aller:</strong> nur reguläre Urlaubsanträge, keine Sonderurlaube, keine Krankmeldungen.</li>
+<li><strong>Ein Schritt weniger:</strong> Resturlaubsberechnung bleibt in der bestehenden Excel-Datei, der Flow liest sie nur.</li>
+<li><strong>Mensch bleibt im Entscheidungspunkt:</strong> der Flow erzeugt die Genehmigungsanfrage, die Führungskraft entscheidet.</li>
+</ol>
+<p>Übrig bleibt ein Projekt mit Trigger, Datenquelle, KI-Zusammenfassung des Antrags, Genehmigung und Rückmeldung – in der verfügbaren Zeit baubar und prüfbar.</p>
+</div>
+<hr />
+<h2 id="354-ist-prozess-kurz-und-ehrlich-aufnehmen">35.4 Ist-Prozess kurz und ehrlich aufnehmen<a class="headerlink" href="#354-ist-prozess-kurz-und-ehrlich-aufnehmen" title="Permanent link">&para;</a></h2>
+<p>Die Prozessaufnahme selbst kennst du aus Kapitel 17. Für die Projektarbeit gilt eine bewusst enge Fassung: <strong>maximal eine Seite</strong>. Du brauchst keine vollständige Prozesslandkarte, sondern die Grundlage, um später den Nutzen belegen zu können.</p>
+<p>Halte fünf Dinge fest: den Auslöser, die Schritte in der Reihenfolge, wer sie ausführt, wo ein Medienbruch liegt (Mail zu Excel, Papier zu System), und wie lange ein Durchlauf <strong>realistisch</strong> dauert.</p>
+<div class="admonition warning">
+<p class="admonition-title">Ehrlich heißt: auch das Unangenehme</p>
+<p>Notiere die Stellen, an denen der Prozess heute schlecht läuft, so wie sie sind: „In etwa jedem fünften Fall fehlt eine Angabe, dann geht eine Rückfrage-Mail raus und der Fall liegt zwei Tage." Wer den Ist-Zustand schönt, bekommt später ein Zielbild, das den echten Schmerz nicht trifft – und beim Vorstellen des Ergebnisses keine Zahl, mit der man den Nutzen zeigen kann (Kap. 40).</p>
+</div>
+<p>Für die Zeitmessung reicht eine <strong>ehrliche Schätzung mit Herkunft</strong>: „acht Minuten pro Fall, gemessen an fünf Fällen am Dienstag" ist belastbar. „ungefähr eine halbe Stunde, gefühlt" ist es nicht – und du wirst diese Zahl in der Nutzenrechnung brauchen.</p>
+<hr />
+<h2 id="355-zielbild-und-messbares-erfolgskriterium">35.5 Zielbild und messbares Erfolgskriterium<a class="headerlink" href="#355-zielbild-und-messbares-erfolgskriterium" title="Permanent link">&para;</a></h2>
+<p>Das <strong>Zielbild</strong> beschreibt den Soll-Zustand in drei bis fünf Sätzen aus Sicht der Nutzenden: Was passiert nach dem Auslöser, was übernimmt der Flow, was entscheidet weiterhin ein Mensch, was kommt am Ende heraus.</p>
+<p>Das <strong>Erfolgskriterium</strong> ist etwas anderes: ein einzelner, überprüfbarer Satz, an dem du am Ende selbst feststellen kannst, ob das Projekt sein Ziel erreicht hat.</p>
+<table>
+<thead>
+<tr>
+<th>Vage formuliert</th>
+<th>Messbar formuliert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Der Prozess wird schneller."</td>
+<td>„Ein Fall benötigt statt 8 Minuten Handarbeit maximal 2 Minuten Prüfzeit."</td>
+</tr>
+<tr>
+<td>„Die KI klassifiziert zuverlässig."</td>
+<td>„Bei 20 Testfällen ist die Kategorie in mindestens 17 Fällen korrekt."</td>
+</tr>
+<tr>
+<td>„Weniger Fehler."</td>
+<td>„Kein Fall bleibt länger als 24 Stunden unbearbeitet liegen, gemessen über 10 Durchläufe."</td>
+</tr>
+<tr>
+<td>„Die Kollegen sind entlastet."</td>
+<td>„Niemand muss Daten aus der Mail von Hand in die Liste übertragen."</td>
+</tr>
+</tbody>
+</table>
+<p>Ein gutes Erfolgskriterium hat drei Bestandteile: eine <strong>Größe</strong> (Zeit, Anzahl, Trefferquote), einen <strong>Zielwert</strong> und eine <strong>Messmethode</strong>, die du selbst durchführen kannst. Ohne Messmethode ist der Zielwert nur eine Behauptung.</p>
+<div class="admonition info">
+<p class="admonition-title">Ein Kriterium, nicht fünf</p>
+<p>Nimm genau ein Erfolgskriterium als Hauptmaßstab. Weitere Wirkungen kannst du als Nebeneffekte notieren. Fünf gleichrangige Kriterien führen dazu, dass am Ende drei erfüllt sind und niemand sagen kann, ob das Projekt erfolgreich war.</p>
+</div>
+<hr />
+<h2 id="356-der-projektsteckbrief-als-startdokument">35.6 Der Projektsteckbrief als Startdokument<a class="headerlink" href="#356-der-projektsteckbrief-als-startdokument" title="Permanent link">&para;</a></h2>
+<p>Der Steckbrief aus Kapitel 34 diente dem Vergleich mehrerer Ideen. Jetzt wird er zum <strong>Startdokument deines Projekts</strong>: eine Seite, die du in den folgenden Etappen fortschreibst und die später zum Kern deiner Dokumentation wird (Kap. 39).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code>PROJEKTSTECKBRIEF
+
+Projektname:        [Kurzname, unter dem alle das Projekt kennen]
+Bereich / Prozess:  [Abteilung und betroffener Prozess]
+Verantwortlich:     [Name] , Vertretung: [Name]
+
+Problem heute:      [2 bis 3 Saetze, was konkret weh tut]
+Ist-Aufwand:        [Zeit pro Fall] x [Faelle pro Woche] , Quelle: [wie gemessen]
+
+Zielbild:           [3 bis 5 Saetze Soll-Zustand aus Nutzersicht]
+Erfolgskriterium:   [Groesse] erreicht [Zielwert] , gemessen durch [Messmethode]
+
+Im Scope:
+  - [Punkt 1]
+  - [Punkt 2]
+  - [Punkt 3]
+Nicht im Scope:
+  - [Nicht-Ziel 1] , weil [Grund]
+  - [Nicht-Ziel 2] , weil [Grund]
+  - [Nicht-Ziel 3] , weil [Grund]
+
+Datenquellen:       [Liste] , Zugang vorhanden: [ja / nein]
+KI-Anteil:          [welche Aufgabe die KI uebernimmt]
+Menschlicher Entscheidungspunkt: [wo genau wird freigegeben]
+Rechtlicher Hinweis: [personenbezogene Daten ja/nein, Kap. 4 geprueft]
+
+Offene Annahmen:    [Annahme 1] , [Annahme 2]
+Groesstes Risiko:   [Risiko] , Gegenmassnahme: [Massnahme]
+</code></pre></div></td></tr></table></div>
+<h3 id="typische-scope-fallen">Typische Scope-Fallen<a class="headerlink" href="#typische-scope-fallen" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Falle</th>
+<th>Woran du sie erkennst</th>
+<th>Gegenmittel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zu groß</strong></td>
+<td>Der Ist-Prozess hat mehr als zehn Schritte oder mehr als drei Beteiligte</td>
+<td>einen Teilprozess herausschneiden, Rest als Nicht-Ziel</td>
+</tr>
+<tr>
+<td><strong>Zu vage</strong></td>
+<td>Das Erfolgskriterium enthält kein Substantiv, das man zählen kann</td>
+<td>Größe, Zielwert und Messmethode ergänzen</td>
+</tr>
+<tr>
+<td><strong>Fremde Freigaben</strong></td>
+<td>Im Plan steht „sobald genehmigt" oder „wenn der Betriebsrat zustimmt"</td>
+<td>Vorhaben auf den freigabefreien Teil reduzieren</td>
+</tr>
+<tr>
+<td><strong>Kein Datenzugriff</strong></td>
+<td>Der Connector wird dir nicht angezeigt oder du hast keine Leserechte</td>
+<td>Ersatzquelle mit Testdaten aufbauen, Anbindung als Ausblick</td>
+</tr>
+<tr>
+<td><strong>Kein Prüfmaßstab</strong></td>
+<td>Du kannst nicht sagen, wann ein Durchlauf „richtig" war</td>
+<td>einen Ausschnitt wählen, dessen Ergebnis du fachlich beurteilen kannst</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Selbstprüfung vor dem Weiterarbeiten</p>
+<p>Lies deinen Steckbrief einer Person vor, die den Prozess nicht kennt. Kann sie danach in eigenen Worten sagen, was der Flow tun soll, was er nicht tun soll und woran man Erfolg erkennt, ist der Zuschnitt tragfähig. Stockt sie an einer Stelle, ist genau dort dein Scope noch unscharf.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Die Kapitel 35 bis 40 sind die <strong>sechs Etappen eines eigenen Projekts</strong> – Methodik und Vorlagen, keine neuen Werkzeugfunktionen.</li>
+<li>Fünf <strong>Auswahlkriterien</strong> entscheiden über Machbarkeit: Datenzugriff, verstandener Prozess, prüfbares Ergebnis, unkritische Rechtslage, keine Fremdabhängigkeit.</li>
+<li>Scope heißt vor allem <strong>Nicht-Ziele aufschreiben</strong> – jeweils mit Begründung, sonst wirkt es später wie eine Lücke.</li>
+<li>Der <strong>Ist-Prozess</strong> wird kurz und ehrlich aufgenommen, mit einer Zeitangabe, deren Herkunft du benennen kannst.</li>
+<li>Ein <strong>Erfolgskriterium</strong> braucht Größe, Zielwert und Messmethode – und es gibt genau eines davon.</li>
+<li>Der <strong>Projektsteckbrief</strong> ist das Startdokument, das du in allen weiteren Etappen fortschreibst.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Machbarkeits-Schnelltest für deine Projektidee</summary>
+<p>Notiere deine bevorzugte Projektidee in einem Satz. Prüfe sie danach gegen die fünf
+Auswahlkriterien und vergib jeweils <strong>Ja</strong>, <strong>Teilweise</strong> oder <strong>Nein</strong>:</p>
+<ol>
+<li>Datenzugriff heute vorhanden</li>
+<li>Prozess verstanden, ohne Rückfrage bei Dritten beschreibbar</li>
+<li>Ergebnis eines Durchlaufs von dir selbst prüfbar</li>
+<li>Rechtlich unkritisch</li>
+<li>Kein Wartezustand durch Dritte</li>
+</ol>
+<p>Schreibe zum Schluss einen Satz: Bleibst du bei der Idee, verkleinerst du sie, oder
+wechselst du?</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Sei bei Kriterium 1 streng. „Ich könnte den Zugang beantragen" ist ein Nein, nicht ein
+Teilweise.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) alle fünf Kriterien sind bewertet, nicht nur die bequemen;
+(2) jede Bewertung hat eine kurze Begründung mit einem konkreten Bezug (Systemname,
+Postfach, Liste); (3) die Schlussfolgerung passt zur Bewertung – ein Nein bei Datenzugriff,
+Rechtslage oder Fremdabhängigkeit führt zu Verkleinern oder Wechseln.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>Bewertung</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Datenzugriff</td>
+<td>Ja</td>
+<td>Sammelpostfach und SharePoint-Liste habe ich selbst</td>
+</tr>
+<tr>
+<td>Prozess verstanden</td>
+<td>Ja</td>
+<td>ich führe ihn seit zwei Jahren selbst aus</td>
+</tr>
+<tr>
+<td>Ergebnis prüfbar</td>
+<td>Ja</td>
+<td>ich sehe sofort, ob Betrag und Lieferant stimmen</td>
+</tr>
+<tr>
+<td>Rechtlich unkritisch</td>
+<td>Teilweise</td>
+<td>Lieferantendaten sind Firmendaten, aber Ansprechpartner-Namen sind personenbezogen</td>
+</tr>
+<tr>
+<td>Keine Fremdabhängigkeit</td>
+<td>Nein</td>
+<td>ERP-Anbindung bräuchte einen Premium-Connector</td>
+</tr>
+</tbody>
+</table>
+<p>Schlussfolgerung: „Ich bleibe bei der Idee, streiche aber die ERP-Anbindung und ersetze sie
+durch eine Prüfliste in SharePoint." Genau diese Reduktion ist das Lernziel – nicht ein
+Fünffach-Ja.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Nicht-Ziele-Liste für dein Projekt</summary>
+<p>Schreibe für dein Projekt eine Nicht-Ziele-Liste mit <strong>mindestens fünf Einträgen</strong>.</p>
+<ol>
+<li>Jeder Eintrag hat die Form: „Nicht Teil des Projekts ist [X], weil [Grund]."</li>
+<li>Mindestens ein Nicht-Ziel muss ein <strong>Wunsch sein, der fachlich sinnvoll wäre</strong> – du
+   schließt ihn nur aus Zeit- oder Zugangsgründen aus.</li>
+<li>Mindestens ein Nicht-Ziel muss eine <strong>Entscheidung sein, die bewusst beim Menschen
+   bleibt</strong> (kein automatischer Abschluss ohne Prüfung).</li>
+<li>Ergänze zu zwei Nicht-Zielen jeweils einen Satz, unter welcher Bedingung du sie später
+   nachziehen würdest.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Denk an die Sätze, die im Gespräch mit Kollegen fallen: „Könnte der Flow nicht auch noch …".
+Genau diese Sätze gehören auf die Liste, bevor sie dein Projekt aufblähen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) mindestens fünf Einträge, jeder mit Begründung; (2) die Begründungen
+benennen einen echten Grund (Zugang, Zeit, Recht, Verantwortung) und nicht nur „zu
+aufwendig"; (3) mindestens ein bewusst beim Menschen bleibender Entscheidungspunkt ist
+enthalten; (4) die Nachzieh-Bedingungen sind überprüfbar formuliert.</p>
+<p>Beispiel für ein gutes Ergebnis (Projekt: Rechnungseingang vorsortieren):</p>
+<ul>
+<li>Nicht Teil des Projekts ist die Buchung im ERP, weil kein Zugang und kein Premium-Connector
+  verfügbar ist. Nachziehen, sobald die IT einen Lesezugang bereitstellt.</li>
+<li>Nicht Teil des Projekts ist die automatische Freigabe von Rechnungen, weil die
+  Zahlungsfreigabe eine Verantwortungsentscheidung ist und beim Menschen bleibt.</li>
+<li>Nicht Teil des Projekts sind Papierrechnungen, weil dafür ein Scan-Prozess nötig wäre.</li>
+<li>Nicht Teil des Projekts ist die Ablösung der bestehenden Ordnerstruktur, weil daran drei
+  weitere Abteilungen hängen.</li>
+<li>Nicht Teil des Projekts sind Gutschriften, weil sie eine andere Prüflogik brauchen.
+  Nachziehen, wenn der Normalfall über zehn Durchläufe stabil läuft.</li>
+</ul>
+<p>Schwach wäre: „Kein ERP, keine Gutschriften, kein Papier" – ohne Gründe ist das eine Lücke,
+keine Entscheidung.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Erfolgskriterium messbar machen – mit KI als Sparringspartner</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li>Formuliere dein Erfolgskriterium zunächst selbst, so gut du kannst.</li>
+<li>Gib deinem KI-Werkzeug folgenden Auftrag:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Ich beschreibe dir ein Erfolgskriterium fuer ein kleines
+Automatisierungsprojekt. Pruefe es auf drei Punkte: Enthaelt es eine
+zaehlbare Groesse, einen Zielwert und eine Messmethode, die eine einzelne
+Person selbst durchfuehren kann? Nenne fuer jeden fehlenden Punkt eine
+konkrete Ergaenzung und formuliere zwei Alternativfassungen.
+Kriterium: [dein Kriterium]
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Prüfe die Vorschläge kritisch: Verwirf jede Fassung, deren Messmethode du in der
+   verfügbaren Zeit <strong>nicht</strong> wirklich durchführen kannst.</li>
+<li>Schreibe die Endfassung auf und ergänze in einem Satz, <strong>wann und wie</strong> du die Messung
+   durchführen wirst.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die KI liefert gern Kennzahlen, die gut klingen und niemand erheben kann („Zufriedenheit der
+Fachabteilung steigt um 20 Prozent"). Deine Aufgabe ist das Aussortieren: Was kannst du mit
+einer Stoppuhr, einer Liste von Testfällen oder dem Ausführungsverlauf des Flows selbst
+nachweisen?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) die Endfassung enthält zählbare Größe, Zielwert und Messmethode;
+(2) die Messmethode ist ohne fremde Hilfe durchführbar; (3) mindestens ein KI-Vorschlag wurde
+begründet verworfen; (4) es ist genau ein Hauptkriterium, keine Sammlung.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<p>Erste Fassung: „Der Rechnungseingang läuft schneller und mit weniger Fehlern."</p>
+<p>Endfassung: „Für 15 Testrechnungen liest der Flow Rechnungsnummer, Betrag und Lieferant in
+mindestens 13 Fällen korrekt aus, und die verbleibende Prüfzeit pro Rechnung liegt unter
+2 Minuten. Messung: 15 vorbereitete Testrechnungen einmal durchlaufen lassen, Ergebnisse in
+der Testfall-Tabelle abhaken, Prüfzeit bei fünf Fällen mit der Stoppuhr nehmen."</p>
+<p>Verworfener KI-Vorschlag mit Begründung: „Fehlerquote im Rechnungseingang sinkt um 30 Prozent"
+– die bisherige Fehlerquote ist nirgends erfasst, also gibt es keinen Ausgangswert, gegen den
+gemessen werden könnte.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Projektetappe 1 – Use Case festlegen und Steckbrief erstellen</summary>
+<p><strong>Projektetappe:</strong> Dies ist die erste Etappe deines eigenen Projekts. Am Ende dieses
+Workshops steht fest, <strong>welchen</strong> Workflow du bauen wirst, wie er zugeschnitten ist und woran
+du am Ende Erfolg messen wirst. Alles Weitere baut darauf auf: das Design (Kap. 36), der Bau
+(Kap. 37), Betrieb und Übergabe (Kap. 38), Dokumentation (Kap. 39) und Präsentation
+(Kap. 40). Nimm dir die Zeit hier – ein unscharfer Zuschnitt kostet später ein Vielfaches.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen fuer dein Projekt:
+Ein Prozess aus deinem eigenen Arbeitsumfeld.
+Werkzeuge: Power Automate, Microsoft 365, ein KI-Baustein.
+Falls du keine Umgebung hast: Zapier oder Make im kostenfreien Tarif,
+oder ein vollstaendiger Papier-Entwurf mit Testdaten.
+Zeitbudget fuer die gesamte Umsetzung: wenige Arbeitstage, nicht Wochen.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Drei Kandidaten und ein Ist-Prozess.</strong> Sammle <strong>drei</strong> Kandidaten aus deinem
+Arbeitsumfeld, jeweils in einem Satz als Tätigkeit formuliert. Nutze dafür deine Bewertung aus
+Kapitel 34, wenn sie vorliegt. Prüfe alle drei mit dem Machbarkeits-Schnelltest (fünf
+Kriterien, jeweils Ja/Teilweise/Nein). Wähle einen Kandidaten aus und nimm für diesen den
+<strong>Ist-Prozess auf maximal einer Seite</strong> auf: Auslöser, Schritte in Reihenfolge, ausführende
+Rollen, Medienbrüche, Dauer pro Durchlauf mit Angabe, woher die Zahl kommt.</p>
+<p><strong>Runde 2 – Zuschnitt gegen vier Pflichtkriterien.</strong> Erstelle Scope-Liste und Nicht-Ziele und
+prüfe dein Ergebnis gegen <strong>alle vier</strong> Kriterien. Lass dir von deinem KI-Werkzeug
+Gegenfragen stellen, schließe die Lücken aber selbst:</p>
+<ol>
+<li>Die Nicht-Ziele-Liste hat <strong>mindestens fünf</strong> Einträge, jeder mit Begründung.</li>
+<li>Das Erfolgskriterium enthält <strong>Größe, Zielwert und Messmethode</strong> und ist ohne fremde Hilfe
+   messbar.</li>
+<li>Für <strong>jede</strong> Datenquelle ist notiert, ob du heute Zugriff hast – ohne neue Freigabe.</li>
+<li>Mindestens <strong>ein</strong> menschlicher Entscheidungspunkt ist benannt, an dem bewusst nicht
+   automatisiert wird, inklusive Begründung.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Wähle die Variante, die auf dein Projekt zutrifft, und
+arbeite sie durch:</p>
+<ul>
+<li><strong>Variante A:</strong> Eine deiner Datenquellen fällt weg – der Connector wird dir nicht angezeigt
+  oder die Rechte fehlen. Baue eine Ersatzquelle mit Testdaten auf (SharePoint-Liste,
+  Excel-Datei) und passe Scope, Nicht-Ziele und Erfolgskriterium an.</li>
+<li><strong>Variante B:</strong> Beim Aufschreiben des Ist-Prozesses stellst du fest, dass der Ablauf zwei
+  Sonderfälle hat, die zusammen fast die Hälfte der Fälle ausmachen. Entscheide, ob du sie
+  einschließt oder ausschließt – und formuliere die Folge für deinen Nutzennachweis.</li>
+</ul>
+<p>Dokumentiere die Änderung als <strong>Scope-Änderung mit Datum und Grund</strong>, nicht als stille
+Korrektur.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Beschreibe deinem KI-Werkzeug alle drei Kandidaten
+aus Runde 1 und lass dir eine Empfehlung mit Begründung geben. Die Empfehlung wird
+vermutlich den Kandidaten mit dem größten Nutzen nennen. Entscheide danach selbst und
+<strong>widersprich der Empfehlung begründet</strong>, wenn der größte Nutzen mit dem größten Risiko oder
+der größten Abhängigkeit zusammenfällt. Halte in fünf bis acht Sätzen fest: gewählter
+Kandidat, verworfene Alternative, Ausschlaggrund, und was du aufgibst, indem du klein
+anfängst.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Kandidatenliste mit ausgefülltem Machbarkeits-Schnelltest für alle drei Ideen</li>
+<li>Ist-Prozess auf maximal einer Seite, mit Dauer und Herkunft der Zahl</li>
+<li>ausgefüllter Projektsteckbrief inklusive Scope, Nicht-Ziele-Liste und Erfolgskriterium</li>
+<li>Entscheidungsnotiz aus Runde 4 plus dokumentierte Scope-Änderung aus Runde 3</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> alle vier Pflichtkriterien erfüllt sind, dein Steckbrief keine
+Zeile mehr mit „muss noch geklärt werden" bei den Datenquellen enthält, und du das Projekt in
+drei Sätzen so erklären kannst, dass eine prozessfremde Person Zweck, Grenze und Erfolgsmaß
+wiedergeben kann.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert steckt in Runde 3 und 4. Runde 1 fühlt sich produktiv an, entscheidet aber wenig.
+In Runde 3 zeigt sich, ob dein Zuschnitt Reserve hat: Wer nur einen Plan hat und keinen
+Ersatzweg, verliert Tage. In Runde 4 geht es um die unbequeme Erkenntnis, dass der beste
+Kandidat für ein Projekt mit engem Zeitbudget selten der mit dem größten Nutzen ist. Formuliere
+ausdrücklich, was du aufgibst – das ist keine Schwäche, sondern der Beleg dafür, dass du
+bewusst entschieden hast.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) alle drei Kandidaten sind gegen die fünf Auswahlkriterien geprüft und
+die Auswahl folgt nachvollziehbar aus dieser Prüfung; (2) alle vier Pflichtkriterien aus
+Runde 2 sind erfüllt, insbesondere ein Erfolgskriterium mit zählbarer Größe, Zielwert und
+selbst durchführbarer Messmethode sowie eine Nicht-Ziele-Liste mit begründeten Einträgen;
+(3) die Komplikation aus Runde 3 führt zu einer dokumentierten Scope-Änderung mit Datum und
+Grund, nicht zu einem stillen Weglassen oder zum Aufgeben des Projekts; (4) die
+Entscheidungsnotiz wägt Nutzen gegen Risiko und Abhängigkeit ab, benennt die verworfene
+Alternative und übernimmt die KI-Empfehlung nicht ungeprüft.</p>
+<p>Lernziel: Aus einer Idee ein tragfähig zugeschnittenes Vorhaben machen – mit ausdrücklichen
+Nicht-Zielen, einem messbaren Erfolgskriterium und einer begründeten Entscheidung gegen den
+verlockenderen, aber riskanteren Kandidaten.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel34/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel36/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

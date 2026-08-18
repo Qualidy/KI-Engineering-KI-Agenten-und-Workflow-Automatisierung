@@ -1,0 +1,86 @@
+title: Projektetappe 5 – Dokumentation fertigstellen
+difficulty: 4
+question: |
+  **Projektetappe:** Fünfte Etappe. Grundlage sind Steckbrief (Kap. 35), Design und Testfälle
+  (Kap. 36), Bau- und Testprotokoll (Kap. 37) und Betriebsblatt (Kap. 38). Am Ende dieses
+  Workshops liegt die vollständige Projektdokumentation vor – das Dokument, mit dem eine andere
+  Person dein Projekt übernehmen könnte.
+
+  ```text
+  Rueckfallebenen:
+  Einzelne Artefakte fehlen -> schreibe den Abschnitt mit dem vorhandenen Wissen
+    und markiere Fehlendes ausdruecklich als offenen Punkt in Abschnitt 8.
+  Flow ist unvollstaendig -> dokumentiere gebauten Stand, geplanten Stand und
+    Blocker getrennt. Abschnitt 9 bewertet dann den erreichten Stand.
+  Keine Messwerte vorhanden -> schreibe, welche Messung geplant war und warum
+    sie nicht moeglich war. Erfinde keine Zahlen.
+  ```
+
+  ---
+
+  **Runde 1 – Rohfassung aller neun Abschnitte.** Führe deine bestehenden Artefakte in der
+  Doku-Gliederung zusammen und schreibe alle neun Abschnitte in einer Rohfassung: Ziel und Nutzen,
+  Ist und Soll, Architektur und Flow-Beschreibung, KI-Bausteine mit Prompts im Wortlaut,
+  Datenquellen und Berechtigungen, Testnachweis, Betriebshinweise, Grenzen und offene Punkte,
+  Bewertung. Nutze dabei ein KI-Werkzeug zum Formulieren, mit der Anweisung, keine Inhalte zu
+  ergänzen und Lücken zu markieren.
+
+  **Runde 2 – Prüfung gegen vier Pflichtkriterien.** Deine Doku muss **alle vier** Kriterien
+  erfüllen:
+
+  1. Für **jede** KI-Stelle steht der Prompt im vollständigen Wortlaut, mit erwartetem
+     Ausgabeformat und dem Verhalten bei unklarer Antwort.
+  2. Der **Testnachweis** enthält die Testfall-Tabelle mit Ergebnis und Datum sowie die
+     Stichprobe des KI-Anteils mit Trefferquote und benannter Fehlerrichtung.
+  3. Abschnitt 8 nennt **mindestens fünf** Grenzen oder offene Punkte, jeweils mit Begründung –
+     einschließlich der bewusst nicht automatisierten Entscheidungen.
+  4. Jede Zahl und jeder Feldname im Dokument ist gegen Werkzeug oder Protokoll geprüft; keine
+     Aussage stammt ungeprüft aus einem KI-Entwurf.
+
+  **Runde 3 – Der Lesetest als Komplikation.** Gib deine Doku einer Person, die dein Projekt nicht
+  kennt – oder simuliere den Test, indem du deinem KI-Werkzeug **nur** die Doku gibst und es
+  auffordert, den Flow aus der Beschreibung nachzubauen und alle Stellen zu nennen, an denen es
+  raten müsste. Erwarte unangenehme Ergebnisse: fehlende Feldnamen, unklare
+  Verzweigungsbedingungen, ein Prompt ohne Kontext. Arbeite **jede** genannte Ratestelle ein. Wenn
+  du dabei feststellst, dass eine Angabe fehlt, weil du sie nie festgehalten hast, hole sie jetzt
+  am Werkzeug nach – nicht aus der Erinnerung.
+
+  **Runde 4 – Bewertung und Entscheidung unter Abwägung.** Schreibe Abschnitt 9 fertig: Kriterium
+  zitieren, Messweg, Ergebnis, Einordnung, Nutzenrechnung mit offenem Rechenweg, Rückblick. Lass
+  dir von deinem KI-Werkzeug helfen, den Nutzen darzustellen – und erwarte den Vorschlag,
+  günstig zu runden, den Effekt hochzurechnen („bei 500 Fällen im Jahr wären das …") oder
+  Zielverfehlungen als „im Wesentlichen erreicht" zu formulieren. **Widersprich mindestens einer
+  dieser Verschönerungen begründet** und formuliere die ehrliche Fassung. Halte in drei bis fünf
+  Sätzen fest, welche Verschönerung du abgelehnt hast und welchen Schaden sie angerichtet hätte.
+
+  **Deliverable:**
+
+  1. vollständige Dokumentation mit allen neun Abschnitten, sechs bis zwölf Seiten
+  2. Testnachweis und KI-Baustein-Abschnitt mit Prompts im Wortlaut
+  3. Protokoll des Lesetests aus Runde 3: genannte Ratestellen und wie du sie behoben hast
+  4. Abschnitt 9 mit Bewertung, offener Nutzenrechnung und der Notiz zur abgelehnten
+     Verschönerung aus Runde 4
+
+  **Fertig bist du erst, wenn** aus dem Lesetest keine offene Ratestelle mehr übrig ist, jede Zahl
+  im Dokument auf eine Messung oder ein Protokoll zurückführbar ist, Abschnitt 8 mindestens fünf
+  begründete Grenzen enthält, und die Bewertung in Abschnitt 9 auch dann nachvollziehbar ist, wenn
+  das Erfolgskriterium verfehlt wurde.
+tip: |
+  Der Lernwert steckt in Runde 3 und 4. Die Rohfassung schreibt sich mit KI-Unterstützung schnell –
+  und liest sich für dich vollständig, weil du das Fehlende im Kopf ergänzt. Erst der Lesetest zeigt,
+  was wirklich im Dokument steht. Runde 4 trifft eine Haltungsfrage: Eine schön gerechnete
+  Nutzenzahl hält bis zur ersten kritischen Rückfrage (Kap. 40), eine belegte Zahl hält immer. Und
+  eine ehrlich benannte Zielverfehlung mit erklärter Ursache wirkt kompetenter als ein
+  geschöntes „erreicht".
+solution: |
+  Bewertungskriterien: (1) alle neun Abschnitte sind inhaltlich gefüllt und die Zielgruppen finden
+  ihren Teil – vorne fachlich lesbar, in der Mitte technisch, hinten betrieblich; (2) alle vier
+  Pflichtkriterien sind erfüllt, insbesondere Prompts im Wortlaut, ein Testnachweis mit Datum und
+  Fehlerrichtung sowie fünf begründete Grenzen; (3) der Lesetest aus Runde 3 ist dokumentiert und
+  jede Ratestelle nachweislich behoben, wobei fehlende Angaben am Werkzeug nachgeholt und nicht aus
+  der Erinnerung ergänzt wurden; (4) Abschnitt 9 zitiert das Erfolgskriterium, legt Messweg und
+  Rechenweg offen und weist eine begründet abgelehnte Verschönerung nach.
+
+  Lernziel: Eine Dokumentation schreiben, mit der eine fremde Person das Projekt übernehmen kann –
+  und dabei die Versuchung zurückweisen, Lücken mit plausiblen Formulierungen statt mit Fakten zu
+  füllen.

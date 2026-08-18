@@ -1,0 +1,48 @@
+title: Feldplan für den Rechnungseingang
+difficulty: 2
+question: |
+  Der Ablauf aus Kapitel 17 soll aus einer eingehenden Rechnungsmail eine Zeile in einer
+  Liste erzeugen. Der Trigger liefert diese Felder:
+
+  ```text
+  Absender: buchhaltung@papierwelt-gmbh.de
+  Betreff: Rechnung R-2026-4711 / Bestellung 88231
+  Empfangszeit: 2026-03-04T00:42:11Z
+  Anhang 1: Rechnung_4711.pdf
+  Textkoerper: Sehr geehrte Damen und Herren, anbei erhalten Sie
+    unsere Rechnung ueber 1.250,00 EUR. Zahlbar innerhalb 14 Tagen.
+  ```
+
+  Die Liste hat die Spalten `Lieferant`, `Rechnungsnummer`, `Bestellnummer`,
+  `Eingangsdatum`, `Betrag`, `Status`.
+
+  1. Erstelle eine Mapping-Tabelle: `Zielspalte | Herkunft | Datentyp | Umformung nötig`.
+  2. Markiere jede Spalte, deren Wert **nicht sicher** aus dem Trigger zu gewinnen ist.
+  3. Nenne zwei Datentyp-Probleme, die in diesem Beispiel konkret drohen.
+tip: |
+  Schau genau auf die Empfangszeit und auf den Betrag. Beide sehen harmlos aus und sind
+  die beiden Stellen, an denen dieser Ablauf in der Praxis falsche Ergebnisse liefert,
+  ohne eine Fehlermeldung zu erzeugen.
+solution: |
+  | Zielspalte | Herkunft | Datentyp | Umformung |
+  |---|---|---|---|
+  | Lieferant | Absenderdomain | Text | Domain in Klarnamen, besser über Nachschlageliste |
+  | Rechnungsnummer | Betreff | Text | aus dem Betreff herausschneiden, Format unsicher |
+  | Bestellnummer | Betreff | Text | ebenfalls herausschneiden, oft nicht vorhanden |
+  | Eingangsdatum | Empfangszeit | Datum | Zeitzone umrechnen, dann nur Datum |
+  | Betrag | nur im Textkörper oder im PDF | Zahl | Text bereinigen und in Zahl wandeln |
+  | Status | fester Wert | Text | keine, immer „in Prüfung" |
+
+  **Nicht sicher gewinnbar:** Rechnungs- und Bestellnummer setzen voraus, dass der Lieferant
+  sie stets gleich in den Betreff schreibt – das tut kein Lieferant zuverlässig. Der Betrag
+  ist am unsichersten: Im Textkörper steht er zufällig, verbindlich ist nur das PDF.
+  Belastbar wird das erst über Dokumentenerkennung (Kap. 31) oder manuelle Erfassung.
+
+  **Zwei Datentyp-Probleme:** `1.250,00 EUR` ist Text mit Tausenderpunkt, Komma und
+  Währungskürzel – ohne Bereinigung und Umwandlung schlägt jeder Größenvergleich lautlos
+  fehl. Und die Empfangszeit `00:42:11Z` ist Weltzeit: In Mitteleuropa ist das der **5.**
+  März, nicht der 4. Ohne Zeitzonenumrechnung landen Belege im falschen Monat.
+
+  Die eigentliche Erkenntnis: Der Feldplan zeigt, dass dieser Ablauf noch nicht baubar ist.
+  Erst die Entscheidung „Betrag wird von Hand erfasst" oder „Betrag kommt aus dem PDF"
+  macht ihn eindeutig.

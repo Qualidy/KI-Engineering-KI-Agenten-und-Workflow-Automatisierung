@@ -1,20 +1,78 @@
-title: Persönlicher Entwicklungsplan
+title: Ein Prompt-Baustein, der in einen Ablauf passt
 difficulty: 4
 question: |
-  **Szenario:** Du bist in der Umschulung, Fachrichtung SI. Vorher: 10 Jahre Logistik. Ziel: IT-Security in 5 Jahren.
+  **Szenario:** Im Sammelpostfach eures Bereichs landen täglich Anfragen aller Art. Später soll
+  ein automatisierter Ablauf jede eingehende Anfrage einsortieren, zusammenfassen und an das
+  richtige Team weiterleiten (Kap. 29, Kap. 30). Bevor irgendetwas gebaut wird, braucht ihr das
+  Herzstück: einen **Prompt-Baustein**, der jede Anfrage in eine feste Struktur überführt – so
+  zuverlässig, dass eine Maschine damit weiterarbeiten kann und ein Mensch nur noch die
+  Zweifelsfälle sieht.
+
+  ```text
+  Rahmen:
+  Rund 40 Anfragen taeglich, Laenge von zwei Zeilen bis zwei Seiten.
+  Zielteams: Vertrieb, Technik, Buchhaltung, Sonstiges.
+  Etwa jede zehnte Anfrage enthaelt zwei Anliegen gleichzeitig.
+  Alle Beispieltexte anonymisieren.
+  ```
 
   ---
 
-  **Aufgabe:**
+  **Runde 1 – Baustein bauen.** Entwickle den Prompt: feste Feldstruktur mit mindestens fünf
+  Feldern, erlaubte Werte für Zielteam und Dringlichkeit, ein Feld für Unsicherheit, eine Regel
+  für fehlende Angaben und das Verbot jeglichen Begleittextes. Ergänze eine kurze, sichtbare
+  Selbstprüfung mit mindestens drei Punkten. Teste den Baustein an **acht** anonymisierten
+  Beispieltexten und protokolliere jede Ausgabe.
 
-  1. **SWOT-Analyse** (kurz): Stärken, Schwächen, Chancen, Risiken deines Wegs.
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Der Baustein muss **alle vier** Kriterien erfüllen:
 
-  2. **Entwicklungsplan** Tabelle: Zeitrahmen (6 Mon / 1 J / 3 J / 5 J) | Ziel | Maßnahme | Nachweis.
+  1. Über acht Durchläufe erscheinen **ausschließlich** erlaubte Werte in den festen Feldern.
+  2. Es gibt ein Feld, an dem ein Ablauf erkennen kann, dass ein **Mensch** draufschauen muss –
+     nicht nur eine Kategorie.
+  3. Mindestens **ein** Testfall ist eine Anfrage mit zwei Anliegen, und der Baustein geht
+     definiert damit um.
+  4. Kein Durchlauf enthält Begleittext, Einleitung oder Nachfrage außerhalb der Struktur.
 
-  3. **Lebenslanges Lernen:** Welche Routine (wöchentlich/monatlich) hältst du ein?
+  **Runde 3 – Die Komplikation.** Zwei Dinge kommen dazu: Erstens gibt es künftig ein fünftes
+  Zielteam. Zweitens tauchen Anfragen auf Englisch auf, und in drei deiner Testläufe kippt die
+  Ausgabe teilweise ins Englische – die festen Feldnamen inklusive. Überarbeite den Baustein für
+  beide Punkte und wiederhole **alle acht** Testfälle. Halte fest, welche Änderung welche Wirkung
+  hatte, und ob eine davon einen vorher funktionierenden Fall verschlechtert hat.
 
-  4. **Reflexion:** Wie nutzt du WISO-Kenntnisse (Arbeitsrecht, Tarif, Entgelt) auch in der IT-Karriere?
+  **Runde 4 – Entscheidung unter Abwägung.** Die Bereichsleitung möchte, dass der spätere Ablauf
+  die Anfragen ohne Zwischenstopp direkt zuweist – die Prüfschleife koste zu viel Zeit. Lass dir
+  von deinem KI-Werkzeug Argumente für beide Seiten geben und miss an deinen acht Testläufen, wie
+  oft die Zuordnung tatsächlich falsch oder unsicher war. Entscheide begründet und **widersprich**,
+  wenn deine Messung gegen die Vorgabe spricht. Lege fest, bei welchem Feldwert ein Mensch
+  eingreift und wie ihr feststellt, ob sich diese Schwelle bewährt.
 
-  **Deliverables:** SWOT + Entwicklungsplan (1–2 Seiten)
+  **Deliverable:**
+
+  1. Prompt-Baustein in der Endfassung, mit Feldstruktur, Wertelisten und Selbstprüfung
+  2. Testprotokoll mit acht Durchläufen vor und nach Runde 3
+  3. Versionsliste mit mindestens vier Einträgen: Änderung und Grund
+  4. Entscheidungsnotiz aus Runde 4 mit gemessener Fehlerquote und festgelegter Eingriffsschwelle
+
+  **Fertig bist du erst, wenn** alle acht Testläufe in der Endfassung ausschließlich erlaubte
+  Werte und keinen Begleittext enthalten, der Fall mit zwei Anliegen definiert behandelt wird, die
+  Versionsliste jede Änderung begründet, und deine Eingriffsschwelle aus deinen eigenen Messwerten
+  hergeleitet ist statt aus dem Gefühl.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. In Runde 3 erlebst du das Grundproblem jeder Prompt-Pflege:
+  Eine Änderung repariert einen Fall und beschädigt einen anderen – deshalb testest du immer alle
+  Fälle, nicht nur den neuen. In Runde 4 zählt nicht deine Meinung über Automatisierung, sondern
+  deine Messung: Wer sagen kann, wie oft die Zuordnung danebenlag, kann eine Schwelle begründen.
+  Wer es nicht gemessen hat, diskutiert nur.
 solution: |
-  SWOT berücksichtigt Vorerfahrung Logistik; Plan realistisch mit Security-Zertifikaten; Lernroutine z. B. 5 Std./Monat Security-News + Labs; WISO: Arbeitsvertrag prüfen, BR/JAV, Entgelt verstehen, Mitbestimmung bei IT-Einführungen.
+  Bewertungskriterien: (1) Der Baustein hat mindestens fünf Felder, geschlossene Wertelisten, ein
+  Unsicherheitsfeld und eine Selbstprüfung; die acht Testläufe sind vollständig protokolliert;
+  (2) alle vier Pflichtkriterien erfüllt, insbesondere die maschinell erkennbare Eingriffsmarkierung
+  und der definierte Umgang mit Mehrfachanliegen; (3) die Überarbeitung deckt beide Komplikationen
+  ab, alle Testfälle wurden erneut durchlaufen, und Verschlechterungen sind benannt statt
+  verschwiegen; (4) die Entscheidung stützt sich auf die eigene Fehlerquote, legt eine konkrete
+  Eingriffsschwelle fest und benennt, woran man später erkennt, ob sie richtig gewählt war.
+
+  Lernziel: Einen Prompt so bauen, dass er nicht nur schöne Antworten liefert, sondern als
+  verlässlicher Baustein in einem automatisierten Ablauf funktioniert – mit erzwungenem Format,
+  eingebauter Unsicherheitsmeldung, Versionierung und einer aus Messwerten begründeten
+  Kontrollschwelle.

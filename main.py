@@ -35,6 +35,22 @@ def define_env(env):
             result +='{ target=_blank rel="noopener noreferrer" }'
         return result
 
+    @env.macro
+    def progress(current, total=40):
+        return course_progress(current, total)
+
+
+def course_progress(current, total=40):
+    steps = []
+    for i in range(1, total + 1):
+        if i < current:
+            steps.append('  <div class="step done"></div>')
+        elif i == current:
+            steps.append('  <div class="step active"></div>')
+        else:
+            steps.append('  <div class="step"></div>')
+    return '<div class="kurs-progress">\n' + '\n'.join(steps) + '\n</div>'
+
 
 def youtube_video_admonition(inner_url, title='Video'):
     return f'''??? video "{title}"

@@ -1,0 +1,90 @@
+title: Den KI-Anteil eines Prozesses entwerfen und absichern
+difficulty: 4
+question: |
+  **Szenario:** Die Hollerbach Bürotechnik GmbH betreibt ein zentrales Postfach für alle
+  Serviceanliegen. Drei Personen im Innendienst lesen jede eingehende Nachricht, entscheiden, wer
+  zuständig ist, legen einen Vorgang in einer SharePoint-Liste an und schreiben eine Eingangsbestätigung.
+  Die Bearbeitung stockt regelmäßig, weil zwei der drei Personen häufig im Außendienst sind. Die
+  Bereichsleitung möchte, dass „die KI das übernimmt". Deine Aufgabe ist der Entwurf – nicht der Bau.
+
+  ```text
+  Rahmendaten:
+  Zentrales Postfach service mit 60 bis 90 Nachrichten pro Arbeitstag.
+  Vier Zustaendigkeiten: Technik, Vertrieb, Buchhaltung, Sonstiges.
+  Etwa jede zehnte Nachricht ist eine Beschwerde mit Eskalationspotenzial.
+  Etwa jede zwanzigste Nachricht enthaelt eine Kuendigung eines Wartungsvertrags.
+  Vorhanden: Microsoft 365, Power Automate, SharePoint-Liste Vorgaenge.
+  Drei Bearbeitende, davon zwei ueberwiegend im Aussendienst.
+  ```
+
+  Arbeite mit einem KI-Werkzeug als Sparringspartner, aber liefere gegen klare Anforderungen.
+
+  ---
+
+  **Runde 1 – Ablauf zerlegen.** Zeichne den Ist-Ablauf in Schritten auf und markiere für jeden
+  Schritt, ob er deterministisch oder unscharf ist. Entwirf daraus den Soll-Ablauf als nummerierte
+  Schrittliste. Für **jeden** KI-Schritt hältst du fest: welche der acht Einsatzstellen es ist,
+  welche Eingabe er bekommt und welche Ausgabe er liefern muss. Es dürfen höchstens drei KI-Schritte
+  sein – begründe, welche Kandidaten du bewusst weggelassen hast.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Entwurf muss **alle vier** erfüllen. Lass ihn
+  vom KI-Werkzeug gegenprüfen und schließe die Lücken selbst:
+
+  1. Jeder KI-Schritt hat einen benannten **Rückfallweg** mit einer zuständigen Rolle und einer
+     Frist, nach der ein liegengebliebener Fall eskaliert.
+  2. Vor jeder **Außenwirkung** steht ein Freigabe-Gate oder eine ausdrückliche Begründung, warum
+     hier keines nötig ist.
+  3. Es ist festgelegt, **was protokolliert** wird: mindestens Eingabe, KI-Ausgabe, Zeitpunkt und
+     die daraus abgeleitete Entscheidung.
+  4. Kein Schritt enthält ein Antimuster aus Abschnitt 29.4 – insbesondere rechnet nirgends die KI.
+
+  **Runde 3 – Die Komplikation.** Nach zwei Wochen Testbetrieb zeigt die Auswertung: Kündigungen von
+  Wartungsverträgen werden **systematisch** als „Sonstiges" eingeordnet, weil sie höflich und
+  unauffällig formuliert sind. Vier Kündigungen sind dadurch die Widerspruchsfrist hindurch
+  liegengeblieben. Gleichzeitig fällt auf, dass die Konfidenzwerte fast aller Nachrichten zwischen
+  0,7 und 0,8 liegen – die Schwelle trennt also praktisch nichts.
+
+  - Analysiere beide Probleme getrennt: Warum reicht eine reine Konfidenzschwelle hier nicht?
+  - Überarbeite den Entwurf so, dass Kündigungen zuverlässig erkannt werden. Prüfe dabei ausdrücklich,
+    ob die richtige Lösung an dieser Stelle überhaupt ein KI-Schritt ist.
+  - Passe die Behandlung der mittleren Konfidenzwerte an, ohne die Prüfliste unbrauchbar zu fluten.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Bereichsleitung will die Eingangsbestätigung
+  vollautomatisch versenden lassen, weil sie „nur eine Höflichkeitsfloskel" sei, und verweist auf die
+  eingesparte Zeit. Lass dir vom KI-Werkzeug Pro und Contra geben. Entscheide begründet – und
+  **widersprich** der Vorgabe oder dem KI-Vorschlag, wenn die Bestätigung eine Zuständigkeit oder
+  eine Bearbeitungszusage enthält, die im Zweifel falsch ist. Formuliere deine Empfehlung so, dass sie
+  auch dann trägt, wenn die Leitung sie ablehnt.
+
+  **Deliverable:**
+
+  1. Soll-Ablauf als nummerierte Schrittliste mit Kennzeichnung deterministisch bzw. KI, inklusive
+     Einsatzstelle, Eingabe und Ausgabe je KI-Schritt
+  2. ausgefüllte Checkliste der vier Pflichtkriterien mit Nachweis, wo im Ablauf sie erfüllt sind
+  3. überarbeitete Fassung nach Runde 3, mit getrennter Antwort auf das Kündigungs- und das
+     Schwellenproblem
+  4. begründete Entscheidung zur Eingangsbestätigung, inklusive der verworfenen Alternative
+
+  **Fertig bist du erst, wenn** alle vier Pflichtkriterien nachweisbar erfüllt sind, dein Entwurf
+  höchstens drei KI-Schritte enthält, die Kündigungserkennung in Version 2 nicht allein auf einer
+  Konfidenzschwelle beruht und deine Entscheidung zur Eingangsbestätigung benennt, welcher konkrete
+  Satz darin im Fehlerfall Schaden anrichten würde.
+tip: |
+  Der Lernwert liegt in Runde 3. Der Reflex lautet fast immer „besserer Prompt" oder „höhere
+  Schwelle". Beides hilft hier wenig: Eine systematische Fehleinordnung verschwindet nicht durch eine
+  Schwelle, weil das Modell auch bei den falschen Fällen sicher wirkt. Tragfähig sind stattdessen
+  deterministische Vorfilter auf eindeutige Signalwörter, eine eigene Kategorie mit strengerer
+  Behandlung oder das bewusste Herausnehmen dieses Falls aus der Automatisierung. In Runde 4 gilt:
+  Jede automatisch versendete Nachricht ist eine Zusage des Unternehmens, auch wenn sie kurz ist.
+solution: |
+  Bewertungskriterien: (1) der Soll-Ablauf trennt sauber zwischen deterministischen und KI-Schritten,
+  benennt für jeden KI-Schritt eine der acht Einsatzstellen und begründet die weggelassenen Kandidaten
+  nachvollziehbar; (2) alle vier Pflichtkriterien sind mit konkretem Ortsbezug im Ablauf belegt, der
+  Rückfallweg hat Rolle und Frist, und die Protokollierung listet die vier Mindestangaben; (3) die
+  überarbeitete Fassung behandelt Kündigungen mit einem anderen Mechanismus als einer Schwelle und
+  begründet, warum die mittleren Konfidenzwerte kein Prompt-Problem sind; (4) die Entscheidung zur
+  Eingangsbestätigung wägt Zeitersparnis gegen den Inhalt der Zusage ab und übernimmt weder die
+  Vorgabe der Leitung noch den KI-Vorschlag ungeprüft.
+
+  Lernziel: einen realen Büroprozess so entwerfen, dass die KI genau die unscharfen Teilschritte
+  übernimmt und der Ablauf jeden möglichen Fehler der KI abfängt, bevor er nach außen wirkt.

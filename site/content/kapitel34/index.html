@@ -1,0 +1,1983 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel33/">
+      
+      
+        <link rel="next" href="../kapitel35/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-34-ideenwerkstatt-use-cases-finden-bewerten-priorisieren" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Block 6 · Kombination von KI & Workflow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 29 – KI-Bausteine im Workflow: Muster und Einsatzstellen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel30/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 30 – AI Builder und KI-Aktionen in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 31 – Dokumentenverarbeitung automatisieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel33/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 33 – Agent und Workflow verbinden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#341-ideen-systematisch-finden" class="md-nav__link">
+    <span class="md-ellipsis">
+      34.1 Ideen systematisch finden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#342-das-bewertungsraster" class="md-nav__link">
+    <span class="md-ellipsis">
+      34.2 Das Bewertungsraster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#343-vier-ideen-durchgerechnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      34.3 Vier Ideen, durchgerechnet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#344-aufwand-nutzen-matrix-und-startreihenfolge" class="md-nav__link">
+    <span class="md-ellipsis">
+      34.4 Aufwand-Nutzen-Matrix und Startreihenfolge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#345-der-use-case-steckbrief" class="md-nav__link">
+    <span class="md-ellipsis">
+      34.5 Der Use-Case-Steckbrief
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#346-pilot-statt-groprojekt-und-richtig-messen" class="md-nav__link">
+    <span class="md-ellipsis">
+      34.6 Pilot statt Großprojekt, und richtig messen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-34-ideenwerkstatt-use-cases-finden-bewerten-priorisieren">Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren<a class="headerlink" href="#kapitel-34-ideenwerkstatt-use-cases-finden-bewerten-priorisieren" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sieben Suchmuster, mit denen du <strong>Automatisierungsideen systematisch findest</strong> statt sie zu erraten</li>
+<li>Ein <strong>Bewertungsraster</strong> mit sechs Dimensionen und einer konkreten Punkteskala</li>
+<li>Wie eine Bewertung praktisch aussieht – an vier Ideen <strong>durchgerechnet</strong></li>
+<li>Wie du aus der <strong>Aufwand-Nutzen-Matrix</strong> eine begründete Startreihenfolge ableitest</li>
+<li>Den <strong>Use-Case-Steckbrief</strong> als kopierbare Vorlage</li>
+<li>Warum ein <strong>Pilot</strong> dem Großprojekt überlegen ist und wie du den Erfolg tatsächlich misst</li>
+</ul>
+</div>
+<hr />
+<h2 id="341-ideen-systematisch-finden">34.1 Ideen systematisch finden<a class="headerlink" href="#341-ideen-systematisch-finden" title="Permanent link">&para;</a></h2>
+<p>Die übliche Ideensammlung beginnt mit der Frage „Was könnten wir mit KI machen?" – und endet mit einer Wunschliste, die niemand umsetzt. Sie fragt nach der Lösung, bevor das Problem benannt ist. Die bessere Frage lautet: <strong>Wo tut es weh?</strong></p>
+<p>Sieben Suchmuster führen zuverlässig zu brauchbaren Kandidaten:</p>
+<table>
+<thead>
+<tr>
+<th>Suchmuster</th>
+<th>Leitfrage</th>
+<th>Typischer Fund</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zeitfresser</strong></td>
+<td>Was dauert regelmäßig länger, als es sollte?</td>
+<td>Belege abtippen, Berichte zusammenstellen</td>
+</tr>
+<tr>
+<td><strong>Medienbrüche</strong></td>
+<td>Wo wechseln Daten das Format oder das System?</td>
+<td>Mailanhang wird von Hand in eine Liste übertragen</td>
+</tr>
+<tr>
+<td><strong>Doppelerfassung</strong></td>
+<td>Wo wird dasselbe zweimal eingegeben?</td>
+<td>Auftragsdaten in Fachsystem und Excel</td>
+</tr>
+<tr>
+<td><strong>Warteschlangen</strong></td>
+<td>Wo liegt etwas herum und wartet auf jemanden?</td>
+<td>Freigaben, Rückmeldungen, Prüfungen</td>
+</tr>
+<tr>
+<td><strong>Wiederkehrende Rückfragen</strong></td>
+<td>Welche Frage wird jede Woche neu gestellt?</td>
+<td>Wo finde ich, wie beantrage ich, wer ist zuständig</td>
+</tr>
+<tr>
+<td><strong>Fehlerquellen</strong></td>
+<td>Wo passieren regelmäßig dieselben Fehler?</td>
+<td>Zahlendreher, vergessene Felder, falscher Empfänger</td>
+</tr>
+<tr>
+<td><strong>Tag-im-Leben-Analyse</strong></td>
+<td>Was tut eine Person an einem normalen Tag wirklich?</td>
+<td>die unsichtbaren Kleinaufgaben zwischen den großen</td>
+</tr>
+</tbody>
+</table>
+<p>Die letzte Methode ist die ergiebigste und die unbequemste: Eine Person notiert einen Arbeitstag lang, was sie tut, in Blöcken von etwa fünfzehn Minuten. Nichts wird beschönigt, auch nicht die dreimal am Tag wiederholte Suche nach derselben Datei. Das Ergebnis überrascht regelmäßig – die größten Zeitfresser stehen fast nie in Prozessbeschreibungen, weil sie niemand für erwähnenswert hält.</p>
+<p>Beim Aufschreiben gilt eine strenge Regel: <strong>Frage nach Tätigkeiten, nicht nach Themen.</strong> „Buchhaltung" ist keine Idee. „Eingangsrechnungen prüfen und kontieren" ist eine. Formuliere jede Idee als Tätigkeit mit einem Objekt, also Verb plus Gegenstand. Wer das nicht kann, hat noch keine Idee, sondern ein Themengebiet – und Themengebiete lassen sich weder bewerten noch umsetzen (Kap. 17).</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis: die KI-Brille</p>
+<p>Wer mit der Frage „Wo können wir KI einsetzen?" loszieht, findet KI-Anwendungen – auch dort, wo eine Bedingung oder eine bessere Excel-Vorlage genügt hätte. Sammle deshalb erst die Schmerzpunkte, und entscheide <strong>danach</strong>, ob der Fall überhaupt KI braucht (Kap. 29). Ein guter Ideenvorrat enthält immer auch Fälle, die man ohne KI löst.</p>
+</div>
+<hr />
+<h2 id="342-das-bewertungsraster">34.2 Das Bewertungsraster<a class="headerlink" href="#342-das-bewertungsraster" title="Permanent link">&para;</a></h2>
+<p>Ideen zu sammeln ist leicht, sie zu vergleichen ist die eigentliche Arbeit. Dafür bewertest du jede Idee in sechs Dimensionen mit <strong>1 bis 5 Punkten</strong>. Entscheidend ist die Richtung: <strong>Hohe Punktzahl heißt immer günstig.</strong> Bei Aufwand und Risiko bedeutet das, dass wenig Aufwand und geringes Risiko hohe Punkte bekommen.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>1 Punkt</th>
+<th>3 Punkte</th>
+<th>5 Punkte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nutzen</strong></td>
+<td>spart kaum spürbar Zeit oder Ärger</td>
+<td>spürbare Entlastung für ein Team</td>
+<td>deutliche Entlastung oder erkennbar bessere Qualität</td>
+</tr>
+<tr>
+<td><strong>Aufwand</strong></td>
+<td>Wochen, externe Hilfe nötig</td>
+<td>einige Tage</td>
+<td>in ein bis zwei Tagen baubar</td>
+</tr>
+<tr>
+<td><strong>Risiko</strong></td>
+<td>rechtlich heikel, Fehler wirken nach außen</td>
+<td>Fehler intern korrigierbar</td>
+<td>Fehler folgenlos, leicht rückgängig</td>
+</tr>
+<tr>
+<td><strong>Datenverfügbarkeit</strong></td>
+<td>Daten fehlen oder liegen auf Papier</td>
+<td>Daten vorhanden, aber uneinheitlich</td>
+<td>Daten digital, strukturiert, zugänglich</td>
+</tr>
+<tr>
+<td><strong>Akzeptanz</strong></td>
+<td>Betroffene lehnen ab oder fürchten um ihre Arbeit</td>
+<td>gemischt, Überzeugungsarbeit nötig</td>
+<td>Betroffene wünschen es sich ausdrücklich</td>
+</tr>
+<tr>
+<td><strong>Wiederholhäufigkeit</strong></td>
+<td>einige Male im Jahr</td>
+<td>wöchentlich</td>
+<td>täglich oder mehrmals täglich</td>
+</tr>
+</tbody>
+</table>
+<p>Zusätzlich gilt eine <strong>Ausschlussregel</strong>: Eine Idee mit 1 Punkt beim Risiko fällt aus der Bewertung heraus, unabhängig von ihrer Gesamtpunktzahl. Rechtlich heikle Vorhaben werden nicht durch hohen Nutzen erlaubt. Das betrifft in der Praxis vor allem Personalentscheidungen, Bonitätseinschätzungen und alles, was Menschen bewertet (Kap. 4 und 14).</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Die unterschätzte Dimension ist die <strong>Datenverfügbarkeit</strong>. Sie ist keine gleichberechtigte Dimension unter sechs, sondern eine Voraussetzung: Eine Idee mit hohem Nutzen und 2 Punkten bei den Daten ist kein guter Startkandidat, sondern ein Datenprojekt mit angehängter Automatisierung. Das darf man machen – aber man sollte wissen, dass man es tut.</p>
+</div>
+<hr />
+<h2 id="343-vier-ideen-durchgerechnet">34.3 Vier Ideen, durchgerechnet<a class="headerlink" href="#343-vier-ideen-durchgerechnet" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Bewertung bei der Bergmüller Haustechnik GmbH</p>
+<p>Ausgangslage: 120 Beschäftigte, Innendienst mit sechs Personen, Buchhaltung mit drei, keine eigene IT-Entwicklung. Vier Ideen aus der Sammelrunde:</p>
+<table>
+<thead>
+<tr>
+<th>Idee</th>
+<th>Nutzen</th>
+<th>Aufwand</th>
+<th>Risiko</th>
+<th>Daten</th>
+<th>Akzeptanz</th>
+<th>Häufigkeit</th>
+<th>Summe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A Eingangsrechnungen vorerfassen</td>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td><strong>23</strong></td>
+</tr>
+<tr>
+<td>B Serviceanfragen vorsortieren</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td><strong>26</strong></td>
+</tr>
+<tr>
+<td>C Bewerbungen vorbewerten</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td><strong>14</strong></td>
+</tr>
+<tr>
+<td>D Wochenbericht aus Projektnotizen</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td><strong>23</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Idee C</strong> fällt sofort heraus: 1 Punkt beim Risiko löst die Ausschlussregel aus. Die Vorbewertung von Bewerbungen berührt Diskriminierungsrisiken und gehört im EU AI Act zu den besonders streng regulierten Anwendungen. Zusätzlich ist die Akzeptanz mit 2 Punkten die niedrigste im Feld – ein Projekt, das gegen den Widerstand der Betroffenen gestartet wird, scheitert selten an der Technik.</p>
+<p><strong>Idee B</strong> führt mit 26 Punkten, und zwar ohne Ausreißer: kein Wert unter 4. Genau das macht sie zum idealen Startkandidaten.</p>
+<p><strong>Idee A und D</strong> liegen mit je 23 Punkten gleichauf – aber das Gleichstandsergebnis täuscht. A hat den mit Abstand höchsten Nutzen und den höchsten Aufwand. D ist billig zu bauen, scheitert aber wahrscheinlich an der Datenverfügbarkeit: Projektnotizen liegen verstreut in Mails, Notizbüchern und Chatverläufen. Bei gleicher Punktzahl entscheidet deshalb die Frage, welcher niedrige Einzelwert <strong>auflösbar</strong> ist. Hoher Aufwand ist eine Frage der Zeitplanung. Fehlende Daten sind ein eigenes Vorprojekt.</p>
+<p><strong>Startreihenfolge:</strong> B, dann A, dann D. C wird nicht weiterverfolgt und die Ablehnung schriftlich begründet – damit die Idee nicht in drei Monaten unbewertet wieder auftaucht.</p>
+</div>
+<hr />
+<h2 id="344-aufwand-nutzen-matrix-und-startreihenfolge">34.4 Aufwand-Nutzen-Matrix und Startreihenfolge<a class="headerlink" href="#344-aufwand-nutzen-matrix-und-startreihenfolge" title="Permanent link">&para;</a></h2>
+<p>Die Punktsumme ordnet, aber sie erklärt nicht. Für die Kommunikation mit Entscheidenden ist die <strong>Aufwand-Nutzen-Matrix</strong> wirksamer: zwei Achsen, vier Felder, jede Idee ein Punkt darin.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>geringer Aufwand</th>
+<th>hoher Aufwand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>hoher Nutzen</strong></td>
+<td>sofort starten – hier liegt der Einstieg</td>
+<td>planen und in Etappen bauen</td>
+</tr>
+<tr>
+<td><strong>geringer Nutzen</strong></td>
+<td>nebenbei mitnehmen, wenn Zeit ist</td>
+<td>nicht machen und Ablehnung begründen</td>
+</tr>
+</tbody>
+</table>
+<p>Für unser Beispiel: Idee B landet oben links und ist damit der Startkandidat. Idee A landet oben rechts – hoher Nutzen, hoher Aufwand – und wird in Etappen geplant, etwa zuerst nur für die fünf größten Lieferanten. Idee D landet unten links und wird mitgenommen, sobald die Notizen ohnehin vereinheitlicht werden.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Ideen sammeln]) --&gt; B([In sechs Dimensionen bewerten])
+    B --&gt; C([Ausschlussregel Risiko pruefen])
+    C --&gt; D([In die Matrix eintragen])
+    D --&gt; E([Startreihenfolge begruenden])</code></pre>
+<p>Die Startreihenfolge folgt aber nicht allein der Punktzahl. Drei weitere Überlegungen verschieben sie regelmäßig:</p>
+<p><strong>Sichtbarkeit.</strong> Das erste Vorhaben sollte für andere spürbar sein. Eine Verbesserung, die niemand bemerkt, erzeugt keine Bereitschaft für das zweite.</p>
+<p><strong>Umkehrbarkeit.</strong> Beginne dort, wo ein Fehlschlag folgenlos bleibt. Der erste Versuch ist der, bei dem du am wenigsten weißt.</p>
+<p><strong>Verfügbarkeit der Beteiligten.</strong> Ein Vorhaben, dessen Fachkenntnis bei einer Person liegt, die sechs Wochen nicht ansprechbar ist, ist unabhängig von der Punktzahl kein Startkandidat.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: das Prestigeprojekt zuerst</p>
+<p>Der häufigste Fehler ist, mit dem größten Vorhaben zu beginnen, weil es den sichtbarsten Effekt verspricht. Groß bedeutet aber fast immer: viele Beteiligte, viele Sonderfälle, lange Bauzeit, spätes Ergebnis. Ein gescheitertes erstes Vorhaben verbrennt die Bereitschaft für alle folgenden – und zwar für Jahre. Beginne klein, liefere schnell, und nimm das große Vorhaben als zweites.</p>
+</div>
+<hr />
+<h2 id="345-der-use-case-steckbrief">34.5 Der Use-Case-Steckbrief<a class="headerlink" href="#345-der-use-case-steckbrief" title="Permanent link">&para;</a></h2>
+<p>Sobald eine Idee weiterverfolgt wird, bekommt sie einen Steckbrief. Er passt auf eine Seite und zwingt zu Klarheit an genau den Stellen, an denen sonst Nebel bleibt. Kopiere diese Vorlage und fülle sie je Idee aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>USE-CASE-STECKBRIEF
+
+Kurztitel            Verb plus Gegenstand, hoechstens acht Woerter
+Bereich              Abteilung oder Team
+Verantwortlich       Name der Person, die das Ergebnis vertritt
+
+Problem heute        Was laeuft schlecht, in zwei bis drei Saetzen
+Betroffene           Wer macht es heute, wie viele Personen
+Haeufigkeit          Wie oft faellt es an, mit Zahl
+Zeitaufwand heute    Minuten je Fall und Summe pro Woche
+
+Ausloeser            Was startet den Ablauf
+Schritte heute       Nummerierte Liste, hoechstens zehn Schritte
+Beteiligte Systeme   Wo liegen die Daten heute
+
+Zielbild             Wie soll es laufen, in drei bis fuenf Saetzen
+KI-Anteil            Welcher Teilschritt und welche Einsatzstelle
+Deterministischer Teil Was macht der Ablauf verlaesslich
+Entscheidungspunkt   Wer entscheidet was und wann
+Rueckfallweg         Was passiert, wenn die KI unsicher ist
+
+Bewertung            Nutzen, Aufwand, Risiko, Daten, Akzeptanz,
+                     Haeufigkeit, jeweils 1 bis 5, plus Summe
+Ausserhalb           Was ausdruecklich nicht dazugehoert
+Risiken              Was schiefgehen kann, und die Gegenmassnahme
+Rechtliche Punkte    Personenbezug, Aufbewahrung, Mitbestimmung
+
+Erfolgskriterium     Eine messbare Aussage mit Zahl und Frist
+Messung vorher       Was wird wann gemessen, bevor gebaut wird
+Messung nachher      Was wird wann gemessen, nachdem es laeuft
+</code></pre></div></td></tr></table></div>
+<p>Zwei Felder werden regelmäßig zu schnell abgehakt. <strong>Außerhalb</strong> ist das wirksamste Mittel gegen ausufernden Umfang: Wer aufschreibt, was nicht dazugehört, kann später darauf zeigen. Und <strong>Messung vorher</strong> ist die Bedingung dafür, dass du den Erfolg überhaupt belegen kannst – nachträglich lässt sich der Ausgangszustand nicht mehr erheben.</p>
+<hr />
+<h2 id="346-pilot-statt-groprojekt-und-richtig-messen">34.6 Pilot statt Großprojekt, und richtig messen<a class="headerlink" href="#346-pilot-statt-groprojekt-und-richtig-messen" title="Permanent link">&para;</a></h2>
+<p>Ein <strong>Pilot</strong> ist keine verkleinerte Version des Vorhabens, sondern ein bewusst begrenzter Ausschnitt, der eine Frage beantwortet: Trägt die Idee? Begrenzt wird auf einer von drei Achsen – ein Team statt aller, ein Dokumenttyp statt aller, vier Wochen statt dauerhaft. Zwei Achsen gleichzeitig zu begrenzen ist meist zu viel; dann misst man nichts mehr Aussagekräftiges.</p>
+<p>Die Erfolgsmessung entscheidet darüber, ob aus dem Piloten etwas wird. Sie braucht drei Dinge: eine Zahl, einen Zeitpunkt davor und einen Zeitpunkt danach.</p>
+<table>
+<thead>
+<tr>
+<th>Statt dieser Aussage</th>
+<th>Diese Aussage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Spart viel Zeit"</td>
+<td>„Bearbeitungszeit je Anfrage von 7 auf unter 3 Minuten, gemessen an 40 Fällen"</td>
+</tr>
+<tr>
+<td>„Weniger Fehler"</td>
+<td>„Anteil unvollständiger Vorgänge von 12 auf unter 5 Prozent in vier Wochen"</td>
+</tr>
+<tr>
+<td>„Kommt gut an"</td>
+<td>„Mindestens 8 von 10 Beteiligten wollen nach vier Wochen weitermachen"</td>
+</tr>
+<tr>
+<td>„Läuft stabil"</td>
+<td>„Höchstens 2 Fehlerabbrüche pro Woche, alle innerhalb eines Tages behoben"</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Ohne Vorher-Messung keine Erfolgsaussage</p>
+<p>Der häufigste Fehler ist, erst nach dem Bauen zu messen. Dann bleibt nur die Schätzung „gefühlt schneller", und die überzeugt niemanden, der Ressourcen freigeben soll. Miss <strong>vor</strong> dem Bauen, eine Woche lang, mit einer einfachen Strichliste: wie viele Fälle, wie viele Minuten je Fall, wie viele Fehler. Der Aufwand dafür beträgt wenige Minuten am Tag, und ohne diese Zahlen ist jede spätere Nutzenaussage angreifbar.</p>
+</div>
+<p>Am Ende dieses Blocks solltest du eine <strong>bewertete Ideenliste</strong> haben – nicht eine Idee, sondern mehrere, mit Punkten, Reihenfolge und Begründung. Aus dieser Liste wählst du in Kap. 35 das Vorhaben aus, das du in der Projektarbeit umsetzt. Je ehrlicher du hier bewertest, desto weniger Überraschungen erlebst du dort. Und die Ideen, die du jetzt begründet ablehnst, sind kein Verlust: Eine dokumentierte Absage ist genauso wertvoll wie ein Startkandidat, weil sie verhindert, dass dieselbe Diskussion in einem halben Jahr von vorn beginnt.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ideen findest du über <strong>sieben Suchmuster</strong> – am ergiebigsten ist die Tag-im-Leben-Analyse; formuliere jede Idee als Tätigkeit, nicht als Thema.</li>
+<li>Das <strong>Bewertungsraster</strong> hat sechs Dimensionen mit 1 bis 5 Punkten, hohe Punktzahl heißt immer günstig, und ein Risikowert von 1 schließt aus.</li>
+<li>Die <strong>Datenverfügbarkeit</strong> ist keine gleichrangige Dimension, sondern eine Voraussetzung; ein niedriger Wert bedeutet ein vorgelagertes Datenprojekt.</li>
+<li>Die <strong>Aufwand-Nutzen-Matrix</strong> übersetzt die Punkte in vier Handlungsempfehlungen; Sichtbarkeit, Umkehrbarkeit und Verfügbarkeit verschieben die Reihenfolge zusätzlich.</li>
+<li>Der <strong>Use-Case-Steckbrief</strong> zwingt zur Klarheit – besonders bei „Außerhalb", „Rückfallweg" und „Messung vorher".</li>
+<li>Ein <strong>Pilot</strong> begrenzt auf genau einer Achse, und ohne <strong>Vorher-Messung</strong> gibt es keine belegbare Erfolgsaussage.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Aus Themen werden Tätigkeiten</summary>
+<p>Diese sechs Einträge stammen aus einer Ideensammlung. Keiner davon ist in dieser Form bewertbar.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>1. Irgendwas mit Rechnungen
+2. Kundenservice verbessern
+3. Die Excel-Listen sind ein Chaos
+4. KI fuer das Marketing
+5. Zu viele Rueckfragen aus dem Aussendienst
+6. Onboarding neuer Mitarbeitender
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Formuliere jeden Eintrag als <strong>Tätigkeit</strong> um: Verb plus Gegenstand, höchstens acht Wörter.
+   Wo mehrere Tätigkeiten stecken, trenne sie.</li>
+<li>Ordne jeder umformulierten Idee eines der sieben Suchmuster aus Abschnitt 34.1 zu.</li>
+<li>Markiere die Ideen, bei denen du vermutest, dass <strong>keine KI</strong> nötig ist.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Wenn du eine Idee nicht als Tätigkeit formulieren kannst, fehlt dir Information. Notiere in diesem
+Fall, welche Frage du stellen müsstest – auch das ist ein gültiges Ergebnis.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Beispielhafte Umformulierung:</p>
+<table>
+<thead>
+<tr>
+<th>Ursprung</th>
+<th>Als Tätigkeit</th>
+<th>Suchmuster</th>
+<th>Ohne KI möglich</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Rechnungen</td>
+<td>Rechnungsfelder aus PDF vorerfassen</td>
+<td>Zeitfresser</td>
+<td>nein, Extraktion braucht KI</td>
+</tr>
+<tr>
+<td>2 Kundenservice</td>
+<td>Serviceanfragen dem richtigen Team zuordnen</td>
+<td>Warteschlangen</td>
+<td>nein, unscharfe Einordnung</td>
+</tr>
+<tr>
+<td>3 Excel-Chaos</td>
+<td>Auftragsdaten aus zwei Systemen abgleichen</td>
+<td>Doppelerfassung</td>
+<td>ja, reine Regel</td>
+</tr>
+<tr>
+<td>4 Marketing</td>
+<td>Produkttexte für Newsletter entwerfen</td>
+<td>Zeitfresser</td>
+<td>nein, Texterzeugung</td>
+</tr>
+<tr>
+<td>5 Rückfragen</td>
+<td>Wiederkehrende Fragen des Außendiensts beantworten</td>
+<td>wiederkehrende Rückfragen</td>
+<td>teils, oft genügt ein gepflegtes Dokument</td>
+</tr>
+<tr>
+<td>6 Onboarding</td>
+<td>Einarbeitungsaufgaben automatisch zuweisen</td>
+<td>Medienbrüche</td>
+<td>ja, Ablauf mit fester Checkliste</td>
+</tr>
+</tbody>
+</table>
+<p>Zwei Erkenntnisse: Erstens zerfallen die meisten Einträge bei genauem Hinsehen in mehrere Ideen –
+„Onboarding" enthält Aufgabenzuweisung, Zugangsanlage und Materialbestellung, und das sind drei
+unterschiedlich schwierige Vorhaben. Zweitens brauchen mindestens zwei der sechs Ideen gar keine
+KI. Eine Ideensammlung ohne solche Fälle ist ein Warnzeichen: Dann wurde nach KI-Anwendungen
+gesucht statt nach Problemen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Drei Ideen bewerten und die Reihenfolge begründen</summary>
+<p>In einem Vertriebsteam mit acht Personen wurden drei Ideen gesammelt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Idee 1: Besuchsberichte aus Diktat-Notizen erstellen.
+        Faellt taeglich an, Notizen liegen als Sprachnachricht in Teams,
+        etwa 20 Minuten je Bericht, drei Personen betroffen, die es hassen.
+Idee 2: Angebotstexte fuer Standardprodukte erzeugen.
+        Etwa fuenf Angebote pro Woche, Textbausteine liegen in Word,
+        Angebote gehen direkt an Kunden, Vertriebsleitung ist skeptisch.
+Idee 3: Leads aus dem Webformular automatisch dem Gebiet zuordnen.
+        Rund 30 Leads pro Woche, Formulardaten sind sauber und strukturiert,
+        Zuordnungsregel steht in einer Tabelle, wird heute von Hand gemacht.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Bewerte alle drei Ideen in den sechs Dimensionen mit 1 bis 5 Punkten und bilde die Summe.</li>
+<li>Trage sie in die Aufwand-Nutzen-Matrix ein und leite eine Startreihenfolge ab.</li>
+<li>Prüfe für jede Idee, ob sie überhaupt KI braucht, und begründe.</li>
+<li>Begründe deine Startempfehlung mit mindestens einem Argument, das <strong>nicht</strong> aus der Punktzahl
+   stammt.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte bei Idee 3 auf die Formulierung „Zuordnungsregel steht in einer Tabelle". Das ist ein
+entscheidender Hinweis. Und prüfe bei Idee 2, was „geht direkt an Kunden" für das Risiko bedeutet.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Beispielhafte Bewertung – abweichende Punktzahlen sind vertretbar, wenn sie begründet sind:</p>
+<table>
+<thead>
+<tr>
+<th>Idee</th>
+<th>Nutzen</th>
+<th>Aufwand</th>
+<th>Risiko</th>
+<th>Daten</th>
+<th>Akzeptanz</th>
+<th>Häufigkeit</th>
+<th>Summe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Besuchsberichte</td>
+<td>5</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr>
+<td>2 Angebotstexte</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>17</td>
+</tr>
+<tr>
+<td>3 Leads zuordnen</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>26</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Matrix:</strong> Idee 3 liegt bei geringem Aufwand und mittlerem Nutzen, Idee 1 bei mittlerem Aufwand
+und hohem Nutzen, Idee 2 bei geringem Aufwand und geringem Nutzen mit erhöhtem Risiko.</p>
+<p><strong>Braucht es KI?</strong> Idee 1 ja, Sprachnachricht in strukturierten Bericht ist Transkription plus
+Zusammenfassung. Idee 2 ja, aber mit Freigabe-Gate, weil die Texte an Kunden gehen. Idee 3
+<strong>nein</strong> – eine Zuordnungsregel, die in einer Tabelle steht, ist eine Bedingung oder ein Nachschlagen
+im Flow. Hier KI einzusetzen wäre teurer, langsamer und unzuverlässiger als eine feste Regel.</p>
+<p><strong>Startreihenfolge und Begründung jenseits der Punkte:</strong> Idee 3 zuerst, obwohl sie keine KI braucht
+– sie ist in Stunden gebaut, liefert ein sichtbares Ergebnis und schafft Vertrauen für das nächste
+Vorhaben. Danach Idee 1, die den größten Nutzen bringt und von den Betroffenen ausdrücklich
+gewünscht wird; Akzeptanz von 5 Punkten ist ein starkes Argument, das in der Summe untergeht.
+Idee 2 zuletzt oder gar nicht: geringe Häufigkeit, skeptische Leitung und direkter Kundenkontakt
+sind eine ungünstige Kombination für ein frühes Vorhaben.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Steckbrief schreiben und von der KI zerlegen lassen</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude) und bezieht sich auf <strong>deinen
+eigenen Arbeitsbereich</strong>.</p>
+<ol>
+<li>Wähle eine Tätigkeit aus deinem Alltag, die regelmäßig anfällt und dich stört. Formuliere sie als
+   Verb plus Gegenstand.</li>
+<li>Fülle den Use-Case-Steckbrief aus Abschnitt 34.5 vollständig aus. Kein Feld bleibt leer – wo du
+   etwas nicht weißt, schreibst du <code>unbekannt, zu klären mit [Rolle]</code>.</li>
+<li>Lass den Steckbrief kritisch prüfen:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Pruefe diesen Use-Case-Steckbrief als kritischer Projektleiter.
+Nenne die drei schwaechsten Felder und sage jeweils, welche Frage
+unbeantwortet bleibt. Nenne ausserdem zwei Risiken, die im Steckbrief
+fehlen. Mache keine Verbesserungsvorschlaege, stelle nur Fragen.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Beantworte die gestellten Fragen und überarbeite den Steckbrief.</li>
+<li>Prüfe zuletzt selbst: Ist dein Erfolgskriterium wirklich messbar, und könntest du die
+   Vorher-Messung ab morgen beginnen? Wenn nicht, schärfe es nach.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Auftrag „stelle nur Fragen, mache keine Vorschläge" ist bewusst gewählt. Ein KI-Werkzeug füllt
+Lücken sonst mit plausiblen Annahmen – und die stehen dann in deinem Steckbrief, ohne dass jemand
+sie geprüft hat. Fragen zwingen dich, die Antwort selbst zu beschaffen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien für einen guten Steckbrief:</p>
+<ul>
+<li><strong>Kurztitel</strong> ist eine Tätigkeit mit Objekt, kein Thema, und passt in acht Wörter.</li>
+<li><strong>Zeitaufwand heute</strong> enthält eine Zahl je Fall und eine Wochensumme. Fehlt sie, ist der spätere
+  Nutzennachweis unmöglich.</li>
+<li><strong>KI-Anteil</strong> benennt genau eine der acht Einsatzstellen aus Kap. 29. Steht dort etwas wie „die KI
+  bearbeitet den Vorgang", ist der Schritt zu groß geschnitten.</li>
+<li><strong>Rückfallweg</strong> nennt eine Rolle und beschreibt, was mit unsicheren Fällen passiert.</li>
+<li><strong>Außerhalb</strong> enthält mindestens zwei konkrete Abgrenzungen. Ein leeres Feld hier ist der
+  verlässlichste Vorbote von ausuferndem Umfang.</li>
+<li><strong>Erfolgskriterium</strong> enthält Zahl, Bezugsgröße und Frist. „Schneller" oder „besser" genügt nicht.</li>
+</ul>
+<p>Typische Schwachstellen, die die Prüfung aufdeckt: Der Zeitaufwand ist geschätzt statt gemessen.
+Der Entscheidungspunkt ist nicht besetzt – es steht keine Person dort. Die Datenlage wird
+optimistisch beschrieben, obwohl die Daten in Mailanhängen liegen. Und die rechtlichen Punkte sind
+mit „unkritisch" abgehakt, obwohl personenbezogene Daten verarbeitet werden.</p>
+<p>Ein gutes Ergebnis zeigt beide Fassungen und benennt konkret, welche Frage aus Schritt 3 welche
+Änderung ausgelöst hat.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Die eigene Ideenliste aufbauen, bewerten und priorisieren</summary>
+<p><strong>Szenario:</strong> Du bereitest die Entscheidung vor, welches Vorhaben du selbst umsetzt. Ausgangspunkt
+ist dein eigener Arbeitsbereich – oder, falls du dich dort nicht festlegen willst, der unten
+beschriebene fiktive Bereich. Am Ende dieses Workshops steht eine bewertete Ideenliste, aus der du
+in der Projektarbeit dein Vorhaben wählst.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Alternative Ausgangslage, falls du keinen eigenen Bereich waehlst:
+Bergmueller Haustechnik GmbH, 120 Beschaeftigte.
+Innendienst sechs Personen, Buchhaltung drei, Aussendienst zwoelf.
+Vorhanden: Microsoft 365, SharePoint, Power Automate, ein Fachsystem fuer
+Auftraege, Excel-Listen fuer alles Uebrige.
+Keine eigene Entwicklung, IT besteht aus zwei Personen mit vollem Tagesgeschaeft.
+Bekannte Schmerzpunkte: Eingangsrechnungen, Serviceanfragen, Wochenberichte,
+Rueckfragen des Aussendiensts, Materialbestellungen.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Sammeln und formulieren.</strong> Arbeite die sieben Suchmuster aus Abschnitt 34.1 nacheinander
+durch und sammle <strong>mindestens zwölf Ideen</strong>. Für die Tag-im-Leben-Analyse gehst du einen typischen
+Arbeitstag in Blöcken durch und notierst auch die Kleinigkeiten. Formuliere jede Idee als Verb plus
+Gegenstand, höchstens acht Wörter. Ergänze je Idee eine Zeile: Wer macht es heute, wie oft, wie lange.
+Nutze ein KI-Werkzeug, um deine Liste auf Dubletten und Themengebiete zu prüfen – aber übernimm
+keine erfundenen Ideen.</p>
+<p><strong>Runde 2 – Bewerten gegen Pflichtkriterien.</strong> Bewerte alle Ideen im Raster mit 1 bis 5 Punkten.
+Deine Liste muss <strong>alle vier</strong> Kriterien erfüllen:</p>
+<ol>
+<li>Mindestens <strong>zwei Ideen</strong> sind als „braucht keine KI, klassische Automatisierung genügt"
+   markiert – mit Begründung, welche Regel den KI-Schritt ersetzt.</li>
+<li>Mindestens <strong>eine Idee</strong> löst die Ausschlussregel beim Risiko aus oder scheitert an der
+   Datenverfügbarkeit; die Ablehnung ist schriftlich begründet.</li>
+<li>Für jede Idee mit KI-Anteil ist benannt, welche der acht Einsatzstellen aus Kap. 29 gemeint ist
+   und wer das Ergebnis prüft.</li>
+<li>Keine Idee ist doppelt, keine ist so vage formuliert, dass sich Aufwand oder Nutzen nicht
+   einschätzen lassen.</li>
+</ol>
+<p>Trage anschließend alle verbliebenen Ideen in die Aufwand-Nutzen-Matrix ein.</p>
+<p><strong>Runde 3 – Die Komplikation.</strong> Du legst deine Top-3 einer erfahrenen Kollegin vor. Drei Rückmeldungen
+kommen:</p>
+<ul>
+<li>„Bei deinem Favoriten liegen die Daten gar nicht so vor, wie du denkst. Die Hälfte kommt als
+  Anhang, den jemand von Hand umbenennt."</li>
+<li>„Die Leute in dem Team haben letztes Jahr schon ein Digitalisierungsprojekt erlebt, das im Sand
+  verlaufen ist. Die machen nicht noch mal mit."</li>
+<li>„Was du da an Zeitersparnis aufschreibst, hast du geschätzt. Gemessen hat das nie jemand."</li>
+</ul>
+<p>Behandle jede Rückmeldung ernst und getrennt. Bei der ersten korrigierst du die Bewertung der
+Datenverfügbarkeit und prüfst, ob die Idee dadurch die Startposition verliert. Bei der zweiten
+entwirfst du eine konkrete Maßnahme für die Akzeptanz, die nicht aus einer Ankündigung besteht. Bei
+der dritten planst du eine <strong>Vorher-Messung</strong>, die du ab morgen mit wenigen Minuten Aufwand pro Tag
+durchführen könntest – mit Messgröße, Erhebungsweise und Zeitraum. Erstelle danach eine überarbeitete
+Rangfolge.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Du sollst dich auf <strong>eine</strong> Idee festlegen. Die
+Bereichsleitung wünscht sich ausdrücklich die Idee mit dem größten Nutzen. Lass dir vom KI-Werkzeug
+Pro und Contra für deine beiden aussichtsreichsten Kandidaten geben. Entscheide begründet – und
+<strong>widersprich</strong> der Vorgabe oder dem KI-Vorschlag, wenn die nutzenstärkste Idee zugleich die
+aufwendigste, riskanteste oder datenschwächste ist. Fülle für deine Wahl den Use-Case-Steckbrief aus
+Abschnitt 34.5 vollständig aus und formuliere zusätzlich, wie ein auf <strong>eine</strong> Achse begrenzter
+Pilot aussehen würde.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Ideenliste mit mindestens zwölf als Tätigkeit formulierten Einträgen samt Zeile zu Person,
+   Häufigkeit und Dauer</li>
+<li>vollständige Bewertungstabelle mit allen sechs Dimensionen, Summen, Matrix-Einordnung und
+   ausgefüllter Pflichtkriterien-Checkliste</li>
+<li>überarbeitete Rangfolge nach Runde 3, mit getrennter Antwort auf alle drei Rückmeldungen und
+   einem konkreten Plan für die Vorher-Messung</li>
+<li>ausgefüllter Use-Case-Steckbrief für die gewählte Idee, Beschreibung des Piloten und eine kurze
+   schriftliche Begründung der abgelehnten Alternative</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> deine Liste sowohl KI-taugliche als auch bewusst ohne KI umsetzbare
+Ideen enthält, mindestens eine Ablehnung schriftlich begründet ist, dein Steckbrief kein leeres Feld
+hat, dein Erfolgskriterium eine Zahl und eine Frist enthält und deine Vorher-Messung so beschrieben
+ist, dass eine andere Person sie morgen beginnen könnte.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Die drei Rückmeldungen sind genau die, die in echten Projekten
+kommen – meist erst, wenn schon gebaut wurde. Die dritte ist die unangenehmste: Fast jede
+Nutzenschätzung in einer Ideenliste ist geraten, und geraten heißt angreifbar. Eine Strichliste über
+eine Woche kostet fast nichts und macht aus einer Behauptung ein Argument. In Runde 4 gilt: Die
+nutzenstärkste Idee ist selten die beste erste Idee. Wer trotzdem den großen Wurf wählt, muss
+erklären können, warum Aufwand, Risiko und Datenlage in diesem Fall beherrschbar sind.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) mindestens zwölf als Tätigkeit formulierte Ideen, die erkennbar aus
+mehreren der sieben Suchmuster stammen und nicht nur aus einem, jeweils mit Angaben zu Person,
+Häufigkeit und Dauer; (2) vollständige Bewertung aller Ideen mit nachvollziehbarer Punktvergabe,
+alle vier Pflichtkriterien belegt, insbesondere die bewusst ohne KI umsetzbaren Ideen und die
+begründete Ablehnung; (3) die überarbeitete Rangfolge reagiert auf alle drei Rückmeldungen einzeln,
+korrigiert die Datenbewertung ehrlich auch dann, wenn dadurch der Favorit fällt, und enthält eine
+Vorher-Messung mit Messgröße, Erhebungsweise und Zeitraum; (4) der Steckbrief ist vollständig, das
+Erfolgskriterium ist mit Zahl und Frist messbar, der Pilot ist auf genau eine Achse begrenzt, und
+die Entscheidung übernimmt weder die Vorgabe der Bereichsleitung noch den KI-Vorschlag ungeprüft.</p>
+<p>Lernziel: aus einer ungeordneten Sammlung von Schmerzpunkten eine belastbare, bewertete Ideenliste
+machen und daraus ein Vorhaben auswählen, das man tatsächlich zu Ende bringen und dessen Nutzen man
+hinterher belegen kann.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel33/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 33 – Agent und Workflow verbinden">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 33 – Agent und Workflow verbinden
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel35/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 35 – Den eigenen Use Case auswählen und schärfen">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

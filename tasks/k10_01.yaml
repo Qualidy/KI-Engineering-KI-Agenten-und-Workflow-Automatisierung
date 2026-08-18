@@ -1,0 +1,35 @@
+title: Einen Großauftrag zerlegen
+difficulty: 1
+question: |
+  Gegeben ist dieser Auftrag an ein KI-Werkzeug:
+
+  ```text
+  Erstelle ein Konzept zur Einfuehrung eines digitalen Urlaubsantrags
+  bei uns im Unternehmen.
+  ```
+
+  1. Nenne **drei Gründe**, warum dieser Auftrag ein schlechtes Ergebnis liefern wird.
+  2. Zerlege ihn in **vier Teilschritte**, die nacheinander bearbeitet werden. Formuliere jeden
+     Teilschritt als eigenen Auftrag.
+  3. Notiere zu jedem Teilschritt, **woran du prüfst**, ob das Zwischenergebnis brauchbar ist,
+     bevor du weitergehst.
+tip: |
+  Orientiere dich an den Zerlegungsmustern aus Abschnitt 10.1. Ein guter Teilschritt hat ein
+  Ergebnis, das man ansehen und beurteilen kann – „Ideen sammeln" ist zu unscharf, „zehn
+  Anforderungen als Liste" nicht.
+solution: |
+  Zu 1 – typische Gründe: Der Auftrag enthält keinen Kontext über euer Unternehmen, kein Format
+  und keinen Adressaten; er verlangt Recherche, Struktur und Formulierung gleichzeitig; und das
+  Ergebnis ist als Ganzes nicht prüfbar, weil man nicht sieht, welche Annahmen darin stecken.
+
+  Zu 2 und 3 – beispielhafte Zerlegung:
+
+  | Teilschritt | Auftrag | Prüfung des Zwischenergebnisses |
+  |---|---|---|
+  | 1 | Liste die Anforderungen an einen digitalen Urlaubsantrag, getrennt nach Beschäftigten, Führungskräften und Personalabteilung | Sind alle drei Gruppen vertreten? Ist etwas dabei, das bei uns nicht gilt? |
+  | 2 | Beschreibe den heutigen Ablauf in Schritten, auf Basis meiner Stichpunkte | Stimmen die Schritte mit der Realität überein? |
+  | 3 | Schlage auf Basis von 1 und 2 einen Soll-Ablauf vor, mit Entscheidungspunkten | Ist jeder Schritt zuständigkeitsklar? Fehlt ein Sonderfall? |
+  | 4 | Formuliere daraus ein zweiseitiges Konzept für die Geschäftsleitung | Steht etwas darin, das nicht aus 1 bis 3 stammt? |
+
+  Die Prüfung in Schritt 4 ist die wirksamste: Alles, was dort neu auftaucht, ist entweder eine
+  gute Ergänzung oder eine Erfindung – und du siehst es nur, weil du die Zwischenstände hast.

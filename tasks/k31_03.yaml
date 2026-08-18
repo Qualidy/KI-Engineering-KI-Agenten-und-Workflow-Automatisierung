@@ -1,0 +1,50 @@
+title: Extraktion testen und die Grenzen finden
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug. Hast du Zugang zu AI Builder, nutze die Rechnungsverarbeitung
+  in einem Testflow. Andernfalls arbeitest du im Chatwerkzeug (Copilot, ChatGPT oder Claude) und
+  lässt dir die Belegtexte dort erzeugen.
+
+  1. Erzeuge dir vier fiktive Belegtexte:
+
+     ```text
+     Erfinde vier kurze Rechnungstexte eines Papiergrosshandels als reinen Text.
+     Beleg 1 vollstaendig und eindeutig.
+     Beleg 2 mit zwei verschiedenen Betraegen, Zwischensumme und Gesamtbetrag.
+     Beleg 3 ohne Rechnungsnummer.
+     Beleg 4 mit lueckenhaftem Text, als waere der Scan schlecht.
+     ```
+
+  2. Lass die vier Felder Rechnungsnummer, Rechnungsdatum, Bruttobetrag und Lieferant extrahieren,
+     mit einer Sicherheitsangabe je Feld und der ausdrücklichen Regel, fehlende Werte als `null`
+     auszugeben.
+  3. Prüfe jedes Ergebnis gegen den Ausgangstext. Notiere für jeden Beleg: Welcher Wert ist falsch,
+     fehlt oder wurde erfunden?
+  4. Wende deine dreistufige Behandlung an: In welche Stufe fällt jeder der vier Belege?
+  5. Formuliere für den problematischsten Beleg eine **zusätzliche fachliche Prüfregel**, die den
+     Fehler abfangen würde, ohne die Konfidenzschwelle zu verändern.
+tip: |
+  Beleg 2 ist der eigentliche Kern der Übung. Achte darauf, welchen der beiden Beträge das Werkzeug
+  wählt – und mit welcher Sicherheit es das tut. Eine hohe Sicherheit bei falscher Zuordnung ist der
+  Fall, gegen den keine Schwelle hilft.
+solution: |
+  Typische Beobachtungen:
+
+  - **Beleg 1** wird vollständig und mit hohen Sicherheiten extrahiert und landet in der obersten
+    Stufe. Das ist der Normalfall, für den die Automatisierung gebaut wird.
+  - **Beleg 2** ist der lehrreiche Fall: Häufig wird die Zwischensumme statt des Gesamtbetrags
+    ausgegeben, und zwar mit hoher Sicherheit. Das Modell hat die Zahl korrekt gelesen, nur dem
+    falschen Feld zugeordnet. Eine Schwelle fängt das nicht ab.
+  - **Beleg 3** liefert bei korrekter Anweisung `null` für die Rechnungsnummer. Wird stattdessen eine
+    plausibel aussehende Nummer erfunden, fehlt in deinem Auftrag die Regel für fehlende Werte.
+  - **Beleg 4** erzeugt meist niedrige Sicherheiten und fällt in die manuelle Stufe – das ist das
+    gewünschte Verhalten.
+
+  **Zusätzliche fachliche Prüfregel für Beleg 2:** Der extrahierte Bruttobetrag wird gegen die
+  zugehörige Bestellung geprüft, oder es wird die Rechenprobe aus Nettobetrag, Steuersatz und
+  Bruttobetrag im Flow durchgeführt. Beide Prüfungen sind deterministisch und rechnen im Flow, nicht
+  in der KI. Nur wenn diese Prüfung besteht **und** die Konfidenz hoch ist, läuft der Beleg
+  automatisch durch.
+
+  Ein gutes Ergebnis benennt konkret, welcher Wert bei welchem Beleg falsch war, und unterscheidet
+  sauber zwischen Lesefehler und Zuordnungsfehler.

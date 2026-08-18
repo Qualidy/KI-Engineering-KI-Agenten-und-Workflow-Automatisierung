@@ -1,0 +1,45 @@
+title: Eigenen Prompt datenschutzfest umbauen
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Schreibe einen Prompt für eine echte Aufgabe aus deinem Arbeitsalltag – **noch nicht
+     absenden**. Nimm bewusst eine Aufgabe, bei der du normalerweise echte Daten hättest, etwa
+     eine Kundenantwort, eine Fallbewertung oder eine Auswertung.
+
+  2. Markiere in deinem Entwurf jede Stelle, die unter die Leitplanken aus Abschnitt 4.6 fällt.
+     Notiere pro Stelle, welches Rechtsfeld betroffen ist: DSGVO, Geschäftsgeheimnis,
+     Urheberrecht oder Mitbestimmung.
+
+  3. Baue den Prompt nach dem Muster **ersetzen, kürzen, fragen** um: Namen und Kennungen durch
+     Rollen, Daten auf das Notwendige reduzieren, kritische Reste weglassen.
+
+  4. Sende **nur** die umgebaute Fassung ab. Prüfe anschließend: Ist das Ergebnis für deine
+     Aufgabe noch brauchbar? Was fehlt – und lässt sich das Fehlende nachträglich von Hand
+     einsetzen, statt es dem Werkzeug zu geben?
+
+  5. Notiere zum Abschluss, welche Frage du deiner Datenschutzbeauftragten stellen würdest,
+     wenn du diese Aufgabe regelmäßig so lösen wolltest.
+tip: |
+  Der Erkenntnisgewinn liegt in Punkt 4. In den meisten Fällen ist der Nutzen der KI die
+  Formulierung, die Struktur oder die Analyse – nicht der Personenbezug. Wer das trennt, verliert
+  fast nichts und entfernt das Risiko fast vollständig. Wenn der Nutzen tatsächlich am
+  Personenbezug hängt, hast du einen Fall gefunden, der eine Freigabe braucht.
+solution: |
+  Bewertungskriterien für eine gute Bearbeitung:
+
+  - Der ursprüngliche Entwurf enthält mindestens eine kritische Stelle, die korrekt einem
+    Rechtsfeld zugeordnet ist – häufig DSGVO bei Namen und Kundennummern, Geheimnisschutz bei
+    Beträgen und Kalkulationen.
+  - Die umgebaute Fassung arbeitet mit Rollenbezeichnungen wie „Kunde A" statt echter Namen und
+    enthält nur die Angaben, die die Antwort tatsächlich beeinflussen.
+  - Die Bewertung in Punkt 4 unterscheidet zwischen echtem Verlust und Bequemlichkeitsverlust.
+    Beispiel für ein gutes Ergebnis: „Die Anrede fehlt, das setze ich in zehn Sekunden selbst ein.
+    Der Argumentationsaufbau, den ich eigentlich brauchte, ist vollständig da."
+  - Die Frage an die Datenschutzbeauftragte ist konkret und beantwortbar. Gut: „Für welches
+    unserer Werkzeuge besteht ein Auftragsverarbeitungsvertrag, sodass ich Kundennummern
+    eingeben darf?" Schwach: „Darf ich KI benutzen?"
+
+  Häufige Fehlbearbeitung: Nur der Name wird entfernt, während Abteilung, Standort und
+  Fallkonstellation stehen bleiben. Damit ist die Person weiter identifizierbar – das ist
+  Pseudonymisierung, keine Anonymisierung, und der Datenschutz gilt unverändert.

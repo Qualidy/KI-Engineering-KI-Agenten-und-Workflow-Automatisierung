@@ -1,0 +1,39 @@
+title: Welcher Baustein fehlt?
+difficulty: 1
+question: |
+  Bestimme für jeden Prompt, welche der sechs Bausteine **fehlen** – Rolle, Aufgabe, Kontext,
+  Format, Ton, Einschränkungen – und was das für das Ergebnis bedeutet.
+
+  1. `Schreib was zur Digitalisierung.`
+  2. `Fasse den folgenden Text zusammen: [Text]`
+  3. `Du bist Personalreferentin. Formuliere eine Einladung zum Vorstellungsgespraech.
+     Freundlich, maximal 120 Woerter.`
+  4. `Erstelle eine Tabelle mit den Spalten Aufgabe, Verantwortlich, Frist aus dem folgenden
+     Protokoll. Uebernimm nur, was im Text steht, fehlende Angaben als offen.
+     Protokoll: [Text]`
+
+  Ergänze anschließend Prompt 2 so, dass er alle Bausteine enthält, die er für eine brauchbare
+  Zusammenfassung braucht.
+tip: |
+  Nicht jeder Prompt braucht alle sechs Bausteine. Frage deshalb nicht „was fehlt formal", sondern
+  „was würde ich am Ergebnis vermissen, wenn ich es so abschicke".
+solution: |
+  | Nr. | Fehlt | Folge |
+  |---|---|---|
+  | 1 | alles außer einem Themenwort | beliebiger Text, unbrauchbar |
+  | 2 | Format, Ton, Einschränkungen, Zweck | Länge und Detailtiefe sind Glückssache |
+  | 3 | Kontext, Einschränkungen | Termin, Ort und Ansprechpartner werden erfunden |
+  | 4 | Rolle, Ton | unkritisch – bei einer Extraktionsaufgabe braucht es beides nicht |
+
+  Ergänzte Fassung von Prompt 2:
+
+  ```text
+  Fasse den folgenden Text fuer eine Fuehrungskraft zusammen, die ihn nicht gelesen hat.
+  Format: fuenf Stichpunkte, je maximal 15 Woerter, danach ein Satz zur offenen Frage.
+  Nutze ausschliesslich Aussagen aus dem Text. Was nicht drinsteht, erfindest du nicht.
+  Text: [Text einfuegen]
+  ```
+
+  Beachte Prompt 4: Er wirkt karg, ist aber gut – weil bei einer reinen Aufbereitungsaufgabe Rolle
+  und Ton nichts beitragen, Format und Einschränkung dagegen alles. Vollständigkeit heißt nicht,
+  alle sechs Bausteine mechanisch abzuarbeiten.

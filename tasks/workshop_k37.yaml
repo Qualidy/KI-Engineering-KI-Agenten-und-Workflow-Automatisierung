@@ -1,0 +1,93 @@
+title: Projektetappe 3 – Flow bauen, kalibrieren und abnehmen
+difficulty: 4
+question: |
+  **Projektetappe:** Dritte Etappe. Grundlage ist dein Flow-Design und die Testfall-Tabelle aus
+  Kapitel 36. Am Ende dieses Workshops läuft dein Flow für den Hauptfall, der KI-Anteil ist
+  kalibriert, und es liegt ein Abnahmedurchgang gegen deine Testfälle vor.
+
+  ```text
+  Rueckfallebenen:
+  Kein Zugang zu Power Automate -> baue den Flow in Zapier oder Make im
+    kostenfreien Tarif, oder simuliere jeden Schritt von Hand und protokolliere
+    Ein- und Ausgaben.
+  Kein KI-Baustein im Flow verfuegbar -> fuehre die KI-Stelle im Chatwerkzeug
+    aus, kopiere das Ergebnis in den Flow und dokumentiere diese Stelle als
+    manuellen Zwischenschritt.
+  Flow laeuft am Ende nicht -> dokumentiere den erreichten Stand, den genauen
+    Blocker und den reduzierten Umfang. Das ist ein gueltiges Ergebnis.
+  ```
+
+  ---
+
+  **Runde 1 – Skelett und Datenfluss.** Baue zuerst das Skelett: Trigger und alle Aktionen in
+  Reihenfolge mit festen Platzhalterwerten, ohne Bedingungen, ohne KI, ohne Fehlerbehandlung.
+  Führe es aus, bis ein Durchlauf den letzten Schritt erreicht. Ersetze danach die Platzhalter
+  schrittweise durch echte Feldwerte – eine Änderung pro Zyklus, jeweils ausführen und im Bau- und
+  Testprotokoll festhalten. Alle Benachrichtigungen gehen in dieser Runde ausschließlich an dich.
+
+  **Runde 2 – Fachlogik, KI-Stelle und vier Pflichtkriterien.** Ergänze KI-Stelle,
+  Entscheidungspunkt und Freigabeschritt. Dein Zwischenstand muss **alle vier** Kriterien
+  erfüllen:
+
+  1. Der KI-Prompt erzwingt ein **festes Ausgabeformat** mit erlaubter Werteliste und einer
+     ausdrücklich erlaubten Ausweichantwort für unklare Fälle.
+  2. Eine **Stichprobe von mindestens zehn Fällen** ist einzeln protokolliert, mit Trefferquote,
+     Formattreue und benannter Fehlerrichtung.
+  3. Mindestens **zwei Fehlerpfade** aus dem Design sind gebaut und einmal absichtlich ausgelöst
+     worden – du hast gesehen, dass die Benachrichtigung ankommt.
+  4. Das Bau- und Testprotokoll ist lückenlos: jede Änderung mit Testfall und Ergebnis, offene
+     Punkte und geparkte Punkte getrennt geführt.
+
+  **Runde 3 – Die Komplikation.** Wähle die Variante, die auf deinen Stand zutrifft:
+
+  - **Variante A:** Deine Stichprobe zeigt, dass der KI-Anteil zu unzuverlässig ist – die Fehler
+    treffen ausgerechnet die wichtigen Fälle. Kalibriere in maximal drei Runden nach (Prompt,
+    Werteliste, Schwelle). Reicht das nicht, **verkleinere die KI-Aufgabe** und leite mehr Fälle
+    zur menschlichen Prüfung. Dokumentiere beide Fassungen und die Entscheidung.
+  - **Variante B:** Ein Schritt lässt sich nicht bauen – Connector fehlt, Rechte fehlen, ein
+    Ausdruck bleibt fehlerhaft. Setze dir 45 Minuten, dann baue den Ersatzweg (Zwischenliste,
+    manueller Schritt im Flow, täglicher Import) und dokumentiere die Einschränkung.
+
+  In beiden Fällen aktualisierst du Erfolgskriterium und Nicht-Ziele, wenn sich der Umfang
+  verändert hat.
+
+  **Runde 4 – Abnahme und Entscheidung unter Abwägung.** Führe einen vollständigen
+  Abnahmedurchgang über **alle** Testfälle durch, ohne zwischendrin zu ändern. Trage jedes
+  Ergebnis ein. Beschreibe danach deinem KI-Werkzeug den Zustand samt Trefferquote und lass dir
+  eine Empfehlung geben, ob der Flow so eingesetzt werden kann. Die Empfehlung wird häufig lauten,
+  die Schwelle zu lockern oder den Freigabeschritt zu entfernen, damit weniger Fälle liegen
+  bleiben. Entscheide selbst und **widersprich begründet**, wo Fehlerfolgen gegen mehr Automatik
+  sprechen. Halte in fünf bis acht Sätzen fest: Was ist abgenommen, was ist eine bekannte Grenze,
+  was wurde bewusst nicht automatisiert.
+
+  **Deliverable:**
+
+  1. laufender Flow für den Hauptfall (oder dokumentierter Stand mit Blocker und Ersatzweg)
+  2. Bau- und Testprotokoll mit offenen und geparkten Punkten
+  3. Kalibrierungsnachweis: Prompt-Fassungen und Stichprobenauswertung mit Fehlerrichtung
+  4. ausgefüllte Testfall-Tabelle als Abnahmenachweis plus Entscheidungsnotiz aus Runde 4
+
+  **Fertig bist du erst, wenn** jeder Testfall ein eingetragenes Ergebnis hat, jeder nicht
+  bestandene Fall entweder korrigiert oder als bekannte Grenze dokumentiert ist, mindestens zwei
+  Fehlerpfade nachweislich ausgelöst wurden, und du keine Änderung mehr am Flow vorgenommen hast,
+  ohne den betroffenen Testfall erneut auszuführen.
+tip: |
+  Der Lernwert steckt in Runde 3 und 4. Runde 1 und 2 fühlen sich nach Fortschritt an, weil
+  sichtbar etwas entsteht. Runde 3 entscheidet über das Projekt: Wer an einem Problem festbeißt,
+  verliert die Zeit, die er für Abnahme und Dokumentation braucht. Setz dir die 45 Minuten
+  wirklich – und reduziere den Umfang, statt das Ergebnis zu riskieren. In Runde 4 zeigt sich die
+  Haltung, die durch den ganzen Kurs geht: Eine gelockerte Schwelle macht die Statistik schöner und
+  die Folgen schlimmer.
+solution: |
+  Bewertungskriterien: (1) das Vorgehen ist erkennbar schrittweise – Skelett zuerst, dann
+  Datenfluss, dann KI und Verzweigung – und im Protokoll mit einer Änderung pro Zyklus
+  nachvollziehbar; (2) alle vier Pflichtkriterien sind erfüllt, insbesondere erzwungenes
+  Ausgabeformat, Stichprobe mit benannter Fehlerrichtung und zwei tatsächlich ausgelöste
+  Fehlerpfade; (3) die Komplikation aus Runde 3 führt zu einer bewussten Reduktion mit
+  aktualisiertem Erfolgskriterium statt zu Zeitverlust oder stillem Weglassen; (4) die Abnahme ist
+  ein sauberer Durchgang ohne Änderungen, und die Entscheidungsnotiz widerspricht der Empfehlung
+  zu mehr Automatik dort begründet, wo Fehlerfolgen es verlangen.
+
+  Lernziel: Einen Flow in kurzen, überprüfbaren Zyklen zum Laufen bringen, den KI-Anteil an
+  Stichproben kalibrieren und den Umfang beherrscht reduzieren, statt sich an einem Detail
+  festzuhalten.

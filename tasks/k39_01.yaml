@@ -1,0 +1,27 @@
+title: Drei Fragen der Nachfolge beantworten
+difficulty: 1
+question: |
+  Stell dir vor, du übergibst dein Projekt in einem Jahr an eine Person, die dich nicht fragen
+  kann.
+
+  1. Notiere die **drei Fragen**, die diese Person zuerst stellen würde.
+  2. Beantworte jede Frage in zwei bis drei Sätzen so konkret, dass die Antwort ohne dich reicht.
+  3. Markiere, in welchen Abschnitt der Doku-Gliederung jede Antwort gehört.
+tip: |
+  Die ersten Fragen sind selten „wie funktioniert die KI". Meist lauten sie: Warum ist das so
+  gebaut, was darf ich nicht anfassen, und was mache ich, wenn es nicht läuft?
+solution: |
+  Qualitätskriterien: (1) die Fragen sind Übernahmefragen, nicht Verständnisfragen zur Technik
+  allgemein; (2) jede Antwort enthält konkrete Namen von Listen, Feldern, Personen oder Schritten;
+  (3) die Zuordnung zur Gliederung passt.
+
+  Beispiel für ein gutes Ergebnis:
+
+  | Frage | Antwort in Kurzform | Abschnitt |
+  |---|---|---|
+  | Woran merke ich, dass etwas nicht läuft? | Kommt zwischen 8 und 18 Uhr kein neuer Eintrag in der Liste Anfragen oder ist die Spalte Kategorie leer, ist der Flow gestört. Die Fehlermail geht an A. Beispiel. | 7 Betriebshinweise |
+  | Was darf ich nicht ohne Prüfung ändern? | Die Spaltennamen der Liste Anfragen und die Kategorie-Werteliste im Prompt müssen zusammenpassen. Wird eine Spalte umbenannt, bricht Schritt 4 ab. | 3 und 5 |
+  | Warum bestätigt die Teamleitung die Kategorie noch von Hand? | Die Trefferquote liegt bei etwa 90 Prozent, und eine falsche Kategorie führt zu verzögerten Support-Fällen. Die Freigabe ist bewusst behalten. | 1 und 8 |
+
+  Schwach wäre: „Wie funktioniert Power Automate?" – das steht nicht in deiner Projektdoku,
+  sondern in der Produktdokumentation.

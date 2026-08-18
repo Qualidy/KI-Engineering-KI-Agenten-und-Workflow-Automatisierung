@@ -1,0 +1,61 @@
+title: Den doppelt laufenden Ablauf entschärfen
+difficulty: 3
+question: |
+  Ein Kollege hat folgenden Ablauf entworfen und ist stolz darauf:
+
+  ```text
+  Ausloeser: Neue E-Mail im Sammelpostfach rechnung@
+  Schritt 1: Anhang in SharePoint speichern, Dateiname
+             Rechnung_[laufende Nummer].pdf
+  Schritt 2: Neue Zeile in der Liste Rechnungseingang anlegen
+  Schritt 3: Freigabemail an die Kostenstelle senden
+  Schritt 4: Bestaetigungsmail an den Lieferanten senden
+  ```
+
+  Nach zwei Wochen gibt es Beschwerden: Kostenstellen erhalten dieselbe Rechnung mehrfach
+  zur Freigabe, in der Ablage liegen Dateien doppelt unter verschiedenen Nummern, und ein
+  Lieferant hat sich über vier identische Bestätigungen beschwert.
+
+  1. Nenne **drei** Situationen, die diesen Ablauf zweimal für denselben Vorgang starten.
+  2. Prüfe jeden der vier Schritte: Ist er idempotent? Was passiert bei doppelter
+     Ausführung konkret?
+  3. Entwirf ein eindeutiges Kennzeichen für einen Vorgang und beschreibe, wo im Ablauf
+     die Prüfung eingebaut wird.
+  4. Lass dir dann von einem KI-Werkzeug (Copilot, ChatGPT oder Claude) den überarbeiteten
+     Ablauf gegenprüfen. Formuliere den Auftrag so, dass er nach **verbleibenden**
+     Schwachstellen sucht, nicht nach Lob. Prüfe jeden Hinweis selbst nach und notiere,
+     welchen du übernimmst und welchen du verwirfst.
+tip: |
+  Sortiere die Schritte nach dem Schaden, den eine doppelte Ausführung anrichtet. Eine
+  doppelte Datei ist unschön, eine doppelte Mail an einen Lieferanten ist peinlich, eine
+  doppelte Freigabe kann zur doppelten Zahlung führen. Achte außerdem auf die laufende
+  Nummer in Schritt 1 – sie ist der Grund, warum die Doppelung überhaupt unentdeckt bleibt.
+solution: |
+  **Ursachen für Doppelläufe:** erneutes Starten nach einem Fehler in Schritt 3 oder 4;
+  eine Antwortmail des Lieferanten im selben Postfach, die als neuer Vorgang gilt; ein
+  Lieferant, der die Rechnung zur Sicherheit ein zweites Mal sendet; das Weiterleiten
+  derselben Mail durch eine Kollegin.
+
+  | Schritt | Idempotent? | Folge bei doppelter Ausführung |
+  |---|---|---|
+  | Datei speichern mit laufender Nummer | nein | zweite Datei unter neuem Namen, Doppelung unsichtbar |
+  | Zeile in Liste anlegen | nein | zwei Vorgänge für eine Rechnung |
+  | Freigabemail senden | nein | Kostenstelle gibt zweimal frei, Risiko Doppelzahlung |
+  | Bestätigung an Lieferant | nein | Außenwirkung, Vertrauensverlust |
+
+  **Kennzeichen:** Lieferant plus Rechnungsnummer, zum Beispiel
+  `papierwelt-gmbh_R-2026-4711`. Die laufende Nummer taugt nicht, weil der Ablauf sie selbst
+  erzeugt und beim zweiten Lauf eine neue vergibt; die Empfangszeit taugt nicht, weil sie
+  sich bei einer Wiederholung unterscheidet.
+
+  **Einbau:** Direkt nach dem Trigger Kennzeichen bilden und in der Liste danach suchen.
+  Vorhanden heißt: nur protokollieren und beenden. Nicht vorhanden heißt: Zeile anlegen,
+  dann Datei speichern, dann Mails senden. Die Reihenfolge ist entscheidend – der Eintrag
+  ist die Sperre und muss vor den nach außen wirkenden Schritten stehen. Der Dateiname
+  sollte das Kennzeichen enthalten, damit ein zweiter Lauf überschreibt statt zu ergänzen.
+
+  **Zum KI-Anteil:** Brauchbar sind meist der Hinweis auf den fehlenden Fall
+  „Rechnungsnummer nicht erkennbar", auf Groß- und Kleinschreibung im Kennzeichen und auf
+  fehlende Fehlerprotokollierung. Verwerfen solltest du pauschale Empfehlungen wie „nutze
+  eine Datenbank" – sie beantworten die Frage nicht und ignorieren, dass hier ohne
+  Adminrechte gearbeitet wird.

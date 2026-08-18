@@ -1,0 +1,29 @@
+title: Symptom und Ursache zuordnen
+difficulty: 1
+question: |
+  Sechs Beobachtungen aus dem Alltag mit KI-Werkzeugen. Ordne jeder Beobachtung die
+  **technische Ursache** zu: Token, Kontextfenster, Trainingsstichtag, Temperatur oder
+  die Grundfunktion „wahrscheinlichste Fortsetzung".
+
+  1. Das Werkzeug behauptet, eine Förderrichtlinie enthalte einen Paragrafen, den es nicht gibt.
+  2. Nach 40 Nachrichten hält sich das Werkzeug nicht mehr an die Formatvorgabe vom Anfang.
+  3. Auf dieselbe Frage kommen an zwei Tagen zwei unterschiedlich formulierte Antworten.
+  4. Eine Multiplikation mit vierstelligen Zahlen ist um einige Hundert daneben.
+  5. Das Werkzeug kennt eine Softwareversion nicht, die seit einem halben Jahr im Einsatz ist.
+  6. Die Frage „Wie viele n stecken in Kundenkommunikation?" wird falsch beantwortet.
+tip: |
+  Zwei der sechs Fälle haben dieselbe Ursache. Frage dich bei jedem Punkt: Liegt es daran,
+  **womit** das Modell rechnet, **wie viel** es überblickt, **wann** es gelernt hat oder
+  **wie** es auswählt?
+solution: |
+  | Nr. | Ursache | Begründung |
+  |---|---|---|
+  | 1 | wahrscheinlichste Fortsetzung | Das Modell füllt eine Wissenslücke mit einer plausiblen Formulierung – eine klassische Halluzination |
+  | 2 | Kontextfenster | Ältere Teile des Gesprächs werden gekürzt oder verdichtet, die Vorgabe fällt heraus |
+  | 3 | Temperatur | Die Auswahl unter wahrscheinlichen Fortsetzungen enthält eine Zufallskomponente |
+  | 4 | Token | Zahlen zerfallen in Bruchstücke, das Modell erzeugt eine plausible Zifferfolge statt zu rechnen |
+  | 5 | Trainingsstichtag | Nach dem Stichtag Entstandenes steckt nicht im Modell |
+  | 6 | Token | Einzelbuchstaben sind keine Verarbeitungseinheit, Zählen ist deshalb unzuverlässig |
+
+  Die wichtigste Einsicht: Keiner dieser Fälle ist ein Defekt, der sich melden ließe. Alle sechs
+  folgen aus der Bauweise – deshalb hilft nur eine passende Arbeitsweise, kein Warten auf ein Update.

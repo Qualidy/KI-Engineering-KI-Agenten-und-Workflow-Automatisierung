@@ -1,0 +1,90 @@
+title: Projektetappe 1 – Use Case festlegen und Steckbrief erstellen
+difficulty: 4
+question: |
+  **Projektetappe:** Dies ist die erste Etappe deines eigenen Projekts. Am Ende dieses
+  Workshops steht fest, **welchen** Workflow du bauen wirst, wie er zugeschnitten ist und woran
+  du am Ende Erfolg messen wirst. Alles Weitere baut darauf auf: das Design (Kap. 36), der Bau
+  (Kap. 37), Betrieb und Übergabe (Kap. 38), Dokumentation (Kap. 39) und Präsentation
+  (Kap. 40). Nimm dir die Zeit hier – ein unscharfer Zuschnitt kostet später ein Vielfaches.
+
+  ```text
+  Rahmen fuer dein Projekt:
+  Ein Prozess aus deinem eigenen Arbeitsumfeld.
+  Werkzeuge: Power Automate, Microsoft 365, ein KI-Baustein.
+  Falls du keine Umgebung hast: Zapier oder Make im kostenfreien Tarif,
+  oder ein vollstaendiger Papier-Entwurf mit Testdaten.
+  Zeitbudget fuer die gesamte Umsetzung: wenige Arbeitstage, nicht Wochen.
+  ```
+
+  ---
+
+  **Runde 1 – Drei Kandidaten und ein Ist-Prozess.** Sammle **drei** Kandidaten aus deinem
+  Arbeitsumfeld, jeweils in einem Satz als Tätigkeit formuliert. Nutze dafür deine Bewertung aus
+  Kapitel 34, wenn sie vorliegt. Prüfe alle drei mit dem Machbarkeits-Schnelltest (fünf
+  Kriterien, jeweils Ja/Teilweise/Nein). Wähle einen Kandidaten aus und nimm für diesen den
+  **Ist-Prozess auf maximal einer Seite** auf: Auslöser, Schritte in Reihenfolge, ausführende
+  Rollen, Medienbrüche, Dauer pro Durchlauf mit Angabe, woher die Zahl kommt.
+
+  **Runde 2 – Zuschnitt gegen vier Pflichtkriterien.** Erstelle Scope-Liste und Nicht-Ziele und
+  prüfe dein Ergebnis gegen **alle vier** Kriterien. Lass dir von deinem KI-Werkzeug
+  Gegenfragen stellen, schließe die Lücken aber selbst:
+
+  1. Die Nicht-Ziele-Liste hat **mindestens fünf** Einträge, jeder mit Begründung.
+  2. Das Erfolgskriterium enthält **Größe, Zielwert und Messmethode** und ist ohne fremde Hilfe
+     messbar.
+  3. Für **jede** Datenquelle ist notiert, ob du heute Zugriff hast – ohne neue Freigabe.
+  4. Mindestens **ein** menschlicher Entscheidungspunkt ist benannt, an dem bewusst nicht
+     automatisiert wird, inklusive Begründung.
+
+  **Runde 3 – Die Komplikation.** Wähle die Variante, die auf dein Projekt zutrifft, und
+  arbeite sie durch:
+
+  - **Variante A:** Eine deiner Datenquellen fällt weg – der Connector wird dir nicht angezeigt
+    oder die Rechte fehlen. Baue eine Ersatzquelle mit Testdaten auf (SharePoint-Liste,
+    Excel-Datei) und passe Scope, Nicht-Ziele und Erfolgskriterium an.
+  - **Variante B:** Beim Aufschreiben des Ist-Prozesses stellst du fest, dass der Ablauf zwei
+    Sonderfälle hat, die zusammen fast die Hälfte der Fälle ausmachen. Entscheide, ob du sie
+    einschließt oder ausschließt – und formuliere die Folge für deinen Nutzennachweis.
+
+  Dokumentiere die Änderung als **Scope-Änderung mit Datum und Grund**, nicht als stille
+  Korrektur.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Beschreibe deinem KI-Werkzeug alle drei Kandidaten
+  aus Runde 1 und lass dir eine Empfehlung mit Begründung geben. Die Empfehlung wird
+  vermutlich den Kandidaten mit dem größten Nutzen nennen. Entscheide danach selbst und
+  **widersprich der Empfehlung begründet**, wenn der größte Nutzen mit dem größten Risiko oder
+  der größten Abhängigkeit zusammenfällt. Halte in fünf bis acht Sätzen fest: gewählter
+  Kandidat, verworfene Alternative, Ausschlaggrund, und was du aufgibst, indem du klein
+  anfängst.
+
+  **Deliverable:**
+
+  1. Kandidatenliste mit ausgefülltem Machbarkeits-Schnelltest für alle drei Ideen
+  2. Ist-Prozess auf maximal einer Seite, mit Dauer und Herkunft der Zahl
+  3. ausgefüllter Projektsteckbrief inklusive Scope, Nicht-Ziele-Liste und Erfolgskriterium
+  4. Entscheidungsnotiz aus Runde 4 plus dokumentierte Scope-Änderung aus Runde 3
+
+  **Fertig bist du erst, wenn** alle vier Pflichtkriterien erfüllt sind, dein Steckbrief keine
+  Zeile mehr mit „muss noch geklärt werden" bei den Datenquellen enthält, und du das Projekt in
+  drei Sätzen so erklären kannst, dass eine prozessfremde Person Zweck, Grenze und Erfolgsmaß
+  wiedergeben kann.
+tip: |
+  Der Lernwert steckt in Runde 3 und 4. Runde 1 fühlt sich produktiv an, entscheidet aber wenig.
+  In Runde 3 zeigt sich, ob dein Zuschnitt Reserve hat: Wer nur einen Plan hat und keinen
+  Ersatzweg, verliert Tage. In Runde 4 geht es um die unbequeme Erkenntnis, dass der beste
+  Kandidat für ein Projekt mit engem Zeitbudget selten der mit dem größten Nutzen ist. Formuliere
+  ausdrücklich, was du aufgibst – das ist keine Schwäche, sondern der Beleg dafür, dass du
+  bewusst entschieden hast.
+solution: |
+  Bewertungskriterien: (1) alle drei Kandidaten sind gegen die fünf Auswahlkriterien geprüft und
+  die Auswahl folgt nachvollziehbar aus dieser Prüfung; (2) alle vier Pflichtkriterien aus
+  Runde 2 sind erfüllt, insbesondere ein Erfolgskriterium mit zählbarer Größe, Zielwert und
+  selbst durchführbarer Messmethode sowie eine Nicht-Ziele-Liste mit begründeten Einträgen;
+  (3) die Komplikation aus Runde 3 führt zu einer dokumentierten Scope-Änderung mit Datum und
+  Grund, nicht zu einem stillen Weglassen oder zum Aufgeben des Projekts; (4) die
+  Entscheidungsnotiz wägt Nutzen gegen Risiko und Abhängigkeit ab, benennt die verworfene
+  Alternative und übernimmt die KI-Empfehlung nicht ungeprüft.
+
+  Lernziel: Aus einer Idee ein tragfähig zugeschnittenes Vorhaben machen – mit ausdrücklichen
+  Nicht-Zielen, einem messbaren Erfolgskriterium und einer begründeten Entscheidung gegen den
+  verlockenderen, aber riskanteren Kandidaten.

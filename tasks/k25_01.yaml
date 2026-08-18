@@ -1,0 +1,26 @@
+title: Welcher Speicherort passt?
+difficulty: 1
+question: |
+  Entscheide für jeden Fall, ob eine **SharePoint-Liste**, eine **Excel-Tabelle** oder eine
+  **Dokumentbibliothek** der richtige Speicherort ist. Begründe jeweils in einem Satz.
+
+  1. 15 Personen erfassen laufend Reklamationen und ändern deren Status.
+  2. Ein Flow legt jede Woche eine Zeile mit Kennzahlen für eine Auswertung ab.
+  3. Eingehende Rechnungen als PDF sollen mit Lieferant und Rechnungsnummer abgelegt werden.
+  4. Eine Liste von Kostenstellen-Kürzeln, die ein Flow nur nachschlägt.
+  5. Ein Antragsvorgang, bei dem später nachvollziehbar sein muss, wer wann was geändert hat.
+tip: |
+  Frage dich zwei Dinge: Schreiben mehrere gleichzeitig? Und brauche ich einen Verlauf
+  pro Datensatz oder nur pro Datei?
+solution: |
+  | Fall | Speicherort | Begründung |
+  |---|---|---|
+  | 1. Reklamationen | SharePoint-Liste | gleichzeitiger Zugriff, Statusspalte, Rechte pro Liste |
+  | 2. Kennzahlen wöchentlich | Excel-Tabelle | reines Anhängen für Auswertung, keine Parallelbearbeitung |
+  | 3. Rechnungs-PDF | Dokumentbibliothek | Datei plus Metadatenspalten, `Datei erstellen` |
+  | 4. Kostenstellen-Nachschlagewerk | SharePoint-Liste | mit `Elemente abrufen` und Filterabfrage gezielt lesbar |
+  | 5. Antragsvorgang mit Nachweis | SharePoint-Liste | Versionsverlauf je Element, Excel hat den nur je Datei |
+
+  Kernaussage: Excel ist ein guter **Ausgang** für Auswertungen, aber ein schlechter zentraler
+  Datenspeicher für laufende Vorgänge. Sobald mehrere Personen gleichzeitig arbeiten oder ein
+  Verlauf je Datensatz nötig ist, gewinnt die Liste.

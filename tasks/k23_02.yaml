@@ -1,0 +1,40 @@
+title: Ausdruckslabor mit Verfassen bauen
+difficulty: 2
+question: |
+  Diese Übung baust du in Power Automate. Du legst dir eine Werkbank an, in der du jeden Ausdruck
+  dieses Kapitels ausprobieren kannst.
+
+  1. `Erstellen → Sofortiger Cloud-Flow`, Name `23 Ausdruckslabor`, Trigger `Flow manuell auslösen`.
+  2. Füge fünf Aktionen `Verfassen` (Gruppe `Datenvorgang`) hinzu und benenne jede nach ihrem Zweck,
+     zum Beispiel `Datum sortierbar`, `Datum deutsch`, `Uhrzeit lokal`, `Frist plus 14 Tage`,
+     `Absender ohne Domain`.
+  3. Trage in die fünf Aktionen ein: `utcNow` unformatiert, `formatDateTime` mit deutschem Datum,
+     `convertTimeZone` nach `W. Europe Standard Time` mit Datum und Uhrzeit, `addDays` mit 14 Tagen,
+     sowie `toLower` in Verbindung mit `split` auf eine Beispiel-Mailadresse.
+  4. Speichern, `Testen → Manuell`. Öffne den Lauf und lies die **Ausgaben** aller fünf Schritte ab.
+  5. Notiere die Differenz zwischen `utcNow` und dem Ergebnis von `convertTimeZone` in Stunden und
+     erkläre, warum sie im Winter anders ist als im Sommer.
+tip: |
+  Trage in jede Verfassen-Aktion nur **einen** Ausdruck ein. Der Sinn der Übung ist, dass du fünf
+  einzeln lesbare Ergebnisse im Ausführungsverlauf hast statt eines langen Textes.
+solution: |
+  Erwartete Schrittfolge und Inhalte:
+
+  ```text
+  Flow: 23 Ausdruckslabor   (Instant-Flow)
+    Trigger: Flow manuell ausloesen
+    Verfassen: Zeitstempel roh        @{utcNow()}
+    Verfassen: Datum deutsch          @{formatDateTime(utcNow(),'dd.MM.yyyy')}
+    Verfassen: Uhrzeit lokal          @{convertTimeZone(utcNow(),'UTC','W. Europe Standard Time','dd.MM.yyyy HH:mm')}
+    Verfassen: Frist plus 14 Tage     @{addDays(utcNow(),14,'dd.MM.yyyy')}
+    Verfassen: Absender ohne Domain   @{toLower(first(split('Anna.Beispiel@Firma.de','@')))}
+  ```
+
+  Erwartete Ausgaben im Verlauf: ein Zeitstempel mit `Z` am Ende, ein deutsches Datum, eine
+  Ortszeit, die im Sommer zwei und im Winter eine Stunde nach der UTC-Zeit liegt, ein Datum 14 Tage
+  in der Zukunft und der Wert `anna.beispiel`.
+
+  Erklärung zur Zeitdifferenz: Deutschland verwendet im Winter MEZ mit einer Stunde Abstand zu UTC
+  und im Sommer MESZ mit zwei Stunden. `convertTimeZone` mit `W. Europe Standard Time` berücksichtigt
+  diesen Wechsel automatisch – deshalb ist ein handgerechnetes `addHours` mit fester Stundenzahl
+  immer für ein halbes Jahr falsch.

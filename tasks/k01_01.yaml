@@ -1,0 +1,27 @@
+title: KI oder klassische Software?
+difficulty: 1
+question: |
+  Ordne die folgenden Systeme zu: Handelt es sich um **klassische Software** (feste Regeln)
+  oder um ein **KI-System** (lernt aus Daten)?
+
+  1. Ein Taschenrechner
+  2. Ein Spam-Filter, der sich an neue Spam-Arten anpasst
+  3. Eine Gehaltsabrechnung nach festen Formeln
+  4. Copilot, das eine E-Mail zusammenfasst
+  5. Eine Ampelsteuerung mit festem Zeitplan
+  6. Ein Ablauf, der jede eingehende Rechnung in einen Ordner verschiebt
+tip: |
+  Frage dich: Wurde jeder Fall vorher programmiert – oder erkennt das System selbst Muster?
+solution: |
+  | System | Einordnung | Begründung |
+  |---|---|---|
+  | Taschenrechner | klassische Software | feste Rechenregeln, immer identisches Ergebnis |
+  | Lernender Spam-Filter | KI-System | leitet Muster aus markierten Beispielen ab |
+  | Gehaltsabrechnung | klassische Software | Formeln sind vorgegeben und nachrechenbar |
+  | Copilot-Zusammenfassung | KI-System (generative KI) | erzeugt neuen Text, Ergebnis variiert |
+  | Ampel mit Zeitplan | klassische Software | starrer Plan, kein Lernen |
+  | Rechnung in Ordner verschieben | klassische Software | reine Regel „wenn Rechnung, dann Ordner" |
+
+  Der letzte Fall ist der wichtigste für diesen Kurs: Automatisierung ist **nicht** automatisch KI.
+  Sie wird erst dann zur KI-Anwendung, wenn ein lernendes Element hinzukommt – etwa wenn das
+  System selbst erkennen soll, **ob** ein Dokument überhaupt eine Rechnung ist.

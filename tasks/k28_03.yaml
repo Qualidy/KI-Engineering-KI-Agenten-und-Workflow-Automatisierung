@@ -1,0 +1,55 @@
+title: Fehlerbehandlung wie ein Try-Catch bauen
+difficulty: 3
+question: |
+  Diese Übung baust du in Power Automate. Ausgangslage ist ein Flow, der jede Nacht Vorgänge aus
+  einer Liste liest und für jeden Vorgang eine Aktion ausführt. Er läuft meistens – und schweigt,
+  wenn er scheitert.
+
+  Vorgegebene Fehlermeldung aus dem letzten Lauf:
+
+  ```text
+  Aktion: Element aktualisieren
+  Status: 429
+  Meldung: Rate limit is exceeded. Try again in 18 seconds.
+  ```
+
+  1. Baue einen geplanten Flow mit `Elemente abrufen` und einem `Auf jedes anwenden`, in dem ein
+     Listenelement aktualisiert wird.
+  2. Lege die fachlichen Schritte in einen `Bereich (Scope)` mit dem Namen `Versuch`.
+  3. Ergänze einen zweiten `Bereich` namens `Fehlerbehandlung`, der über
+     `Nach Fehler ausführen (Configure run after)` nur bei `ist fehlgeschlagen` und
+     `Timeout aufgetreten` startet. Er soll die Fehlerdetails in eine Liste `Fehlerprotokoll`
+     schreiben, eine Nachricht in einen Teams-Kanal senden und den Flow mit `Beenden (Terminate)`
+     und Status `Fehlgeschlagen` abschließen.
+  4. Reagiere gezielt auf die vorgegebene Meldung: Stelle Wiederholungsrichtlinie und
+     Nebenläufigkeit passend ein und begründe beide Werte.
+  5. Erzwinge einen Fehler im Bereich `Versuch` und weise nach, dass der Fehlerzweig gelaufen ist.
+tip: |
+  Die Fehlerdetails bekommst du nicht aus dem einzelnen Schritt, sondern über einen Ausdruck auf
+  das Ergebnis des ganzen Bereichs. Und überlege bei der Ratenbegrenzung, was die Ursache ist:
+  nicht die Anzahl der Datensätze, sondern wie viele gleichzeitig verarbeitet werden.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Trigger: Wiederholung  (naechtlich)
+  Bereich Versuch:
+    Aktion: Elemente abrufen  (Filterabfrage, Paginierung eingeschaltet)
+    Aktion: Auf jedes anwenden  (Einstellungen: Parallelitaet auf 5 begrenzt)
+              Aktion: Element aktualisieren
+                        Einstellungen: Wiederholungsrichtlinie exponentiell, 4 Versuche
+  Bereich Fehlerbehandlung:   (Nach Fehler ausfuehren: ist fehlgeschlagen, Timeout aufgetreten)
+    Aktion: Verfassen  ->  result(Bereich Versuch)
+    Aktion: Element erstellen  (Liste Fehlerprotokoll, Zeitpunkt, Flowname, Fehlerdetails)
+    Aktion: Nachricht in einem Chat oder Kanal veroeffentlichen  (Kanal Betrieb)
+    Aktion: Beenden  (Status Fehlgeschlagen, eigene Meldung)
+  ```
+
+  Bewertung: (1) Der Fehlerzweig startet über `Nach Fehler ausführen` und ist nachweislich
+  gelaufen. (2) Die Fehlerdetails kommen aus `result('Bereich_Versuch')`, damit erkennbar ist,
+  **welcher** Schritt gescheitert ist. (3) Begründung zur Meldung 429: Die Wiederholungsrichtlinie
+  hilft hier tatsächlich, weil die Begrenzung nach kurzer Zeit aufgehoben ist – die eigentliche
+  Ursache ist aber die parallele Schleife, deshalb wird die Nebenläufigkeit gesenkt. Nur
+  Wiederholen zu erhöhen verlängert die Laufzeit, ohne das Problem zu lösen. (4) Die Meldung geht
+  an einen Kanal, nicht an eine Einzelperson, und `Beenden` mit Status `Fehlgeschlagen` sorgt
+  dafür, dass der Lauf im Verlauf rot erscheint und nicht als Erfolg gezählt wird.

@@ -1,0 +1,1880 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel24/">
+      
+      
+        <link rel="next" href="../kapitel26/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 25 – Integration von Microsoft 365 - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-25-integration-von-microsoft-365" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 25 – Integration von Microsoft 365
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Block 5 · Power Automate in der Praxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 21 – Einführung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 22 – Der erste Cloud-Flow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 24 – Steuerung und Verzweigung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 25 – Integration von Microsoft 365
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 25 – Integration von Microsoft 365
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#251-sharepoint-als-datenruckgrat" class="md-nav__link">
+    <span class="md-ellipsis">
+      25.1 SharePoint als Datenrückgrat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#252-microsoft-lists-forms-und-excel-der-eingang-in-den-prozess" class="md-nav__link">
+    <span class="md-ellipsis">
+      25.2 Microsoft Lists, Forms und Excel: der Eingang in den Prozess
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#253-der-ausgang-outlook-teams-planner-und-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      25.3 Der Ausgang: Outlook, Teams, Planner und To Do
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#254-unter-welcher-identitat-arbeitet-der-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      25.4 Unter welcher Identität arbeitet der Flow?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#255-welcher-speicherort-fur-welchen-zweck" class="md-nav__link">
+    <span class="md-ellipsis">
+      25.5 Welcher Speicherort für welchen Zweck?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 26 – Integration externer Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 28 – Testing, Fehlerbehandlung und Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-25-integration-von-microsoft-365">Kapitel 25 – Integration von Microsoft 365<a class="headerlink" href="#kapitel-25-integration-von-microsoft-365" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie du <strong>SharePoint-Listen und Dokumentbibliotheken</strong> als Datenrückgrat deiner Flows nutzt</li>
+<li>Wie du Daten gezielt liest: <strong>Elemente abrufen</strong> mit <strong>Filterabfrage</strong> statt Schleife über alles</li>
+<li>Wie <strong>Microsoft Lists, Forms und Excel-Tabellen</strong> als Eingang in den Prozess dienen</li>
+<li>Wie du über <strong>Outlook</strong> und <strong>Teams</strong> Menschen erreichst und über <strong>Planner/To Do</strong> Aufgaben erzeugst</li>
+<li>Unter welcher <strong>Identität</strong> ein Flow arbeitet – und warum das über Datenzugriff und Ausfallsicherheit entscheidet</li>
+<li>Welcher <strong>Speicherort</strong> für welchen Zweck taugt: SharePoint-Liste, Excel-Tabelle oder Dataverse</li>
+</ul>
+</div>
+<hr />
+<h2 id="251-sharepoint-als-datenruckgrat">25.1 SharePoint als Datenrückgrat<a class="headerlink" href="#251-sharepoint-als-datenruckgrat" title="Permanent link">&para;</a></h2>
+<p>Fast jeder ernsthafte Flow braucht einen Ort, an dem Daten <strong>bleiben</strong>. In Microsoft 365 ist das in der Regel SharePoint – in zwei Varianten:</p>
+<ul>
+<li>Eine <strong>SharePoint-Liste</strong> ist eine Tabelle mit klar definierten Spalten (Text, Zahl, Datum, Auswahl, Person, Ja/Nein). Sie eignet sich für Vorgänge: Anträge, Reklamationen, Bestellungen.</li>
+<li>Eine <strong>Dokumentbibliothek</strong> ist ein Ablageort für Dateien, der zusätzlich Spalten (Metadaten) tragen kann: Lieferant, Rechnungsnummer, Status.</li>
+</ul>
+<p>Diese Aktionen brauchst du praktisch immer. Du findest sie über <code>make.powerautomate.com → Flow bearbeiten → Neuer Schritt → SharePoint</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Aktion (deutsch / englisch)</th>
+<th>Zweck</th>
+<th>Pflichtangaben</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Element erstellen (Create item)</td>
+<td>neuen Datensatz anlegen</td>
+<td>Websiteadresse, Listenname, Spaltenwerte</td>
+</tr>
+<tr>
+<td>Element aktualisieren (Update item)</td>
+<td>bestehenden Datensatz ändern</td>
+<td>zusätzlich <strong>ID</strong> des Elements</td>
+</tr>
+<tr>
+<td>Element abrufen (Get item)</td>
+<td>genau einen Datensatz laden</td>
+<td>ID</td>
+</tr>
+<tr>
+<td>Elemente abrufen (Get items)</td>
+<td>mehrere Datensätze suchen</td>
+<td>Filterabfrage, Sortierung, Anzahl</td>
+</tr>
+<tr>
+<td>Datei erstellen (Create file)</td>
+<td>Datei in Bibliothek ablegen</td>
+<td>Ordnerpfad, Dateiname, Dateiinhalt</td>
+</tr>
+<tr>
+<td>Dateieigenschaften aktualisieren (Update file properties)</td>
+<td>Metadaten einer Datei setzen</td>
+<td>ID der Datei</td>
+</tr>
+</tbody>
+</table>
+<p>Der wichtigste Hebel ist die <strong>Filterabfrage</strong> (Filter Query) in <code>Elemente abrufen</code>. Sie filtert <strong>auf dem Server</strong>, sodass gar nicht erst alle Datensätze in den Flow geladen werden:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Status eq &#39;Offen&#39;
+Abteilung eq &#39;Einkauf&#39; and Betrag gt 500
+Faelligkeit lt &#39;2026-09-01&#39;
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: interne Spaltennamen</p>
+<p>Die Filterabfrage arbeitet mit dem <strong>internen</strong> Spaltennamen, nicht mit der Anzeige. Wird eine Spalte als „Fällig am" angelegt und später umbenannt, bleibt intern oft <code>F_x00e4_llig_x0020_am</code> stehen. Prüfe den internen Namen über <code>Listeneinstellungen → Spalte anklicken</code> und lies ihn aus der Adresszeile (Parameter <code>Field=</code>). Textwerte stehen in einfachen Anführungszeichen, Zahlen ohne.</p>
+</div>
+<p><code>Elemente abrufen</code> liefert außerdem standardmäßig nur die ersten 100 Einträge. Für größere Listen musst du <code>Anzahl der Elemente</code> erhöhen und die <strong>Paginierung</strong> einschalten – das gehört zu Performance und Grenzen (Kap. 28). Merke dir die Grundregel: filtern statt schleifen. Alle 4.000 Elemente zu laden und in <code>Auf jedes anwenden</code> mit einer Bedingung zu prüfen (Kap. 24) kostet Laufzeit und macht den Flow unlesbar.</p>
+<hr />
+<h2 id="252-microsoft-lists-forms-und-excel-der-eingang-in-den-prozess">25.2 Microsoft Lists, Forms und Excel: der Eingang in den Prozess<a class="headerlink" href="#252-microsoft-lists-forms-und-excel-der-eingang-in-den-prozess" title="Permanent link">&para;</a></h2>
+<p><strong>Microsoft Lists</strong> ist keine zweite Datenbank, sondern eine <strong>benutzerfreundliche Oberfläche auf genau dieselben SharePoint-Listen</strong>: Ansichten, Formatierungen, Formularfelder, ein Kalender- oder Galerie-Layout. Für den Flow ändert sich dadurch nichts – du wählst weiterhin Websiteadresse und Listenname. Praktischer Effekt: Die Fachabteilung pflegt Daten in einer angenehmen Ansicht, dein Flow liest sie technisch als SharePoint-Liste.</p>
+<p><strong>Microsoft Forms</strong> ist der einfachste Prozessstart. Der Trigger heißt <code>Bei Übermittlung einer neuen Antwort (When a new response is submitted)</code> und liefert nur eine Antwort-ID. Die eigentlichen Antworten holst du mit <code>Antwortdetails abrufen (Get response details)</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Trigger: Bei Uebermittlung einer neuen Antwort  (Formular: Materialantrag)
+Aktion:  Antwortdetails abrufen  (Antwort-ID aus dem Trigger)
+Aktion:  Element erstellen  (Liste Materialantraege)
+           Titel        = Antwortfeld Material
+           Antragsteller = Antwortfeld Responder
+           Status       = Offen
+</code></pre></div></td></tr></table></div>
+<p><strong>Excel</strong> ist der Klassiker, hat aber eine harte Voraussetzung: Der Connector <code>Excel Online (Business)</code> sieht ausschließlich Daten, die <strong>als Tabelle formatiert</strong> sind (<code>Excel → Einfügen → Tabelle</code>). Ein simpler Zellbereich ist für den Flow unsichtbar. Zusätzlich muss die Datei in OneDrive oder SharePoint liegen, nicht auf einem Netzlaufwerk.</p>
+<table>
+<thead>
+<tr>
+<th>Excel-Aktion</th>
+<th>Zweck</th>
+<th>Stolperstein</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zeile in Tabelle hinzufügen (Add a row into a table)</td>
+<td>Datensatz anhängen</td>
+<td>Tabelle muss existieren und benannt sein</td>
+</tr>
+<tr>
+<td>Zeilen abrufen (List rows present in a table)</td>
+<td>Tabelleninhalt lesen</td>
+<td>liefert alles als <strong>Text</strong>, Datumsangaben als Zahl</td>
+</tr>
+<tr>
+<td>Zeile aktualisieren (Update a row)</td>
+<td>Zeile ändern</td>
+<td>braucht eine eindeutige Schlüsselspalte</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis: Excel ist keine Datenbank</p>
+<p>Zwei Flows, die gleichzeitig in dieselbe Arbeitsmappe schreiben, blockieren sich. Öffnet jemand die Datei in der Desktop-App, schlagen Schreibaktionen fehl. Und Datumsangaben kommen als Seriennummer wie <code>46000</code> zurück, die du erst umrechnen musst. Für alles, was mehrere Personen gleichzeitig nutzen, ist eine SharePoint-Liste die stabilere Wahl.</p>
+</div>
+<hr />
+<h2 id="253-der-ausgang-outlook-teams-planner-und-to-do">25.3 Der Ausgang: Outlook, Teams, Planner und To Do<a class="headerlink" href="#253-der-ausgang-outlook-teams-planner-und-to-do" title="Permanent link">&para;</a></h2>
+<p>Ein Flow, dessen Ergebnis niemand sieht, ist wertlos. Für die Rückmeldung an Menschen gibt es vier Wege:</p>
+<table>
+<thead>
+<tr>
+<th>Aktion</th>
+<th>Wirkung</th>
+<th>Typischer Einsatz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E-Mail senden V2 (Send an email V2)</td>
+<td>Mail an Empfängerliste</td>
+<td>Bestätigung, Zusammenfassung, Bericht</td>
+</tr>
+<tr>
+<td>E-Mail mit Optionen senden (Send email with options)</td>
+<td>Mail mit Antwort-Schaltflächen, Flow wartet</td>
+<td>einfache Ja/Nein-Rückfrage</td>
+</tr>
+<tr>
+<td>Ereignis erstellen V4 (Create event V4)</td>
+<td>Kalendereintrag</td>
+<td>Frist, Termin, Erinnerung</td>
+</tr>
+<tr>
+<td>Nachricht in einem Chat oder Kanal veröffentlichen (Post message in a chat or channel)</td>
+<td>Teams-Nachricht</td>
+<td>Team informieren, Vorgang sichtbar machen</td>
+</tr>
+</tbody>
+</table>
+<p><code>E-Mail senden V2</code> erlaubt im Bereich <code>Erweiterte Optionen</code> unter anderem CC, Anlagen und <code>Von (Senden als)</code>. Damit kann ein Flow im Namen eines <strong>freigegebenen Postfachs</strong> schreiben – etwa <code>einkauf@beispielfirma.example</code> statt der Privatadresse der Person, die den Flow gebaut hat.</p>
+<p>Für Aufgaben gilt eine einfache Trennung: <strong>Planner</strong> ist Teamarbeit (<code>Aufgabe erstellen (Create a task)</code> mit Plan, Bucket und zugewiesener Person), <strong>To Do</strong> ist persönlich (<code>Aufgabe hinzufügen (Add a to-do)</code>). Wenn eine Aufgabe auch nach einem Urlaub oder Wechsel sichtbar bleiben muss, gehört sie nach Planner.</p>
+<p>Ein Teams-Beitrag kann außerdem eine <strong>Adaptive Card</strong> sein – eine strukturierte Karte mit Feldern und Schaltflächen direkt im Chat. Damit lassen sich Freigaben ohne Umweg über E-Mail erledigen; das baust du in Kapitel 27 auf.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Forms Antrag]) --&gt; B([SharePoint Liste als Datenrueckgrat])
+    B --&gt; C([Teams Nachricht an Fachteam])
+    B --&gt; D([Outlook Bestaetigung an Antragsteller])
+    B --&gt; E([Planner Aufgabe fuer Bearbeitung])</code></pre>
+<hr />
+<h2 id="254-unter-welcher-identitat-arbeitet-der-flow">25.4 Unter welcher Identität arbeitet der Flow?<a class="headerlink" href="#254-unter-welcher-identitat-arbeitet-der-flow" title="Permanent link">&para;</a></h2>
+<p>Das ist die wichtigste und am häufigsten übersehene Frage dieses Kapitels. Ein Flow hat <strong>keine eigene Identität</strong>. Er arbeitet über <strong>Verbindungen</strong> (Connections), und jede Verbindung gehört einer Person. Wenn du in einem Flow den SharePoint-Connector nutzt, ist dort deine Anmeldung hinterlegt – der Flow handelt also <strong>in deinem Namen</strong>.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Person legt Verbindung an]) --&gt; B([Flow nutzt diese Verbindung])
+    B --&gt; C([Zugriff genau wie diese Person])
+    C --&gt; D([Protokoll zeigt diese Person als Verursacher])
+    C --&gt; E([Bei Austritt bricht der Flow ab])</code></pre>
+<p>Daraus folgen vier praktische Konsequenzen:</p>
+<ol>
+<li><strong>Datenzugriff ist begrenzt auf deine Rechte.</strong> Was du selbst nicht öffnen darfst, kann auch dein Flow nicht lesen. Ein Flow, der auf eine fremde Abteilungsliste zugreifen soll, scheitert mit einem Berechtigungsfehler (Statuscode 401 oder 403, Kap. 28) – nicht weil der Flow falsch gebaut ist, sondern weil die Identität nicht darf.</li>
+<li><strong>Datenzugriff kann auch zu weit reichen.</strong> Läuft der Flow unter einem Konto mit weitreichenden Rechten, können auf einmal alle Nutzenden über den Flow Dinge tun, die sie direkt nicht dürften. Ein manuell auslösbarer Flow, der mit einer privilegierten Verbindung Daten löscht, ist eine offene Hintertür.</li>
+<li><strong>Die Spur im Protokoll zeigt dich.</strong> In SharePoint steht in <code>Erstellt von</code> und <code>Geändert von</code> der Verbindungsinhaber, nicht die Person, die den Antrag gestellt hat. Wer wirklich beantragt hat, musst du selbst in eine eigene Spalte schreiben.</li>
+<li><strong>Personalwechsel bricht den Flow.</strong> Wird das Konto deaktiviert, die Lizenz entzogen oder das Kennwort zurückgesetzt, schlagen die Verbindungen fehl und der Flow steht – oft unbemerkt, weil die Fehlermeldung im Postfach einer nicht mehr existierenden Person landet.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Der Klassiker: Der Flow gehört einer Person, die das Haus verlässt</p>
+<p>Ein Flow, der die Urlaubsanträge verteilt, läuft zwei Jahre stabil. Dann wechselt die Kollegin, die ihn gebaut hat, die Abteilung. Ihre Verbindung wird ungültig, niemand ist Miteigentümer, niemand bekommt die Fehlermeldung. Erst nach Wochen fällt auf, dass Anträge liegen bleiben. Genau dagegen helfen Dienstkonten und Miteigentümerschaft.</p>
+</div>
+<p><strong>Die Lösung: ein Dienst- oder Funktionskonto.</strong> Das ist ein eigenes Benutzerkonto ohne persönlichen Inhaber, etwa <code>flow-service@beispielfirma.example</code>, mit passender Lizenz und genau den nötigen Rechten. Die Verbindungen des Flows werden mit diesem Konto angelegt. Vorteile: Der Flow ist unabhängig von Personalwechseln, im Protokoll ist erkennbar, dass eine Automatisierung gehandelt hat, und die Rechte lassen sich gezielt vergeben.</p>
+<p>Zusätzlich – und mit weniger Aufwand – solltest du immer diese drei Dinge tun:</p>
+<ul>
+<li><strong>Miteigentümer eintragen:</strong> <code>Meine Flows → Flow → Freigeben → Benutzer hinzufügen</code>. Mindestens zwei Personen oder eine Gruppe, damit der Flow bearbeitbar bleibt.</li>
+<li><strong>Fehlerbenachrichtigung an ein Team-Postfach</strong> statt an eine Einzelperson (Kap. 28).</li>
+<li><strong>Verbindungen dokumentieren:</strong> Welcher Connector läuft unter welchem Konto? Das ist der erste Blick bei jedem Berechtigungsfehler.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Flow ist kein neutraler Roboter. Er ist eine Vollmacht: Er handelt mit den Rechten derjenigen Identität, deren Verbindung er benutzt. Wer diese Frage nicht klärt, baut entweder einen Flow, der zu wenig darf, oder einen, der zu viel darf.</p>
+</div>
+<hr />
+<h2 id="255-welcher-speicherort-fur-welchen-zweck">25.5 Welcher Speicherort für welchen Zweck?<a class="headerlink" href="#255-welcher-speicherort-fur-welchen-zweck" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>SharePoint-Liste</th>
+<th>Excel-Tabelle</th>
+<th>Dataverse (Ausblick)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gleichzeitiger Zugriff</td>
+<td>unproblematisch</td>
+<td>Konflikte und Sperren</td>
+<td>unproblematisch</td>
+</tr>
+<tr>
+<td>Datentypen und Prüfung</td>
+<td>Spaltentypen, Pflichtfelder</td>
+<td>alles frei eintippbar</td>
+<td>strenges Datenmodell mit Regeln</td>
+</tr>
+<tr>
+<td>Berechtigungen</td>
+<td>pro Liste, Ordner, Element möglich</td>
+<td>nur über die Datei</td>
+<td>fein pro Tabelle, Feld und Zeile</td>
+</tr>
+<tr>
+<td>Versionsverlauf</td>
+<td>pro Element vorhanden</td>
+<td>nur pro Datei</td>
+<td>vollständige Historie</td>
+</tr>
+<tr>
+<td>Datenmenge</td>
+<td>Tausende Einträge gut, dann Feinarbeit</td>
+<td>wenige Tausend Zeilen</td>
+<td>für große Datenmengen gebaut</td>
+</tr>
+<tr>
+<td>Lizenz</td>
+<td>in Microsoft 365 enthalten</td>
+<td>in Microsoft 365 enthalten</td>
+<td><strong>Premium</strong>, kostet zusätzlich</td>
+</tr>
+<tr>
+<td>Gut für</td>
+<td>Vorgänge mit Status und Verlauf</td>
+<td>Auswertung, Import, Export</td>
+<td>zentrale Fachanwendungen</td>
+</tr>
+</tbody>
+</table>
+<p>Als Faustregel: <strong>Vorgänge in eine SharePoint-Liste, Auswertungen in Excel.</strong> Excel ist ein hervorragendes Ziel für einen Bericht („einmal pro Woche eine Zeile anhängen"), aber ein schlechter zentraler Datenspeicher für laufende Prozesse. <strong>Dataverse</strong> ist die professionelle Variante mit echtem Datenmodell und feiner Rechtevergabe, braucht aber eine Premium-Lizenz und ist in dieser Weiterbildung nur Ausblick.</p>
+<div class="admonition example">
+<p class="admonition-title">Durchgängiges Beispiel: Materialantrag Ende zu Ende</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>Trigger: Bei Uebermittlung einer neuen Antwort  (Forms: Materialantrag)
+Aktion:  Antwortdetails abrufen
+Aktion:  Elemente abrufen  (Liste Kostenstellen)
+           Filterabfrage: Kuerzel eq &#39;EK-100&#39;
+           Anzahl der Elemente: 1
+Aktion:  Element erstellen  (Liste Materialantraege)
+           Titel         = Antwortfeld Material
+           Antragsteller = Antwortfeld Responder
+           Kostenstelle  = Wert aus Elemente abrufen
+           Status        = Offen
+Aktion:  Nachricht in einem Chat oder Kanal veroeffentlichen
+           Kanal Einkauf, Text mit Link auf das neue Element
+Aktion:  Aufgabe erstellen  (Planner, Bucket Pruefung)
+Aktion:  E-Mail senden V2  (an Antragsteller, Von: freigegebenes Postfach Einkauf)
+</code></pre></div></td></tr></table></div>
+<p>Beachte die Reihenfolge: Erst <strong>speichern</strong>, dann <strong>benachrichtigen</strong>. Schlägt die Mail fehl, ist der Antrag trotzdem erfasst – umgekehrt wäre er verloren.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>SharePoint-Listen</strong> sind das Datenrückgrat: <code>Element erstellen</code>, <code>Element aktualisieren</code>, <code>Element abrufen</code>, <code>Elemente abrufen</code> mit <strong>Filterabfrage</strong>, <code>Datei erstellen</code> für Bibliotheken.</li>
+<li><strong>Microsoft Lists</strong> ist nur eine komfortable Oberfläche auf dieselben Listen – für den Flow ändert sich nichts.</li>
+<li><strong>Excel</strong> funktioniert nur mit Daten, die <strong>als Tabelle formatiert</strong> sind, und ist bei gleichzeitigem Zugriff empfindlich.</li>
+<li><strong>Forms</strong> startet Prozesse, <strong>Outlook</strong> und <strong>Teams</strong> melden zurück, <strong>Planner</strong> und <strong>To Do</strong> erzeugen Aufgaben.</li>
+<li>Ein Flow handelt <strong>im Namen der Identität seiner Verbindungen</strong> – das bestimmt Datenzugriff, Protokolleintrag und Ausfallrisiko bei Personalwechsel. <strong>Dienstkonten</strong> und Miteigentümerschaft lösen das.</li>
+<li>Wähle den Speicherort nach Zweck: Vorgänge in die Liste, Auswertungen nach Excel, Dataverse als Premium-Ausblick.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Welcher Speicherort passt?</summary>
+<p>Entscheide für jeden Fall, ob eine <strong>SharePoint-Liste</strong>, eine <strong>Excel-Tabelle</strong> oder eine
+<strong>Dokumentbibliothek</strong> der richtige Speicherort ist. Begründe jeweils in einem Satz.</p>
+<ol>
+<li>15 Personen erfassen laufend Reklamationen und ändern deren Status.</li>
+<li>Ein Flow legt jede Woche eine Zeile mit Kennzahlen für eine Auswertung ab.</li>
+<li>Eingehende Rechnungen als PDF sollen mit Lieferant und Rechnungsnummer abgelegt werden.</li>
+<li>Eine Liste von Kostenstellen-Kürzeln, die ein Flow nur nachschlägt.</li>
+<li>Ein Antragsvorgang, bei dem später nachvollziehbar sein muss, wer wann was geändert hat.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Frage dich zwei Dinge: Schreiben mehrere gleichzeitig? Und brauche ich einen Verlauf
+pro Datensatz oder nur pro Datei?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Fall</th>
+<th>Speicherort</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Reklamationen</td>
+<td>SharePoint-Liste</td>
+<td>gleichzeitiger Zugriff, Statusspalte, Rechte pro Liste</td>
+</tr>
+<tr>
+<td>2. Kennzahlen wöchentlich</td>
+<td>Excel-Tabelle</td>
+<td>reines Anhängen für Auswertung, keine Parallelbearbeitung</td>
+</tr>
+<tr>
+<td>3. Rechnungs-PDF</td>
+<td>Dokumentbibliothek</td>
+<td>Datei plus Metadatenspalten, <code>Datei erstellen</code></td>
+</tr>
+<tr>
+<td>4. Kostenstellen-Nachschlagewerk</td>
+<td>SharePoint-Liste</td>
+<td>mit <code>Elemente abrufen</code> und Filterabfrage gezielt lesbar</td>
+</tr>
+<tr>
+<td>5. Antragsvorgang mit Nachweis</td>
+<td>SharePoint-Liste</td>
+<td>Versionsverlauf je Element, Excel hat den nur je Datei</td>
+</tr>
+</tbody>
+</table>
+<p>Kernaussage: Excel ist ein guter <strong>Ausgang</strong> für Auswertungen, aber ein schlechter zentraler
+Datenspeicher für laufende Vorgänge. Sobald mehrere Personen gleichzeitig arbeiten oder ein
+Verlauf je Datensatz nötig ist, gewinnt die Liste.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Formularantwort in eine SharePoint-Liste schreiben</summary>
+<p>Diese Übung baust du in Power Automate.</p>
+<ol>
+<li>Lege in einem Test-Team eine SharePoint-Liste <code>Materialantraege</code> mit den Spalten
+   <code>Titel</code> (Text), <code>Antragsteller</code> (Text), <code>Menge</code> (Zahl) und <code>Status</code> (Auswahl: Offen,
+   Genehmigt, Abgelehnt) an.</li>
+<li>Erstelle ein Microsoft Form <code>Materialantrag</code> mit den Fragen Material, Menge und Begründung.</li>
+<li>Baue über <code>make.powerautomate.com → Erstellen → Automatisierter Cloud-Flow</code> einen Flow, der
+   bei jeder neuen Formularantwort ein Listenelement anlegt. <code>Status</code> wird fest auf <code>Offen</code>
+   gesetzt, <code>Antragsteller</code> kommt aus dem Formular.</li>
+<li>Sende eine Testantwort ab und prüfe im Ausführungsverlauf die Eingaben des Schritts
+   <code>Element erstellen</code>.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Forms-Trigger liefert nur eine Antwort-ID. Die eigentlichen Antworten bekommst du erst
+über einen zweiten Schritt. Achte außerdem darauf, dass die Spalte <code>Menge</code> eine Zahl erwartet.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Trigger: Bei Uebermittlung einer neuen Antwort  (Formular Materialantrag)
+Aktion:  Antwortdetails abrufen  (Antwort-ID aus dem Trigger)
+Aktion:  Element erstellen  (Websiteadresse, Liste Materialantraege)
+           Titel         = Antwortfeld Material
+           Antragsteller = Antwortfeld Responder
+           Menge         = Antwortfeld Menge
+           Status        = Offen
+</code></pre></div></td></tr></table></div>
+<p>Prüfpunkte: (1) <code>Antwortdetails abrufen</code> ist vorhanden – ohne diesen Schritt gibt es keine
+Antwortfelder. (2) Beim Einfügen von Antwortfeldern in <code>Element erstellen</code> darf Power Automate
+<strong>kein</strong> <code>Auf jedes anwenden</code> um den Schritt legen; passiert das doch, hast du versehentlich
+ein Feld aus einer Liste gewählt. (3) Kommt eine Fehlermeldung zum Feld <code>Menge</code>, liefert das
+Formular Text – dann <code>int(...)</code> um den Wert legen (Kap. 23).</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Offene Vorgänge gefiltert lesen und melden</summary>
+<p>Diese Übung baust du in Power Automate. Grundlage ist deine Liste <code>Materialantraege</code>
+aus der vorherigen Übung. Trage mindestens sechs Testelemente ein, davon drei mit
+<code>Status = Offen</code> und unterschiedlichen Mengen.</p>
+<ol>
+<li>Baue einen <strong>geplanten Cloud-Flow</strong>, der jeden Werktag um 8 Uhr läuft.</li>
+<li>Lies mit <code>Elemente abrufen (Get items)</code> <strong>ausschließlich</strong> die offenen Anträge mit einer
+   Menge über 10 – über die <strong>Filterabfrage</strong>, nicht über eine Bedingung in einer Schleife.</li>
+<li>Baue aus dem Ergebnis eine lesbare Textliste und veröffentliche sie als Nachricht in einem
+   Teams-Kanal. Enthält das Ergebnis keine Elemente, soll <strong>keine</strong> Nachricht gesendet werden.</li>
+<li>Notiere anschließend, unter welcher Identität dein Flow gerade arbeitet und was passieren
+   würde, wenn dein Konto morgen deaktiviert wird.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Für die Textliste brauchst du keine Schleife mit Variable: Die Aktion <code>Auswählen (Select)</code>
+formt aus jedem Element eine Textzeile, <code>join</code> fügt sie zusammen. Für „keine Elemente"
+hilft <code>length</code> auf dem Ergebnis.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Trigger: Wiederholung  (taeglich 08:00, Zeitzone beachten)
+Aktion:  Elemente abrufen  (Liste Materialantraege)
+           Filterabfrage: Status eq &#39;Offen&#39; and Menge gt 10
+           Sortieren nach: Created
+Aktion:  Bedingung  -&gt;  length(body des Schritts Elemente abrufen) ist groesser als 0
+           Falls ja:
+             Aktion: Auswaehlen  (Von = value, Zuordnung = Titel und Menge als Textzeile)
+             Aktion: Verfassen   -&gt; join(Ausgabe von Auswaehlen, Zeilenumbruch)
+             Aktion: Nachricht in einem Chat oder Kanal veroeffentlichen  (Kanal Einkauf)
+           Falls nein:
+             keine Aktion
+</code></pre></div></td></tr></table></div>
+<p>Bewertung: (1) Die Filterung passiert in der <strong>Filterabfrage</strong> – eine Lösung mit
+<code>Auf jedes anwenden</code> plus Bedingung ist funktional, aber verschwendet Aktionen und gilt hier
+als nicht erfüllt. (2) Textwerte in der Filterabfrage stehen in einfachen Anführungszeichen,
+Zahlen ohne. (3) Der Leer-Fall ist behandelt, sonst kommt jeden Morgen eine leere Nachricht.
+(4) Zur Identität: Der Flow liest die Liste mit <strong>deinen</strong> Rechten und die Teams-Nachricht
+erscheint unter deinem Namen. Wird dein Konto deaktiviert, brechen beide Verbindungen und
+der Flow läuft still ins Leere – deshalb Dienstkonto plus Miteigentümer.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Werkstattbedarf digital erfassen – ein Flow durch Microsoft 365</summary>
+<p><strong>Szenario:</strong> Die Werkstatt eines mittelständischen Betriebs bestellt Kleinmaterial bisher über
+Zettel am Schwarzen Brett. Zweimal pro Woche sammelt eine Kollegin die Zettel ein, tippt sie in
+eine Excel-Datei und mailt sie an den Einkauf. Zettel gehen verloren, niemand weiß, was schon
+bestellt ist, und wenn die Kollegin im Urlaub ist, passiert nichts. Du baust den Ablauf komplett
+in Microsoft 365 nach – mit einem Datenrückgrat, das auch ohne dich weiterläuft.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+Betrieb mit 80 Beschaeftigten, davon 25 in der Werkstatt.
+Etwa 40 Materialanforderungen pro Woche, Werte zwischen 5 und 900 Euro.
+Beteiligte: Antragstellende, Werkstattleitung, Einkauf, Buchhaltung.
+Regel im Haus: ab 250 Euro muss die Werkstattleitung zustimmen.
+Werkzeuge: Microsoft 365 mit Forms, SharePoint, Teams, Outlook, Planner.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Datenrückgrat und Erfassung bauen.</strong> Lege eine SharePoint-Liste <code>Materialbedarf</code> an
+mit mindestens den Spalten Titel, Menge, Einzelpreis, Gesamtwert, Kostenstelle, Antragsteller,
+Status (Offen, In Bestellung, Erledigt, Abgelehnt), Bemerkung. Lege eine zweite Liste
+<code>Kostenstellen</code> mit Kürzel und Verantwortlichem an und füll sie mit fünf erfundenen Einträgen.
+Baue ein Microsoft Form als Erfassungsformular und einen Flow, der jede Antwort als Element in
+<code>Materialbedarf</code> schreibt, die Kostenstelle über <code>Elemente abrufen</code> mit Filterabfrage nachschlägt
+und den Gesamtwert berechnet. Teste mit mindestens fünf Antworten.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Dein Flow muss <strong>alle vier</strong> Kriterien erfüllen:</p>
+<ol>
+<li>Der Antragsteller steht in einer <strong>eigenen Spalte</strong> – nicht nur in <code>Erstellt von</code>.</li>
+<li>Die Kostenstelle wird über eine <strong>Filterabfrage</strong> nachgeschlagen; ein unbekanntes Kürzel führt
+   zu Status <code>Abgelehnt</code> und einer Rückmeldung per Mail, nicht zu einem Abbruch.</li>
+<li>Es wird <strong>erst gespeichert, dann benachrichtigt</strong> – und die Teams-Nachricht enthält einen Link
+   auf das Listenelement.</li>
+<li>Ab 250 Euro Gesamtwert wird zusätzlich eine Planner-Aufgabe für die Werkstattleitung erzeugt,
+   darunter nicht.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Der Einkauf meldet zwei Dinge: Erstens will die Buchhaltung die
+Daten wöchentlich in Excel, weil sie damit weiterrechnet. Zweitens sind in zwei Wochen sechs
+Anforderungen doppelt eingegangen, weil Leute das Formular zweimal abgeschickt haben. Erweitere
+deine Lösung: Ergänze einen geplanten Flow, der freitags die Anforderungen der Woche in eine
+Excel-Tabelle in SharePoint schreibt – und finde einen Weg, Doppeleinträge zu erkennen, bevor sie
+gespeichert werden. Dokumentiere, warum du Excel hier als <strong>Ziel</strong>, aber nicht als Datenspeicher
+verwendest.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die IT sagt: „Baut das bitte so, dass es unter einem
+Dienstkonto läuft." Die Werkstattleitung sagt: „Zu kompliziert, das kann doch einfach auf
+deinem Konto laufen." Hole dir von einem KI-Werkzeug Argumente für beide Seiten – und
+entscheide dann begründet. <strong>Widersprich</strong> der Seite, die du für falsch hältst, ausdrücklich und
+benenne die konkreten Folgen: Wer sieht die Fehlermeldung, wer steht im Protokoll, was passiert
+bei Urlaub, Wechsel oder Kennwortänderung? Falls du kein Dienstkonto einrichten kannst,
+beschreibe die Übergangslösung und ihre Restrisiken.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>lauffähiger Erfassungs-Flow plus SharePoint-Listen <code>Materialbedarf</code> und <code>Kostenstellen</code>
+   mit Testdaten</li>
+<li>Nachweis der vier Pflichtkriterien, je Kriterium ein Ausführungsverlauf oder Listenauszug</li>
+<li>geplanter Wochen-Flow nach Excel plus deine Lösung gegen Doppeleinträge</li>
+<li>einseitige Entscheidungsnotiz zur Identitätsfrage mit benannten Folgen und Restrisiken</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> mindestens fünf Testanforderungen korrekt in der Liste stehen,
+ein Antrag mit unbekannter Kostenstelle sauber abgelehnt wurde statt den Flow abzubrechen, eine
+Anforderung über 250 Euro eine Planner-Aufgabe erzeugt hat, der Wochen-Flow eine Excel-Zeile
+geschrieben hat und deine Entscheidungsnotiz benennt, wer den Flow übernimmt, wenn du zwei
+Wochen ausfällst.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Runde 1 ist Handwerk, der Lernwert steckt in Runde 3 und 4. Doppeleinträge sind der klassische
+Grund, warum sauber gebaute Flows in der Praxis unbrauchbare Daten produzieren – prüfe vor dem
+Schreiben mit einer Filterabfrage auf gleichen Antragsteller, gleiches Material und gleichen Tag.
+Und in Runde 4 gibt es keine bequeme Antwort: Der Flow auf deinem Konto ist in zehn Minuten
+gebaut und in sechs Monaten ein Problem. Beschreibe diesen Zeitversatz ausdrücklich.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Erfassung läuft Ende zu Ende, die Kostenstelle wird per Filterabfrage
+nachgeschlagen und der unbekannte Fall ist als <strong>Fachfall</strong> behandelt, nicht als Fehler;
+(2) alle vier Pflichtkriterien sind nachgewiesen, insbesondere eigene Antragsteller-Spalte,
+Reihenfolge speichern-dann-melden und die 250-Euro-Verzweigung; (3) der Wochen-Flow nutzt Excel
+als Auswertungsziel und die Begründung trennt Datenspeicher von Auswertung, die Dublettenprüfung
+greift vor dem Schreiben; (4) die Entscheidungsnotiz wägt Dienstkonto gegen persönliches Konto
+mit konkreten Folgen für Protokoll, Fehlerbenachrichtigung und Vertretung ab und übernimmt keine
+der beiden Vorgaben ungeprüft.</p>
+<p>Lernziel: Einen echten Ablauf allein mit Microsoft-365-Bausteinen tragfähig bauen – und die
+Identitäts- und Betreibbarkeitsfrage als Teil des Bauens begreifen, nicht als Nachgedanken.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel24/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 24 – Steuerung und Verzweigung in Power Automate">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 24 – Steuerung und Verzweigung in Power Automate
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel26/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 26 – Integration externer Apps">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 26 – Integration externer Apps
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

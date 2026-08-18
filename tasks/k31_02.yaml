@@ -1,0 +1,44 @@
+title: Schwellenwerte durchrechnen
+difficulty: 2
+question: |
+  Ein Team verarbeitet wöchentlich 300 Eingangsrechnungen. Aus einem Testlauf über eine Woche liegen
+  die niedrigsten Feldkonfidenzen je Rechnung vor:
+
+  ```text
+  ab 0,90            : 105 Rechnungen
+  0,80 bis unter 0,90: 120 Rechnungen
+  0,70 bis unter 0,80:  45 Rechnungen
+  unter 0,70         :  30 Rechnungen
+  ```
+
+  Erfassung von Hand dauert etwa 4 Minuten je Rechnung, das Prüfen einer Vorerfassung etwa 1 Minute.
+
+  1. Entwirf eine dreistufige Behandlung mit konkreten Schwellenwerten und begründe deine Wahl.
+  2. Berechne für deine Variante den wöchentlichen Zeitaufwand und vergleiche ihn mit den 300
+     Rechnungen von Hand.
+  3. Ergänze eine Stichprobenregel für die automatisch verarbeitete Stufe und rechne sie mit ein.
+  4. Beantworte: Was ändert sich an deiner Empfehlung, wenn in der obersten Stufe zwei fehlerhafte
+     Rechnungen durchgelaufen sind?
+tip: |
+  Rechne beide Varianten einmal mit der oberen Schwelle bei 0,90 und einmal bei 0,80 durch. Der
+  Zeitunterschied ist groß – und genau deshalb ist die Frage nach den durchgerutschten Fehlern
+  entscheidend, nicht die nach der eingesparten Zeit.
+solution: |
+  **Variante A, obere Schwelle 0,90:** 105 automatisch, 165 als Prüfaufgabe, 30 manuell.
+  Aufwand: 165 mal 1 Minute plus 30 mal 4 Minuten gleich 285 Minuten. Stichprobe von 5 Prozent auf
+  105 Rechnungen sind rund 5 Prüfungen zu je 1 Minute, also 290 Minuten gesamt. Von Hand wären es
+  1200 Minuten.
+
+  **Variante B, obere Schwelle 0,80:** 225 automatisch, 45 als Prüfaufgabe, 30 manuell.
+  Aufwand: 45 plus 120 gleich 165 Minuten, plus rund 11 Minuten Stichprobe, also 176 Minuten.
+
+  Variante B spart rund zwei Stunden mehr pro Woche – aber sie schiebt 120 Rechnungen aus der
+  geprüften in die automatische Stufe. Genau in dieser Gruppe zwischen 0,80 und 0,90 sitzen
+  erfahrungsgemäß die meisten Grenzfälle.
+
+  **Zur vierten Frage:** Zwei durchgelaufene Fehler in der obersten Stufe sind kein Anlass, die
+  Schwelle nur leicht anzuheben. Wichtiger ist die Frage nach der Fehlerart. Waren es falsch
+  **gelesene** Werte, hilft eine höhere Schwelle. Waren es richtig gelesene, aber falsch
+  **zugeordnete** Werte, hilft sie überhaupt nicht – dann brauchst du eine fachliche Prüfung, etwa
+  den Abgleich des Betrags mit der Bestellung, als zweite Bedingung für die automatische Stufe.
+  Eine gute Antwort erkennt diesen Unterschied.

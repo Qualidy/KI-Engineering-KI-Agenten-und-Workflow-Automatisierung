@@ -1,0 +1,53 @@
+title: Text in Tabelle, Auffälligkeiten, Gegenprobe
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug (Copilot in Excel und Copilot Chat, alternativ ChatGPT oder
+  Claude plus Excel).
+
+  Ausgangspunkt sind Bestellhinweise, wie sie per Mail eintreffen:
+
+  ```text
+  Frau Berger von Musterhandel braucht 12 Metallregale 200x100 verzinkt bis zum
+  20. Maerz, Netto 1044 Euro, Anlieferung nur vormittags.
+  Nordlicht Bueromoebel ruft 40 Rollcontainer weiss ab, Netto 2360, Termin offen.
+  Bergquell Logistik: 25 Metallregale 180x080 pulverbeschichtet, 1975 netto,
+  Termin 15. Maerz, bitte auf Palette.
+  Talwerk Montage moechte eine Werkbank Buche als Sonderanfertigung, Netto 1420,
+  so schnell wie moeglich.
+  Musterhandel noch einmal: 8 Rollcontainer anthrazit, 424 Euro netto, 25. Maerz.
+  Nordlicht: 40 Rollcontainer weiss, 2360 netto, Termin offen.
+  ```
+
+  1. **Strukturieren.** Lass daraus eine Tabelle mit den Spalten `Kunde`, `Warengruppe`, `Menge`,
+     `Netto`, `Wunschtermin`, `Besonderheit` erzeugen. Verbiete ausdrücklich, fehlende oder
+     unscharfe Angaben in konkrete Werte umzuwandeln.
+  2. **Ableiten.** Ergänze eine Spalte `Stueckpreis`. Lass die Regel von der KI beschreiben, aber
+     rechne den Wert in Excel mit einer Formel.
+  3. **Prüfen.** Lass die Tabelle auf Auffälligkeiten untersuchen und beurteile jeden Fund selbst:
+     Fehler oder echter Sonderfall? Begründe.
+  4. **Gegenprobe.** Führe Summenprobe, Zeilenprobe und Extremwertprobe durch. Vergleiche die
+     Nettosumme aus dem Chatfenster mit dem Ergebnis von `=SUMME(...)` in Excel.
+  5. Notiere, an welcher Stelle das Werkzeug ohne deine Einschränkung geraten hätte.
+tip: |
+  Im Text stecken mindestens drei Stolperstellen: eine mögliche Dublette, eine unscharfe
+  Terminangabe und ein Stückpreis, der stark aus dem Rahmen fällt. Zwei davon sind keine Fehler.
+solution: |
+  Erwartete Tabelle: sechs Zeilen. Zeile 2 und Zeile 6 sind identisch (Nordlicht, 40 Rollcontainer
+  weiß, 2360, Termin offen) – das ist die **mögliche Dublette**. Sie muss als Fund gemeldet, aber
+  nicht gelöscht werden: Ein zweiter Abruf derselben Menge ist im Handel völlig normal. Die
+  Klärung erfolgt durch Rückfrage, nicht durch Löschen.
+
+  Stückpreise: 87,00 / 59,00 / 79,00 / 1420,00 / 53,00 / 59,00 Euro. Der Wert 1420 ist der
+  **Extremwert** – und kein Fehler, sondern die Sonderanfertigung mit Menge 1. Genau dieser Fall
+  zeigt, warum Ausreißer nicht bereinigt werden dürfen.
+
+  Der Wunschtermin „so schnell wie möglich" muss leer bleiben oder als Text stehen. Ohne die
+  Einschränkung erzeugt das Werkzeug hier mit hoher Wahrscheinlichkeit ein Datum – häufig den
+  nächsten Werktag. Aus einem Kundenwunsch wäre damit eine Terminzusage geworden, ohne dass es
+  jemand entschieden hat.
+
+  Bewertungskriterien: (1) sechs Zeilen, keine zusammengeführt, keine erfundenen Termine;
+  (2) Stückpreis per Excel-Formel, nicht aus dem Chat übernommen;   (3) alle drei Stolperstellen
+  gefunden und die beiden Nicht-Fehler als solche begründet; (4) die Nettosumme in
+  Excel nachgerechnet (9.583 Euro) und mit der Chat-Angabe verglichen, inklusive Notiz, ob sie
+  übereinstimmten.

@@ -1,0 +1,92 @@
+title: Projektetappe 4 – Betriebs- und Übergabekonzept erstellen
+difficulty: 4
+question: |
+  **Projektetappe:** Vierte Etappe. Grundlage ist dein gebauter und abgenommener Flow aus
+  Kapitel 37. Am Ende dieses Workshops ist dein Projekt übergabefähig: Es gibt eine zuständige
+  Person, eine funktionierende Fehlerbenachrichtigung, einen Rückfallweg, einen bestandenen
+  Datenschutz-Check und einen Abschaltplan.
+
+  ```text
+  Rueckfallebenen:
+  Flow laeuft nur teilweise -> erstelle das Betriebskonzept fuer den Teil, der
+    laeuft, und notiere fuer den Rest, was noch fehlt.
+  Flow laeuft gar nicht -> erstelle das Betriebskonzept fuer den geplanten
+    Zustand und markiere jede Zeile, die noch nicht ueberprueft werden konnte,
+    ausdruecklich als ungeprueft.
+  Kein produktiver Einsatz vorgesehen -> plane den Live-Gang vollstaendig durch
+    und fuehre alle Schritte in der Testumgebung aus.
+  ```
+
+  ---
+
+  **Runde 1 – Betriebsblatt und Monitoring aufbauen.** Fülle das **Betriebsblatt** vollständig aus:
+  Verantwortliche, Vertretung, technischer Kontakt, Konto und Miteigentümer, Trigger und
+  Häufigkeit, Abhängigkeiten von fremden Objekten, bekannte Grenzen, Änderungshistorie. Baue
+  danach die Fehlerbenachrichtigung so, dass sie Fallkennzeichen und Handlungsanweisung enthält,
+  und ergänze eine einfache Prüfung gegen den stillen Ausfall (Zählung ohne Ergebnis, ausbleibende
+  Einträge).
+
+  **Runde 2 – Prüfung gegen vier Pflichtkriterien.** Dein Konzept muss **alle vier** Kriterien
+  erfüllen:
+
+  1. Die Fehlerbenachrichtigung wurde **absichtlich ausgelöst** und enthält Zeitpunkt,
+     Fallkennzeichen, Schrittname und Handlungsanweisung.
+  2. Der **Datenschutz-Check** ist vollständig abgehakt, jede offene Zeile hat eine benannte
+     Maßnahme mit Datum – „passt schon" ist keine Antwort.
+  3. Der **Rückfallweg** ist so geschrieben, dass eine andere Person ihn ohne Rückfrage ausführen
+     kann, inklusive Nacharbeit und Zeitgrenze mit Eskalation.
+  4. Für **jede** Abhängigkeit von einem fremden Objekt ist vermerkt, wer dort zuständig ist und
+     ob diese Person informiert wurde, dass eine Automatisierung mitliest.
+
+  **Runde 3 – Die Komplikation.** Es passiert etwas, das den Betrieb bedroht. Arbeite **beide**
+  Fälle durch:
+
+  - **Fall 1 – Personalwechsel:** Die verantwortliche Person (also du) verlässt in vier Wochen die
+    Abteilung. Prüfe konkret, was dann abbricht: Verbindungen, Postfachzugriff, Eigentum am Flow,
+    Kenntnis der Prompts. Setze die machbaren Maßnahmen sofort um und notiere die restlichen als
+    Übergabepunkte mit Termin.
+  - **Fall 2 – Änderung am Nachbarsystem:** Ein angebundenes Objekt wird umgebaut, zum Beispiel
+    eine Spalte umbenannt oder ein Formularfeld entfernt. Beschreibe, wie du das **merken** würdest,
+    wie lange es unbemerkt bleiben könnte und was du am Flow oder am Monitoring änderst, damit es
+    auffällt.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Frage lautet: Geht dieser Flow überhaupt live,
+  und wenn ja, in welchem Umfang? Beschreibe deinem KI-Werkzeug Zustand, Trefferquote,
+  Verantwortlichkeiten und offene Punkte und lass dir eine Empfehlung geben. Erwartbar ist ein
+  optimistisches „ja, live gehen". Entscheide selbst und **widersprich begründet**, wenn eine
+  Voraussetzung fehlt – etwa keine belastbare Vertretung, ein offener Punkt im
+  Datenschutz-Check oder eine Abhängigkeit, über die niemand informiert ist. Formuliere in fünf bis
+  acht Sätzen eine der drei Entscheidungen: vollständiger Live-Gang, eingeschränkter Start (nur
+  ein Teil, nur ein Team, nur mit Freigabe je Fall) oder bewusst kein Live-Gang mit Begründung und
+  Bedingungen dafür.
+
+  **Deliverable:**
+
+  1. vollständig ausgefülltes Betriebsblatt inklusive Abhängigkeiten und Änderungshistorie
+  2. Nachweis der ausgelösten Fehlerbenachrichtigung plus Prüfung gegen den stillen Ausfall
+  3. abgehakter Datenschutz-Check und Rückfallweg für den manuellen Notbetrieb
+  4. Einweisung für Nutzende auf einer halben Seite, Abschaltplan und die Entscheidungsnotiz aus
+     Runde 4 samt Übergabepunkten aus Runde 3
+
+  **Fertig bist du erst, wenn** eine andere Person mit deinen Unterlagen erkennen kann, was der
+  Flow tut, dass er ausgefallen ist, was dann zu tun ist und wie man ihn abschaltet – und wenn im
+  Datenschutz-Check keine Zeile ohne Häkchen oder ohne benannte Maßnahme mit Datum steht.
+tip: |
+  Der Lernwert steckt in Runde 3 und 4. Betriebsunterlagen zu schreiben wirkt wie Bürokratie, bis
+  Fall 1 eintritt: Die meisten selbst gebauten Flows sterben nicht an einem Fehler, sondern an
+  einem Kontowechsel. Runde 4 ist die unbequemste Entscheidung des ganzen Projekts. „Wir gehen
+  nicht live, weil es keine Vertretung mit Zugriff gibt" ist ein vollwertiges, professionelles
+  Ergebnis – und deutlich besser als ein Flow, der im Urlaub still ausfällt und Fälle verschluckt.
+solution: |
+  Bewertungskriterien: (1) das Betriebsblatt ist vollständig, benennt einzelne Personen statt
+  Teams und macht die Kontoabhängigkeit sichtbar; (2) alle vier Pflichtkriterien sind erfüllt,
+  insbesondere die tatsächlich ausgelöste Fehlerbenachrichtigung mit Fallkennzeichen und der ohne
+  Rückfrage ausführbare Rückfallweg; (3) beide Komplikationen aus Runde 3 sind bearbeitet – der
+  Personalwechsel mit konkreten Maßnahmen und Terminen, die Systemänderung mit einer Aussage zur
+  Erkennungszeit und einer Verbesserung am Monitoring; (4) die Entscheidung aus Runde 4 ist
+  begründet, wägt Nutzen gegen fehlende Betriebsvoraussetzungen ab und übernimmt die
+  KI-Empfehlung nicht ungeprüft.
+
+  Lernziel: Ein selbst gebauter Flow wird erst durch Zuständigkeit, Monitoring, Datenschutz-Check
+  und Rückfallweg zu einem tragfähigen Ergebnis – und ein bewusst verschobener Live-Gang ist eine
+  richtige Entscheidung, keine Niederlage.

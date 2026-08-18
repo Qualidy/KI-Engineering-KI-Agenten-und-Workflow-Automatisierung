@@ -1,0 +1,1873 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel21/">
+      
+      
+        <link rel="next" href="../kapitel23/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 22 – Der erste Cloud-Flow - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-22-der-erste-cloud-flow" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 22 – Der erste Cloud-Flow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Block 5 · Power Automate in der Praxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 21 – Einführung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 22 – Der erste Cloud-Flow
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 22 – Der erste Cloud-Flow
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#221-das-szenario-und-das-zielbild" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.1 Das Szenario und das Zielbild
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222-flow-anlegen-und-trigger-konfigurieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.2 Flow anlegen und Trigger konfigurieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223-vor-dem-start-filtern-trigger-bedingung" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.3 Vor dem Start filtern: Trigger-Bedingung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224-aktionen-hinzufugen-und-dynamische-inhalte-einsetzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.4 Aktionen hinzufügen und dynamische Inhalte einsetzen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225-benennen-speichern-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.5 Benennen, speichern, testen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#226-den-ausfuhrungsverlauf-lesen" class="md-nav__link">
+    <span class="md-ellipsis">
+      22.6 Den Ausführungsverlauf lesen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 24 – Steuerung und Verzweigung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 25 – Integration von Microsoft 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 26 – Integration externer Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 28 – Testing, Fehlerbehandlung und Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-22-der-erste-cloud-flow">Kapitel 22 – Der erste Cloud-Flow<a class="headerlink" href="#kapitel-22-der-erste-cloud-flow" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie du einen <strong>automatisierten Cloud-Flow</strong> von der leeren Seite bis zum aktiven Ablauf baust</li>
+<li>Wie du einen <strong>Trigger</strong> konfigurierst und mit einer <strong>Trigger-Bedingung</strong> unnötige Läufe verhinderst</li>
+<li>Wie du <strong>Aktionen</strong> hinzufügst und Felder mit <strong>dynamischen Inhalten (Dynamic Content)</strong> füllst</li>
+<li>Warum du jeden Schritt <strong>umbenennst</strong> und wie du den Flow speicherst, ohne ihn scharf zu stellen</li>
+<li>Wie du <strong>manuell</strong> und mit <strong>echter Auslösung</strong> testest</li>
+<li>Wie du den <strong>Ausführungsverlauf (Run history)</strong> liest und <strong>Ein- und Ausgaben</strong> eines Schrittes prüfst</li>
+</ul>
+</div>
+<hr />
+<h2 id="221-das-szenario-und-das-zielbild">22.1 Das Szenario und das Zielbild<a class="headerlink" href="#221-das-szenario-und-das-zielbild" title="Permanent link">&para;</a></h2>
+<p>Du baust einen Ablauf, der in Verwaltung, Einkauf und Buchhaltung ständig gebraucht wird: <strong>Eine E-Mail mit Anhang trifft ein, der Anhang wird in einen Ordner gelegt, und das Team wird informiert.</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    A([Neue Mail mit Anhang]) --&gt; B([Nur relevante Mails durchlassen])
+    B --&gt; C([Anhang im Ordner speichern])
+    C --&gt; D([Nachricht in Teams])</code></pre>
+<p>Als Schrittliste sieht der Zielzustand so aus. Die Einrückung zeigt, was ineinander liegt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: 22 Rechnungsanhang ablegen   (automatisierter Cloud-Flow)
+  Trigger: Bei Eingang einer neuen E-Mail V3
+    Ordner: Posteingang
+    Nur mit Anlagen: Ja
+    Anlagen einschliessen: Ja
+    Betrefffilter: Rechnung
+  Aktion: Auf jedes anwenden   (ueber Anlagen)
+    Aktion: Datei erstellen   (OneDrive for Business)
+      Ordnerpfad: /Rechnungseingang
+      Dateiname: Name der Anlage
+      Dateiinhalt: Inhalt der Anlage
+  Aktion: Nachricht in einem Chat oder Kanal veroeffentlichen   (Teams)
+    Text: Neue Rechnung von Absender mit Betreff eingegangen
+</code></pre></div></td></tr></table></div>
+<p>Alle beteiligten Connectoren sind Standard-Connectoren (Kap. 21), du brauchst also keine Zusatzlizenz. Wenn du kein Teams hast, ersetze den letzten Schritt durch <code>E-Mail senden (V2)</code> – die Logik bleibt gleich.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Baue nie den ganzen Flow und teste dann. Baue <strong>Trigger plus eine Aktion</strong>, teste, und erweitere erst danach. Ein Flow mit acht Schritten, der beim ersten Lauf scheitert, hat acht Fehlerkandidaten; ein Flow mit zwei Schritten hat einen.</p>
+</div>
+<hr />
+<h2 id="222-flow-anlegen-und-trigger-konfigurieren">22.2 Flow anlegen und Trigger konfigurieren<a class="headerlink" href="#222-flow-anlegen-und-trigger-konfigurieren" title="Permanent link">&para;</a></h2>
+<p>Der Weg: <code>make.powerautomate.com → Erstellen → Automatisierter Cloud-Flow</code>. Es öffnet sich ein Dialog mit zwei Feldern.</p>
+<p>Im Feld <strong>Flow-Name</strong> trägst du sofort einen sprechenden Namen ein, zum Beispiel <code>22 Rechnungsanhang ablegen</code>. Im Feld <strong>Flow-Trigger auswählen</strong> suchst du nach <code>neue E-Mail</code> und wählst <strong>Bei Eingang einer neuen E-Mail (V3)</strong> aus dem Office-365-Outlook-Connector. Dann <code>Erstellen</code>.</p>
+<p>Du landest im <strong>Flow-Designer</strong>. Der Trigger ist als erste Karte da, aber leer. Klicke ihn an und öffne über <code>Erweiterte Optionen anzeigen</code> die vollständige Feldliste.</p>
+<table>
+<thead>
+<tr>
+<th>Feld im Trigger</th>
+<th>Bedeutung</th>
+<th>Empfehlung für diesen Flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ordner</strong></td>
+<td>welcher Postfachordner überwacht wird</td>
+<td><code>Posteingang</code>, besser ein eigener Unterordner</td>
+</tr>
+<tr>
+<td><strong>An / Von</strong></td>
+<td>Filter auf Empfänger oder Absender</td>
+<td>leer lassen oder Absenderadresse eintragen</td>
+</tr>
+<tr>
+<td><strong>Betrefffilter (Subject Filter)</strong></td>
+<td>Text, der im Betreff vorkommen muss</td>
+<td><code>Rechnung</code></td>
+</tr>
+<tr>
+<td><strong>Nur mit Anlagen</strong></td>
+<td><code>Ja</code> = Mails ohne Anhang lösen nichts aus</td>
+<td><code>Ja</code></td>
+</tr>
+<tr>
+<td><strong>Anlagen einschließen</strong></td>
+<td><code>Ja</code> = der Inhalt der Anhänge wird mitgeliefert</td>
+<td><code>Ja</code></td>
+</tr>
+<tr>
+<td><strong>Wichtigkeit</strong></td>
+<td>Filter auf Priorität der Mail</td>
+<td><code>Beliebig</code></td>
+</tr>
+</tbody>
+</table>
+<p>Die beiden letzten Felder sind der klassische Stolperstein: <strong>Nur mit Anlagen</strong> entscheidet, <em>ob</em> der Flow startet. <strong>Anlagen einschließen</strong> entscheidet, ob du an den <em>Inhalt</em> der Anhänge kommst. Steht das zweite auf <code>Nein</code>, startet der Flow zwar, aber der Dateiinhalt ist leer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Der Trigger prüft dein Postfach in einem festen Takt, nicht in Echtzeit. Zwischen Eingang der Mail und Start des Flows liegt in der Praxis oft eine Minute oder mehr. Ein Flow, der „nicht funktioniert", ist häufig einfach noch nicht gelaufen – warte einmal ab und schau danach in den Ausführungsverlauf.</p>
+</div>
+<hr />
+<h2 id="223-vor-dem-start-filtern-trigger-bedingung">22.3 Vor dem Start filtern: Trigger-Bedingung<a class="headerlink" href="#223-vor-dem-start-filtern-trigger-bedingung" title="Permanent link">&para;</a></h2>
+<p>Der Betrefffilter im Trigger reicht oft nicht. Vielleicht willst du nur Mails von zwei bestimmten Absendern, oder du willst Weiterleitungen aussparen. Dafür gibt es die <strong>Trigger-Bedingung (Trigger Condition)</strong>: einen Ausdruck, der vor dem Start geprüft wird. Ist er nicht erfüllt, startet der Flow gar nicht und erzeugt auch keinen Eintrag im Ausführungsverlauf.</p>
+<p>Weg: <code>Trigger-Karte → ... → Einstellungen → Trigger-Bedingungen → Neu hinzufügen</code>. Dort trägst du einen Ausdruck ein, der <code>true</code> oder <code>false</code> ergibt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>@not(startsWith(triggerOutputs()?[&#39;body/subject&#39;], &#39;AW:&#39;))
+</code></pre></div></td></tr></table></div>
+<p>Diese Bedingung lässt Antwortmails aus. Warum das so wichtig ist: Ein Flow, der auf Mails reagiert und selbst Mails verschickt, kann sich sonst gegenseitig auslösen. Die Syntax solcher Ausdrücke lernst du systematisch in Kapitel 23; für den Moment genügt das Prinzip.</p>
+<p>Jede Bedingung, die du im Trigger oder in einer Trigger-Bedingung unterbringst, spart einen kompletten Lauf. Eine <code>Bedingung (Condition)</code> mitten im Flow prüft dagegen erst, nachdem der Flow schon gestartet ist – das verbraucht Kontingent und macht den Ausführungsverlauf unübersichtlich (Kap. 24).</p>
+<hr />
+<h2 id="224-aktionen-hinzufugen-und-dynamische-inhalte-einsetzen">22.4 Aktionen hinzufügen und dynamische Inhalte einsetzen<a class="headerlink" href="#224-aktionen-hinzufugen-und-dynamische-inhalte-einsetzen" title="Permanent link">&para;</a></h2>
+<p>Unter dem Trigger klickst du auf <code>+ Neuer Schritt</code> beziehungsweise auf das Plus-Symbol. Suche nach <code>Datei erstellen</code> und wähle die Aktion aus dem Connector <strong>OneDrive for Business</strong> (oder <code>Datei erstellen</code> aus SharePoint, wenn du in eine Bibliothek ablegst).</p>
+<p>Die Aktion hat drei Felder. Sobald du in ein Feld klickst, öffnet sich die Auswahl <strong>Dynamischer Inhalt (Dynamic Content)</strong> – eine Liste aller Werte, die die vorherigen Schritte geliefert haben.</p>
+<table>
+<thead>
+<tr>
+<th>Feld</th>
+<th>Was du einträgst</th>
+<th>Herkunft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ordnerpfad</strong></td>
+<td><code>/Rechnungseingang</code></td>
+<td>von Hand, über das Ordnersymbol auswählbar</td>
+</tr>
+<tr>
+<td><strong>Dateiname</strong></td>
+<td>dynamischer Inhalt <code>Name der Anlage</code></td>
+<td>Trigger</td>
+</tr>
+<tr>
+<td><strong>Dateiinhalt</strong></td>
+<td>dynamischer Inhalt <code>Inhalt der Anlage</code></td>
+<td>Trigger</td>
+</tr>
+</tbody>
+</table>
+<p>In dem Moment, in dem du <code>Name der Anlage</code> einsetzt, passiert etwas Wichtiges: Power Automate legt automatisch eine Schleife <strong>Auf jedes anwenden (Apply to each)</strong> um die Aktion. Der Grund ist, dass eine Mail mehrere Anhänge haben kann – <code>Anlagen</code> ist also eine <strong>Liste</strong>, und der Dienst muss jeden Eintrag einzeln behandeln. Diese automatische Umklammerung überrascht Anfänger regelmäßig; sie ist richtig und du solltest sie nicht wegräumen. Details zu Schleifen folgen in Kapitel 24.</p>
+<p>Als dritten Schritt fügst du <code>Nachricht in einem Chat oder Kanal veröffentlichen</code> (Teams) hinzu. Wähle <code>Kanal</code>, dein Team und einen Kanal, und schreibe eine Nachricht, die feste Textteile mit dynamischen Inhalten mischt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Neue Rechnung eingegangen.
+Absender: Von
+Betreff: Betreff
+Empfangen: Empfangszeit
+Ablage: /Rechnungseingang
+</code></pre></div></td></tr></table></div>
+<p>Die kursiv wirkenden Bezeichnungen <code>Von</code>, <code>Betreff</code> und <code>Empfangszeit</code> sind keine getippten Wörter, sondern Bausteine aus dem dynamischen Inhalt – im Designer erkennbar als kleine farbige Kacheln.</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>Die Teams-Nachricht liegt <strong>außerhalb</strong> der Schleife, die Dateiablage <strong>innerhalb</strong>. Setzt du die Nachricht versehentlich mit in die Schleife, bekommt dein Kanal bei einer Mail mit vier Anhängen vier Nachrichten. Prüfe vor dem Speichern immer die Einrückung: Was in der Schleifenkarte steht, läuft pro Listeneintrag.</p>
+</div>
+<hr />
+<h2 id="225-benennen-speichern-testen">22.5 Benennen, speichern, testen<a class="headerlink" href="#225-benennen-speichern-testen" title="Permanent link">&para;</a></h2>
+<p><strong>Schritte umbenennen.</strong> Jede Karte hat im Menü <code>...</code> den Punkt <code>Umbenennen</code>. Aus <code>Datei erstellen</code> wird <code>Anhang in Rechnungsordner speichern</code>, aus <code>Auf jedes anwenden</code> wird <code>Fuer jeden Anhang</code>. Das ist keine Kosmetik: Die Schrittnamen erscheinen im Ausführungsverlauf und in Fehlermeldungen. Ein Fehler in <code>Aktion 3</code> sagt dir nichts, ein Fehler in <code>Anhang in Rechnungsordner speichern</code> sofort alles.</p>
+<p><strong>Speichern.</strong> <code>Speichern</code> oben rechts. Power Automate prüft dabei auf leere Pflichtfelder und meldet sie. Wichtig: Ein automatisierter Flow ist nach dem Speichern <strong>aktiv</strong>. Wenn du das nicht willst, schalte ihn über <code>Meine Flows → ... → Ausschalten</code> ab.</p>
+<p><strong>Manuell testen.</strong> <code>Testen → Manuell → Testen</code>. Der Designer wartet nun auf ein echtes Ereignis: Du schickst dir selbst eine Mail mit Anhang und dem Wort „Rechnung" im Betreff. Der Trigger greift, und du siehst live, welche Karte grün, welche grau und welche rot wird.</p>
+<p><strong>Mit gespeicherten Daten testen.</strong> Nach dem ersten Lauf steht unter <code>Testen</code> die Option <code>Automatisch → Mit Daten aus vorherigen Ausführungen</code>. Damit wiederholst du denselben Fall, ohne jedes Mal eine neue Mail zu schicken. Das ist der schnellste Weg, eine Korrektur zu prüfen.</p>
+<p><strong>Echte Auslösung.</strong> Zum Abschluss lässt du eine Mail von einer anderen Person schicken. Erst damit prüfst du, was du selbst nie prüfst: fremde Anhangnamen, fremde Betreffzeilen, Signaturbilder als zusätzliche Anhänge.</p>
+<div class="admonition example">
+<p class="admonition-title">Der Lauf, den du sehen willst</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Ausfuehrung 14:02  Erfolgreich  Dauer 3 Sekunden
+  Bei Eingang einer neuen E-Mail V3      0 s   Erfolgreich
+  Fuer jeden Anhang                      2 s   Erfolgreich
+    Anhang in Rechnungsordner speichern  1 s   Erfolgreich   1 von 1
+  Team informieren                       1 s   Erfolgreich
+</code></pre></div></td></tr></table></div>
+<p>Prüfe zusätzlich das Ergebnis am Ziel, nicht nur den grünen Haken: Liegt die Datei im Ordner, ist sie größer als 0 Kilobyte, lässt sie sich öffnen?</p>
+</div>
+<hr />
+<h2 id="226-den-ausfuhrungsverlauf-lesen">22.6 Den Ausführungsverlauf lesen<a class="headerlink" href="#226-den-ausfuhrungsverlauf-lesen" title="Permanent link">&para;</a></h2>
+<p>Weg: <code>Meine Flows → Flow anklicken</code>. Auf der Detailseite steht unten der Bereich <strong>28-Tage-Ausführungsverlauf</strong> mit Startzeit, Dauer und Status.</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Bedeutung</th>
+<th>Erster Schritt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Erfolgreich</strong></td>
+<td>alle Schritte gelaufen</td>
+<td>Ergebnis am Ziel prüfen</td>
+</tr>
+<tr>
+<td><strong>Fehlgeschlagen</strong></td>
+<td>ein Schritt hat abgebrochen</td>
+<td>Lauf öffnen, rote Karte anklicken</td>
+</tr>
+<tr>
+<td><strong>Wird ausgeführt</strong></td>
+<td>läuft noch oder wartet</td>
+<td>abwarten, bei Genehmigungen normal</td>
+</tr>
+<tr>
+<td><strong>Abgebrochen</strong></td>
+<td>Flow wurde gestoppt oder ausgeschaltet</td>
+<td>Status des Flows prüfen</td>
+</tr>
+<tr>
+<td><strong>kein Eintrag</strong></td>
+<td>Trigger hat nicht gegriffen</td>
+<td>Trigger-Felder und Trigger-Bedingung prüfen</td>
+</tr>
+</tbody>
+</table>
+<p>Öffne einen Lauf und klicke eine Karte an. Du siehst zwei Blöcke: <strong>Eingaben (Inputs)</strong> – womit der Schritt gestartet wurde – und <strong>Ausgaben (Outputs)</strong> – was er zurückgegeben hat. Das ist das wichtigste Diagnosewerkzeug überhaupt, weil es die Frage beantwortet: Ist der Wert schon vor diesem Schritt falsch gewesen, oder erst hier?</p>
+<p>Die letzte Zeile der Tabelle ist der häufigste Ratlosigkeitsfall: <strong>kein Eintrag im Verlauf</strong>. Dann ist nicht der Flow kaputt, sondern der Trigger hat nie ausgelöst – falscher Ordner, Betrefffilter zu streng, <code>Nur mit Anlagen</code> auf <code>Ja</code> bei einer Mail ohne Anhang, oder eine Trigger-Bedingung, die immer <code>false</code> ergibt.</p>
+<div class="admonition warning">
+<p class="admonition-title">Die drei häufigsten Anfängerfehler in diesem Szenario</p>
+<ol>
+<li><strong>Anlagen einschließen steht auf <code>Nein</code>.</strong> Der Flow läuft grün durch, aber die abgelegte Datei hat 0 Byte. Symptom: Datei da, Inhalt weg. Lösung: Trigger öffnen, <code>Erweiterte Optionen anzeigen</code>, <code>Anlagen einschließen</code> auf <code>Ja</code>.</li>
+<li><strong>Dateien überschreiben sich.</strong> Zwei Absender schicken je eine <code>Rechnung.pdf</code>. Die zweite Datei ersetzt die erste oder der Schritt scheitert. Lösung: einen eindeutigen Dateinamen bauen, etwa aus Datum, Absender und Originalname (Kap. 23).</li>
+<li><strong>Die Benachrichtigung liegt in der Schleife.</strong> Vier Anhänge erzeugen vier Teams-Nachrichten, davon drei mit Signaturbildern. Lösung: Nachricht aus der Karte <code>Auf jedes anwenden</code> herausziehen und Anhänge zusätzlich nach Dateiendung filtern (Kap. 24).</li>
+</ol>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ein Cloud-Flow entsteht über <code>Erstellen → Automatisierter Cloud-Flow</code>; Name und Trigger werden sofort vergeben.</li>
+<li>Im Trigger entscheidet <code>Nur mit Anlagen</code>, <strong>ob</strong> der Flow startet, und <code>Anlagen einschließen</code>, ob du an den <strong>Inhalt</strong> kommst.</li>
+<li>Eine <strong>Trigger-Bedingung</strong> filtert vor dem Start und verhindert unnötige Läufe und Selbstauslösung.</li>
+<li><strong>Dynamische Inhalte</strong> übertragen Werte aus vorherigen Schritten; bei Listen legt Power Automate automatisch <code>Auf jedes anwenden</code> um die Aktion.</li>
+<li>Bauen in kleinen Schritten, jede Karte umbenennen, manuell testen, dann mit gespeicherten Daten und zuletzt mit echter fremder Auslösung.</li>
+<li>Der <strong>Ausführungsverlauf</strong> mit <strong>Eingaben und Ausgaben</strong> je Schritt ist das zentrale Diagnosewerkzeug; kein Eintrag bedeutet: der Trigger hat nicht gegriffen.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Fehlerbild dem Fehler zuordnen</summary>
+<p>Fünf Teilnehmende haben den Flow aus dem Kapitel gebaut und beschreiben jeweils ein Symptom.
+Benenne für jedes Symptom die <strong>wahrscheinlichste Ursache</strong> und den <strong>ersten Klick</strong>, mit dem
+du sie prüfst.</p>
+<ol>
+<li>„Im Ausführungsverlauf steht überhaupt nichts, obwohl ich mir eine Mail geschickt habe."</li>
+<li>„Der Lauf ist grün, aber die Datei in OneDrive hat 0 Byte."</li>
+<li>„Ich habe eine Mail mit drei Anhängen geschickt und drei Teams-Nachrichten bekommen."</li>
+<li>„Der Flow läuft, aber erst zwei Minuten nach der Mail."</li>
+<li>„Beim zweiten Test ist der Schritt <code>Datei erstellen</code> rot geworden, beim ersten nicht."</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Unterscheide streng zwischen drei Kategorien: Der Trigger hat nicht ausgelöst, der Trigger hat
+ausgelöst aber Daten fehlen, oder eine Aktion sitzt an der falschen Stelle in der Verschachtelung.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Ursache</th>
+<th>Erster Klick</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Trigger hat nicht ausgelöst: falscher Ordner, zu strenger Betrefffilter, <code>Nur mit Anlagen</code> auf <code>Ja</code> bei Mail ohne Anhang oder Trigger-Bedingung immer <code>false</code></td>
+<td>Trigger-Karte öffnen, <code>Erweiterte Optionen anzeigen</code>, Filterfelder prüfen</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>Anlagen einschließen</code> steht auf <code>Nein</code> – der Flow startet, liefert aber keinen Dateiinhalt</td>
+<td>Trigger-Karte, Feld <code>Anlagen einschließen</code> auf <code>Ja</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Die Teams-Aktion liegt innerhalb von <code>Auf jedes anwenden</code></td>
+<td>Designer öffnen, Einrückung prüfen, Aktion aus der Schleifenkarte herausziehen</td>
+</tr>
+<tr>
+<td>4</td>
+<td>kein Fehler: der Trigger prüft das Postfach in Takten, nicht in Echtzeit</td>
+<td>Ausführungsverlauf, Startzeit mit Empfangszeit vergleichen</td>
+</tr>
+<tr>
+<td>5</td>
+<td>gleicher Dateiname wie im ersten Test, die Datei existiert schon</td>
+<td>Lauf öffnen, <code>Datei erstellen</code> anklicken, Eingaben prüfen und Dateinamen eindeutig machen</td>
+</tr>
+</tbody>
+</table>
+<p>Punkt 4 ist der lehrreichste: Nicht jede Verzögerung ist ein Fehler. Wer sie für einen hält, baut
+am funktionierenden Flow herum und verschlimmert ihn. Punkt 5 zeigt, warum der Blick in die
+<strong>Eingaben</strong> eines Schrittes wichtiger ist als die Fehlermeldung selbst – dort steht der Dateiname,
+der die Kollision verursacht.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Den Kern-Flow bauen und manuell testen</summary>
+<p>Baue in Power Automate den Kern des Kapitel-Szenarios – nur Trigger und Ablage, noch keine
+Benachrichtigung.</p>
+<ol>
+<li>Lege in deinem OneDrive for Business einen Ordner <code>Rechnungseingang</code> an.</li>
+<li>Erstelle über <code>Erstellen → Automatisierter Cloud-Flow</code> einen Flow mit dem Namen
+   <code>22 Rechnungsanhang ablegen</code> und dem Trigger <code>Bei Eingang einer neuen E-Mail (V3)</code>.</li>
+<li>Setze im Trigger: Ordner <code>Posteingang</code>, Betrefffilter <code>Rechnung</code>, <code>Nur mit Anlagen</code> = <code>Ja</code>,
+   <code>Anlagen einschließen</code> = <code>Ja</code>.</li>
+<li>Füge <code>Datei erstellen</code> (OneDrive for Business) hinzu und fülle Ordnerpfad, Dateiname und
+   Dateiinhalt. Benenne beide entstandenen Karten sprechend um.</li>
+<li>Speichern, <code>Testen → Manuell</code>, dann schicke dir selbst eine Mail mit einem PDF und dem
+   Betreff <code>Rechnung Test 1</code>. Prüfe Lauf <strong>und</strong> Ergebnis im Ordner.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Wundere dich nicht, wenn nach dem Einsetzen des Dateinamens plötzlich eine Karte
+<code>Auf jedes anwenden</code> um deine Aktion herum erscheint. Das ist korrekt: Anlagen sind eine Liste.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: 22 Rechnungsanhang ablegen
+  Trigger: Bei Eingang einer neuen E-Mail V3   -&gt; umbenannt in: Neue Rechnungsmail
+    Ordner: Posteingang
+    Betrefffilter: Rechnung
+    Nur mit Anlagen: Ja
+    Anlagen einschliessen: Ja
+  Aktion: Auf jedes anwenden   -&gt; umbenannt in: Fuer jeden Anhang
+    Ausgewaehlte Ausgabe: Anlagen
+    Aktion: Datei erstellen   -&gt; umbenannt in: Anhang speichern
+      Ordnerpfad: /Rechnungseingang
+      Dateiname: Name der Anlage        (dynamischer Inhalt)
+      Dateiinhalt: Inhalt der Anlage    (dynamischer Inhalt)
+</code></pre></div></td></tr></table></div>
+<p>Nachweis eines gelungenen Ergebnisses: Der Lauf steht auf <strong>Erfolgreich</strong>, im Ordner
+<code>Rechnungseingang</code> liegt die Datei mit dem Originalnamen, sie ist größer als 0 Byte und lässt sich
+öffnen. Beide Karten tragen sprechende Namen.</p>
+<p>Wer 0 Byte erhält, hat <code>Anlagen einschließen</code> nicht gesetzt. Wer keinen Lauf sieht, hat einen
+Betrefffilter, der nicht passt – der Filter unterscheidet nicht zwischen Groß- und Kleinschreibung,
+aber <code>Rechnungen</code> im Filter und <code>Rechnung</code> in der Mail passen nicht zusammen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Benachrichtigung ergänzen und den Verlauf auswerten</summary>
+<p>Du erweiterst den Flow aus der vorigen Übung und liest anschließend den Ausführungsverlauf
+wie eine Diagnose.</p>
+<ol>
+<li>Ergänze <strong>außerhalb</strong> der Schleife eine Benachrichtigung: <code>Nachricht in einem Chat oder Kanal
+   veröffentlichen</code> (Teams) oder <code>E-Mail senden (V2)</code>. Der Text muss Absender, Betreff und
+   Empfangszeit als dynamische Inhalte enthalten.</li>
+<li>Trage eine Trigger-Bedingung ein, die Antwortmails aussperrt:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>@not(startsWith(triggerOutputs()?[&#39;body/subject&#39;], &#39;AW:&#39;))
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Teste drei Fälle und protokolliere je Fall, was im Ausführungsverlauf steht: (a) Mail mit
+   einem Anhang, (b) Mail mit zwei Anhängen, (c) Mail mit dem Betreff <code>AW: Rechnung Test 1</code>.</li>
+<li>Öffne im Lauf zu Fall (b) den Schritt <code>Anhang speichern</code> und lies die <strong>Eingaben</strong>. Notiere,
+   wie oft der Schritt gelaufen ist und welcher Dateiname jeweils darin stand.</li>
+<li>Beantworte: Warum ist bei Fall (c) kein Lauf im Verlauf zu sehen, obwohl die Mail angekommen ist?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Fall (c) fühlt sich wie ein Fehler an, ist aber der Beweis, dass die Trigger-Bedingung arbeitet.
+Der Unterschied zwischen „gar kein Lauf" und „Lauf mit übersprungenem Schritt" ist eine der
+wichtigsten Unterscheidungen in Power Automate.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: 22 Rechnungsanhang ablegen
+  Trigger: Neue Rechnungsmail
+    Einstellungen: Trigger-Bedingung mit not und startsWith auf AW:
+  Aktion: Fuer jeden Anhang
+    Aktion: Anhang speichern
+  Aktion: Team informieren        (ausserhalb der Schleife)
+    Text: Von, Betreff, Empfangszeit als dynamische Inhalte
+</code></pre></div></td></tr></table></div>
+<p>Erwartete Beobachtungen:</p>
+<table>
+<thead>
+<tr>
+<th>Fall</th>
+<th>Verlauf</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a) ein Anhang</td>
+<td>ein Lauf, <code>Anhang speichern</code> einmal, eine Benachrichtigung</td>
+<td>Normalfall</td>
+</tr>
+<tr>
+<td>(b) zwei Anhänge</td>
+<td>ein Lauf, <code>Anhang speichern</code> zweimal mit unterschiedlichen Dateinamen, weiterhin <strong>eine</strong> Benachrichtigung</td>
+<td>die Schleife läuft pro Listeneintrag, die Nachricht liegt außerhalb</td>
+</tr>
+<tr>
+<td>(c) Betreff <code>AW: …</code></td>
+<td><strong>kein Eintrag</strong> im Verlauf</td>
+<td>die Trigger-Bedingung war <code>false</code>, der Flow wurde nie gestartet</td>
+</tr>
+</tbody>
+</table>
+<p>Bewertungskriterien: (1) die Benachrichtigung liegt nachweislich außerhalb der Schleife und kommt
+bei zwei Anhängen genau einmal; (2) die drei Fälle sind mit Verlaufsbefund protokolliert; (3) die
+Eingaben des Schrittes wurden gelesen und die Anzahl der Durchläufe korrekt benannt; (4) der
+Unterschied zwischen „kein Lauf" und „Lauf mit Fehler" ist in eigenen Worten erklärt.</p>
+<p>Wichtig für alles Weitere: Eine Trigger-Bedingung hinterlässt keine Spur. Wenn du sie zu streng
+formulierst, wirkt der Flow tot, ohne dass irgendwo eine Fehlermeldung erscheint. Notiere dir
+deshalb jede Trigger-Bedingung in der Flow-Beschreibung.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Posteingang Angebotsanfragen automatisiert ablegen</summary>
+<p><strong>Szenario:</strong> Im Vertriebsinnendienst laufen Angebotsanfragen per Mail ein, oft mit
+Leistungsverzeichnis oder Zeichnung als Anhang. Bisher lädt jede Person die Anhänge von Hand in
+einen Ordner und schreibt eine Notiz in den Teams-Kanal. Zweimal im letzten Quartal wurde eine
+Anfrage übersehen, einmal lag dieselbe Datei in drei verschiedenen Ordnern. Du baust den Ablauf
+als Cloud-Flow – er muss am Ende dieses Workshops wirklich laufen und den Kanal wirklich
+benachrichtigen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Etwa 20 Anfragen pro Woche, Anhaenge meist PDF, gelegentlich zwei bis fuenf Dateien pro Mail.
+Ablageziel: OneDrive for Business oder eine SharePoint-Bibliothek, Ordner Angebotsanfragen.
+Zielkanal: Teams-Kanal Vertrieb, alternativ eine Bestaetigungsmail an dich selbst.
+Mails kommen teils direkt, teils als Weiterleitung von Kolleginnen und Kollegen.
+Verwendet werden ausschliesslich Standard-Connectoren.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Grundlage bauen.</strong> Lege den Zielordner an und baue den Flow in drei Etappen, mit einem
+Testlauf nach jeder Etappe: (1) Trigger <code>Bei Eingang einer neuen E-Mail (V3)</code> mit passenden
+Filtern, (2) Ablage der Anhänge, (3) Benachrichtigung außerhalb der Schleife. Lege dir vorab drei
+Testmails an: eine mit einem Anhang, eine mit drei Anhängen, eine ohne Anhang.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Dein Flow muss <strong>alle vier</strong> Punkte erfüllen und du
+weist jeden Punkt mit einem Lauf aus dem Ausführungsverlauf nach:</p>
+<ol>
+<li>Eine Mail <strong>ohne</strong> Anhang erzeugt keinen Lauf.</li>
+<li>Eine Mail mit <strong>drei</strong> Anhängen erzeugt drei Dateien und genau <strong>eine</strong> Benachrichtigung.</li>
+<li>Jede Karte im Flow trägt einen sprechenden Namen; die Benachrichtigung enthält Absender,
+   Betreff und Empfangszeit als dynamische Inhalte.</li>
+<li>Der Flow lässt sich mit <code>Testen → Automatisch → Mit Daten aus vorherigen Ausführungen</code>
+   wiederholen, ohne dass du eine neue Mail schicken musst.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Der Flow geht in Betrieb, und drei Meldungen kommen zurück:</p>
+<ul>
+<li>Eine Kollegin hat eine Anfrage weitergeleitet. Ergebnis: Im Ordner liegen jetzt drei Dateien –
+  das Leistungsverzeichnis und zwei Bilder aus der Signatur. Finde heraus, woran du eine
+  Signaturdatei erkennst, und lege fest, wie du sie aussortierst.</li>
+<li>Zwei Kunden haben ihre Datei <code>Anfrage.pdf</code> genannt. Die zweite hat die erste überschrieben und
+  ist nicht mehr auffindbar. Baue einen eindeutigen Dateinamen und beschreibe, aus welchen
+  Bestandteilen er besteht.</li>
+<li>Der Kanal wurde an einem Tag mit 14 Nachrichten geflutet, weil auch die automatischen
+  Antwortmails des eigenen Flows den Trigger auslösten. Stelle das über eine Trigger-Bedingung ab
+  und weise mit dem Ausführungsverlauf nach, dass die Doppelläufe verschwunden sind.</li>
+</ul>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die IT sagt: „Ablage nur in SharePoint, niemals in
+OneDrive." Der Vertrieb sagt: „OneDrive ist einfacher, das machen wir so." Lass dir von einem
+KI-Werkzeug Argumente für beide Seiten geben und prüfe sie an deinem gebauten Flow nach: Was
+ändert sich technisch, wer hat Zugriff, was passiert bei Abwesenheit der Eigentümerin. Entscheide
+begründet und <strong>widersprich</strong> dabei mindestens einem Argument, das dir das KI-Werkzeug geliefert
+hat, mit einer Beobachtung aus deinem eigenen Testlauf.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>laufender Flow mit sprechenden Schrittnamen, in Betrieb genommen und aktiv</li>
+<li>Testprotokoll mit vier Läufen: ohne Anhang, ein Anhang, drei Anhänge, Wiederholung mit
+   gespeicherten Daten – je mit Status, Dauer und Ergebnis am Ziel</li>
+<li>Lösungen zu den drei Störungen aus Runde 3, jede mit Vorher-Nachher-Nachweis aus dem Verlauf</li>
+<li>halbseitige Entscheidung zum Ablageort mit dem widersprochenen KI-Argument</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> der Flow aktiv ist, alle vier Testläufe mit geprüftem Ergebnis am
+Zielort belegt sind, jede der drei Störungen aus Runde 3 mit einem Vorher-Nachher-Lauf aus dem
+Ausführungsverlauf nachweislich behoben ist und deine Entscheidung zum Ablageort mindestens ein
+Argument des KI-Werkzeugs mit einer eigenen Beobachtung aus deinem Testlauf zurückweist.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der eigentliche Lernwert liegt in Runde 3. Die drei Störungen sind keine erfundenen Übungsfälle,
+sondern die drei Dinge, die bei diesem Flow in der Praxis immer passieren: fremde Signaturbilder,
+gleiche Dateinamen, Selbstauslösung. Achte darauf, jede Korrektur mit einem Lauf zu belegen statt
+sie nur zu behaupten – „müsste jetzt gehen" ist die Aussage, mit der Flows unbemerkt kaputtgehen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) der Flow ist aktiv und die vier Pflichtläufe sind mit Zeitstempel, Status
+und geprüftem Ergebnis am Zielort belegt, insbesondere drei Dateien bei einer Nachricht;
+(2) die Signaturdateien werden über ein nachvollziehbares Merkmal aussortiert, etwa Dateiendung
+oder Dateigröße, und die Begründung passt zu den Eingaben im Ausführungsverlauf; (3) der
+Dateiname ist nachweislich eindeutig und aus Bestandteilen wie Datum, Absender und Originalname
+aufgebaut, die Kollision ist mit einem Testlauf widerlegt; (4) die Doppelauslösung ist über eine
+Trigger-Bedingung abgestellt und die Entscheidung zum Ablageort wägt Zugriff, Vertretung und
+Aufwand ab, statt nur einer Seite zuzustimmen.</p>
+<p>Lernziel: einen vollständigen Cloud-Flow selbstständig bauen, in Betrieb nehmen und mit dem
+Ausführungsverlauf beweisen, dass er das Richtige tut – auch bei unsauberen Eingangsdaten.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel21/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 21 – Einführung in Power Automate">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 21 – Einführung in Power Automate
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel23/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

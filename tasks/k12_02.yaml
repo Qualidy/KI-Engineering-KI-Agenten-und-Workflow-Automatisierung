@@ -1,0 +1,53 @@
+title: Tonwechsel ohne Inhaltsverlust
+difficulty: 2
+question: |
+  Diese Übung machst du am Werkzeug (Copilot in Word, Copilot Chat, ChatGPT oder Claude).
+
+  1. Erzeuge einen Ausgangstext mit diesem Auftrag:
+
+     ```text
+     Rolle: Du bist Sachbearbeiterin im Innendienst der Musterhandel GmbH.
+     Aufgabe: Schreibe eine Nachricht an einen Kunden, dass die Lieferung sich um
+     zwei Wochen verzoegert.
+     Kontext: Neuer Liefertermin 26. Maerz. Grund: Ausfall eines Vorlieferanten.
+     Eine Teillieferung von 40 Prozent ist am 12. Maerz moeglich. Skonto von zwei
+     Prozent bleibt bestehen, Ruecktrittsrecht nach unseren AGB unberuehrt.
+     Format: Betreff, Anrede mit [Kundenname], maximal 150 Woerter, Gruss.
+     Ton: sachlich.
+     Einschraenkung: Keine Angaben ergaenzen, die hier nicht stehen.
+     ```
+
+  2. Lass denselben Text in zwei weiteren Tonlagen erzeugen: einmal deutlich freundlicher,
+     einmal deutlich knapper.
+  3. Erstelle eine Tabelle mit allen **harten Angaben** aus dem Original (Datumsangaben,
+     Prozentwerte, Rechte) und prüfe für jede Fassung, ob sie noch enthalten ist.
+  4. Formuliere aus dem Ergebnis eine Zusatzanweisung, die den Verlust verhindert.
+tip: |
+  Zähle vor dem Vergleich, wie viele harte Angaben das Original hat. Wer erst hinterher zählt,
+  übersieht genau die, die verschwunden sind.
+solution: |
+  Harte Angaben im Original: neuer Termin 26. März, Teillieferung 40 Prozent, Teiltermin
+  12. März, Skonto zwei Prozent, Rücktrittsrecht nach AGB. Also fünf Angaben.
+
+  Typisches Ergebnis:
+
+  | Angabe | freundlicher | knapper |
+  |---|---|---|
+  | Termin 26. März | erhalten | erhalten |
+  | Teillieferung 40 Prozent | oft erhalten | häufig gestrichen |
+  | Teiltermin 12. März | häufig gestrichen | häufig gestrichen |
+  | Skonto zwei Prozent | häufig gestrichen | gestrichen |
+  | Rücktrittsrecht | fast immer gestrichen | fast immer gestrichen |
+
+  Das Muster ist stabil: Die freundliche Fassung verliert alles, was nach Einschränkung oder
+  Recht klingt, die knappe Fassung verliert alles, was sekundär wirkt. Beides ist gefährlich,
+  weil ausgerechnet das Rücktrittsrecht rechtlich relevant ist.
+
+  Wirksame Zusatzanweisung:
+
+  ```text
+  Beim Umformulieren gilt: Die folgenden Angaben muessen wortgleich erhalten
+  bleiben und duerfen weder gekuerzt noch umformuliert werden:
+  26. Maerz, 40 Prozent, 12. Maerz, zwei Prozent Skonto, Ruecktrittsrecht nach
+  AGB. Aendere ausschliesslich Satzbau und Tonlage.
+  ```

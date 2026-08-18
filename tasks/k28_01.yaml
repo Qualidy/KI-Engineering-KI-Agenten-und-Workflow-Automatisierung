@@ -1,0 +1,26 @@
+title: Fehlermeldungen deuten
+difficulty: 1
+question: |
+  Fünf Flows sind fehlgeschlagen. Nenne für jede Meldung die **wahrscheinliche Ursache** und die
+  **erste** Maßnahme aus der Fehlersuch-Checkliste.
+
+  1. `401 Unauthorized` beim Schritt `Elemente abrufen` auf einer Liste eines anderen Bereichs.
+  2. `404 Not Found` beim Schritt `Element aktualisieren`, direkt nach einem Genehmigungsschritt.
+  3. `InvalidTemplate: Unable to process template language expressions` beim Schritt `Verfassen`.
+  4. `429 Too Many Requests` in einem `Auf jedes anwenden` über 600 Datensätze.
+  5. Der Lauf ist grün, aber in der Liste steht eine Zeile ohne Antragsteller.
+tip: |
+  Zwei der fünf Fälle sind keine Bauteilfehler, sondern Rechte- oder Datenprobleme. Und einer
+  ist überhaupt nicht rot – der gefährlichste von allen.
+solution: |
+  | Fall | Ursache | Erste Maßnahme |
+  |---|---|---|
+  | 1. 401 | Verbindung hat keinen Zugriff auf die fremde Liste | Identität prüfen: Unter welchem Konto läuft der Connector, darf dieses Konto die Liste lesen? |
+  | 2. 404 | die ID ist leer oder das Element wurde gelöscht | Eingaben des Schritts lesen: Steht dort eine ID oder ein leerer Wert? |
+  | 3. InvalidTemplate | Ausdruck falsch oder Feldname existiert nicht | Ausdruck mit `Verfassen` und festem Beispielwert isoliert testen |
+  | 4. 429 | Ratenbegrenzung durch zu viele parallele Aufrufe | Nebenläufigkeit der Schleife senken, Wiederholungsrichtlinie prüfen, Aufrufe bündeln |
+  | 5. grün mit Lücke | leerer Wert wurde stillschweigend geschrieben | Pflichtfeld mit `empty(...)` prüfen und den leeren Fall als Fachfall behandeln |
+
+  Fall 5 ist der wichtigste: Ein grüner Lauf ist kein Beweis für Richtigkeit. Fehlende Werte
+  erzeugen keinen Abbruch, sondern unbrauchbare Daten, die niemand bemerkt. Deshalb gehören
+  Prüfungen auf leere Pflichtfelder in jeden Flow, der Daten schreibt.

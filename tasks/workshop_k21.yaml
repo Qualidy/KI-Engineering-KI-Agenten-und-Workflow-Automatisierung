@@ -1,0 +1,88 @@
+title: Erkundung und erster aktiver Flow im eigenen Mandanten
+difficulty: 4
+question: |
+  **Szenario:** Deine Abteilung soll Power Automate einführen. Die IT hat den Zugang freigeschaltet,
+  will aber vor jeder weiteren Freigabe wissen, worauf sich das Haus einlässt: Welche Flow-Typen
+  entstehen, welche Connectoren werden gebraucht, wessen Konten hängen daran und wo liegen die Flows
+  eigentlich. Gleichzeitig verlangt deine Teamleitung ein sichtbares Ergebnis, kein Konzeptpapier.
+  Du lieferst beides: einen belastbaren Steckbrief der Umgebung und einen aktiven Flow, der jeden
+  Montag eine Wochenstart-Erinnerung mit den Terminen und Zuständigkeiten der Woche verschickt.
+
+  ```text
+  Rahmen:
+  Abteilung mit 9 Personen, Microsoft 365 vorhanden, keine Premium-Lizenz.
+  Werkzeuge: Outlook, Teams, OneDrive for Business, SharePoint, Excel Online, Forms.
+  Die Erinnerung geht heute per Hand raus und wurde in den letzten Monaten dreimal vergessen.
+  Die IT hat genau eine Frage: Wer haftet, wenn der Flow etwas Falsches verschickt.
+  ```
+
+  ---
+
+  **Runde 1 – Inventar und Grundgerüst.** Erstelle einen Umgebungs-Steckbrief: Konto, Umgebung
+  (Standardumgebung oder eigene), vorhandene Verbindungen mit Status, und eine Tabelle mit acht
+  Connectoren, die dein Team realistisch braucht – je mit Standard- oder Premium-Einordnung, geprüft
+  über `Erstellen → Aktion hinzufügen → Suchfeld`. Baue anschließend den Flow: `Erstellen →
+  Geplanter Cloud-Flow`, Wiederholung wöchentlich, Montag, 8 Uhr, danach eine Teams-Nachricht in
+  einen Kanal deiner Wahl und eine Mail an dich selbst. Speichern, `Testen → Manuell`, Lauf prüfen.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Ergebnis muss **alle vier** Punkte erfüllen:
+
+  1. Der Flow hat mindestens einen erfolgreichen Lauf im **Ausführungsverlauf**, nachgewiesen mit
+     Datum, Uhrzeit und Dauer.
+  2. Für jeden verwendeten Connector ist dokumentiert, **unter welchem Konto** die Verbindung läuft.
+  3. Der Steckbrief benennt für jeden der acht Connectoren korrekt Standard oder Premium – mindestens
+     einer der acht ist bewusst ein Premium-Connector mit Begründung, warum er trotzdem auf der Liste steht.
+  4. Flow-Name und alle Schrittnamen sind sprechend; kein Schritt heißt mehr `Aktion 2` oder
+     `Wiederholung`.
+
+  **Runde 3 – Die Komplikation.** Drei Dinge treten ein, alle drei praxistypisch:
+
+  - Ein Kollege hat deinen Flow über `Speichern unter` kopiert und ebenfalls aktiviert. Die
+    Erinnerung geht **doppelt** raus. Finde heraus, wie du das erkennst und was die dauerhafte
+    Lösung ist (Kopie löschen ist nur die halbe Antwort – wie verhinderst du die Kopie künftig?).
+  - Die Nachricht kommt nicht um 8 Uhr, sondern um 10 Uhr. Prüfe im Trigger die eingestellte
+    **Zeitzone** und korrigiere sie. Notiere, was im Winter passiert, wenn du stattdessen einfach
+    zwei Stunden abgezogen hättest.
+  - Die Verbindung hängt an deinem persönlichen Konto, und du gehst in vier Wochen in eine längere
+    Abwesenheit. Beschreibe konkret, was am Montag danach passiert, und erarbeite zwei Varianten,
+    das zu verhindern.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die IT verlangt: „Alles in eine eigene Umgebung, in eine
+  Lösung verpackt, mit Dienstkonto – ab sofort, für jeden Flow." Deine Teamleitung will das Gegenteil:
+  „Einfach in der Standardumgebung bauen, das reicht." Lass dir von einem KI-Werkzeug beide Positionen
+  ausarbeiten, entscheide dann selbst und **widersprich** begründet der Seite, die du ablehnst – auch
+  wenn es die IT ist. Deine Entscheidung muss die Frage der IT aus dem Szenario beantworten: Wer
+  haftet, wenn der Flow etwas Falsches verschickt.
+
+  **Deliverable:**
+
+  1. Umgebungs-Steckbrief (Konto, Umgebung, Verbindungen mit Status, Connector-Tabelle mit acht Zeilen)
+  2. aktiver Flow `Wochenstart-Erinnerung` mit Nachweis eines erfolgreichen Laufs und korrekter Zeitzone
+  3. Analyse der drei Störungen aus Runde 3 mit je einer dauerhaften Maßnahme
+  4. einseitige Entscheidung zu Umgebung und Kontoführung, inklusive begründetem Widerspruch
+
+  **Fertig bist du erst, wenn** der Steckbrief alle vorhandenen Verbindungen mit Status und acht
+  Connectoren mit der Einordnung Standard oder Premium enthält, der Flow `Wochenstart-Erinnerung`
+  aktiv ist und ein Lauf mit korrekter deutscher Uhrzeit belegt ist, für jede der drei Störungen
+  aus Runde 3 eine dauerhafte Maßnahme benannt ist und deine Entscheidung zur Kontoführung
+  beantwortet, was passiert, wenn die Person, unter deren Konto der Flow läuft, das Unternehmen
+  verlässt.
+tip: |
+  Der Steckbrief ist Fleißarbeit, der Lernwert steckt in Runde 3 und 4. Die Doppelausführung und die
+  Zeitzone sind die zwei Fehler, die dich in diesem Block noch mehrfach treffen werden – wer hier
+  versteht, dass ein Zeitplan-Trigger eine eingestellte Zeitzone hat und Sommerzeit nicht selbst
+  mitdenkt, spart sich später viel Sucharbeit. In Runde 4 gibt es keine richtige Antwort, nur eine
+  begründete: Governance kostet Zeit und schützt vor Ausfall, Standardumgebung ist schnell und
+  erzeugt Schatten-IT.
+solution: |
+  Bewertungskriterien: (1) der Flow ist aktiv, hat einen erfolgreichen Lauf mit belegtem Zeitstempel
+  und trägt sprechende Namen; (2) die Connector-Tabelle ordnet Standard und Premium korrekt zu und
+  belegt für jede Verbindung das Konto; (3) die drei Störungen sind mit Ursache und dauerhafter
+  Maßnahme beschrieben – Doppelausführung über den Ausführungsverlauf zweier Flows erkannt und über
+  Eigentümerschaft statt Kopien gelöst, Zeitzone im Trigger korrigiert statt durch Stundenabzug,
+  Kontoabhängigkeit über Dienstkonto oder zweite Eigentümerschaft entschärft; (4) die Entscheidung
+  wägt Aufwand gegen Ausfallrisiko ab, widerspricht einer der beiden Vorgaben begründet und benennt
+  eine verantwortliche Person.
+
+  Lernziel: Power Automate nicht nur bedienen, sondern die drei Koordinaten Konto, Umgebung und
+  Verbindung verstehen – und die Folgen einer Fehlkonfiguration am eigenen laufenden Flow sehen.

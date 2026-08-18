@@ -1,0 +1,81 @@
+title: Agenten-Steckbrief für einen echten Anwendungsfall
+difficulty: 4
+question: |
+  **Szenario:** Die Zentrale Verwaltung eines mittelständischen Unternehmens ertrinkt in
+  Rückfragen. Beschäftigte schreiben an ein Sammelpostfach – zu Urlaub, Reisekosten,
+  Bescheinigungen, Zugängen, Arbeitszeit. Drei Personen sortieren, leiten weiter und beantworten
+  Standardfragen. Die Bereichsleitung hat gehört, dass „ein Agent das kann", und möchte einen
+  belastbaren Steckbrief, bevor Geld ausgegeben wird.
+
+  ```text
+  Rahmen:
+  Rund 60 Anfragen pro Tag, davon geschaetzt ein Drittel Standardfragen.
+  Vorhandene Unterlagen: Intranetseiten, eine Reisekostenrichtlinie als PDF,
+  eine veraltete FAQ-Liste in Word, viel Wissen nur in den Koepfen.
+  Microsoft 365 vorhanden, keine Entwicklerkapazitaet.
+  Du darfst das Szenario durch deinen eigenen Bereich ersetzen.
+  ```
+
+  ---
+
+  **Runde 1 – Steckbrief bauen.** Erstelle einen Agenten-Steckbrief mit allen fünf Bausteinen der
+  Anatomie: Ziel und Instruktion (ausformuliert, mit mindestens drei Grenzen), Werkzeuge (als
+  Tätigkeiten), Wissensquellen (konkret benannt, mit Angabe wer sie pflegt), Gedächtnis (was
+  innerhalb, was außerhalb eines Vorgangs) und die Arbeitsschleife (welche Schritte, welche
+  Prüfung nach jedem Schritt). Ergänze eine gewählte Autonomiestufe mit Begründung.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Der Steckbrief muss **alle vier** Kriterien
+  erfüllen:
+
+  1. Zu jeder Wissensquelle ist benannt, **wer sie aktuell hält** und was passiert, wenn sie
+     veraltet ist.
+  2. Die Instruktion enthält eine ausdrückliche Regel für den Fall, dass die Unterlagen die Frage
+     **nicht** beantworten.
+  3. Für jedes Werkzeug mit Außenwirkung ist eine **Freigabe oder eine Begründung** angegeben,
+     warum keine nötig ist.
+  4. Es ist benannt, **wie ein Fehler auffallen würde** – nicht nur, dass geprüft wird.
+
+  **Runde 3 – Die Komplikation.** Beim Sichten der Unterlagen stellt sich heraus: Die FAQ-Liste
+  ist zwei Jahre alt und widerspricht an drei Stellen der aktuellen Richtlinie. Außerdem sind
+  etwa 20 Prozent der Anfragen Einzelfälle, die niemand nach Regeln beantworten kann. Überarbeite
+  den Steckbrief: Was tust du mit widersprüchlichen Quellen? Wie erkennt der Agent, dass ein Fall
+  nicht zu ihm gehört? Grenze den Anwendungsbereich neu ab und schreibe auf, welcher Anteil der
+  Anfragen realistisch übrig bleibt.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Bereichsleitung möchte, dass der Agent Antworten
+  **direkt** an die Beschäftigten schickt – Stufe 4, weil sonst „nichts gespart" werde. Lass dir
+  von deinem KI-Werkzeug Argumente für beide Seiten geben. Entscheide dann selbst und
+  **widersprich** begründet, wenn du eine niedrigere Stufe für richtig hältst. Formuliere einen
+  Kompromiss, der spürbar Arbeit spart, ohne die Fehlerfolge zu ignorieren – und benenne, unter
+  welcher **überprüfbaren Bedingung** du später auf die nächste Stufe gehen würdest.
+
+  **Deliverable:**
+
+  1. Agenten-Steckbrief mit allen fünf Bausteinen und begründeter Autonomiestufe
+  2. ausgefüllte Checkliste der vier Pflichtkriterien
+  3. überarbeitete Fassung nach Runde 3, mit neu abgegrenztem Anwendungsbereich
+  4. Entscheidungsnotiz aus Runde 4 mit Kompromiss und Aufstiegsbedingung
+
+  **Fertig bist du erst, wenn** die Instruktion mindestens drei echte Grenzen und eine Regel für
+  unbeantwortbare Fälle enthält, jede Wissensquelle eine verantwortliche Pflege hat, im Steckbrief
+  steht, woran ein Fehler auffällt, und deine Entscheidungsnotiz eine Bedingung nennt, an der man
+  objektiv ablesen kann, ob die nächste Autonomiestufe vertretbar wäre.
+tip: |
+  Der Lernwert liegt in Runde 3. Fast jedes Agentenprojekt scheitert nicht an der Technik, sondern
+  an der Wissensbasis: veraltete Dateien, widersprüchliche Fassungen, ungepflegte Listen. Wer das
+  im Steckbrief ausklammert, plant einen Agenten für eine Welt, die es nicht gibt. In Runde 4 gilt:
+  „Spart nichts" ist ein ernstzunehmendes Argument – begegne ihm mit einem Zuschnitt, der wirklich
+  entlastet, statt mit einer Sicherheitsschleife um jeden Vorgang.
+solution: |
+  Bewertungskriterien: (1) alle fünf Bausteine sind konkret und auf das Szenario bezogen ausgefüllt,
+  die Instruktion enthält ausformulierte Grenzen statt allgemeiner Vorsätze; (2) alle vier
+  Pflichtkriterien sind erfüllt, insbesondere die benannte Pflegeverantwortung und die Frage, woran
+  ein Fehler auffällt; (3) die Überarbeitung löst den Quellenwiderspruch nachvollziehbar – etwa
+  durch Vorrang der Richtlinie und Aussortieren der FAQ – und grenzt den Anwendungsbereich
+  ehrlich kleiner ab, inklusive realistischer Restmenge; (4) die Entscheidung wägt Entlastung gegen
+  Fehlerfolge ab, übernimmt die Vorgabe Stufe 4 nicht ungeprüft und nennt eine objektiv prüfbare
+  Aufstiegsbedingung.
+
+  Lernziel: Einen Agenten nicht als Produktidee, sondern als Zusammenspiel aus Ziel, Werkzeugen,
+  Wissen, Gedächtnis und Kontrolle entwerfen – und die Autonomiestufe aus der Fehlerfolge ableiten
+  statt aus dem Wunsch nach Ersparnis.

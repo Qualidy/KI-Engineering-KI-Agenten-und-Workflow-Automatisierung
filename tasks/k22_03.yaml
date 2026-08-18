@@ -1,0 +1,53 @@
+title: Benachrichtigung ergänzen und den Verlauf auswerten
+difficulty: 3
+question: |
+  Du erweiterst den Flow aus der vorigen Übung und liest anschließend den Ausführungsverlauf
+  wie eine Diagnose.
+
+  1. Ergänze **außerhalb** der Schleife eine Benachrichtigung: `Nachricht in einem Chat oder Kanal
+     veröffentlichen` (Teams) oder `E-Mail senden (V2)`. Der Text muss Absender, Betreff und
+     Empfangszeit als dynamische Inhalte enthalten.
+  2. Trage eine Trigger-Bedingung ein, die Antwortmails aussperrt:
+
+     ```text
+     @not(startsWith(triggerOutputs()?['body/subject'], 'AW:'))
+     ```
+
+  3. Teste drei Fälle und protokolliere je Fall, was im Ausführungsverlauf steht: (a) Mail mit
+     einem Anhang, (b) Mail mit zwei Anhängen, (c) Mail mit dem Betreff `AW: Rechnung Test 1`.
+  4. Öffne im Lauf zu Fall (b) den Schritt `Anhang speichern` und lies die **Eingaben**. Notiere,
+     wie oft der Schritt gelaufen ist und welcher Dateiname jeweils darin stand.
+  5. Beantworte: Warum ist bei Fall (c) kein Lauf im Verlauf zu sehen, obwohl die Mail angekommen ist?
+tip: |
+  Fall (c) fühlt sich wie ein Fehler an, ist aber der Beweis, dass die Trigger-Bedingung arbeitet.
+  Der Unterschied zwischen „gar kein Lauf" und „Lauf mit übersprungenem Schritt" ist eine der
+  wichtigsten Unterscheidungen in Power Automate.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Flow: 22 Rechnungsanhang ablegen
+    Trigger: Neue Rechnungsmail
+      Einstellungen: Trigger-Bedingung mit not und startsWith auf AW:
+    Aktion: Fuer jeden Anhang
+      Aktion: Anhang speichern
+    Aktion: Team informieren        (ausserhalb der Schleife)
+      Text: Von, Betreff, Empfangszeit als dynamische Inhalte
+  ```
+
+  Erwartete Beobachtungen:
+
+  | Fall | Verlauf | Erklärung |
+  |---|---|---|
+  | (a) ein Anhang | ein Lauf, `Anhang speichern` einmal, eine Benachrichtigung | Normalfall |
+  | (b) zwei Anhänge | ein Lauf, `Anhang speichern` zweimal mit unterschiedlichen Dateinamen, weiterhin **eine** Benachrichtigung | die Schleife läuft pro Listeneintrag, die Nachricht liegt außerhalb |
+  | (c) Betreff `AW: …` | **kein Eintrag** im Verlauf | die Trigger-Bedingung war `false`, der Flow wurde nie gestartet |
+
+  Bewertungskriterien: (1) die Benachrichtigung liegt nachweislich außerhalb der Schleife und kommt
+  bei zwei Anhängen genau einmal; (2) die drei Fälle sind mit Verlaufsbefund protokolliert; (3) die
+  Eingaben des Schrittes wurden gelesen und die Anzahl der Durchläufe korrekt benannt; (4) der
+  Unterschied zwischen „kein Lauf" und „Lauf mit Fehler" ist in eigenen Worten erklärt.
+
+  Wichtig für alles Weitere: Eine Trigger-Bedingung hinterlässt keine Spur. Wenn du sie zu streng
+  formulierst, wirkt der Flow tot, ohne dass irgendwo eine Fehlermeldung erscheint. Notiere dir
+  deshalb jede Trigger-Bedingung in der Flow-Beschreibung.

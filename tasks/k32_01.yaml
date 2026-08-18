@@ -1,0 +1,31 @@
+title: Thema oder generative Antwort?
+difficulty: 1
+question: |
+  Ein Agent für den Innendienst eines Baustoffhändlers soll folgende Anliegen bedienen. Entscheide
+  jeweils, ob du ein **Thema mit Trigger-Phrasen** anlegst oder es bei einer **generativen Antwort**
+  aus den Wissensquellen belässt. Begründe in einem Satz.
+
+  1. „Wie lange sind die Zahlungsziele für Neukunden?"
+  2. „Ich möchte eine Reklamation melden."
+  3. „Wo finde ich die aktuelle Preisliste?"
+  4. „Bitte den Liefertermin zu Vorgang 44182 nachschlagen."
+  5. „Welche Sicherheitsvorgaben gelten beim Betreten des Lagers?"
+  6. „Ich möchte mit einer Person aus dem Innendienst sprechen."
+tip: |
+  Die Faustregel aus dem Kapitel: Alles, was verbindlich ist oder etwas auslöst, gehört in ein Thema.
+  Reine Auskunft bleibt bei generativen Antworten.
+solution: |
+  | Anliegen | Weg | Begründung |
+  |---|---|---|
+  | 1 Zahlungsziele | generative Antwort | reine Auskunft aus der Richtlinie |
+  | 2 Reklamation melden | Thema | löst einen Vorgang aus, braucht feste Rückfragen |
+  | 3 Preisliste finden | generative Antwort | Verweis auf ein Dokument, keine Aktion |
+  | 4 Liefertermin nachschlagen | Thema mit Aktion | ruft einen Flow auf, braucht die Vorgangsnummer als Eingabe |
+  | 5 Sicherheitsvorgaben | generative Antwort | Auskunft, sollte aber die Quelle nennen |
+  | 6 Zu einem Menschen | Thema | fester Weg zur Weiterleitung, darf nicht dem Zufall überlassen bleiben |
+
+  Fall 5 ist der Grenzfall und zeigt eine wichtige Unterscheidung: Sicherheitsvorgaben sind zwar
+  Auskunft, aber folgenreiche Auskunft. Hier lohnt es sich, in der Instruktion vorzuschreiben, dass
+  bei solchen Themen immer der Wortlaut zitiert und die Fundstelle genannt wird – statt gleich ein
+  eigenes Thema zu bauen. Fall 6 wird am häufigsten vergessen und ist die wichtigste Absicherung
+  gegen einen Agenten, der zur Sackgasse wird.

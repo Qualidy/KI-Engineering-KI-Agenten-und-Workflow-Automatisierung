@@ -1,0 +1,113 @@
+title: Monatsabschluss mit KI-Unterstützung
+difficulty: 4
+question: |
+  **Szenario:** Du arbeitest in der Buchhaltung der Musterhandel GmbH, ein Team von drei Personen.
+  Der Monatsabschluss März steht an, eine Kollegin ist krank, und die Geschäftsführung erwartet den
+  Bericht zwei Tage früher als üblich. Zu erledigen sind ein Stapel Eingangsrechnungen, ein Mahnlauf,
+  die Kommentierung der Abweichungen und – neu – eine Festlegung, wie der KI-Einsatz künftig
+  dokumentiert wird. Der Steuerberater hat angekündigt, im Sommer die Verfahrensdokumentation zu
+  prüfen.
+
+  ```text
+  Rahmendaten:
+  Musterhandel GmbH, Handel mit Lager- und Bueroeinrichtung, 140 Beschaeftigte
+  Buchhaltung: 3 Personen, aktuell 2 verfuegbar
+  Eingangsrechnungen im Monat: rund 260, davon 40 mit Klaerungsbedarf
+  Offene Posten ueber Faelligkeit: 34 Rechnungen, 7 davon ueber 30 Tage
+  Zahlungsziel 14 Tage netto, Mengenrabatt und Skonto laut Vertrag
+  Kontenplan liegt als interne Datei in SharePoint
+  Werkzeuge: Copilot in M365 freigegeben, Excel, Buchhaltungssystem mit Protokoll
+  Mahnbausteine zu Zinsen und Kosten liegen als geprueftes Dokument vor
+  ```
+
+  Lege dir für die Arbeit mindestens acht erfundene Eingangsrechnungen an. Mindestens drei davon
+  müssen fehlerhaft sein: ein Rechenfehler, eine fehlende Pflichtangabe und eine Rechnung, die
+  periodenübergreifend abzugrenzen ist. Verwende keine echten Belege und keine echten Kontodaten.
+
+  ---
+
+  **Runde 1 – Grundlage bauen.** Baue die drei Bausteine des Abschlusses. Erstens die
+  **Belegerfassung**: Übertrage alle acht Rechnungen mit Fundstellen in eine Tabelle und führe alle
+  sechs Plausibilitätsprüfungen aus dem Kapitel durch; jede Rechnung erhält einen Befundstatus.
+  Zweitens die **Kontierungsvorschläge**: für jede prüffähige Rechnung ein Vorschlag mit Begründung,
+  Sicherheitsgrad und offener Frage. Drittens die vier abgestuften **Mahnvorlagen** mit Platzhaltern.
+  Rechne jede Zahl in Excel oder im System, nicht im Chatfenster.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Arbeitsergebnisse müssen **alle vier**
+  Kriterien erfüllen. Prüfe einzeln nach und korrigiere:
+
+  1. Keine Zahl in deinen Unterlagen stammt aus einem Chatfenster – jede ist in Excel oder im System
+     nachgerechnet und die Rechnung ist nachvollziehbar dokumentiert.
+  2. Die drei fehlerhaften Rechnungen sind als Befund ausgewiesen und nicht stillschweigend
+     korrigiert; zu jeder ist festgehalten, was die Buchung blockiert und wer zu kontaktieren ist.
+  3. Jeder Kontierungsvorschlag ist ausdrücklich als Vorschlag gekennzeichnet, nennt nur Konten aus
+     dem internen Kontenplan und hat bei Sicherheitsgrad niedrig eine konkrete offene Frage.
+  4. Keine Mahnvorlage enthält Verzugszinsen, Mahnkosten, Paragrafen oder Schadensersatzangaben aus
+     dem Werkzeug; solche Angaben stammen ausschließlich aus dem geprüften Baustein.
+
+  **Runde 3 – Die Komplikation.** Vier Dinge treffen zusammen. Erstens fällt auf, dass eine
+  Eingangsrechnung bereits im Februar erfasst wurde – der Lieferant hat sie nach einer Mahnung erneut
+  geschickt, mit abweichender Rechnungsnummer. Zweitens hat ein Kunde aus dem Mahnlauf tatsächlich
+  bezahlt, die Zahlung war aber einer falschen Rechnung zugeordnet; die Mahnung ist bereits heraus.
+  Drittens ergibt deine Abweichungsübersicht eine Unterschreitung bei der Instandhaltung von fast
+  50 Prozent, und die Geschäftsführung möchte das im Bericht als Kostendisziplin gewürdigt sehen.
+  Viertens bittet dich die zweite Kollegin, ihre Kontierungsvorschläge „einfach mitzufreigeben", weil
+  die Zeit fehlt. Bearbeite alles: Dokumentiere den Dublettenfall nachvollziehbar samt Korrekturweg;
+  formuliere eine Nachricht an den fälschlich gemahnten Kunden, die den Fehler benennt ohne
+  Rechtsansprüche einzuräumen; formuliere die Instandhaltungsposition sachlich, ohne die geforderte
+  Deutung zu übernehmen und ohne eine Ursache zu erfinden; und beantworte die Bitte um Mitfreigabe.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Geschäftsführung schlägt vor, ab dem nächsten Monat
+  alle Kontierungsvorschläge mit Sicherheitsgrad hoch automatisch zu buchen, „weil die KI da ohnehin
+  richtig liegt", und die Verfahrensdokumentation „später zu machen, wenn wieder Luft ist". Lass dir
+  von einem KI-Werkzeug Argumente für und gegen beide Vorschläge geben, entscheide begründet, und
+  **widersprich** mindestens einem der beiden Vorschläge mit tragfähiger Begründung. Entwirf
+  abschließend einen realistischen Gegenvorschlag: Wo lässt sich Zeit sparen, ohne Vier-Augen-Prinzip
+  und Nachvollziehbarkeit aufzugeben?
+
+  **Deliverable:**
+
+  1. Belegtabelle mit Fundstellen, Befundstatus und dokumentierten Rechenwegen sowie die
+     Kontierungsvorschläge mit Sicherheitsgrad und offenen Fragen
+  2. vier Mahnvorlagen plus ausgefüllte Prüfmatrix der vier Pflichtkriterien
+  3. Bearbeitung aller vier Punkte aus Runde 3: Dublettendokumentation mit Korrekturweg, Nachricht an
+     den fälschlich gemahnten Kunden, sachliche Formulierung zur Instandhaltung, Antwort zur
+     Mitfreigabe
+  4. begründete Entscheidung zu Automatikbuchung und Verfahrensdokumentation samt Gegenvorschlag zur
+     Zeitersparnis
+  5. Entwurf des Dokumentationsblatts für den KI-Einsatz: Werkzeug, Prompt-Vorlage mit Version,
+     prüfende Person, Änderungen am Vorschlag, Umgang mit abgelehnten Vorschlägen
+
+  **Fertig bist du erst, wenn** keine Zahl deiner Unterlagen aus einem Chatfenster stammt, die drei
+  fehlerhaften Rechnungen als Befund und nicht als korrigierter Wert erscheinen, die
+  Instandhaltungsposition weder als Erfolg gewürdigt noch mit einer erfundenen Ursache versehen ist,
+  du die Bitte um Mitfreigabe klar beantwortet hast, und deine Entscheidung in Runde 4 mindestens
+  einem Vorschlag der Geschäftsführung begründet widerspricht.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Runde 3 enthält drei Situationen, in denen Bequemlichkeit und
+  Erwartungsdruck genau gegen die Regeln dieses Kapitels drücken: Die Mitfreigabe hebelt das
+  Vier-Augen-Prinzip aus, ohne dass es jemand böse meint. Die gewünschte Würdigung der
+  Instandhaltung verlangt eine Deutung, die die Daten nicht hergeben – und die im nächsten Quartal
+  peinlich wird, wenn die verschobenen Maßnahmen anfallen. Der Dublettenfall ist der beste Test für
+  Nachvollziehbarkeit: Wichtig ist nicht, dass er gefunden wird, sondern dass Fund, Ursache und
+  Korrektur so dokumentiert sind, dass ein Prüfer sie ohne Rückfrage versteht. In Runde 4 liegt die
+  Falle im Begriff Sicherheitsgrad hoch: Das ist eine Selbstauskunft des Werkzeugs, kein Prüfergebnis.
+solution: |
+  Bewertungskriterien: (1) Die Belegtabelle weist zu jeder Rechnung Fundstellen und Befundstatus aus,
+  und die Kontierungsvorschläge nennen ausschließlich Konten aus dem internen Kontenplan, sind als
+  Vorschlag gekennzeichnet und haben bei niedrigem Sicherheitsgrad eine konkrete Frage; (2) die
+  Prüfmatrix belegt alle vier Kriterien mit Nachweisen statt Häkchen, insbesondere die Herkunft jeder
+  Zahl und die Freiheit der Mahnvorlagen von Rechtsangaben aus dem Werkzeug; (3) die
+  Dublettendokumentation macht Fund, Ursache und Korrekturweg für einen Dritten verständlich, die
+  Nachricht an den Kunden benennt den Fehler sachlich ohne Anspruchseinräumung, die
+  Instandhaltungsposition ist beschreibend formuliert und als Prüfpunkt statt als Erfolg ausgewiesen,
+  und die Bitte um Mitfreigabe ist mit Bezug auf das Vier-Augen-Prinzip abgelehnt und durch einen
+  praktikablen Vorschlag ersetzt; (4) die Entscheidung in Runde 4 erkennt, dass Sicherheitsgrad hoch
+  eine Selbsteinschätzung ohne Prüfwert ist, behandelt die Verfahrensdokumentation als Pflicht und
+  nicht als Restarbeit, und der Gegenvorschlag benennt echte Zeitfresser wie Abtippen, Suchen von
+  Fundstellen und uneinheitliche Mahntexte; (5) das Dokumentationsblatt enthält alle fünf Felder und
+  ist so gestaltet, dass es je Vorgang tatsächlich ausgefüllt werden kann.
+
+  Lernziel: KI im Rechnungswesen so einsetzen, dass Zeitgewinn und Nachvollziehbarkeit sich nicht
+  ausschließen – und unter realem Termindruck erkennen, an welchen Stellen Vier-Augen-Prinzip,
+  Belegtreue und Dokumentation nicht verhandelbar sind.

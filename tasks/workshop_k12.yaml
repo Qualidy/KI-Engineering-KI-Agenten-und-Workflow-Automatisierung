@@ -1,0 +1,91 @@
+title: Kommunikationspaket zu einer Preisanpassung
+difficulty: 4
+question: |
+  **Szenario:** Die Musterhandel GmbH passt zum 1. April die Preise an – im Schnitt vier Prozent,
+  bei drei Warengruppen bis zu neun Prozent. Betroffen sind 340 Bestandskunden, davon 28 mit
+  Rahmenvereinbarung. Du bist im Innendienst und sollst das komplette Kommunikationspaket
+  erstellen: Kundenanschreiben, interne Sprachregelung für Rückfragen, Antwortbausteine für
+  Beschwerden und eine Besprechungsvorbereitung für das Vertriebsteam. Bisher existieren nur
+  Stichpunkte der Geschäftsführung und ein Wording-Block.
+
+  ```text
+  Ausgangslage:
+  Anpassung ab 01.04., im Schnitt vier Prozent
+  Warengruppen Metallregale, Rollcontainer, Sonderanfertigung bis neun Prozent
+  Grund: Material-, Fracht- und Verpackungskosten
+  28 Rahmenvereinbarungen laufen bis 31.12. zu Altpreisen weiter
+  Skontoregelung unveraendert, Ruecktrittsrecht nach AGB unberuehrt
+  Ansprechpartnerin Rueckfragen: Frau Berger, Innendienst
+  Kein Rabattspielraum ohne Freigabe der Vertriebsleitung
+  ```
+
+  ---
+
+  **Runde 1 – Grundlage bauen.** Erstelle zuerst einen **Wording-Block** für Musterhandel mit
+  mindestens acht Regeln (Anrede, Aktivform, verbotene Wörter, Fristenformat, Abschluss). Erzeuge
+  dann das Kundenanschreiben in **drei Fassungen**: für Kunden ohne Rahmenvereinbarung, für die
+  28 Rahmenkunden, und eine Kurzfassung mit maximal 90 Wörtern für den Versand per Nachricht.
+  Alle drei entstehen aus derselben Stichpunktliste und mit angehängtem Wording-Block.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Prüfe alle drei Fassungen einzeln. Jede muss
+  **alle vier** Kriterien erfüllen; korrigiere, bis das gilt:
+
+  1. Jede Zahl, jedes Datum und jede Warengruppe stimmt mit der Ausgangslage überein – kein
+     Wert ist ergänzt, gerundet oder weggelassen.
+  2. Der Text enthält **keine** Zusage, die in der Ausgangslage nicht steht – insbesondere
+     keinen Rabatt, keine Ausnahme, keine Übergangsfrist.
+  3. Die Fassung für Rahmenkunden nennt die Weitergeltung der Altpreise bis 31.12. ausdrücklich,
+     die anderen beiden nennen sie **nicht**.
+  4. Der Wording-Block ist vollständig eingehalten, insbesondere kein „zeitnah", „kurzfristig"
+     oder „gegebenenfalls" und keine Entschuldigung.
+
+  **Runde 3 – Die Komplikation.** Zwei Tage vor dem Versand passieren drei Dinge. Erstens
+  entscheidet die Geschäftsführung, die Sonderanfertigungen aus der Anpassung herauszunehmen –
+  dort bleiben die Preise gleich. Zweitens beschwert sich ein Rahmenkunde bereits vorab und droht
+  mit Abwanderung. Drittens stellt sich heraus, dass die Kurzfassung von der Vertriebsleitung
+  bereits an fünf Kunden verschickt wurde – mit der alten Warengruppenliste. Bearbeite alle drei
+  Punkte: Passe die drei Fassungen an, erzeuge eine **Korrekturnachricht** an die fünf Kunden, die
+  den Fehler benennt ohne Vertrauen zu zerstören, und entwickle drei abgestufte Antwortbausteine
+  für Beschwerden (verständnisvoll ohne Zugeständnis, Angebot eines Gesprächs, Eskalation an die
+  Vertriebsleitung). Prüfe jeden Baustein mit der Prüfliste aus dem Kapitel.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Vertriebsleitung möchte in das Anschreiben den
+  Satz aufnehmen: „Für langjährige Partner finden wir selbstverständlich eine individuelle
+  Lösung." Zusätzlich soll der Grund der Anpassung gestrichen werden, weil er „nach Ausrede
+  klingt". Lass dir von deinem KI-Werkzeug Argumente für und gegen beide Vorgaben geben und
+  entscheide begründet. **Widersprich** mindestens einer der beiden Vorgaben mit einer
+  tragfähigen Begründung und einem konkreten Alternativvorschlag im Wortlaut.
+
+  **Deliverable:**
+
+  1. Wording-Block mit mindestens acht Regeln plus die drei Anschreiben-Fassungen
+  2. ausgefüllte Prüfmatrix der vier Pflichtkriterien für alle drei Fassungen
+  3. angepasste Fassungen nach Runde 3, Korrekturnachricht an die fünf Kunden und drei geprüfte
+     Beschwerde-Bausteine
+  4. begründete Entscheidung zu den beiden Vorgaben der Vertriebsleitung, mit Alternativformulierung
+
+  **Fertig bist du erst, wenn** keine der Fassungen eine nicht vorgegebene Zusage enthält, die
+  Sonderanfertigungen nach Runde 3 in allen Dokumenten korrekt behandelt sind, die
+  Korrekturnachricht den Fehler ausdrücklich benennt, und deine Entscheidung in Runde 4 mindestens
+  eine Vorgabe der Vertriebsleitung begründet ablehnt.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Runde 1 zeigt nur, wie schnell drei Fassungen entstehen.
+  Runde 3 zeigt das eigentliche Problem der KI-Textarbeit: Wenn sich eine Grundlage ändert, muss
+  jede erzeugte Fassung erneut geprüft werden – und die eine bereits versandte Fassung lässt sich
+  nicht zurückholen. Achte in Runde 4 auf den Satz mit „selbstverständlich": Er ist rechtlich eine
+  Zusage und praktisch ein Freibrief für jeden, der laut genug fragt. Der Grund der Anpassung ist
+  dagegen der einzige Teil, der Widerspruch überhaupt sachlich beantwortbar macht.
+solution: |
+  Bewertungskriterien: (1) Der Wording-Block ist konkret und prüfbar formuliert, und die drei
+  Fassungen unterscheiden sich sichtbar in Länge und Adressat, ohne inhaltlich voneinander
+  abzuweichen; (2) die Prüfmatrix belegt für jede Fassung alle vier Kriterien, besonders die
+  saubere Trennung der Rahmenkunden-Information; (3) nach Runde 3 sind alle Dokumente konsistent
+  angepasst, die Korrekturnachricht benennt den Fehler sachlich und ohne Schuldzuweisung, und die
+  drei Beschwerde-Bausteine sind erkennbar abgestuft statt dreimal derselbe Text in anderer
+  Reihenfolge; (4) die Entscheidung in Runde 4 erkennt den Zusagecharakter der geforderten
+  Formulierung, argumentiert nicht nur stilistisch, und liefert eine Alternative, die freundlich
+  bleibt ohne Ansprüche zu erzeugen.
+
+  Lernziel: KI-gestützte Textarbeit über einen ganzen Kommunikationsvorgang hinweg beherrschen –
+  einschließlich der Erkenntnis, dass erzeugte Texte bei jeder Änderung der Grundlage komplett neu
+  geprüft werden müssen und dass Ton nie auf Kosten von Verbindlichkeit gehen darf.

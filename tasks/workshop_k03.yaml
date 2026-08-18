@@ -1,0 +1,92 @@
+title: Nutzen-Risiko-Bilanz für einen KI-Einsatz im Kundenservice
+difficulty: 4
+question: |
+  **Szenario:** Du arbeitest im Kundenservice eines Versandhändlers. Täglich kommen rund 180
+  E-Mails herein: Lieferstatus, Reklamationen, Rücksendungen, Rechnungsfragen. Die Bearbeitung
+  dauert im Schnitt sieben Minuten, die Antwortzeit liegt bei zwei Tagen, in Spitzenwochen bei
+  fünf. Die Bereichsleitung will KI-Antwortentwürfe einführen und rechnet mit „mindestens einer
+  halben Stelle Einsparung". Das Team ist skeptisch, der Betriebsrat hat Fragen angekündigt.
+  Du sollst eine belastbare Nutzen-Risiko-Bilanz vorlegen.
+
+  ```text
+  Rahmendaten:
+  180 Mails pro Tag, 6 Mitarbeitende, Bearbeitung im Schnitt 7 Minuten.
+  Verteilung: 45 Prozent Lieferstatus, 25 Prozent Reklamation,
+  20 Prozent Ruecksendung, 10 Prozent Rechnungsfragen.
+  Rund 5 Prozent der Faelle enthalten Gesundheits- oder Beschwerdedetails.
+  Systeme: Microsoft 365, Shopsystem mit Sendungsdaten, Ticketpostfach.
+  Vorgabe der Bereichsleitung: Antwortzeit unter einen Tag.
+  ```
+
+  ---
+
+  **Runde 1 – Nutzen ehrlich rechnen.** Wähle **zwei** der vier Fallgruppen aus und rechne für
+  jede den vollständigen Weg durch: bisherige Bearbeitungszeit, Zeit mit KI-Entwurf, zusätzliche
+  Prüfzeit, Anteil der Fälle mit Nachschärfen, Anteil der Fälle, in denen der Entwurf verworfen
+  wird. Weise für jede Gruppe alle drei Nutzenarten getrennt aus – Zeit, Qualität, Skalierung –
+  und benenne, welche du **nicht** belegen kannst.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Bilanz muss **alle vier** Kriterien
+  erfüllen. Lass sie von einem KI-Werkzeug gegenprüfen und ergänze die Lücken selbst:
+
+  1. Für jede Fallgruppe ist die Prüfzeit **beziffert** und in der Gesamtrechnung enthalten.
+  2. Mindestens **drei** Risiken aus Kapitel 3 sind benannt, jeweils mit einer Gegenmaßnahme,
+     die im Ablauf verankert ist und nicht von Aufmerksamkeit abhängt.
+  3. Für jede Fallgruppe ist der Mensch-in-der-Schleife-Aufbau festgelegt: Freigabe vorher,
+     Stichprobe nachher oder vollautomatisch – jeweils mit Begründung.
+  4. Es ist benannt, welche Fälle **grundsätzlich nicht** über den automatischen Pfad laufen,
+     und warum.
+
+  **Runde 3 – Die Komplikation.** Nach vier Wochen Pilotbetrieb treten drei Dinge ein: Die
+  gemessene Ersparnis liegt bei einem Drittel des Versprochenen. In zwei Fällen wurde ein
+  Kulanzbetrag zugesagt, den es so nicht gibt – beide Entwürfe waren freigegeben worden. Und die
+  Stichprobenprüfung ist in Woche drei stillschweigend eingestellt worden, weil „ohnehin alles
+  passte". Überarbeite deine Bilanz:
+
+  - Korrigiere die Nutzenzahlen und benenne, was du in Runde 1 zu optimistisch angesetzt hast.
+  - Verändere den Ablauf so, dass eine falsche Zusage **strukturell** nicht mehr in eine
+    Kundenmail gelangen kann. Ein besserer Prompt genügt als Antwort nicht.
+  - Baue die Stichprobenprüfung so um, dass ihr Ausfall auffällt.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Bereichsleitung hält an der halben Stelle fest
+  und schlägt vor, die Freigabe bei Lieferstatus-Mails ganz zu streichen, um das Ziel zu
+  erreichen. Lass dir von deinem KI-Werkzeug Pro und Contra geben und entscheide dann begründet.
+  **Widersprich** der Vorgabe oder dem KI-Vorschlag, wo du es für nötig hältst, und formuliere
+  eine Empfehlung, die die Bereichsleitung nachvollziehen kann: welcher Teil automatisch läuft,
+  welcher nicht, welches Einsparziel realistisch ist und wie du das Team und den Betriebsrat
+  informierst.
+
+  **Deliverable:**
+
+  1. Nutzenrechnung für zwei Fallgruppen mit allen Zeitanteilen und getrennten Nutzenarten
+  2. Risikoliste mit mindestens drei Risiken und je einer verankerten Gegenmaßnahme
+  3. überarbeitete Bilanz nach den drei Vorfällen aus Runde 3, mit korrigierten Zahlen
+  4. einseitige Empfehlung inklusive begründetem Widerspruch und Informationsplan für das Team
+
+  **Fertig bist du erst, wenn** deine Rechnung Prüfzeit und Nacharbeit enthält, für jede
+  Fallgruppe ein Mensch-in-der-Schleife-Aufbau festgelegt ist, deine Lösung für die falsche
+  Kulanzzusage ohne menschliche Aufmerksamkeit funktioniert und deine Empfehlung ein
+  **realistisches** Einsparziel nennt statt des ursprünglich versprochenen.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Die zu optimistische Rechnung aus Runde 1 ist kein
+  Malus – fast alle Erstrechnungen fallen so aus, weil Prüfzeit und Verwerfen unterschätzt
+  werden. Entscheidend ist, dass du den Fehler benennen kannst. Bei der falschen Kulanzzusage
+  liegt die tragfähige Lösung nicht im Prompt, sondern in der Struktur: Zusagen und Beträge
+  gehören nicht in den vom Modell erzeugten Text, sondern werden regelbasiert aus dem Quellsystem
+  eingesetzt oder gar nicht erwähnt. In Runde 4 ist der Vorschlag, die Freigabe zu streichen,
+  nicht grundsätzlich falsch – bei rein informativen Lieferstatus-Antworten kann er richtig sein.
+  Die Kunst ist, die Grenze genau zu ziehen und zu begründen.
+solution: |
+  Bewertungskriterien: (1) die Nutzenrechnung für beide Fallgruppen enthält bezifferte Prüfzeit,
+  Nachschärf- und Verwurfquote und weist Zeit-, Qualitäts- und Skalierungsnutzen getrennt aus,
+  einschließlich der ehrlich als nicht belegbar markierten Anteile; (2) mindestens drei Risiken
+  mit Gegenmaßnahmen, die im Ablauf verankert sind und nicht von Aufmerksamkeit abhängen;
+  (3) die Überarbeitung nach Runde 3 korrigiert die Zahlen nachvollziehbar, verhindert falsche
+  Zusagen strukturell durch regelbasierte Datenübernahme oder Ausschluss des Themas und macht
+  den Ausfall der Stichprobe sichtbar; (4) die Empfehlung zieht eine begründete Grenze zwischen
+  automatisch und freigabepflichtig, nennt ein realistisches Einsparziel statt der halben Stelle
+  und enthält einen Informationsplan, der die Sorgen des Teams sachlich adressiert.
+
+  Lernziel: Nutzen und Risiko eines KI-Einsatzes über den gesamten Weg abwägen, Kontrollpunkte
+  so bauen, dass sie ihren Ausfall selbst anzeigen, und eine Erwartung nach oben korrigierten
+  Zahlen gegenüber begründet zurückweisen.

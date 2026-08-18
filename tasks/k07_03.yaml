@@ -1,0 +1,36 @@
+title: Zwei Werkzeuge, eine Aufgabe
+difficulty: 3
+question: |
+  Diese Übung machst du direkt an den Werkzeugen. Nutze zwei verschiedene, die dir zur Verfügung
+  stehen – zum Beispiel Copilot und ChatGPT, oder ChatGPT und Claude.
+
+  1. **Gleiche Aufgabe, gleicher Prompt.** Gib beiden Werkzeugen exakt denselben Auftrag. Nimm
+     eine realistische Aufgabe mit mitgeliefertem Material, etwa: einen zweiseitigen Text auf
+     fünf Stichpunkte verdichten und drei offene Fragen benennen.
+  2. **Bewerten statt bauchgefühlen.** Bewerte beide Ergebnisse anhand von vier Kriterien, die du
+     **vorher** festlegst – zum Beispiel: Vollständigkeit, Formattreue, Erfundenes, Nacharbeit in
+     Minuten. Halte je Kriterium eine kurze Beobachtung fest, keine Punktzahl.
+  3. **Kontexttest.** Frage beide Werkzeuge nach einer Information, die nur in eurer internen
+     Ablage steht (etwa nach einem konkreten Dokument). Notiere, was passiert: Zugriff, ehrliche
+     Absage oder erfundene Antwort?
+  4. **Fazit.** Schreibe drei Sätze: Für welchen Aufgabentyp würdest du welches Werkzeug wählen,
+     und woran hast du das festgemacht?
+tip: |
+  Lege die vier Kriterien wirklich vorher fest und schreibe sie auf. Sonst bewertest du im
+  Nachhinein das Ergebnis, das dir besser gefällt, und suchst die Begründung dazu. Genau so
+  entstehen die Werkzeugdebatten, die im Betrieb niemanden weiterbringen.
+solution: |
+  Typische Beobachtungen:
+
+  - Bei der **Zusammenfassung** liegen die Ergebnisse meist dicht beieinander. Unterschiede zeigen
+    sich eher in Länge, Gliederungsstil und Formattreue als in der inhaltlichen Qualität.
+  - Beim **Kontexttest** trennt sich die Lage deutlich: Ein Werkzeug mit Unternehmenszugriff findet
+    das Dokument oder sagt begründet, dass es nichts findet. Ein öffentliches Werkzeug hat zwei
+    Möglichkeiten – ehrliche Absage oder erfundene Antwort. Beides kommt vor.
+  - **Formattreue** ist häufig der praxisrelevanteste Unterschied, weil sie direkt Nacharbeit
+    kostet.
+
+  Ein gutes Fazit klingt nicht nach „Werkzeug A ist besser", sondern nach: „Für Aufgaben mit
+  internem Bezug nutze ich A, weil nur dort der Zugriff besteht. Für längere Textarbeit nutze ich
+  B, weil ich dort weniger nacharbeiten musste. Für alles Allgemeine ist es mir gleich." Genau
+  diese Differenzierung ist das Lernziel – die Werkzeugwahl folgt der Aufgabe, nicht der Vorliebe.

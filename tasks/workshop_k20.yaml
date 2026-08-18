@@ -1,0 +1,96 @@
+title: Werkzeugauswahl mit Entscheidungsvorlage
+difficulty: 4
+question: |
+  **Szenario:** Bei der Nordwind Handel GmbH ist die Automatisierung außer Kontrolle geraten.
+  Drei Abteilungen haben unabhängig voneinander begonnen, und niemand hat den Überblick. Die
+  Geschäftsführung will in zwei Wochen eine Entscheidungsvorlage: ein Standardwerkzeug,
+  klare Regeln und ein Umgang mit dem Bestehenden. Du erstellst diese Vorlage.
+
+  ```text
+  Bestandsaufnahme:
+  Marketing nutzt Zapier im Gratistarif, privat angemeldet mit der
+    Mailadresse einer Werkstudentin, ueberfuehrt Formulardaten in ein
+    Newsletter-Werkzeug. Enthaelt Namen und Mailadressen von Kunden.
+  Vertrieb nutzt Make, bezahlt ueber die Firmenkreditkarte eines
+    Teamleiters, verteilt Anfragen aus dem Webformular an Zustaendige.
+  Buchhaltung hat zwei Power-Automate-Flows, angelegt vom
+    Auszubildenden, der im September das Unternehmen verlaesst.
+  Vorhandene Lizenzen: Microsoft 365 Business Premium fuer alle.
+  IT: zwei Personen, sehr ausgelastet, bisher nicht beteiligt.
+  Datenschutzbeauftragte: extern, einmal im Monat im Haus.
+  ```
+
+  ---
+
+  **Runde 1 – Bestand und Kriterien.** Erstelle zwei Artefakte. Erstens ein
+  **Ablaufverzeichnis** mit den Spalten `Ablauf | Abteilung | Werkzeug | verarbeitete
+  Datenarten | Verbindung gehört wem | Risiko`. Zweitens eine **Kriterienliste** mit
+  Gewichtung für die Werkzeugentscheidung, ausdrücklich abgeleitet aus der Lage bei
+  Nordwind – nicht aus einer allgemeinen Liste. Begründe jedes Gewicht.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Entscheidungsvorlage muss **alle vier**
+  Kriterien erfüllen:
+
+  1. Es gibt eine **gewichtete Matrix** über alle drei Werkzeuge mit gewichteten Summen und
+     einer eindeutigen Empfehlung für ein Standardwerkzeug.
+  2. Für **jeden** der drei Bestandsfälle ist entschieden: weiterbetreiben, umbauen oder
+     abschalten – jeweils mit Begründung, Termin und verantwortlicher Rolle.
+  3. Die Frage „wem gehört die Verbindung" ist für jeden Bestandsfall beantwortet und für
+     die Zukunft geregelt.
+  4. Es gibt eine **verständliche Meldeschwelle** in maximal drei Sätzen: ab wann muss ein
+     selbst gebauter Ablauf gemeldet werden? Sie muss so formuliert sein, dass sie ohne
+     Rückfrage anwendbar ist.
+
+  **Runde 3 – Die Komplikation.** Zwei Dinge kommen dazwischen. Erstens teilt die IT mit,
+  dass sie keine neue Umgebung einrichten und keine zusätzlichen Werkzeuge betreuen kann –
+  Kapazität für zwei Personentage, nicht mehr. Zweitens stellt sich heraus, dass der
+  Make-Ablauf des Vertriebs eine Anbindung an ein Fremd-CRM nutzt, für die es in Power
+  Automate keine Standardanbindung gibt. Überarbeite deine Vorlage: Halte an einem
+  Standardwerkzeug fest oder lasse eine begründete Ausnahme zu – und beschreibe, unter
+  welchen Bedingungen eine Ausnahme gilt und wie sie überprüft wird.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Geschäftsführung will „alles auf Power
+  Automate, das ist ja bezahlt". Lass dir von einem KI-Werkzeug Argumente für beide Seiten
+  geben. Entscheide dann begründet und **widersprich** entweder der Geschäftsführung oder
+  dem KI-Vorschlag. Rechne dabei gegen: Aufwand für den Umbau, Risiko des Weiterbetriebs
+  und die zwei Personentage der IT. Benenne ausdrücklich, welchen Bestandsfall du **sofort**
+  abschaltest, auch wenn das kurzfristig Arbeit von Hand bedeutet.
+
+  **Deliverable:**
+
+  1. Ablaufverzeichnis und begründete Kriterienliste mit Gewichtung
+  2. gewichtete Auswahlmatrix mit Empfehlung plus ausgefüllte Checkliste der vier
+     Pflichtkriterien
+  3. Maßnahmenplan je Bestandsfall mit Entscheidung, Termin, Rolle und Aufwandsschätzung
+  4. Entscheidungsvorlage von maximal zwei Seiten für die Geschäftsführung, inklusive
+     abgelehnter Alternative, Ausnahmeregel und Meldeschwelle
+
+  **Fertig bist du erst, wenn** jeder der drei Bestandsfälle eine terminierte Entscheidung
+  mit Verantwortlicher hat, die Meldeschwelle ohne Rückfrage anwendbar ist, dein Plan mit
+  zwei Personentagen IT-Kapazität auskommt, und deine Vorlage klar sagt, welcher Ablauf
+  sofort stoppt und warum.
+tip: |
+  Der eigentliche Lernwert liegt in Runde 3 und 4. Runde 3 zerstört die bequeme Antwort „ein
+  Werkzeug für alles": Sobald eine Anbindung fehlt und die IT keine Kapazität hat, brauchst
+  du eine Ausnahmeregel, die missbrauchsfest ist – sonst ist das Standardwerkzeug nach einem
+  Jahr wieder eine von drei Lösungen. In Runde 4 ist der Zapier-Fall des Marketings der
+  Prüfstein: Kundendaten laufen über ein privat angemeldetes Konto einer Werkstudentin. Wer
+  hier auf ein geordnetes Migrationsprojekt setzt statt sofort zu stoppen, hat Risiko und
+  Bequemlichkeit verwechselt.
+solution: |
+  Bewertungskriterien: (1) Das Ablaufverzeichnis benennt für alle drei Fälle Datenarten und
+  Eigentümer der Verbindung und stuft das Risiko nachvollziehbar ab – der Zapier-Fall mit
+  Kundendaten über ein privates Konto ist als höchstes Risiko erkannt; (2) alle vier
+  Pflichtkriterien sind erfüllt, die Matrix ist gerechnet und die Meldeschwelle ist in
+  einfacher Sprache formuliert und ohne Rückfrage anwendbar; (3) die Ausnahmeregel nach
+  Runde 3 ist an überprüfbare Bedingungen gebunden – etwa keine personenbezogenen Daten,
+  benannter Verantwortlicher, Firmenkonto, jährliche Überprüfung – und nicht als „im
+  Einzelfall entscheiden" formuliert; (4) die Entscheidung in Runde 4 ist gerechnet statt
+  behauptet, hält der Vorgabe „alles auf Power Automate" begründet stand oder widerspricht
+  ihr, und benennt eine sofortige Abschaltung mit der Bereitschaft, kurzfristig manuelle
+  Arbeit hinzunehmen.
+
+  Lernziel: Eine Werkzeugentscheidung so treffen und dokumentieren, dass sie fachlich
+  begründet, betrieblich tragfähig und gegenüber der Leitung vertretbar ist – und dabei
+  Schatten-IT nicht durch Verbote, sondern durch klare Eigentümerschaft, Meldeschwellen und
+  überprüfbare Ausnahmen in den Griff bekommen.

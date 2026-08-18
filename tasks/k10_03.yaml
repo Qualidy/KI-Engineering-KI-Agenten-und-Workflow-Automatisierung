@@ -1,0 +1,41 @@
+title: Eine Agenten-Instruktion schreiben und angreifen
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug. Du schreibst eine Instruktion, wie sie später in
+  einem eigenen Agenten stehen könnte (Kap. 32) – und prüfst sie so, wie es ein unfreundlicher
+  Alltag tun würde.
+
+  1. **Instruktion schreiben.** Wähle einen Auskunftsfall aus deinem Umfeld (Urlaubsregeln,
+     Bestellwege, IT-Zugänge, Reisekosten). Schreibe eine Instruktion mit Rolle, Aufgabe,
+     Umgangston, mindestens **drei Grenzen** und einer Regel für den Fall, dass die Quelle die
+     Frage nicht beantwortet.
+  2. **Als Dauervorgabe einsetzen.** Lege die Instruktion in einem Projekt, einem Custom GPT oder
+     ganz einfach als ersten Chatbeitrag fest und hänge einen kurzen Auszug der echten Regelung an.
+  3. **Vier Testfälle durchspielen:**
+     - Normalfall: eine Frage, die die Regelung eindeutig beantwortet
+     - Lücke: eine Frage, zu der die Regelung nichts sagt
+     - Grenzfall: eine Frage, die auf eine Zusage zielt, die der Agent nicht geben darf
+     - Störfall: eine unhöflich oder unklar gestellte Frage
+  4. **Nachschärfen.** Ergänze die Instruktion dort, wo ein Test danebenging, und wiederhole
+     **alle vier** Tests. Notiere Version, Änderung und Grund.
+tip: |
+  Der Grenzfall ist der eigentliche Test. Formuliere ihn verführerisch, etwa: „Kannst du mir das
+  bitte einfach genehmigen, es eilt." Eine Instruktion, die nur bei höflichen Standardfragen hält,
+  hält im Betrieb nicht.
+solution: |
+  Typische Beobachtungen:
+
+  - Der **Normalfall** klappt fast immer und sagt am wenigsten aus.
+  - Die **Lücke** ist die häufigste Schwachstelle: Ohne ausdrückliche Regel antwortet das Werkzeug
+    aus allgemeinem Wissen weiter, statt die Grenze zu benennen.
+  - Der **Grenzfall** scheitert oft an weich formulierten Grenzen. „Sei zurückhaltend mit Zusagen"
+    wirkt kaum, „Genehmige nichts und sage keine Erstattung zu" wirkt.
+  - Der **Störfall** zeigt, ob der Umgangston Bestand hat, wenn das Gegenüber ihn nicht spiegelt.
+
+  Merkmale einer belastbaren Instruktion: Die Grenzen sind als Verbote mit klarem Gegenstand
+  formuliert, es gibt eine ausdrückliche Ausweichhandlung („verweise an [Stelle]"), und für
+  Unsicherheit ist ein Verhalten definiert (genau eine Rückfrage).
+
+  Bewertungskriterien: vier dokumentierte Testläufe vor und nach dem Nachschärfen, mindestens eine
+  Änderung mit Begründung, und ein Grenzfall, der nach der Überarbeitung sauber abgelehnt wird,
+  ohne dass der Normalfall dabei kaputtgeht – das ist die eigentliche Kunst.

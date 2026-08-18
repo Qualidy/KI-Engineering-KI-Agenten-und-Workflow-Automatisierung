@@ -1,0 +1,48 @@
+title: Sicheren Dateinamen im echten Flow bauen
+difficulty: 3
+question: |
+  Du machst den Flow aus Kapitel 22 kollisionssicher. Gebaut wird in Power Automate.
+
+  1. Öffne `22 Rechnungsanhang ablegen` (oder baue den Kern neu) und ergänze **vor** der Ablage drei
+     `Verfassen`-Aktionen mit sprechenden Namen: `Datum`, `Absender`, `Dateiname bereinigt`.
+  2. `Datum` liefert das Datum sortierbar, `Absender` den Absender klein und ohne Domain,
+     `Dateiname bereinigt` den Anhangnamen ohne Schrägstrich und ohne Doppelpunkt.
+  3. Setze im Schritt `Datei erstellen` als Dateinamen einen `concat`-Ausdruck aus den drei
+     Verfassen-Ausgaben, getrennt durch Unterstriche.
+  4. Ergänze eine Absicherung für den Fall eines leeren Betreffs: Die Benachrichtigung soll
+     `Ohne Betreff` schreiben, wenn der Betreff leer ist.
+  5. Teste drei Fälle: normale Mail, Mail mit `05/2024` im Anhangnamen, Mail ohne Betreff. Halte für
+     jeden Fall den erzeugten Dateinamen aus den Eingaben des Schrittes `Datei erstellen` fest.
+tip: |
+  Die Ausgabe einer Verfassen-Aktion sprichst du mit `outputs` und dem Schrittnamen an, wobei
+  Leerzeichen im Namen zu Unterstrichen werden. Wenn der Ausdruck rot bleibt, prüfe zuerst, ob der
+  Schrittname im Ausdruck exakt so geschrieben ist wie die Karte im Designer.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Flow: 22 Rechnungsanhang ablegen
+    Trigger: Neue Rechnungsmail
+    Verfassen: Datum               @{formatDateTime(utcNow(),'yyyy-MM-dd')}
+    Verfassen: Absender            @{toLower(first(split(triggerOutputs()?['body/from'],'@')))}
+    Aktion: Fuer jeden Anhang
+      Verfassen: Dateiname bereinigt
+        @{replace(replace(items('Fuer_jeden_Anhang')?['name'],'/','-'),':','-')}
+      Aktion: Anhang speichern
+        Dateiname: @{concat(outputs('Datum'),'_',outputs('Absender'),'_',outputs('Dateiname_bereinigt'))}
+    Aktion: Team informieren
+      Betreffzeile: @{if(empty(triggerOutputs()?['body/subject']),'Ohne Betreff',triggerOutputs()?['body/subject'])}
+  ```
+
+  Beachte die Verschachtelung: `Datum` und `Absender` gehören **vor** die Schleife, weil sie pro Mail
+  gleich bleiben. `Dateiname bereinigt` muss **in** die Schleife, weil es pro Anhang unterschiedlich ist.
+
+  Bewertungskriterien: (1) drei Verfassen-Aktionen mit sprechenden Namen an der richtigen
+  Verschachtelungsebene; (2) der Dateiname enthält Datum, Absender und Originalname und ist damit
+  auch bei gleichnamigen Anhängen verschiedener Absender eindeutig; (3) der Sonderzeichenfall ist
+  nachgewiesen, der Schrägstrich erscheint als Bindestrich und der Schritt läuft grün; (4) der leere
+  Betreff wird über `if` und `empty` abgefangen statt zu einer leeren Nachricht zu führen.
+
+  Zwei Testergebnisse, die du sehen solltest: `2024-11-05_anna.beispiel_LV.pdf` im Normalfall und
+  `2024-11-05_anna.beispiel_Rechnung 05-2024.pdf` im Sonderzeichenfall. Ohne die Bereinigung wäre der
+  Schritt mit einer Fehlermeldung zum ungültigen Pfad abgebrochen.

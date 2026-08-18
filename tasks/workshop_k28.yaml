@@ -1,0 +1,89 @@
+title: Vom fragilen Flow zum betriebsfähigen Ablauf
+difficulty: 4
+question: |
+  **Szenario:** Ein Kollege hat vor einem halben Jahr einen Flow gebaut, der nächtlich offene
+  Reklamationen aufarbeitet: Er liest die Liste, ergänzt Kennzahlen, aktualisiert jeden Vorgang und
+  verschickt morgens eine Zusammenfassung. Der Kollege ist seit vier Wochen nicht mehr im Haus.
+  Seit zwei Wochen kommt keine Zusammenfassung mehr, und niemand weiß, warum. Im Verlauf stehen
+  abwechselnd rote Läufe und grüne Läufe mit unvollständigen Ergebnissen. Du übernimmst und machst
+  den Ablauf betriebsfähig.
+
+  ```text
+  Rahmendaten:
+  Liste Reklamationen mit etwa 900 Eintraegen, davon 120 offen.
+  Naechtlicher Lauf um 02:00, Zusammenfassung um 07:00 an einen Verteiler.
+  Bekannte Symptome:
+    - manche Laeufe brechen mit 429 ab
+    - der Bericht enthaelt seit Wochen nur 100 Vorgaenge
+    - in 6 Eintraegen fehlt der Bearbeiter, dort steht in der Mail eine Luecke
+    - Fehlermeldungen gingen an das Postfach des ausgeschiedenen Kollegen
+  ```
+
+  ---
+
+  **Runde 1 – Nachbauen und Testfälle festlegen.** Baue diesen Flow in einer Testumgebung nach:
+  Liste `Reklamationen` mit Titel, Kunde, Status, Bearbeiter, Eingangsdatum, Prioritaet; mindestens
+  120 Testeinträge, davon einige ohne Bearbeiter. Der Flow liest nachts die offenen Vorgänge,
+  aktualisiert je Vorgang ein Feld und versendet eine Zusammenfassung. Schreibe **vor** dem Testen
+  fünf Testfälle auf: Normalfall, fehlender Bearbeiter, mehr als 100 Vorgänge, doppelte Auslösung,
+  keine offenen Vorgänge. Führe den Flow aus und dokumentiere je Testfall das Ergebnis.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein überarbeiteter Flow muss **alle vier**
+  Kriterien erfüllen:
+
+  1. Alle offenen Vorgänge werden verarbeitet, nicht nur die ersten 100 – Paginierung ist
+     eingeschaltet und nachgewiesen.
+  2. Fehlende Pflichtangaben werden erkannt und als Fachfall behandelt: Der Vorgang landet in einer
+     Sammelmeldung, der Flow läuft weiter und schreibt keine Lücken in den Bericht.
+  3. Die fachlichen Schritte liegen in einem `Bereich`, ein zweiter Bereich läuft über
+     `Nach Fehler ausführen` und protokolliert Fehler in einer Liste `Fehlerprotokoll`.
+  4. Fehlermeldungen gehen an einen Teams-Kanal oder ein Team-Postfach; mindestens zwei
+     Miteigentümer sind eingetragen und jede Aktion hat einen sprechenden Namen.
+
+  **Runde 3 – Die Komplikation.** Am Tag nach deiner Übergabe passieren drei Dinge: Die Liste wächst
+  über Nacht auf 400 offene Vorgänge, weil eine Störung viele Reklamationen erzeugt hat – der Lauf
+  bricht mit `429` ab. Gleichzeitig wurde eine Spalte umbenannt, deine Filterabfrage findet nichts
+  mehr und liefert **grün** eine leere Liste. Und die Fachabteilung möchte die Zusammenfassung nun
+  zweimal täglich. Behebe alle drei Punkte: Bring den Lauf bei 400 Vorgängen stabil durch, sorge
+  dafür, dass ein leeres Ergebnis **nicht** als stiller Erfolg durchgeht, und passe den Zeitplan an,
+  ohne den Aktionsverbrauch zu verdoppeln.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Fachabteilung fordert: „Baut einfach ein, dass der
+  Flow bei jedem Fehler automatisch dreimal wiederholt und dann weitermacht – dann haben wir Ruhe."
+  Lass dir von einem KI-Werkzeug eine Umsetzung dieser Forderung vorschlagen und prüfe sie kritisch:
+  Bei welchen Fehlerarten ist Wiederholen sinnvoll, bei welchen verschleiert es das Problem? Was
+  bedeutet „dann weitermachen" für die Datenqualität? Entscheide begründet, **widersprich** der
+  Forderung oder dem KI-Vorschlag an den Stellen, wo Wiederholen falsch ist, und lege fest, welche
+  Fehler den Lauf hart beenden müssen.
+
+  **Deliverable:**
+
+  1. lauffähiger überarbeiteter Flow plus Testliste mit mindestens 120 Einträgen
+  2. Testfallliste mit Ergebnis je Fall, vorher und nach der Überarbeitung
+  3. Nachweis der vier Pflichtkriterien plus Beschreibung der drei Reparaturen aus Runde 3
+  4. einseitige Betriebsnotiz: Verantwortliche, Vertretung, wohin Fehler gemeldet werden, wie eine
+     Änderung eingespielt wird, wo der Export liegt
+
+  **Fertig bist du erst, wenn** ein Lauf über 400 Vorgänge vollständig durchgelaufen ist, ein leeres
+  Filterergebnis eine Meldung erzeugt statt still zu enden, ein erzwungener Fehler nachweislich im
+  `Fehlerprotokoll` und im Teams-Kanal gelandet ist, jede Aktion einen sprechenden Namen hat und
+  deine Betriebsnotiz erklärt, wer den Flow bei deinem Ausfall übernimmt.
+tip: |
+  Der teuerste Fehler in diesem Szenario ist nicht der rote Lauf, sondern der grüne mit
+  unvollständigen Daten – erst 100 statt 120 Vorgänge, dann eine leere Liste nach der Umbenennung.
+  Beides erzeugt keinen Alarm. Baue deshalb eine Plausibilitätsprüfung ein: Weicht die Anzahl
+  deutlich vom Erwarteten ab, ist das eine Meldung wert. Runde 4 zielt auf die bequemste und
+  häufigste Fehlentscheidung im Betrieb: alles wiederholen und weiterlaufen lassen. Damit werden
+  Berechtigungs- und Datenfehler unsichtbar, statt behoben zu werden.
+solution: |
+  Bewertungskriterien: (1) Die fünf Testfälle sind **vor** dem Umbau notiert und mit Ergebnis
+  vorher/nachher belegt; (2) alle vier Pflichtkriterien sind nachgewiesen, insbesondere Paginierung
+  über 100 Elemente hinaus und die Behandlung fehlender Pflichtangaben ohne Abbruch;
+  (3) alle drei Punkte aus Runde 3 sind behoben – Nebenläufigkeit und Wiederholung gegen 429,
+  Prüfung auf leeres Ergebnis mit Meldung, angepasster Zeitplan mit Blick auf den
+  Aktionsverbrauch; (4) die Entscheidung in Runde 4 unterscheidet begründet zwischen
+  wiederholbaren Fehlern wie 429, 500 und Zeitüberschreitung und nicht wiederholbaren wie 400, 401,
+  404 und ungültigem Ausdruck, und benennt Fälle, in denen der Lauf hart beendet werden muss.
+
+  Lernziel: Einen geerbten Flow in einen betreibbaren Zustand bringen – mit Testfällen,
+  Fehlerbehandlung, Grenzenbewusstsein und einer Übergabe, die auch ohne die bauende Person hält.

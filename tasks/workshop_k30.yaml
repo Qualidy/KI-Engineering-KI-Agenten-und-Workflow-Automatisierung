@@ -1,0 +1,93 @@
+title: Triage-Flow mit KI-Baustein bauen und härten
+difficulty: 4
+question: |
+  **Szenario:** Die Vennhoff Fachgroßhandel GmbH sammelt alle Anliegen ihrer Wiederverkäufer in einem
+  gemeinsamen Postfach. Eine Kollegin sortiert sie morgens von Hand und legt Vorgänge in einer
+  SharePoint-Liste an. Sie geht in vier Wochen in Elternzeit, eine Vertretung gibt es nicht. Du sollst
+  einen Flow bauen, der die Vorsortierung übernimmt und nur die unklaren Fälle an Menschen gibt.
+
+  ```text
+  Rahmendaten:
+  Postfach haendleranfragen, rund 50 Nachrichten pro Arbeitstag.
+  Kategorien: Reklamation, Angebotsanfrage, Rechnungsfrage, Terminfrage, Sonstiges.
+  Dringlichkeit hoch gilt bei Lieferstopp, Fristsetzung oder Kuendigung.
+  Zielsysteme: SharePoint-Liste Vorgaenge, SharePoint-Liste Pruefliste.
+  Zustaendig fuer die Pruefliste: die Innendienstleitung.
+  ```
+
+  Ohne AI-Builder-Zugang arbeitest du durchgehend mit dem Ersatzweg aus Abschnitt 30.5: Prompt im
+  Chatwerkzeug testen, Ausgabe über eine `Verfassen`-Aktion in den Flow geben.
+
+  ---
+
+  **Runde 1 – Prompt und Flow bauen.** Schreibe zuerst den Prompt vollständig aus, mit Rolle,
+  geschlossener Kategorienliste, Dringlichkeitsdefinition, Regel für fehlende Angaben und festem
+  JSON-Ausgabeformat mit mindestens den Feldern Kategorie, Dringlichkeit, Kundennummer, Konfidenz und
+  Begründung. Teste ihn an **zehn selbst erfundenen Nachrichten**, davon drei mehrdeutige, eine leere
+  und eine auf Englisch. Baue anschließend den Flow: Trigger, KI-Schritt, `JSON analysieren`,
+  Bedingung, Eintrag in `Vorgaenge` oder in `Pruefliste`.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Flow muss **alle vier** erfüllen:
+
+  1. Die Ausgabe des KI-Schritts wird tatsächlich **zerlegt** und in einzelne Listenfelder
+     geschrieben – nicht als Textblock in ein Notizfeld gekippt.
+  2. Es gibt eine **deterministische Vorprüfung** vor dem KI-Aufruf, die leere oder extrem kurze
+     Nachrichten ohne KI direkt in die Prüfliste schickt.
+  3. Der Vergleich der Konfidenz funktioniert nachweislich als **Zahlenvergleich**. Weise das nach,
+     indem ein Testfall mit 0,9 und einer mit 0,85 unterschiedlich behandelt werden.
+  4. Ein **Formatfehler bricht den Flow nicht ab**: KI-Schritt und Zerlegen liegen in einem `Bereich`,
+     ein Fehlerzweig schreibt den Fall in die Prüfliste.
+
+  **Runde 3 – Die Komplikation.** Nach dem Testbetrieb liegen drei Befunde vor:
+
+  - Bei sechs von fünfzig Nachrichten hat das Modell die Felder `lieferdatum` und `betreffend`
+    zusätzlich erfunden – `JSON analysieren` lief durch, die Zusatzfelder landeten nirgends, aber in
+    zwei Fällen fehlte dafür die Kundennummer.
+  - Die englische Nachricht wurde als `Sonstiges` mit Konfidenz 0,92 eingeordnet.
+  - Die Innendienstleitung meldet, dass die Prüfliste inzwischen 60 Einträge hat und niemand
+    hineinschaut.
+
+  Behandle alle drei Befunde getrennt. Für den ersten überarbeitest du Prompt **und** Schema. Für den
+  zweiten entscheidest du, ob eine Sprachbehandlung vor den KI-Schritt gehört. Für den dritten
+  entwirfst du eine Regelung, die die Prüfliste am Leben hält – mit Zuständigkeit, Frist und
+  Eskalation. Halte fest, welcher der drei Befunde der gefährlichste ist und warum.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Geschäftsführung will die Prüfliste ganz abschaffen:
+  Der Flow soll bei niedriger Konfidenz einfach `Sonstiges` setzen und den Vorgang trotzdem anlegen,
+  damit „nichts liegen bleibt". Lass dir vom KI-Werkzeug Pro und Contra geben, entscheide begründet
+  und **widersprich**, wenn der Vorschlag die Fehler nur unsichtbar macht statt sie zu beseitigen.
+  Formuliere eine Gegenvorschlag, der das berechtigte Anliegen der Geschäftsführung aufnimmt.
+
+  **Deliverable:**
+
+  1. vollständiger Prompt in Endfassung plus die Ergebnistabelle der zehn Testnachrichten
+  2. Flow-Skizze als nummerierte Schrittliste und ausgefüllte Checkliste der vier Pflichtkriterien
+  3. Version 2 nach Runde 3, mit getrennter Antwort auf alle drei Befunde und einer Regelung für die
+     Prüfliste
+  4. begründete Entscheidung zur Abschaffung der Prüfliste, inklusive Gegenvorschlag
+
+  **Fertig bist du erst, wenn** dein Flow eine leere Nachricht ohne KI-Aufruf abfängt, ein Formatfehler
+  nachweislich nicht zum Abbruch führt, die Prüfliste eine namentliche Zuständigkeit und eine Frist
+  hat und deine Entscheidung in Runde 4 benennt, welcher konkrete Fehlerfall durch die
+  Geschäftsführungs-Idee unsichtbar würde.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Erfundene Zusatzfelder sind kein Schönheitsfehler: Sie zeigen,
+  dass das Modell das Format als Vorschlag behandelt, und sie gehen oft mit ausgelassenen Pflichtfeldern
+  einher. Die englische Nachricht mit hoher Konfidenz ist der klassische Fall, in dem das Modell sich
+  sicher ist und trotzdem falsch liegt – eine Schwelle hilft dagegen prinzipiell nicht. Und Runde 4
+  ist die häufigste Wendung in echten Projekten: Der Rückfallweg wird abgeschafft, weil er Arbeit
+  macht. Damit verschwindet nicht der Fehler, sondern nur seine Sichtbarkeit.
+solution: |
+  Bewertungskriterien: (1) der Prompt enthält Rolle, geschlossene Kategorienliste, definierte
+  Dringlichkeit, Regel für fehlende Angaben und ein hart vorgeschriebenes Ausgabeformat, und die
+  Testtabelle zeigt für alle zehn Nachrichten Ergebnis und Auffälligkeit; (2) alle vier Pflichtkriterien
+  sind belegt, insbesondere die Vorprüfung vor dem KI-Aufruf und der nachgewiesene Zahlenvergleich;
+  (3) Version 2 beantwortet die drei Befunde getrennt, ergänzt beim ersten sowohl Prompt als auch
+  Schema, behandelt den zweiten nicht über eine höhere Schwelle und gibt der Prüfliste Zuständigkeit,
+  Frist und Eskalation; (4) die Entscheidung in Runde 4 unterscheidet zwischen dem Anliegen
+  „nichts bleibt liegen" und der Maßnahme „Rückfallweg streichen" und bietet eine Alternative an,
+  etwa eine tägliche Zusammenfassung offener Prüffälle statt der Abschaffung.
+
+  Lernziel: einen KI-Baustein so in einen Flow einbauen, dass die Ausgabe strukturiert
+  weiterverarbeitet wird und weder ein Formatfehler noch eine selbstsichere Fehleinschätzung den
+  Prozess unbemerkt beschädigt.

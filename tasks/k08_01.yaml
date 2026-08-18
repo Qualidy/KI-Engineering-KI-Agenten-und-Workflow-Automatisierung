@@ -1,0 +1,32 @@
+title: Die passende Rolle wählen
+difficulty: 1
+question: |
+  Ordne jeder Situation das passende Rollenmuster zu: Rechercheur, Reviewer, Ghostwriter,
+  Sparringspartner, Datenaufbereiter, Tutor oder Übersetzer.
+
+  1. Du hast eine Betriebsvereinbarung entworfen und willst wissen, wo sie unklar ist.
+  2. Aus einem einstündigen Besprechungsprotokoll soll eine Aufgabenliste werden.
+  3. Du willst verstehen, wie eine Genehmigung in Power Automate funktioniert.
+  4. Du hältst die geplante Umstellung auf ein neues Ticketsystem für richtig und willst wissen,
+     was dagegen spricht.
+  5. Du hast Stichpunkte für eine Absage an einen Bewerber und brauchst daraus einen Brief.
+  6. Ein Rundschreiben der IT ist für die Fachbereiche unverständlich formuliert.
+  7. Du sollst dich in ein Thema einarbeiten, von dem du bisher nur den Namen kennst.
+tip: |
+  Frage dich bei jedem Punkt: Bringst du den Inhalt schon mit – oder brauchst du erst welchen?
+  Und willst du Zustimmung, Widerspruch oder Form?
+solution: |
+  | Nr. | Rolle | Begründung |
+  |---|---|---|
+  | 1 | Reviewer | Der Text liegt vor, gesucht sind Schwächen |
+  | 2 | Datenaufbereiter | Umwandlung von Freitext in eine Struktur |
+  | 3 | Tutor | Erklären mit Beispiel und Verständnisprüfung |
+  | 4 | Sparringspartner | Ausdrücklich verlangt sind Gegenargumente |
+  | 5 | Ghostwriter | Inhalt kommt von dir, Formulierung von der KI |
+  | 6 | Übersetzer | Übertragung zwischen Fachniveaus |
+  | 7 | Rechercheur | Material sammeln und ordnen, danach selbst prüfen |
+
+  Zwei Feinheiten: Nummer 1 und Nummer 4 wirken ähnlich, unterscheiden sich aber im Gegenstand –
+  der Reviewer prüft einen **Text**, der Sparringspartner greift eine **Position** an. Und
+  Nummer 7 ist die Rolle mit dem höchsten Prüfaufwand, weil das Ergebnis vollständig aus dem
+  Modell stammt.

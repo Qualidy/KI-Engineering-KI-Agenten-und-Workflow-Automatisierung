@@ -1,0 +1,48 @@
+title: Wo endet der Chat, wo beginnt der Agent?
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. **Auftrag stellen.** Gib deinem Werkzeug einen bewusst mehrschrittigen Auftrag, der Zugriffe
+     bräuchte, zum Beispiel:
+
+     ```text
+     Erstelle mir eine Uebersicht aller offenen Rueckfragen aus meinem Postfach
+     der letzten Woche, sortiert nach Dringlichkeit, und lege zu jeder Rueckfrage
+     eine Aufgabe mit Faelligkeit an.
+     ```
+
+     Notiere, was tatsächlich passiert: Wird nachgefragt, wird etwas erfunden, wird etwas
+     abgelehnt, wird etwas wirklich getan?
+
+  2. **Schleife sichtbar machen.** Stelle den Auftrag in einem neuen Chat noch einmal, diesmal mit:
+
+     ```text
+     Bearbeite das nicht. Beschreibe stattdessen, in welchen Schritten du vorgehen
+     wuerdest, welche Zugriffe du je Schritt braeuchtest und woran du nach jedem
+     Schritt pruefen wuerdest, ob er geklappt hat.
+     ```
+
+  3. **Auswerten.** Vergleiche die beschriebene Schleife mit dem, was in Schritt 1 tatsächlich
+     möglich war. Halte fest: Welche Bausteine der Agenten-Anatomie fehlen deinem Werkzeug für
+     diesen Auftrag? An welcher Stelle würde ein Fehler in Schritt 1 unbemerkt in Schritt 3
+     weiterwirken?
+tip: |
+  Interessant ist nicht, ob der Auftrag klappt – meistens klappt er nicht. Interessant ist, **wie**
+  das Werkzeug scheitert: Sagt es klar, dass ihm der Zugriff fehlt, oder liefert es eine erfundene
+  Übersicht, die aussieht, als käme sie aus deinem Postfach?
+solution: |
+  Typische Beobachtungen:
+
+  - **Ohne Zugriff** kommt entweder eine ehrliche Auskunft („ich habe keinen Zugriff auf dein
+    Postfach") oder – deutlich unangenehmer – eine erfundene Beispielübersicht mit erfundenen
+    Absendern. Letzteres ist genau die Halluzination aus Kapitel 5, nur in Tabellenform.
+  - **Mit Zugriff** (Copilot im M365-Umfeld) klappt der erste Teil oft, der zweite scheitert am
+    fehlenden Werkzeug zum Anlegen von Aufgaben oder verlangt eine Bestätigung.
+  - Die **Schrittbeschreibung** aus Teil 2 ist meist sauber und plausibel. Das zeigt den Kern des
+    Kapitels: Planen kann ein Sprachmodell, Handeln nicht – dafür braucht es Werkzeuge.
+
+  Erwartete Auswertung: Es fehlen typischerweise **Werkzeuge** (Postfachzugriff, Aufgaben anlegen)
+  und die **Prüfschritte** der Schleife. Fehlerfortpflanzung: Wird in Schritt 1 eine
+  Abwesenheitsnotiz als Rückfrage gewertet, entsteht am Ende eine Aufgabe zu einem Vorgang, den es
+  nicht gibt – und im fertigen Ergebnis sieht man dieser Aufgabe nicht mehr an, woher sie stammt.

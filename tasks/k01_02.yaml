@@ -1,0 +1,26 @@
+title: Den KI-Effekt entlarven
+difficulty: 2
+question: |
+  Der **KI-Effekt** beschreibt: Was heute funktioniert, gilt morgen nicht mehr als „echte KI".
+
+  1. Nenne **drei** Funktionen, die du heute täglich nutzt und die vor 15 Jahren als
+     spektakuläre KI-Leistung gegolten hätten.
+  2. Formuliere für jede Funktion in einem Satz, **warum** sie heute selbstverständlich wirkt.
+  3. Beantworte für jede Funktion die Leitfrage aus dem Kapitel: Lernt das System aus Daten,
+     oder folgt es Regeln? Begründe kurz.
+tip: |
+  Schau auf dein Smartphone und in dein Postfach: Autokorrektur, Diktierfunktion, Fotosuche,
+  Routenberechnung, Übersetzung, Antwortvorschläge in E-Mails.
+solution: |
+  Beispielhafte Bearbeitung:
+
+  | Funktion | Warum selbstverständlich | Daten oder Regeln |
+  |---|---|---|
+  | Diktierfunktion am Handy | funktioniert zuverlässig und kostenlos, überall verfügbar | Daten – Spracherkennung ist trainiert |
+  | Übersetzung im Browser | ein Klick, sofortiges Ergebnis | Daten – aus riesigen Textpaaren gelernt |
+  | Fotosuche nach „Hund" | wirkt wie eine normale Suchfunktion | Daten – Bilderkennung ist trainiert |
+  | Routenberechnung | seit Jahren im Auto verbaut | überwiegend Regeln (Algorithmus), Stauprognose dagegen gelernt |
+
+  Wichtig ist nicht die perfekte Zuordnung, sondern die Denkbewegung: Die Frage „ist das KI?" ist
+  weniger nützlich als die Frage „woher kommt das Verhalten – aus Regeln oder aus Beispielen?".
+  Die Routenberechnung zeigt, dass beides in einem Produkt stecken kann.

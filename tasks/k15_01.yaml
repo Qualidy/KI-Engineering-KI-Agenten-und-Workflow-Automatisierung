@@ -1,0 +1,42 @@
+title: Behauptung, Beleg oder Vermutung?
+difficulty: 1
+question: |
+  Ein Kollege hat sich mit einem KI-Werkzeug einen Angebotstext erzeugen lassen. Er hatte nur
+  eingegeben: „Angebot für 30 Rollcontainer an einen Büromöbelhändler in Hamburg".
+
+  ```text
+  Als marktfuehrender Anbieter im Bereich Bueroeinrichtung liefern wir seit ueber
+  40 Jahren Qualitaet. Unsere Rollcontainer sind TUEV-geprueft und werden bereits
+  von zahlreichen namhaften Haeusern wie der Hanse Kontor AG eingesetzt. Dank
+  unserer eigenen Fertigung in Deutschland liefern wir innerhalb von 48 Stunden
+  und gewaehren 10 Jahre Garantie. Bei Abnahme von 30 Stueck erhalten Sie
+  selbstverstaendlich unseren Mengenrabatt von 12 Prozent.
+  ```
+
+  1. Markiere jede Aussage und ordne sie ein: **belegt**, **unbelegt**, oder **frei erfunden**.
+  2. Benenne die drei Aussagen mit dem größten Schadenspotenzial und begründe kurz.
+  3. Formuliere in einem Satz, welche Anweisung im Prompt gefehlt hat.
+tip: |
+  Der Kollege hat exakt zwei Angaben geliefert: Menge und Kundentyp. Alles andere im Text muss
+  irgendwoher kommen.
+solution: |
+  | Aussage | Einordnung | Bemerkung |
+  |---|---|---|
+  | marktführender Anbieter | frei erfunden | Superlativ ohne Grundlage, wettbewerbsrechtlich angreifbar |
+  | seit über 40 Jahren | frei erfunden | Firmengeschichte war nie Teil des Auftrags |
+  | TÜV-geprüft | frei erfunden | erfundenes Prüfsiegel, besonders heikel |
+  | Referenzkunde Hanse Kontor AG | frei erfunden | erfundene Referenz, verletzt Rechte Dritter |
+  | eigene Fertigung in Deutschland | frei erfunden | Herkunftsangabe, irreführend |
+  | Lieferung in 48 Stunden | frei erfunden | Zusage mit unmittelbarer Vertragswirkung |
+  | 10 Jahre Garantie | frei erfunden | Zusage mit langfristiger finanzieller Folge |
+  | 12 Prozent Mengenrabatt | frei erfunden | Kondition, die niemand freigegeben hat |
+  | 30 Stück | belegt | war im Auftrag enthalten |
+
+  Der Text besteht praktisch vollständig aus Erfindungen. Das größte Schadenspotenzial haben das
+  Prüfsiegel (Täuschung über eine Zertifizierung), die Referenz (Rechte des genannten Unternehmens
+  und sofortige Blamage bei Nachfrage) und die Garantiezusage (zehn Jahre Haftung aus einem Satz,
+  den niemand entschieden hat).
+
+  Gefehlt hat die Einschränkung: keine Angaben ergänzen, die nicht im Auftrag stehen, insbesondere
+  keine Preise, Konditionen, Referenzen, Zertifikate, Fristen oder Garantien. Die Lehre: Ein knapper
+  Auftrag erzeugt keinen knappen Text, sondern einen erfundenen.

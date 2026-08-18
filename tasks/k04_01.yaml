@@ -1,0 +1,30 @@
+title: Darf das in den Prompt?
+difficulty: 1
+question: |
+  Entscheide für jede Eingabe: **darf hinein**, **darf nicht hinein** oder **nur nach
+  Anpassung**. Wenn du „nur nach Anpassung" wählst, schreibe die angepasste Fassung auf.
+
+  1. „Formuliere eine freundliche Absage für Herrn Meier, Bewerbernummer 4711, Wohnort Kassel."
+  2. „Erkläre mir den Unterschied zwischen Auftragsverarbeitung und gemeinsamer Verantwortung."
+  3. „Hier ist unsere Preisliste mit Einkaufspreisen und Margen. Erstelle daraus ein Angebot."
+  4. „Kürze diesen Text von unserer Website auf 120 Wörter."
+  5. „Fasse dieses Protokoll des Mitarbeitergesprächs mit Frau Schulz zusammen."
+  6. „Welche Excel-Formel summiert Werte nach Monat und Kostenstelle?"
+tip: |
+  Prüfe drei Dinge in dieser Reihenfolge: Ist eine reale Person erkennbar? Ist der Inhalt
+  vertraulich oder wirtschaftlich sensibel? Und lässt sich derselbe Nutzen mit weniger
+  Information erreichen?
+solution: |
+  | Eingabe | Bewertung | Begründung und Anpassung |
+  |---|---|---|
+  | 1 Absage an Herrn Meier | nur nach Anpassung | Name, Bewerbernummer und Wohnort sind personenbezogen. Angepasst: „Formuliere eine freundliche Absage nach einem Vorstellungsgespräch, Anrede und Name füge ich selbst ein." |
+  | 2 Auftragsverarbeitung erklären | darf hinein | allgemeine Fachfrage ohne Personen- und Unternehmensbezug |
+  | 3 Preisliste mit Margen | darf nicht hinein | Kalkulations- und Margendaten sind Geschäftsgeheimnisse; eine Eingabe kann deren Schutz gefährden |
+  | 4 Website-Text kürzen | darf hinein | bereits veröffentlichter eigener Inhalt |
+  | 5 Protokoll Mitarbeitergespräch | darf nicht hinein | Beschäftigtendaten mit Bewertungscharakter, hoher Schutzbedarf und Mitbestimmungsbezug |
+  | 6 Excel-Formel | darf hinein | reine Werkzeugfrage ohne echte Daten |
+
+  Fall 1 zeigt das nützlichste Muster: Der eigentliche Nutzen liegt in der Formulierung, nicht
+  in den Personendaten. Wer die Personalisierung selbst einsetzt, bekommt dasselbe Ergebnis ohne
+  Datenschutzproblem. Fall 3 ist der am häufigsten unterschätzte Fall, weil dort keine Person
+  betroffen ist und die DSGVO gar nicht greift – das Risiko liegt allein beim Geheimnisschutz.

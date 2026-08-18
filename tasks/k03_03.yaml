@@ -1,0 +1,42 @@
+title: Halluzination provozieren und dokumentieren
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude). Ziel ist nicht,
+  das Werkzeug schlechtzumachen, sondern die **Form** seiner Fehler kennenzulernen.
+
+  1. Stelle drei Fragen, deren Antwort du sicher überprüfen kannst:
+     - eine Frage nach einer **Zahl** aus einem Bereich, den du gut kennst
+     - eine Frage nach einer **internen Regelung** deines Arbeitgebers
+     - eine Frage nach einer **Quelle**, zum Beispiel: nenne mir drei Fachartikel zum Thema X mit Titel und Jahr
+
+  2. Prüfe jede Antwort nach. Notiere pro Antwort: richtig, teilweise richtig oder erfunden –
+     und **wie sicher** die Formulierung klang.
+
+  3. Stelle nun dieselbe Frage nach der internen Regelung erneut, diesmal mit dem relevanten
+     Textauszug als Kontext im Prompt. Vergleiche das Ergebnis.
+
+  4. Formuliere aus deinen Beobachtungen **drei Regeln** dafür, welche Art von Information du
+     künftig nie aus dem Modell selbst beziehst.
+tip: |
+  Achte besonders auf Punkt 1c. Erfundene Quellenangaben sind der klarste Fall: Sie sehen
+  vollständig und korrekt formatiert aus, existieren aber nicht. Und achte darauf, ob eine
+  falsche Antwort sprachlich unsicherer klingt als eine richtige – meistens tut sie das nicht.
+solution: |
+  Typische Beobachtungen:
+
+  - **Zahlenfrage:** Häufig plausible Größenordnung, im Detail falsch. Gefährlich, weil die
+    Abweichung nur auffällt, wenn man den echten Wert kennt.
+  - **Interne Regelung:** Fast immer erfunden. Das Modell kennt interne Dokumente nicht, füllt
+    die Lücke aber mit einer branchenüblich klingenden Regel, statt die Wissenslücke zu benennen.
+  - **Quellenangaben:** Häufig frei erfunden, mit korrekt aussehenden Titeln, Autoren und
+    Jahreszahlen. Der stärkste Beleg dafür, dass Sicherheit im Ton nichts über Richtigkeit sagt.
+  - **Mit Kontext im Prompt:** Die Antwort wird deutlich besser, weil das Modell nun aus
+    vorgelegtem Text arbeitet statt aus Erinnerung. Genau darauf beruht die Wissensanbindung
+    von Agenten in Kapitel 6.
+
+  Beispielhafte eigene Regeln: (1) Zahlen, Fristen und Beträge stammen aus dem Quellsystem, nie
+  aus dem Modell. (2) Internes Wissen liefere ich als Kontext mit, statt es abzufragen.
+  (3) Jede Quellenangabe wird einzeln überprüft oder gestrichen.
+
+  Ein gutes Ergebnis hält zusätzlich fest, dass der Ton der Antwort kein Warnsignal liefert –
+  das ist der eigentliche Grund, warum Halluzinationen im Arbeitsalltag durchrutschen.

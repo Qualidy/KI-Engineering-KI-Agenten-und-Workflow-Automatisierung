@@ -1,0 +1,30 @@
+title: Risikoklasse und Pflichten einordnen
+difficulty: 2
+question: |
+  Ordne jeden Einsatz einer Risikoklasse des EU AI Act zu: **verboten**, **hohes Risiko**,
+  **Transparenzpflicht** oder **minimales Risiko**. Benenne zusätzlich, ob die DSGVO betroffen
+  ist, und – falls ja – die wichtigste Pflicht daraus.
+
+  1. Ein Werkzeug bewertet aus Aufzeichnungen von Kundentelefonaten die Stimmung der
+     Mitarbeitenden im Callcenter.
+  2. Ein System filtert eingehende Bewerbungen und erstellt eine Rangfolge der Kandidaten.
+  3. Ein Chatbot auf der Unternehmenswebsite beantwortet Fragen zu Öffnungszeiten und Versand.
+  4. Copilot fasst einen internen Besprechungstermin für die Teilnehmenden zusammen.
+  5. Ein Ablauf sortiert eingehende Rechnungen nach Lieferant in Ordner.
+tip: |
+  Der AI Act fragt nach dem Zweck, nicht nach der Technik. Prüfe deshalb zuerst: Wird über
+  Menschen entschieden oder werden Menschen bewertet? Und dann getrennt davon: Sind
+  personenbezogene Daten im Spiel?
+solution: |
+  | Einsatz | Risikoklasse | DSGVO betroffen | Wichtigste Pflicht |
+  |---|---|---|---|
+  | 1 Stimmung der Mitarbeitenden bewerten | verboten | ja | Emotionserkennung am Arbeitsplatz ist untersagt; die DSGVO-Frage stellt sich gar nicht mehr |
+  | 2 Bewerbungen filtern und ranken | hohes Risiko | ja | keine ausschließlich automatisierte Entscheidung nach Art. 22; echte menschliche Auswahl, Transparenz, Mitbestimmung |
+  | 3 Chatbot auf der Website | Transparenzpflicht | ja, sobald Anfragen Personendaten enthalten | Kennzeichnung als KI-System; Rechtsgrundlage und Speicherdauer für Chatverläufe klären |
+  | 4 Besprechung zusammenfassen | minimales Risiko | ja, Teilnehmende sind identifizierbar | Zweckbindung und Zugriffsrechte; Zusammenfassung nur für Berechtigte |
+  | 5 Rechnungen in Ordner sortieren | minimales Risiko | in der Regel ja, Ansprechpartner auf Belegen | Datenminimierung und Speicherbegrenzung, Aufbewahrungspflichten beachten |
+
+  Zwei Einsichten sind übertragbar. Erstens: Fall 1 wird oft als „nur eine Auswertung" verharmlost,
+  ist aber eine ausdrücklich verbotene Praxis – hier hilft keine Gestaltung und keine Einwilligung.
+  Zweitens: Minimales Risiko nach AI Act bedeutet nicht datenschutzfrei. Fall 4 und 5 sind beide
+  unkritisch im Sinne des AI Act und dennoch vollständig DSGVO-relevant.

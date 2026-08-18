@@ -1,0 +1,89 @@
+title: Prozessaufnahme und Automatisierungsdesign auf Papier
+difficulty: 4
+question: |
+  **Szenario:** Du übernimmst in der Personalabteilung der Nordwind Handel GmbH die
+  Aufgabe, den Urlaubsantrag „endlich in Ordnung zu bringen". Beschwerden gibt es von allen
+  Seiten: Beschäftigte wissen nicht, ob ihr Antrag angekommen ist, Führungskräfte finden die
+  Anträge nicht wieder, und die Personalabteilung pflegt am Monatsende alles von Hand in eine
+  Excel-Datei. Ein Werkzeug baust du in diesem Workshop noch nicht – du lieferst die
+  Grundlage, auf der später gebaut wird.
+
+  ```text
+  Nordwind Handel GmbH, 180 Mitarbeitende, 12 Fuehrungskraefte.
+  Rund 500 Urlaubsantraege pro Jahr, Spitzen im Mai und November.
+  Heute: Antrag per Mail oder Papierformular an die Fuehrungskraft,
+    Freigabe per Antwortmail oder Unterschrift,
+    Personalabteilung traegt in Excel-Datei Urlaubskonto ein.
+  Bekannte Probleme: Antraege gehen verloren, Vertretungsregel bei
+    Abwesenheit der Fuehrungskraft fehlt, Resturlaub ist nie aktuell,
+    Sonderfaelle wie Sonderurlaub und Kurzarbeit laufen anders.
+  Systeme: Outlook, ein SharePoint-Team, eine Excel-Datei, kein HR-System.
+  ```
+
+  ---
+
+  **Runde 1 – Ist-Aufnahme.** Nimm den Ablauf so auf, wie er heute tatsächlich läuft. Erstelle
+  eine Schritttabelle mit den Spalten `Nr. | Schritt | Rolle | System | Medienbruch |
+  Wartezeit` und mindestens acht Zeilen. Ergänze darunter drei Angaben: reine
+  Bearbeitungszeit je Antrag, typische Durchlaufzeit, Anzahl der Medienbrüche. Zeichne
+  zusätzlich ein Diagramm mit maximal acht Kästen für die Abstimmung mit den Führungskräften.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Aufnahme muss **alle vier** Kriterien
+  erfüllen. Arbeite sie nach und dokumentiere die Nachbesserung:
+
+  1. Jeder Schritt hat genau **eine** verantwortliche Rolle – kein „irgendwer aus HR".
+  2. Mindestens **zwei Sonderfälle** sind benannt und mit ihrer geschätzten Häufigkeit
+     versehen (zum Beispiel Abwesenheit der Führungskraft, Antrag rückwirkend, Sonderurlaub).
+  3. Jede Wartezeit über einem Tag ist mit einer Ursache versehen, nicht nur mit einer Dauer.
+  4. Für jeden Medienbruch ist notiert, welcher Fehler dort real passieren kann.
+
+  **Runde 3 – Die Komplikation.** Beim Vorstellen kommt heraus, dass zwei Abteilungen den
+  Ablauf **anders** handhaben: Der Vertrieb pflegt eine eigene Abwesenheitsliste in Teams und
+  meldet Urlaub nur gesammelt zum Monatsende. Die Personalabteilung hat davon nichts gewusst,
+  die Excel-Datei ist damit für ein Viertel der Belegschaft unvollständig. Überarbeite deine
+  Aufnahme: Nimm den abweichenden Weg als zweite Variante auf und entscheide begründet, ob
+  dein künftiger Ablauf **beide** Wege abbilden oder auf **einen** vereinheitlichen soll.
+  Benenne, wer diese Entscheidung fachlich treffen muss.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Bewerte mindestens fünf Schritte mit
+  Häufigkeit × Aufwand × Regelhaftigkeit und bilde eine Rangfolge. Lass dir von einem
+  KI-Werkzeug einen Vorschlag geben, womit du starten solltest. Die Personalleitung möchte
+  dagegen „das Urlaubskonto automatisch berechnen", weil das den größten Nutzen hätte.
+  Entscheide dich für **einen** Startschritt und **widersprich** begründet – entweder der
+  Personalleitung oder dem KI-Vorschlag. Nenne dabei ausdrücklich, welchen Schritt du
+  **nicht** automatisierst und warum.
+
+  **Deliverable:**
+
+  1. Ist-Aufnahme als Schritttabelle plus Diagramm, inklusive Bearbeitungs- und Durchlaufzeit
+  2. ausgefüllte Checkliste der vier Pflichtkriterien mit dokumentierter Nachbesserung
+  3. zweite Prozessvariante des Vertriebs plus begründete Entscheidung Vereinheitlichen
+     oder Abbilden
+  4. Bewertungstabelle mit Rangfolge, Startempfehlung mit Begründung und einer bewusst
+     abgelehnten Automatisierung
+
+  **Fertig bist du erst, wenn** deine Aufnahme den echten Ablauf beschreibt und nicht den
+  gewünschten, alle vier Pflichtkriterien nachweisbar erfüllt sind, die Vertriebsvariante
+  sichtbar ist, und deine Startempfehlung sowohl den Punktwert als auch Datenverfügbarkeit
+  und Fehlerfolge berücksichtigt.
+tip: |
+  Der eigentliche Lernwert liegt in Runde 3 und 4. Runde 3 zeigt das häufigste Scheitern
+  echter Automatisierungsprojekte: Der Ablauf, den man aufgenommen hat, ist nur einer von
+  mehreren. Wer das erst nach dem Bauen merkt, muss neu anfangen. In Runde 4 liegt die Falle
+  im Wort „größter Nutzen": Ein automatisch berechnetes Urlaubskonto klingt attraktiv, setzt
+  aber saubere Stammdaten und vollständige Historie voraus – beides fehlt hier. Der
+  langweilige Schritt mit hoher Regelhaftigkeit ist fast immer der bessere Start.
+solution: |
+  Bewertungskriterien: (1) Die Ist-Aufnahme trennt Bearbeitungszeit von Durchlaufzeit,
+  benennt Rollen statt Namen und weist mindestens drei Medienbrüche mit konkretem Fehlerbild
+  nach; (2) alle vier Pflichtkriterien sind erfüllt, insbesondere die Sonderfälle mit
+  Häufigkeitsschätzung und die Ursachen der Wartezeiten – „dauert manchmal" genügt nicht;
+  (3) die Vertriebsvariante ist als eigener Weg dargestellt, die Entscheidung
+  Vereinheitlichen oder Abbilden ist mit Aufwand und Akzeptanz begründet und benennt die
+  fachlich zuständige Stelle; (4) die Rangfolge stützt sich auf plausible Punktwerte, die
+  Startempfehlung wägt Datenverfügbarkeit und Fehlerfolge ab, und es gibt eine bewusst
+  abgelehnte Automatisierung mit tragfähiger Begründung.
+
+  Lernziel: Einen realen Ablauf so aufnehmen und bewerten, dass daraus ein baubarer
+  Automatisierungsauftrag wird – und dabei erkennen, dass abweichende Praxis und fehlende
+  Daten wichtiger sind als der geschätzte Nutzen.

@@ -1,0 +1,28 @@
+title: Texterkennung oder Feldextraktion?
+difficulty: 1
+question: |
+  Entscheide für jede Anforderung, ob reine **Texterkennung** genügt oder ob du eine
+  **Feldextraktion** brauchst. Begründe jeweils in einem Satz.
+
+  1. Alte Projektakten sollen im Intranet durchsuchbar werden.
+  2. Von jeder Eingangsrechnung sollen Betrag und Fälligkeit in eine Liste geschrieben werden.
+  3. Aus Besprechungsprotokollen als Foto soll der Text kopierbar werden.
+  4. Aus Lieferscheinen sollen Bestellnummer und Menge mit der Bestellung abgeglichen werden.
+  5. Gescannte Verträge sollen nach dem Wort „Kündigungsfrist" durchsuchbar sein.
+  6. Aus Reisekostenbelegen sollen Datum, Betrag und Händler in die Abrechnung übernommen werden.
+tip: |
+  Frage dich: Reicht es, wenn der Text irgendwo im Dokument gefunden werden kann – oder muss ein
+  Wert einem benannten Feld zugeordnet werden, mit dem ein Flow anschließend arbeitet?
+solution: |
+  | Anforderung | Antwort | Begründung |
+  |---|---|---|
+  | 1 Projektakten durchsuchbar | Texterkennung | es geht nur um Auffindbarkeit, nicht um einzelne Werte |
+  | 2 Betrag und Fälligkeit | Feldextraktion | die Werte müssen benannten Feldern zugeordnet in eine Liste |
+  | 3 Protokolltext kopierbar | Texterkennung | reine Umwandlung von Bild in Text |
+  | 4 Lieferschein abgleichen | Feldextraktion | ein Abgleich setzt strukturierte Felder voraus |
+  | 5 Verträge nach Stichwort | Texterkennung | eine Volltextsuche braucht keine Feldstruktur |
+  | 6 Reisekostenbelege | Feldextraktion | drei benannte Felder wandern in ein Zielsystem |
+
+  Merke: Texterkennung macht Dokumente **auffindbar**, Feldextraktion macht sie **verarbeitbar**.
+  Fall 5 ist der Grenzfall: Sobald aus „Vertrag enthält das Wort Kündigungsfrist" die Anforderung
+  „Kündigungsfrist als Wert in eine Übersicht" wird, wechselt er in die zweite Kategorie.

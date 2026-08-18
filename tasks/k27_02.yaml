@@ -1,0 +1,44 @@
+title: Erste Genehmigung mit Ergebnisauswertung
+difficulty: 2
+question: |
+  Diese Übung baust du in Power Automate. Verwende eine Test-SharePoint-Liste `Antraege` mit den
+  Spalten Titel, Betrag, Antragsteller, Status (Offen, Genehmigt, Abgelehnt), Entscheidung,
+  Entschieden von, Entschieden am.
+
+  1. Baue einen Flow, der beim Erstellen eines Listenelements startet.
+  2. Ergänze `Genehmigungen starten und warten (Start and wait for an approval)` mit Typ
+     `Genehmigen/Ablehnen – Erste Antwort zählt`. Weise die Anfrage dir selbst zu.
+  3. Fülle `Details` so, dass eine Entscheidung ohne Rückfrage möglich ist, und setze einen Link
+     auf das Listenelement.
+  4. Werte das Ergebnis mit einer `Bedingung` aus und schreibe Status, Kommentar, entscheidende
+     Person und Zeitpunkt in das Listenelement zurück. Informiere den Antragsteller per Mail.
+  5. Teste mit zwei Elementen: eines genehmigst du mit Kommentar, eines lehnst du ab.
+tip: |
+  Der Vergleichswert im Ergebnisfeld ist `Approve` beziehungsweise `Reject` – auch in der
+  deutschen Oberfläche. Kommentar und Name der entscheidenden Person stecken nicht direkt im
+  Ergebnis, sondern in der Antwortliste.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Trigger: Wenn ein Element erstellt wird  (Liste Antraege)
+  Aktion:  Genehmigungen starten und warten
+             Typ        = Genehmigen/Ablehnen - Erste Antwort zaehlt
+             Titel      = Antrag mit Titel und Betrag
+             Details    = Antragsteller, Betrag, Zweck, Frist
+             Elementlink = Link auf das Listenelement
+  Aktion:  Bedingung  ->  Ergebnis ist gleich Approve
+             Falls ja:
+               Aktion: Element aktualisieren  (Status Genehmigt, Entscheidung, Person, Zeitpunkt)
+               Aktion: E-Mail senden V2  (Zusage an Antragsteller)
+             Falls nein:
+               Aktion: Element aktualisieren  (Status Abgelehnt, Kommentar als Begruendung)
+               Aktion: E-Mail senden V2  (Ablehnung mit Kommentar)
+  ```
+
+  Kommentar und Name holst du mit Ausdrücken auf die Antwortliste, etwa
+  `first(body('Genehmigungen_starten_und_warten')?['responses'])?['comments']`.
+
+  Prüfpunkte: (1) Beide Zweige schreiben zurück – ein Flow, der nur den Ja-Fall behandelt, lässt
+  abgelehnte Anträge auf `Offen` stehen. (2) `Details` enthält genug für eine Entscheidung.
+  (3) Entscheidende Person und Zeitpunkt stehen in der Liste, nicht nur im Ausführungsverlauf.

@@ -1,0 +1,1919 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel11/">
+      
+      
+        <link rel="next" href="../kapitel13/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 12 – KI-gestützte Textarbeit - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-12-ki-gestutzte-textarbeit-in-word-outlook-und-teams" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 12 – KI-gestützte Textarbeit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Block 3 · Praxis mit KI-Agenten
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 12 – KI-gestützte Textarbeit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 12 – KI-gestützte Textarbeit
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121-was-ki-an-textarbeit-tatsachlich-beschleunigt" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1 Was KI an Textarbeit tatsächlich beschleunigt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-word-entwerfen-umschreiben-kurzen-ton-wechseln" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2 Word: entwerfen, umschreiben, kürzen, Ton wechseln
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-lange-dokumente-zusammenfassen-und-befragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3 Lange Dokumente zusammenfassen und befragen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#124-outlook-threads-verdichten-und-antworten-entwerfen" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.4 Outlook: Threads verdichten und Antworten entwerfen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#125-teams-besprechung-zusammenfassung-aufgaben" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.5 Teams: Besprechung, Zusammenfassung, Aufgaben
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#126-corporate-wording-textbausteine-und-die-prufliste" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.6 Corporate Wording, Textbausteine und die Prüfliste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 13 – KI-gestützte Datenarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 14 – Fallbeispiel HR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 15 – Fallbeispiel Vertrieb
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 16 – Fallbeispiel Rechnungswesen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-12-ki-gestutzte-textarbeit-in-word-outlook-und-teams">Kapitel 12 – KI-gestützte Textarbeit in Word, Outlook und Teams<a class="headerlink" href="#kapitel-12-ki-gestutzte-textarbeit-in-word-outlook-und-teams" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie du in <strong>Word</strong> Entwürfe erzeugst, umschreibst, kürzt und den <strong>Ton</strong> wechselst</li>
+<li>Wie du <strong>lange Dokumente</strong> zusammenfasst und gezielt befragst, statt sie ganz zu lesen</li>
+<li>Wie du in <strong>Outlook</strong> E-Mail-Threads verdichtest und Antwortentwürfe erzeugst</li>
+<li>Wie du aus einer <strong>Teams-Besprechung</strong> eine belastbare Zusammenfassung mit Aufgaben ableitest</li>
+<li>Wie du <strong>Corporate Wording</strong> und Textbausteine in wiederverwendbare Vorlagen überführst</li>
+<li>Eine konkrete <strong>Prüfliste</strong> für KI-Texte – der Schritt, der über Qualität entscheidet</li>
+</ul>
+</div>
+<hr />
+<h2 id="121-was-ki-an-textarbeit-tatsachlich-beschleunigt">12.1 Was KI an Textarbeit tatsächlich beschleunigt<a class="headerlink" href="#121-was-ki-an-textarbeit-tatsachlich-beschleunigt" title="Permanent link">&para;</a></h2>
+<p>KI ist nicht überall gleich stark. Wer sie an der falschen Stelle einsetzt, verliert Zeit statt sie zu gewinnen:</p>
+<table>
+<thead>
+<tr>
+<th>Tätigkeit</th>
+<th>Zeitgewinn</th>
+<th>Warum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Erster Entwurf aus Stichpunkten</td>
+<td>sehr hoch</td>
+<td>Das leere Blatt kostet die meiste Zeit</td>
+</tr>
+<tr>
+<td>Umformulieren, Ton wechseln</td>
+<td>sehr hoch</td>
+<td>Sprachliche Umformung ist die Kernstärke</td>
+</tr>
+<tr>
+<td>Lange Texte zusammenfassen</td>
+<td>hoch</td>
+<td>Struktur erkennen geht schneller als lesen</td>
+</tr>
+<tr>
+<td>Fachliche Richtigkeit prüfen</td>
+<td>kein Gewinn</td>
+<td>Das Modell kennt deine internen Regeln nicht</td>
+</tr>
+<tr>
+<td>Verbindliche Zusagen formulieren</td>
+<td>negativ</td>
+<td>Erfundene Fristen und Konditionen sind teuer</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>KI ist stark bei der <strong>Form</strong> und schwach bei der <strong>Verbindlichkeit</strong>. Delegiere Formulierung, Struktur und Tonlage. Behalte Fakten, Zahlen, Fristen und Zusagen bei dir.</p>
+</div>
+<hr />
+<h2 id="122-word-entwerfen-umschreiben-kurzen-ton-wechseln">12.2 Word: entwerfen, umschreiben, kürzen, Ton wechseln<a class="headerlink" href="#122-word-entwerfen-umschreiben-kurzen-ton-wechseln" title="Permanent link">&para;</a></h2>
+<p>Der Einstieg läuft über <code>Word → Registerkarte Start → Copilot → Entwurf mit Copilot</code>. Der wichtigste Hebel ist die <strong>Stichpunktübergabe</strong>: Du gibst nicht ein Thema, sondern deine Inhalte. Aus einem Thema entsteht Beliebigkeit, aus Stichpunkten entsteht dein Text.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du bist Mitarbeiterin im Innendienst der Musterhandel GmbH.
+Aufgabe: Schreibe ein Anschreiben zur Ankuendigung einer Preisanpassung an
+Bestandskunden.
+Kontext, meine Stichpunkte:
+- Anpassung ab 01.04., durchschnittlich vier Prozent
+- Grund: gestiegene Fracht- und Verpackungskosten
+- Bestehende Rahmenvereinbarungen bleiben bis Jahresende unberuehrt
+- Ansprechpartnerin fuer Rueckfragen: Frau Berger, Innendienst
+Format: Betreffzeile, Anrede mit Platzhalter [Kundenname], drei kurze Absaetze,
+Gruss. Maximal 200 Woerter. Ton sachlich, kein Bedauern.
+Einschraenkung: Nenne keine Prozentwerte oder Termine, die nicht oben stehen.
+Keine Entschuldigung und keine Zusage auf Ausnahmen.
+</code></pre></div></td></tr></table></div>
+<p>Fürs <strong>Umschreiben</strong> markierst du den Textabschnitt und wählst <code>Word → Copilot → Umschreiben mit Copilot</code>. Oft ist der Chatweg aber präziser, weil du die Richtung vorgeben kannst:</p>
+<table>
+<thead>
+<tr>
+<th>Ziel</th>
+<th>Konkrete Anweisung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kürzen</td>
+<td><code>Kuerze auf 120 Woerter. Streiche zuerst Nebensaetze und Fuellwoerter, nicht Inhalte.</code></td>
+</tr>
+<tr>
+<td>Verständlicher</td>
+<td><code>Formuliere fuer Leser ohne Fachkenntnis. Erklaere jeden Fachbegriff im Satz, in dem er vorkommt.</code></td>
+</tr>
+<tr>
+<td>Freundlicher, ohne weich</td>
+<td><code>Freundlicherer Ton, aber ohne Konjunktive und ohne Abschwaechungen wie eventuell oder gegebenenfalls.</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: Der Tonwechsel schleift Inhalte mit</p>
+<p>Wenn du „freundlicher" oder „kürzer" verlangst, verändert das Modell nicht nur die Sprache – es lässt gern auch Bedingungen, Fristen oder Einschränkungen weg, weil sie unfreundlich oder lang wirken. Vergleiche nach jedem Tonwechsel die <strong>harten Angaben</strong> von Vorher und Nachher: Zahlen, Datumsangaben, Namen, Bedingungen.</p>
+</div>
+<hr />
+<h2 id="123-lange-dokumente-zusammenfassen-und-befragen">12.3 Lange Dokumente zusammenfassen und befragen<a class="headerlink" href="#123-lange-dokumente-zusammenfassen-und-befragen" title="Permanent link">&para;</a></h2>
+<p>Bei einem 40-seitigen Dokument ist „Fasse das zusammen" fast immer die schwächste Frage. Eine Zusammenfassung ohne Zweck gewichtet gleichmäßig – und du brauchst gerade die Gewichtung.</p>
+<p>Zwei bessere Muster sind die <strong>zweckgebundene Zusammenfassung</strong> und die <strong>gezielte Befragung</strong>. Beide verbindet die wirkungsvollste Einzelanweisung für Dokumentarbeit: jede Aussage mit Fundstelle belegen. Das kostet nichts, macht die Prüfung um ein Vielfaches schneller und senkt die Neigung des Modells, Lücken plausibel zu füllen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Fasse das angehaengte Dokument fuer eine Entscheidung ueber die
+Verlaengerung des Vertrags zusammen.
+Format:
+1. Empfehlungsrelevante Punkte, maximal fuenf Bullets
+2. Tabelle mit den Spalten Risiko, Auswirkung, Fundstelle
+3. Liste der Punkte, die im Dokument offen bleiben
+Einschraenkung: Jede Aussage mit Abschnittsnummer belegen. Keine eigene
+Empfehlung.
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Beantworte aus dem angehaengten Dokument ausschliesslich diese vier
+Fragen. Nutze keine anderen Quellen.
+1. Welche Kuendigungsfristen sind genannt?
+2. Welche Leistungen sind ausdruecklich ausgeschlossen?
+3. Welche Pflichten treffen uns bei Verzug?
+4. Welche Stellen widersprechen sich?
+Format: Je Frage ein Absatz mit maximal 40 Woertern plus Fundstelle. Steht die
+Antwort nicht im Dokument, schreibe nicht enthalten.
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="124-outlook-threads-verdichten-und-antworten-entwerfen">12.4 Outlook: Threads verdichten und Antworten entwerfen<a class="headerlink" href="#124-outlook-threads-verdichten-und-antworten-entwerfen" title="Permanent link">&para;</a></h2>
+<p>Der Klickpfad lautet <code>Outlook → Nachricht öffnen → Copilot → Zusammenfassen</code> beziehungsweise <code>Outlook → Antworten → Copilot → Entwurf mit Copilot</code>. Ein Thread mit 18 Nachrichten enthält typischerweise drei Sachinformationen und fünfzehn Mal Höflichkeit, Zitate und Terminfindung. Genau dieses Verhältnis macht die Verdichtung so wertvoll – wenn du sagst, worauf es dir ankommt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Verdichte den ausgewaehlten Mailverlauf.
+Format:
+- Sachstand in maximal drei Saetzen
+- Tabelle: Wer hat was zugesagt, mit Datum der Nachricht
+- Offene Fragen und was von mir erwartet wird
+Einschraenkung: Keine Hoeflichkeitsfloskeln uebernehmen. Widersprueche zwischen
+Nachrichten ausdruecklich als Widerspruch benennen.
+</code></pre></div></td></tr></table></div>
+<p>Für Antwortentwürfe gilt: Gib die <strong>Position</strong> vor, statt sie erfinden zu lassen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Entwirf eine Antwort auf die ausgewaehlte Nachricht.
+Meine Position: Wir koennen den Liefertermin nicht vorziehen. Wir bieten eine
+Teillieferung am urspruenglichen Termin an, den Rest zwei Wochen spaeter.
+Ton: freundlich, klar, keine Entschuldigungsschleifen.
+Format: Maximal 130 Woerter, ein Angebot am Ende, keine Rueckfrage.
+Einschraenkung: Keine Mengen, Preise oder Termine nennen, die nicht in meiner
+Position oder in der Anfrage stehen.
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Der gefährlichste Satz in KI-Mails</p>
+<p>Antwortentwürfe erzeugen ungefragt Zusagen: „Selbstverständlich können wir das bis Freitag umsetzen", „Gerne erstatten wir Ihnen die Kosten". Solche Sätze klingen kundenfreundlich und sind rechtlich relevant. Suche in jedem Entwurf zuerst nach <strong>Zusagen, Fristen und Zahlen</strong> – und lösche alles, was du nicht selbst vorgegeben hast.</p>
+</div>
+<hr />
+<h2 id="125-teams-besprechung-zusammenfassung-aufgaben">12.5 Teams: Besprechung, Zusammenfassung, Aufgaben<a class="headerlink" href="#125-teams-besprechung-zusammenfassung-aufgaben" title="Permanent link">&para;</a></h2>
+<p>In einer Besprechung mit aktivierter Aufzeichnung oder Transkription erreichst du Copilot über <code>Teams → Besprechung → Copilot</code>; danach findest du die Zusammenfassung unter <code>Teams → Kalender → Besprechung → Registerkarte Zusammenfassung</code>. Der Mehrwert entsteht weniger bei der Zusammenfassung selbst als bei der <strong>Aufgabenableitung</strong>: Eine Protokollzusammenfassung liest niemand zweimal, eine Aufgabenliste mit Verantwortlichen und Terminen wird zum Arbeitsmittel.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Leite aus der Besprechung die Aufgaben ab.
+Format: Tabelle mit den Spalten Aufgabe, Verantwortlich, Termin, Quelle im
+Gespraech.
+Regeln:
+- Nur Aufgaben aufnehmen, die im Gespraech tatsaechlich zugesagt wurden
+- Wenn keine Person genannt wurde, schreibe offen statt einen Namen zu raten
+- Wenn kein Termin genannt wurde, schreibe kein Termin
+- Danach separat: diskutierte, aber nicht entschiedene Themen
+</code></pre></div></td></tr></table></div>
+<pre class="mermaid"><code>flowchart LR
+    A([Besprechung mit Transkript]) --&gt; B([Zusammenfassung erzeugen])
+    B --&gt; C([Aufgaben ableiten])
+    C --&gt; D([Mensch prueft Zusagen und Termine])</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Der Ausweichweg ohne Besprechungs-Copilot</p>
+<p>Ohne Copilot in Teams-Besprechungen bleibt der klassische Weg: Notizen als Stichpunkte mitschreiben, danach in Copilot Chat einfügen und mit demselben Auftrag verarbeiten. Das Ergebnis ist erfahrungsgemäß nicht schlechter, weil deine Stichpunkte schon eine Vorauswahl enthalten. Achte darauf, dass eine Aufzeichnung oder Transkription nicht ohne Zustimmung der Beteiligten und ohne Beteiligung der Mitbestimmung eingeschaltet wird (Kap. 4).</p>
+</div>
+<hr />
+<h2 id="126-corporate-wording-textbausteine-und-die-prufliste">12.6 Corporate Wording, Textbausteine und die Prüfliste<a class="headerlink" href="#126-corporate-wording-textbausteine-und-die-prufliste" title="Permanent link">&para;</a></h2>
+<p>Wenn zwölf Leute KI-Texte erzeugen, entstehen zwölf Tonlagen. Dagegen hilft ein <strong>Wording-Block</strong>: ein fester Textbaustein, den du an jeden Schreibauftrag anhängst.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Wording Musterhandel GmbH, immer anhaengen:
+- Anrede: Sehr geehrte Frau [Name] bzw. Sehr geehrter Herr [Name]
+- Wir-Form, aktiv, keine Passivkonstruktionen
+- Keine Superlative, keine Ausrufezeichen, keine Emojis
+- Wir sagen Auftrag, nicht Order. Wir sagen Rechnung, nicht Invoice
+- Fristen immer mit konkretem Datum, nie mit kurzfristig oder zeitnah
+- Kein Bedauern ohne Anlass, keine Entschuldigung ohne Fehler
+</code></pre></div></td></tr></table></div>
+<p>Noch wirksamer sind <strong>Textbausteine mit Platzhaltern</strong> in einer gemeinsamen Vorlagensammlung, etwa in einer SharePoint-Bibliothek. Und dann kommt der Schritt, der in der Praxis am häufigsten fehlt.</p>
+<table>
+<thead>
+<tr>
+<th>Prüfschritt</th>
+<th>Konkrete Frage</th>
+<th>Warum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Fakten</td>
+<td>Steht jede Zahl, jedes Datum, jeder Name so in meiner Quelle?</td>
+<td>Häufigster Fehlertyp</td>
+</tr>
+<tr>
+<td>2. Zusagen</td>
+<td>Enthält der Text eine Verpflichtung, die ich nicht vorgegeben habe?</td>
+<td>Rechtlich relevant</td>
+</tr>
+<tr>
+<td>3. Vollständigkeit</td>
+<td>Fehlt eine Bedingung oder Einschränkung, die im Original stand?</td>
+<td>Tonwechsel schleift mit</td>
+</tr>
+<tr>
+<td>4. Ton und Adressat</td>
+<td>Passt das zur Beziehung und zum Anlass?</td>
+<td>Modell trifft Register oft zu glatt</td>
+</tr>
+<tr>
+<td>5. Wording</td>
+<td>Sind unsere Begriffe und Anredeformen eingehalten?</td>
+<td>Außenwirkung</td>
+</tr>
+<tr>
+<td>6. Eigenständigkeit</td>
+<td>Würde dieser Text auch für ein beliebiges anderes Unternehmen passen?</td>
+<td>Erkennungsmerkmal für Beliebigkeit</td>
+</tr>
+<tr>
+<td>7. Verantwortung</td>
+<td>Kann ich diesen Text mit meinem Namen darunter vertreten?</td>
+<td>Letzte Instanz</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Prüfliste angewandt</p>
+<p>Ein Entwurf enthielt den Satz: „Selbstverständlich kümmern wir uns umgehend um Ihr Anliegen und melden uns zeitnah mit einer Lösung." Prüfschritt 2 findet die Zusage „mit einer Lösung", Prüfschritt 5 findet „zeitnah" als verbotene unbestimmte Frist.     Korrigierte Fassung: „Wir prüfen Ihr Anliegen und melden uns bis Donnerstag, 12. März, mit einer Rückmeldung." Kürzer, verbindlicher, und es ist genau das zugesagt, was auch eingehalten werden kann.</p>
+<p>Nutze die Prüfliste die ersten Wochen bewusst und schriftlich. Danach sitzen die Schritte 1, 2 und 3 als Reflex – und genau die drei sind die teuren.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>KI ist stark bei <strong>Form, Struktur und Tonlage</strong> und schwach bei <strong>Verbindlichkeit</strong> – teile Aufgaben entsprechend auf.</li>
+<li>In Word gilt: <strong>Stichpunkte übergeben</strong>, nicht Themen. Aus einem Thema entsteht Beliebigkeit.</li>
+<li>Bei langen Dokumenten ist <strong>zweckgebundene Zusammenfassung oder gezielte Befragung</strong> besser als „fasse zusammen" – mit <strong>Fundstellenpflicht</strong>.</li>
+<li>In Outlook lohnt Verdichtung besonders bei Threads; bei Antwortentwürfen gibst du die <strong>Position</strong> vor. Aus Teams-Besprechungen ist die <strong>Aufgabenableitung</strong> wertvoller als die Zusammenfassung.</li>
+<li><strong>Corporate Wording</strong> als anhängbarer Block plus eine feste <strong>Prüfliste</strong> machen aus Einzelversuchen verlässliche Textqualität.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Sieben Prüfschritte an einem Entwurf</summary>
+<p>Ein Kollege hat mit Copilot diesen Antwortentwurf an einen Kunden erzeugt. Vorgegeben hatte er
+nur: „Reklamation, Ware beschädigt angekommen, wir prüfen".</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Betreff: Ihre Reklamation
+Sehr geehrte Frau Berger,
+vielen Dank fuer Ihre Nachricht und entschuldigen Sie bitte vielmals die
+entstandenen Unannehmlichkeiten. Selbstverstaendlich werden wir Ihnen die
+beschaedigte Ware kostenfrei ersetzen und die Ersatzlieferung umgehend
+veranlassen. Zudem erstatten wir Ihnen die Frachtkosten in Hoehe von 49 Euro.
+Wir melden uns zeitnah bei Ihnen.
+Beste Gruesse
+Ihr Team
+</code></pre></div></td></tr></table></div>
+<p>Wende die Prüfliste aus dem Kapitel an. Notiere je Prüfschritt, ob der Text ihn besteht,
+und benenne den konkreten Fund.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte besonders auf Prüfschritt 2. Der Auftrag lautete „wir prüfen" – alles, was darüber
+hinausgeht, hat das Werkzeug selbst hinzugefügt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Prüfschritt</th>
+<th>Ergebnis</th>
+<th>Fund</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Fakten</td>
+<td>nicht bestanden</td>
+<td>49 Euro Frachtkosten sind frei erfunden</td>
+</tr>
+<tr>
+<td>2 Zusagen</td>
+<td>nicht bestanden</td>
+<td>kostenfreier Ersatz und Erstattung waren nicht vorgegeben</td>
+</tr>
+<tr>
+<td>3 Vollständigkeit</td>
+<td>nicht bestanden</td>
+<td>die eigentliche Aussage „wir prüfen" fehlt vollständig</td>
+</tr>
+<tr>
+<td>4 Ton und Adressat</td>
+<td>nicht bestanden</td>
+<td>doppelte Entschuldigung vor jeder Prüfung</td>
+</tr>
+<tr>
+<td>5 Wording</td>
+<td>nicht bestanden</td>
+<td>„zeitnah" ohne Datum, „Beste Grüße", „Ihr Team" ohne Namen</td>
+</tr>
+<tr>
+<td>6 Eigenständigkeit</td>
+<td>nicht bestanden</td>
+<td>passt unverändert zu jedem beliebigen Händler</td>
+</tr>
+<tr>
+<td>7 Verantwortung</td>
+<td>nicht bestanden</td>
+<td>enthält Verpflichtungen, die der Absender nicht eingehen darf</td>
+</tr>
+</tbody>
+</table>
+<p>Tragfähige Korrektur: „Vielen Dank für Ihre Nachricht. Wir prüfen den Transportschaden und
+benötigen dafür Fotos der Verpackung. Eine Rückmeldung zum weiteren Vorgehen erhalten Sie bis
+Donnerstag, 12. März." Der Text ist kürzer, verbindlich und enthält keine Zusage, die noch
+nicht entschieden ist. Die Lehre: Ein Entwurf, der freundlicher klingt als der Auftrag es
+hergibt, ist kein guter Entwurf, sondern ein Risiko.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Tonwechsel ohne Inhaltsverlust</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot in Word, Copilot Chat, ChatGPT oder Claude).</p>
+<ol>
+<li>Erzeuge einen Ausgangstext mit diesem Auftrag:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du bist Sachbearbeiterin im Innendienst der Musterhandel GmbH.
+Aufgabe: Schreibe eine Nachricht an einen Kunden, dass die Lieferung sich um
+zwei Wochen verzoegert.
+Kontext: Neuer Liefertermin 26. Maerz. Grund: Ausfall eines Vorlieferanten.
+Eine Teillieferung von 40 Prozent ist am 12. Maerz moeglich. Skonto von zwei
+Prozent bleibt bestehen, Ruecktrittsrecht nach unseren AGB unberuehrt.
+Format: Betreff, Anrede mit [Kundenname], maximal 150 Woerter, Gruss.
+Ton: sachlich.
+Einschraenkung: Keine Angaben ergaenzen, die hier nicht stehen.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Lass denselben Text in zwei weiteren Tonlagen erzeugen: einmal deutlich freundlicher,
+   einmal deutlich knapper.</li>
+<li>Erstelle eine Tabelle mit allen <strong>harten Angaben</strong> aus dem Original (Datumsangaben,
+   Prozentwerte, Rechte) und prüfe für jede Fassung, ob sie noch enthalten ist.</li>
+<li>Formuliere aus dem Ergebnis eine Zusatzanweisung, die den Verlust verhindert.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zähle vor dem Vergleich, wie viele harte Angaben das Original hat. Wer erst hinterher zählt,
+übersieht genau die, die verschwunden sind.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Harte Angaben im Original: neuer Termin 26. März, Teillieferung 40 Prozent, Teiltermin
+12. März, Skonto zwei Prozent, Rücktrittsrecht nach AGB. Also fünf Angaben.</p>
+<p>Typisches Ergebnis:</p>
+<table>
+<thead>
+<tr>
+<th>Angabe</th>
+<th>freundlicher</th>
+<th>knapper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Termin 26. März</td>
+<td>erhalten</td>
+<td>erhalten</td>
+</tr>
+<tr>
+<td>Teillieferung 40 Prozent</td>
+<td>oft erhalten</td>
+<td>häufig gestrichen</td>
+</tr>
+<tr>
+<td>Teiltermin 12. März</td>
+<td>häufig gestrichen</td>
+<td>häufig gestrichen</td>
+</tr>
+<tr>
+<td>Skonto zwei Prozent</td>
+<td>häufig gestrichen</td>
+<td>gestrichen</td>
+</tr>
+<tr>
+<td>Rücktrittsrecht</td>
+<td>fast immer gestrichen</td>
+<td>fast immer gestrichen</td>
+</tr>
+</tbody>
+</table>
+<p>Das Muster ist stabil: Die freundliche Fassung verliert alles, was nach Einschränkung oder
+Recht klingt, die knappe Fassung verliert alles, was sekundär wirkt. Beides ist gefährlich,
+weil ausgerechnet das Rücktrittsrecht rechtlich relevant ist.</p>
+<p>Wirksame Zusatzanweisung:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Beim Umformulieren gilt: Die folgenden Angaben muessen wortgleich erhalten
+bleiben und duerfen weder gekuerzt noch umformuliert werden:
+26. Maerz, 40 Prozent, 12. Maerz, zwei Prozent Skonto, Ruecktrittsrecht nach
+AGB. Aendere ausschliesslich Satzbau und Tonlage.
+</code></pre></div></td></tr></table></div>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Thread verdichten, Aufgaben ableiten, Antwort entwerfen</summary>
+<p>Diese Übung machst du am Werkzeug. Sie bildet die Kette ab, die im Alltag am häufigsten
+vorkommt: verstehen, ableiten, antworten.</p>
+<p>Nutze diesen erfundenen Mailverlauf (kopiere ihn in Copilot Chat, ChatGPT oder Claude):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>01.03. Frau Berger, Musterhandel: Bitte Angebot fuer 200 Regalboeden bis 05.03.
+02.03. Innendienst: Angebot folgt, Frage nach Materialstaerke.
+02.03. Frau Berger: 19 Millimeter, Lieferung bis Ende Maerz noetig.
+03.03. Lager: Nur 120 Stueck verfuegbar, Rest in Kalenderwoche 14.
+03.03. Innendienst: Angebot verschickt, Lieferung Ende Maerz zugesagt.
+04.03. Frau Berger: Zusaetzlich 40 Stueck in 25 Millimeter, gleicher Termin.
+05.03. Vertriebsleitung: Sonderpreis nur bei Abnahme von 250 Stueck.
+06.03. Frau Berger: Wann kommt die Auftragsbestaetigung?
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Verdichte den Verlauf: Sachstand in drei Sätzen, Tabelle mit Zusagen und Datum, offene
+   Fragen, was von dir erwartet wird.</li>
+<li>Lass die <strong>Widersprüche</strong> ausdrücklich benennen. Es gibt mindestens einen.</li>
+<li>Erzeuge einen Antwortentwurf an Frau Berger. Gib deine Position selbst vor und verbiete
+   jede Angabe, die nicht aus Verlauf oder Position stammt.</li>
+<li>Wende die Prüfliste aus dem Kapitel auf den Entwurf an und notiere jeden Fund.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Verlauf enthält eine Zusage, die durch eine spätere Nachricht sachlich unhaltbar wird.
+Wenn dein Werkzeug sie nicht von selbst als Widerspruch benennt, hast du die Anweisung dazu
+nicht deutlich genug formuliert – nicht das Modell hat versagt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Der zentrale Widerspruch: Am 03.03. sagt der Innendienst Lieferung bis Ende März für
+200 Stück zu, obwohl das Lager am selben Tag nur 120 Stück bis dahin gemeldet hat. Der Rest
+kommt erst in Kalenderwoche 14, also im April. Der zweite Konflikt: Der Sonderpreis gilt erst
+ab 250 Stück, angefragt sind 200 plus 40, also 240.</p>
+<p>Ein gutes Ergebnis benennt beides ausdrücklich, statt eine glatte Zusammenfassung zu liefern.</p>
+<p>Tragfähiger Antwortentwurf, sinngemäß: Auftragsbestätigung für 240 Böden, Teillieferung von
+120 Stück in 19 Millimeter bis 31. März, Restmenge in Kalenderwoche 14, Hinweis, dass der
+Sonderpreis ab 250 Stück gilt und bei 240 Stück nicht greift, mit Angebot, die Menge auf 250 zu
+erhöhen. Kein „Ende März wie zugesagt", keine erfundenen Preise.</p>
+<p>Bewertungskriterien: (1) Widersprüche benannt, nicht geglättet; (2) alle Zusagen mit Datum
+belegt; (3) der Antwortentwurf wiederholt die unhaltbare Zusage nicht, sondern korrigiert sie
+sachlich; (4) die Prüfliste findet mindestens die Kategorie Zusagen und die Kategorie Fakten
+als kritische Stellen. Kernerkenntnis: Verdichtung ist erst dann nützlich, wenn sie Konflikte
+hervorhebt. Eine widerspruchsfreie Zusammenfassung eines widersprüchlichen Verlaufs ist eine
+Falschmeldung.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Kommunikationspaket zu einer Preisanpassung</summary>
+<p><strong>Szenario:</strong> Die Musterhandel GmbH passt zum 1. April die Preise an – im Schnitt vier Prozent,
+bei drei Warengruppen bis zu neun Prozent. Betroffen sind 340 Bestandskunden, davon 28 mit
+Rahmenvereinbarung. Du bist im Innendienst und sollst das komplette Kommunikationspaket
+erstellen: Kundenanschreiben, interne Sprachregelung für Rückfragen, Antwortbausteine für
+Beschwerden und eine Besprechungsvorbereitung für das Vertriebsteam. Bisher existieren nur
+Stichpunkte der Geschäftsführung und ein Wording-Block.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Ausgangslage:
+Anpassung ab 01.04., im Schnitt vier Prozent
+Warengruppen Metallregale, Rollcontainer, Sonderanfertigung bis neun Prozent
+Grund: Material-, Fracht- und Verpackungskosten
+28 Rahmenvereinbarungen laufen bis 31.12. zu Altpreisen weiter
+Skontoregelung unveraendert, Ruecktrittsrecht nach AGB unberuehrt
+Ansprechpartnerin Rueckfragen: Frau Berger, Innendienst
+Kein Rabattspielraum ohne Freigabe der Vertriebsleitung
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Grundlage bauen.</strong> Erstelle zuerst einen <strong>Wording-Block</strong> für Musterhandel mit
+mindestens acht Regeln (Anrede, Aktivform, verbotene Wörter, Fristenformat, Abschluss). Erzeuge
+dann das Kundenanschreiben in <strong>drei Fassungen</strong>: für Kunden ohne Rahmenvereinbarung, für die
+28 Rahmenkunden, und eine Kurzfassung mit maximal 90 Wörtern für den Versand per Nachricht.
+Alle drei entstehen aus derselben Stichpunktliste und mit angehängtem Wording-Block.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Prüfe alle drei Fassungen einzeln. Jede muss
+<strong>alle vier</strong> Kriterien erfüllen; korrigiere, bis das gilt:</p>
+<ol>
+<li>Jede Zahl, jedes Datum und jede Warengruppe stimmt mit der Ausgangslage überein – kein
+   Wert ist ergänzt, gerundet oder weggelassen.</li>
+<li>Der Text enthält <strong>keine</strong> Zusage, die in der Ausgangslage nicht steht – insbesondere
+   keinen Rabatt, keine Ausnahme, keine Übergangsfrist.</li>
+<li>Die Fassung für Rahmenkunden nennt die Weitergeltung der Altpreise bis 31.12. ausdrücklich,
+   die anderen beiden nennen sie <strong>nicht</strong>.</li>
+<li>Der Wording-Block ist vollständig eingehalten, insbesondere kein „zeitnah", „kurzfristig"
+   oder „gegebenenfalls" und keine Entschuldigung.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Zwei Tage vor dem Versand passieren drei Dinge. Erstens
+entscheidet die Geschäftsführung, die Sonderanfertigungen aus der Anpassung herauszunehmen –
+dort bleiben die Preise gleich. Zweitens beschwert sich ein Rahmenkunde bereits vorab und droht
+mit Abwanderung. Drittens stellt sich heraus, dass die Kurzfassung von der Vertriebsleitung
+bereits an fünf Kunden verschickt wurde – mit der alten Warengruppenliste. Bearbeite alle drei
+Punkte: Passe die drei Fassungen an, erzeuge eine <strong>Korrekturnachricht</strong> an die fünf Kunden, die
+den Fehler benennt ohne Vertrauen zu zerstören, und entwickle drei abgestufte Antwortbausteine
+für Beschwerden (verständnisvoll ohne Zugeständnis, Angebot eines Gesprächs, Eskalation an die
+Vertriebsleitung). Prüfe jeden Baustein mit der Prüfliste aus dem Kapitel.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Vertriebsleitung möchte in das Anschreiben den
+Satz aufnehmen: „Für langjährige Partner finden wir selbstverständlich eine individuelle
+Lösung." Zusätzlich soll der Grund der Anpassung gestrichen werden, weil er „nach Ausrede
+klingt". Lass dir von deinem KI-Werkzeug Argumente für und gegen beide Vorgaben geben und
+entscheide begründet. <strong>Widersprich</strong> mindestens einer der beiden Vorgaben mit einer
+tragfähigen Begründung und einem konkreten Alternativvorschlag im Wortlaut.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Wording-Block mit mindestens acht Regeln plus die drei Anschreiben-Fassungen</li>
+<li>ausgefüllte Prüfmatrix der vier Pflichtkriterien für alle drei Fassungen</li>
+<li>angepasste Fassungen nach Runde 3, Korrekturnachricht an die fünf Kunden und drei geprüfte
+   Beschwerde-Bausteine</li>
+<li>begründete Entscheidung zu den beiden Vorgaben der Vertriebsleitung, mit Alternativformulierung</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> keine der Fassungen eine nicht vorgegebene Zusage enthält, die
+Sonderanfertigungen nach Runde 3 in allen Dokumenten korrekt behandelt sind, die
+Korrekturnachricht den Fehler ausdrücklich benennt, und deine Entscheidung in Runde 4 mindestens
+eine Vorgabe der Vertriebsleitung begründet ablehnt.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Runde 1 zeigt nur, wie schnell drei Fassungen entstehen.
+Runde 3 zeigt das eigentliche Problem der KI-Textarbeit: Wenn sich eine Grundlage ändert, muss
+jede erzeugte Fassung erneut geprüft werden – und die eine bereits versandte Fassung lässt sich
+nicht zurückholen. Achte in Runde 4 auf den Satz mit „selbstverständlich": Er ist rechtlich eine
+Zusage und praktisch ein Freibrief für jeden, der laut genug fragt. Der Grund der Anpassung ist
+dagegen der einzige Teil, der Widerspruch überhaupt sachlich beantwortbar macht.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Der Wording-Block ist konkret und prüfbar formuliert, und die drei
+Fassungen unterscheiden sich sichtbar in Länge und Adressat, ohne inhaltlich voneinander
+abzuweichen; (2) die Prüfmatrix belegt für jede Fassung alle vier Kriterien, besonders die
+saubere Trennung der Rahmenkunden-Information; (3) nach Runde 3 sind alle Dokumente konsistent
+angepasst, die Korrekturnachricht benennt den Fehler sachlich und ohne Schuldzuweisung, und die
+drei Beschwerde-Bausteine sind erkennbar abgestuft statt dreimal derselbe Text in anderer
+Reihenfolge; (4) die Entscheidung in Runde 4 erkennt den Zusagecharakter der geforderten
+Formulierung, argumentiert nicht nur stilistisch, und liefert eine Alternative, die freundlich
+bleibt ohne Ansprüche zu erzeugen.</p>
+<p>Lernziel: KI-gestützte Textarbeit über einen ganzen Kommunikationsvorgang hinweg beherrschen –
+einschließlich der Erkenntnis, dass erzeugte Texte bei jeder Änderung der Grundlage komplett neu
+geprüft werden müssen und dass Ton nie auf Kosten von Verbindlichkeit gehen darf.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel11/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel13/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 13 – KI-gestützte Datenarbeit">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 13 – KI-gestützte Datenarbeit
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

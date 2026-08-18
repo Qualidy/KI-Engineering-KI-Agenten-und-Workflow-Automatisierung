@@ -1,0 +1,93 @@
+title: Der Verteiler für den Sammel-Posteingang
+difficulty: 4
+question: |
+  **Szenario:** Eine Firma hat ein Sammelpostfach `info@`, in dem alles landet: Rechnungen,
+  Bewerbungen, Angebotsanfragen, Reklamationen und Werbung. Zwei Personen sortieren jeden Morgen von
+  Hand vor und leiten weiter. Das dauert täglich fast eine Stunde, und in der Urlaubszeit bleiben
+  Vorgänge tagelang liegen. Du baust den Verteiler als Cloud-Flow. Am Ende des Workshops muss er
+  laufen, korrekt verzweigen und nachweisbar auch mit unsauberen Eingängen umgehen.
+
+  ```text
+  Rahmen:
+  Etwa 60 Mails pro Tag, davon rund ein Drittel mit Anhang.
+  Kategorien und Zielorte:
+    Rechnung     -> Ablage Rechnungen + Nachricht an Buchhaltung
+    Bewerbung    -> Ablage Bewerbungen + Nachricht an Personal
+    Anfrage      -> Nachricht an Vertrieb
+    Sonstiges    -> Sammelablage, keine Nachricht
+  Erkennungsmerkmal: Schluesselwort im Betreff, gross und klein gemischt.
+  Nur Standard-Connectoren, Ablage in OneDrive oder SharePoint, Benachrichtigung in Teams oder per Mail.
+  ```
+
+  ---
+
+  **Runde 1 – Grundlage bauen.** Baue den Flow in vier Etappen mit Testlauf nach jeder Etappe:
+  Trigger mit sinnvollen Filtern, Kategorie über eine `Verfassen`-Aktion ermitteln, `Switch` mit
+  vier Wegen inklusive Standardzweig, danach Ablage der Anhänge und Benachrichtigung. Filtere die
+  Anhänge vor der Schleife mit `Array filtern`, sodass Signaturbilder nicht mitgespeichert werden.
+  Lege dir sechs Testmails an, die alle vier Kategorien und beide Anhangfälle abdecken.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Weise jeden der **vier** Punkte mit einem Lauf aus
+  dem Ausführungsverlauf nach:
+
+  1. Eine Mail mit `RECHNUNG` in Großbuchstaben landet im Rechnungszweig – die Erkennung ist
+     unabhängig von Groß- und Kleinschreibung.
+  2. Eine Mail mit einem Betreff ohne Schlüsselwort landet im Standardzweig und löst **keine**
+     Benachrichtigung aus.
+  3. Eine Mail mit drei Anhängen, davon einem Signaturbild, erzeugt genau zwei Dateien und genau
+     **eine** Benachrichtigung.
+  4. Der Flow hat höchstens zwei Verschachtelungsebenen, jeder Schritt trägt einen sprechenden Namen
+     und mindestens drei Aktionen haben einen Kommentar mit einer Begründung.
+
+  **Runde 3 – Die Komplikation.** Nach zwei Tagen Betrieb kommen vier Beschwerden:
+
+  - Die Buchhaltung erhält jede Rechnung **zweimal**. Ursache ist, dass der Flow auch auf die eigenen
+    Weiterleitungen und Antworten reagiert. Stelle das über eine Trigger-Bedingung ab und weise mit
+    dem Verlauf nach, dass keine Doppelläufe mehr entstehen.
+  - An einem Tag lief der Flow 40-mal, ohne etwas zu tun, weil die Mails keine passenden Anhänge
+    hatten. Baue eine Abbruchlogik ein, die diesen Fall bewusst und nachvollziehbar beendet, statt
+    still durchzulaufen.
+  - Der Zähler in der Bestätigungsmail stimmt nicht: Bei fünf Dateien meldet der Flow drei. Finde die
+    Ursache in den Einstellungen der Schleife und löse sie auf **zwei** verschiedene Weisen.
+  - Eine Bewerbung mit dem Dateinamen `Zeugnis 2019/2020.pdf` hat den Flow abbrechen lassen.
+    Behebe das, ohne die Nachvollziehbarkeit des Dateinamens zu verlieren (Kap. 23).
+
+  **Runde 4 – Entscheidung unter Abwägung.** Zwei Vorgaben stehen gegen deine Beobachtungen. Erstens
+  fordert die Fachabteilung: „Baut die Kategorien mit verschachtelten Bedingungen, das versteht jeder,
+  und nehmt zwölf statt vier Kategorien." Zweitens empfiehlt dir ein KI-Werkzeug, die Nebenläufigkeit
+  der Schleife auf 20 zu setzen, weil der Flow dann schneller ist. Prüfe beide Vorschläge an deinem
+  gebauten Flow, entscheide begründet und **widersprich** mindestens einem der beiden ausdrücklich –
+  mit einem Beleg aus deinem eigenen Ausführungsverlauf, nicht mit einer allgemeinen Regel.
+
+  **Deliverable:**
+
+  1. laufender Verteiler-Flow mit Switch, Filter, Abbruchlogik und sprechenden Schrittnamen
+  2. Flow-Skizze als Schrittliste mit Einrückung, die die Verschachtelung zeigt
+  3. Testprotokoll mit sechs Läufen, je Kategorie und Anhangfall einer, mit Status und Ergebnis am Zielort
+  4. Entscheidungsnotiz zu Kategorienzahl und Nebenläufigkeit, inklusive des begründeten Widerspruchs
+
+  **Fertig bist du erst, wenn** der Verteiler aktiv ist, alle sechs Testläufe die richtige Kategorie
+  und den richtigen Zielort erreichen, ein Eingang ohne erkennbares Schlüsselwort nachweislich in der
+  Sammelablage landet statt den Flow abzubrechen, und deine Entscheidungsnotiz begründet, warum du
+  die Zahl der Kategorien nicht einfach erhöht hast.
+tip: |
+  Runde 3 enthält genau die vier Störungen, die in echten Verteilern auftreten: Doppelausführung,
+  Leerläufe, ein falscher Zähler durch parallele Schleifen und ein Sonderzeichen im Dateinamen. Der
+  Zählerfehler ist der lehrreichste, weil nichts rot wird – du siehst ihn nur, wenn du das Ergebnis
+  gegen die tatsächliche Anzahl der Dateien im Ordner prüfst. In Runde 4 sind beide Vorschläge nicht
+  dumm, sondern nur an dieser Stelle falsch: Zwölf verschachtelte Bedingungen sind nicht wartbar, und
+  Nebenläufigkeit ist genau dann schädlich, wenn eine Variable mitzählt.
+solution: |
+  Bewertungskriterien: (1) der Flow verzweigt über einen Switch mit Standardzweig, die Erkennung ist
+  über `toLower` unabhängig von der Schreibweise und der Standardzweig löst keine Benachrichtigung
+  aus; (2) Anhänge werden vor der Schleife per `Array filtern` reduziert, die Benachrichtigung liegt
+  außerhalb der Schleife und beide Punkte sind mit dem Drei-Anhänge-Lauf belegt; (3) alle vier
+  Störungen aus Runde 3 sind mit Ursache und Vorher-Nachher-Nachweis behandelt – Trigger-Bedingung
+  gegen Doppelläufe, `Beenden` oder Trigger-Bedingung gegen Leerläufe, Zählerfehler sowohl durch
+  Abschalten der Nebenläufigkeit als auch durch `length` auf der gefilterten Liste gelöst,
+  Sonderzeichen über `replace` entfernt; (4) die Entscheidungsnotiz widerspricht mindestens einer
+  Vorgabe mit einem konkreten Befund aus dem eigenen Ausführungsverlauf.
+
+  Lernziel: Verzweigung, Schleifen und Filter so einsetzen, dass ein Flow auch bei unsauberen
+  Eingängen richtig entscheidet – und dabei lesbar bleibt, statt in verschachtelten Bedingungen zu
+  erstarren.

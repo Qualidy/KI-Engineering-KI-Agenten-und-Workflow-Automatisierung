@@ -1,0 +1,53 @@
+title: Genehmigung mit Frist, Erinnerung und Eskalation
+difficulty: 3
+question: |
+  Diese Übung baust du in Power Automate. Erweitere den Flow aus der vorherigen Übung so, dass ein
+  Vorgang nicht liegen bleiben kann.
+
+  1. Ersetze `Genehmigungen starten und warten` durch `Genehmigung erstellen (Create an approval)`
+     und `Auf Genehmigung warten (Wait for an approval)`.
+  2. Baue eine `Parallele Verzweigung`: Ein Zweig wartet auf die Antwort, der andere verzögert um
+     eine kurze Testdauer (etwa 5 Minuten statt 3 Tagen) und schickt dann eine Erinnerung – aber
+     nur, wenn der Vorgang in der Liste noch auf `Offen` steht.
+  3. Nach einer zweiten Verzögerung eskaliert der Flow: Er informiert eine zweite Person und
+     vermerkt in der Liste, dass eskaliert wurde.
+  4. Die zuständige Person soll **nicht** fest eingetippt sein. Lege eine Liste `Zustaendigkeiten`
+     mit Kostenstelle, Verantwortlich und Vertretung an und schlage die Adresse nachschlagend
+     über `Elemente abrufen` mit Filterabfrage.
+  5. Teste zwei Fälle: einmal antwortest du sofort, einmal lässt du die Frist verstreichen.
+tip: |
+  Für die Tests reichen kurze Wartezeiten – stelle sie danach auf realistische Werte um. Achte
+  darauf, dass die Erinnerung den Status **frisch** aus der Liste liest und nicht den Wert vom
+  Flow-Start verwendet, sonst erinnerst du auch bei längst entschiedenen Vorgängen.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Trigger: Wenn ein Element erstellt wird  (Liste Antraege)
+  Aktion:  Elemente abrufen  (Liste Zustaendigkeiten, Filterabfrage auf Kostenstelle)
+  Aktion:  Genehmigung erstellen  (Zugewiesen zu = Verantwortlich und Vertretung, Erste Antwort zaehlt)
+  Parallele Verzweigung:
+    Zweig A:
+      Aktion: Auf Genehmigung warten
+    Zweig B:
+      Aktion: Verzoegern  (Testdauer)
+      Aktion: Element abrufen  (aktueller Status)
+      Aktion: Bedingung  ->  Status ist gleich Offen
+                Falls ja:
+                  Aktion: E-Mail senden V2  (Erinnerung an Verantwortlichen)
+                  Aktion: Verzoegern  (zweite Testdauer)
+                  Aktion: Element abrufen  (Status erneut)
+                  Aktion: Bedingung  ->  Status ist gleich Offen
+                            Falls ja:
+                              Aktion: E-Mail senden V2  (Eskalation an zweite Person)
+                              Aktion: Element aktualisieren  (Bemerkung Eskaliert am ...)
+  Nach der Verzweigung:
+    Aktion: Bedingung auf das Ergebnis  ->  Status, Kommentar, Person, Zeitpunkt zurueckschreiben
+  ```
+
+  Bewertung: (1) Erinnerung und Eskalation greifen nur bei noch offenem Status – der Status wird
+  dafür **erneut gelesen**. (2) Die Zuständigkeit kommt aus der Liste; ein fest eingetippter
+  Empfänger gilt als nicht erfüllt. (3) Es ist erkennbar in der Liste vermerkt, dass eskaliert
+  wurde, damit die Entscheidung später erklärbar ist. (4) Bewusste Entscheidung erkennbar: Bei
+  `Erste Antwort zählt` mit Verantwortlichem **und** Vertretung fällt Urlaub gar nicht auf – die
+  Eskalation ist dann das zweite Netz, nicht der Hauptmechanismus.

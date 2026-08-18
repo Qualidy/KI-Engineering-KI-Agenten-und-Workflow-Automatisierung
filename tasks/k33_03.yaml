@@ -1,0 +1,50 @@
+title: Die Naht zwischen Agent und Flow testen
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug. Mit Copilot-Studio-Zugang testest du einen Agenten mit
+  angebundenem Flow. Ohne Zugang baust du den Agenten in ChatGPT oder Claude nach und simulierst den
+  Flow, indem du seine Rückgaben von Hand als Nachricht einspielst.
+
+  1. Lege den Datenvertrag zugrunde: Eingabe `vorgangsnummer` im Muster VG- plus fünf Ziffern,
+     Rückgaben `gefunden`, `status`, `liefertermin`, `hinweis`.
+  2. Schreibe die Instruktion so, dass der Agent fehlende Eingaben erfragt, niemals Werte erfindet und
+     bei `null` im Liefertermin ausdrücklich keinen Termin nennt.
+  3. Führe diese fünf Testfälle je **zweimal** durch und protokolliere die Antworten:
+
+     ```text
+     T1 Gueltige Nummer, Flow liefert status in Arbeit und einen Liefertermin
+     T2 Nutzer fragt ohne Nummer nach dem Stand seiner Bestellung
+     T3 Flow liefert gefunden gleich falsch
+     T4 Flow liefert einen Status, der nicht in der vereinbarten Liste steht
+     T5 Flow liefert liefertermin gleich null, status in Arbeit
+     ```
+
+  4. Bewerte jede Antwort: Wurde etwas erfunden? Wurde die Lücke ehrlich benannt? Waren beide
+     Durchläufe gleich?
+  5. Verbessere Instruktion oder Datenvertrag an der schwächsten Stelle und wiederhole den
+     betreffenden Testfall.
+tip: |
+  T4 und T5 sind der Kern. Ein unerwarteter Statuswert und ein leeres Datumsfeld sind die beiden
+  Fälle, in denen ein Agent am ehesten anfängt zu formulieren statt zu berichten. Achte auf Formeln
+  wie „voraussichtlich" oder „in der Regel" – sie sind das Warnsignal.
+solution: |
+  Typische Beobachtungen:
+
+  - **T1** funktioniert fast immer. Er ist der Fall, den man beim Bauen testet, und deshalb kein
+    Beweis für Belastbarkeit.
+  - **T2** trennt gute von schlechten Instruktionen. Ohne ausdrückliche Regel erfindet der Agent
+    entweder eine Nummer oder ruft den Flow ohne Pflichteingabe auf. Richtig ist eine Rückfrage,
+    ohne dass der Flow überhaupt gestartet wird.
+  - **T3** wird oft geglättet: Statt „zu dieser Nummer ist kein Vorgang hinterlegt" kommt eine
+    Formulierung, die Unsicherheit verschleiert. Die Instruktion muss den Fall wörtlich vorgeben.
+  - **T4** ist der aufschlussreichste Fall. Ein unerwarteter Statuswert wird meist stillschweigend
+    umgedeutet, etwa `zurueckgestellt` wird zu „in Arbeit". Die Reparatur gehört auf beide Seiten:
+    Der Flow gibt nur Werte aus der vereinbarten Liste zurück, und die Instruktion verbietet das
+    Umformulieren von Statuswerten.
+  - **T5** ist der klassische Halluzinationsfall an einer Datenlücke. Ohne Regel entsteht ein
+    „voraussichtlich Ende nächster Woche", das nirgends steht.
+
+  Der zweite Durchlauf zeigt zusätzlich, wie stark die Antworten schwanken. Weicht T4 oder T5
+  zwischen den Durchläufen ab, ist die Regel nicht bindend genug formuliert. Ein gutes Ergebnis
+  enthält das Protokoll aller zehn Durchläufe und benennt konkret, welche Änderung an welcher Stelle
+  vorgenommen wurde.

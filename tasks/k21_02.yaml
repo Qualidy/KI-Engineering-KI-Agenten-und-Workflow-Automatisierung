@@ -1,0 +1,36 @@
+title: Zugangs-Check mit einem Instant-Flow
+difficulty: 2
+question: |
+  Diese Übung baust du direkt in Power Automate. Ziel ist nicht der Nutzen des Flows, sondern
+  der Nachweis, dass Konto, Umgebung und Verbindung funktionieren.
+
+  1. Melde dich unter `make.powerautomate.com` an. Notiere aus der Kopfzeile das **Konto** und
+     die aktuell gewählte **Umgebung**.
+  2. Baue einen Instant-Flow: `Erstellen → Sofortiger Cloud-Flow` → Name `Zugangs-Check`, Trigger
+     `Flow manuell auslösen`. Füge die Aktion `E-Mail senden (V2)` aus dem Outlook-Connector hinzu,
+     Empfänger bist du selbst, Betreff `Zugangs-Check`. Speichern, dann `Testen → Manuell`.
+  3. Öffne danach den Bereich `Verbindungen` und notiere, welche Verbindung neu entstanden ist und
+     unter welchem Konto sie steht.
+tip: |
+  Wenn der Testlauf rot wird, lies nicht die Logik durch, sondern öffne den fehlgeschlagenen Schritt
+  im Ausführungsverlauf. Bei einem so einfachen Flow liegt der Fehler fast immer an der Verbindung
+  oder an einem leeren Pflichtfeld.
+solution: |
+  Erwartete Schrittfolge im fertigen Flow:
+
+  ```text
+  Flow: Zugangs-Check   (Instant-Flow)
+    Trigger: Flow manuell ausloesen
+    Aktion: E-Mail senden V2
+      An: eigene Adresse
+      Betreff: Zugangs-Check
+      Text: beliebig, darf kurz sein
+  ```
+
+  Nachweis: Der Testlauf steht im Ausführungsverlauf auf **Erfolgreich**, die Mail ist im Postfach,
+  und unter `Verbindungen` steht eine Outlook-Verbindung mit deinem Konto.
+
+  Lernwert liegt in Punkt 3: Der Flow hat sich stillschweigend mit deiner Identität verbunden. Alles,
+  was er künftig sendet, sieht für Empfänger aus wie eine Mail von dir – und er sieht nur die Daten,
+  die dein Konto sehen darf. Wer die Umgebung nicht notiert hat, sucht den Flow beim nächsten Login
+  unter Umständen erfolglos, weil oben rechts eine andere Umgebung ausgewählt ist.

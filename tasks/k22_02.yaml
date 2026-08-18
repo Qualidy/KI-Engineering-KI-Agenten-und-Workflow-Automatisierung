@@ -1,0 +1,43 @@
+title: Den Kern-Flow bauen und manuell testen
+difficulty: 2
+question: |
+  Baue in Power Automate den Kern des Kapitel-Szenarios – nur Trigger und Ablage, noch keine
+  Benachrichtigung.
+
+  1. Lege in deinem OneDrive for Business einen Ordner `Rechnungseingang` an.
+  2. Erstelle über `Erstellen → Automatisierter Cloud-Flow` einen Flow mit dem Namen
+     `22 Rechnungsanhang ablegen` und dem Trigger `Bei Eingang einer neuen E-Mail (V3)`.
+  3. Setze im Trigger: Ordner `Posteingang`, Betrefffilter `Rechnung`, `Nur mit Anlagen` = `Ja`,
+     `Anlagen einschließen` = `Ja`.
+  4. Füge `Datei erstellen` (OneDrive for Business) hinzu und fülle Ordnerpfad, Dateiname und
+     Dateiinhalt. Benenne beide entstandenen Karten sprechend um.
+  5. Speichern, `Testen → Manuell`, dann schicke dir selbst eine Mail mit einem PDF und dem
+     Betreff `Rechnung Test 1`. Prüfe Lauf **und** Ergebnis im Ordner.
+tip: |
+  Wundere dich nicht, wenn nach dem Einsetzen des Dateinamens plötzlich eine Karte
+  `Auf jedes anwenden` um deine Aktion herum erscheint. Das ist korrekt: Anlagen sind eine Liste.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Flow: 22 Rechnungsanhang ablegen
+    Trigger: Bei Eingang einer neuen E-Mail V3   -> umbenannt in: Neue Rechnungsmail
+      Ordner: Posteingang
+      Betrefffilter: Rechnung
+      Nur mit Anlagen: Ja
+      Anlagen einschliessen: Ja
+    Aktion: Auf jedes anwenden   -> umbenannt in: Fuer jeden Anhang
+      Ausgewaehlte Ausgabe: Anlagen
+      Aktion: Datei erstellen   -> umbenannt in: Anhang speichern
+        Ordnerpfad: /Rechnungseingang
+        Dateiname: Name der Anlage        (dynamischer Inhalt)
+        Dateiinhalt: Inhalt der Anlage    (dynamischer Inhalt)
+  ```
+
+  Nachweis eines gelungenen Ergebnisses: Der Lauf steht auf **Erfolgreich**, im Ordner
+  `Rechnungseingang` liegt die Datei mit dem Originalnamen, sie ist größer als 0 Byte und lässt sich
+  öffnen. Beide Karten tragen sprechende Namen.
+
+  Wer 0 Byte erhält, hat `Anlagen einschließen` nicht gesetzt. Wer keinen Lauf sieht, hat einen
+  Betrefffilter, der nicht passt – der Filter unterscheidet nicht zwischen Groß- und Kleinschreibung,
+  aber `Rechnungen` im Filter und `Rechnung` in der Mail passen nicht zusammen.

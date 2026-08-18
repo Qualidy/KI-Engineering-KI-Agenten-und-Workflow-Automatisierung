@@ -1,0 +1,49 @@
+title: Nichtdeterminismus messbar machen
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude). Du simulierst den
+  KI-Schritt, den ein Flow später automatisch ausführen würde.
+
+  1. Erzeuge dir zuerst eine Testmenge:
+
+     ```text
+     Erfinde zehn kurze Kundenanfragen an den Service eines Bueromoebelhaendlers.
+     Vier davon sollen eindeutig sein, vier mehrdeutig, eine sehr knapp und eine
+     ohne erkennbares Anliegen. Nummeriere sie.
+     ```
+
+  2. Lasse die zehn Anfragen einordnen, mit genau diesem Auftrag:
+
+     ```text
+     Ordne jede Anfrage genau einer Kategorie zu: Reklamation, Angebotsanfrage,
+     Rechnungsfrage, Sonstiges. Gib zusaetzlich eine Sicherheit von 0 bis 1 an.
+     Antworte als Tabelle mit Nummer, Kategorie, Sicherheit.
+     ```
+
+  3. Öffne einen **neuen** Chat, füge dieselben zehn Anfragen und denselben Auftrag ein und lasse
+     erneut einordnen.
+  4. Vergleiche beide Durchläufe: Bei welchen Anfragen weicht die Kategorie ab? Bei welchen weicht
+     die angegebene Sicherheit stark ab?
+  5. Leite daraus eine **Konfidenzschwelle** ab und begründe sie mit deinen Beobachtungen.
+tip: |
+  Erwarte nicht, dass alles auseinanderfällt. Interessant ist genau die Schnittmenge: Die Fälle,
+  die in beiden Durchläufen gleich und mit hoher Sicherheit eingeordnet wurden, sind
+  automatisierungsreif. Alles andere braucht einen Rückfallweg.
+solution: |
+  Typisches Ergebnis: Die vier eindeutigen Anfragen sind in beiden Durchläufen identisch eingeordnet,
+  meist mit Sicherheiten ab etwa 0,9. Die mehrdeutigen schwanken – häufig zwischen Reklamation und
+  Rechnungsfrage, weil beide Beschwerdecharakter haben. Die sehr knappe Anfrage landet mal in
+  Sonstiges, mal in einer inhaltlichen Kategorie. Die Anfrage ohne Anliegen bekommt oft trotzdem eine
+  Kategorie mit erstaunlich hoher Sicherheit zugewiesen.
+
+  Daraus folgen drei belastbare Erkenntnisse:
+
+  - Eine Schwelle um 0,85 trennt in der Regel brauchbar zwischen automatisch und Prüfliste. Der
+    genaue Wert ist weniger wichtig als die Tatsache, dass es ihn gibt.
+  - Der selbst angegebene Sicherheitswert ist **keine Messung**, sondern eine Schätzung des Modells.
+    Er ist als grobe Sortierhilfe nutzbar, nicht als belastbare Kennzahl.
+  - Für die leere Anfrage hilft keine Schwelle, sondern eine deterministische Vorprüfung im Flow:
+    zu kurzer oder leerer Text geht ohne KI-Aufruf direkt in die Prüfliste.
+
+  Ein gutes Ergebnis benennt konkrete Anfragennummern, bei denen die Durchläufe abwichen, statt
+  allgemein „manches war unterschiedlich" zu schreiben.

@@ -1,0 +1,43 @@
+title: Das Werkzeug beim Wort nehmen
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Stelle die Frage:
+
+     ```text
+     Bist du eine starke oder eine schwache KI? Antworte in drei Saetzen und
+     begruende deine Einordnung.
+     ```
+
+  2. Stelle danach eine Rechenaufgabe mit ungewöhnlichen Zahlen, zum Beispiel:
+
+     ```text
+     Wie viel ergibt 4837 mal 926? Nenne nur das Ergebnis.
+     ```
+
+     Prüfe das Ergebnis mit einem Taschenrechner nach.
+
+  3. Stelle zuletzt eine Frage, deren Antwort du sicher kennst, die aber sehr speziell ist –
+     etwa zu einer internen Regelung deines Arbeitgebers oder einem Nischenthema.
+
+  Notiere zu allen drei Punkten: Was war brauchbar, was war falsch oder erfunden?
+  Formuliere daraus **drei Regeln** für deinen eigenen Umgang mit KI-Werkzeugen.
+tip: |
+  Erwarte nicht, dass alles schiefgeht – und nicht, dass alles klappt. Interessant ist der
+  Unterschied: Sprachliche Aufgaben gelingen meist gut, exaktes Rechnen und Spezialwissen sind
+  die Schwachstellen. Achte darauf, wie **selbstsicher** falsche Antworten klingen.
+solution: |
+  Typische Beobachtungen:
+
+  - **Selbsteinordnung:** Die Antwort ist meist korrekt („schwache KI"), stammt aber aus
+    Trainingsdaten, nicht aus Selbsterkenntnis. Das System kann sich selbst nicht beobachten.
+  - **Rechenaufgabe:** Große Multiplikationen gehen häufig schief oder werden nur dann korrekt
+    gelöst, wenn das Werkzeug intern ein Rechenwerkzeug aufruft. Das ist der Unterschied zwischen
+    einem reinen Sprachmodell und einem Agenten mit Werkzeugen (Kap. 6).
+  - **Spezialfrage:** Hier zeigt sich die **Halluzination** am deutlichsten – plausibel klingender,
+    aber erfundener Inhalt. Internes Wissen kennt das Modell nur, wenn es ihm bereitgestellt wird.
+
+  Beispielhafte eigene Regeln: (1) Jede Zahl und jede Quelle nachprüfen. (2) Fehlenden Kontext
+  selbst mitliefern statt Wissen zu erwarten. (3) Sprachliche Aufgaben delegieren, Verantwortung
+  für Inhalt und Freigabe behalten.

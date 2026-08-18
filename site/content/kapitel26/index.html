@@ -1,0 +1,1889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel25/">
+      
+      
+        <link rel="next" href="../kapitel27/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 26 – Integration externer Apps - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-26-integration-externer-apps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 26 – Integration externer Apps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Block 5 · Power Automate in der Praxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 21 – Einführung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 22 – Der erste Cloud-Flow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 24 – Steuerung und Verzweigung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 25 – Integration von Microsoft 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 26 – Integration externer Apps
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 26 – Integration externer Apps
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#261-das-connector-prinzip-und-wo-es-endet" class="md-nav__link">
+    <span class="md-ellipsis">
+      26.1 Das Connector-Prinzip – und wo es endet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#262-schnittstellen-verstehen-die-sechs-begriffe" class="md-nav__link">
+    <span class="md-ellipsis">
+      26.2 Schnittstellen verstehen: die sechs Begriffe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#263-die-http-aktion-in-der-praxis" class="md-nav__link">
+    <span class="md-ellipsis">
+      26.3 Die HTTP-Aktion in der Praxis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#264-authentifizierung-und-wohin-die-zugangsdaten-gehoren" class="md-nav__link">
+    <span class="md-ellipsis">
+      26.4 Authentifizierung – und wohin die Zugangsdaten gehören
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#265-webhooks-wenn-der-andere-dienst-dich-ruft" class="md-nav__link">
+    <span class="md-ellipsis">
+      26.5 Webhooks: wenn der andere Dienst dich ruft
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#266-ratenbegrenzungen-wiederholungen-und-der-blick-nach-vorn" class="md-nav__link">
+    <span class="md-ellipsis">
+      26.6 Ratenbegrenzungen, Wiederholungen und der Blick nach vorn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 28 – Testing, Fehlerbehandlung und Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-26-integration-externer-apps">Kapitel 26 – Integration externer Apps<a class="headerlink" href="#kapitel-26-integration-externer-apps" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie das <strong>Connector-Prinzip</strong> funktioniert und wo es endet</li>
+<li>Die Grundbegriffe einer <strong>Schnittstelle (API)</strong>: Endpunkt, Methode, Kopfzeilen, Anfragekörper, Antwort, Statuscode</li>
+<li>Wie du die Aktion <strong>HTTP-Anforderung</strong> konfigurierst und die <strong>JSON</strong>-Antwort weiterverarbeitest</li>
+<li>Wie <strong>Authentifizierung</strong> in Grundzügen läuft – API-Schlüssel, Basisauthentifizierung, OAuth</li>
+<li>Wie du mit dem Trigger <strong>Bei Empfang einer HTTP-Anforderung</strong> einen <strong>Webhook</strong> entgegennimmst</li>
+<li>Was <strong>Ratenbegrenzungen</strong> bedeuten und wie du mit Wiederholungen darauf reagierst</li>
+</ul>
+</div>
+<hr />
+<h2 id="261-das-connector-prinzip-und-wo-es-endet">26.1 Das Connector-Prinzip – und wo es endet<a class="headerlink" href="#261-das-connector-prinzip-und-wo-es-endet" title="Permanent link">&para;</a></h2>
+<p>Bisher hast du fertige <strong>Connectoren</strong> benutzt: SharePoint, Outlook, Teams (Kap. 25). Ein Connector ist eine vorgefertigte Übersetzung zwischen Power Automate und einem fremden Dienst. Er bringt fertige Aktionen mit sinnvollen deutschen Bezeichnungen, kümmert sich um die Anmeldung und blendet die technischen Details aus.</p>
+<p>Es gibt sie in drei Gruppen: <strong>Standard</strong> (in den meisten Lizenzen enthalten), <strong>Premium</strong> (kostet zusätzlich, etwa SQL Server, Salesforce oder die generische <code>HTTP</code>-Aktion) und <strong>Custom</strong> (selbst gebaut). Für über tausend Dienste existiert ein Connector – aber eben nicht für alle. Genau dann greifst du selbst zum Werkzeug.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Dein Flow]) --&gt; B([Fertiger Connector])
+    A --&gt; C([HTTP Aktion selbst gebaut])
+    B --&gt; D([Fremder Dienst])
+    C --&gt; D</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Connector ist bequem, aber nicht magisch. Darunter läuft immer derselbe Vorgang: Der Flow schickt eine Anfrage an eine Adresse im Internet und wertet die Antwort aus. Wenn du diesen Vorgang einmal von Hand nachbaust, verstehst du auch die fertigen Connectoren besser.</p>
+</div>
+<hr />
+<h2 id="262-schnittstellen-verstehen-die-sechs-begriffe">26.2 Schnittstellen verstehen: die sechs Begriffe<a class="headerlink" href="#262-schnittstellen-verstehen-die-sechs-begriffe" title="Permanent link">&para;</a></h2>
+<p>Eine <strong>API</strong> (Application Programming Interface, Anwendungsschnittstelle) ist die Tür, durch die Programme miteinander sprechen. Du brauchst dafür sechs Begriffe – und keinen davon musst du programmieren können.</p>
+<table>
+<thead>
+<tr>
+<th>Begriff</th>
+<th>Was es ist</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Endpunkt</strong> (URL)</td>
+<td>die Adresse der Funktion, die du aufrufen willst</td>
+<td><code>https://api.kursdienst.example/v1/kurse</code></td>
+</tr>
+<tr>
+<td><strong>Methode</strong></td>
+<td>was du tun willst</td>
+<td><code>GET</code> = holen, <code>POST</code> = senden</td>
+</tr>
+<tr>
+<td><strong>Kopfzeilen</strong> (Header)</td>
+<td>Zusatzangaben zur Anfrage</td>
+<td><code>Content-Type: application/json</code></td>
+</tr>
+<tr>
+<td><strong>Anfragekörper</strong> (Body)</td>
+<td>die eigentlichen Daten, die du sendest</td>
+<td>Antragsdaten als JSON</td>
+</tr>
+<tr>
+<td><strong>Antwort</strong> (Response)</td>
+<td>was zurückkommt</td>
+<td>JSON mit Wechselkursen</td>
+</tr>
+<tr>
+<td><strong>Statuscode</strong></td>
+<td>Kurzbefund, ob es geklappt hat</td>
+<td><code>200</code> = in Ordnung</td>
+</tr>
+</tbody>
+</table>
+<p>Der Unterschied zwischen den beiden wichtigsten Methoden: <strong>GET</strong> holt Informationen und verändert nichts – du kannst es beliebig oft wiederholen. <strong>POST</strong> sendet Daten und legt in der Regel etwas an. Ein doppelt gesendetes POST kann also einen doppelten Datensatz erzeugen; das ist der Grund, warum Idempotenz (Kap. 18) bei Schreibaufrufen so wichtig ist. Die Statuscodes sind grob nach Hundertern sortiert: 200er heißt Erfolg, 400er heißt „deine Anfrage war das Problem", 500er heißt „der Dienst hat ein Problem".</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Bedeutung</th>
+<th>Was du tun musst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Erfolg, Antwort enthält Daten</td>
+<td>nichts</td>
+</tr>
+<tr>
+<td>400</td>
+<td>fehlerhafte Anfrage</td>
+<td>Anfragekörper und Pflichtfelder prüfen</td>
+</tr>
+<tr>
+<td>401</td>
+<td>nicht angemeldet oder Schlüssel falsch</td>
+<td>Zugangsdaten und Header prüfen</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Endpunkt oder Objekt existiert nicht</td>
+<td>Adresse und ID prüfen, oft nur ein Tippfehler</td>
+</tr>
+<tr>
+<td>429</td>
+<td>zu viele Anfragen (Ratenbegrenzung)</td>
+<td>warten und wiederholen</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Fehler beim Anbieter</td>
+<td>wiederholen, dann melden</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis: 401 ist kein Baufehler</p>
+<p>Ein <code>401</code> sagt nicht, dass dein Flow falsch aufgebaut ist, sondern dass die Identität nicht akzeptiert wird – falscher Schlüssel, abgelaufener Zugriff oder fehlende Berechtigung. Ein <code>404</code> sagt nicht, dass der Dienst kaputt ist, sondern dass an dieser Adresse nichts liegt. Wer die Codes lesen kann, spart sich das Umbauen von funktionierenden Flows.</p>
+</div>
+<hr />
+<h2 id="263-die-http-aktion-in-der-praxis">26.3 Die HTTP-Aktion in der Praxis<a class="headerlink" href="#263-die-http-aktion-in-der-praxis" title="Permanent link">&para;</a></h2>
+<p>Die Aktion heißt in der Oberfläche <code>HTTP-Anforderung (HTTP)</code> und ist ein <strong>Premium</strong>-Baustein. Sie hat genau die Felder aus der Tabelle oben. Am Beispiel eines erfundenen Wechselkurs-Dienstes:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Aktion: HTTP-Anforderung
+  Methode:  GET
+  URI:      https://api.kursdienst.example/v1/kurse?basis=EUR&amp;ziel=CHF
+  Kopfzeilen:
+    Accept       = application/json
+    X-Api-Key    = Wert aus sicherer Ablage
+  Anfragekoerper: leer
+</code></pre></div></td></tr></table></div>
+<p>Die Antwort kommt als <strong>JSON</strong> (JavaScript Object Notation) – ein Textformat aus Feldnamen und Werten in geschweiften Klammern, verschachtelbar:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>{
+  &quot;basis&quot;: &quot;EUR&quot;,
+  &quot;datum&quot;: &quot;2026-03-04&quot;,
+  &quot;kurse&quot;: {
+    &quot;CHF&quot;: 0.9612
+  }
+}
+</code></pre></div></td></tr></table></div>
+<p>Auf einzelne Felder greifst du mit einem Ausdruck zu (Kap. 23). Der Pfad folgt der Verschachtelung:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>body(&#39;HTTP-Anforderung&#39;)?[&#39;basis&#39;]
+body(&#39;HTTP-Anforderung&#39;)?[&#39;kurse&#39;]?[&#39;CHF&#39;]
+</code></pre></div></td></tr></table></div>
+<p>Das Fragezeichen ist wichtig: Es verhindert einen Abbruch, wenn das Feld fehlt – dann kommt einfach ein leerer Wert zurück. Bequemer wird es mit der Aktion <code>JSON analysieren (Parse JSON)</code>: Du fügst dort ein Beispiel der Antwort ein, lässt das Schema erzeugen und bekommst danach alle Felder als dynamische Inhalte zur Auswahl.</p>
+<div class="admonition example">
+<p class="admonition-title">Durchgängiges Beispiel: Tageskurs in eine Liste schreiben</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Trigger: Wiederholung  (taeglich 07:00)
+Aktion:  HTTP-Anforderung  (GET auf den Kursdienst, Kopfzeile mit Schluessel)
+Aktion:  Bedingung  -&gt;  Statuscode des HTTP-Schritts ist gleich 200
+           Falls ja:
+             Aktion: JSON analysieren  (Inhalt = Body, Schema aus Beispiel)
+             Aktion: Element erstellen  (Liste Tageskurse)
+                       Titel = 2026-03-04
+                       Kurs  = Feld CHF aus JSON analysieren
+           Falls nein:
+             Aktion: Nachricht in einem Chat oder Kanal veroeffentlichen
+                       Text mit Statuscode und Fehlermeldung
+</code></pre></div></td></tr></table></div>
+<p>Beachte: Der Erfolgsfall wird <strong>geprüft</strong>, nicht angenommen. Fremde Dienste antworten irgendwann anders als erwartet – dieser eine Bedingungsschritt macht den Unterschied zwischen einem Flow, der still falsche Daten schreibt, und einem, der Bescheid gibt.</p>
+</div>
+<hr />
+<h2 id="264-authentifizierung-und-wohin-die-zugangsdaten-gehoren">26.4 Authentifizierung – und wohin die Zugangsdaten gehören<a class="headerlink" href="#264-authentifizierung-und-wohin-die-zugangsdaten-gehoren" title="Permanent link">&para;</a></h2>
+<p>Kaum ein Dienst antwortet ohne Nachweis, wer fragt. Drei Verfahren begegnen dir:</p>
+<ul>
+<li><strong>API-Schlüssel im Header:</strong> Der Dienst gibt dir eine lange Zeichenfolge, die du in einer Kopfzeile mitschickst, etwa <code>X-Api-Key</code>. Einfach, verbreitet – aber wer den Schlüssel hat, ist du.</li>
+<li><strong>Basisauthentifizierung (Basic Authentication):</strong> Benutzername und Kennwort werden bei jeder Anfrage mitgesendet. Die HTTP-Aktion hat dafür eigene Felder unter <code>Authentifizierung → Basic</code>. Nur akzeptabel über verschlüsselte Verbindungen und nur, wenn der Dienst nichts anderes anbietet.</li>
+<li><strong>OAuth:</strong> Statt ein Kennwort weiterzugeben, erteilst du dem Flow einmal eine <strong>Zustimmung</strong>. Der Flow erhält daraufhin ein zeitlich begrenztes Zugriffstoken, das erneuert wird. Das ist das Verfahren hinter allen Microsoft-365-Connectoren – deshalb tippst du dort nie ein Kennwort in einen Flow-Schritt.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Zugangsdaten niemals im Klartext in den Flow</p>
+<p>Ein Schlüssel, der direkt in ein Aktionsfeld oder eine <code>Verfassen</code>-Aktion getippt wird, steht anschließend im Flow-Definitionsexport, oft in den Ausführungsverlauf-Eingaben und ist für alle Miteigentümer lesbar. Nutze stattdessen eine sichere Ablage: <strong>Azure Key Vault</strong> über den entsprechenden Connector oder – wenn deine Organisation das vorsieht – <strong>umgebungsspezifische Variablen</strong> in einer Lösung. Setze bei sensiblen Schritten zusätzlich <code>Einstellungen → Sichere Eingaben</code> und <code>Sichere Ausgaben</code>, damit die Werte nicht im Verlauf erscheinen. Und wenn ein Schlüssel doch einmal sichtbar war: Er ist verbrannt und muss beim Anbieter neu erzeugt werden.</p>
+</div>
+<hr />
+<h2 id="265-webhooks-wenn-der-andere-dienst-dich-ruft">26.5 Webhooks: wenn der andere Dienst dich ruft<a class="headerlink" href="#265-webhooks-wenn-der-andere-dienst-dich-ruft" title="Permanent link">&para;</a></h2>
+<p>Bisher hast du gefragt. Ein <strong>Webhook</strong> dreht die Richtung: Der fremde Dienst ruft <strong>dich</strong>, sobald etwas passiert. Das ist sparsamer und schneller als ein Zeitplan, der alle fünf Minuten nachfragt.</p>
+<p>In Power Automate baust du das mit dem Trigger <code>Bei Empfang einer HTTP-Anforderung (When a HTTP request is received)</code>. Beim ersten Speichern erzeugt Power Automate eine lange, eindeutige URL, die du beim fremden Dienst einträgst. Damit die Felder als dynamische Inhalte verfügbar sind, hinterlegst du im Trigger ein <strong>Schema</strong> – am einfachsten über <code>Beispielnutzlast zum Generieren des Schemas verwenden</code> mit einer Beispielnachricht:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>{
+  &quot;vorgangsnummer&quot;: &quot;A-2026-0417&quot;,
+  &quot;kunde&quot;: &quot;Musterwerk GmbH&quot;,
+  &quot;betrag&quot;: 1240.50
+}
+</code></pre></div></td></tr></table></div>
+<pre class="mermaid"><code>flowchart LR
+    A([Fremder Dienst]) --&gt; B([HTTP Anfrage an die Flow URL])
+    B --&gt; C([Trigger empfaengt Daten])
+    C --&gt; D([Flow verarbeitet und speichert])
+    D --&gt; E([Antwort mit Statuscode zurueck])</code></pre>
+<p>Wenn der andere Dienst eine Antwort erwartet, ergänze am Ende die Aktion <code>Antwort (Response)</code> mit Statuscode und optionalem Körper. Ohne sie antwortet Power Automate mit <code>202 Accepted</code>, sobald der Trigger gefeuert hat.</p>
+<div class="admonition warning">
+<p class="admonition-title">Diese URL ist ein Passwort</p>
+<p>Die Trigger-URL enthält eine Signatur und braucht sonst keine Anmeldung: Wer sie kennt, kann deinen Flow auslösen – beliebig oft und mit beliebigen Inhalten. Behandle sie wie ein Kennwort. Verschicke sie nicht in Chatnachrichten, prüfe die eingehenden Daten im Flow auf Plausibilität, bevor du sie speicherst, und beschränke unter <code>Einstellungen → Trigger-Bedingungen</code> oder über eine erwartete Kopfzeile, wer sinnvoll durchkommt. Ist die URL abgeflossen, erzeuge sie neu, indem du den Trigger ersetzt.</p>
+</div>
+<hr />
+<h2 id="266-ratenbegrenzungen-wiederholungen-und-der-blick-nach-vorn">26.6 Ratenbegrenzungen, Wiederholungen und der Blick nach vorn<a class="headerlink" href="#266-ratenbegrenzungen-wiederholungen-und-der-blick-nach-vorn" title="Permanent link">&para;</a></h2>
+<p>Fremde Dienste schützen sich mit <strong>Ratenbegrenzungen</strong> (Rate Limits): etwa 60 Anfragen pro Minute. Darüber antworten sie mit <code>429</code>. Das trifft dich sofort, wenn ein <code>Auf jedes anwenden</code> über 500 Datensätze läuft und in jedem Durchlauf einen Aufruf macht.</p>
+<table>
+<thead>
+<tr>
+<th>Gegenmittel</th>
+<th>Wo eingestellt</th>
+<th>Wirkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wiederholungsrichtlinie (Retry policy)</td>
+<td>Aktion → Einstellungen</td>
+<td>wiederholt automatisch mit steigendem Abstand</td>
+</tr>
+<tr>
+<td>Nebenläufigkeit begrenzen</td>
+<td>Auf jedes anwenden → Einstellungen</td>
+<td>weniger gleichzeitige Aufrufe, dafür verlässlich</td>
+</tr>
+<tr>
+<td>Verzögern (Delay) in der Schleife</td>
+<td>eigene Aktion</td>
+<td>einfache Bremse, kostet Laufzeit</td>
+</tr>
+<tr>
+<td>Daten bündeln</td>
+<td>Flow-Aufbau</td>
+<td>ein Aufruf mit Sammelinhalt statt 500 Einzelaufrufe</td>
+</tr>
+</tbody>
+</table>
+<p>Die Wiederholungsrichtlinie steht standardmäßig auf vier Versuchen mit exponentiell steigendem Abstand. Bei <code>429</code> und <code>500</code> ist das genau richtig. Bei <code>400</code> und <code>404</code> ist Wiederholen sinnlos – der Fehler liegt an der Anfrage und wird beim fünften Versuch nicht besser. Wie du solche Fälle sauber abfängst, ist Thema von Kapitel 28.</p>
+<p>Wenn du dieselbe Schnittstelle immer wieder brauchst, lohnt ein <strong>Custom Connector</strong>: Du beschreibst Endpunkte, Felder und Anmeldung einmal zentral, danach steht der Dienst allen im Team mit fertigen Aktionen zur Verfügung – ohne dass jemand URLs und Schlüssel kennen muss. Das ist ein Thema für die Zusammenarbeit mit der IT (Kap. 20) und hier nur Ausblick.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ein <strong>Connector</strong> ist eine fertige Übersetzung zu einem Dienst; fehlt sie, baust du den Aufruf mit der <strong>HTTP-Anforderung</strong> selbst.</li>
+<li>Jede Schnittstelle beschreibst du mit sechs Begriffen: <strong>Endpunkt, Methode, Kopfzeilen, Anfragekörper, Antwort, Statuscode</strong>.</li>
+<li><strong>GET</strong> holt und ist wiederholbar, <strong>POST</strong> schreibt und kann Dubletten erzeugen.</li>
+<li><strong>JSON</strong> ist das Austauschformat; Felder erreichst du über Ausdrücke mit <code>?['feldname']</code> oder komfortabel über <code>JSON analysieren</code>.</li>
+<li>Zugangsdaten gehören <strong>nie im Klartext</strong> in den Flow, sondern in eine sichere Ablage; OAuth ersetzt Kennwortweitergabe durch Zustimmung.</li>
+<li><strong>Webhooks</strong> kehren die Richtung um – die Trigger-URL ist wie ein Passwort zu behandeln; gegen <strong>Ratenbegrenzungen</strong> helfen Wiederholungsrichtlinie, begrenzte Nebenläufigkeit und gebündelte Aufrufe.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Statuscodes richtig deuten</summary>
+<p>Dein Flow ruft einen externen Dienst über die Aktion <code>HTTP-Anforderung (HTTP)</code> auf. Ordne jeder
+Rückmeldung den passenden Statuscode zu (200, 400, 401, 404, 429, 500) und nenne die <strong>erste</strong>
+Maßnahme.</p>
+<ol>
+<li>Der Flow läuft in einer Schleife über 800 Datensätze; ab dem 61. Durchlauf bricht er ab.</li>
+<li>Der Dienst antwortet: Feld <code>betrag</code> fehlt im Anfragekörper.</li>
+<li>Der Schlüssel in der Kopfzeile wurde beim Anbieter neu erzeugt, im Flow steht der alte.</li>
+<li>In der URL steht <code>/v1/kurs</code> statt <code>/v1/kurse</code>.</li>
+<li>Der Dienst hat eine Störung und meldet einen internen Fehler.</li>
+<li>Alles funktioniert, die Antwort enthält die erwarteten Felder.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Merke dir die Hunderter: 200er = Erfolg, 400er = deine Anfrage war das Problem,
+500er = der Anbieter hat das Problem.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Fall</th>
+<th>Code</th>
+<th>Erste Maßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Abbruch ab dem 61. Aufruf</td>
+<td>429</td>
+<td>Ratenbegrenzung: Nebenläufigkeit senken, Wiederholungsrichtlinie, Aufrufe bündeln</td>
+</tr>
+<tr>
+<td>2. Pflichtfeld fehlt</td>
+<td>400</td>
+<td>Anfragekörper prüfen, Wiederholen hilft nicht</td>
+</tr>
+<tr>
+<td>3. Alter Schlüssel</td>
+<td>401</td>
+<td>Zugangsdaten in der sicheren Ablage aktualisieren</td>
+</tr>
+<tr>
+<td>4. Tippfehler in der URL</td>
+<td>404</td>
+<td>Endpunkt prüfen</td>
+</tr>
+<tr>
+<td>5. Störung beim Anbieter</td>
+<td>500</td>
+<td>wiederholen, danach an verantwortliche Person melden</td>
+</tr>
+<tr>
+<td>6. Alles in Ordnung</td>
+<td>200</td>
+<td>nichts</td>
+</tr>
+</tbody>
+</table>
+<p>Wichtigste Unterscheidung: Bei 429 und 500 ist <strong>Wiederholen</strong> sinnvoll, bei 400, 401 und 404
+nicht – dort ändert sich beim fünften Versuch nichts. Genau darauf stellst du die
+Wiederholungsrichtlinie ein.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Einen Webhook entgegennehmen</summary>
+<p>Diese Übung baust du in Power Automate.</p>
+<ol>
+<li>Erstelle über <code>make.powerautomate.com → Erstellen → Instant-Cloud-Flow</code> einen Flow mit dem
+   Trigger <code>Bei Empfang einer HTTP-Anforderung (When a HTTP request is received)</code>.</li>
+<li>Setze unter <code>Erweiterte Optionen</code> die Methode auf <code>GET</code>. Der Flow soll zwei Angaben aus der
+   Adresse auswerten: <code>vorgang</code> und <code>betrag</code>.</li>
+<li>Schreibe die empfangenen Werte in eine SharePoint-Liste <code>Eingang</code> (Spalten Titel und Betrag)
+   und antworte dem Aufrufer am Ende mit der Aktion <code>Antwort (Response)</code>, Statuscode 200 und
+   einem kurzen Bestätigungstext.</li>
+<li>Speichere, kopiere die erzeugte URL, hänge <code>&amp;vorgang=A-2026-0417&amp;betrag=1240</code> an und rufe sie
+   im Browser auf. Prüfe das Ergebnis in der Liste.</li>
+<li>Notiere in zwei Sätzen, warum diese URL wie ein Kennwort behandelt werden muss.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die Werte aus der Adresse erreichst du mit einem Ausdruck auf die Abfrageparameter des Triggers.
+Die URL entsteht erst beim ersten Speichern – vorher ist das Feld leer.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Trigger: Bei Empfang einer HTTP-Anforderung  (Methode GET)
+Aktion:  Element erstellen  (Liste Eingang)
+           Titel  = triggerOutputs()[&#39;queries&#39;][&#39;vorgang&#39;]
+           Betrag = int(triggerOutputs()[&#39;queries&#39;][&#39;betrag&#39;])
+Aktion:  Antwort  (Statuscode 200, Text Vorgang erfasst)
+</code></pre></div></td></tr></table></div>
+<p>Prüfpunkte: (1) Die URL wird erst nach dem Speichern angezeigt. (2) Ohne <code>Antwort</code>-Aktion
+bekommt der Aufrufer nur ein <code>202 Accepted</code> – die Aktion ist der Unterschied zwischen
+„angenommen" und „erledigt". (3) Ist <code>betrag</code> ein Zahlenfeld in SharePoint, muss der Text mit
+<code>int(...)</code> umgewandelt werden, sonst kommt ein Fehler zum ungültigen Wert.</p>
+<p>Zur Sicherheitsfrage: Die URL enthält eine Signatur und verlangt keine Anmeldung. Wer sie kennt,
+kann den Flow beliebig oft mit frei erfundenen Werten auslösen – also Datenmüll erzeugen oder
+Aktionsverbrauch verursachen. Deshalb nicht in Chats weitergeben, eingehende Werte im Flow auf
+Plausibilität prüfen und die URL bei Verdacht durch Ersetzen des Triggers neu erzeugen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Fremde Antwort auswerten und Fehlerfall behandeln</summary>
+<p>Diese Übung baust du in Power Automate. Ziel ist ein Flow, der eine JSON-Antwort eines fremden
+Dienstes auswertet und den Fehlerfall nicht verschweigt.</p>
+<ol>
+<li>Erstelle einen Instant-Cloud-Flow. Steht dir die Premium-Aktion <code>HTTP-Anforderung (HTTP)</code>
+   zur Verfügung, rufe damit den erfundenen Endpunkt
+   <code>https://api.kursdienst.example/v1/kurse?basis=EUR&amp;ziel=CHF</code> auf – er wird fehlschlagen,
+   genau das ist Teil der Übung. Andernfalls simuliere die Antwort mit einer <code>Verfassen</code>-Aktion,
+   die folgenden Text enthält:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>{
+  &quot;basis&quot;: &quot;EUR&quot;,
+  &quot;datum&quot;: &quot;2026-03-04&quot;,
+  &quot;kurse&quot;: { &quot;CHF&quot;: 0.9612 }
+}
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Verarbeite die Antwort mit <code>JSON analysieren (Parse JSON)</code> und lies den Kurs für <code>CHF</code> heraus.</li>
+<li>Prüfe mit einer <code>Bedingung</code>, ob der Aufruf erfolgreich war, und schreibe im Erfolgsfall Datum
+   und Kurs in eine SharePoint-Liste, im Fehlerfall eine Teams-Nachricht mit Statuscode.</li>
+<li>Stelle an der aufrufenden Aktion unter <code>Einstellungen</code> die <strong>Wiederholungsrichtlinie</strong> auf
+   einen Wert ein, der zu deinem Fehlerfall passt, und begründe die Einstellung in einem Satz.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Für das Schema in <code>JSON analysieren</code> brauchst du nichts zu tippen: Schaltfläche
+<code>Nutzlast-Beispiel zum Generieren des Schemas verwenden</code> und den Beispieltext einfügen.
+Verschachtelte Felder erreichst du über den Pfad, nicht über den Feldnamen allein.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Trigger: Manuell ausloesen
+Aktion:  HTTP-Anforderung  (oder Verfassen mit Beispieltext)
+           Einstellungen: Wiederholungsrichtlinie exponentiell, 4 Versuche
+Aktion:  JSON analysieren  (Inhalt = Body des vorigen Schritts, Schema aus Beispiel)
+Aktion:  Bedingung  -&gt;  Statuscode ist gleich 200
+           Falls ja:
+             Aktion: Element erstellen  (Titel = Feld datum, Kurs = Feld CHF)
+           Falls nein:
+             Aktion: Nachricht in einem Chat oder Kanal veroeffentlichen
+                       Text mit Statuscode und Fehlermeldung
+</code></pre></div></td></tr></table></div>
+<p>Der Kurs wird über den verschachtelten Pfad gelesen, zum Beispiel
+<code>body('JSON_analysieren')?['kurse']?['CHF']</code>. Das Fragezeichen verhindert einen Abbruch, wenn
+das Feld fehlt.</p>
+<p>Bewertung: (1) Die Antwort wird geprüft, nicht angenommen – der Fehlerzweig existiert.
+(2) Beim erfundenen Endpunkt entsteht ein Verbindungsfehler; wer den Ausführungsverlauf liest,
+erkennt das an der Fehlermeldung des HTTP-Schritts und nicht an einem Statuscode 200.
+(3) Begründung der Wiederholungsrichtlinie: sinnvoll bei 429 und 500, sinnlos bei 400, 401 und
+404 – dort verlängert sie nur die Laufzeit. (4) Der Fehlerzweig meldet an einen Kanal, nicht an
+eine Einzelperson, damit die Meldung im Urlaubsfall gesehen wird.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Sendungsstatus eines Partners anbinden</summary>
+<p><strong>Szenario:</strong> Ein erfundener Logistikpartner, die Nordkurier GmbH, liefert Sendungsstatus bisher
+per Sammelmail: einmal täglich eine Textliste, die im Kundenservice von Hand abgetippt wird.
+Anfragen von Kunden werden dadurch mit bis zu einem Tag Verzögerung beantwortet. Der Partner
+bietet zwei Wege an: Er kann jede Statusänderung sofort an eine URL melden, und er stellt eine
+Abfrageschnittstelle bereit, über die man den Status einer Sendung nachfragen kann. Ein fertiger
+Connector existiert nicht. Du baust die Anbindung.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+Etwa 250 Sendungen pro Woche, 6 Personen im Kundenservice.
+Statuswerte: angenommen, unterwegs, zugestellt, Problem.
+Abfrageschnittstelle laut Partnerdoku:
+  GET https://api.nordkurier.example/v1/sendungen/A-2026-0417
+  Kopfzeile X-Api-Key mit dem Schluessel aus der Partnervereinbarung
+  Ratenbegrenzung 60 Anfragen pro Minute
+Meldung des Partners an deine URL, Beispielinhalt:
+  { &quot;sendung&quot;: &quot;A-2026-0417&quot;, &quot;status&quot;: &quot;unterwegs&quot;, &quot;zeitpunkt&quot;: &quot;2026-03-04T09:12:00Z&quot; }
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Empfang bauen.</strong> Lege eine SharePoint-Liste <code>Sendungsstatus</code> an (Sendung, Status,
+Zeitpunkt, Quelle, Bemerkung). Baue einen Flow mit dem Trigger
+<code>Bei Empfang einer HTTP-Anforderung (When a HTTP request is received)</code>, hinterlege ein Schema
+aus dem Beispielinhalt oben, schreibe jede Meldung in die Liste und antworte dem Partner mit der
+Aktion <code>Antwort (Response)</code>. Teste mit mindestens fünf verschiedenen Meldungen. Baue außerdem
+den Abfrageweg: mit der Aktion <code>HTTP-Anforderung (HTTP)</code>, falls verfügbar – sonst als exakt
+dokumentierten Entwurf plus Simulation über <code>Verfassen</code> und <code>JSON analysieren</code>.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Anbindung muss <strong>alle vier</strong> Kriterien
+erfüllen:</p>
+<ol>
+<li>Unbekannte oder leere Statuswerte landen <strong>nicht</strong> ungeprüft in der Liste, sondern führen zu
+   einem eigenen Eintrag mit Bemerkung und einer Meldung in einen Teams-Kanal.</li>
+<li>Der Aufrufer bekommt eine sinnvolle Antwort: Statuscode 200 bei Erfolg, 400 bei fehlendem
+   Pflichtfeld.</li>
+<li>Der API-Schlüssel steht <strong>nirgends im Klartext</strong> im Flow – beschreibe und nutze deine Ablage.</li>
+<li>Am aufrufenden Schritt ist eine Wiederholungsrichtlinie eingestellt, die zu 429 und 500 passt,
+   und dokumentiert ist, warum sie bei 400 und 404 nichts hilft.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Nach zwei Tagen Testbetrieb passieren drei Dinge: Der Partner
+ergänzt ohne Vorwarnung ein Feld <code>verzoegerung_minuten</code>, sendet den Zeitpunkt plötzlich als
+<code>04.03.2026 09:12</code> statt im bisherigen Format, und einige Meldungen kommen doppelt an, weil sein
+System bei fehlender Antwort erneut sendet. Deine Liste enthält jetzt Dubletten und leere
+Zeitpunkte. Repariere die Anbindung: Fange das neue Format ab, verhindere Dubletten anhand von
+Sendung plus Zeitpunkt, und stelle sicher, dass ein unerwartetes Feld deinen Flow <strong>nicht</strong>
+zum Absturz bringt. Dokumentiere, was du am Schema geändert hast und warum.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Der Partner schlägt vor: „Am einfachsten schicken wir
+die URL an den Verteiler des Kundenservice, dann kann jeder testen. Und legt den Schlüssel doch
+direkt in den Flow, das spart Aufwand." Gleichzeitig will der Kundenservice die Sendungen
+zusätzlich alle fünf Minuten aktiv abfragen, um sicher nichts zu verpassen – bei 250 Sendungen
+wären das mehr Aufrufe als die Ratenbegrenzung erlaubt. Hole dir von einem KI-Werkzeug Argumente
+und entscheide dann begründet über beide Punkte. <strong>Widersprich</strong> mindestens einem der Vorschläge
+ausdrücklich und benenne die Folge, die du damit verhinderst.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>lauffähiger Empfangs-Flow mit Schema, Validierung, Antwort-Aktion und Liste <code>Sendungsstatus</code>
+   mit mindestens fünf Testmeldungen</li>
+<li>Abfrageweg als lauffähige Aktion oder als exakter Entwurf mit Endpunkt, Methode, Kopfzeilen
+   und Auswertung der JSON-Antwort</li>
+<li>Nachweis der vier Pflichtkriterien plus Beschreibung der Reparatur aus Runde 3</li>
+<li>einseitige Entscheidungsnotiz zu Weitergabe der URL, Ablage des Schlüssels und Abfragetakt</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> fünf Testmeldungen korrekt in der Liste stehen, eine Meldung mit
+fehlendem Pflichtfeld mit Statuscode 400 abgewiesen wurde, eine doppelt gesendete Meldung genau
+<strong>einen</strong> Eintrag erzeugt hat, im Flow kein Schlüssel im Klartext auffindbar ist und deine
+Entscheidungsnotiz einen der Partnervorschläge begründet ablehnt.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Runde 3 ist der eigentliche Kern: Fremde Schnittstellen ändern sich ohne dich, und ein
+Doppelversand ist kein Sonderfall, sondern das normale Verhalten eines Systems, das keine
+Antwort erhält. Wer die Antwort-Aktion vergisst, produziert Dubletten selbst. Prüfe vor dem
+Schreiben mit einer Filterabfrage auf Sendung und Zeitpunkt. In Runde 4 hilft die Frage: Was
+kostet der bequeme Weg in drei Monaten – an Datenqualität, an Aufrufen und an Vertraulichkeit?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Der Empfangsweg läuft nachweisbar Ende zu Ende, mit Schema, Prüfung der
+Pflichtfelder und einer echten <code>Antwort</code>-Aktion statt eines stillen 202; (2) alle vier
+Pflichtkriterien sind belegt, insbesondere die schlüsselfreie Flow-Definition und eine
+Wiederholungsrichtlinie mit begründeter Einstellung; (3) die Reparatur aus Runde 3 behandelt alle
+drei Änderungen – neues Feld ohne Absturz, zweites Datumsformat abgefangen, Dublettenprüfung vor
+dem Schreiben; (4) die Entscheidungsnotiz lehnt mindestens einen Partnervorschlag begründet ab
+und rechnet den Abfragetakt gegen die Ratenbegrenzung, statt beides nebeneinander stehen zu
+lassen.</p>
+<p>Lernziel: Eine fremde Schnittstelle ohne fertigen Connector anbinden – und dabei die drei Dinge
+beherrschen, an denen solche Anbindungen in der Praxis scheitern: Geheimnisse, Doppelmeldungen
+und stillschweigende Änderungen beim Partner.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel25/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 25 – Integration von Microsoft 365">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 25 – Integration von Microsoft 365
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel27/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

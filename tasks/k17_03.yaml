@@ -1,0 +1,52 @@
+title: KI strukturiert den Prozess – du prüfst nach
+difficulty: 3
+question: |
+  Diese Übung machst du in einem KI-Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Gib die folgende Beschreibung als Prosa ein und lass sie strukturieren:
+
+     ```text
+     Strukturiere die folgende Prozessbeschreibung in eine Tabelle mit den Spalten
+     Schritt, Rolle, System, Medienbruch, Wartezeit. Markiere jede Stelle, an der
+     die Beschreibung unklar oder unvollstaendig ist, mit OFFEN. Erfinde keine
+     Schritte.
+
+     Beschreibung: Wenn eine Bestellanforderung reinkommt, meist per Mail an den
+     Einkauf, schaut sich das jemand an und prueft, ob das Budget da ist. Dazu wird
+     in einer Excel-Datei nachgesehen. Passt es, wird eine Bestellung im
+     Warenwirtschaftssystem angelegt und der Anforderer bekommt Bescheid. Bei
+     groesseren Betraegen muss vorher noch die Abteilungsleitung zustimmen, das
+     dauert manchmal. Am Ende wird alles in einem Ordner abgelegt.
+     ```
+
+  2. Prüfe die Antwort kritisch. Finde **mindestens drei** Stellen, an denen das Werkzeug
+     etwas erfunden, weggelassen oder falsch eingeordnet hat.
+  3. Formuliere die drei wichtigsten **Rückfragen** an den Einkauf, die du vor jeder
+     Automatisierung stellen musst.
+  4. Bewerte einen Schritt deiner Wahl mit Häufigkeit × Aufwand × Regelhaftigkeit und
+     begründe, ob er ein Kandidat ist.
+tip: |
+  Achte besonders auf die Wörter „meist", „jemand", „größere Beträge" und „manchmal".
+  Genau dort steckt keine Regel, sondern eine ungeklärte Entscheidung – und genau dort
+  füllt ein KI-Werkzeug die Lücke am liebsten mit einer plausibel klingenden Erfindung.
+solution: |
+  Typische Funde beim Nachprüfen:
+
+  - **Erfunden:** konkrete Schwellenwerte („ab 1000 Euro"), obwohl der Text nur „größere
+    Beträge" sagt. Häufig ergänzt werden auch eine Freigabe durch die Geschäftsführung,
+    ein Ticketsystem oder eine Prüfung der Lieferantendaten.
+  - **Weggelassen:** die Wartezeit bei der Zustimmung der Abteilungsleitung erscheint oft
+    nicht als eigene Zeile, obwohl sie die Durchlaufzeit dominiert.
+  - **Falsch eingeordnet:** „in Excel nachsehen" ist ein Medienbruch, wird aber gern als
+    reiner Systemschritt geführt. Auch „in einem Ordner ablegen" bleibt unklar –
+    Papierordner oder Dateiablage?
+  - **Nicht markiert:** Was passiert, wenn das Budget **nicht** reicht? Der Text nennt
+    keinen Ablehnungspfad; ein gutes Ergebnis markiert das als OFFEN.
+
+  Gute Rückfragen: (1) Ab welchem Betrag genau ist eine Zustimmung nötig, und wer
+  entscheidet bei Abwesenheit? (2) Was geschieht bei fehlendem Budget? (3) Wo ist die
+  verbindliche Ablage, und welcher Dateiname gilt?
+
+  Bewertungsbeispiel: „Budget in Excel nachsehen" mit Häufigkeit 4, Aufwand 3 und
+  Regelhaftigkeit 4 ergibt 48 – ein Kandidat, aber nur, wenn die Budgetdaten maschinell
+  lesbar vorliegen. Diese Datenfrage entscheidet öfter über den Erfolg als der Punktwert.

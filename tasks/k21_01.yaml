@@ -1,0 +1,32 @@
+title: Welcher Flow-Typ passt?
+difficulty: 1
+question: |
+  Ordne jeder Anforderung den passenden Flow-Typ zu: **automatisierter Cloud-Flow**,
+  **Instant-Flow**, **geplanter Flow**, **Desktop-Flow (RPA)** oder **Prozess-Flow**.
+  Begründe jede Zuordnung mit einem Satz, der den **Auslöser** benennt.
+
+  1. Jeden Freitag um 16 Uhr soll eine Liste der offenen Aufgaben per Mail rausgehen.
+  2. Sobald in einer SharePoint-Liste ein neuer Eintrag entsteht, soll das Team eine
+     Teams-Nachricht bekommen.
+  3. Ein Servicetechniker will unterwegs auf dem Handy einen Knopf drücken, der seinen
+     Standort und eine Statusmeldung an die Zentrale schickt.
+  4. Daten aus einer Excel-Datei sollen in ein 15 Jahre altes Warenwirtschaftsprogramm
+     eingetippt werden, für das es keinen Connector gibt.
+  5. Ein Angebotsprozess soll die Vertriebsmitarbeitenden durch fünf feste Phasen führen,
+     ohne selbst etwas zu automatisieren.
+tip: |
+  Stelle bei jeder Zeile nur eine Frage: Was passiert als Erstes, und wer oder was löst es aus –
+  ein Ereignis in einer App, ein Mensch, die Uhr, oder muss eine Programmoberfläche bedient werden?
+solution: |
+  | Nr. | Flow-Typ | Auslöser und Begründung |
+  |---|---|---|
+  | 1 | geplanter Flow | Auslöser ist die Uhr, kein Ereignis in einer App; läuft auch, wenn es nichts zu melden gibt |
+  | 2 | automatisierter Cloud-Flow | SharePoint meldet das Ereignis „neues Element erstellt" |
+  | 3 | Instant-Flow | ein Mensch drückt bewusst auf Start, hier in der Power-Automate-Mobil-App |
+  | 4 | Desktop-Flow (RPA) | kein Connector vorhanden, also muss die Oberfläche bedient werden – braucht Power Automate Desktop und einen laufenden Rechner |
+  | 5 | Prozess-Flow | automatisiert nichts, sondern gibt Menschen eine feste Phasenfolge vor |
+
+  Die häufigste Verwechslung ist 1 gegen 2: Beide klingen nach „regelmäßig", aber nur Fall 2 hat ein
+  echtes Ereignis. Fall 4 ist die wichtigste Warnung: RPA ist die Lösung für Systeme ohne
+  Schnittstelle und damit die störanfälligste Variante – erst prüfen, ob es wirklich keinen
+  Connector oder Export gibt.

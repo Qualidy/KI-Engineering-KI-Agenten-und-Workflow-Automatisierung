@@ -1,0 +1,33 @@
+title: Vorgefertigtes Modell, Prompt oder eigenes Modell?
+difficulty: 1
+question: |
+  Für jede der folgenden Aufgaben stehen drei Wege offen: ein **vorgefertigtes AI-Builder-Modell**,
+  die **Prompt-Aktion** oder ein **eigenes trainiertes Modell**. Wähle jeweils den günstigsten Weg
+  und begründe in einem Satz.
+
+  1. Aus einem Foto einer Visitenkarte sollen Name, Firma und Telefonnummer erfasst werden.
+  2. Eingehende Nachrichten sollen einer von fünf hausinternen Zuständigkeiten zugeordnet werden,
+     die es so nirgends sonst gibt.
+  3. Von jeder Rückmeldung aus einem Forms-Formular soll die Stimmung erfasst werden.
+  4. Aus einem hausinternen Urlaubsantragsformular mit festem Layout sollen sechs Felder
+     ausgelesen werden – täglich rund 40 Stück.
+  5. Zu jeder Reklamation soll ein dreizeiliger Antwortentwurf im Hausstil entstehen.
+  6. Die Sprache eingehender Mails soll erkannt werden, um sie an das richtige Team zu leiten.
+tip: |
+  Vorgefertigte Modelle lösen Standardaufgaben ohne Vorbereitung. Die Prompt-Aktion ist der flexible
+  Allrounder für alles, was mit Text und eigenen Regeln zu tun hat. Ein eigenes Modell lohnt erst bei
+  vielen gleichartigen Dokumenten mit festem Aufbau.
+solution: |
+  | Aufgabe | Weg | Begründung |
+  |---|---|---|
+  | 1 Visitenkarte | vorgefertigtes Modell | genau dafür gibt es den Visitenkartenleser |
+  | 2 Hausinterne Zuständigkeiten | Prompt-Aktion | die Kategorien sind eigene Begriffe, sie lassen sich im Prompt aufzählen |
+  | 3 Stimmung | vorgefertigtes Modell | Standardfall, sofort einsetzbar, strukturierte Ausgabe |
+  | 4 Urlaubsantrag | eigenes trainiertes Modell | festes Layout, hohe Stückzahl, wiederkehrende Felder |
+  | 5 Antwortentwurf | Prompt-Aktion | Texterzeugung mit eigenem Ton, kein fertiges Modell dafür |
+  | 6 Sprache erkennen | vorgefertigtes Modell | Spracherkennung ist ein Standardmodell |
+
+  Wichtig ist die Reihenfolge des Nachdenkens: erst prüfen, ob ein vorgefertigtes Modell passt, dann
+  die Prompt-Aktion, und erst ganz zuletzt ein eigenes Modell. Fall 2 könnte man auch mit einem
+  eigenen Klassifizierungsmodell lösen – das wäre aber deutlich mehr Aufwand für dasselbe Ergebnis,
+  solange die Kategorien in den Prompt passen.

@@ -1,0 +1,79 @@
+title: Belastbarkeitsprüfung eines KI-Werkzeugs
+difficulty: 4
+question: |
+  **Szenario:** In deinem Bereich nutzen inzwischen alle irgendein KI-Werkzeug, aber niemand weiß
+  genau, worauf man sich verlassen kann. Zwei Vorfälle haben Unruhe erzeugt: In einem Angebot
+  stand eine falsch summierte Position, in einer Kundenantwort ein Verweis auf eine Regelung, die
+  es nicht gibt. Die Bereichsleitung möchte eine **Handreichung auf zwei Seiten**, die für euer
+  Werkzeug belegt, was zuverlässig funktioniert und was nicht. Belegt heißt: mit eigenen Tests,
+  nicht mit Behauptungen aus dem Internet.
+
+  ```text
+  Rahmen:
+  Ein Werkzeug eurer Wahl (Copilot, ChatGPT oder Claude).
+  Zielgruppe der Handreichung: Kolleginnen und Kollegen ohne IT-Hintergrund.
+  Umfang: maximal zwei Seiten, jede Aussage mit einem Testbeispiel belegt.
+  Keine Aussagen ueber Werkzeuge, die ihr nicht getestet habt.
+  ```
+
+  ---
+
+  **Runde 1 – Testreihe bauen und durchführen.** Erstelle zu **fünf Bereichen** je zwei konkrete
+  Testaufgaben und führe alle zehn durch. Die fünf Bereiche: exaktes Rechnen, Zählen und
+  Vollständigkeit, Aktualität, internes Wissen, Verhalten in langen Gesprächen. Dokumentiere zu
+  jedem Test: Eingabe, Ausgabe, was du erwartet hast, ob das Ergebnis richtig war und woran du
+  das erkannt hast.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Testreihe muss **alle vier** Kriterien
+  erfüllen:
+
+  1. Mindestens **drei** Tests haben ein Ergebnis, das du **objektiv** prüfen kannst – Rechnung,
+     Anzahl, Datum, Wortlaut einer Quelle.
+  2. Mindestens **ein** Test zeigt einen Fall, in dem das Werkzeug **richtig** und **schnell**
+     ist. Eine Handreichung, die nur Schwächen auflistet, wird zu Recht ignoriert.
+  3. Zu jeder festgestellten Schwäche steht eine **konkrete Arbeitsanweisung**, was man stattdessen
+     tut – nicht „vorsichtig sein", sondern „Summen in Excel prüfen".
+  4. Kein Testergebnis beruht auf einem einzigen Durchlauf; jeder Test wurde mindestens zweimal
+     in getrennten Chats ausgeführt.
+
+  **Runde 3 – Die Komplikation.** Eine Kollegin zeigt dir, dass ihr Werkzeug dieselbe
+  Rechenaufgabe fehlerfrei löst, weil es intern ein Rechenwerkzeug aufruft. Deine pauschale
+  Aussage „KI kann nicht rechnen" ist damit falsch. Überarbeite die betroffenen Stellen der
+  Handreichung so, dass sie zwischen **reiner Textvorhersage** und **Werkzeugnutzung**
+  unterscheidet. Prüfe außerdem nach, ob dieselbe Unterscheidung auch bei Aktualität greift
+  (Websuche aktiv oder nicht) und korrigiere entsprechend.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Bereichsleitung will die Handreichung auf einen
+  einzigen Satz eindampfen: „Jedes KI-Ergebnis ist vor Verwendung vollständig zu prüfen." Lass dir
+  von deinem Werkzeug Argumente dafür und dagegen geben. Entscheide dann selbst und
+  **widersprich** begründet, wenn du die Regel für falsch hältst: Formuliere eine abgestufte
+  Regel, die benennt, welche Ergebnisse eine vollständige Prüfung brauchen, welche eine
+  Stichprobe und welche gar keine – jeweils mit Begründung aus deinen Testergebnissen.
+
+  **Deliverable:**
+
+  1. Testprotokoll mit zehn Tests (Eingabe, Ausgabe, Erwartung, Bewertung, Prüfweg)
+  2. Handreichung auf maximal zwei Seiten mit Stärken, Schwächen und Arbeitsanweisungen
+  3. überarbeitete Fassung der Stellen aus Runde 3, mit sichtbarer Unterscheidung
+  4. abgestufte Prüfregel aus Runde 4 samt Begründung, warum die Ein-Satz-Regel nicht genügt
+
+  **Fertig bist du erst, wenn** jeder Test zweimal ausgeführt und mit angegebenem Prüfweg belegt
+  ist, die Handreichung mindestens eine belegte Stärke und zu jeder Schwäche eine konkrete
+  Arbeitsanweisung enthält, keine Aussage mehr pauschal „KI kann nicht …" lautet, und deine
+  abgestufte Prüfregel für jede Stufe ein Beispiel aus deinen eigenen Tests nennt.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Pauschale Aussagen über KI sind bequem und halten der
+  ersten Nachfrage nicht stand – das gilt für „KI kann alles" genauso wie für „KI kann nicht
+  rechnen". Und eine Regel, die alles unter Generalverdacht stellt, wird im Alltag nicht befolgt,
+  weil sie den Nutzen auffrisst. Nützlich wird eine Regel erst, wenn sie unterscheidet.
+solution: |
+  Bewertungskriterien: (1) zehn nachvollziehbar dokumentierte Tests über alle fünf Bereiche, mit
+  angegebenem Prüfweg statt Bauchgefühl; (2) alle vier Pflichtkriterien erfüllt, insbesondere die
+  Mehrfachausführung und die konkreten Arbeitsanweisungen; (3) die Überarbeitung trennt sauber
+  zwischen dem, was das Sprachmodell selbst tut, und dem, was ein angebundenes Werkzeug übernimmt,
+  und überträgt diese Unterscheidung auf die Aktualitätsfrage; (4) die abgestufte Prüfregel
+  benennt mindestens drei Stufen mit klaren Beispielen und begründet den Widerspruch zur
+  Ein-Satz-Vorgabe aus den eigenen Testergebnissen.
+
+  Lernziel: Die Eigenschaften eines Sprachmodells nicht nur kennen, sondern am eigenen Werkzeug
+  belegen – und daraus eine Arbeitsregel machen, die differenziert genug ist, um befolgt zu werden.

@@ -1,0 +1,36 @@
+title: Anatomie-Skizze für einen eigenen Fall
+difficulty: 2
+question: |
+  Wähle eine wiederkehrende Aufgabe aus deinem Arbeitsalltag, die mehrere Schritte hat – zum
+  Beispiel: eingehende Anfragen sortieren und beantworten, Besprechungsnotizen in Aufgaben
+  überführen, oder Angebote auf Vollständigkeit prüfen.
+
+  Skizziere für diese Aufgabe einen Agenten. Fülle alle fünf Bausteine aus:
+
+  1. **Ziel und Instruktion** – in zwei bis drei Sätzen, einschließlich einer Grenze
+     („tut auf keinen Fall …")
+  2. **Werkzeuge** – welche Zugriffe oder Aktionen wären nötig? Nenne mindestens zwei.
+  3. **Wissensquellen** – welche Unterlagen müsste der Agent kennen?
+  4. **Gedächtnis** – was muss er sich innerhalb eines Vorgangs merken, was darüber hinaus?
+  5. **Autonomiestufe** – welche der Stufen 0 bis 4 wählst du, und warum?
+
+  Markiere zum Schluss den Baustein, bei dem du dir am unsichersten bist.
+tip: |
+  Denke bei den Werkzeugen nicht an Technik, sondern an Tätigkeiten: „im Postfach suchen",
+  „einen Eintrag in einer Liste anlegen", „eine Nachricht senden". Ob das später ein Connector,
+  ein Flow oder ein Klick ist, spielt für die Skizze keine Rolle.
+solution: |
+  Beispielhafte Bearbeitung für „eingehende Supportanfragen vorsortieren":
+
+  | Baustein | Ausfüllung |
+  |---|---|
+  | Ziel und Instruktion | Sortiert eingehende Anfragen nach Kategorie und Dringlichkeit und erstellt je Fall eine Kurzfassung. Beantwortet keine Anfrage selbst und sagt nichts zu Preisen oder Terminen zu. |
+  | Werkzeuge | Postfach durchsuchen, Eintrag in einer Liste anlegen, Benachrichtigung in Teams senden |
+  | Wissensquellen | Kategorienliste, Eskalationsregeln, Liste der zuständigen Teams |
+  | Gedächtnis | Im Vorgang: alle Angaben der Anfrage. Darüber hinaus: keine – Kundendaten gehören nicht ins Langzeitgedächtnis |
+  | Autonomiestufe | Stufe 2, weil die Zuordnung Auswirkungen auf Bearbeitungszeiten hat und Fehlzuordnungen sonst unbemerkt bleiben |
+
+  Gute Bearbeitungen erkennst du an drei Dingen: Die Instruktion enthält eine **echte Grenze**,
+  die Werkzeuge sind als Tätigkeiten und nicht als Produkte benannt, und die Autonomiestufe ist
+  mit der **Fehlerfolge** begründet, nicht mit dem technisch Möglichen. Wer Stufe 4 wählt, muss
+  erklären können, wie ein Fehler überhaupt auffallen würde.

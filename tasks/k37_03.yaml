@@ -1,0 +1,40 @@
+title: Den KI-Anteil kalibrieren und Stichprobe auswerten
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug – im KI-Baustein deines Flows oder, falls der Flow noch nicht
+  läuft, direkt in Copilot, ChatGPT oder Claude mit deinen Testdaten.
+
+  1. Schreibe deinen Prompt so um, dass er ein **festes Ausgabeformat** erzwingt: nur die
+     benötigten Felder, feste Reihenfolge, keine Einleitung, erlaubte Werteliste, ausdrückliche
+     Erlaubnis für eine Ausweichantwort wie „Unklar".
+  2. Lass **mindestens acht** deiner Testfälle durchlaufen und notiere für jeden: Ergebnis,
+     fachlich korrekt ja oder nein, Format korrekt ja oder nein.
+  3. Werte aus: Trefferquote, Formattreue, Unklar-Anteil – und vor allem die **Fehlerrichtung**:
+     Welche Art von Fällen geht daneben?
+  4. Nimm **eine** gezielte Verbesserung am Prompt vor und wiederhole die Fälle, die falsch waren.
+     Notiere, ob sich etwas verbessert hat und ob dafür etwas anderes schlechter wurde.
+tip: |
+  Ändere immer nur eine Sache pro Runde, sonst weißt du nicht, was gewirkt hat. Die wirksamste
+  einzelne Ergänzung ist meist die erlaubte Ausweichantwort: Ein Modell ohne Ausweg erfindet lieber
+  eine Kategorie, als zuzugeben, dass der Text keine Zuordnung erlaubt.
+solution: |
+  Qualitätskriterien: (1) der Prompt enthält Werteliste, festes Format und eine erlaubte
+  Ausweichantwort; (2) mindestens acht Fälle sind einzeln protokolliert, nicht pauschal bewertet;
+  (3) die Auswertung nennt Trefferquote, Formattreue und die Fehlerrichtung; (4) es wurde genau
+  eine Änderung vorgenommen und ihre Wirkung nachgemessen, inklusive möglicher Nebenwirkung.
+
+  Beispiel für ein gutes Ergebnis:
+
+  Erste Runde: 8 Fälle, 6 fachlich korrekt, 8 formal korrekt, 0 Ausweichantworten. Fehlerrichtung:
+  Beide Fehler betreffen Anfragen, in denen Vertrieb und Support gemischt vorkommen – die KI wählt
+  Vertrieb, richtig wäre Support gewesen, weil ein bestehender Vertrag betroffen ist.
+
+  Änderung: eine Regel ergänzt: „Wenn ein bestehender Vertrag oder eine bestehende Lieferung
+  erwähnt wird, ist die Kategorie Support, auch wenn nach Preisen gefragt wird."
+
+  Zweite Runde: beide Fälle korrekt, ein vorher richtiger Fall wird nun als Support eingeordnet,
+  obwohl es eine Neukundenanfrage war. Schluss: Regel behalten, aber Schwelle nachziehen – Fälle
+  mit beiden Merkmalen bekommen Kategorie Unklar und gehen zur menschlichen Prüfung.
+
+  Diese Nebenwirkung ist der eigentliche Lerninhalt: Prompt-Verbesserungen sind Abwägungen, keine
+  reinen Zugewinne.

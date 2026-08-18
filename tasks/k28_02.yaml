@@ -1,0 +1,41 @@
+title: Einen Fehler bewusst erzeugen und finden
+difficulty: 2
+question: |
+  Diese Übung baust du in Power Automate. Du erzeugst absichtlich einen Fehler und arbeitest die
+  Fehlersuch-Checkliste ab.
+
+  1. Baue einen Instant-Cloud-Flow: `Verfassen` mit dem festen Text `Bestellung`, danach
+     `Element aktualisieren (Update item)` auf eine Test-SharePoint-Liste, wobei du in das Feld
+     `ID` die Ausgabe der `Verfassen`-Aktion einsetzt.
+  2. Führe den Flow aus. Er schlägt fehl. Notiere den genauen Statuscode und die Meldung.
+  3. Arbeite die Schritte 1 bis 4 der Fehlersuch-Checkliste ab und schreibe zu jedem Schritt eine
+     Zeile: Was hast du geprüft, was hast du gesehen?
+  4. Erzeuge einen zweiten Fehler, indem du im Feld `ID` einen Ausdruck auf ein Feld einsetzt, das
+     es nicht gibt. Vergleiche die beiden Fehlermeldungen: Worin unterscheiden sie sich?
+  5. Repariere den Flow so, dass er mit einer echten ID läuft, und fahre den Fall über
+     `Erneut übermitteln` nach.
+tip: |
+  Achte auf den Unterschied zwischen einem Fehler, den der **Dienst** meldet (Statuscode aus
+  SharePoint), und einem Fehler, den Power Automate schon beim Auswerten des Ausdrucks bemerkt.
+  Der zweite passiert, bevor überhaupt jemand gefragt wurde.
+solution: |
+  Erwartetes Ergebnis:
+
+  ```text
+  Fall 1: Element aktualisieren mit ID = Bestellung
+          -> Fehler des Dienstes, Statuscode 400 oder 404
+          -> Eingaben zeigen ID = Bestellung, also einen Text statt einer Zahl
+  Fall 2: Element aktualisieren mit Ausdruck auf ein nicht vorhandenes Feld
+          -> InvalidTemplate, Fehler bereits beim Auswerten des Ausdrucks
+          -> Eingaben werden gar nicht angezeigt, weil der Schritt nie gestartet ist
+  ```
+
+  Die Checkliste liefert dabei diese Beobachtungen: (1) roter Schritt ist
+  `Element aktualisieren`; (2) in den **Eingaben** steht ein Text, wo eine Zahl erwartet wird;
+  (3) die **Ausgaben** von `Verfassen` bestätigen, dass der Text von dort kommt – der Fehler wurde
+  also einen Schritt früher gemacht; (4) die Meldung ist ein Anfrage- und kein Rechteproblem, also
+  hilft kein Wiederholen.
+
+  Der Vergleich in Punkt 4 ist der Lernkern: Ein `InvalidTemplate` entsteht **in** Power Automate,
+  ein `400` oder `404` kommt **vom Zieldienst**. Beim ersten prüfst du den Ausdruck, beim zweiten
+  den Wert und das Zielobjekt.

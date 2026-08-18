@@ -1,0 +1,94 @@
+title: "Anmeldedaten veredeln: Datum, Fristen und saubere Namen"
+difficulty: 4
+question: |
+  **Szenario:** Eine Weiterbildungsabteilung nimmt Kursanmeldungen entgegen. Die Daten kommen
+  unsauber an: Namen mit Leerzeichen am Anfang, Mailadressen in gemischter Schreibweise, Beträge mit
+  deutschem Komma, Kursdaten als Text. Aus jeder Anmeldung sollen eine Bestätigungsnachricht mit
+  deutschem Datum, eine Widerrufsfrist von 14 Tagen und eine sauber benannte Ablagedatei entstehen.
+  Bisher macht das eine Person von Hand und hat sich dabei schon zweimal in der Frist verrechnet.
+
+  ```text
+  Rahmen:
+  Etwa 40 Anmeldungen pro Monat, Bearbeitung bisher manuell.
+  Eingabefelder: Name, E-Mail-Adresse, Kursbezeichnung, Kursbeginn, Teilnahmebetrag.
+  Beispieldaten aus der Praxis:
+    Name:          "  Meier-Schulz, Anna  "
+    E-Mail:        Anna.Meier-Schulz@Firma.DE
+    Kurs:          Excel/Aufbau Modul 2
+    Kursbeginn:    2026-03-09
+    Betrag:        1.190,00
+  Ziel: Bestaetigung mit deutschem Datum, Widerrufsfrist, Ablagedatei mit eindeutigem Namen.
+  ```
+
+  ---
+
+  **Runde 1 – Grundlage bauen.** Erstelle einen Instant-Flow `23 Anmeldung veredeln`
+  (`Erstellen → Sofortiger Cloud-Flow`, Trigger `Flow manuell auslösen`) und füge dem Trigger fünf
+  Eingaben hinzu: Name, E-Mail, Kurs, Kursbeginn, Betrag. Baue anschließend für jede Umwandlung eine
+  eigene `Verfassen`-Aktion mit sprechendem Namen und teste nach jeweils zwei Aktionen. Am Ende
+  erzeugt der Flow eine Datei in OneDrive oder SharePoint und schickt eine Bestätigungsmail mit den
+  veredelten Werten.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Führe den Flow mit den Beispieldaten aus dem Rahmen
+  aus. Alle **vier** Punkte müssen im Ausführungsverlauf nachweisbar sein:
+
+  1. Name und E-Mail sind bereinigt: keine Leerzeichen am Rand, Adresse durchgängig klein.
+  2. Der Kursbeginn erscheint in der Bestätigung als `09.03.2026`, die Widerrufsfrist als Datum
+     14 Tage nach dem Kursbeginn.
+  3. Der Dateiname ist eindeutig und enthält kein verbotenes Zeichen, obwohl die Kursbezeichnung
+     einen Schrägstrich enthält.
+  4. Jede `Verfassen`-Aktion enthält genau **einen** Umwandlungsschritt und trägt einen Namen, der
+     ihren Zweck beschreibt.
+
+  **Runde 3 – Die Komplikation.** Der Flow geht in den Probebetrieb, drei Meldungen kommen zurück:
+
+  - Die Bestätigungsmail nennt als Ausstellungsdatum `05.11.2026 08:14`, obwohl sie um 10:14 Uhr
+    verschickt wurde. Finde die Ursache, korrigiere sie richtig und begründe, warum ein fester
+    Stundenzuschlag keine Lösung ist.
+  - Eine Anmeldung kam ohne Kursbezeichnung. Der Flow ist mit einer Meldung über einen ungültigen
+    Ausdruck abgebrochen. Fange den Fall so ab, dass der Flow durchläuft und stattdessen
+    `Kurs unbekannt` einsetzt.
+  - Die Buchhaltung braucht den Betrag als Zahl, um damit zu rechnen. `1.190,00` lässt sich nicht
+    umwandeln. Löse das und dokumentiere die Reihenfolge der nötigen Umwandlungen.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Lass dir von einem KI-Werkzeug den gesamten Ablauf als
+  **einen** verschachtelten Ausdruck für ein einziges Feld erzeugen. Er wird funktionieren und kurz
+  sein. Entscheide dann begründet, ob du ihn übernimmst oder bei den einzelnen `Verfassen`-Schritten
+  bleibst, und **widersprich** dem KI-Vorschlag mit mindestens zwei konkreten Argumenten aus deiner
+  eigenen Testerfahrung. Zweite Abwägung: Die Kollegin, die die Ablage pflegt, will das Datum im
+  Dateinamen als `09.03.2026`, weil sie es so lesen kann. Prüfe, was das mit der Sortierung des
+  Ordners macht, und entscheide.
+
+  **Deliverable:**
+
+  1. lauffähiger Flow `23 Anmeldung veredeln` mit sprechend benannten Verfassen-Schritten
+  2. Testprotokoll mit vier Läufen: Beispieldaten, fehlende Kursbezeichnung, Betrag mit Komma,
+     Sonderzeichen im Kursnamen – je mit den Ausgaben der relevanten Schritte
+  3. Liste aller verwendeten Ausdrücke mit einem Satz Zweck je Ausdruck
+  4. Entscheidung zu Riesenausdruck gegen Einzelschritte und zum Datumsformat im Dateinamen,
+     inklusive der beiden Gegenargumente zum KI-Vorschlag
+
+  **Fertig bist du erst, wenn** alle vier Testläufe ohne Abbruch durchlaufen, Bestätigungsdatum und
+  Widerrufsfrist in deutscher Schreibweise und in der richtigen Zeitzone stimmen, der erzeugte
+  Dateiname weder Sonderzeichen noch doppelte Leerzeichen enthält, jeder verwendete Ausdruck mit
+  seinem Zweck dokumentiert ist und deine Entscheidung beide Gegenargumente ausdrücklich benennt.
+tip: |
+  Runde 3 ist der Kern. Die Zeitzonenfalle, der leere Wert und das deutsche Dezimalkomma sind die
+  drei Datenfehler, die in echten Flows fast garantiert vorkommen – und alle drei zeigen sich erst
+  bei fremden Daten, nie beim eigenen Test. In Runde 4 ist der kurze KI-Ausdruck technisch nicht
+  falsch: Er ist nur im Fehlerfall nicht prüfbar, weil du bei einem falschen Ergebnis nicht sehen
+  kannst, welcher der acht verschachtelten Schritte daneben lag.
+solution: |
+  Bewertungskriterien: (1) der Flow läuft mit den Beispieldaten fehlerfrei durch, Name und Adresse
+  sind über `trim` und `toLower` bereinigt, das Datum erscheint als `09.03.2026` und die Frist ist
+  über `addDays` berechnet; (2) das Ausstellungsdatum wird über `convertTimeZone` mit
+  `W. Europe Standard Time` gebildet und die Begründung nennt den Sommerzeitwechsel als Grund gegen
+  einen festen Stundenzuschlag; (3) der fehlende Wert wird über `if` und `empty` mit Ersatzwert
+  abgefangen und der Betrag über `replace` in Verbindung mit `float` in eine Zahl gewandelt, wobei
+  Tausenderpunkt und Dezimalkomma in der richtigen Reihenfolge behandelt sind; (4) die Entscheidung
+  gegen oder für den Sammelausdruck ist mit Prüfbarkeit, Wartbarkeit und Fehlersuche begründet, und
+  beim Dateinamen ist erkannt, dass nur `yyyy-MM-dd` chronologisch sortiert.
+
+  Lernziel: Ausdrücke nicht als Formelakrobatik verstehen, sondern als kontrollierte Kette kleiner,
+  einzeln prüfbarer Umwandlungen – und die drei klassischen Datenfallen Zeitzone, leerer Wert und
+  Zahlenformat selbstständig entschärfen.

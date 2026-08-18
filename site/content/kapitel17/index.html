@@ -1,0 +1,1881 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel16/">
+      
+      
+        <link rel="next" href="../kapitel18/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 17 – Workflow-Grundlagen - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-17-workflow-grundlagen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 17 – Workflow-Grundlagen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Block 4 · Einstieg in Workflow-Automatisierung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 17 – Workflow-Grundlagen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 17 – Workflow-Grundlagen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#171-prozess-und-workflow-sind-nicht-dasselbe" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.1 Prozess und Workflow sind nicht dasselbe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#172-das-durchgangige-beispiel-eingangsrechnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.2 Das durchgängige Beispiel: Eingangsrechnung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#173-prozessaufnahme-in-der-praxis" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.3 Prozessaufnahme in der Praxis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#174-notation-schrittliste-und-diagramm" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4 Notation: Schrittliste und Diagramm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#175-automatisierungspotenzial-erkennen-und-priorisieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.5 Automatisierungspotenzial erkennen und priorisieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#176-was-du-bewusst-nicht-automatisierst" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.6 Was du bewusst nicht automatisierst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 18 – Trigger, Aktionen und Daten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 19 – Logikbausteine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-17-workflow-grundlagen">Kapitel 17 – Workflow-Grundlagen<a class="headerlink" href="#kapitel-17-workflow-grundlagen" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Was ein <strong>Workflow</strong> ist und wie er sich vom <strong>Geschäftsprozess</strong> unterscheidet</li>
+<li>Wie du einen Ist-Prozess systematisch <strong>aufnimmst</strong>: Auslöser, Schritte, Beteiligte, Systeme, Medienbrüche, Wartezeiten</li>
+<li>Wie du einen Ablauf als <strong>Schrittliste</strong> und als <strong>Diagramm</strong> notierst, ohne eine Notationslehre zu lernen</li>
+<li>Wie du Automatisierungspotenzial über <strong>Häufigkeit × Aufwand × Regelhaftigkeit</strong> einschätzt</li>
+<li>Wie du Kandidaten <strong>priorisierst</strong>, statt beim größten Wunsch anzufangen</li>
+<li>Was du bewusst <strong>nicht</strong> automatisierst – und warum das eine Stärke ist</li>
+</ul>
+</div>
+<hr />
+<h2 id="171-prozess-und-workflow-sind-nicht-dasselbe">17.1 Prozess und Workflow sind nicht dasselbe<a class="headerlink" href="#171-prozess-und-workflow-sind-nicht-dasselbe" title="Permanent link">&para;</a></h2>
+<p>Ein <strong>Geschäftsprozess</strong> beschreibt fachlich, wie ein Ergebnis von Anfang bis Ende entsteht: „Von der eingehenden Rechnung bis zur Zahlung." Er ist unabhängig davon, mit welchen Werkzeugen gearbeitet wird, und enthält alle Beteiligten, auch die Ausnahmen und Sonderfälle.</p>
+<p>Ein <strong>Workflow</strong> ist die konkrete Umsetzung eines Prozessabschnitts als festgelegte Folge von Schritten – mit klaren Auslösern, Zuständigkeiten, Übergaben und Regeln. Ein Workflow ist damit enger, präziser und überprüfbar. Genau deshalb kann man ihn automatisieren.</p>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>Geschäftsprozess</th>
+<th>Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blickwinkel</td>
+<td>fachlich, Ende zu Ende</td>
+<td>operativ, ein Abschnitt</td>
+</tr>
+<tr>
+<td>Detailtiefe</td>
+<td>„Rechnung wird geprüft"</td>
+<td>„Betrag mit Bestellung vergleichen, Abweichung über 50 Euro melden"</td>
+</tr>
+<tr>
+<td>Umfang</td>
+<td>enthält alle Sonderfälle</td>
+<td>behandelt den geregelten Normalfall</td>
+</tr>
+<tr>
+<td>Beteiligte</td>
+<td>Abteilungen, Rollen</td>
+<td>einzelne Zuständigkeiten pro Schritt</td>
+</tr>
+<tr>
+<td>Änderungsanlass</td>
+<td>Strategie, Organisation, Recht</td>
+<td>neue Regel, neues System, Fehler im Ablauf</td>
+</tr>
+<tr>
+<td>Automatisierbar</td>
+<td>nein, zu unscharf</td>
+<td>ja, wenn die Regeln eindeutig sind</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Der Prozess sagt, <strong>was</strong> erreicht werden soll. Der Workflow sagt, <strong>wer wann was womit</strong> tut. Automatisiert wird immer ein Workflow – niemals ein ganzer Prozess. Wer „den Rechnungsprozess automatisieren" will, hat noch keine Aufgabe, sondern ein Thema.</p>
+</div>
+<p>Daraus folgt die Reihenfolge in diesem Block: Erst nimmst du den Prozess auf, dann schneidest du daraus einen Workflow zu, dann baust du ihn (Block 5). Wer sofort ein Werkzeug öffnet, baut meist den Ablauf, den er sich vorstellt – nicht den, der wirklich läuft.</p>
+<hr />
+<h2 id="172-das-durchgangige-beispiel-eingangsrechnung">17.2 Das durchgängige Beispiel: Eingangsrechnung<a class="headerlink" href="#172-das-durchgangige-beispiel-eingangsrechnung" title="Permanent link">&para;</a></h2>
+<p>Dieser Block arbeitet mit einem Szenario, auf das die Kapitel 18, 19 und 20 zurückgreifen. Es ist bewusst unspektakulär: Hohe Stückzahl, klare Regeln im Normalfall, viele Übergaben und ein Problem, das alle kennen – genau so sehen die typischen ersten Automatisierungsfälle aus.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Nordwind Handel GmbH, 180 Mitarbeitende, Handel mit Buerobedarf.
+Rund 400 Eingangsrechnungen pro Monat, davon 300 als PDF an das
+  Sammelpostfach rechnung@nordwind-handel.de, 100 auf Papier per Post.
+Beteiligte: 2 Personen Buchhaltung pruefen formal, ca. 20
+  Kostenstellenverantwortliche geben fachlich frei, Leitung
+  Finanzen gibt Zahlungen ueber 5000 Euro frei.
+Systeme: Outlook, SharePoint-Ablage, Excel-Liste Rechnungseingang, ERP.
+Problem: Rechnungen bleiben liegen, Skonto verfaellt, und niemand
+  weiss auf Zuruf, wo eine Rechnung gerade haengt.
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="173-prozessaufnahme-in-der-praxis">17.3 Prozessaufnahme in der Praxis<a class="headerlink" href="#173-prozessaufnahme-in-der-praxis" title="Permanent link">&para;</a></h2>
+<p>Eine Prozessaufnahme ist kein Modellierungsprojekt, sondern ein strukturiertes Nachfragen. Sechs Fragen reichen für den Anfang:</p>
+<ol>
+<li><strong>Auslöser:</strong> Was passiert als Erstes, sodass der Ablauf überhaupt beginnt? Eine E-Mail, ein Formular, ein Datum, ein Anruf?</li>
+<li><strong>Schritte:</strong> Was passiert danach, in welcher Reihenfolge, bis das Ergebnis vorliegt?</li>
+<li><strong>Beteiligte:</strong> Wer führt den Schritt aus – Rolle, nicht Name?</li>
+<li><strong>Systeme:</strong> In welchem Werkzeug findet der Schritt statt?</li>
+<li><strong>Medienbrüche:</strong> Wo wechseln Informationen das Medium oder werden von Hand übertragen?</li>
+<li><strong>Wartezeiten:</strong> Wo liegt der Vorgang, ohne dass jemand daran arbeitet?</li>
+</ol>
+<p>Ein <strong>Medienbruch</strong> ist jede Stelle, an der Daten aus einem Medium in ein anderes übertragen werden, meist durch Abtippen oder Kopieren: PDF in Excel, Excel ins ERP, E-Mail-Text in ein Ticketsystem. Medienbrüche sind Fehlerquellen und gleichzeitig die lohnendsten Automatisierungsstellen.</p>
+<p>So sieht die Aufnahme für Nordwind aus. Bilde beim Lesen die Summe der letzten beiden Spalten – fünf Medienbrüche und bis zu neun Tage Wartezeit an einer einzigen Stelle zeigen ohne weitere Analyse, wo hier das Geld liegt.</p>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Schritt</th>
+<th>Wer</th>
+<th>System</th>
+<th>Medienbruch</th>
+<th>Wartezeit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Rechnung trifft im Sammelpostfach ein</td>
+<td>–</td>
+<td>Outlook</td>
+<td>nein</td>
+<td>bis zu 1 Tag</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PDF in Ablage speichern, Dateiname vergeben</td>
+<td>Buchhaltung</td>
+<td>Outlook, SharePoint</td>
+<td>ja</td>
+<td>–</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Kopfdaten in Excel-Liste eintragen</td>
+<td>Buchhaltung</td>
+<td>Excel</td>
+<td>ja, Abtippen</td>
+<td>–</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Formal prüfen: Pflichtangaben, Bestellbezug</td>
+<td>Buchhaltung</td>
+<td>Excel, ERP</td>
+<td>nein</td>
+<td>–</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Freigabe per E-Mail anfordern</td>
+<td>Buchhaltung</td>
+<td>Outlook</td>
+<td>nein</td>
+<td>2 bis 9 Tage</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fachliche Freigabe erteilen oder ablehnen</td>
+<td>Kostenstelle</td>
+<td>Outlook</td>
+<td>ja, Antwort per Text</td>
+<td>–</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Freigabe in Excel nachtragen</td>
+<td>Buchhaltung</td>
+<td>Excel</td>
+<td>ja</td>
+<td>–</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Buchen und zur Zahlung vormerken</td>
+<td>Buchhaltung</td>
+<td>ERP</td>
+<td>ja, Abtippen</td>
+<td>bis Zahllauf</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Fast alle nehmen versehentlich den <strong>Wunschprozess</strong> auf, nicht den echten. Gefragt wird „wie läuft das?", geantwortet wird „so soll es laufen". Frage deshalb immer nach dem letzten konkreten Fall: „Zeig mir die Rechnung, die du heute Morgen bearbeitet hast." Und frage nach Ausnahmen: „Was war der letzte Fall, der nicht so lief?"</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">KI als Strukturierhilfe – mit Gegenprobe</p>
+<p>Wenn du eine Prozessbeschreibung als Fließtext hast, lass sie dir strukturieren:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Hier ist eine Prozessbeschreibung als Fliesstext. Wandle sie in eine
+Tabelle mit den Spalten Schritt, Rolle, System, Medienbruch, Wartezeit.
+Markiere jede Stelle, an der die Beschreibung unklar ist, mit OFFEN.
+Erfinde nichts.
+</code></pre></div></td></tr></table></div>
+<p>Der Wert liegt in den <code>OFFEN</code>-Markierungen: Sie zeigen, wo du nachfragen musst. Prüfe die Tabelle trotzdem Zeile für Zeile – KI ergänzt gern plausible Schritte, die es bei euch gar nicht gibt (Kap. 8).</p>
+</div>
+<hr />
+<h2 id="174-notation-schrittliste-und-diagramm">17.4 Notation: Schrittliste und Diagramm<a class="headerlink" href="#174-notation-schrittliste-und-diagramm" title="Permanent link">&para;</a></h2>
+<p>Für Fachanwender genügen zwei Darstellungen. Die <strong>Schrittliste</strong> ist die Arbeitsform. Sie ist schnell, textbasiert und lässt sich später fast eins zu eins in ein Werkzeug übertragen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Ausloeser: E-Mail mit PDF-Anhang trifft im Sammelpostfach ein
+Schritt 1: Anhang in Ablage speichern
+Schritt 2: Kopfdaten erfassen
+Schritt 3: WENN Bestellbezug fehlt DANN Rueckfrage an Lieferant, Ende
+Schritt 4: Freigabe bei Kostenstelle anfordern
+Schritt 5: WENN abgelehnt DANN Klaerfall, sonst weiter
+Schritt 6: Betrag ueber 5000 Euro zusaetzlich Leitung Finanzen
+Schritt 7: Buchen und zur Zahlung vormerken
+</code></pre></div></td></tr></table></div>
+<p>Das <strong>Diagramm</strong> ist die Kommunikationsform. Es zeigt Verzweigungen auf einen Blick und eignet sich, um sich mit Beteiligten abzustimmen:</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Rechnung trifft ein]) --&gt; B([Erfassen und formal pruefen])
+    B --&gt; C([Bestellbezug vorhanden])
+    C --&gt;|nein| D([Rueckfrage Lieferant])
+    C --&gt;|ja| E([Freigabe Kostenstelle])
+    E --&gt; F([Buchen und zahlen])</code></pre>
+<p>Halte Diagramme klein. Mehr als etwa zehn Kästen liest niemand freiwillig, und Sonderfälle gehören in die Schrittliste, nicht ins Bild. Umgekehrt gilt: Wenn du einen Ablauf nicht als Schrittliste aufschreiben kannst, ist er noch nicht verstanden – und dann kannst du ihn auch nicht automatisieren.</p>
+<hr />
+<h2 id="175-automatisierungspotenzial-erkennen-und-priorisieren">17.5 Automatisierungspotenzial erkennen und priorisieren<a class="headerlink" href="#175-automatisierungspotenzial-erkennen-und-priorisieren" title="Permanent link">&para;</a></h2>
+<p>Ob sich ein Schritt lohnt, hängt an drei Größen, die multipliziert werden – nicht addiert. Ist ein Faktor sehr klein, ist das Ergebnis klein, egal wie gut die anderen aussehen.</p>
+<ul>
+<li><strong>Häufigkeit:</strong> Wie oft läuft der Schritt? 1 = selten, 5 = täglich vielfach.</li>
+<li><strong>Aufwand je Fall:</strong> Wie viel Zeit und Nerven kostet er? 1 = Sekunden, 5 = viele Minuten oder Warten.</li>
+<li><strong>Regelhaftigkeit:</strong> Wie eindeutig ist die Regel? 1 = Einzelfallurteil, 5 = immer identisch.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Kandidat</th>
+<th>Häufigkeit</th>
+<th>Aufwand</th>
+<th>Regelhaftigkeit</th>
+<th>Punktwert</th>
+<th>Einschätzung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PDF ablegen und benennen</td>
+<td>5</td>
+<td>2</td>
+<td>5</td>
+<td>50</td>
+<td>starker Kandidat</td>
+</tr>
+<tr>
+<td>Kopfdaten abtippen</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>80</td>
+<td>starker Kandidat</td>
+</tr>
+<tr>
+<td>Freigabe anfordern und nachhalten</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td>75</td>
+<td>starker Kandidat</td>
+</tr>
+<tr>
+<td>Sachliche Freigabe entscheiden</td>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+<td>10</td>
+<td>bleibt beim Menschen</td>
+</tr>
+<tr>
+<td>Jahresabschluss vorbereiten</td>
+<td>1</td>
+<td>5</td>
+<td>2</td>
+<td>10</td>
+<td>kein Kandidat</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Durchgerechnet</p>
+<p>„Kopfdaten abtippen" kommt auf 5 × 4 × 4 = <strong>80</strong> und ist damit der stärkste Kandidat. „Sachliche Freigabe entscheiden" kommt trotz identischer Häufigkeit nur auf 5 × 2 × 1 = <strong>10</strong>, weil die Regelhaftigkeit fehlt: Ob eine Leistung tatsächlich erbracht wurde, weiß nur die Person, die sie beauftragt hat. Der Schritt wird nicht automatisiert – aber sein <strong>Drumherum</strong> schon: anfordern, erinnern, dokumentieren. Das ist das wichtigste Muster dieses Blocks.</p>
+</div>
+<p>Der Punktwert ordnet, entscheidet aber nicht. Vor der Umsetzung kommen drei Gegenfragen: Sind die <strong>Daten verfügbar</strong> in einer Form, mit der ein Werkzeug arbeiten kann? Welche <strong>Folge</strong> hat ein Fehler – falsch abgelegte Datei oder falsch angewiesene Zahlung? Und ist die <strong>Akzeptanz</strong> da, oder umgeht das Team den neuen Ablauf?</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Kandidat mit hohem Punktwert]) --&gt; B([Daten maschinell verfuegbar])
+    B --&gt;|nein| C([zurueckstellen und Datenquelle klaeren])
+    B --&gt;|ja| D([Fehlerfolge beherrschbar])
+    D --&gt;|nein| E([nur mit Freigabe durch Menschen])
+    D --&gt;|ja| F([als Pilot umsetzen])</code></pre>
+<p>Fange mit einem Kandidaten an, der hoch punktet, geringe Fehlerfolgen hat und in wenigen Tagen sichtbar wird. Ein kleiner Erfolg finanziert die nächsten drei Vorhaben; ein gescheitertes Prestigeprojekt blockiert sie (Kap. 34).</p>
+<hr />
+<h2 id="176-was-du-bewusst-nicht-automatisierst">17.6 Was du bewusst nicht automatisierst<a class="headerlink" href="#176-was-du-bewusst-nicht-automatisierst" title="Permanent link">&para;</a></h2>
+<p>Nicht zu automatisieren ist eine fachliche Entscheidung, keine Kapitulation. Ein Workflow, der ständig ausgebessert werden muss, kostet mehr Zeit, als er spart.</p>
+<table>
+<thead>
+<tr>
+<th>Fall</th>
+<th>Warum problematisch</th>
+<th>Besserer Umgang</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seltene Vorgänge</td>
+<td>Bauaufwand rechnet sich nie, Wissen veraltet</td>
+<td>Checkliste und gute Dokumentation</td>
+</tr>
+<tr>
+<td>Unklare Regeln</td>
+<td>Regel muss erst erfunden werden, Ergebnis wird willkürlich</td>
+<td>erst fachlich klären, dann automatisieren</td>
+</tr>
+<tr>
+<td>Häufig wechselnde Vorgaben</td>
+<td>jede Änderung erzwingt Nacharbeit am Ablauf</td>
+<td>manuell lassen oder nur den stabilen Kern automatisieren</td>
+</tr>
+<tr>
+<td>Echte Ermessensentscheidungen</td>
+<td>Verantwortung ist nicht delegierbar</td>
+<td>Entscheidung beim Menschen, Vorbereitung automatisieren</td>
+</tr>
+<tr>
+<td>Chaotischer Ist-Zustand</td>
+<td>Automatisierung beschleunigt das Chaos</td>
+<td>Prozess zuerst aufräumen</td>
+</tr>
+<tr>
+<td>Rechtlich sensible Schritte</td>
+<td>Nachweispflichten, Mitbestimmung</td>
+<td>mit Fachbereich und IT klären (Kap. 4, Kap. 20)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Wir automatisieren erst mal und regeln die Details später" klingt pragmatisch und ist der häufigste Grund für aufgegebene Automatisierungen. Ein Workflow ist eine <strong>schriftlich fixierte Entscheidung</strong>. Wo es keine Entscheidung gibt, kann der Ablauf sie nicht ersetzen – er macht die Lücke nur schneller sichtbar, meist im Fehlerfall.</p>
+</div>
+<p>Der produktive Zwischenweg heißt <strong>Teilautomatisierung</strong>: Der Ablauf erledigt alles Regelhafte und legt der zuständigen Person eine fertig vorbereitete Entscheidung vor. So bleibt Verantwortung dort, wo sie hingehört, und die Fleißarbeit verschwindet trotzdem.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Der <strong>Geschäftsprozess</strong> beschreibt das fachliche Ganze, der <strong>Workflow</strong> einen geregelten Abschnitt – automatisiert wird immer der Workflow.</li>
+<li>Eine Prozessaufnahme klärt sechs Dinge: Auslöser, Schritte, Beteiligte, Systeme, <strong>Medienbrüche</strong>, <strong>Wartezeiten</strong>.</li>
+<li>Nimm den <strong>echten</strong> Ablauf auf, nicht den gewünschten: nach dem letzten konkreten Fall und nach Ausnahmen fragen.</li>
+<li><strong>Schrittliste</strong> zum Arbeiten, <strong>Diagramm</strong> zum Abstimmen. Was du nicht als Schrittliste aufschreiben kannst, kannst du nicht automatisieren.</li>
+<li>Potenzial ergibt sich aus <strong>Häufigkeit × Aufwand × Regelhaftigkeit</strong>; Datenverfügbarkeit, Fehlerfolge und Akzeptanz entscheiden über die Reihenfolge.</li>
+<li>Selten, unklar geregelt oder ständig wechselnd heißt: nicht automatisieren – oder nur das Drumherum einer menschlichen Entscheidung.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Prozess, Workflow oder gar nichts davon?</summary>
+<p>Ordne jede Aussage zu: Beschreibt sie einen <strong>Geschäftsprozess</strong>, einen <strong>Workflow</strong>
+oder ist sie nur ein <strong>Thema</strong> ohne konkreten Ablauf?</p>
+<ol>
+<li>„Von der Bewerbung bis zur Einstellung."</li>
+<li>„Wenn eine Bewerbung im Postfach eintrifft, wird die PDF in den Ordner der Stelle
+   gelegt und die Fachabteilung erhält eine Nachricht."</li>
+<li>„Wir digitalisieren das Personalwesen."</li>
+<li>„Bei Betrag über 5000 Euro geht die Rechnung zusätzlich an die Leitung Finanzen."</li>
+<li>„Der komplette Beschaffungsvorgang inklusive Reklamationen."</li>
+<li>„Irgendwas mit KI im Einkauf."</li>
+</ol>
+<p>Notiere zu jeder Zuordnung eine kurze Begründung.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Prüfe zwei Dinge: Gibt es einen erkennbaren <strong>Auslöser</strong>? Und ist die Regel so eindeutig,
+dass zwei Personen sie identisch anwenden würden?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Einordnung</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Geschäftsprozess</td>
+<td>Ende-zu-Ende-Blick, keine Schritte, keine Regeln benannt</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Workflow</td>
+<td>klarer Auslöser, klare Schritte, eindeutig ausführbar</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Thema</td>
+<td>kein Auslöser, kein Ergebnis, keine Regel – nur eine Absicht</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Workflow</td>
+<td>eindeutige Regel mit Schwellenwert und Zuständigkeit</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Geschäftsprozess</td>
+<td>umfasst bewusst alle Sonderfälle, deshalb zu unscharf zum Bauen</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Thema</td>
+<td>Schlagwort ohne Aufgabe</td>
+</tr>
+</tbody>
+</table>
+<p>Der Lernpunkt: Nur die Zeilen 2 und 4 sind automatisierbar. Die Zeilen 1 und 5 sind
+wichtig, um den Überblick zu behalten, taugen aber nicht als Bauauftrag. Die Zeilen 3
+und 6 sind Aufträge, die man <strong>zurückgeben</strong> muss – mit der Bitte, einen konkreten
+Ablauf zu benennen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Einen eigenen Ablauf aufnehmen</summary>
+<p>Wähle einen Ablauf aus deinem Arbeitsalltag, der <strong>mindestens wöchentlich</strong> vorkommt und
+über zwei Personen oder zwei Systeme läuft (Urlaubsantrag, Bestellanforderung,
+Reisekostenabrechnung, Kundenanfrage, Onboarding einer neuen Kollegin).</p>
+<ol>
+<li>Notiere den <strong>Auslöser</strong> in einem Satz.</li>
+<li>Schreibe die Schritte in eine Tabelle mit den Spalten
+   <code>Nr. | Schritt | Wer (Rolle) | System | Medienbruch | Wartezeit</code>.
+   Mindestens sechs Zeilen.</li>
+<li>Markiere anschließend jede Zeile mit einem Medienbruch und jede Zeile mit einer
+   Wartezeit über einem Tag.</li>
+<li>Beantworte in zwei Sätzen: An welcher Stelle verliert der Ablauf am meisten Zeit –
+   durch Arbeit oder durch Liegen?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Denke an den letzten konkreten Fall, nicht an die Idealvorstellung. Wartezeiten fühlen
+sich beim Aufschreiben unwichtig an, weil dabei niemand arbeitet – genau deshalb werden
+sie fast immer vergessen, obwohl sie meist den größten Teil der Durchlaufzeit ausmachen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien für eine gute Bearbeitung:</p>
+<ul>
+<li>Der Auslöser ist ein <strong>Ereignis</strong>, kein Zustand („Formular wird eingereicht", nicht
+  „Urlaub wird gebraucht").</li>
+<li>Schritte sind als Tätigkeit mit Verb formuliert, nicht als Substantivblöcke.</li>
+<li>In der Spalte „Wer" stehen <strong>Rollen</strong> (Sachbearbeitung, Führungskraft), keine Namen –
+  sonst wird der Ablauf beim nächsten Personalwechsel ungültig.</li>
+<li>Mindestens ein Medienbruch ist gefunden. Wer keinen findet, hat zu grob geschnitten:
+  Jedes Abtippen, Kopieren, Ausdrucken und Wieder-Einscannen zählt.</li>
+<li>Die Antwort zu Punkt 4 trennt <strong>Bearbeitungszeit</strong> von <strong>Durchlaufzeit</strong>.</li>
+</ul>
+<p>Beispielhaftes Ergebnis für einen Urlaubsantrag: reine Bearbeitungszeit etwa zehn
+Minuten, Durchlaufzeit vier Tage. Das Zeitproblem liegt also nicht im Ausfüllen, sondern
+im Warten auf die Freigabe. Wer hier „das Formular automatisieren" vorschlägt, hat den
+falschen Schritt gewählt – zu automatisieren ist das <strong>Anfordern und Erinnern</strong>.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> KI strukturiert den Prozess – du prüfst nach</summary>
+<p>Diese Übung machst du in einem KI-Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li>Gib die folgende Beschreibung als Prosa ein und lass sie strukturieren:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Strukturiere die folgende Prozessbeschreibung in eine Tabelle mit den Spalten
+Schritt, Rolle, System, Medienbruch, Wartezeit. Markiere jede Stelle, an der
+die Beschreibung unklar oder unvollstaendig ist, mit OFFEN. Erfinde keine
+Schritte.
+
+Beschreibung: Wenn eine Bestellanforderung reinkommt, meist per Mail an den
+Einkauf, schaut sich das jemand an und prueft, ob das Budget da ist. Dazu wird
+in einer Excel-Datei nachgesehen. Passt es, wird eine Bestellung im
+Warenwirtschaftssystem angelegt und der Anforderer bekommt Bescheid. Bei
+groesseren Betraegen muss vorher noch die Abteilungsleitung zustimmen, das
+dauert manchmal. Am Ende wird alles in einem Ordner abgelegt.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Prüfe die Antwort kritisch. Finde <strong>mindestens drei</strong> Stellen, an denen das Werkzeug
+   etwas erfunden, weggelassen oder falsch eingeordnet hat.</li>
+<li>Formuliere die drei wichtigsten <strong>Rückfragen</strong> an den Einkauf, die du vor jeder
+   Automatisierung stellen musst.</li>
+<li>Bewerte einen Schritt deiner Wahl mit Häufigkeit × Aufwand × Regelhaftigkeit und
+   begründe, ob er ein Kandidat ist.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte besonders auf die Wörter „meist", „jemand", „größere Beträge" und „manchmal".
+Genau dort steckt keine Regel, sondern eine ungeklärte Entscheidung – und genau dort
+füllt ein KI-Werkzeug die Lücke am liebsten mit einer plausibel klingenden Erfindung.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Funde beim Nachprüfen:</p>
+<ul>
+<li><strong>Erfunden:</strong> konkrete Schwellenwerte („ab 1000 Euro"), obwohl der Text nur „größere
+  Beträge" sagt. Häufig ergänzt werden auch eine Freigabe durch die Geschäftsführung,
+  ein Ticketsystem oder eine Prüfung der Lieferantendaten.</li>
+<li><strong>Weggelassen:</strong> die Wartezeit bei der Zustimmung der Abteilungsleitung erscheint oft
+  nicht als eigene Zeile, obwohl sie die Durchlaufzeit dominiert.</li>
+<li><strong>Falsch eingeordnet:</strong> „in Excel nachsehen" ist ein Medienbruch, wird aber gern als
+  reiner Systemschritt geführt. Auch „in einem Ordner ablegen" bleibt unklar –
+  Papierordner oder Dateiablage?</li>
+<li><strong>Nicht markiert:</strong> Was passiert, wenn das Budget <strong>nicht</strong> reicht? Der Text nennt
+  keinen Ablehnungspfad; ein gutes Ergebnis markiert das als OFFEN.</li>
+</ul>
+<p>Gute Rückfragen: (1) Ab welchem Betrag genau ist eine Zustimmung nötig, und wer
+entscheidet bei Abwesenheit? (2) Was geschieht bei fehlendem Budget? (3) Wo ist die
+verbindliche Ablage, und welcher Dateiname gilt?</p>
+<p>Bewertungsbeispiel: „Budget in Excel nachsehen" mit Häufigkeit 4, Aufwand 3 und
+Regelhaftigkeit 4 ergibt 48 – ein Kandidat, aber nur, wenn die Budgetdaten maschinell
+lesbar vorliegen. Diese Datenfrage entscheidet öfter über den Erfolg als der Punktwert.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Prozessaufnahme und Automatisierungsdesign auf Papier</summary>
+<p><strong>Szenario:</strong> Du übernimmst in der Personalabteilung der Nordwind Handel GmbH die
+Aufgabe, den Urlaubsantrag „endlich in Ordnung zu bringen". Beschwerden gibt es von allen
+Seiten: Beschäftigte wissen nicht, ob ihr Antrag angekommen ist, Führungskräfte finden die
+Anträge nicht wieder, und die Personalabteilung pflegt am Monatsende alles von Hand in eine
+Excel-Datei. Ein Werkzeug baust du in diesem Workshop noch nicht – du lieferst die
+Grundlage, auf der später gebaut wird.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Nordwind Handel GmbH, 180 Mitarbeitende, 12 Fuehrungskraefte.
+Rund 500 Urlaubsantraege pro Jahr, Spitzen im Mai und November.
+Heute: Antrag per Mail oder Papierformular an die Fuehrungskraft,
+  Freigabe per Antwortmail oder Unterschrift,
+  Personalabteilung traegt in Excel-Datei Urlaubskonto ein.
+Bekannte Probleme: Antraege gehen verloren, Vertretungsregel bei
+  Abwesenheit der Fuehrungskraft fehlt, Resturlaub ist nie aktuell,
+  Sonderfaelle wie Sonderurlaub und Kurzarbeit laufen anders.
+Systeme: Outlook, ein SharePoint-Team, eine Excel-Datei, kein HR-System.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Ist-Aufnahme.</strong> Nimm den Ablauf so auf, wie er heute tatsächlich läuft. Erstelle
+eine Schritttabelle mit den Spalten <code>Nr. | Schritt | Rolle | System | Medienbruch |
+Wartezeit</code> und mindestens acht Zeilen. Ergänze darunter drei Angaben: reine
+Bearbeitungszeit je Antrag, typische Durchlaufzeit, Anzahl der Medienbrüche. Zeichne
+zusätzlich ein Diagramm mit maximal acht Kästen für die Abstimmung mit den Führungskräften.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Aufnahme muss <strong>alle vier</strong> Kriterien
+erfüllen. Arbeite sie nach und dokumentiere die Nachbesserung:</p>
+<ol>
+<li>Jeder Schritt hat genau <strong>eine</strong> verantwortliche Rolle – kein „irgendwer aus HR".</li>
+<li>Mindestens <strong>zwei Sonderfälle</strong> sind benannt und mit ihrer geschätzten Häufigkeit
+   versehen (zum Beispiel Abwesenheit der Führungskraft, Antrag rückwirkend, Sonderurlaub).</li>
+<li>Jede Wartezeit über einem Tag ist mit einer Ursache versehen, nicht nur mit einer Dauer.</li>
+<li>Für jeden Medienbruch ist notiert, welcher Fehler dort real passieren kann.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Beim Vorstellen kommt heraus, dass zwei Abteilungen den
+Ablauf <strong>anders</strong> handhaben: Der Vertrieb pflegt eine eigene Abwesenheitsliste in Teams und
+meldet Urlaub nur gesammelt zum Monatsende. Die Personalabteilung hat davon nichts gewusst,
+die Excel-Datei ist damit für ein Viertel der Belegschaft unvollständig. Überarbeite deine
+Aufnahme: Nimm den abweichenden Weg als zweite Variante auf und entscheide begründet, ob
+dein künftiger Ablauf <strong>beide</strong> Wege abbilden oder auf <strong>einen</strong> vereinheitlichen soll.
+Benenne, wer diese Entscheidung fachlich treffen muss.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Bewerte mindestens fünf Schritte mit
+Häufigkeit × Aufwand × Regelhaftigkeit und bilde eine Rangfolge. Lass dir von einem
+KI-Werkzeug einen Vorschlag geben, womit du starten solltest. Die Personalleitung möchte
+dagegen „das Urlaubskonto automatisch berechnen", weil das den größten Nutzen hätte.
+Entscheide dich für <strong>einen</strong> Startschritt und <strong>widersprich</strong> begründet – entweder der
+Personalleitung oder dem KI-Vorschlag. Nenne dabei ausdrücklich, welchen Schritt du
+<strong>nicht</strong> automatisierst und warum.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Ist-Aufnahme als Schritttabelle plus Diagramm, inklusive Bearbeitungs- und Durchlaufzeit</li>
+<li>ausgefüllte Checkliste der vier Pflichtkriterien mit dokumentierter Nachbesserung</li>
+<li>zweite Prozessvariante des Vertriebs plus begründete Entscheidung Vereinheitlichen
+   oder Abbilden</li>
+<li>Bewertungstabelle mit Rangfolge, Startempfehlung mit Begründung und einer bewusst
+   abgelehnten Automatisierung</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> deine Aufnahme den echten Ablauf beschreibt und nicht den
+gewünschten, alle vier Pflichtkriterien nachweisbar erfüllt sind, die Vertriebsvariante
+sichtbar ist, und deine Startempfehlung sowohl den Punktwert als auch Datenverfügbarkeit
+und Fehlerfolge berücksichtigt.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der eigentliche Lernwert liegt in Runde 3 und 4. Runde 3 zeigt das häufigste Scheitern
+echter Automatisierungsprojekte: Der Ablauf, den man aufgenommen hat, ist nur einer von
+mehreren. Wer das erst nach dem Bauen merkt, muss neu anfangen. In Runde 4 liegt die Falle
+im Wort „größter Nutzen": Ein automatisch berechnetes Urlaubskonto klingt attraktiv, setzt
+aber saubere Stammdaten und vollständige Historie voraus – beides fehlt hier. Der
+langweilige Schritt mit hoher Regelhaftigkeit ist fast immer der bessere Start.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Die Ist-Aufnahme trennt Bearbeitungszeit von Durchlaufzeit,
+benennt Rollen statt Namen und weist mindestens drei Medienbrüche mit konkretem Fehlerbild
+nach; (2) alle vier Pflichtkriterien sind erfüllt, insbesondere die Sonderfälle mit
+Häufigkeitsschätzung und die Ursachen der Wartezeiten – „dauert manchmal" genügt nicht;
+(3) die Vertriebsvariante ist als eigener Weg dargestellt, die Entscheidung
+Vereinheitlichen oder Abbilden ist mit Aufwand und Akzeptanz begründet und benennt die
+fachlich zuständige Stelle; (4) die Rangfolge stützt sich auf plausible Punktwerte, die
+Startempfehlung wägt Datenverfügbarkeit und Fehlerfolge ab, und es gibt eine bewusst
+abgelehnte Automatisierung mit tragfähiger Begründung.</p>
+<p>Lernziel: Einen realen Ablauf so aufnehmen und bewerten, dass daraus ein baubarer
+Automatisierungsauftrag wird – und dabei erkennen, dass abweichende Praxis und fehlende
+Daten wichtiger sind als der geschätzte Nutzen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel16/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 16 – Fallbeispiel Rechnungswesen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 16 – Fallbeispiel Rechnungswesen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel18/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 18 – Trigger, Aktionen und Daten">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 18 – Trigger, Aktionen und Daten
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

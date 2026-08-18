@@ -1,0 +1,38 @@
+title: Tabelle prüfen, bevor die KI ran darf
+difficulty: 1
+question: |
+  Vor dir liegt dieser Auszug aus einer echten Arbeitsdatei. Er ist so, wie solche Dateien
+  tatsächlich aussehen.
+
+  ```text
+  Zeile 1:  Auswertung Auftraege Q1  (verbundene Zellen A1 bis F1)
+  Zeile 2:  (leer)
+  Zeile 3:  Nr | Kunde | Datum | Menge | Netto | Bemerkung
+  Zeile 4:  1001 | Musterhandel GmbH | 12.01.2026 | 12 | 1.044,00 EUR |
+  Zeile 5:  1002 | Nordlicht Bueromoebel | 15.01.2026 | 40 | 2360 |
+  Zeile 6:  Zwischensumme Januar |  |  | 52 | 3404 |
+  Zeile 7:  1003 | musterhandel gmbh | 02.02.2026 |  | 890 | Preis offen
+  Zeile 8:  1004 | Bergquell Logistik | 2026-02-14 | 25 | 1975 |
+  ```
+
+  1. Benenne **alle** Verstöße gegen die fünf Bedingungen einer verwertbaren Tabelle.
+  2. Gib für jeden Verstoß den konkreten Reparaturschritt an.
+  3. Nenne einen Verstoß, der beim Rechnen zu einem **falschen, aber unauffälligen** Ergebnis führt.
+tip: |
+  Achte nicht nur auf die Struktur, sondern auf die Zellinhalte. Zwei Spalten enthalten Werte
+  in unterschiedlichen Formaten.
+solution: |
+  | Verstoß | Zeile | Reparatur |
+  |---|---|---|
+  | Verbundene Zellen im Titel | 1 | Zellverbund lösen, Titel außerhalb des Tabellenbereichs |
+  | Leerzeile als Trenner | 2 | löschen, Kopfzeile direkt über die Daten |
+  | Zwischensumme in den Daten | 6 | entfernen, Summen außerhalb oder per Pivot |
+  | Netto als Text mit Einheit | 4 | `1.044,00 EUR` in Zahl `1044` wandeln, Einheit in die Überschrift |
+  | Zwei Datumsformate | 4 und 8 | einheitlich als Datum formatieren |
+  | Uneinheitliche Kundenschreibweise | 7 | vereinheitlichen, sonst Gruppierung schlägt fehl |
+  | Fehlende Menge | 7 | klären, ob 0 oder unbekannt – nicht blind mit 0 füllen |
+
+  Der gefährlichste Verstoß ist das Netto als Text in Zeile 4. Eine Summe über die Spalte
+  ignoriert diesen Wert stillschweigend und liefert 5225 statt 6269 – ein plausibles, aber
+  falsches Ergebnis ohne jede Fehlermeldung. Der Zellverbund fällt dagegen sofort auf, weil
+  Copilot die Arbeit verweigert. Sichtbare Probleme sind die harmlosen.

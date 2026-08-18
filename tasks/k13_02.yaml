@@ -1,0 +1,45 @@
+title: Formel erzeugen und mit drei Fällen prüfen
+difficulty: 2
+question: |
+  Diese Übung machst du am Werkzeug. Lege in Excel eine Tabelle mit diesem erfundenen Datensatz
+  an und formatiere sie über `Excel → Registerkarte Einfügen → Tabelle` als Tabelle `Lieferungen`.
+
+  ```text
+  Auftrag;Kunde;Zusagedatum;Lieferdatum;Menge
+  A-2001;Musterhandel GmbH;10.03.2026;08.03.2026;12
+  A-2002;Nordlicht Bueromoebel;12.03.2026;12.03.2026;40
+  A-2003;Bergquell Logistik;15.03.2026;19.03.2026;25
+  A-2004;Talwerk Montage;20.03.2026;;1
+  A-2005;Musterhandel GmbH;05.03.2026;;8
+  ```
+
+  1. Lass eine Formel für eine neue Spalte `Lieferstatus` erzeugen, die zwischen `puenktlich`,
+     `verspaetet`, `offen` und `ueberfaellig` unterscheidet. Beschreibe die Regeln vollständig
+     und fordere strukturierte Verweise mit Spaltennamen an.
+  2. Setze die Formel ein und notiere das Ergebnis für alle fünf Zeilen.
+  3. Führe die **Drei-Fälle-Gegenprobe** durch: Normalfall, Grenzfall, Leerwertfall.
+  4. Wenn eine Zeile falsch ist, formuliere eine Nachschärfung und prüfe erneut.
+tip: |
+  Zeile A-2002 ist der Grenzfall: Lieferdatum genau gleich Zusagedatum. Überlege dir **vorher**,
+  welches Ergebnis richtig ist – sonst übernimmst du die Entscheidung des Werkzeugs, ohne sie
+  bemerkt zu haben.
+solution: |
+  Erwartete Ergebnisse: A-2001 pünktlich, A-2002 pünktlich (Grenzfall, kleiner gleich),
+  A-2003 verspätet, A-2004 offen, A-2005 überfällig.
+
+  Eine tragfähige Formel für die Spalte:
+
+  ```text
+  =WENN([@Lieferdatum]="";WENN([@Zusagedatum]<HEUTE();"ueberfaellig";"offen");
+   WENN([@Lieferdatum]<=[@Zusagedatum];"puenktlich";"verspaetet"))
+  ```
+
+  Typische Fehler in erzeugten Formeln: (1) Die Prüfung auf leeres Lieferdatum fehlt, dann wird
+  eine leere Zelle als 0 gelesen und A-2004 gilt als pünktlich – ein stiller, gefährlicher Fehler.
+  (2) Es wird `<` statt `<=` verwendet, dann kippt der Grenzfall A-2002 auf verspätet.
+  (3) Es werden Zellbezüge wie `C2` statt strukturierter Verweise geliefert, was beim Einfügen
+  neuer Zeilen bricht.
+
+  Bewertungskriterien: Alle vier Statuswerte kommen vor, die Leerwertzeilen sind korrekt getrennt,
+  der Grenzfall entspricht deiner vorher festgelegten Erwartung, und du hast die Prüfung an
+  konkreten Zeilen belegt – nicht durch Ansehen der Formel.

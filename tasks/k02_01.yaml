@@ -1,0 +1,27 @@
+title: Stufe im Spektrum bestimmen
+difficulty: 1
+question: |
+  Ordne jeden Fall einer Stufe des Automatisierungs-Spektrums zu:
+  **Makro**, **regelbasierter Workflow**, **RPA**, **KI-Baustein** oder **Agent**.
+
+  1. Ein Excel-Ablauf formatiert jeden Monat den Umsatzbericht auf Knopfdruck.
+  2. Trifft eine Mail mit Anhang ein, wird die Datei in SharePoint abgelegt und das Team informiert.
+  3. Eine Software meldet sich am alten Lagersystem an und tippt Bestellmengen in die Maske.
+  4. Ein Schritt liest aus einem Rechnungs-PDF Nummer, Betrag und Lieferant heraus.
+  5. Ein System erhält den Auftrag, offene Rückfragen zu einer Reklamation zu klären, und
+     entscheidet selbst, welche Quellen es dafür abfragt.
+tip: |
+  Zwei Leitfragen genügen: Wer hat die Reihenfolge der Schritte festgelegt – ein Mensch beim
+  Bauen oder das System zur Laufzeit? Und wird über die Oberfläche oder über eine Schnittstelle
+  zugegriffen?
+solution: |
+  | Fall | Stufe | Begründung |
+  |---|---|---|
+  | 1 Umsatzbericht formatieren | Makro | feste Abfolge innerhalb eines Programms, manuell gestartet |
+  | 2 Anhang ablegen und informieren | regelbasierter Workflow | Ereignis als Auslöser, Connectoren, immer gleicher Ablauf |
+  | 3 Bestellmengen eintippen | RPA | bedient eine Oberfläche, weil keine Schnittstelle existiert |
+  | 4 Felder aus PDF lesen | KI-Baustein | ein Denkschritt mit statistischem Ergebnis, danach geht es regelbasiert weiter |
+  | 5 Rückfragen klären | Agent | erhält ein Ziel, wählt Werkzeuge und Reihenfolge selbst |
+
+  Fall 4 ist der lehrreichste: Der KI-Anteil ist nur ein einzelner Schritt. Alles davor und
+  danach bleibt regelbasiert – genau das Muster „deterministisch außen, KI innen".

@@ -1,0 +1,91 @@
+title: Sendungsstatus eines Partners anbinden
+difficulty: 4
+question: |
+  **Szenario:** Ein erfundener Logistikpartner, die Nordkurier GmbH, liefert Sendungsstatus bisher
+  per Sammelmail: einmal täglich eine Textliste, die im Kundenservice von Hand abgetippt wird.
+  Anfragen von Kunden werden dadurch mit bis zu einem Tag Verzögerung beantwortet. Der Partner
+  bietet zwei Wege an: Er kann jede Statusänderung sofort an eine URL melden, und er stellt eine
+  Abfrageschnittstelle bereit, über die man den Status einer Sendung nachfragen kann. Ein fertiger
+  Connector existiert nicht. Du baust die Anbindung.
+
+  ```text
+  Rahmendaten:
+  Etwa 250 Sendungen pro Woche, 6 Personen im Kundenservice.
+  Statuswerte: angenommen, unterwegs, zugestellt, Problem.
+  Abfrageschnittstelle laut Partnerdoku:
+    GET https://api.nordkurier.example/v1/sendungen/A-2026-0417
+    Kopfzeile X-Api-Key mit dem Schluessel aus der Partnervereinbarung
+    Ratenbegrenzung 60 Anfragen pro Minute
+  Meldung des Partners an deine URL, Beispielinhalt:
+    { "sendung": "A-2026-0417", "status": "unterwegs", "zeitpunkt": "2026-03-04T09:12:00Z" }
+  ```
+
+  ---
+
+  **Runde 1 – Empfang bauen.** Lege eine SharePoint-Liste `Sendungsstatus` an (Sendung, Status,
+  Zeitpunkt, Quelle, Bemerkung). Baue einen Flow mit dem Trigger
+  `Bei Empfang einer HTTP-Anforderung (When a HTTP request is received)`, hinterlege ein Schema
+  aus dem Beispielinhalt oben, schreibe jede Meldung in die Liste und antworte dem Partner mit der
+  Aktion `Antwort (Response)`. Teste mit mindestens fünf verschiedenen Meldungen. Baue außerdem
+  den Abfrageweg: mit der Aktion `HTTP-Anforderung (HTTP)`, falls verfügbar – sonst als exakt
+  dokumentierten Entwurf plus Simulation über `Verfassen` und `JSON analysieren`.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Anbindung muss **alle vier** Kriterien
+  erfüllen:
+
+  1. Unbekannte oder leere Statuswerte landen **nicht** ungeprüft in der Liste, sondern führen zu
+     einem eigenen Eintrag mit Bemerkung und einer Meldung in einen Teams-Kanal.
+  2. Der Aufrufer bekommt eine sinnvolle Antwort: Statuscode 200 bei Erfolg, 400 bei fehlendem
+     Pflichtfeld.
+  3. Der API-Schlüssel steht **nirgends im Klartext** im Flow – beschreibe und nutze deine Ablage.
+  4. Am aufrufenden Schritt ist eine Wiederholungsrichtlinie eingestellt, die zu 429 und 500 passt,
+     und dokumentiert ist, warum sie bei 400 und 404 nichts hilft.
+
+  **Runde 3 – Die Komplikation.** Nach zwei Tagen Testbetrieb passieren drei Dinge: Der Partner
+  ergänzt ohne Vorwarnung ein Feld `verzoegerung_minuten`, sendet den Zeitpunkt plötzlich als
+  `04.03.2026 09:12` statt im bisherigen Format, und einige Meldungen kommen doppelt an, weil sein
+  System bei fehlender Antwort erneut sendet. Deine Liste enthält jetzt Dubletten und leere
+  Zeitpunkte. Repariere die Anbindung: Fange das neue Format ab, verhindere Dubletten anhand von
+  Sendung plus Zeitpunkt, und stelle sicher, dass ein unerwartetes Feld deinen Flow **nicht**
+  zum Absturz bringt. Dokumentiere, was du am Schema geändert hast und warum.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Der Partner schlägt vor: „Am einfachsten schicken wir
+  die URL an den Verteiler des Kundenservice, dann kann jeder testen. Und legt den Schlüssel doch
+  direkt in den Flow, das spart Aufwand." Gleichzeitig will der Kundenservice die Sendungen
+  zusätzlich alle fünf Minuten aktiv abfragen, um sicher nichts zu verpassen – bei 250 Sendungen
+  wären das mehr Aufrufe als die Ratenbegrenzung erlaubt. Hole dir von einem KI-Werkzeug Argumente
+  und entscheide dann begründet über beide Punkte. **Widersprich** mindestens einem der Vorschläge
+  ausdrücklich und benenne die Folge, die du damit verhinderst.
+
+  **Deliverable:**
+
+  1. lauffähiger Empfangs-Flow mit Schema, Validierung, Antwort-Aktion und Liste `Sendungsstatus`
+     mit mindestens fünf Testmeldungen
+  2. Abfrageweg als lauffähige Aktion oder als exakter Entwurf mit Endpunkt, Methode, Kopfzeilen
+     und Auswertung der JSON-Antwort
+  3. Nachweis der vier Pflichtkriterien plus Beschreibung der Reparatur aus Runde 3
+  4. einseitige Entscheidungsnotiz zu Weitergabe der URL, Ablage des Schlüssels und Abfragetakt
+
+  **Fertig bist du erst, wenn** fünf Testmeldungen korrekt in der Liste stehen, eine Meldung mit
+  fehlendem Pflichtfeld mit Statuscode 400 abgewiesen wurde, eine doppelt gesendete Meldung genau
+  **einen** Eintrag erzeugt hat, im Flow kein Schlüssel im Klartext auffindbar ist und deine
+  Entscheidungsnotiz einen der Partnervorschläge begründet ablehnt.
+tip: |
+  Runde 3 ist der eigentliche Kern: Fremde Schnittstellen ändern sich ohne dich, und ein
+  Doppelversand ist kein Sonderfall, sondern das normale Verhalten eines Systems, das keine
+  Antwort erhält. Wer die Antwort-Aktion vergisst, produziert Dubletten selbst. Prüfe vor dem
+  Schreiben mit einer Filterabfrage auf Sendung und Zeitpunkt. In Runde 4 hilft die Frage: Was
+  kostet der bequeme Weg in drei Monaten – an Datenqualität, an Aufrufen und an Vertraulichkeit?
+solution: |
+  Bewertungskriterien: (1) Der Empfangsweg läuft nachweisbar Ende zu Ende, mit Schema, Prüfung der
+  Pflichtfelder und einer echten `Antwort`-Aktion statt eines stillen 202; (2) alle vier
+  Pflichtkriterien sind belegt, insbesondere die schlüsselfreie Flow-Definition und eine
+  Wiederholungsrichtlinie mit begründeter Einstellung; (3) die Reparatur aus Runde 3 behandelt alle
+  drei Änderungen – neues Feld ohne Absturz, zweites Datumsformat abgefangen, Dublettenprüfung vor
+  dem Schreiben; (4) die Entscheidungsnotiz lehnt mindestens einen Partnervorschlag begründet ab
+  und rechnet den Abfragetakt gegen die Ratenbegrenzung, statt beides nebeneinander stehen zu
+  lassen.
+
+  Lernziel: Eine fremde Schnittstelle ohne fertigen Connector anbinden – und dabei die drei Dinge
+  beherrschen, an denen solche Anbindungen in der Praxis scheitern: Geheimnisse, Doppelmeldungen
+  und stillschweigende Änderungen beim Partner.

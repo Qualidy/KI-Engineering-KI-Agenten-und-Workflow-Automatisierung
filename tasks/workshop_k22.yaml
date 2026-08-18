@@ -1,0 +1,84 @@
+title: Posteingang Angebotsanfragen automatisiert ablegen
+difficulty: 4
+question: |
+  **Szenario:** Im Vertriebsinnendienst laufen Angebotsanfragen per Mail ein, oft mit
+  Leistungsverzeichnis oder Zeichnung als Anhang. Bisher lädt jede Person die Anhänge von Hand in
+  einen Ordner und schreibt eine Notiz in den Teams-Kanal. Zweimal im letzten Quartal wurde eine
+  Anfrage übersehen, einmal lag dieselbe Datei in drei verschiedenen Ordnern. Du baust den Ablauf
+  als Cloud-Flow – er muss am Ende dieses Workshops wirklich laufen und den Kanal wirklich
+  benachrichtigen.
+
+  ```text
+  Rahmen:
+  Etwa 20 Anfragen pro Woche, Anhaenge meist PDF, gelegentlich zwei bis fuenf Dateien pro Mail.
+  Ablageziel: OneDrive for Business oder eine SharePoint-Bibliothek, Ordner Angebotsanfragen.
+  Zielkanal: Teams-Kanal Vertrieb, alternativ eine Bestaetigungsmail an dich selbst.
+  Mails kommen teils direkt, teils als Weiterleitung von Kolleginnen und Kollegen.
+  Verwendet werden ausschliesslich Standard-Connectoren.
+  ```
+
+  ---
+
+  **Runde 1 – Grundlage bauen.** Lege den Zielordner an und baue den Flow in drei Etappen, mit einem
+  Testlauf nach jeder Etappe: (1) Trigger `Bei Eingang einer neuen E-Mail (V3)` mit passenden
+  Filtern, (2) Ablage der Anhänge, (3) Benachrichtigung außerhalb der Schleife. Lege dir vorab drei
+  Testmails an: eine mit einem Anhang, eine mit drei Anhängen, eine ohne Anhang.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Flow muss **alle vier** Punkte erfüllen und du
+  weist jeden Punkt mit einem Lauf aus dem Ausführungsverlauf nach:
+
+  1. Eine Mail **ohne** Anhang erzeugt keinen Lauf.
+  2. Eine Mail mit **drei** Anhängen erzeugt drei Dateien und genau **eine** Benachrichtigung.
+  3. Jede Karte im Flow trägt einen sprechenden Namen; die Benachrichtigung enthält Absender,
+     Betreff und Empfangszeit als dynamische Inhalte.
+  4. Der Flow lässt sich mit `Testen → Automatisch → Mit Daten aus vorherigen Ausführungen`
+     wiederholen, ohne dass du eine neue Mail schicken musst.
+
+  **Runde 3 – Die Komplikation.** Der Flow geht in Betrieb, und drei Meldungen kommen zurück:
+
+  - Eine Kollegin hat eine Anfrage weitergeleitet. Ergebnis: Im Ordner liegen jetzt drei Dateien –
+    das Leistungsverzeichnis und zwei Bilder aus der Signatur. Finde heraus, woran du eine
+    Signaturdatei erkennst, und lege fest, wie du sie aussortierst.
+  - Zwei Kunden haben ihre Datei `Anfrage.pdf` genannt. Die zweite hat die erste überschrieben und
+    ist nicht mehr auffindbar. Baue einen eindeutigen Dateinamen und beschreibe, aus welchen
+    Bestandteilen er besteht.
+  - Der Kanal wurde an einem Tag mit 14 Nachrichten geflutet, weil auch die automatischen
+    Antwortmails des eigenen Flows den Trigger auslösten. Stelle das über eine Trigger-Bedingung ab
+    und weise mit dem Ausführungsverlauf nach, dass die Doppelläufe verschwunden sind.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die IT sagt: „Ablage nur in SharePoint, niemals in
+  OneDrive." Der Vertrieb sagt: „OneDrive ist einfacher, das machen wir so." Lass dir von einem
+  KI-Werkzeug Argumente für beide Seiten geben und prüfe sie an deinem gebauten Flow nach: Was
+  ändert sich technisch, wer hat Zugriff, was passiert bei Abwesenheit der Eigentümerin. Entscheide
+  begründet und **widersprich** dabei mindestens einem Argument, das dir das KI-Werkzeug geliefert
+  hat, mit einer Beobachtung aus deinem eigenen Testlauf.
+
+  **Deliverable:**
+
+  1. laufender Flow mit sprechenden Schrittnamen, in Betrieb genommen und aktiv
+  2. Testprotokoll mit vier Läufen: ohne Anhang, ein Anhang, drei Anhänge, Wiederholung mit
+     gespeicherten Daten – je mit Status, Dauer und Ergebnis am Ziel
+  3. Lösungen zu den drei Störungen aus Runde 3, jede mit Vorher-Nachher-Nachweis aus dem Verlauf
+  4. halbseitige Entscheidung zum Ablageort mit dem widersprochenen KI-Argument
+
+  **Fertig bist du erst, wenn** der Flow aktiv ist, alle vier Testläufe mit geprüftem Ergebnis am
+  Zielort belegt sind, jede der drei Störungen aus Runde 3 mit einem Vorher-Nachher-Lauf aus dem
+  Ausführungsverlauf nachweislich behoben ist und deine Entscheidung zum Ablageort mindestens ein
+  Argument des KI-Werkzeugs mit einer eigenen Beobachtung aus deinem Testlauf zurückweist.
+tip: |
+  Der eigentliche Lernwert liegt in Runde 3. Die drei Störungen sind keine erfundenen Übungsfälle,
+  sondern die drei Dinge, die bei diesem Flow in der Praxis immer passieren: fremde Signaturbilder,
+  gleiche Dateinamen, Selbstauslösung. Achte darauf, jede Korrektur mit einem Lauf zu belegen statt
+  sie nur zu behaupten – „müsste jetzt gehen" ist die Aussage, mit der Flows unbemerkt kaputtgehen.
+solution: |
+  Bewertungskriterien: (1) der Flow ist aktiv und die vier Pflichtläufe sind mit Zeitstempel, Status
+  und geprüftem Ergebnis am Zielort belegt, insbesondere drei Dateien bei einer Nachricht;
+  (2) die Signaturdateien werden über ein nachvollziehbares Merkmal aussortiert, etwa Dateiendung
+  oder Dateigröße, und die Begründung passt zu den Eingaben im Ausführungsverlauf; (3) der
+  Dateiname ist nachweislich eindeutig und aus Bestandteilen wie Datum, Absender und Originalname
+  aufgebaut, die Kollision ist mit einem Testlauf widerlegt; (4) die Doppelauslösung ist über eine
+  Trigger-Bedingung abgestellt und die Entscheidung zum Ablageort wägt Zugriff, Vertretung und
+  Aufwand ab, statt nur einer Seite zuzustimmen.
+
+  Lernziel: einen vollständigen Cloud-Flow selbstständig bauen, in Betrieb nehmen und mit dem
+  Ausführungsverlauf beweisen, dass er das Richtige tut – auch bei unsauberen Eingangsdaten.

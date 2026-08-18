@@ -1,0 +1,86 @@
+title: Technologie-Entscheidung für den Angebotsprozess
+difficulty: 4
+question: |
+  **Szenario:** Du arbeitest im Vertriebsinnendienst eines Maschinenbau-Zulieferers. Anfragen
+  kommen per Mail, über ein Webformular und telefonisch herein. Der Weg bis zum Angebot ist
+  gewachsen, nicht entworfen: Jemand liest die Anfrage, sucht Preise in einer Excel-Datei, legt
+  einen Vorgang im alten ERP-System an, schreibt das Angebot in Word und schickt es raus.
+  Angebote gehen regelmäßig unter, Rückfragen dauern Tage. Die Geschäftsführung hat gehört,
+  „ein KI-Agent" könne das übernehmen, und erwartet von dir eine belastbare Einschätzung.
+
+  ```text
+  Rahmendaten:
+  Etwa 120 Anfragen pro Monat, davon rund 70 angebotsrelevant.
+  Team: 4 Personen im Innendienst, 1 Vertriebsleitung.
+  Systeme: Microsoft 365, Preisliste in Excel auf SharePoint, ERP ohne Schnittstelle.
+  Rund 20 Prozent der Anfragen sind Sonderanfertigungen ohne Listenpreis.
+  Keine Entwicklungsressourcen, kein Budget fuer Individualsoftware.
+  ```
+
+  ---
+
+  **Runde 1 – Ist-Prozess in Schritte zerlegen.** Schreibe den Ablauf von der eingehenden
+  Anfrage bis zum versendeten Angebot in **mindestens acht einzelne Schritte** auf. Notiere pro
+  Schritt: wer ihn ausführt, welches System beteiligt ist, ob ein Urteil nötig ist, und was
+  passiert, wenn er ausfällt. Ordne anschließend jedem Schritt eine Stufe des Spektrums zu –
+  Makro, Workflow, RPA, KI-Baustein, Agent oder „bleibt beim Menschen".
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Zuordnung muss **alle vier** Kriterien
+  erfüllen. Lass sie von einem KI-Werkzeug gegenprüfen und schließe Lücken selbst:
+
+  1. Mindestens **zwei** Schritte sind als regelbasierter Workflow **ohne** KI markiert, mit
+     Begründung, warum hier keine KI nötig ist.
+  2. Für jeden RPA-Vorschlag ist belegt, dass zuvor nach einer Schnittstelle oder einem
+     Export-Weg gesucht wurde.
+  3. Jeder KI-Baustein ist auf **eine** Aufgabe eingegrenzt und mit einem Prüfschritt versehen,
+     der benennt, wer das Ergebnis kontrolliert.
+  4. Kein Schritt mit Außenwirkung gegenüber Kunden läuft ohne menschliche Freigabe.
+
+  **Runde 3 – Die Komplikation.** Zwei Dinge treten ein. Erstens: Die IT teilt mit, dass das ERP
+  in sechs Monaten ein Update erhält, bei dem sich die Masken ändern. Zweitens: Ein Testlauf
+  zeigt, dass die KI bei den Sonderanfertigungen Preise erfindet, die plausibel aussehen, aber
+  falsch sind. Überarbeite deinen Entwurf:
+
+  - Entscheide, was mit dem RPA-Anteil passiert, und benenne die Konsequenz für Aufwand und
+    Zeitplan.
+  - Verändere die Behandlung der Sonderanfertigungen so, dass der Fehler **nicht mehr
+    unbemerkt** durchlaufen kann. Eine Verbesserung des Prompts allein genügt nicht.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Geschäftsführung besteht auf „einem Agenten,
+  der den ganzen Angebotsprozess übernimmt", weil das nach außen am besten wirkt. Lass dir von
+  deinem KI-Werkzeug Pro und Contra dazu geben und entscheide dann begründet, mit **welchem
+  einen Schritt** ihr startet. **Widersprich** der Vorgabe – oder dem Vorschlag deines
+  KI-Werkzeugs – wenn du sie für falsch hältst, und formuliere den Widerspruch so, dass die
+  Geschäftsführung ihn nachvollziehen kann: Nutzen, Aufwand, Fehlerfolgen, Rückfallebene.
+
+  **Deliverable:**
+
+  1. Schritt-Tabelle des Ist-Prozesses mit Stufen-Zuordnung, mindestens acht Schritte
+  2. ausgefüllte Checkliste der vier Pflichtkriterien
+  3. überarbeitete Fassung nach ERP-Update und Preis-Fehlern, inklusive Begründung
+  4. einseitige Empfehlung für den Startschritt mit begründeter Ablehnung der Agenten-Vorgabe
+
+  **Fertig bist du erst, wenn** jeder Schritt genau eine Stufe trägt, alle vier Pflichtkriterien
+  erfüllt sind, deine Sonderanfertigungs-Lösung einen erkennbaren Kontrollmechanismus enthält
+  und deine Empfehlung erklärt, warum du **nicht** mit dem Gesamtprozess beginnst.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Runde 3 zeigt, dass die Technologiewahl kein einmaliger
+  Beschluss ist: Ein angekündigtes Update entwertet eine RPA-Lösung, bevor sie fertig ist, und
+  eine falsche Zahl ist gefährlicher als ein sichtbarer Fehler, weil sie niemandem auffällt.
+  In Runde 4 geht es nicht darum, Recht zu haben, sondern darum, einen Widerspruch mit Zahlen
+  und Fehlerfolgen zu begründen statt mit Bauchgefühl. Wer bei Sonderanfertigungen nur den
+  Prompt verbessert, hat die Aufgabe nicht gelöst – dort gehört ein Ausschluss oder eine
+  Pflichtprüfung hin.
+solution: |
+  Bewertungskriterien: (1) mindestens acht sauber getrennte Schritte mit Ausführendem, System,
+  Urteilsanteil und Ausfallfolge, jeweils genau einer Stufe zugeordnet; (2) alle vier
+  Pflichtkriterien nachweisbar erfüllt, insbesondere die bewusst KI-freien Schritte und die
+  Suche nach einer Schnittstelle vor jedem RPA-Vorschlag; (3) die überarbeitete Fassung reagiert
+  auf beide Komplikationen konkret – der RPA-Anteil wird verschoben, begrenzt oder durch einen
+  Export ersetzt, und Sonderanfertigungen werden vom automatischen Pfad ausgenommen oder mit
+  Pflichtprüfung versehen statt nur mit besserem Prompt; (4) die Startempfehlung wägt Nutzen,
+  Aufwand, Fehlerfolgen und Rückfallebene ab und begründet die Ablehnung des Gesamt-Agenten
+  mit Fehlereingrenzung, nicht mit Skepsis.
+
+  Lernziel: Eine Technologieentscheidung entlang von Aufgabenmerkmalen treffen statt entlang von
+  Schlagworten – und die Entscheidung gegen Änderungen und gegen Erwartungsdruck verteidigen.

@@ -1,0 +1,30 @@
+title: KI-Schritt oder deterministischer Schritt?
+difficulty: 1
+question: |
+  Ein Flow verarbeitet eingehende Serviceanfragen. Entscheide für jeden Schritt, ob er in den
+  **deterministischen** Teil gehört oder ein **KI-Schritt** ist. Begründe jeweils in einem Satz.
+
+  1. Der Flow startet, sobald eine Mail im Postfach `service` eintrifft.
+  2. Aus dem Mailtext wird die Kundennummer herausgezogen.
+  3. Der Betreff wird einer von vier Kategorien zugeordnet.
+  4. Die Summe der offenen Posten des Kunden wird berechnet.
+  5. Es wird ein Antwortentwurf in freundlichem Ton erzeugt.
+  6. Der Vorgang wird als Eintrag in einer SharePoint-Liste angelegt.
+  7. Bei der Kategorie „Reklamation" geht eine Genehmigungsanfrage an die Teamleitung.
+tip: |
+  Frage bei jedem Schritt: Könnte ich das Ergebnis vorher exakt vorhersagen, wenn ich die Eingabe
+  kenne? Wenn ja, ist es deterministisch.
+solution: |
+  | Schritt | Einordnung | Begründung |
+  |---|---|---|
+  | 1 Trigger auf Postfach | deterministisch | Ereignis tritt ein oder nicht, keine Interpretation |
+  | 2 Kundennummer herausziehen | KI-Schritt (Extrahieren) | Freitext, Nummer steht an beliebiger Stelle |
+  | 3 Kategorie zuordnen | KI-Schritt (Einordnen) | unscharfe Zuordnung aus fester Liste |
+  | 4 Offene Posten summieren | deterministisch | Rechnen gehört nie in die KI, sondern in Ausdruck oder Fachsystem |
+  | 5 Antwortentwurf | KI-Schritt (Formulieren) | Text erzeugen, danach Freigabe nötig |
+  | 6 Listeneintrag anlegen | deterministisch | feste Aktion mit festen Feldern |
+  | 7 Genehmigung bei Reklamation | deterministisch | Verzweigung auf einen bereits vorliegenden Wert |
+
+  Beachte Schritt 7: Die Verzweigung selbst ist deterministisch, auch wenn der Wert, auf den sie
+  sich stützt, aus Schritt 3 von der KI stammt. Genau das ist das Muster „deterministisch außen,
+  KI innen" – die Unsicherheit steckt in einem klar abgegrenzten Schritt, nicht in der Steuerung.

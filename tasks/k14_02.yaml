@@ -1,0 +1,43 @@
+title: Anzeigentext auf Diskriminierungsrisiko prüfen
+difficulty: 2
+question: |
+  Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude – der Text enthält keine
+  personenbezogenen Daten).
+
+  ```text
+  Wir suchen zum naechstmoeglichen Zeitpunkt eine Sekretaerin fuer unsere
+  Geschaeftsleitung. Sie passen zu uns, wenn Sie deutsche Muttersprachlerin sind,
+  mindestens 15 Jahre Berufserfahrung mitbringen und sich in unser junges,
+  dynamisches Team einfuegen. Ein gepflegtes Erscheinungsbild und hohe
+  Flexibilitaet, auch an Abenden und Wochenenden, sind selbstverstaendlich.
+  Koerperliche Belastbarkeit wird vorausgesetzt. Wir bieten ein Umfeld fuer
+  Menschen, die noch etwas erreichen wollen.
+  ```
+
+  1. Lass den Text mit dem Prüf-Prompt aus dem Kapitel auf Fundstellen untersuchen.
+  2. Ergänze selbst alle Funde, die das Werkzeug übersehen hat.
+  3. Formuliere eine bereinigte Fassung, die den sachlichen Kern erhält.
+  4. Notiere, welche Anforderung du **gestrichen** hast, weil sie sich aus keiner Tätigkeit
+     ableiten lässt.
+tip: |
+  Zähle vorher, wie viele problematische Stellen du selbst findest, und vergleiche danach. Das
+  Werkzeug findet die offensichtlichen Formulierungen zuverlässig, übersieht aber gern die, die
+  nur mittelbar wirken.
+solution: |
+  | Fundstelle | Merkmal | Alternative |
+  |---|---|---|
+  | Sekretärin | Geschlecht | Assistenz der Geschäftsleitung, alle Geschlechter |
+  | deutsche Muttersprachlerin | Herkunft und Geschlecht | sehr gute Deutschkenntnisse in Wort und Schrift |
+  | mindestens 15 Jahre Berufserfahrung | Alter, mittelbar | nachgewiesene Erfahrung in vergleichbarer Assistenztätigkeit |
+  | junges, dynamisches Team | Alter | Team mit kurzen Entscheidungswegen |
+  | gepflegtes Erscheinungsbild | Aussehen, mittelbar Herkunft und Religion | streichen, oder konkrete Anforderung an Kundenkontakt benennen |
+  | Flexibilität abends und am Wochenende | Familiensituation, Religion | konkret benennen, etwa Bereitschaft für zwei Abendtermine im Monat |
+  | körperliche Belastbarkeit | Behinderung | konkrete Tätigkeit nennen oder streichen |
+  | noch etwas erreichen wollen | Alter | streichen |
+
+  Das ist die entscheidende Beobachtung: Nach der Bereinigung bleibt von der Anzeige fast nichts
+  übrig – weil sie fast ausschließlich aus Merkmalen bestand, die nichts mit der Tätigkeit zu tun
+  haben. Der richtige Weg ist deshalb nicht, den Text zu reparieren, sondern beim
+  Anforderungsprofil neu anzufangen: Welche Tätigkeiten fallen an, und was braucht man dafür
+  wirklich? Die Anforderung „gepflegtes Erscheinungsbild" ist der klarste Streichkandidat, weil
+  sie in keiner Tätigkeit begründet ist und mittelbar auf Herkunft, Religion und soziale Lage wirkt.

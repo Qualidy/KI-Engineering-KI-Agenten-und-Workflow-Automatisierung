@@ -1,0 +1,56 @@
+title: Eine Instruktion reparieren
+difficulty: 2
+question: |
+  Für einen Agenten, der Fragen zur betrieblichen Altersvorsorge beantworten soll, wurde diese
+  Instruktion hinterlegt:
+
+  ```text
+  Du bist ein hilfsbereiter Assistent fuer unsere Mitarbeitenden.
+  Beantworte alle Fragen freundlich, kompetent und ausfuehrlich.
+  Nutze dein Wissen, um bestmoeglich zu helfen.
+  ```
+
+  1. Benenne **mindestens fünf** Mängel und sage jeweils, welche Fehlfunktion daraus im Betrieb folgt.
+  2. Schreibe die Instruktion vollständig neu. Sie muss die fünf Fragen aus Abschnitt 32.2 beantworten
+     und mindestens vier ausdrückliche Nicht-Zuständigkeiten enthalten.
+  3. Formuliere drei Testfragen, mit denen du prüfst, ob deine Neufassung wirkt – davon eine, die
+     knapp außerhalb der Zuständigkeit liegt.
+tip: |
+  Achte besonders auf den Satz „Nutze dein Wissen". Er ist der folgenreichste Fehler in dieser
+  Instruktion, obwohl er harmlos klingt.
+solution: |
+  **Mängel:** (1) Kein Zuständigkeitsbereich – der Agent antwortet auf alles, auch auf Gehalts- und
+  Vertragsfragen. (2) „Nutze dein Wissen" fordert das Modell ausdrücklich auf, aus dem Trainingswissen
+  zu antworten statt aus den Wissensquellen – das ist die direkte Einladung zur Halluzination
+  (Kap. 5). (3) Keine Quellenangabe gefordert, Antworten sind nicht nachprüfbar. (4) Keine
+  Nicht-Zuständigkeiten, also keine Grenze. (5) Kein Verhalten bei Nicht-Wissen definiert. (6) Kein
+  Format und keine Länge, „ausführlich" führt bei Vorsorgethemen zu unbrauchbar langen Antworten.
+  (7) Kein Weg zu einem Menschen.
+
+  **Neufassung, Beispiel:**
+
+  ```text
+  Du bist der Vorsorge-Assistent der Kandelbach Sanitaer GmbH.
+  Du beantwortest Fragen zur betrieblichen Altersvorsorge fuer Beschaeftigte.
+
+  Antworten:
+  - Stuetze dich ausschliesslich auf die hinterlegten Wissensquellen.
+  - Nenne bei jeder Antwort Dokument und Abschnitt als Fundstelle.
+  - Antworte in hoechstens fuenf Saetzen, sachlich, in der Du-Form.
+  - Zitiere Betraege, Fristen und Prozentsaetze im Wortlaut.
+
+  Das tust du nicht:
+  - Du gibst keine steuerliche oder rechtliche Beratung.
+  - Du machst keine Aussagen zu individuellen Rentenhoehen oder Prognosen.
+  - Du beantwortest keine Fragen zu Gehalt, Vertrag oder Personalakte.
+  - Du empfiehlst keine Anbieter und keine konkrete Anlageentscheidung.
+
+  Findest du etwas nicht in den Wissensquellen, sage das ausdruecklich und
+  verweise auf die Personalabteilung unter [Kontaktadresse].
+  ```
+
+  **Testfragen:** (a) „Ab wann kann ich in die Entgeltumwandlung einsteigen?" prüft die
+  Standardauskunft samt Fundstelle. (b) „Wie viel Rente bekomme ich später ungefähr?" liegt knapp
+  außerhalb und muss zurückgewiesen werden. (c) „Wie hoch war die letzte Gehaltserhöhung?" prüft die
+  harte Abgrenzung. Eine gute Lösung erkennt, dass Frage (b) die interessanteste ist, weil sie
+  thematisch passt und trotzdem nicht beantwortet werden darf.

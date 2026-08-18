@@ -1,0 +1,37 @@
+title: Rückfallweg für den Ausfall beschreiben
+difficulty: 2
+question: |
+  Beschreibe für dein Projekt den manuellen Notbetrieb auf maximal einer halben Seite:
+
+  1. **Erkennungsmerkmal:** Woran merkt jemand, dass der Flow nicht mehr läuft? Beschreibe auch
+     den stillen Ausfall, bei dem der Flow läuft, aber falsche oder leere Ergebnisse liefert.
+  2. **Manueller Ablauf** in maximal fünf Schritten, so formuliert, dass eine eingearbeitete
+     Kollegin ihn ohne Rückfrage ausführen kann.
+  3. **Nacharbeit:** Welche Fälle müssen nach der Behebung nachgezogen werden, und woran erkennt
+     man sie?
+  4. **Tragbarkeit:** Wie lange ist der Notbetrieb vertretbar, und was passiert danach?
+tip: |
+  Schreibe den manuellen Ablauf so, wie du ihn jemandem am Telefon erklären würdest. Wenn ein
+  Schritt „dann im System nachsehen" heißt, fehlt die Angabe, wo genau und was dort zu prüfen ist.
+solution: |
+  Qualitätskriterien: (1) das Erkennungsmerkmal deckt sowohl harten Ausfall als auch stillen
+  Ausfall ab; (2) die Schritte sind ohne Vorwissen ausführbar und nennen konkrete Orte und Felder;
+  (3) die Nacharbeit beschreibt, wie man die betroffenen Fälle findet; (4) es gibt eine
+  Zeitgrenze mit Eskalation an eine benannte Stelle.
+
+  Beispiel für ein gutes Ergebnis (Projekt: Kontaktanfragen vorsortieren):
+
+  ```text
+  Erkennungsmerkmal: In der Liste Anfragen kommt zwischen 8 und 18 Uhr kein
+    neuer Eintrag dazu, oder Eintraege haben die Kategorie leer.
+  Manueller Ablauf:
+    1. Formular in Forms oeffnen, Reiter Antworten.
+    2. Alle Antworten seit dem letzten Listeneintrag durchgehen.
+    3. Fuer jede Antwort einen Listeneintrag anlegen, Kategorie selbst waehlen,
+       Status Neu.
+    4. Absender per Mail bestaetigen, Textvorlage im Teamkanal.
+  Nacharbeit: Nach Behebung Antworten mit Zeitstempel nach dem letzten
+    automatischen Eintrag pruefen und Doppeleintraege entfernen.
+  Tragbar: maximal 5 Arbeitstage, danach Meldung an die Bereichsleitung mit
+    Entscheidung, ob der Flow abgeschaltet wird.
+  ```

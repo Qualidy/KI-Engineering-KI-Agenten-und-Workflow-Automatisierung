@@ -1,0 +1,56 @@
+title: Abweichungen kommentieren ohne Ursachen zu erfinden
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug plus Excel. Alle Daten sind erfunden.
+
+  ```text
+  Kostenstelle;Plan;Ist
+  Fracht ausgehend;42000;51300
+  Verpackung;12000;12400
+  Instandhaltung;18000;9100
+  Reisekosten;9000;14200
+  Buerobedarf;3000;2850
+  Fremdleistungen Montage;25000;25100
+  Energie;16000;20800
+  ```
+
+  1. **Kommentieren.** Lass die Übersicht mit dem Prompt aus dem Kapitel kommentieren – mit der
+     Einschränkung, keine Ursachen zu vermuten, nichts zu bewerten und keine Maßnahmen zu empfehlen.
+  2. **Gegenprobe.** Rechne alle Abweichungen und Prozentwerte in Excel nach und vergleiche mit den
+     Angaben aus dem Chat. Notiere jede Differenz.
+  3. **Fachlich einordnen.** Bestimme selbst die drei Abweichungen mit dem größten Handlungsbedarf –
+     und begründe, warum das nicht einfach die drei größten Eurobeträge sind.
+  4. **Gegenversuch.** Führe den Auftrag noch einmal ohne die Ursachensperre aus. Markiere jeden
+     Satz, der eine Ursache behauptet, und prüfe, ob sie aus den Daten belegbar ist.
+  5. Formuliere je Abweichung mit Handlungsbedarf eine Rückfrage an die verantwortliche Kostenstelle.
+tip: |
+  Eine Abweichung nach unten ist nicht automatisch eine gute Nachricht. Überlege bei jeder
+  Unterschreitung, ob etwas gespart oder etwas verschoben wurde – und was im nächsten Quartal
+  daraus folgt.
+solution: |
+  Abweichungen: Fracht plus 9.300 (22,1 Prozent), Verpackung plus 400 (3,3 Prozent), Instandhaltung
+  minus 8.900 (49,4 Prozent), Reisekosten plus 5.200 (57,8 Prozent), Bürobedarf minus 150
+  (5,0 Prozent), Fremdleistungen plus 100 (0,4 Prozent), Energie plus 4.800 (30,0 Prozent).
+
+  Die drei mit dem größten Handlungsbedarf sind nicht die drei größten Eurobeträge:
+
+  - **Instandhaltung minus 49,4 Prozent** ist der wichtigste Befund, obwohl es wie eine Einsparung
+    aussieht. Eine Halbierung der Instandhaltung ist meist eine verschobene Maßnahme, die im
+    Folgezeitraum doppelt anfällt – möglicherweise samt Ausfallrisiko.
+  - **Reisekosten plus 57,8 Prozent** ist die höchste relative Abweichung und deutet auf eine
+    Planungsgrundlage hin, die nicht mehr passt.
+  - **Energie plus 30,0 Prozent** trifft eine Position, die ohne Gegenmaßnahme dauerhaft weiterläuft.
+
+  Die Frachtkosten sind in absoluten Zahlen die größte Abweichung, aber bei gestiegenem
+  Versandvolumen mengenabhängig und damit erklärbar – hier ist die Rückfrage, ob das Volumen
+  entsprechend gestiegen ist. Verpackung, Bürobedarf und Fremdleistungen sind unauffällig.
+
+  In Schritt 4 zeigt sich der Kern: Ohne Ursachensperre entstehen Sätze wie „Der Anstieg der
+  Energiekosten resultiert aus gestiegenen Marktpreisen" oder „Die Instandhaltung konnte durch
+  effizientere Planung reduziert werden". Keiner dieser Sätze ist aus den Daten belegbar, und der
+  zweite ist zusätzlich beschönigend.
+
+  Bewertungskriterien: (1) alle Prozentwerte in Excel nachgerechnet und Differenzen notiert;
+  (2) keine Ursachenbehauptung im Kommentar; (3) die Unterschreitung bei der Instandhaltung ist als
+  Risiko und nicht als Erfolg eingeordnet; (4) je Abweichung eine konkrete, beantwortbare Rückfrage
+  an eine benannte Stelle.

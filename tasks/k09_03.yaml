@@ -1,0 +1,48 @@
+title: Few-Shot und der erste Bibliothekseintrag
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug. Ziel ist ein Prompt, den du danach wirklich
+  weiterverwendest.
+
+  1. **Muster wählen.** Nimm eine Textsorte aus deinem Haus, die einer festen Form folgt und die
+     sich schwer beschreiben lässt: Betreffzeilen, Ticket-Kurztitel, Notizen im CRM, Einträge in
+     einem Statusbericht.
+  2. **Ohne Beispiele.** Beschreibe die Form nur mit Worten und lass fünf Einträge erzeugen.
+     Notiere, was abweicht.
+  3. **Mit Beispielen.** Gib zwei bis drei echte Beispiele aus eurem Bestand mit (anonymisiert)
+     und lass dieselben fünf Einträge erneut erzeugen.
+  4. **Widerspruchstest.** Ersetze eines deiner Beispiele durch eines, das dem Muster
+     **nicht** folgt, und wiederhole. Was passiert?
+  5. **Bibliothekseintrag.** Halte den funktionierenden Prompt in der Feldstruktur aus
+     Abschnitt 9.6 fest: Name, Prompt-Text mit Platzhaltern in eckigen Klammern, Werkzeug,
+     Beispielergebnis, Prüfpunkte, Stand.
+tip: |
+  Achte in Schritt 4 genau hin. Das Ergebnis wird nicht „ein bisschen schlechter", sondern
+  uneinheitlich: Ein Teil folgt dem alten Muster, ein Teil dem Ausreißer. Genau daran erkennst du,
+  wie stark Beispiele wirken – und warum eine unaufgeräumte Beispielsammlung schadet.
+solution: |
+  Typische Beobachtungen:
+
+  - **Ohne Beispiele** trifft die Beschreibung den Ton selten. Abweichungen betreffen vor allem
+    Länge, Groß- und Kleinschreibung, Zeichensetzung und die Reihenfolge der Bestandteile.
+  - **Mit Beispielen** passt die Form meist ab dem ersten Versuch. Zwei bis drei Beispiele
+    genügen; mehr bringen kaum Zusatznutzen.
+  - **Im Widerspruchstest** wird die Ausgabe uneinheitlich. Lehre daraus: Beispiele müssen
+    untereinander konsistent sein, sonst richtet man mit ihnen Schaden an.
+
+  Beispielhafter Bibliothekseintrag:
+
+  ```text
+  Name:            Betreffzeile fuer Kundenmail
+  Prompt:          Formuliere eine Betreffzeile nach diesem Muster ...
+                   Anliegen: [Anliegen], Vorgangsnummer: [Nummer]
+  Werkzeug:        getestet in Copilot Chat
+  Beispielergebnis: Ihre Bestellung 10432 - aktueller Stand
+  Pruefpunkte:     Nummer korrekt uebernommen, keine Wertung im Betreff,
+                   maximal 60 Zeichen
+  Stand:           heutiges Datum
+  ```
+
+  Bewertungskriterien: Der Eintrag enthält alle sechs Felder, der Prompt hat mindestens zwei
+  Platzhalter, und die Prüfpunkte sind so formuliert, dass eine andere Person sie ohne Rückfrage
+  anwenden könnte.

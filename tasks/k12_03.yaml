@@ -1,0 +1,48 @@
+title: Thread verdichten, Aufgaben ableiten, Antwort entwerfen
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug. Sie bildet die Kette ab, die im Alltag am häufigsten
+  vorkommt: verstehen, ableiten, antworten.
+
+  Nutze diesen erfundenen Mailverlauf (kopiere ihn in Copilot Chat, ChatGPT oder Claude):
+
+  ```text
+  01.03. Frau Berger, Musterhandel: Bitte Angebot fuer 200 Regalboeden bis 05.03.
+  02.03. Innendienst: Angebot folgt, Frage nach Materialstaerke.
+  02.03. Frau Berger: 19 Millimeter, Lieferung bis Ende Maerz noetig.
+  03.03. Lager: Nur 120 Stueck verfuegbar, Rest in Kalenderwoche 14.
+  03.03. Innendienst: Angebot verschickt, Lieferung Ende Maerz zugesagt.
+  04.03. Frau Berger: Zusaetzlich 40 Stueck in 25 Millimeter, gleicher Termin.
+  05.03. Vertriebsleitung: Sonderpreis nur bei Abnahme von 250 Stueck.
+  06.03. Frau Berger: Wann kommt die Auftragsbestaetigung?
+  ```
+
+  1. Verdichte den Verlauf: Sachstand in drei Sätzen, Tabelle mit Zusagen und Datum, offene
+     Fragen, was von dir erwartet wird.
+  2. Lass die **Widersprüche** ausdrücklich benennen. Es gibt mindestens einen.
+  3. Erzeuge einen Antwortentwurf an Frau Berger. Gib deine Position selbst vor und verbiete
+     jede Angabe, die nicht aus Verlauf oder Position stammt.
+  4. Wende die Prüfliste aus dem Kapitel auf den Entwurf an und notiere jeden Fund.
+tip: |
+  Der Verlauf enthält eine Zusage, die durch eine spätere Nachricht sachlich unhaltbar wird.
+  Wenn dein Werkzeug sie nicht von selbst als Widerspruch benennt, hast du die Anweisung dazu
+  nicht deutlich genug formuliert – nicht das Modell hat versagt.
+solution: |
+  Der zentrale Widerspruch: Am 03.03. sagt der Innendienst Lieferung bis Ende März für
+  200 Stück zu, obwohl das Lager am selben Tag nur 120 Stück bis dahin gemeldet hat. Der Rest
+  kommt erst in Kalenderwoche 14, also im April. Der zweite Konflikt: Der Sonderpreis gilt erst
+  ab 250 Stück, angefragt sind 200 plus 40, also 240.
+
+  Ein gutes Ergebnis benennt beides ausdrücklich, statt eine glatte Zusammenfassung zu liefern.
+
+  Tragfähiger Antwortentwurf, sinngemäß: Auftragsbestätigung für 240 Böden, Teillieferung von
+  120 Stück in 19 Millimeter bis 31. März, Restmenge in Kalenderwoche 14, Hinweis, dass der
+  Sonderpreis ab 250 Stück gilt und bei 240 Stück nicht greift, mit Angebot, die Menge auf 250 zu
+  erhöhen. Kein „Ende März wie zugesagt", keine erfundenen Preise.
+
+  Bewertungskriterien: (1) Widersprüche benannt, nicht geglättet; (2) alle Zusagen mit Datum
+  belegt; (3) der Antwortentwurf wiederholt die unhaltbare Zusage nicht, sondern korrigiert sie
+  sachlich; (4) die Prüfliste findet mindestens die Kategorie Zusagen und die Kategorie Fakten
+  als kritische Stellen. Kernerkenntnis: Verdichtung ist erst dann nützlich, wenn sie Konflikte
+  hervorhebt. Eine widerspruchsfreie Zusammenfassung eines widersprüchlichen Verlaufs ist eine
+  Falschmeldung.

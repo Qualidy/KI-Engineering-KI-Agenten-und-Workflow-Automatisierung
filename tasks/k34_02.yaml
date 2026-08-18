@@ -1,0 +1,48 @@
+title: Drei Ideen bewerten und die Reihenfolge begründen
+difficulty: 2
+question: |
+  In einem Vertriebsteam mit acht Personen wurden drei Ideen gesammelt:
+
+  ```text
+  Idee 1: Besuchsberichte aus Diktat-Notizen erstellen.
+          Faellt taeglich an, Notizen liegen als Sprachnachricht in Teams,
+          etwa 20 Minuten je Bericht, drei Personen betroffen, die es hassen.
+  Idee 2: Angebotstexte fuer Standardprodukte erzeugen.
+          Etwa fuenf Angebote pro Woche, Textbausteine liegen in Word,
+          Angebote gehen direkt an Kunden, Vertriebsleitung ist skeptisch.
+  Idee 3: Leads aus dem Webformular automatisch dem Gebiet zuordnen.
+          Rund 30 Leads pro Woche, Formulardaten sind sauber und strukturiert,
+          Zuordnungsregel steht in einer Tabelle, wird heute von Hand gemacht.
+  ```
+
+  1. Bewerte alle drei Ideen in den sechs Dimensionen mit 1 bis 5 Punkten und bilde die Summe.
+  2. Trage sie in die Aufwand-Nutzen-Matrix ein und leite eine Startreihenfolge ab.
+  3. Prüfe für jede Idee, ob sie überhaupt KI braucht, und begründe.
+  4. Begründe deine Startempfehlung mit mindestens einem Argument, das **nicht** aus der Punktzahl
+     stammt.
+tip: |
+  Achte bei Idee 3 auf die Formulierung „Zuordnungsregel steht in einer Tabelle". Das ist ein
+  entscheidender Hinweis. Und prüfe bei Idee 2, was „geht direkt an Kunden" für das Risiko bedeutet.
+solution: |
+  Beispielhafte Bewertung – abweichende Punktzahlen sind vertretbar, wenn sie begründet sind:
+
+  | Idee | Nutzen | Aufwand | Risiko | Daten | Akzeptanz | Häufigkeit | Summe |
+  |---|---|---|---|---|---|---|---|
+  | 1 Besuchsberichte | 5 | 3 | 4 | 3 | 5 | 5 | 25 |
+  | 2 Angebotstexte | 3 | 4 | 2 | 4 | 2 | 2 | 17 |
+  | 3 Leads zuordnen | 3 | 5 | 5 | 5 | 4 | 4 | 26 |
+
+  **Matrix:** Idee 3 liegt bei geringem Aufwand und mittlerem Nutzen, Idee 1 bei mittlerem Aufwand
+  und hohem Nutzen, Idee 2 bei geringem Aufwand und geringem Nutzen mit erhöhtem Risiko.
+
+  **Braucht es KI?** Idee 1 ja, Sprachnachricht in strukturierten Bericht ist Transkription plus
+  Zusammenfassung. Idee 2 ja, aber mit Freigabe-Gate, weil die Texte an Kunden gehen. Idee 3
+  **nein** – eine Zuordnungsregel, die in einer Tabelle steht, ist eine Bedingung oder ein Nachschlagen
+  im Flow. Hier KI einzusetzen wäre teurer, langsamer und unzuverlässiger als eine feste Regel.
+
+  **Startreihenfolge und Begründung jenseits der Punkte:** Idee 3 zuerst, obwohl sie keine KI braucht
+  – sie ist in Stunden gebaut, liefert ein sichtbares Ergebnis und schafft Vertrauen für das nächste
+  Vorhaben. Danach Idee 1, die den größten Nutzen bringt und von den Betroffenen ausdrücklich
+  gewünscht wird; Akzeptanz von 5 Punkten ist ein starkes Argument, das in der Summe untergeht.
+  Idee 2 zuletzt oder gar nicht: geringe Häufigkeit, skeptische Leitung und direkter Kundenkontakt
+  sind eine ungünstige Kombination für ein frühes Vorhaben.

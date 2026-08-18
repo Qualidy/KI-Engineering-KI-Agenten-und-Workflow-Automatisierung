@@ -1,0 +1,35 @@
+title: Formularantwort in eine SharePoint-Liste schreiben
+difficulty: 2
+question: |
+  Diese Übung baust du in Power Automate.
+
+  1. Lege in einem Test-Team eine SharePoint-Liste `Materialantraege` mit den Spalten
+     `Titel` (Text), `Antragsteller` (Text), `Menge` (Zahl) und `Status` (Auswahl: Offen,
+     Genehmigt, Abgelehnt) an.
+  2. Erstelle ein Microsoft Form `Materialantrag` mit den Fragen Material, Menge und Begründung.
+  3. Baue über `make.powerautomate.com → Erstellen → Automatisierter Cloud-Flow` einen Flow, der
+     bei jeder neuen Formularantwort ein Listenelement anlegt. `Status` wird fest auf `Offen`
+     gesetzt, `Antragsteller` kommt aus dem Formular.
+  4. Sende eine Testantwort ab und prüfe im Ausführungsverlauf die Eingaben des Schritts
+     `Element erstellen`.
+tip: |
+  Der Forms-Trigger liefert nur eine Antwort-ID. Die eigentlichen Antworten bekommst du erst
+  über einen zweiten Schritt. Achte außerdem darauf, dass die Spalte `Menge` eine Zahl erwartet.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Trigger: Bei Uebermittlung einer neuen Antwort  (Formular Materialantrag)
+  Aktion:  Antwortdetails abrufen  (Antwort-ID aus dem Trigger)
+  Aktion:  Element erstellen  (Websiteadresse, Liste Materialantraege)
+             Titel         = Antwortfeld Material
+             Antragsteller = Antwortfeld Responder
+             Menge         = Antwortfeld Menge
+             Status        = Offen
+  ```
+
+  Prüfpunkte: (1) `Antwortdetails abrufen` ist vorhanden – ohne diesen Schritt gibt es keine
+  Antwortfelder. (2) Beim Einfügen von Antwortfeldern in `Element erstellen` darf Power Automate
+  **kein** `Auf jedes anwenden` um den Schritt legen; passiert das doch, hast du versehentlich
+  ein Feld aus einer Liste gewählt. (3) Kommt eine Fehlermeldung zum Feld `Menge`, liefert das
+  Formular Text – dann `int(...)` um den Wert legen (Kap. 23).

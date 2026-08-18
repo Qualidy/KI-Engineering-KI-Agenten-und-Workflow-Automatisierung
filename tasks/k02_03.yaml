@@ -1,0 +1,46 @@
+title: Baustein oder Agent im Werkzeug prüfen
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Gib einen reinen **Baustein-Auftrag** – eine eng umrissene Einzelaufgabe:
+
+     ```text
+     Ordne den folgenden Text genau einer Kategorie zu: Reklamation, Anfrage oder Kuendigung.
+     Antworte nur mit der Kategorie.
+     Text: Ich habe die Lieferung am Montag erhalten, aber zwei Teile fehlen. Bitte klaeren.
+     ```
+
+  2. Gib danach einen **Ziel-Auftrag** mit offenem Weg:
+
+     ```text
+     Ziel: Klaere den Fall aus Punkt 1 vollstaendig. Plane selbst, welche Schritte dazu
+     noetig sind, und nenne jeden Schritt mit dem Werkzeug oder der Quelle, die du dafuer
+     brauchst. Fuehre noch nichts aus.
+     ```
+
+  3. Vergleiche beide Ergebnisse und beantworte schriftlich:
+     - Was hat sich am **Ergebnistyp** verändert?
+     - Welche Werkzeuge fordert das Werkzeug in Punkt 2 ein, die es gar nicht hat?
+     - An welcher Stelle des vorgeschlagenen Plans würdest du eine **Freigabe** einbauen und warum?
+tip: |
+  Der interessante Teil ist nicht die Qualität der Antworten, sondern der Unterschied in ihrer
+  Form. Achte darauf, ob das Werkzeug in Punkt 2 Zugriffe voraussetzt, die es nicht besitzt –
+  etwa auf Bestelldaten, Kundenhistorie oder ein Ticketsystem.
+solution: |
+  Typische Beobachtungen:
+
+  - **Ergebnistyp:** Punkt 1 liefert ein Wort, also einen fertigen Wert, der maschinell
+    weiterverarbeitbar ist. Punkt 2 liefert einen Plan, also mehrere Schritte mit
+    Voraussetzungen. Das ist genau der Unterschied zwischen Baustein und Agent.
+  - **Fehlende Werkzeuge:** Der Plan verlangt fast immer Zugriffe, die ein Chatfenster nicht
+    hat – Lieferdaten, Bestellpositionen, Kundenkontakt, Versand eines Antwortschreibens.
+    Ohne angebundene Werkzeuge bleibt ein Agent eine Absichtserklärung. Diese Anbindung ist
+    das Thema von Kapitel 6 und Kapitel 32.
+  - **Freigabepunkt:** Sinnvoll ist die Freigabe unmittelbar vor jeder Außenwirkung, also vor
+    dem Versand an den Kunden und vor jeder Buchung oder Gutschrift. Interne Recherche und
+    Entwurf können ohne Freigabe laufen.
+
+  Ein gutes Ergebnis erkennt zusätzlich, dass Punkt 1 wiederholbar und prüfbar ist, während
+  der Plan aus Punkt 2 bei erneuter Ausführung anders ausfallen kann. Wiederholbarkeit ist ein
+  Argument für den Baustein, Flexibilität ein Argument für den Agenten.

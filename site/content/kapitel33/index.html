@@ -1,0 +1,1881 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel32/">
+      
+      
+        <link rel="next" href="../kapitel34/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 33 – Agent und Workflow verbinden - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-33-agent-und-workflow-verbinden" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 33 – Agent und Workflow verbinden
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Block 6 · Kombination von KI & Workflow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 29 – KI-Bausteine im Workflow: Muster und Einsatzstellen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel30/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 30 – AI Builder und KI-Aktionen in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 31 – Dokumentenverarbeitung automatisieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 33 – Agent und Workflow verbinden
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 33 – Agent und Workflow verbinden
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#331-drei-architekturmuster" class="md-nav__link">
+    <span class="md-ellipsis">
+      33.1 Drei Architekturmuster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#332-ubergabepunkte-und-datenvertrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      33.2 Übergabepunkte und Datenverträge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#333-identitat-und-rechte-wer-handelt-hier-eigentlich" class="md-nav__link">
+    <span class="md-ellipsis">
+      33.3 Identität und Rechte: wer handelt hier eigentlich?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#334-protokollierung-und-auditierbarkeit" class="md-nav__link">
+    <span class="md-ellipsis">
+      33.4 Protokollierung und Auditierbarkeit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#335-kontrolle-notbremse-grenzen-der-autonomie" class="md-nav__link">
+    <span class="md-ellipsis">
+      33.5 Kontrolle, Notbremse, Grenzen der Autonomie
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#336-agent-und-flow-zusammen-testen" class="md-nav__link">
+    <span class="md-ellipsis">
+      33.6 Agent und Flow zusammen testen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel34/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-33-agent-und-workflow-verbinden">Kapitel 33 – Agent und Workflow verbinden<a class="headerlink" href="#kapitel-33-agent-und-workflow-verbinden" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Die drei <strong>Architekturmuster</strong>: Agent ruft Flow, Flow ruft KI, Agent und Flow nebeneinander mit dem Menschen als Gate</li>
+<li>Was ein <strong>Datenvertrag</strong> an der Übergabestelle ist und was bei fehlenden Werten passieren muss</li>
+<li>Unter welcher <strong>Identität</strong> ein Agent handelt und warum er nie mehr Rechte haben darf als die Person, für die er arbeitet</li>
+<li>Was du <strong>protokollieren</strong> musst, um im Nachhinein erklären zu können, warum etwas passiert ist</li>
+<li>Wie <strong>Notbremse und Abschaltbarkeit</strong> aussehen und wo die Grenzen der Autonomie liegen</li>
+<li>Wie du eine Kombination aus <strong>Agent und Flow</strong> systematisch testest</li>
+</ul>
+</div>
+<hr />
+<h2 id="331-drei-architekturmuster">33.1 Drei Architekturmuster<a class="headerlink" href="#331-drei-architekturmuster" title="Permanent link">&para;</a></h2>
+<p>Bis hierher hast du beide Bausteine einzeln gebaut: Flows mit KI-Schritten (Kap. 29–31) und Agenten mit Wissen und Aktionen (Kap. 32). Wenn beide zusammenkommen, gibt es drei sinnvolle Anordnungen. Die Wahl entscheidet über Verlässlichkeit, Aufwand und Risiko.</p>
+<p><strong>Muster 1 – Agent ruft Flow.</strong> Der Mensch spricht mit dem Agenten, der Agent ruft bei Bedarf einen Flow als Werkzeug auf. Der Einstieg ist ein Gespräch, der Ablauf beginnt erst danach.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Mensch stellt Anliegen]) --&gt; B([Agent versteht und fragt nach])
+    B --&gt; C([Agent ruft Flow auf])
+    C --&gt; D([Flow arbeitet deterministisch])
+    D --&gt; E([Agent meldet Ergebnis zurueck])</code></pre>
+<p><strong>Muster 2 – Flow ruft KI.</strong> Ein Ereignis startet den Ablauf, die KI erledigt darin einen unscharfen Teilschritt. Es gibt kein Gespräch. Das ist das Muster aus Kap. 29 und 30.</p>
+<p><strong>Muster 3 – Agent und Flow nebeneinander, Mensch als Gate.</strong> Der Agent bereitet vor, ein Mensch entscheidet, der Flow führt aus. Die beiden Systeme sprechen nicht direkt miteinander – zwischen ihnen sitzt eine Freigabe.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Agent erstellt Entwurf]) --&gt; B([Mensch prueft und gibt frei])
+    B --&gt; C([Flow fuehrt aus])
+    C --&gt; D([Protokoll und Rueckmeldung])</code></pre>
+<table>
+<thead>
+<tr>
+<th>Muster</th>
+<th>Einstieg</th>
+<th>Stärke</th>
+<th>Risiko</th>
+<th>Typischer Fall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent ruft Flow</td>
+<td>Gespräch</td>
+<td>fühlt sich natürlich an, deckt viele Varianten ab</td>
+<td>Agent wählt das falsche Werkzeug oder erfindet Eingaben</td>
+<td>Statusabfrage, Ticket anlegen</td>
+</tr>
+<tr>
+<td>Flow ruft KI</td>
+<td>Ereignis</td>
+<td>vorhersehbar, gut testbar, gut protokollierbar</td>
+<td>KI-Ausgabe bricht das Format</td>
+<td>Eingangspost, Belege</td>
+</tr>
+<tr>
+<td>Nebeneinander mit Gate</td>
+<td>beliebig</td>
+<td>höchste Kontrolle</td>
+<td>langsamer, Gate kann zum Nadelöhr werden</td>
+<td>Kundenkommunikation, Angebote</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Die Frage lautet nie „Agent oder Flow", sondern: <strong>Wer trägt die Entscheidung?</strong> Trägt sie der Ablauf, nimm Muster 2. Trägt sie ein Mensch, nimm Muster 3. Muster 1 ist die bequemste Variante für Nutzende und die anspruchsvollste in der Absicherung – setze es nur ein, wenn die aufgerufenen Flows für sich genommen ungefährlich sind.</p>
+</div>
+<hr />
+<h2 id="332-ubergabepunkte-und-datenvertrage">33.2 Übergabepunkte und Datenverträge<a class="headerlink" href="#332-ubergabepunkte-und-datenvertrage" title="Permanent link">&para;</a></h2>
+<p>An jeder Stelle, an der Agent und Flow einander etwas übergeben, entsteht eine Bruchstelle. Der Agent arbeitet mit Sprache, der Flow mit Feldern. Was zwischen beiden fließt, braucht deshalb eine feste Vereinbarung: den <strong>Datenvertrag</strong>. Er legt fest, welche Felder in welchem Format übergeben werden, welche davon Pflicht sind und was passiert, wenn ein Wert fehlt.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code>Datenvertrag: Agent ruft Flow Vorgangsstatus auf
+
+Eingaben vom Agenten an den Flow
+  vorgangsnummer   Text, Muster VG- gefolgt von fuenf Ziffern   Pflicht
+  anfragende_person Text, Anmeldename der aufrufenden Person     Pflicht
+  sprache          Text, de oder en, Standard de                 optional
+
+Ausgaben vom Flow an den Agenten
+  gefunden         Wahrheitswert
+  status           Text aus fester Liste: offen, in Arbeit, erledigt, storniert
+  liefertermin     Datum im Format JJJJ-MM-TT oder null
+  hinweis          Text, hoechstens 200 Zeichen
+
+Verhalten bei fehlenden Werten
+  Fehlt die Vorgangsnummer: Der Agent fragt nach und ruft den Flow nicht auf.
+  Nummer entspricht nicht dem Muster: Der Flow bricht mit einer klaren Meldung ab.
+  Vorgang nicht gefunden: gefunden ist falsch, der Agent sagt das und verweist
+  auf den Innendienst.
+  Kein Liefertermin hinterlegt: liefertermin ist null, der Agent nennt keinen Termin.
+</code></pre></div></td></tr></table></div>
+<p>Die letzte Zeile ist der wichtigste Teil des Vertrags. Ein Agent, der ein leeres Feld bekommt, formuliert daraus im Zweifel eine Auskunft – „voraussichtlich Ende der Woche" ist dann keine Information aus dem System, sondern eine Erfindung. Der Datenvertrag muss deshalb nicht nur sagen, was übergeben wird, sondern auch, <strong>wie über eine Lücke gesprochen wird</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: der Agent füllt Lücken selbst</p>
+<p>Fehlt eine Pflichteingabe, neigt ein Agent dazu, sie zu erraten – eine plausible Vorgangsnummer, eine wahrscheinliche Kundennummer. Der Flow läuft dann sauber durch und liefert ein sauberes Ergebnis zum falschen Vorgang. Zwei Maßnahmen zusammen helfen: In der Instruktion steht ausdrücklich, dass fehlende Werte erfragt und nie erfunden werden. Und der Flow prüft die Eingabe selbst gegen ein Muster, statt sich auf den Agenten zu verlassen. Prüfe nie nur auf einer Seite der Übergabe.</p>
+</div>
+<hr />
+<h2 id="333-identitat-und-rechte-wer-handelt-hier-eigentlich">33.3 Identität und Rechte: wer handelt hier eigentlich?<a class="headerlink" href="#333-identitat-und-rechte-wer-handelt-hier-eigentlich" title="Permanent link">&para;</a></h2>
+<p>Wenn ein Agent einen Flow aufruft und dieser Flow eine Liste ändert, eine Mail sendet oder ein Dokument ablegt – <strong>unter wessen Namen</strong> geschieht das? Diese Frage klingt technisch und ist in Wahrheit die zentrale Governance-Frage des ganzen Blocks.</p>
+<p>In der Power Platform hängt eine Aktion an einer <strong>Verbindung</strong>, und eine Verbindung gehört einer Person oder einem Dienstkonto (Kap. 21). Wer den Flow angelegt und die Verbindung hergestellt hat, unter dessen Rechten läuft er in der Regel – unabhängig davon, wer den Agenten anspricht. Daraus folgen drei unangenehme Möglichkeiten:</p>
+<table>
+<thead>
+<tr>
+<th>Konstellation</th>
+<th>Was passiert</th>
+<th>Bewertung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flow läuft unter der Verbindung der bauenden Person</td>
+<td>alle Nutzenden handeln mit deren Rechten</td>
+<td>gefährlich, wenn diese Person mehr darf als die Nutzenden</td>
+</tr>
+<tr>
+<td>Flow läuft unter einem Dienstkonto</td>
+<td>Rechte sind gebündelt und dokumentierbar</td>
+<td>gut, wenn das Konto minimal berechtigt ist</td>
+</tr>
+<tr>
+<td>Flow prüft die Berechtigung der anfragenden Person selbst</td>
+<td>Rechte werden je Aufruf geprüft</td>
+<td>am sichersten, aber aufwendiger</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Die Grundregel</p>
+<p><strong>Ein Agent darf nie mehr Rechte haben als die Person, für die er gerade arbeitet.</strong> Sonst wird er zum Umweg um das Berechtigungskonzept: Wer die Personalakten nicht sehen darf, fragt eben den Agenten, dessen Flow unter einem hoch berechtigten Konto läuft. Technisch funktioniert alles, fachlich ist es ein Datenschutzvorfall (Kap. 4).</p>
+</div>
+<p>Praktisch heißt das: Gib dem Flow ein Dienstkonto mit <strong>genau den</strong> Rechten, die für seine Aufgabe nötig sind, und nicht mehr. Übergib die anfragende Person als Pflichtfeld im Datenvertrag und lass den Flow prüfen, ob diese Person den angefragten Vorgang überhaupt sehen darf. Und begrenze, wer den Agenten nutzen darf – ein Agent, der in Teams für alle freigegeben ist, ist so berechtigt wie sein am weitesten reichender Flow.</p>
+<hr />
+<h2 id="334-protokollierung-und-auditierbarkeit">33.4 Protokollierung und Auditierbarkeit<a class="headerlink" href="#334-protokollierung-und-auditierbarkeit" title="Permanent link">&para;</a></h2>
+<p>Drei Wochen nach einem Vorfall steht die Frage im Raum: Warum hat das System das getan? Ohne Protokoll ist die ehrliche Antwort „das wissen wir nicht" – und die ist bei personenbezogenen Daten, bei Geld und bei rechtsrelevanten Vorgängen nicht tragbar (Kap. 3).</p>
+<p>Der Ausführungsverlauf von Power Automate zeigt, <strong>dass</strong> ein Zweig genommen wurde. Er erklärt nicht, <strong>warum</strong>. Bei KI-gestützten Abläufen brauchst du deshalb ein eigenes, fachliches Protokoll. Sinnvoll ist eine einfache SharePoint-Liste, in die jeder Vorgang eine Zeile schreibt:</p>
+<table>
+<thead>
+<tr>
+<th>Feld</th>
+<th>Warum es gebraucht wird</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zeitpunkt</td>
+<td>Zuordnung zu Vorfällen und Zeiträumen</td>
+</tr>
+<tr>
+<td>Auslöser und anfragende Person</td>
+<td>wer hat es angestoßen, unter wessen Identität</td>
+</tr>
+<tr>
+<td>Eingabe an die KI</td>
+<td>ohne sie ist die Ausgabe nicht bewertbar</td>
+</tr>
+<tr>
+<td>Ausgabe der KI im Wortlaut</td>
+<td>die eigentliche Erklärung der Entscheidung</td>
+</tr>
+<tr>
+<td>Konfidenz oder Sicherheitsangabe</td>
+<td>zeigt, ob die Schwelle richtig gesetzt war</td>
+</tr>
+<tr>
+<td>Verwendetes Modell und Promptstand</td>
+<td>ohne Version ist nichts reproduzierbar</td>
+</tr>
+<tr>
+<td>Abgeleitete Entscheidung</td>
+<td>was der Ablauf daraus gemacht hat</td>
+</tr>
+<tr>
+<td>Freigebende Person und Zeitpunkt</td>
+<td>wer hat die Verantwortung übernommen</td>
+</tr>
+</tbody>
+</table>
+<p>Die vorletzte Zeile wird am häufigsten vergessen und am meisten gebraucht. Prompts werden geändert, Modelle werden von den Anbietern aktualisiert. Ohne Angabe, welcher Promptstand und welches Modell am fraglichen Tag im Einsatz waren, lässt sich ein altes Ergebnis nicht nachvollziehen.</p>
+<div class="admonition warning">
+<p class="admonition-title">Protokolle sind selbst datenschutzrelevant</p>
+<p>Ein Protokoll, das Eingaben im Wortlaut speichert, enthält damit auch personenbezogene Daten – manchmal mehr als das Zielsystem. Es braucht deshalb dieselbe Sorgfalt: begrenzter Zugriff, festgelegte Aufbewahrungsdauer, geregelte Löschung. Protokolliere so viel wie nötig und so wenig wie möglich, und kläre den Umfang mit den Zuständigen für Datenschutz und gegebenenfalls mit der Mitbestimmung (Kap. 4).</p>
+</div>
+<hr />
+<h2 id="335-kontrolle-notbremse-grenzen-der-autonomie">33.5 Kontrolle, Notbremse, Grenzen der Autonomie<a class="headerlink" href="#335-kontrolle-notbremse-grenzen-der-autonomie" title="Permanent link">&para;</a></h2>
+<p>Ein Agent mit Aktionen ist kein Chatfenster mehr. Er handelt – und was handelt, muss anhaltbar sein.</p>
+<p>Die <strong>Notbremse</strong> ist keine Metapher, sondern eine konkrete Vorbereitung. Sie besteht aus vier Dingen, die vor dem Produktivgang geklärt sein müssen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>1. Wer darf abschalten
+   Zwei namentlich benannte Personen, davon eine als Vertretung.
+2. Wie wird abgeschaltet
+   Agent depublizieren oder Flow deaktivieren. Der Weg ist aufgeschrieben und
+   einmal geprobt worden.
+3. Was passiert mit laufenden Vorgaengen
+   Angefangene Faelle werden aufgelistet und manuell abgearbeitet.
+4. Wie erfahren die Nutzenden davon
+   Feste Nachricht im Teams-Kanal und Verweis auf den manuellen Weg.
+</code></pre></div></td></tr></table></div>
+<p>Punkt 2 ist der, der in der Praxis scheitert. Wenn die einzige Person, die abschalten kann, im Urlaub ist, gibt es keine Notbremse. Und ein Abschaltweg, der nie erprobt wurde, ist im Ernstfall eine Vermutung.</p>
+<p>Die <strong>Grenzen der Autonomie</strong> ziehst du an drei Stellen. Erstens bei der Außenwirkung: Alles, was das Unternehmen nach außen bindet, braucht ein Gate (Kap. 27). Zweitens bei der Unumkehrbarkeit: Was sich nicht zurücknehmen lässt – Löschungen, Zahlungen, Kündigungen –, wird nicht automatisch ausgeführt. Drittens bei der Menge: Ein Agent, der einen Datensatz ändert, ist etwas anderes als einer, der vierhundert ändert. Eine schlichte Mengenbegrenzung je Aufruf ist eine der wirksamsten Sicherungen überhaupt.</p>
+<div class="admonition info">
+<p class="admonition-title">Fehlverhalten ist selten spektakulär</p>
+<p>Die typische Fehlfunktion ist nicht der Agent, der Amok läuft, sondern der, der leise Unsinn macht: Er ordnet über Wochen eine Kategorie systematisch falsch zu, oder er nennt einen Termin, den es nicht gibt. Deshalb braucht es neben der Notbremse eine <strong>regelmäßige Sichtprüfung</strong> – eine wöchentliche Stichprobe aus dem Protokoll, angesehen von jemandem, der die Fälle fachlich beurteilen kann. Ohne diese Routine bemerkst du Fehlverhalten erst durch eine Beschwerde.</p>
+</div>
+<hr />
+<h2 id="336-agent-und-flow-zusammen-testen">33.6 Agent und Flow zusammen testen<a class="headerlink" href="#336-agent-und-flow-zusammen-testen" title="Permanent link">&para;</a></h2>
+<p>Beide Teile einzeln zu testen genügt nicht. Fehler entstehen fast immer an der Naht. Ein tragfähiger Testplan hat vier Ebenen:</p>
+<table>
+<thead>
+<tr>
+<th>Ebene</th>
+<th>Was du prüfst</th>
+<th>Beispielhafte Testfälle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flow allein</strong></td>
+<td>Verhält sich der Flow bei gültigen und ungültigen Eingaben korrekt?</td>
+<td>gültige Nummer, unbekannte Nummer, leeres Feld, falsches Format</td>
+</tr>
+<tr>
+<td><strong>Agent allein</strong></td>
+<td>Antwortet er im Rahmen, gibt er Nicht-Wissen zu?</td>
+<td>Standardfrage, Frage außerhalb, unbeantwortbare Frage</td>
+</tr>
+<tr>
+<td><strong>Übergabe</strong></td>
+<td>Hält der Datenvertrag in beide Richtungen?</td>
+<td>fehlende Pflichteingabe, <code>null</code> in der Rückgabe, unerwarteter Statuswert</td>
+</tr>
+<tr>
+<td><strong>Ende zu Ende</strong></td>
+<td>Kommt beim Menschen das Richtige an?</td>
+<td>vollständiger Durchlauf mit Protokollprüfung</td>
+</tr>
+</tbody>
+</table>
+<p>Die dritte Ebene ist die wertvollste und wird am häufigsten ausgelassen. Teste dort gezielt die unangenehmen Fälle: Was sagt der Agent, wenn der Flow <code>gefunden = falsch</code> zurückgibt? Was sagt er, wenn der Liefertermin <code>null</code> ist? Was tut er, wenn der Flow gar nicht antwortet? In allen drei Fällen ist die einzig akzeptable Antwort eine ehrliche – und die musst du in der Instruktion vorschreiben und im Test nachweisen.</p>
+<p>Führe jeden Testfall zweimal durch. Der Agent ist nichtdeterministisch (Kap. 5), ein einzelner erfolgreicher Durchlauf beweist nichts. Für dein eigenes Projekt in Block 7 legst du diese Testfälle vorab schriftlich fest (Kap. 36) und weist sie bei der Abnahme nach (Kap. 37).</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Drei Muster stehen zur Wahl: <strong>Agent ruft Flow</strong>, <strong>Flow ruft KI</strong>, <strong>Agent und Flow nebeneinander mit dem Menschen als Gate</strong>; entscheidend ist, wer die Entscheidung trägt.</li>
+<li>Jede Übergabestelle braucht einen <strong>Datenvertrag</strong> mit Feldern, Formaten, Pflichtangaben und einer Regel für fehlende Werte.</li>
+<li>Ein Agent darf <strong>nie mehr Rechte haben</strong> als die Person, für die er arbeitet – sonst wird er zum Umweg um das Berechtigungskonzept.</li>
+<li>Das fachliche <strong>Protokoll</strong> muss Eingabe, KI-Ausgabe, Konfidenz, Modell- und Promptstand, Entscheidung und Freigabe festhalten – und ist selbst datenschutzrelevant.</li>
+<li><strong>Notbremse</strong> heißt: benannte Personen, erprobter Abschaltweg, Umgang mit laufenden Vorgängen, Information der Nutzenden.</li>
+<li>Getestet wird auf vier Ebenen; die wertvollste ist die <strong>Übergabe</strong>, und jeder Testfall läuft mindestens zweimal.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Das passende Architekturmuster wählen</summary>
+<p>Wähle für jeden Fall das passende Muster aus Abschnitt 33.1: <strong>Agent ruft Flow</strong>, <strong>Flow ruft KI</strong>
+oder <strong>Agent und Flow nebeneinander mit dem Menschen als Gate</strong>. Begründe jeweils in einem Satz.</p>
+<ol>
+<li>Eingehende Bewerbungen sollen automatisch der richtigen Stelle zugeordnet und abgelegt werden.</li>
+<li>Beschäftigte sollen im Teams-Chat den Status ihrer Bestellung erfragen können.</li>
+<li>Aus einem Gesprächsprotokoll soll ein Angebot entstehen, das an den Kunden geht.</li>
+<li>Beschäftigte sollen per Chat eine Krankmeldung erfassen, die eine Meldung an die Führungskraft
+   auslöst.</li>
+<li>Jede eingehende Reklamation soll zusammengefasst und priorisiert in eine Vorgangsliste laufen.</li>
+<li>Ein Kündigungsschreiben an einen Lieferanten soll aus Vertragsdaten erzeugt werden.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Frage bei jedem Fall: Wer trägt die Entscheidung – der Ablauf oder ein Mensch? Und gibt es
+überhaupt ein Gespräch als Einstieg?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Fall</th>
+<th>Muster</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Bewerbungen zuordnen</td>
+<td>Flow ruft KI</td>
+<td>ereignisgesteuert, kein Gespräch, klar abgegrenzter unscharfer Schritt</td>
+</tr>
+<tr>
+<td>2 Bestellstatus erfragen</td>
+<td>Agent ruft Flow</td>
+<td>Einstieg ist eine Frage, der Flow liest nur, geringes Risiko</td>
+</tr>
+<tr>
+<td>3 Angebot an den Kunden</td>
+<td>nebeneinander mit Gate</td>
+<td>Außenwirkung und wirtschaftliche Bindung, ein Mensch gibt frei</td>
+</tr>
+<tr>
+<td>4 Krankmeldung erfassen</td>
+<td>Agent ruft Flow</td>
+<td>Gespräch als Einstieg, klar begrenzte Aktion mit Pflichtfeldern</td>
+</tr>
+<tr>
+<td>5 Reklamation vorsortieren</td>
+<td>Flow ruft KI</td>
+<td>ereignisgesteuert, gut testbar, gut protokollierbar</td>
+</tr>
+<tr>
+<td>6 Kündigungsschreiben</td>
+<td>nebeneinander mit Gate</td>
+<td>rechtsverbindlich und praktisch nicht zurücknehmbar</td>
+</tr>
+</tbody>
+</table>
+<p>Beachte Fall 1: Bewerbungen berühren zusätzlich das Diskriminierungsrisiko und gelten im EU AI Act
+als besonders sensibler Bereich (Kap. 4 und 14). Das Muster stimmt, aber die Automatisierung darf
+hier nur sortieren und ablegen, nicht bewerten oder aussortieren. Fall 4 ist der Grenzfall: Die
+Aktion selbst ist harmlos, die ausgelöste Meldung an die Führungskraft aber nicht mehr – hier ist
+ein Bestätigungsschritt im Gespräch die Mindestabsicherung.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Einen Datenvertrag schreiben</summary>
+<p>Ein Agent im Innendienst soll Beschäftigten Auskunft über offene Reklamationen geben. Dafür ruft er
+einen Flow auf, der eine SharePoint-Liste durchsucht. Bisher gibt es nur diese Notiz:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Agent gibt Kundenname an den Flow, Flow gibt die offenen Reklamationen zurueck.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Schreibe einen vollständigen <strong>Datenvertrag</strong> nach dem Muster aus Abschnitt 33.2, mit Eingaben,
+   Ausgaben, Formaten, Pflichtangaben und dem Verhalten bei fehlenden Werten.</li>
+<li>Benenne <strong>drei</strong> Situationen, in denen die ursprüngliche Notiz zu einem falschen oder
+   unzulässigen Ergebnis führt.</li>
+<li>Ergänze mindestens eine Prüfung, die den Zugriff der anfragenden Person berücksichtigt.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Kundenname ist ein schlechter Schlüssel. Überlege, was passiert, wenn zwei Kunden ähnlich
+heißen, wenn der Name falsch geschrieben wird – und wenn jemand nach einem Kunden fragt, für den er
+gar nicht zuständig ist.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p><strong>Beispielhafter Datenvertrag:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>Eingaben vom Agenten an den Flow
+  kundennummer      Text, Muster KD- gefolgt von vier Ziffern   Pflicht
+  anfragende_person Text, Anmeldename der aufrufenden Person    Pflicht
+  nur_offene        Wahrheitswert, Standard wahr                optional
+
+Ausgaben vom Flow an den Agenten
+  gefunden          Wahrheitswert
+  anzahl            Ganzzahl
+  reklamationen     Liste aus Vorgangsnummer, Datum, Status, Kurztext
+  zugriff_erlaubt   Wahrheitswert
+
+Verhalten bei fehlenden Werten
+  Fehlt die Kundennummer: Der Agent fragt nach und ruft den Flow nicht auf.
+  Nummer entspricht nicht dem Muster: Flow bricht mit klarer Meldung ab.
+  Kein Treffer: gefunden ist falsch, der Agent nennt keine Vermutung.
+  zugriff_erlaubt ist falsch: Der Agent nennt keine Inhalte, sondern verweist
+  auf die zustaendige Stelle.
+</code></pre></div></td></tr></table></div>
+<p><strong>Drei Problemsituationen der Ursprungsnotiz:</strong> (1) Zwei Kunden mit ähnlichem Namen – der Flow
+liefert die falschen Vorgänge, und der Agent hat keine Möglichkeit, das zu bemerken. (2) Der Name
+ist falsch geschrieben oder unvollständig; der Agent erfindet im Zweifel eine Schreibweise, statt
+nachzufragen. (3) Es ist nirgends geprüft, ob die fragende Person diesen Kunden überhaupt sehen
+darf – der Agent wird zum Umweg um das Berechtigungskonzept.</p>
+<p><strong>Zur Zugriffsprüfung:</strong> Der Flow bekommt die anfragende Person als Pflichtfeld und prüft gegen die
+Zuständigkeitsliste, bevor er Inhalte zurückgibt. Wichtig ist, dass er bei fehlender Berechtigung
+nicht einfach eine leere Liste liefert – sonst wirkt es, als gäbe es keine Reklamationen. Ein
+eigenes Feld <code>zugriff_erlaubt</code> macht den Unterschied zwischen „nichts vorhanden" und „nicht
+einsehbar" sichtbar.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Die Naht zwischen Agent und Flow testen</summary>
+<p>Diese Übung machst du am Werkzeug. Mit Copilot-Studio-Zugang testest du einen Agenten mit
+angebundenem Flow. Ohne Zugang baust du den Agenten in ChatGPT oder Claude nach und simulierst den
+Flow, indem du seine Rückgaben von Hand als Nachricht einspielst.</p>
+<ol>
+<li>Lege den Datenvertrag zugrunde: Eingabe <code>vorgangsnummer</code> im Muster VG- plus fünf Ziffern,
+   Rückgaben <code>gefunden</code>, <code>status</code>, <code>liefertermin</code>, <code>hinweis</code>.</li>
+<li>Schreibe die Instruktion so, dass der Agent fehlende Eingaben erfragt, niemals Werte erfindet und
+   bei <code>null</code> im Liefertermin ausdrücklich keinen Termin nennt.</li>
+<li>Führe diese fünf Testfälle je <strong>zweimal</strong> durch und protokolliere die Antworten:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>T1 Gueltige Nummer, Flow liefert status in Arbeit und einen Liefertermin
+T2 Nutzer fragt ohne Nummer nach dem Stand seiner Bestellung
+T3 Flow liefert gefunden gleich falsch
+T4 Flow liefert einen Status, der nicht in der vereinbarten Liste steht
+T5 Flow liefert liefertermin gleich null, status in Arbeit
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Bewerte jede Antwort: Wurde etwas erfunden? Wurde die Lücke ehrlich benannt? Waren beide
+   Durchläufe gleich?</li>
+<li>Verbessere Instruktion oder Datenvertrag an der schwächsten Stelle und wiederhole den
+   betreffenden Testfall.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>T4 und T5 sind der Kern. Ein unerwarteter Statuswert und ein leeres Datumsfeld sind die beiden
+Fälle, in denen ein Agent am ehesten anfängt zu formulieren statt zu berichten. Achte auf Formeln
+wie „voraussichtlich" oder „in der Regel" – sie sind das Warnsignal.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li><strong>T1</strong> funktioniert fast immer. Er ist der Fall, den man beim Bauen testet, und deshalb kein
+  Beweis für Belastbarkeit.</li>
+<li><strong>T2</strong> trennt gute von schlechten Instruktionen. Ohne ausdrückliche Regel erfindet der Agent
+  entweder eine Nummer oder ruft den Flow ohne Pflichteingabe auf. Richtig ist eine Rückfrage,
+  ohne dass der Flow überhaupt gestartet wird.</li>
+<li><strong>T3</strong> wird oft geglättet: Statt „zu dieser Nummer ist kein Vorgang hinterlegt" kommt eine
+  Formulierung, die Unsicherheit verschleiert. Die Instruktion muss den Fall wörtlich vorgeben.</li>
+<li><strong>T4</strong> ist der aufschlussreichste Fall. Ein unerwarteter Statuswert wird meist stillschweigend
+  umgedeutet, etwa <code>zurueckgestellt</code> wird zu „in Arbeit". Die Reparatur gehört auf beide Seiten:
+  Der Flow gibt nur Werte aus der vereinbarten Liste zurück, und die Instruktion verbietet das
+  Umformulieren von Statuswerten.</li>
+<li><strong>T5</strong> ist der klassische Halluzinationsfall an einer Datenlücke. Ohne Regel entsteht ein
+  „voraussichtlich Ende nächster Woche", das nirgends steht.</li>
+</ul>
+<p>Der zweite Durchlauf zeigt zusätzlich, wie stark die Antworten schwanken. Weicht T4 oder T5
+zwischen den Durchläufen ab, ist die Regel nicht bindend genug formuliert. Ein gutes Ergebnis
+enthält das Protokoll aller zehn Durchläufe und benennt konkret, welche Änderung an welcher Stelle
+vorgenommen wurde.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Agent und Flow zusammenschalten und verantwortbar machen</summary>
+<p><strong>Szenario:</strong> Die Steinhauser Elektrotechnik GmbH betreibt einen Innendienst mit vier Personen, die
+täglich rund 80 Statusanfragen zu Aufträgen beantworten – telefonisch, per Mail und im Teams-Chat.
+Ein Agent soll diese Auskünfte übernehmen und dafür einen Flow aufrufen, der die Auftragsliste
+durchsucht. Die IT-Leitung hat zugestimmt, aber zwei Bedingungen gestellt: Es muss jederzeit
+nachvollziehbar sein, wer welche Auskunft bekommen hat, und der Agent darf niemandem etwas zeigen,
+was diese Person nicht ohnehin sehen darf.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+SharePoint-Liste Auftraege mit rund 2400 aktiven Eintraegen.
+Felder: Auftragsnummer, Kunde, Kundenbetreuer, Status, Liefertermin, Notiz.
+Status aus fester Liste: offen, in Arbeit, wartet auf Kunde, erledigt, storniert.
+Nutzerkreis: 60 Personen im Innen- und Aussendienst.
+Regel im Haus: Ein Aussendienstler sieht nur Auftraege seiner eigenen Kunden.
+Der Liefertermin ist bei etwa jedem fuenften Auftrag noch nicht gesetzt.
+Vorhanden: Microsoft 365, Teams, Power Automate, SharePoint.
+</code></pre></div></td></tr></table></div>
+<p>Ohne Copilot-Studio-Zugang entwirfst du den Agenten als Dokument und simulierst die Flow-Rückgaben
+von Hand in ChatGPT oder Claude.</p>
+<hr />
+<p><strong>Runde 1 – Architektur und Datenvertrag.</strong> Entscheide begründet, welches der drei Muster aus
+Abschnitt 33.1 du einsetzt. Schreibe dann den vollständigen Datenvertrag zwischen Agent und Flow:
+Eingaben mit Formaten und Pflichtangaben, Ausgaben mit Wertebereichen, und für <strong>jeden</strong> denkbaren
+Fehlfall die Regel, wie darüber gesprochen wird. Ergänze die Instruktion des Agenten um die Passagen,
+die diesen Vertrag auf der Sprachseite durchsetzen.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Lösung muss <strong>alle vier</strong> erfüllen. Weise jede
+Erfüllung konkret nach:</p>
+<ol>
+<li><strong>Rechte:</strong> Es ist festgelegt, unter welcher Identität der Flow läuft, und der Flow prüft die
+   Berechtigung der anfragenden Person, bevor er Inhalte zurückgibt. Ein Außendienstler darf
+   nachweislich keine fremden Aufträge sehen.</li>
+<li><strong>Protokoll:</strong> Eine Protokollzeile ist mit allen Feldern ausformuliert und an einem echten
+   Beispielvorgang ausgefüllt.</li>
+<li><strong>Lücken:</strong> Für einen fehlenden Liefertermin und für einen nicht gefundenen Auftrag ist der
+   Antworttext des Agenten wörtlich vorgegeben.</li>
+<li><strong>Notbremse:</strong> Abschaltwege, zwei benannte Rollen, Umgang mit laufenden Vorgängen und
+   Information der Nutzenden sind schriftlich festgelegt.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Nach zwei Wochen Betrieb kommen drei Meldungen:</p>
+<ul>
+<li>Ein Außendienstler hat über den Agenten den Status eines Auftrags eines fremden Kunden erfahren.
+  Die Prüfung ergibt: Der Flow läuft unter der Verbindung der Person, die ihn gebaut hat, und diese
+  Person sieht alle Aufträge.</li>
+<li>Bei Aufträgen ohne gesetzten Liefertermin nennt der Agent regelmäßig eine „voraussichtliche"
+  Kalenderwoche, die in keinem Feld steht. Zwei Kunden wurden daraufhin falsch informiert.</li>
+<li>Die Innendienstleitung möchte wissen, warum ein bestimmter Kunde am 12. des Monats eine falsche
+  Auskunft bekommen hat. Im Protokoll steht nur der Zeitpunkt und die Auftragsnummer.</li>
+</ul>
+<p>Behandle die drei Meldungen getrennt. Beim ersten entscheidest du zwischen Dienstkonto und Prüfung
+je Aufruf und begründest die Wahl. Beim zweiten reparierst du beide Seiten der Naht, nicht nur eine.
+Beim dritten ergänzt du das Protokoll so, dass genau diese Frage künftig beantwortbar ist – und sagst,
+welche der ergänzten Angaben selbst datenschutzrelevant sind.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Vertriebsleitung möchte den Agenten erweitern: Er
+soll Liefertermine nicht nur nennen, sondern auf Kundenwunsch auch <strong>verschieben</strong> können, weil das
+„nur ein Feld in der Liste" sei. Lass dir vom KI-Werkzeug Pro und Contra geben, entscheide begründet
+und <strong>widersprich</strong>, wenn die Argumentation Unumkehrbarkeit, Außenwirkung und Mengenbegrenzung
+übergeht. Formuliere eine Variante, die den Wunsch aufnimmt, ohne die Grenzen der Autonomie zu
+überschreiten.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Architekturentscheidung mit Begründung plus vollständiger Datenvertrag und die zugehörigen
+   Instruktionspassagen</li>
+<li>ausgefüllte Pflichtkriterien-Checkliste mit einer beispielhaft ausgefüllten Protokollzeile und
+   den wörtlichen Antworttexten für die beiden Lückenfälle</li>
+<li>Version 2 nach Runde 3 mit getrennter Antwort auf alle drei Meldungen</li>
+<li>begründete Entscheidung zur Terminverschiebung inklusive der abgelehnten Variante und einer
+   tragfähigen Alternative</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> dein Entwurf benennt, unter welcher Identität der Flow läuft und wie
+die Berechtigung geprüft wird, die Protokollzeile Modell- und Promptstand enthält, der Antworttext
+für den fehlenden Liefertermin keine Vermutung zulässt und deine Notbremse einen Abschaltweg
+beschreibt, der ohne die bauende Person funktioniert.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3. Der erste Befund ist der klassische Rechte-Umweg: Technisch
+funktioniert alles, fachlich ist es ein Datenschutzvorfall. Ein Dienstkonto allein löst das nicht –
+es verlagert das Problem nur, solange der Flow nicht prüft, wer fragt. Der zweite Befund zeigt,
+warum ein Datenvertrag beide Seiten braucht: Der Flow muss <code>null</code> liefern statt eines Näherungswerts,
+und die Instruktion muss das Formulieren von Vermutungen ausdrücklich verbieten. Wer nur eine Seite
+repariert, bekommt das Problem in anderer Form zurück. In Runde 4 gilt: Ein Feld zu ändern ist
+technisch trivial und fachlich eine Zusage an einen Kunden – genau die Sorte Aktion, die ein Gate
+braucht.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) die Musterwahl ist begründet und der Datenvertrag deckt Eingaben, Ausgaben,
+Wertebereiche und alle Fehlfälle ab, wobei die Instruktionspassagen den Vertrag auf der Sprachseite
+tatsächlich durchsetzen; (2) alle vier Pflichtkriterien sind konkret belegt, insbesondere eine
+ausgefüllte Protokollzeile und wörtliche Antworttexte statt allgemeiner Absichtserklärungen;
+(3) Version 2 behandelt die drei Meldungen getrennt, wählt beim Rechteproblem eine Lösung mit
+Berechtigungsprüfung je Aufruf statt nur eines Kontowechsels, repariert die Lückenformulierung auf
+beiden Seiten der Naht und benennt beim Protokoll ausdrücklich die datenschutzrelevanten Ergänzungen;
+(4) die Entscheidung zur Terminverschiebung wägt Unumkehrbarkeit, Außenwirkung und Menge ab und
+bietet eine Alternative wie einen Änderungsvorschlag mit Freigabe durch den Kundenbetreuer.</p>
+<p>Lernziel: eine Kombination aus Agent und Flow so bauen, dass Identität, Rechte, Datenübergabe,
+Protokollierung und Abschaltbarkeit geklärt sind, bevor sie mit echten Menschen und echten Daten
+in Berührung kommt.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel32/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 32 – Eigene Agenten bauen mit Copilot Studio">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel34/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

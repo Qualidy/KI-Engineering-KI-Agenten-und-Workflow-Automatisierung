@@ -1,0 +1,29 @@
+title: Das Entscheidungsraster anwenden
+difficulty: 2
+question: |
+  Nimm die folgenden vier Aufgaben und gehe für jede die fünf Fragen des Entscheidungsrasters
+  aus Abschnitt 2.5 durch. Notiere pro Aufgabe: die empfohlene Stufe, die Frage, die den
+  Ausschlag gegeben hat, und – falls nötig – den Punkt, an dem ein Mensch freigeben muss.
+
+  1. Jeden Montag um 8 Uhr eine Liste aller überfälligen Aufgaben an die Teamleitung senden.
+  2. Eingehende Servicemails den Kategorien Reklamation, Anfrage oder Kündigung zuordnen.
+  3. Urlaubsanträge in ein Zeitwirtschaftssystem übertragen, das keine Schnittstelle hat.
+  4. Aus mehreren Quellen ein Kurzprofil zu einem Neukunden zusammenstellen, ohne dass vorher
+     feststeht, welche Quellen gebraucht werden.
+tip: |
+  Halte dich strikt an die Reihenfolge der Fragen und höre bei der ersten auf, die mit Ja
+  beantwortet wird. Frage 5 stellst du zusätzlich – sie schließt keine Stufe aus, sondern
+  verlangt einen Freigabepunkt.
+solution: |
+  | Aufgabe | Empfehlung | Entscheidende Frage | Freigabe durch Menschen |
+  |---|---|---|---|
+  | 1 Montagsliste | regelbasierter Workflow | Frage 1: vollständig in Regeln beschreibbar | nicht nötig, Fehler sind harmlos und sichtbar |
+  | 2 Servicemails einordnen | Workflow mit KI-Baustein | Frage 2: der schwierige Teil steckt in Sprache | Stichprobe, bei Kategorie Kündigung immer |
+  | 3 Urlaubsanträge übertragen | RPA | Frage 3: keine Schnittstelle vorhanden | Kontrollblick auf das Ergebnis, da Eingabefehler stumm bleiben |
+  | 4 Kurzprofil Neukunde | Agent | Frage 4: Schritte und Quellen sind vorab unbekannt | Pflicht, weil Quellen und Aussagen geprüft werden müssen |
+
+  Zwei Einsichten sind wichtiger als die Zuordnung selbst. Erstens: Aufgabe 3 wandert nur
+  deshalb zu RPA, weil eine Schnittstelle fehlt – existierte eine, wäre ein Workflow die
+  bessere und stabilere Wahl. Zweitens: Frage 5 verändert nicht die Stufe, sondern die
+  Autonomie. Bei Aufgabe 2 macht der Unterschied zwischen „automatisch weiterleiten" und
+  „Vorschlag zur Bestätigung" den entscheidenden Teil des Risikos aus.

@@ -1,0 +1,93 @@
+title: Eine Belegstrecke entwerfen, kalibrieren und absichern
+difficulty: 4
+question: |
+  **Szenario:** Bei der Wiesgrund Gebäudetechnik GmbH landen alle Eingangsrechnungen in einem
+  Sammelpostfach. Eine Mitarbeiterin lädt sie herunter, benennt sie um, legt sie in einem
+  Jahresordner ab und tippt vier Felder in das Buchhaltungssystem. Die Ordnerstruktur ist über Jahre
+  gewachsen, Dateinamen wie `RE Nordlicht neu final.pdf` sind die Regel. Die Steuerprüfung im letzten
+  Jahr hat drei Tage gekostet, weil Belege nicht auffindbar waren. Du entwirfst die neue Belegstrecke.
+
+  ```text
+  Rahmendaten:
+  Etwa 300 Eingangsrechnungen pro Woche, 40 verschiedene Lieferanten.
+  Rund 15 Prozent kommen als Handyfoto von der Baustelle, oft schief und dunkel.
+  Etwa jede zwanzigste Datei enthaelt mehrere Belege hintereinander.
+  Pflichtfelder: Rechnungsnummer, Rechnungsdatum, Bruttobetrag, Lieferant, Bestellbezug.
+  Vorhanden: SharePoint-Bibliothek Eingangsbelege, Power Automate, Bestelluebersicht als Liste.
+  Erfassung von Hand dauert rund 4 Minuten, Pruefen einer Vorerfassung rund 1 Minute.
+  ```
+
+  ---
+
+  **Runde 1 – Strecke und Ablage entwerfen.** Zeichne die Belegstrecke vom Eingang bis zur
+  Archivierung als nummerierte Schrittliste und markiere für jeden Schritt deterministisch oder KI.
+  Lege außerdem fest: das Feldschema mit allen fünf Pflichtfeldern und ihren Datentypen, das
+  Dateibenennungsschema mit einem ausgeschriebenen Beispiel und der Regel für fehlende Bestandteile,
+  sowie die Spalten der Bibliothek, nach denen später gesucht wird. Begründe, warum du bestimmte
+  Merkmale als Spalte und nicht als Ordner abbildest.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Entwurf muss **alle vier** erfüllen:
+
+  1. Eine **dreistufige Behandlung** nach Konfidenz ist mit konkreten Schwellenwerten festgelegt und
+     für die 300 Rechnungen durchgerechnet – inklusive Zeitvergleich zur Handerfassung.
+  2. Die oberste Stufe hat neben der Konfidenz mindestens eine **fachliche Prüfregel**, die nicht auf
+     der KI beruht.
+  3. Die **Prüfaufgabe** ist ausformuliert: Zuständigkeit, Frist, Eskalation, und welche Informationen
+     die prüfende Person sieht.
+  4. Es gibt einen definierten Weg für **nicht verarbeitbare Dokumente** mit eigenem Status, Grund und
+     Verantwortlichem.
+
+  **Runde 3 – Die Komplikation.** Nach vier Wochen Testbetrieb liegen drei Befunde vor:
+
+  - Die Konfidenzen liegen bei fast allen Baustellenfotos zwischen 0,72 und 0,84. Die mittlere Stufe
+    ist dadurch auf über 200 Rechnungen pro Woche angewachsen, die Prüfaufgaben stauen sich.
+  - Bei elf Rechnungen eines einzigen Lieferanten wurde durchgehend die Zwischensumme statt des
+    Bruttobetrags extrahiert – mit Konfidenzen über 0,93.
+  - Die Buchhaltung hat begonnen, Prüfaufgaben ungelesen zu bestätigen, weil „die Werte ja fast immer
+    stimmen".
+
+  Behandle die drei Befunde getrennt. Beim ersten prüfst du ausdrücklich, ob das Problem an der
+  Schwelle oder am Modell liegt – und was du an den Beispieldokumenten ändern müsstest. Beim zweiten
+  entwirfst du eine Maßnahme, die ohne Änderung der Schwelle wirkt. Beim dritten entwirfst du eine
+  Gegenmaßnahme, die nicht darauf beruht, an die Sorgfalt der Beteiligten zu appellieren.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die kaufmännische Leitung fordert, alle Rechnungen unter
+  250 Euro künftig ohne jede Prüfung automatisch zu verarbeiten, weil das Risiko dort gering sei. Lass
+  dir vom KI-Werkzeug Pro und Contra geben, entscheide begründet und **widersprich**, wenn die
+  Argumentation nur den Einzelbetrag betrachtet und weder die Häufigkeit noch die
+  Nachvollziehbarkeitspflichten berücksichtigt. Formuliere eine Alternative, die das Anliegen der
+  Leitung aufnimmt.
+
+  **Deliverable:**
+
+  1. Belegstrecke als nummerierte Schrittliste mit Feldschema, Benennungsschema und Bibliotheksspalten
+  2. durchgerechnete dreistufige Behandlung mit Zeitvergleich und ausgefüllter Pflichtkriterien-Checkliste
+  3. Version 2 nach Runde 3 mit getrennter Antwort auf alle drei Befunde
+  4. begründete Entscheidung zur Wertgrenze inklusive Alternative und der verworfenen Variante
+
+  **Fertig bist du erst, wenn** dein Benennungsschema an einem Beleg ohne Rechnungsnummer
+  durchgespielt und funktionsfähig ist, deine oberste Stufe eine nicht-KI-gestützte Prüfregel enthält,
+  Version 2 die Zwischensummen-Fehlzuordnung ohne Schwellenänderung abfängt und deine Entscheidung in
+  Runde 4 benennt, wie viele Rechnungen pro Jahr unter die vorgeschlagene Wertgrenze fallen würden.
+tip: |
+  Der Lernwert liegt in Runde 3. Alle drei Befunde sehen nach Schwellenwertproblemen aus und sind
+  keine. Der erste ist ein Modellproblem: Wenn Baustellenfotos systematisch schlecht abschneiden,
+  fehlen sie im Training. Der zweite ist ein Zuordnungsproblem, gegen das nur eine fachliche
+  Plausibilitätsprüfung hilft – Rechenprobe oder Abgleich mit der Bestellung. Der dritte ist ein
+  Prozessproblem: Wenn Prüfen sich nicht lohnt, wird nicht geprüft. Wirksam sind hier Stichproben mit
+  Rückmeldung oder eine gezielte Prüfung nur der auffälligen Felder statt aller Werte. In Runde 4
+  gilt: Ein kleiner Betrag mal einer hohen Stückzahl ist kein kleines Risiko, und die
+  Nachweispflichten kennen keine Wertgrenze.
+solution: |
+  Bewertungskriterien: (1) die Belegstrecke trennt deterministische von KI-Schritten, das
+  Benennungsschema ist stabil gegen fehlende Bestandteile und die Ablage stützt sich auf Spalten statt
+  auf tiefe Ordner; (2) die dreistufige Behandlung ist mit den 300 Rechnungen tatsächlich
+  durchgerechnet, alle vier Pflichtkriterien sind belegt, und die oberste Stufe hat eine fachliche
+  Prüfregel; (3) Version 2 beantwortet die drei Befunde getrennt und richtig zugeordnet – Modell,
+  Zuordnung, Prozess – ohne alles über die Schwelle lösen zu wollen; (4) die Entscheidung zur
+  Wertgrenze rechnet die Stückzahl hoch, berücksichtigt die Nachweispflichten und bietet eine
+  tragfähige Alternative wie eine erhöhte Stichprobenquote statt vollständiger Prüfungsfreiheit.
+
+  Lernziel: eine vollständige Dokumentenstrecke entwerfen, die Erkennungsqualität, menschliche
+  Prüfkapazität und Nachweispflichten gegeneinander abwägt – und Fehlerursachen richtig zuordnen,
+  statt am Schwellenwert zu drehen.

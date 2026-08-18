@@ -1,0 +1,41 @@
+title: Darf das in den Prompt?
+difficulty: 2
+question: |
+  Bewerte für jeden Inhalt, ob er in ein **öffentliches** KI-Werkzeug eingegeben werden darf:
+  **ja**, **nur anonymisiert** oder **nein, nur in ein freigegebenes Werkzeug**.
+
+  1. Der Wortlaut einer Kundenbeschwerde inklusive Name, Kundennummer und Anschrift
+  2. Ein Auszug aus einem Fachartikel, den du zusammengefasst haben möchtest
+  3. Eine Preiskalkulation für ein laufendes Ausschreibungsverfahren
+  4. Der Lebenslauf einer Bewerberin
+  5. Eine Beschreibung eures Urlaubsantragsprozesses ohne Namen und Systembezeichnungen
+  6. Ein Protokoll einer Teambesprechung mit Namen und Leistungsbeurteilungen
+
+  Schreibe anschließend Punkt 1 so um, dass er unbedenklich wird – ohne dass die Aufgabe
+  „formuliere einen Antwortentwurf" dadurch unlösbar wird.
+tip: |
+  Frage dich bei jedem Punkt: Wäre der Inhalt auch in einer E-Mail an einen externen Dienstleister
+  ohne Vertrag in Ordnung? Und: Welcher Teil der Information wird für die Aufgabe wirklich
+  gebraucht?
+solution: |
+  | Nr. | Bewertung | Begründung |
+  |---|---|---|
+  | 1 | nur anonymisiert | personenbezogene Daten; der Sachverhalt genügt für die Aufgabe |
+  | 2 | ja | fremder, aber öffentlicher Text ohne Personenbezug |
+  | 3 | nein | Geschäftsgeheimnis mit unmittelbarem wirtschaftlichem Schaden im Ernstfall |
+  | 4 | nein | besonders sensibel, Bewerberdaten gehören in ein freigegebenes Umfeld (Kap. 14) |
+  | 5 | ja | Prozessbeschreibung ohne Personenbezug und ohne schützenswerte Details |
+  | 6 | nein | Personenbezug plus Leistungsbewertung, doppelt heikel |
+
+  Beispielhafte Umschreibung von Punkt 1:
+
+  ```text
+  Ein Kunde beschwert sich schriftlich, dass eine bestellte Ware nach drei Wochen
+  nicht geliefert wurde und zwei Rueckfragen unbeantwortet blieben.
+  Der Ton ist deutlich veraergert, eine Kuendigung wird angedeutet.
+  Formuliere einen Antwortentwurf, Platzhalter fuer Name und Bestellnummer
+  in eckigen Klammern.
+  ```
+
+  Der entscheidende Punkt: Für die Formulierungsleistung braucht das Werkzeug den Sachverhalt und
+  den Ton – nicht die Identität. Die Platzhalter setzt du beim Übertragen selbst ein.

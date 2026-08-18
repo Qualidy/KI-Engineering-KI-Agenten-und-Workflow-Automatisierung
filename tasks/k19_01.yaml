@@ -1,0 +1,32 @@
+title: Bedingung, Mehrfachauswahl oder Schleife?
+difficulty: 1
+question: |
+  Welcher Logikbaustein passt? Wähle zwischen **Bedingung**, **Mehrfachauswahl**,
+  **Schleife**, **Variable** und **Warten**. Begründe jeweils in einem Satz.
+
+  1. Rechnungen über 5000 Euro brauchen eine zusätzliche Freigabe.
+  2. Eine Mail enthält bis zu fünf PDF-Anhänge, jeder soll einzeln abgelegt werden.
+  3. Die Zuständigkeit richtet sich nach der Kostenstelle: Einkauf, Marketing, IT,
+     Lager oder Verwaltung.
+  4. Am Ende soll in der Zusammenfassung stehen, wie viele Belege verarbeitet wurden.
+  5. Nach dem Anlegen im Fremdsystem braucht die Suche dort etwa zehn Minuten, bis der
+     Eintrag gefunden wird.
+  6. Gutschriften werden anders behandelt als Rechnungen.
+tip: |
+  Zwei Aufgaben werden regelmäßig verwechselt: Zähle bei Nummer 3 die möglichen Ausgänge.
+  Und frage bei Nummer 4, ob sich der Wert während des Ablaufs verändert.
+solution: |
+  | Nr. | Baustein | Begründung |
+  |---|---|---|
+  | 1 | Bedingung | genau zwei Wege über einen Schwellenwert |
+  | 2 | Schleife | die Anzahl ist unbekannt, jedes Element wird gleich behandelt |
+  | 3 | Mehrfachauswahl | fünf feste Werte plus Standardfall für Unbekanntes |
+  | 4 | Variable | der Zählerstand verändert sich in jedem Durchlauf |
+  | 5 | Warten | das Fremdsystem braucht Zeit, danach wird erneut geprüft |
+  | 6 | Bedingung | zwei Wege, unterscheidbar am Vorzeichen oder Dokumenttyp |
+
+  Zwei Vertiefungen: Bei Nummer 3 wäre eine Kette aus fünf Bedingungen technisch möglich,
+  aber nach kurzer Zeit unlesbar – und wenn die Kostenstellenliste wächst, gehört die
+  Zuordnung ohnehin in eine Nachschlagetabelle. Bei Nummer 4 gilt der Sonderfall: Läuft
+  die Schleife mit gleichzeitiger Verarbeitung, zählt eine Variable falsch. Dann ist es
+  sicherer, am Ende die Anzahl der Elemente in der Liste zu bestimmen, statt mitzuzählen.

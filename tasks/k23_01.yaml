@@ -1,0 +1,30 @@
+title: Ausdrücke lesen und Ergebnis vorhersagen
+difficulty: 1
+question: |
+  Sage für jeden Ausdruck vorher, was er zurückgibt, und benenne den **Datentyp** des Ergebnisses.
+  Zwei der Ausdrücke enthalten einen Fehler – finde sie und korrigiere sie.
+
+  ```text
+  1  @{concat('RE-','2024','-118')}
+  2  @{toLower(trim('  Anna.Beispiel@Firma.de  '))}
+  3  @{length('Rechnung 118')}
+  4  @{formatDateTime('2024-11-05T14:02:31Z','dd.mm.yyyy')}
+  5  @{if(empty('Testbetreff'),'leer')}
+  6  @{int('19,99')}
+  ```
+tip: |
+  Achte bei 4 auf Groß- und Kleinschreibung der Formatzeichen und bei 5 darauf, wie viele Argumente
+  die Funktion braucht. Bei 6 hilft die Frage, welches Dezimaltrennzeichen Power Automate erwartet.
+solution: |
+  | Nr. | Ergebnis | Datentyp | Anmerkung |
+  |---|---|---|---|
+  | 1 | `RE-2024-118` | Text | `concat` verträgt beliebig viele Argumente |
+  | 2 | `anna.beispiel@firma.de` | Text | `trim` entfernt die Leerzeichen, `toLower` schreibt klein |
+  | 3 | `12` | Zahl | Leerzeichen zählen mit |
+  | 4 | `05.02.2024` | Text | **Fehler:** `mm` sind Minuten. Korrekt ist `dd.MM.yyyy` und ergibt `05.11.2024` |
+  | 5 | Fehler | – | **Fehler:** `if` braucht drei Argumente. Korrekt: `@{if(empty('Testbetreff'),'leer','gefuellt')}` und ergibt `gefuellt` |
+  | 6 | Fehler | – | `int` erwartet reine Ziffern. Korrekt: `@{float(replace('19,99',',','.'))}` und ergibt `19.99` |
+
+  Nummer 4 ist der gefährlichste Fehler des ganzen Kapitels, weil er keinen Absturz erzeugt: Der Flow
+  läuft grün durch und schreibt ein falsches Datum in Dateinamen, Betreffzeilen und Fristen. Nummer 5
+  und 6 scheitern sofort und sind damit die harmloseren Fälle.

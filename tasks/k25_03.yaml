@@ -1,0 +1,42 @@
+title: Offene Vorgänge gefiltert lesen und melden
+difficulty: 3
+question: |
+  Diese Übung baust du in Power Automate. Grundlage ist deine Liste `Materialantraege`
+  aus der vorherigen Übung. Trage mindestens sechs Testelemente ein, davon drei mit
+  `Status = Offen` und unterschiedlichen Mengen.
+
+  1. Baue einen **geplanten Cloud-Flow**, der jeden Werktag um 8 Uhr läuft.
+  2. Lies mit `Elemente abrufen (Get items)` **ausschließlich** die offenen Anträge mit einer
+     Menge über 10 – über die **Filterabfrage**, nicht über eine Bedingung in einer Schleife.
+  3. Baue aus dem Ergebnis eine lesbare Textliste und veröffentliche sie als Nachricht in einem
+     Teams-Kanal. Enthält das Ergebnis keine Elemente, soll **keine** Nachricht gesendet werden.
+  4. Notiere anschließend, unter welcher Identität dein Flow gerade arbeitet und was passieren
+     würde, wenn dein Konto morgen deaktiviert wird.
+tip: |
+  Für die Textliste brauchst du keine Schleife mit Variable: Die Aktion `Auswählen (Select)`
+  formt aus jedem Element eine Textzeile, `join` fügt sie zusammen. Für „keine Elemente"
+  hilft `length` auf dem Ergebnis.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Trigger: Wiederholung  (taeglich 08:00, Zeitzone beachten)
+  Aktion:  Elemente abrufen  (Liste Materialantraege)
+             Filterabfrage: Status eq 'Offen' and Menge gt 10
+             Sortieren nach: Created
+  Aktion:  Bedingung  ->  length(body des Schritts Elemente abrufen) ist groesser als 0
+             Falls ja:
+               Aktion: Auswaehlen  (Von = value, Zuordnung = Titel und Menge als Textzeile)
+               Aktion: Verfassen   -> join(Ausgabe von Auswaehlen, Zeilenumbruch)
+               Aktion: Nachricht in einem Chat oder Kanal veroeffentlichen  (Kanal Einkauf)
+             Falls nein:
+               keine Aktion
+  ```
+
+  Bewertung: (1) Die Filterung passiert in der **Filterabfrage** – eine Lösung mit
+  `Auf jedes anwenden` plus Bedingung ist funktional, aber verschwendet Aktionen und gilt hier
+  als nicht erfüllt. (2) Textwerte in der Filterabfrage stehen in einfachen Anführungszeichen,
+  Zahlen ohne. (3) Der Leer-Fall ist behandelt, sonst kommt jeden Morgen eine leere Nachricht.
+  (4) Zur Identität: Der Flow liest die Liste mit **deinen** Rechten und die Teams-Nachricht
+  erscheint unter deinem Namen. Wird dein Konto deaktiviert, brechen beide Verbindungen und
+  der Flow läuft still ins Leere – deshalb Dienstkonto plus Miteigentümer.

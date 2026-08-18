@@ -1,0 +1,38 @@
+title: Einen Webhook entgegennehmen
+difficulty: 2
+question: |
+  Diese Übung baust du in Power Automate.
+
+  1. Erstelle über `make.powerautomate.com → Erstellen → Instant-Cloud-Flow` einen Flow mit dem
+     Trigger `Bei Empfang einer HTTP-Anforderung (When a HTTP request is received)`.
+  2. Setze unter `Erweiterte Optionen` die Methode auf `GET`. Der Flow soll zwei Angaben aus der
+     Adresse auswerten: `vorgang` und `betrag`.
+  3. Schreibe die empfangenen Werte in eine SharePoint-Liste `Eingang` (Spalten Titel und Betrag)
+     und antworte dem Aufrufer am Ende mit der Aktion `Antwort (Response)`, Statuscode 200 und
+     einem kurzen Bestätigungstext.
+  4. Speichere, kopiere die erzeugte URL, hänge `&vorgang=A-2026-0417&betrag=1240` an und rufe sie
+     im Browser auf. Prüfe das Ergebnis in der Liste.
+  5. Notiere in zwei Sätzen, warum diese URL wie ein Kennwort behandelt werden muss.
+tip: |
+  Die Werte aus der Adresse erreichst du mit einem Ausdruck auf die Abfrageparameter des Triggers.
+  Die URL entsteht erst beim ersten Speichern – vorher ist das Feld leer.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Trigger: Bei Empfang einer HTTP-Anforderung  (Methode GET)
+  Aktion:  Element erstellen  (Liste Eingang)
+             Titel  = triggerOutputs()['queries']['vorgang']
+             Betrag = int(triggerOutputs()['queries']['betrag'])
+  Aktion:  Antwort  (Statuscode 200, Text Vorgang erfasst)
+  ```
+
+  Prüfpunkte: (1) Die URL wird erst nach dem Speichern angezeigt. (2) Ohne `Antwort`-Aktion
+  bekommt der Aufrufer nur ein `202 Accepted` – die Aktion ist der Unterschied zwischen
+  „angenommen" und „erledigt". (3) Ist `betrag` ein Zahlenfeld in SharePoint, muss der Text mit
+  `int(...)` umgewandelt werden, sonst kommt ein Fehler zum ungültigen Wert.
+
+  Zur Sicherheitsfrage: Die URL enthält eine Signatur und verlangt keine Anmeldung. Wer sie kennt,
+  kann den Flow beliebig oft mit frei erfundenen Werten auslösen – also Datenmüll erzeugen oder
+  Aktionsverbrauch verursachen. Deshalb nicht in Chats weitergeben, eingehende Werte im Flow auf
+  Plausibilität prüfen und die URL bei Verdacht durch Ersetzen des Triggers neu erzeugen.

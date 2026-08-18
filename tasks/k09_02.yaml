@@ -1,0 +1,38 @@
+title: Vom schlechten zum guten Prompt
+difficulty: 2
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug. Nimm eine echte Aufgabe aus deinem Alltag – zum
+  Beispiel eine Terminabsage, eine Erinnerung an eine überfällige Zulieferung oder eine kurze
+  Information ans Team.
+
+  Arbeite die vier Stufen aus Abschnitt 9.3 nach und **speichere jede Ausgabe**:
+
+  1. **Stufe 0:** Formuliere den Auftrag so knapp, wie du ihn im Alltag tippen würdest.
+  2. **Stufe 1:** Ergänze Aufgabe und Kontext.
+  3. **Stufe 2:** Ergänze Format und Ton.
+  4. **Stufe 3:** Ergänze Rolle und mindestens drei Einschränkungen, darunter die Regel, dass
+     fehlende Angaben mit `[FEHLT]` markiert statt geraten werden.
+
+  Halte zu jeder Stufe in einem Satz fest, **was sich konkret verbessert hat** – und markiere in
+  den Ausgaben von Stufe 0 bis 2 jede Stelle, an der etwas erfunden wurde.
+tip: |
+  Führe jede Stufe in einem **neuen Chat** aus. Baust du sie im selben Gespräch auf, sieht das
+  Werkzeug deine vorherigen Ergänzungen und du misst nicht mehr die Wirkung des einzelnen
+  Bausteins.
+solution: |
+  Typisches Muster über die vier Stufen:
+
+  | Stufe | Beobachtung |
+  |---|---|
+  | 0 | brauchbarer, aber allgemeiner Text; meist eine bis drei erfundene Angaben |
+  | 1 | inhaltlich richtig, Länge und Aufbau schwanken stark |
+  | 2 | direkt verwendbar, verlässliche Länge, passender Ton |
+  | 3 | keine erfundenen Angaben mehr; Lücken sind sichtbar markiert |
+
+  Der wichtigste Nachweis ist die **Markierung des Erfundenen** in den frühen Stufen. Häufig sind
+  es Details, die man leicht überliest: ein Datum, ein Name, eine Begründung, eine höfliche
+  Zusicherung. Genau deshalb ist Stufe 3 kein Feinschliff.
+
+  Eine gute Bearbeitung enthält vier gespeicherte Ausgaben, vier Sätze zur Verbesserung und
+  mindestens eine markierte Erfindung. Wer keine einzige findet, hat entweder eine sehr einfache
+  Aufgabe gewählt oder nicht genau genug verglichen.

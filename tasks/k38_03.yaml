@@ -1,0 +1,41 @@
+title: Fehlerbenachrichtigung ergänzen und auslösen
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug – in Power Automate (oder in Zapier bzw. Make mit deren
+  Fehlerbehandlung).
+
+  1. Fasse die kritischen Schritte deines Flows in einen `Bereich` und ergänze dahinter eine
+     Aktion mit der Einstellung `Nach Fehler ausführen` (Kap. 28), die eine Nachricht an dich
+     sendet.
+  2. Die Nachricht muss **mindestens vier Angaben** enthalten: Zeitpunkt, Kennzeichen des
+     betroffenen Falls, Name des fehlgeschlagenen Schrittes und eine Handlungsanweisung.
+  3. **Löse den Fehler absichtlich aus** – zum Beispiel indem du ein Pflichtfeld leer lässt, einen
+     Listennamen verfälschst oder einen Testdatensatz ohne Anhang schickst.
+  4. Prüfe die eingegangene Nachricht: Könntest du allein damit den betroffenen Fall
+     nachbearbeiten, ohne den Ausführungsverlauf zu öffnen? Ergänze, was fehlt.
+tip: |
+  Die häufigste Schwäche ist eine Fehlermail, die nur die technische Meldung weitergibt. Stell dir
+  vor, deine Vertretung liest sie im Urlaub auf dem Handy: Sie muss daraus erkennen, welcher
+  Vorgang betroffen ist und was jetzt zu tun ist.
+solution: |
+  Qualitätskriterien: (1) Bereich und Fehleraktion sind gebaut und der Fehler wurde tatsächlich
+  ausgelöst, nicht nur geplant; (2) die Nachricht enthält alle vier Angaben, insbesondere ein
+  Fallkennzeichen; (3) die Handlungsanweisung ist konkret; (4) die Nachricht ist nach der Prüfung
+  nachgebessert worden.
+
+  Beispiel für ein gutes Ergebnis:
+
+  ```text
+  Betreff: Flow Kontaktanfragen Vorsortierung fehlgeschlagen
+  Zeitpunkt: 12.03. 09:14
+  Betroffener Fall: Anfrage von Muster GmbH, Formular-ID 1042
+  Fehlgeschlagener Schritt: Element in Liste Anfragen erstellen
+  Fehlermeldung: Die Spalte Kategorie erwartet einen der zulaessigen Werte
+  Was zu tun ist: Anfrage 1042 in Forms oeffnen, Eintrag von Hand anlegen,
+    Status Neu setzen, Absender bestaetigen.
+  ```
+
+  Typische Nachbesserung nach dem Test: Beim ersten Versuch fehlte die Formular-ID, weil sie erst
+  in einem späteren Schritt gesetzt wurde. Lösung: Das Kennzeichen früh in eine Variable oder eine
+  `Verfassen`-Aktion schreiben, damit es auch im Fehlerfall verfügbar ist. Genau diese Erkenntnis
+  bekommt man nur, wenn man den Fehler wirklich auslöst.

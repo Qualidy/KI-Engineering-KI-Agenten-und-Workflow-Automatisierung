@@ -1,0 +1,38 @@
+title: Aus Themen werden Tätigkeiten
+difficulty: 1
+question: |
+  Diese sechs Einträge stammen aus einer Ideensammlung. Keiner davon ist in dieser Form bewertbar.
+
+  ```text
+  1. Irgendwas mit Rechnungen
+  2. Kundenservice verbessern
+  3. Die Excel-Listen sind ein Chaos
+  4. KI fuer das Marketing
+  5. Zu viele Rueckfragen aus dem Aussendienst
+  6. Onboarding neuer Mitarbeitender
+  ```
+
+  1. Formuliere jeden Eintrag als **Tätigkeit** um: Verb plus Gegenstand, höchstens acht Wörter.
+     Wo mehrere Tätigkeiten stecken, trenne sie.
+  2. Ordne jeder umformulierten Idee eines der sieben Suchmuster aus Abschnitt 34.1 zu.
+  3. Markiere die Ideen, bei denen du vermutest, dass **keine KI** nötig ist.
+tip: |
+  Wenn du eine Idee nicht als Tätigkeit formulieren kannst, fehlt dir Information. Notiere in diesem
+  Fall, welche Frage du stellen müsstest – auch das ist ein gültiges Ergebnis.
+solution: |
+  Beispielhafte Umformulierung:
+
+  | Ursprung | Als Tätigkeit | Suchmuster | Ohne KI möglich |
+  |---|---|---|---|
+  | 1 Rechnungen | Rechnungsfelder aus PDF vorerfassen | Zeitfresser | nein, Extraktion braucht KI |
+  | 2 Kundenservice | Serviceanfragen dem richtigen Team zuordnen | Warteschlangen | nein, unscharfe Einordnung |
+  | 3 Excel-Chaos | Auftragsdaten aus zwei Systemen abgleichen | Doppelerfassung | ja, reine Regel |
+  | 4 Marketing | Produkttexte für Newsletter entwerfen | Zeitfresser | nein, Texterzeugung |
+  | 5 Rückfragen | Wiederkehrende Fragen des Außendiensts beantworten | wiederkehrende Rückfragen | teils, oft genügt ein gepflegtes Dokument |
+  | 6 Onboarding | Einarbeitungsaufgaben automatisch zuweisen | Medienbrüche | ja, Ablauf mit fester Checkliste |
+
+  Zwei Erkenntnisse: Erstens zerfallen die meisten Einträge bei genauem Hinsehen in mehrere Ideen –
+  „Onboarding" enthält Aufgabenzuweisung, Zugangsanlage und Materialbestellung, und das sind drei
+  unterschiedlich schwierige Vorhaben. Zweitens brauchen mindestens zwei der sechs Ideen gar keine
+  KI. Eine Ideensammlung ohne solche Fälle ist ein Warnzeichen: Dann wurde nach KI-Anwendungen
+  gesucht statt nach Problemen.

@@ -1,0 +1,1827 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel36/">
+      
+      
+        <link rel="next" href="../kapitel38/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 37 – Umsetzung: bauen, iterieren, testen - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-37-umsetzung-bauen-iterieren-testen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 37 – Umsetzung: bauen, iterieren, testen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Block 7 · Projektarbeit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 37 – Umsetzung: bauen, iterieren, testen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 37 – Umsetzung: bauen, iterieren, testen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#371-erst-das-skelett-dann-der-ausbau" class="md-nav__link">
+    <span class="md-ellipsis">
+      37.1 Erst das Skelett, dann der Ausbau
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#372-testdaten-statt-echtdaten" class="md-nav__link">
+    <span class="md-ellipsis">
+      37.2 Testdaten statt Echtdaten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#373-kurzzyklen-bauen-testen-korrigieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      37.3 Kurzzyklen: bauen, testen, korrigieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#374-fehler-systematisch-eingrenzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      37.4 Fehler systematisch eingrenzen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#375-den-ki-anteil-kalibrieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      37.5 Den KI-Anteil kalibrieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#376-abnahme-blocker-und-zeitmanagement" class="md-nav__link">
+    <span class="md-ellipsis">
+      37.6 Abnahme, Blocker und Zeitmanagement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 39 – Dokumentation der Projektarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 40 – Präsentation und Ausblick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-37-umsetzung-bauen-iterieren-testen">Kapitel 37 – Umsetzung: bauen, iterieren, testen<a class="headerlink" href="#kapitel-37-umsetzung-bauen-iterieren-testen" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Warum du zuerst ein <strong>Skelett</strong> baust, das durchläuft, und erst danach die Fachlogik ergänzt</li>
+<li>Wie du <strong>Testdaten</strong> anlegst, statt an Echtdaten zu üben</li>
+<li>Wie <strong>Kurzzyklen</strong> aus Bauen, Testen und Korrigieren funktionieren – und wie lang ein Zyklus sein darf</li>
+<li>Wie du Fehler <strong>systematisch eingrenzt</strong>, statt zu raten</li>
+<li>Wie du den <strong>KI-Anteil kalibrierst</strong>: Prompt schärfen, Ausgabeformat erzwingen, Schwellenwerte setzen, Stichproben auswerten</li>
+<li>Wie du die <strong>Abnahme</strong> gegen deine Testfälle durchführst und mit Blockern umgehst, ohne das Projekt zu verlieren</li>
+</ul>
+</div>
+<hr />
+<h2 id="371-erst-das-skelett-dann-der-ausbau">37.1 Erst das Skelett, dann der Ausbau<a class="headerlink" href="#371-erst-das-skelett-dann-der-ausbau" title="Permanent link">&para;</a></h2>
+<p>Der häufigste Fehler in der Bauphase: den Flow von vorne nach hinten fertig konfigurieren – Trigger, dann Schritt eins vollständig, dann Schritt zwei vollständig. Nach zwei Stunden gibt es viele perfekte Einstellungen und keinen einzigen erfolgreichen Durchlauf.</p>
+<p>Der bessere Weg ist ein <strong>Skelett</strong>: Trigger, alle geplanten Aktionen in der richtigen Reihenfolge, aber mit festen Platzhalterwerten statt echter Logik. Kein KI-Aufruf, keine Bedingungen, keine Fehlerbehandlung. Ziel ist ein einziger Durchlauf, der bis zum letzten Schritt kommt.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Skelett laeuft durch]) --&gt; B([Datenfluss echt machen])
+    B --&gt; C([KI-Stelle einbauen])
+    C --&gt; D([Verzweigung und Freigabe])
+    D --&gt; E([Fehlerpfade ergaenzen])</code></pre>
+<p>Diese Reihenfolge ist kein Geschmacksurteil. Sie sorgt dafür, dass du jeden neuen Fehler <strong>einem</strong> Schritt zuordnen kannst, weil vorher alles lief.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Flow, der falsche Ergebnisse liefert, ist weiter als ein Flow, der nicht startet. Sorge zuerst dafür, dass Daten fließen – Richtigkeit kommt im zweiten Schritt.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Speichern und Namen geben</p>
+<p>Benenne jede Aktion sofort sprechend („Rechnungsdaten auslesen" statt „Text mit GPT erstellen 2") und speichere nach jedem funktionierenden Zwischenstand. Wenn ein Werkzeug Versionen oder Kopien erlaubt, lege vor jedem größeren Umbau eine Kopie an. Das ersetzt kein Versionsmanagement (Kap. 28), rettet aber Nachmittage.</p>
+</div>
+<hr />
+<h2 id="372-testdaten-statt-echtdaten">37.2 Testdaten statt Echtdaten<a class="headerlink" href="#372-testdaten-statt-echtdaten" title="Permanent link">&para;</a></h2>
+<p>Mit Echtdaten zu üben ist bequem und aus drei Gründen falsch: Du erzeugst echte Nebenwirkungen (Mails an echte Kunden, Einträge in produktive Listen), du verarbeitest personenbezogene Daten ohne Notwendigkeit (Kap. 4), und du hast trotzdem nicht die Fälle, die du brauchst – Grenzfälle kommen im Alltag selten und kaum auf Zuruf.</p>
+<table>
+<thead>
+<tr>
+<th>Bestandteil einer Testumgebung</th>
+<th>Konkret</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Eigene Zielablage</strong></td>
+<td>SharePoint-Liste oder Excel-Datei mit dem Zusatz „Test" im Namen</td>
+</tr>
+<tr>
+<td><strong>Eigener Eingangskanal</strong></td>
+<td>Testpostfach, eigenes Formular oder ein Ordner, in den du Dateien legst</td>
+</tr>
+<tr>
+<td><strong>Testdatensatz</strong></td>
+<td>8 bis 15 vorbereitete Fälle, abgeleitet aus deinen Testfällen (Kap. 36)</td>
+</tr>
+<tr>
+<td><strong>Eigene Empfänger</strong></td>
+<td>alle Benachrichtigungen zunächst an dich selbst</td>
+</tr>
+<tr>
+<td><strong>Erkennbare Markierung</strong></td>
+<td>Betreff und Einträge beginnen mit TEST, damit nichts verwechselt wird</td>
+</tr>
+</tbody>
+</table>
+<p>Wenn du Echtdaten als Vorlage brauchst, anonymisiere sie: Namen ersetzen, Mailadressen auf deine eigene ändern, Beträge und Nummern verfremden. Behalte die <strong>Struktur</strong> bei – gerade die schrägen Formate sind der Grund, warum echte Fälle lehrreich sind.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Benachrichtigungsschritte, die beim Testen noch an echte Empfänger gehen, sind der klassische peinliche Moment: dreißig Testmails an eine Führungskraft, weil ein Schleifenlauf falsch konfiguriert war. Setze <strong>jeden</strong> Empfänger auf dich selbst und tausche sie erst beim Rollout aus (Kap. 38).</p>
+</div>
+<hr />
+<h2 id="373-kurzzyklen-bauen-testen-korrigieren">37.3 Kurzzyklen: bauen, testen, korrigieren<a class="headerlink" href="#373-kurzzyklen-bauen-testen-korrigieren" title="Permanent link">&para;</a></h2>
+<p>Arbeite in Zyklen von <strong>einer Änderung</strong>. Ein Zyklus besteht aus: eine Sache ändern, speichern, mit einem Testfall ausführen, Ergebnis im Ausführungsverlauf ansehen, Ergebnis notieren. Wer drei Änderungen gleichzeitig macht und dann testet, weiß bei einem Fehler nicht, welche davon schuld ist.</p>
+<p>Halte die Ergebnisse mit: ein knappes Protokoll reicht, aber es muss existieren. Es ist später die Grundlage für den Testnachweis in der Dokumentation (Kap. 39).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>BAU- UND TESTPROTOKOLL
+
+| Datum/Zeit | Geaenderter Schritt | Testfall Nr | Ergebnis | Naechster Schritt |
+|------------|---------------------|-------------|----------|-------------------|
+| [Zeit] | [Aktion oder Prompt] | [Nr] | ok / Fehler: [Meldung] | [was du als naechstes aenderst] |
+| [Zeit] | [Aktion oder Prompt] | [Nr] | ok / Fehler: [Meldung] | [Aenderung] |
+
+Offene Punkte:
+  - [Punkt] , entdeckt am [Datum] , Prioritaet: [hoch / mittel / niedrig]
+Geparkt fuer spaeter:
+  - [Punkt] , weil [Grund]
+</code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Ein Zyklus in der Praxis</p>
+<p>Ausgangslage: Das Skelett läuft, der Listeneintrag wird erzeugt, aber das Datumsfeld bleibt leer.</p>
+<ol>
+<li><strong>Eine Änderung:</strong> in der Aktion „Element erstellen" das Datumsfeld mit dem Wert aus dem Trigger belegen.</li>
+<li><strong>Ausführen</strong> mit Testfall 1.</li>
+<li><strong>Verlauf ansehen:</strong> Fehler „Die Zeichenfolge ist kein gültiges Datum".</li>
+<li><strong>Notieren</strong> und daraus eine Hypothese bilden: Das Formular liefert das Datum als Text im Format Tag.Monat.Jahr.</li>
+<li><strong>Nächster Zyklus:</strong> eine <code>Verfassen</code>-Aktion vor dem Eintrag, die das Datum umformt (Kap. 23), erneut ausführen.</li>
+</ol>
+<p>Zwei Zyklen, zwei Minuten, ein gelöstes Problem. Wer stattdessen gleich Datumsformat, Zeitzone und Feldzuordnung zusammen ändert, sucht danach eine halbe Stunde.</p>
+</div>
+<hr />
+<h2 id="374-fehler-systematisch-eingrenzen">37.4 Fehler systematisch eingrenzen<a class="headerlink" href="#374-fehler-systematisch-eingrenzen" title="Permanent link">&para;</a></h2>
+<p>Fehlersuche ist ein Verfahren, kein Talent. Vier Techniken genügen für fast alles, was in einem Flow schiefgeht (Grundlagen zum Ausführungsverlauf in Kap. 28).</p>
+<table>
+<thead>
+<tr>
+<th>Technik</th>
+<th>Vorgehen</th>
+<th>Wofür</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Halbieren</strong></td>
+<td>die hintere Hälfte des Flows abschalten und prüfen, ob die vordere sauber liefert</td>
+<td>wenn unklar ist, wo der Fehler entsteht</td>
+</tr>
+<tr>
+<td><strong>Isolieren</strong></td>
+<td>den verdächtigen Schritt in einem separaten Testflow allein ausführen</td>
+<td>bei KI-Aufrufen, HTTP-Aktionen, Ausdrücken</td>
+</tr>
+<tr>
+<td><strong>Mitschreiben</strong></td>
+<td>Zwischenergebnisse über <code>Verfassen</code> sichtbar machen und im Verlauf lesen</td>
+<td>wenn Daten anders aussehen als erwartet</td>
+</tr>
+<tr>
+<td><strong>Vereinfachen</strong></td>
+<td>den Ausdruck auf den einfachsten Fall reduzieren und dann stückweise aufbauen</td>
+<td>bei verschachtelten Ausdrücken und Formaten</td>
+</tr>
+</tbody>
+</table>
+<p>Und eine Frage vorweg, die viel Zeit spart: <strong>Hat es vorher funktioniert?</strong> Wenn ja, lautet die erste Hypothese immer „meine letzte Änderung" – nicht „das Werkzeug hat ein Problem".</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>Eine Fehlermeldung, die nach Technik klingt, wird oft ungelesen als „unlösbar" abgetan. Tatsächlich stehen im Ausführungsverlauf meist die Eingabe und die Ausgabe jedes Schrittes im Klartext. Lies zuerst die <strong>Eingabe</strong> des fehlgeschlagenen Schrittes: In den meisten Fällen ist dort schon sichtbar, dass ein Wert leer, doppelt oder im falschen Format ankommt.</p>
+</div>
+<hr />
+<h2 id="375-den-ki-anteil-kalibrieren">37.5 Den KI-Anteil kalibrieren<a class="headerlink" href="#375-den-ki-anteil-kalibrieren" title="Permanent link">&para;</a></h2>
+<p>Der KI-Baustein ist der Teil deines Flows, der nicht durch Konfiguration richtig wird, sondern durch <strong>Kalibrierung</strong>. Vier Hebel, in dieser Reihenfolge.</p>
+<p><strong>Erstens: Ausgabeformat erzwingen.</strong> Ein Flow kann keinen Fließtext weiterverarbeiten. Verlange genau die Felder, die du brauchst, in einer festen Reihenfolge, ohne Einleitung und ohne Erklärung.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Du ordnest eingehende Anfragen einer Kategorie zu.
+Erlaubte Kategorien: Vertrieb, Support, Rechnung, Sonstiges.
+Antworte in genau drei Zeilen, ohne Einleitung:
+Kategorie: [eine der erlaubten Kategorien]
+Dringlichkeit: hoch oder normal
+Zusammenfassung: [maximal 20 Woerter]
+Wenn der Text keine Zuordnung erlaubt, schreibe als Kategorie: Unklar.
+Text der Anfrage:
+[Text]
+</code></pre></div></td></tr></table></div>
+<p><strong>Zweitens: Prompt schärfen.</strong> Ergänze eine erlaubte Werteliste, ein Beispiel für den schwierigen Fall und eine ausdrückliche Erlaubnis, „Unklar" zu antworten. Diese Erlaubnis ist wichtiger, als sie klingt: Ein Modell, das keine Ausweichmöglichkeit hat, erfindet lieber eine Kategorie (Kap. 5).</p>
+<p><strong>Drittens: Schwellenwerte anpassen.</strong> Wo dein Baustein einen Konfidenzwert liefert (etwa bei Dokumentenverarbeitung, Kap. 31), legst du fest, ab wann automatisch weitergearbeitet wird und ab wann ein Mensch prüft. Beginne streng und lockere erst, wenn deine Stichprobe es rechtfertigt.</p>
+<p><strong>Viertens: Stichproben auswerten.</strong> Lass 10 bis 20 Fälle durchlaufen und zähle nach.</p>
+<table>
+<thead>
+<tr>
+<th>Größe</th>
+<th>Wie du sie erhebst</th>
+<th>Was sie dir sagt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trefferquote</strong></td>
+<td>Anzahl fachlich korrekter Ergebnisse geteilt durch Anzahl Fälle</td>
+<td>ob der Baustein gut genug für den Zweck ist</td>
+</tr>
+<tr>
+<td><strong>Formattreue</strong></td>
+<td>Anzahl Antworten im verlangten Format geteilt durch Anzahl Fälle</td>
+<td>ob der Flow die Antwort verlässlich weiterverarbeiten kann</td>
+</tr>
+<tr>
+<td><strong>Fehlerrichtung</strong></td>
+<td>bei welchen Fällen falsch geurteilt wird</td>
+<td>ob eine Kategorie fehlt oder ein Prompt-Teil unklar ist</td>
+</tr>
+<tr>
+<td><strong>Unklar-Anteil</strong></td>
+<td>Anzahl Ausweichantworten</td>
+<td>ob die Schwelle zu streng oder der Prompt zu eng ist</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Die Fehlerrichtung ist wichtiger als die Quote</p>
+<p>17 von 20 richtig klingt gleich, ist es aber nicht. Werden nur harmlose Fälle falsch einsortiert und gehen alle kritischen zur Prüfung, ist das ein brauchbarer Zustand. Wenn umgekehrt die drei Fehler genau die dringenden Fälle betreffen, ist der Baustein trotz 85 Prozent nicht einsetzbar. Schau immer nachrechnend hin, <strong>welche</strong> Fälle danebengehen.</p>
+</div>
+<hr />
+<h2 id="376-abnahme-blocker-und-zeitmanagement">37.6 Abnahme, Blocker und Zeitmanagement<a class="headerlink" href="#376-abnahme-blocker-und-zeitmanagement" title="Permanent link">&para;</a></h2>
+<p>Die <strong>Abnahme</strong> ist ein einzelner, sauber durchgeführter Durchgang: alle Testfälle aus Kapitel 36 der Reihe nach ausführen, Ergebnis eintragen, keine Änderung während des Durchgangs. Änderst du zwischendrin, beginnt der Durchgang neu – sonst ist der Nachweis wertlos.</p>
+<p>Ein Testfall gilt als bestanden, wenn das erwartete Ergebnis eintritt, nicht wenn „ungefähr das Richtige" passiert. Nicht bestandene Fälle bekommen einen Eintrag: Ursache, Entscheidung (korrigieren oder als Grenze dokumentieren), und bei Bedarf einen Vermerk in den bekannten Grenzen (Kap. 39).</p>
+<table>
+<thead>
+<tr>
+<th>Blocker</th>
+<th>Reduktion statt Aufgeben</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connector oder Rechte fehlen</td>
+<td>Zwischenschritt über Liste oder Datei, manueller Import einmal täglich</td>
+</tr>
+<tr>
+<td>KI-Ergebnisse zu unzuverlässig</td>
+<td>Aufgabe verkleinern: statt vier Kategorien nur „dringend / nicht dringend", Rest zur Prüfung</td>
+</tr>
+<tr>
+<td>Ein Schritt ist technisch zu aufwendig</td>
+<td>diesen Schritt als manuelle Aufgabe im Flow anlegen, statt ihn zu automatisieren</td>
+</tr>
+<tr>
+<td>Zeit reicht nicht für alle Zweige</td>
+<td>einen Zweig als Nicht-Ziel dokumentieren und den Hauptzweig fertig machen</td>
+</tr>
+<tr>
+<td>Fehler bleibt ungelöst</td>
+<td>Fehlerpfad ergänzen, der den Fall sichtbar an einen Menschen gibt, und Ursache als offenen Punkt dokumentieren</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Das Zeitbudget schützen</p>
+<p>Setze dir eine feste Grenze pro Problem – etwa 45 Minuten. Ist es dann nicht gelöst, wandert es in die Liste „geparkt" und du machst mit dem nächsten Meilenstein weiter. Ein fertiger, dokumentierter Flow mit zwei bekannten Grenzen ist ein Ergebnis. Ein nicht laufender Flow mit einem perfekt gelösten Detailproblem ist keines.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Der Reflex, kurz vor Schluss noch etwas einzubauen</p>
+<p>Wenn der Flow läuft, wirkt jede kleine Ergänzung verlockend. Genau in dieser Phase entstehen die Fehler, die niemand mehr findet, weil danach nicht mehr getestet wird. Regel: <strong>Nach der Abnahme keine Änderung ohne erneuten Testdurchgang.</strong> Zusatzwünsche gehören in die nächsten Schritte (Kap. 40).</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Erst ein <strong>Skelett</strong>, das durchläuft, dann Datenfluss, KI-Stelle, Verzweigungen und Fehlerpfade.</li>
+<li><strong>Testdaten und Testablagen</strong> statt Echtdaten – alle Benachrichtigungen zunächst an dich selbst.</li>
+<li><strong>Kurzzyklen</strong> mit genau einer Änderung pro Zyklus, mitgeschrieben im Bau- und Testprotokoll.</li>
+<li>Fehler eingrenzen durch <strong>Halbieren, Isolieren, Mitschreiben, Vereinfachen</strong> – und immer zuerst die Eingabe des fehlgeschlagenen Schrittes lesen.</li>
+<li>Den KI-Anteil <strong>kalibrieren</strong>: Format erzwingen, Prompt schärfen, Schwellenwerte setzen, Stichprobe auswerten und dabei auf die Fehlerrichtung achten.</li>
+<li><strong>Abnahme</strong> in einem Durchgang ohne Änderungen; bei Blockern den Umfang reduzieren, statt das Projekt zu verlieren.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Das Skelett deines Flows festlegen</summary>
+<p>Bevor du baust, legst du fest, was dein <strong>Skelett</strong> ist – der kürzeste Durchlauf, der von vorn
+bis hinten funktioniert.</p>
+<ol>
+<li>Notiere die Aktionen deines Skeletts in Reihenfolge (drei bis fünf Stück).</li>
+<li>Schreibe zu jeder Aktion, mit welchem <strong>festen Platzhalterwert</strong> du sie zunächst füllst,
+   statt echte Daten zu verarbeiten.</li>
+<li>Notiere in einem Satz, woran du erkennst, dass das Skelett durchgelaufen ist.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Im Skelett gibt es keine Bedingungen, keinen KI-Aufruf und keine Fehlerbehandlung. Wenn dein
+Skelett eine Verzweigung enthält, ist es noch kein Skelett.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) das Skelett hat höchstens fünf Aktionen und keine Verzweigung, keine
+KI-Stelle; (2) jede Aktion hat einen festen Platzhalterwert, keinen dynamischen Inhalt;
+(3) das Abschlusskriterium ist ein sichtbarer Zustand, nicht „läuft".</p>
+<p>Beispiel für ein gutes Ergebnis (Projekt: Kontaktanfragen vorsortieren):</p>
+<table>
+<thead>
+<tr>
+<th>Aktion</th>
+<th>Platzhalterwert im Skelett</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trigger: Neue Antwort in Forms</td>
+<td>wird durch eine selbst ausgefüllte Testantwort ausgelöst</td>
+</tr>
+<tr>
+<td>Antwortdetails abrufen</td>
+<td>keine Belegung nötig</td>
+</tr>
+<tr>
+<td>Element in Testliste erstellen</td>
+<td>Titel: TEST, Kategorie: Sonstiges, Status: Neu</td>
+</tr>
+<tr>
+<td>Mail an mich selbst</td>
+<td>Betreff: TEST Skelettdurchlauf</td>
+</tr>
+</tbody>
+</table>
+<p>Abschlusskriterium: „In der Testliste steht ein Eintrag mit Titel TEST und in meinem Postfach
+liegt eine Mail mit dem Betreff TEST Skelettdurchlauf." Damit ist bewiesen, dass Trigger,
+Schreibrecht und Mailversand funktionieren – bevor irgendeine Fachlogik dazukommt.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Testdatensatz anlegen</summary>
+<p>Lege für dein Projekt einen echten Testdatensatz an – nicht als Beschreibung, sondern als
+benutzbares Material (Formularantworten, Dateien, Mails an ein Testpostfach, Zeilen in einer
+Testliste).</p>
+<ol>
+<li>Erstelle <strong>mindestens fünf</strong> Testfälle: drei Normalfälle, einen Grenzfall, einen Negativfall.</li>
+<li>Markiere alle Testdaten erkennbar, zum Beispiel mit dem Präfix TEST.</li>
+<li>Anonymisiere alles, was aus echten Fällen übernommen ist: Namen, Mailadressen, Nummern,
+   Beträge – aber behalte die ursprüngliche <strong>Struktur</strong> und die schrägen Formate bei.</li>
+<li>Notiere pro Testfall in einer Zeile, welches Ergebnis du erwartest.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die wertvollsten Testdaten sind die hässlichen: Umlaute, doppelte Leerzeichen, abgeschnittene
+Betreffzeilen, ein leeres Pflichtfeld, ein Betrag mit Punkt statt Komma. Genau daran scheitern
+Flows im Alltag.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) die Testdaten existieren tatsächlich und sind ohne Vorbereitung
+wiederverwendbar; (2) keine personenbezogenen Echtdaten mehr enthalten; (3) Grenz- und
+Negativfall sind fachlich sinnvoll und nicht künstlich unmöglich; (4) zu jedem Fall steht ein
+erwartetes Ergebnis.</p>
+<p>Beispiel für ein gutes Ergebnis (Projekt: Rechnungseingang):</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Art</th>
+<th>Testmaterial</th>
+<th>Erwartetes Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Normal</td>
+<td>TEST-Rechnung PDF, Nummer R-1001, 1.190,00 EUR, Lieferant Muster GmbH</td>
+<td>Ablage in Testordner, Listeneintrag mit allen drei Feldern</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Normal</td>
+<td>TEST-Rechnung PDF, Nummer R-1002, 89,90 EUR</td>
+<td>wie Fall 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Normal</td>
+<td>TEST-Rechnung mit zwei Seiten</td>
+<td>wie Fall 1, Betrag von Seite 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Grenz</td>
+<td>Lieferantenname mit Umlaut und Zusatz e. K., Betrag 1190.00 mit Punkt</td>
+<td>Felder unverfälscht, Betrag als Zahl erkannt</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Negativ</td>
+<td>Mail ohne Anhang, Betreff TEST leere Mail</td>
+<td>kein Listeneintrag mit Status Neu, sondern Hinweis an mich mit Grund</td>
+</tr>
+</tbody>
+</table>
+<p>Wer nur Fall 1 dreimal baut, hat fünf Testdaten und einen Test. Die Aussagekraft entsteht durch
+Fall 4 und 5.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Den KI-Anteil kalibrieren und Stichprobe auswerten</summary>
+<p>Diese Übung machst du am Werkzeug – im KI-Baustein deines Flows oder, falls der Flow noch nicht
+läuft, direkt in Copilot, ChatGPT oder Claude mit deinen Testdaten.</p>
+<ol>
+<li>Schreibe deinen Prompt so um, dass er ein <strong>festes Ausgabeformat</strong> erzwingt: nur die
+   benötigten Felder, feste Reihenfolge, keine Einleitung, erlaubte Werteliste, ausdrückliche
+   Erlaubnis für eine Ausweichantwort wie „Unklar".</li>
+<li>Lass <strong>mindestens acht</strong> deiner Testfälle durchlaufen und notiere für jeden: Ergebnis,
+   fachlich korrekt ja oder nein, Format korrekt ja oder nein.</li>
+<li>Werte aus: Trefferquote, Formattreue, Unklar-Anteil – und vor allem die <strong>Fehlerrichtung</strong>:
+   Welche Art von Fällen geht daneben?</li>
+<li>Nimm <strong>eine</strong> gezielte Verbesserung am Prompt vor und wiederhole die Fälle, die falsch waren.
+   Notiere, ob sich etwas verbessert hat und ob dafür etwas anderes schlechter wurde.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Ändere immer nur eine Sache pro Runde, sonst weißt du nicht, was gewirkt hat. Die wirksamste
+einzelne Ergänzung ist meist die erlaubte Ausweichantwort: Ein Modell ohne Ausweg erfindet lieber
+eine Kategorie, als zuzugeben, dass der Text keine Zuordnung erlaubt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) der Prompt enthält Werteliste, festes Format und eine erlaubte
+Ausweichantwort; (2) mindestens acht Fälle sind einzeln protokolliert, nicht pauschal bewertet;
+(3) die Auswertung nennt Trefferquote, Formattreue und die Fehlerrichtung; (4) es wurde genau
+eine Änderung vorgenommen und ihre Wirkung nachgemessen, inklusive möglicher Nebenwirkung.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<p>Erste Runde: 8 Fälle, 6 fachlich korrekt, 8 formal korrekt, 0 Ausweichantworten. Fehlerrichtung:
+Beide Fehler betreffen Anfragen, in denen Vertrieb und Support gemischt vorkommen – die KI wählt
+Vertrieb, richtig wäre Support gewesen, weil ein bestehender Vertrag betroffen ist.</p>
+<p>Änderung: eine Regel ergänzt: „Wenn ein bestehender Vertrag oder eine bestehende Lieferung
+erwähnt wird, ist die Kategorie Support, auch wenn nach Preisen gefragt wird."</p>
+<p>Zweite Runde: beide Fälle korrekt, ein vorher richtiger Fall wird nun als Support eingeordnet,
+obwohl es eine Neukundenanfrage war. Schluss: Regel behalten, aber Schwelle nachziehen – Fälle
+mit beiden Merkmalen bekommen Kategorie Unklar und gehen zur menschlichen Prüfung.</p>
+<p>Diese Nebenwirkung ist der eigentliche Lerninhalt: Prompt-Verbesserungen sind Abwägungen, keine
+reinen Zugewinne.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Projektetappe 3 – Flow bauen, kalibrieren und abnehmen</summary>
+<p><strong>Projektetappe:</strong> Dritte Etappe. Grundlage ist dein Flow-Design und die Testfall-Tabelle aus
+Kapitel 36. Am Ende dieses Workshops läuft dein Flow für den Hauptfall, der KI-Anteil ist
+kalibriert, und es liegt ein Abnahmedurchgang gegen deine Testfälle vor.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Rueckfallebenen:
+Kein Zugang zu Power Automate -&gt; baue den Flow in Zapier oder Make im
+  kostenfreien Tarif, oder simuliere jeden Schritt von Hand und protokolliere
+  Ein- und Ausgaben.
+Kein KI-Baustein im Flow verfuegbar -&gt; fuehre die KI-Stelle im Chatwerkzeug
+  aus, kopiere das Ergebnis in den Flow und dokumentiere diese Stelle als
+  manuellen Zwischenschritt.
+Flow laeuft am Ende nicht -&gt; dokumentiere den erreichten Stand, den genauen
+  Blocker und den reduzierten Umfang. Das ist ein gueltiges Ergebnis.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Skelett und Datenfluss.</strong> Baue zuerst das Skelett: Trigger und alle Aktionen in
+Reihenfolge mit festen Platzhalterwerten, ohne Bedingungen, ohne KI, ohne Fehlerbehandlung.
+Führe es aus, bis ein Durchlauf den letzten Schritt erreicht. Ersetze danach die Platzhalter
+schrittweise durch echte Feldwerte – eine Änderung pro Zyklus, jeweils ausführen und im Bau- und
+Testprotokoll festhalten. Alle Benachrichtigungen gehen in dieser Runde ausschließlich an dich.</p>
+<p><strong>Runde 2 – Fachlogik, KI-Stelle und vier Pflichtkriterien.</strong> Ergänze KI-Stelle,
+Entscheidungspunkt und Freigabeschritt. Dein Zwischenstand muss <strong>alle vier</strong> Kriterien
+erfüllen:</p>
+<ol>
+<li>Der KI-Prompt erzwingt ein <strong>festes Ausgabeformat</strong> mit erlaubter Werteliste und einer
+   ausdrücklich erlaubten Ausweichantwort für unklare Fälle.</li>
+<li>Eine <strong>Stichprobe von mindestens zehn Fällen</strong> ist einzeln protokolliert, mit Trefferquote,
+   Formattreue und benannter Fehlerrichtung.</li>
+<li>Mindestens <strong>zwei Fehlerpfade</strong> aus dem Design sind gebaut und einmal absichtlich ausgelöst
+   worden – du hast gesehen, dass die Benachrichtigung ankommt.</li>
+<li>Das Bau- und Testprotokoll ist lückenlos: jede Änderung mit Testfall und Ergebnis, offene
+   Punkte und geparkte Punkte getrennt geführt.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Wähle die Variante, die auf deinen Stand zutrifft:</p>
+<ul>
+<li><strong>Variante A:</strong> Deine Stichprobe zeigt, dass der KI-Anteil zu unzuverlässig ist – die Fehler
+  treffen ausgerechnet die wichtigen Fälle. Kalibriere in maximal drei Runden nach (Prompt,
+  Werteliste, Schwelle). Reicht das nicht, <strong>verkleinere die KI-Aufgabe</strong> und leite mehr Fälle
+  zur menschlichen Prüfung. Dokumentiere beide Fassungen und die Entscheidung.</li>
+<li><strong>Variante B:</strong> Ein Schritt lässt sich nicht bauen – Connector fehlt, Rechte fehlen, ein
+  Ausdruck bleibt fehlerhaft. Setze dir 45 Minuten, dann baue den Ersatzweg (Zwischenliste,
+  manueller Schritt im Flow, täglicher Import) und dokumentiere die Einschränkung.</li>
+</ul>
+<p>In beiden Fällen aktualisierst du Erfolgskriterium und Nicht-Ziele, wenn sich der Umfang
+verändert hat.</p>
+<p><strong>Runde 4 – Abnahme und Entscheidung unter Abwägung.</strong> Führe einen vollständigen
+Abnahmedurchgang über <strong>alle</strong> Testfälle durch, ohne zwischendrin zu ändern. Trage jedes
+Ergebnis ein. Beschreibe danach deinem KI-Werkzeug den Zustand samt Trefferquote und lass dir
+eine Empfehlung geben, ob der Flow so eingesetzt werden kann. Die Empfehlung wird häufig lauten,
+die Schwelle zu lockern oder den Freigabeschritt zu entfernen, damit weniger Fälle liegen
+bleiben. Entscheide selbst und <strong>widersprich begründet</strong>, wo Fehlerfolgen gegen mehr Automatik
+sprechen. Halte in fünf bis acht Sätzen fest: Was ist abgenommen, was ist eine bekannte Grenze,
+was wurde bewusst nicht automatisiert.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>laufender Flow für den Hauptfall (oder dokumentierter Stand mit Blocker und Ersatzweg)</li>
+<li>Bau- und Testprotokoll mit offenen und geparkten Punkten</li>
+<li>Kalibrierungsnachweis: Prompt-Fassungen und Stichprobenauswertung mit Fehlerrichtung</li>
+<li>ausgefüllte Testfall-Tabelle als Abnahmenachweis plus Entscheidungsnotiz aus Runde 4</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> jeder Testfall ein eingetragenes Ergebnis hat, jeder nicht
+bestandene Fall entweder korrigiert oder als bekannte Grenze dokumentiert ist, mindestens zwei
+Fehlerpfade nachweislich ausgelöst wurden, und du keine Änderung mehr am Flow vorgenommen hast,
+ohne den betroffenen Testfall erneut auszuführen.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert steckt in Runde 3 und 4. Runde 1 und 2 fühlen sich nach Fortschritt an, weil
+sichtbar etwas entsteht. Runde 3 entscheidet über das Projekt: Wer an einem Problem festbeißt,
+verliert die Zeit, die er für Abnahme und Dokumentation braucht. Setz dir die 45 Minuten
+wirklich – und reduziere den Umfang, statt das Ergebnis zu riskieren. In Runde 4 zeigt sich die
+Haltung, die durch den ganzen Kurs geht: Eine gelockerte Schwelle macht die Statistik schöner und
+die Folgen schlimmer.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) das Vorgehen ist erkennbar schrittweise – Skelett zuerst, dann
+Datenfluss, dann KI und Verzweigung – und im Protokoll mit einer Änderung pro Zyklus
+nachvollziehbar; (2) alle vier Pflichtkriterien sind erfüllt, insbesondere erzwungenes
+Ausgabeformat, Stichprobe mit benannter Fehlerrichtung und zwei tatsächlich ausgelöste
+Fehlerpfade; (3) die Komplikation aus Runde 3 führt zu einer bewussten Reduktion mit
+aktualisiertem Erfolgskriterium statt zu Zeitverlust oder stillem Weglassen; (4) die Abnahme ist
+ein sauberer Durchgang ohne Änderungen, und die Entscheidungsnotiz widerspricht der Empfehlung
+zu mehr Automatik dort begründet, wo Fehlerfolgen es verlangen.</p>
+<p>Lernziel: Einen Flow in kurzen, überprüfbaren Zyklen zum Laufen bringen, den KI-Anteil an
+Stichproben kalibrieren und den Umfang beherrscht reduzieren, statt sich an einem Detail
+festzuhalten.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel36/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel38/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

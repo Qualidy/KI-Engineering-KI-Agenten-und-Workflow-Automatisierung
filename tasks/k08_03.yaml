@@ -1,0 +1,41 @@
+title: Eine Rollenkette durchspielen
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug. Nimm eine echte, kleine Schreibaufgabe aus deinem
+  Alltag – eine Absage, eine Prozessbeschreibung, eine Einladung mit Begründung, einen kurzen
+  Vorschlag an die Leitung.
+
+  Arbeite die Kette aus Abschnitt 8.3 ab und **speichere nach jedem Schritt das Zwischenergebnis**:
+
+  1. **Rechercheur:** Lass Argumente, Aspekte oder Bestandteile sammeln, die in den Text gehören.
+     Verlange, dass Unbelegtes als unbelegt markiert wird.
+  2. **Du:** Streiche alles Unzutreffende, ergänze, was nur du weißt. Notiere, wie viele der
+     gelieferten Punkte du behalten hast.
+  3. **Ghostwriter:** Lass aus deiner bereinigten Liste den Text formulieren – mit Vorgaben zu
+     Länge, Ton und Empfänger.
+  4. **Reviewer:** Lass den Entwurf in einem **neuen Chat** kritisch prüfen. Gib die Prüfkriterien
+     vor und verbiete Lob.
+  5. **Du:** Entscheide, welche Kritikpunkte du übernimmst – und welche nicht. Begründe beides.
+
+  Vergleiche am Ende: Wie unterscheidet sich das Endergebnis von dem, was ein einziger Prompt
+  („Schreib mir …") geliefert hätte? Mach den Gegentest.
+tip: |
+  Der neue Chat in Schritt 4 ist kein Formalismus. Im selben Chat verteidigt das Werkzeug seinen
+  eigenen Entwurf und lobt ihn eher, als es ihn zerlegt. Ohne den Entstehungsverlauf im
+  Kontextfenster fällt die Kritik deutlich schärfer aus.
+solution: |
+  Typische Beobachtungen:
+
+  - In Schritt 2 behalten die meisten **weniger als die Hälfte** der gelieferten Punkte. Genau das
+    ist der Wert der Rolle: Der Rechercheur liefert Breite, die Auswahl bleibt bei dir.
+  - Der **Ghostwriter-Text** ist deutlich näher an deiner Absicht als beim Ein-Prompt-Gegentest,
+    weil er nur noch formulieren muss, was inhaltlich bereits entschieden ist.
+  - Der **Reviewer** findet zuverlässig formale Schwächen (unklare Zusagen, fehlende Angaben,
+    Länge) und daneben Punkte, die im konkreten Kontext falsch sind – deshalb Schritt 5.
+  - Der **Gegentest** liefert meist einen sprachlich passablen, inhaltlich aber flachen Text mit
+    einer oder zwei Aussagen, die du so nicht unterschreiben würdest.
+
+  Bewertungskriterien für deine Bearbeitung: alle fünf Zwischenergebnisse liegen vor, die
+  Auswahlentscheidung aus Schritt 2 ist erkennbar, mindestens ein Kritikpunkt aus Schritt 4 wurde
+  **begründet abgelehnt**, und der Vergleich benennt einen konkreten Unterschied statt
+  „war besser".

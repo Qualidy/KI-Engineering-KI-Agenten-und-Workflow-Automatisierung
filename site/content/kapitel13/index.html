@@ -1,0 +1,1892 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel12/">
+      
+      
+        <link rel="next" href="../kapitel14/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 13 – KI-gestützte Datenarbeit - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-13-ki-gestutzte-datenarbeit-in-excel-und-auf-dem-weg-zu-power-bi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 13 – KI-gestützte Datenarbeit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Block 3 · Praxis mit KI-Agenten
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 12 – KI-gestützte Textarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 13 – KI-gestützte Datenarbeit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 13 – KI-gestützte Datenarbeit
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#131-ohne-saubere-tabelle-passiert-nichts" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1 Ohne saubere Tabelle passiert nichts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-formeln-erklaren-und-erzeugen-lassen" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.2 Formeln erklären und erzeugen lassen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#133-abgeleitete-spalten-und-kategorien" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.3 Abgeleitete Spalten und Kategorien
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#134-auffalligkeiten-finden-und-richtig-einordnen" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.4 Auffälligkeiten finden – und richtig einordnen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#135-text-in-tabellenform-bringen" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.5 Text in Tabellenform bringen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#136-die-rechengrenze-und-der-weg-zu-power-bi" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.6 Die Rechengrenze und der Weg zu Power BI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 14 – Fallbeispiel HR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 15 – Fallbeispiel Vertrieb
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 16 – Fallbeispiel Rechnungswesen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-13-ki-gestutzte-datenarbeit-in-excel-und-auf-dem-weg-zu-power-bi">Kapitel 13 – KI-gestützte Datenarbeit in Excel und auf dem Weg zu Power BI<a class="headerlink" href="#kapitel-13-ki-gestutzte-datenarbeit-in-excel-und-auf-dem-weg-zu-power-bi" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Warum <strong>Datenqualität</strong> die Voraussetzung und nicht das Ergebnis der KI-Nutzung ist</li>
+<li>Wie du <strong>Formeln erklären und erzeugen</strong> lässt, ohne dich blind darauf zu verlassen</li>
+<li>Wie du <strong>abgeleitete Spalten</strong> und Kategorien aus vorhandenen Daten gewinnst</li>
+<li>Wie du <strong>Auffälligkeiten</strong> in Daten suchst und echte Sonderfälle von Fehlern trennst</li>
+<li>Wie du unstrukturierten <strong>Text in Tabellenform</strong> bringst</li>
+<li>Wo die harte Grenze beim <strong>exakten Rechnen</strong> liegt, wie die <strong>Gegenprobe</strong> aussieht und wann der Wechsel zu <strong>Power BI</strong> sinnvoll wird</li>
+</ul>
+</div>
+<hr />
+<h2 id="131-ohne-saubere-tabelle-passiert-nichts">13.1 Ohne saubere Tabelle passiert nichts<a class="headerlink" href="#131-ohne-saubere-tabelle-passiert-nichts" title="Permanent link">&para;</a></h2>
+<p>Copilot in Excel erreichst du über <code>Excel → Registerkarte Start → Copilot</code>. Der häufigste erste Satz lautet dort: „Um zu beginnen, formatiere den Bereich als Tabelle." Das ist keine Schikane, sondern die Bedingung dafür, dass überhaupt sinnvoll gearbeitet werden kann. Der Klickpfad zum Umbau lautet <code>Excel → Bereich markieren → Registerkarte Einfügen → Tabelle</code>, den Namen vergibst du über <code>Registerkarte Tabellenentwurf → Tabellenname</code>. Verwertbar ist eine Tabelle, wenn sie fünf Bedingungen erfüllt:</p>
+<table>
+<thead>
+<tr>
+<th>Bedingung</th>
+<th>Warum sie zählt</th>
+<th>Häufiger Verstoß</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Genau eine Kopfzeile mit sprechenden Überschriften</td>
+<td>Ohne Namen kein Bezug auf Spalten</td>
+<td>Überschrift über zwei Zeilen verteilt</td>
+</tr>
+<tr>
+<td>Ein Datensatz pro Zeile, keine Zwischensummen</td>
+<td>Zwischensummen werden mitgezählt</td>
+<td>Summenzeile mitten in den Daten</td>
+</tr>
+<tr>
+<td>Keine verbundenen Zellen</td>
+<td>Zellverbund zerstört den Spaltenbezug</td>
+<td>Optisch schöne Kopfbereiche</td>
+</tr>
+<tr>
+<td>Einheitliche Datentypen je Spalte</td>
+<td>Text in Zahlenspalten blockiert Rechnen</td>
+<td><code>1.250 EUR</code> statt <code>1250</code></td>
+</tr>
+<tr>
+<td>Keine leeren Zeilen oder Spalten</td>
+<td>Bereich bricht dort ab</td>
+<td>Leerspalte zur Optik</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: Zahlen, die keine Zahlen sind</p>
+<p>Der teuerste Datenqualitätsfehler ist die Zahl im Textformat. Sie sieht in der Zelle korrekt aus, wird aber links ausgerichtet und beim Rechnen ignoriert. Eine Summe über 200 Zeilen kann dadurch stillschweigend um Zehntausende zu niedrig ausfallen. Prüfe verdächtige Spalten mit einer Formel wie <code>=ANZAHL(Auftraege2026[Betrag])</code> und vergleiche das Ergebnis mit der Anzahl der Zeilen. Weichen die Werte ab, stehen dort Texte.</p>
+</div>
+<pre class="mermaid"><code>flowchart LR
+    A([Rohdaten im Blatt]) --&gt; B([Als Tabelle formatieren])
+    B --&gt; C([Datentypen pruefen])
+    C --&gt; D([Copilot beauftragen])
+    D --&gt; E([Ergebnis gegenpruefen])</code></pre>
+<hr />
+<h2 id="132-formeln-erklaren-und-erzeugen-lassen">13.2 Formeln erklären und erzeugen lassen<a class="headerlink" href="#132-formeln-erklaren-und-erzeugen-lassen" title="Permanent link">&para;</a></h2>
+<p>Zwei Richtungen sind im Alltag wertvoll – und die erste wird meist unterschätzt: <strong>eine geerbte Formel verstehen.</strong> Du übernimmst eine Datei und findest darin ein Ungeheuer. Statt zu raten, lässt du es erklären:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du bist Excel-Trainerin und erklaerst fuer Menschen ohne Formelkenntnis.
+Aufgabe: Erklaere die folgende Formel Schritt fuer Schritt.
+Formel:
+=WENNFEHLER(INDEX(Preise[Netto];VERGLEICH([@Artikelnummer];Preise[Artikelnummer];0));&quot;kein Preis&quot;)
+Format: Erst was die Formel liefert, dann eine Tabelle mit den Spalten
+Formelteil und Bedeutung, dann zwei Faelle mit unerwartetem Ergebnis.
+Einschraenkung: Keine Verbesserungsvorschlaege, nur Erklaerung.
+</code></pre></div></td></tr></table></div>
+<p>Die zweite Richtung ist das <strong>Erzeugen</strong>. Hier entscheidet die Genauigkeit der Beschreibung über das Ergebnis: Nenne Spaltennamen, Sonderfälle und das gewünschte Verhalten bei fehlenden Werten.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Erzeuge eine Excel-Formel fuer eine neue Spalte Lieferstatus in der
+Tabelle Auftraege2026.
+Vorhandene Spalten: Auftragsnummer, Kunde, Zusagedatum, Lieferdatum, Menge
+Regeln:
+- Lieferdatum leer und Zusagedatum in der Vergangenheit: ueberfaellig
+- Lieferdatum leer und Zusagedatum in der Zukunft: offen
+- Lieferdatum kleiner oder gleich Zusagedatum: puenktlich
+- Lieferdatum groesser als Zusagedatum: verspaetet
+Format: Nur die Formel, danach eine Zeile Erklaerung je Regel.
+Einschraenkung: Nutze strukturierte Verweise mit Spaltennamen, keine
+Zellbezuege wie C2.
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Die Drei-Fälle-Gegenprobe</p>
+<p>Prüfe jede erzeugte Formel an drei selbst gewählten Zeilen: einer klar normalen, einer Grenzfallzeile (Lieferdatum genau gleich Zusagedatum) und einer Zeile mit leeren Werten. Wenn alle drei stimmen, ist die Formel meistens brauchbar. Diese Prüfung dauert zwei Minuten und ersetzt jedes Vertrauen.</p>
+</div>
+<hr />
+<h2 id="133-abgeleitete-spalten-und-kategorien">13.3 Abgeleitete Spalten und Kategorien<a class="headerlink" href="#133-abgeleitete-spalten-und-kategorien" title="Permanent link">&para;</a></h2>
+<p>Viele Auswertungen scheitern nicht am Rechnen, sondern daran, dass die passende Spalte fehlt: Region zur Postleitzahl, Größenklasse zur Menge, Kategorie zum Freitext. Genau hier ist KI stark, weil sie auch <strong>unscharfe</strong> Zuordnungen bewältigt. Ein kleiner, erfundener Datensatz als Arbeitsgrundlage:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Auftragsnummer;Kunde;PLZ;Artikelbezeichnung;Menge;Netto
+A-1001;Musterhandel GmbH;40213;Metallregal 200x100 verzinkt;12;1044,00
+A-1002;Nordlicht Bueromoebel;20095;Rollcontainer 3 Schuebe weiss;40;2360,00
+A-1003;Musterhandel GmbH;40213;Sonderanfertigung Ablage Eiche;2;890,00
+A-1004;Talwerk Montage;04109;Sonderanfertigung Werkbank Buche;1;1420,00
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Ergaenze fuer den folgenden Datensatz drei abgeleitete Spalten.
+Spalte Warengruppe: Metallregal, Rollcontainer oder Sonderanfertigung,
+abgeleitet aus der Artikelbezeichnung.
+Spalte Region: abgeleitet aus der ersten Stelle der PLZ als PLZ-Zone 0 bis 9.
+Spalte Stueckpreis: Netto geteilt durch Menge, auf zwei Stellen gerundet.
+Format: Vollstaendige Tabelle im gleichen Trennzeichenformat, danach eine Liste
+der unsicheren Zeilen mit Begruendung.
+Einschraenkung: Keine Zeile weglassen, keine Zeile umsortieren. Wenn eine
+Zuordnung nicht eindeutig ist, schreibe unklar statt zu raten.
+</code></pre></div></td></tr></table></div>
+<p>Der entscheidende Teil steht in der letzten Zeile. Ohne die Anweisung <code>unklar statt raten</code> bekommst du für jede Zeile eine Zuordnung – auch für die, bei denen es keine gute gibt. Und du erkennst nicht, welche das waren.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz zur Arbeitsteilung</p>
+<p>Nutze KI für die <strong>Zuordnungslogik</strong> und Excel für die <strong>Rechnung</strong>. Lass dir die Regel „Metallregal erkennt man an der Bezeichnung" von der KI bauen und die Division <code>Netto / Menge</code> von Excel ausführen. Wer es umgekehrt macht, kombiniert die Schwäche beider Werkzeuge.</p>
+</div>
+<hr />
+<h2 id="134-auffalligkeiten-finden-und-richtig-einordnen">13.4 Auffälligkeiten finden – und richtig einordnen<a class="headerlink" href="#134-auffalligkeiten-finden-und-richtig-einordnen" title="Permanent link">&para;</a></h2>
+<p>Copilot in Excel kann eine Tabelle durchsehen und benennen, was aus dem Rahmen fällt. Der Nutzen liegt im Finden, nicht im Bewerten.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Untersuche die Tabelle Auftraege2026 auf Auffaelligkeiten.
+Format: Tabelle mit den Spalten Auffaelligkeit, betroffene Zeilen, moegliche
+Ursache, empfohlene Pruefung.
+Pruefe mindestens:
+- Fehlende Werte je Spalte mit Anzahl
+- Werte, die deutlich vom Rest der Spalte abweichen
+- Moegliche Dubletten und uneinheitliche Schreibweisen desselben Kunden
+Einschraenkung: Nichts korrigieren und nichts loeschen. Nur benennen und die
+Zeilennummer angeben.
+</code></pre></div></td></tr></table></div>
+<p>Dann kommt der Teil, den nur du erledigen kannst:</p>
+<table>
+<thead>
+<tr>
+<th>Fund</th>
+<th>Könnte Fehler sein</th>
+<th>Könnte richtig sein</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stückpreis 1420 Euro bei Menge 1</td>
+<td>Komma verrutscht</td>
+<td>Sonderanfertigung ist tatsächlich teurer</td>
+</tr>
+<tr>
+<td>Kunde zweimal in anderer Schreibweise</td>
+<td>Dublette</td>
+<td>zwei rechtlich getrennte Standorte</td>
+</tr>
+<tr>
+<td>Netto leer</td>
+<td>Vergessen</td>
+<td>Gutschrift, Wert wird später ergänzt</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>Ein von der KI gemeldeter „Ausreißer" ist eine <strong>statistische Beobachtung</strong>, keine Fehlerfeststellung. Wer Ausreißer ungeprüft bereinigt, entfernt systematisch die interessantesten Fälle – Sonderaufträge, Großabrufe, Reklamationen. Behandle jeden Fund als Prüfauftrag, nicht als Korrekturanweisung (Kap. 8).</p>
+</div>
+<hr />
+<h2 id="135-text-in-tabellenform-bringen">13.5 Text in Tabellenform bringen<a class="headerlink" href="#135-text-in-tabellenform-bringen" title="Permanent link">&para;</a></h2>
+<p>Eine unterschätzte Stärke: aus Freitext eine strukturierte Tabelle machen – Mailanfragen, Protokollnotizen, Bestelltexte, Formularantworten.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Wandle die folgenden Bestellhinweise in eine Tabelle um.
+Spalten: Kunde, Artikel, Menge, Wunschtermin, Besonderheit
+Quelltext:
+Frau Berger von Musterhandel braucht 12 Metallregale 200 mal 100 verzinkt bis
+zum 20. Maerz, Lieferung nur vormittags moeglich.
+Nordlicht Bueromoebel ruft 40 Rollcontainer weiss ab, Termin offen.
+Talwerk Montage moechte eine Werkbank Buche als Sonderanfertigung, so schnell
+wie moeglich, Hoehe 90 Zentimeter.
+Format: Tabelle mit Trennzeichen Semikolon, eine Zeile je Bestellung.
+Einschraenkung: Fehlende Angaben als leeres Feld lassen, nicht schaetzen.
+Formuliere so schnell wie moeglich nicht in ein Datum um.
+</code></pre></div></td></tr></table></div>
+<p>Die letzte Einschränkung ist der Kern. Ohne sie wird aus „so schnell wie möglich" mit hoher Wahrscheinlichkeit ein konkretes Datum – und aus einem Wunsch eine Zusage. Aus einem ungenauen Text darf keine genaue Tabelle entstehen; die Ungenauigkeit muss sichtbar bleiben.</p>
+<div class="admonition example">
+<p class="admonition-title">Der Weg in die Datei</p>
+<p>Das Ergebnis kopierst du in Excel und trennst es über <code>Excel → Registerkarte Daten → Text in Spalten → Getrennt → Semikolon</code>. Danach <code>Registerkarte Einfügen → Tabelle</code> und Datentypen prüfen. Für regelmäßig wiederkehrende Fälle ist genau dieser Ablauf später ein Kandidat für Automatisierung (Kap. 29 und Kap. 31).</p>
+</div>
+<hr />
+<h2 id="136-die-rechengrenze-und-der-weg-zu-power-bi">13.6 Die Rechengrenze und der Weg zu Power BI<a class="headerlink" href="#136-die-rechengrenze-und-der-weg-zu-power-bi" title="Permanent link">&para;</a></h2>
+<p>Ein Sprachmodell erzeugt Text, indem es das jeweils wahrscheinlichste nächste Stück berechnet. Beim exakten Rechnen ist das die falsche Methode (Kap. 5). Zwei Fälle lassen sich von außen kaum unterscheiden: Entweder führt das Werkzeug intern eine echte Berechnung im Tabellenblatt aus – dann stimmt das Ergebnis. Oder es formuliert eine plausible Zahl – dann stimmt sie manchmal. Deshalb gilt eine einfache Regel: <strong>Zahlen aus einem Chatfenster sind Hypothesen.</strong> Lass die Rechnung in der Tabelle ausführen und prüfe gegen.</p>
+<table>
+<thead>
+<tr>
+<th>Prüfung</th>
+<th>Konkretes Vorgehen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Summenprobe</td>
+<td>Ergebnis mit <code>=SUMME(...)</code> oder <code>=TEILERGEBNIS(...)</code> selbst nachrechnen</td>
+</tr>
+<tr>
+<td>Zeilenprobe</td>
+<td>Anzahl Zeilen im Ergebnis mit <code>=ANZAHL2(...)</code> gegen das Original prüfen</td>
+</tr>
+<tr>
+<td>Extremwertprobe</td>
+<td>größten und kleinsten Wert prüfen, dort fallen Fehler zuerst auf</td>
+</tr>
+<tr>
+<td>Stichprobe</td>
+<td>drei zufällige Zeilen von Hand nachrechnen, Größenordnung vergleichen</td>
+</tr>
+</tbody>
+</table>
+<p>Wenn du merkst, dass du dieselbe Auswertung monatlich neu baust, aus mehreren Quellen zusammenkopierst oder die Datei durch Formeln unbeherrschbar geworden ist, ist der Zeitpunkt für <strong>Power BI</strong> gekommen – ein Werkzeug, das Daten aus Quellen anbindet, sie dauerhaft aufbereitet und in Berichte überführt.</p>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>Excel mit Copilot</th>
+<th>Power BI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anlass</td>
+<td>einmalige oder unregelmäßige Frage</td>
+<td>wiederkehrender Bericht</td>
+</tr>
+<tr>
+<td>Datenmenge</td>
+<td>bis einige zehntausend Zeilen</td>
+<td>deutlich größer</td>
+</tr>
+<tr>
+<td>Quellen</td>
+<td>eine Datei</td>
+<td>mehrere Systeme verbunden</td>
+</tr>
+<tr>
+<td>Aktualisierung</td>
+<td>manuell</td>
+<td>geplant und automatisch</td>
+</tr>
+</tbody>
+</table>
+<p>Der Wechsel zu Power BI ändert dabei das Werkzeug, nicht die Verantwortung. Auch ein automatisch aktualisierter Bericht kann eine falsche Kennzahl konsistent falsch anzeigen – dann täglich und für alle sichtbar. Die Gegenprobe wird beim Umstieg also nicht weniger wichtig, sondern wichtiger.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Datenarbeit mit KI beginnt bei der <strong>Tabellenform</strong>: eine Kopfzeile, ein Datensatz pro Zeile, keine verbundenen Zellen, einheitliche Datentypen.</li>
+<li>Formeln <strong>erklären lassen</strong> ist oft wertvoller als sie erzeugen zu lassen – jede erzeugte Formel braucht die <strong>Drei-Fälle-Gegenprobe</strong>. Bei <strong>abgeleiteten Spalten</strong> macht die Anweisung <code>unklar statt raten</code> Unsicherheit sichtbar.</li>
+<li>Gemeldete <strong>Auffälligkeiten</strong> sind Prüfaufträge, keine Fehlerfeststellungen – Sonderfälle und Fehler sehen gleich aus. Aus ungenauem <strong>Text</strong> darf keine scheingenaue Tabelle werden.</li>
+<li>Zahlen aus dem Chatfenster sind <strong>Hypothesen</strong>: Summen-, Zeilen-, Extremwert- und Stichprobenprüfung gehören dazu.</li>
+<li>Wiederkehrende Berichte gehören nach <strong>Power BI</strong> – die Prüfpflicht wandert mit.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Tabelle prüfen, bevor die KI ran darf</summary>
+<p>Vor dir liegt dieser Auszug aus einer echten Arbeitsdatei. Er ist so, wie solche Dateien
+tatsächlich aussehen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Zeile 1:  Auswertung Auftraege Q1  (verbundene Zellen A1 bis F1)
+Zeile 2:  (leer)
+Zeile 3:  Nr | Kunde | Datum | Menge | Netto | Bemerkung
+Zeile 4:  1001 | Musterhandel GmbH | 12.01.2026 | 12 | 1.044,00 EUR |
+Zeile 5:  1002 | Nordlicht Bueromoebel | 15.01.2026 | 40 | 2360 |
+Zeile 6:  Zwischensumme Januar |  |  | 52 | 3404 |
+Zeile 7:  1003 | musterhandel gmbh | 02.02.2026 |  | 890 | Preis offen
+Zeile 8:  1004 | Bergquell Logistik | 2026-02-14 | 25 | 1975 |
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Benenne <strong>alle</strong> Verstöße gegen die fünf Bedingungen einer verwertbaren Tabelle.</li>
+<li>Gib für jeden Verstoß den konkreten Reparaturschritt an.</li>
+<li>Nenne einen Verstoß, der beim Rechnen zu einem <strong>falschen, aber unauffälligen</strong> Ergebnis führt.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte nicht nur auf die Struktur, sondern auf die Zellinhalte. Zwei Spalten enthalten Werte
+in unterschiedlichen Formaten.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Verstoß</th>
+<th>Zeile</th>
+<th>Reparatur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verbundene Zellen im Titel</td>
+<td>1</td>
+<td>Zellverbund lösen, Titel außerhalb des Tabellenbereichs</td>
+</tr>
+<tr>
+<td>Leerzeile als Trenner</td>
+<td>2</td>
+<td>löschen, Kopfzeile direkt über die Daten</td>
+</tr>
+<tr>
+<td>Zwischensumme in den Daten</td>
+<td>6</td>
+<td>entfernen, Summen außerhalb oder per Pivot</td>
+</tr>
+<tr>
+<td>Netto als Text mit Einheit</td>
+<td>4</td>
+<td><code>1.044,00 EUR</code> in Zahl <code>1044</code> wandeln, Einheit in die Überschrift</td>
+</tr>
+<tr>
+<td>Zwei Datumsformate</td>
+<td>4 und 8</td>
+<td>einheitlich als Datum formatieren</td>
+</tr>
+<tr>
+<td>Uneinheitliche Kundenschreibweise</td>
+<td>7</td>
+<td>vereinheitlichen, sonst Gruppierung schlägt fehl</td>
+</tr>
+<tr>
+<td>Fehlende Menge</td>
+<td>7</td>
+<td>klären, ob 0 oder unbekannt – nicht blind mit 0 füllen</td>
+</tr>
+</tbody>
+</table>
+<p>Der gefährlichste Verstoß ist das Netto als Text in Zeile 4. Eine Summe über die Spalte
+ignoriert diesen Wert stillschweigend und liefert 5225 statt 6269 – ein plausibles, aber
+falsches Ergebnis ohne jede Fehlermeldung. Der Zellverbund fällt dagegen sofort auf, weil
+Copilot die Arbeit verweigert. Sichtbare Probleme sind die harmlosen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Formel erzeugen und mit drei Fällen prüfen</summary>
+<p>Diese Übung machst du am Werkzeug. Lege in Excel eine Tabelle mit diesem erfundenen Datensatz
+an und formatiere sie über <code>Excel → Registerkarte Einfügen → Tabelle</code> als Tabelle <code>Lieferungen</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Auftrag;Kunde;Zusagedatum;Lieferdatum;Menge
+A-2001;Musterhandel GmbH;10.03.2026;08.03.2026;12
+A-2002;Nordlicht Bueromoebel;12.03.2026;12.03.2026;40
+A-2003;Bergquell Logistik;15.03.2026;19.03.2026;25
+A-2004;Talwerk Montage;20.03.2026;;1
+A-2005;Musterhandel GmbH;05.03.2026;;8
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Lass eine Formel für eine neue Spalte <code>Lieferstatus</code> erzeugen, die zwischen <code>puenktlich</code>,
+   <code>verspaetet</code>, <code>offen</code> und <code>ueberfaellig</code> unterscheidet. Beschreibe die Regeln vollständig
+   und fordere strukturierte Verweise mit Spaltennamen an.</li>
+<li>Setze die Formel ein und notiere das Ergebnis für alle fünf Zeilen.</li>
+<li>Führe die <strong>Drei-Fälle-Gegenprobe</strong> durch: Normalfall, Grenzfall, Leerwertfall.</li>
+<li>Wenn eine Zeile falsch ist, formuliere eine Nachschärfung und prüfe erneut.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zeile A-2002 ist der Grenzfall: Lieferdatum genau gleich Zusagedatum. Überlege dir <strong>vorher</strong>,
+welches Ergebnis richtig ist – sonst übernimmst du die Entscheidung des Werkzeugs, ohne sie
+bemerkt zu haben.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Ergebnisse: A-2001 pünktlich, A-2002 pünktlich (Grenzfall, kleiner gleich),
+A-2003 verspätet, A-2004 offen, A-2005 überfällig.</p>
+<p>Eine tragfähige Formel für die Spalte:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>=WENN([@Lieferdatum]=&quot;&quot;;WENN([@Zusagedatum]&lt;HEUTE();&quot;ueberfaellig&quot;;&quot;offen&quot;);
+ WENN([@Lieferdatum]&lt;=[@Zusagedatum];&quot;puenktlich&quot;;&quot;verspaetet&quot;))
+</code></pre></div></td></tr></table></div>
+<p>Typische Fehler in erzeugten Formeln: (1) Die Prüfung auf leeres Lieferdatum fehlt, dann wird
+eine leere Zelle als 0 gelesen und A-2004 gilt als pünktlich – ein stiller, gefährlicher Fehler.
+(2) Es wird <code>&lt;</code> statt <code>&lt;=</code> verwendet, dann kippt der Grenzfall A-2002 auf verspätet.
+(3) Es werden Zellbezüge wie <code>C2</code> statt strukturierter Verweise geliefert, was beim Einfügen
+neuer Zeilen bricht.</p>
+<p>Bewertungskriterien: Alle vier Statuswerte kommen vor, die Leerwertzeilen sind korrekt getrennt,
+der Grenzfall entspricht deiner vorher festgelegten Erwartung, und du hast die Prüfung an
+konkreten Zeilen belegt – nicht durch Ansehen der Formel.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Text in Tabelle, Auffälligkeiten, Gegenprobe</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot in Excel und Copilot Chat, alternativ ChatGPT oder
+Claude plus Excel).</p>
+<p>Ausgangspunkt sind Bestellhinweise, wie sie per Mail eintreffen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Frau Berger von Musterhandel braucht 12 Metallregale 200x100 verzinkt bis zum
+20. Maerz, Netto 1044 Euro, Anlieferung nur vormittags.
+Nordlicht Bueromoebel ruft 40 Rollcontainer weiss ab, Netto 2360, Termin offen.
+Bergquell Logistik: 25 Metallregale 180x080 pulverbeschichtet, 1975 netto,
+Termin 15. Maerz, bitte auf Palette.
+Talwerk Montage moechte eine Werkbank Buche als Sonderanfertigung, Netto 1420,
+so schnell wie moeglich.
+Musterhandel noch einmal: 8 Rollcontainer anthrazit, 424 Euro netto, 25. Maerz.
+Nordlicht: 40 Rollcontainer weiss, 2360 netto, Termin offen.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li><strong>Strukturieren.</strong> Lass daraus eine Tabelle mit den Spalten <code>Kunde</code>, <code>Warengruppe</code>, <code>Menge</code>,
+   <code>Netto</code>, <code>Wunschtermin</code>, <code>Besonderheit</code> erzeugen. Verbiete ausdrücklich, fehlende oder
+   unscharfe Angaben in konkrete Werte umzuwandeln.</li>
+<li><strong>Ableiten.</strong> Ergänze eine Spalte <code>Stueckpreis</code>. Lass die Regel von der KI beschreiben, aber
+   rechne den Wert in Excel mit einer Formel.</li>
+<li><strong>Prüfen.</strong> Lass die Tabelle auf Auffälligkeiten untersuchen und beurteile jeden Fund selbst:
+   Fehler oder echter Sonderfall? Begründe.</li>
+<li><strong>Gegenprobe.</strong> Führe Summenprobe, Zeilenprobe und Extremwertprobe durch. Vergleiche die
+   Nettosumme aus dem Chatfenster mit dem Ergebnis von <code>=SUMME(...)</code> in Excel.</li>
+<li>Notiere, an welcher Stelle das Werkzeug ohne deine Einschränkung geraten hätte.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Im Text stecken mindestens drei Stolperstellen: eine mögliche Dublette, eine unscharfe
+Terminangabe und ein Stückpreis, der stark aus dem Rahmen fällt. Zwei davon sind keine Fehler.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Tabelle: sechs Zeilen. Zeile 2 und Zeile 6 sind identisch (Nordlicht, 40 Rollcontainer
+weiß, 2360, Termin offen) – das ist die <strong>mögliche Dublette</strong>. Sie muss als Fund gemeldet, aber
+nicht gelöscht werden: Ein zweiter Abruf derselben Menge ist im Handel völlig normal. Die
+Klärung erfolgt durch Rückfrage, nicht durch Löschen.</p>
+<p>Stückpreise: 87,00 / 59,00 / 79,00 / 1420,00 / 53,00 / 59,00 Euro. Der Wert 1420 ist der
+<strong>Extremwert</strong> – und kein Fehler, sondern die Sonderanfertigung mit Menge 1. Genau dieser Fall
+zeigt, warum Ausreißer nicht bereinigt werden dürfen.</p>
+<p>Der Wunschtermin „so schnell wie möglich" muss leer bleiben oder als Text stehen. Ohne die
+Einschränkung erzeugt das Werkzeug hier mit hoher Wahrscheinlichkeit ein Datum – häufig den
+nächsten Werktag. Aus einem Kundenwunsch wäre damit eine Terminzusage geworden, ohne dass es
+jemand entschieden hat.</p>
+<p>Bewertungskriterien: (1) sechs Zeilen, keine zusammengeführt, keine erfundenen Termine;
+(2) Stückpreis per Excel-Formel, nicht aus dem Chat übernommen;   (3) alle drei Stolperstellen
+gefunden und die beiden Nicht-Fehler als solche begründet; (4) die Nettosumme in
+Excel nachgerechnet (9.583 Euro) und mit der Chat-Angabe verglichen, inklusive Notiz, ob sie
+übereinstimmten.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Quartalsauswertung aus unsauberen Auftragsdaten</summary>
+<p><strong>Szenario:</strong> Die Vertriebsleitung der Musterhandel GmbH will erstmals eine belastbare
+Quartalsauswertung der Aufträge – Umsatz je Warengruppe, je Region, Entwicklung über die drei
+Monate, Auffälligkeiten. Die Datenbasis ist eine über Jahre gewachsene Excel-Datei, an der vier
+Personen gearbeitet haben. Es gibt Zwischensummen, verbundene Kopfzeilen, zwei Datumsformate,
+Beträge teils als Text, Kundennamen in drei Schreibweisen und ein Blatt mit Freitextnotizen zu
+Sonderaufträgen. Deine Aufgabe ist die vollständige Kette von der Rohdatei zur Auswertung.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+Rund 400 Auftragszeilen im Quartal, 60 Kunden
+Spalten: Nr, Kunde, PLZ, Artikelbezeichnung, Menge, Netto, Zusagedatum,
+Lieferdatum, Bemerkung
+Zusaetzlich ein Blatt Sonderauftraege mit 25 Freitextnotizen
+Warengruppen sind nirgends erfasst, nur aus der Artikelbezeichnung ableitbar
+Regionen sollen aus der ersten Stelle der PLZ entstehen
+Werkzeuge: Excel mit Copilot oder Excel plus ChatGPT bzw. Claude
+</code></pre></div></td></tr></table></div>
+<p>Lege dir für die Arbeit einen eigenen Testdatensatz mit mindestens 25 erfundenen Zeilen an, der
+alle genannten Probleme mindestens einmal enthält. Nur so ist deine Prüfung überhaupt aussagekräftig.</p>
+<hr />
+<p><strong>Runde 1 – Datenbasis herstellen.</strong> Bringe die Rohdaten in eine verwertbare Tabelle: Zellverbund
+lösen, Zwischensummen entfernen, Datentypen vereinheitlichen, Kundennamen zusammenführen, als
+Tabelle formatieren und benennen. Ergänze dann die abgeleiteten Spalten <code>Warengruppe</code>, <code>Region</code>,
+<code>Stueckpreis</code> und <code>Lieferstatus</code>. Nutze KI für die Ableitungsregeln und Excel für jede Rechnung.
+Dokumentiere jeden Eingriff in eine Änderungsliste mit Spalte, Maßnahme und Begründung.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Datenbasis muss <strong>alle vier</strong> Kriterien
+erfüllen. Prüfe einzeln nach und korrigiere:</p>
+<ol>
+<li>Die Anzahl der Datenzeilen nach der Bereinigung ist nachvollziehbar dokumentiert: Ausgangszahl,
+   entfernte Zeilen mit Grund, Endzahl. Keine Zeile ist unbemerkt verschwunden.</li>
+<li>Die Nettosumme der bereinigten Tabelle stimmt mit der Summe der Rohdaten überein – oder die
+   Abweichung ist zeilengenau erklärt (etwa durch entfernte Zwischensummen).</li>
+<li>Für jede abgeleitete Spalte ist die Regel schriftlich festgehalten, und alle Zeilen, bei denen
+   die Zuordnung unsicher war, sind mit <code>unklar</code> markiert statt geraten.</li>
+<li>Jede Zahl, die in die Auswertung eingeht, ist per Excel-Formel entstanden – keine Zahl stammt
+   aus einem Chatfenster.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Drei Dinge kommen dazwischen. Erstens meldet die Buchhaltung,
+dass in den Rohdaten Gutschriften als positive Beträge erfasst sind und eigentlich negativ zählen
+müssten – erkennbar nur an der Bemerkung. Zweitens stellt sich heraus, dass die Warengruppe
+<code>Sonderanfertigung</code> in Wahrheit drei verschiedene Dinge umfasst und die Vertriebsleitung sie
+getrennt sehen will; die Information steckt ausschließlich im Freitextblatt. Drittens zeigt deine
+erste Auswertung einen Umsatzeinbruch im März, den niemand erklären kann. Bearbeite alles:
+Korrigiere die Gutschriften nachvollziehbar, verfeinere die Warengruppen aus dem Freitext, und
+gehe dem März-Einbruch datenbasiert nach, bis du eine belegte Erklärung oder eine belegte
+Datenlücke benennen kannst.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Vertriebsleitung möchte die Auswertung künftig
+monatlich haben und schlägt vor, „die Datei einfach jeden Monat neu von der KI aufbereiten zu
+lassen". Außerdem soll der März-Einbruch aus der Präsentation herausgenommen werden, weil er
+„unerklärt schlecht aussieht". Lass dir Argumente für und gegen beide Vorgaben geben, entscheide
+begründet zwischen der Fortführung in Excel und dem Aufbau in Power BI, und <strong>widersprich</strong>
+mindestens einer der beiden Vorgaben mit tragfähiger Begründung.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>bereinigte Tabelle mit vier abgeleiteten Spalten plus vollständige Änderungsliste</li>
+<li>ausgefüllte Prüfmatrix der vier Pflichtkriterien mit Zahlen, nicht mit Häkchen</li>
+<li>Auswertung nach Warengruppe, Region und Monat, die Gutschriftenkorrektur, die verfeinerten
+   Warengruppen und die belegte Erklärung oder Datenlücke zum März</li>
+<li>begründete Entscheidung Excel gegen Power BI, inklusive der abgelehnten Vorgabe</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> die Nettosumme vor und nach der Bereinigung zeilengenau erklärt ist,
+keine Zahl der Auswertung aus einem Chatfenster stammt, der März-Einbruch entweder erklärt oder
+ausdrücklich als Datenlücke ausgewiesen ist, und deine Entscheidung in Runde 4 einer Vorgabe der
+Vertriebsleitung begründet widerspricht.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 2 und 3. Runde 1 ist Handwerk, das nach zwei Durchläufen sitzt.
+In Runde 2 wirst du feststellen, dass die Summenprobe fast immer eine Abweichung zeigt – und
+dass genau die Suche nach ihrer Ursache die eigentliche Datenarbeit ist. In Runde 3 ist die
+Gutschriftenfrage die gefährlichste: Ein Vorzeichenfehler ist in der Auswertung unsichtbar und
+verdoppelt den Fehlbetrag, weil ein Minus als Plus zählt. Beim März-Einbruch ist die ehrliche
+Antwort „das können die Daten nicht hergeben" oft die richtige – und die schwerste.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Die Änderungsliste macht jeden Eingriff einzeln nachvollziehbar, und die
+abgeleiteten Spalten beruhen auf schriftlich festgehaltenen Regeln mit sichtbar markierten
+Unklarheiten; (2) die Prüfmatrix enthält echte Zahlen, insbesondere eine zeilengenaue Erklärung
+der Summenabweichung, und weist nach, dass keine Auswertungszahl aus einem Chatfenster stammt;
+(3) die Gutschriften sind mit erkennbarer Regel und nicht pauschal korrigiert, die Verfeinerung
+der Sonderanfertigungen ist aus dem Freitext belegt, und der März-Einbruch ist entweder mit Daten
+erklärt oder ehrlich als Datenlücke ausgewiesen statt weggelassen; (4) die Entscheidung Excel
+gegen Power BI wägt Häufigkeit, Quellenzahl, Prüfaufwand und Weitergabe ab und behandelt die
+Vorstellung einer monatlichen KI-Aufbereitung ohne feste Regeln kritisch.</p>
+<p>Lernziel: die vollständige Kette von unsauberen Rohdaten bis zur belastbaren Auswertung
+beherrschen – mit der Einsicht, dass KI bei Struktur und Zuordnung hilft, dass jede Zahl aus der
+Tabelle stammen muss, und dass ein unerklärtes Ergebnis nicht durch Weglassen erklärt wird.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel12/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 12 – KI-gestützte Textarbeit">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 12 – KI-gestützte Textarbeit
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel14/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 14 – Fallbeispiel HR">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 14 – Fallbeispiel HR
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

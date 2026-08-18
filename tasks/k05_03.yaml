@@ -1,0 +1,45 @@
+title: Eine Halluzination erzeugen und wieder einfangen
+difficulty: 3
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug. Ziel ist nicht, das Werkzeug vorzuführen, sondern
+  die Wirkung der Gegenmittel aus Abschnitt 5.6 selbst zu messen.
+
+  1. **Lücke öffnen.** Frage nach etwas sehr Speziellem, das es plausibel gäbe, das du aber
+     nachprüfen kannst – etwa eine interne Regelung deines Arbeitgebers, ein Nischenprodukt oder
+     eine kleine Verordnung. Notiere die Antwort wörtlich.
+  2. **Unsicherheit erlauben.** Stelle dieselbe Frage in einem neuen Chat mit dem Zusatz:
+
+     ```text
+     Wenn du das nicht sicher weisst, antworte ausschliesslich mit: nicht bekannt.
+     Rate nicht und nenne keine Beispiele.
+     ```
+
+  3. **Material mitgeben.** Stelle die Frage ein drittes Mal, diesmal mit dem echten Text
+     (Auszug aus der Regelung, dem Datenblatt, der Verordnung) und dem Zusatz:
+
+     ```text
+     Beantworte ausschliesslich auf Basis des folgenden Textes und zitiere die
+     Stelle woertlich, auf die du dich stuetzt.
+     ```
+
+  Halte in einer kleinen Tabelle fest: Was war in den drei Durchläufen richtig, was falsch, was
+  fehlte? Formuliere daraus zwei Regeln für deine eigene Arbeit.
+tip: |
+  Wähle etwas, das du **wirklich** überprüfen kannst. Bei einem Thema, das du selbst nur ungefähr
+  kennst, hältst du die flüssigere Antwort leicht für die bessere – genau das ist der Kern des
+  Problems.
+solution: |
+  Typische Beobachtungen:
+
+  - **Durchlauf 1** liefert oft eine vollständige, gut formulierte und in Teilen erfundene
+    Antwort. Auffällig ist die Sicherheit im Ton: Es gibt keinen sprachlichen Unterschied zwischen
+    Gewusstem und Erfundenem.
+  - **Durchlauf 2** liefert häufiger „nicht bekannt" oder eine deutlich vorsichtigere Antwort.
+    Die Erlaubnis, nichts zu wissen, wirkt – nicht immer, aber messbar.
+  - **Durchlauf 3** ist meist korrekt, weil das Modell nur noch zusammenfassen muss. Fehler
+    verschieben sich hier von „erfunden" zu „unvollständig" oder „falscher Bezug", und das
+    wörtliche Zitat macht sie sofort prüfbar.
+
+  Beispielhafte Regeln: (1) Bei jeder Frage zu internen oder speziellen Themen liefere ich den
+  Text mit, statt Wissen zu erwarten. (2) In jeden Prompt zu Sachfragen schreibe ich, was das
+  Werkzeug tun soll, wenn ihm eine Angabe fehlt.

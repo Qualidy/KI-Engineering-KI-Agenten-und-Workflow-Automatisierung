@@ -1,0 +1,94 @@
+title: Quartalsauswertung aus unsauberen Auftragsdaten
+difficulty: 4
+question: |
+  **Szenario:** Die Vertriebsleitung der Musterhandel GmbH will erstmals eine belastbare
+  Quartalsauswertung der Aufträge – Umsatz je Warengruppe, je Region, Entwicklung über die drei
+  Monate, Auffälligkeiten. Die Datenbasis ist eine über Jahre gewachsene Excel-Datei, an der vier
+  Personen gearbeitet haben. Es gibt Zwischensummen, verbundene Kopfzeilen, zwei Datumsformate,
+  Beträge teils als Text, Kundennamen in drei Schreibweisen und ein Blatt mit Freitextnotizen zu
+  Sonderaufträgen. Deine Aufgabe ist die vollständige Kette von der Rohdatei zur Auswertung.
+
+  ```text
+  Rahmendaten:
+  Rund 400 Auftragszeilen im Quartal, 60 Kunden
+  Spalten: Nr, Kunde, PLZ, Artikelbezeichnung, Menge, Netto, Zusagedatum,
+  Lieferdatum, Bemerkung
+  Zusaetzlich ein Blatt Sonderauftraege mit 25 Freitextnotizen
+  Warengruppen sind nirgends erfasst, nur aus der Artikelbezeichnung ableitbar
+  Regionen sollen aus der ersten Stelle der PLZ entstehen
+  Werkzeuge: Excel mit Copilot oder Excel plus ChatGPT bzw. Claude
+  ```
+
+  Lege dir für die Arbeit einen eigenen Testdatensatz mit mindestens 25 erfundenen Zeilen an, der
+  alle genannten Probleme mindestens einmal enthält. Nur so ist deine Prüfung überhaupt aussagekräftig.
+
+  ---
+
+  **Runde 1 – Datenbasis herstellen.** Bringe die Rohdaten in eine verwertbare Tabelle: Zellverbund
+  lösen, Zwischensummen entfernen, Datentypen vereinheitlichen, Kundennamen zusammenführen, als
+  Tabelle formatieren und benennen. Ergänze dann die abgeleiteten Spalten `Warengruppe`, `Region`,
+  `Stueckpreis` und `Lieferstatus`. Nutze KI für die Ableitungsregeln und Excel für jede Rechnung.
+  Dokumentiere jeden Eingriff in eine Änderungsliste mit Spalte, Maßnahme und Begründung.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Deine Datenbasis muss **alle vier** Kriterien
+  erfüllen. Prüfe einzeln nach und korrigiere:
+
+  1. Die Anzahl der Datenzeilen nach der Bereinigung ist nachvollziehbar dokumentiert: Ausgangszahl,
+     entfernte Zeilen mit Grund, Endzahl. Keine Zeile ist unbemerkt verschwunden.
+  2. Die Nettosumme der bereinigten Tabelle stimmt mit der Summe der Rohdaten überein – oder die
+     Abweichung ist zeilengenau erklärt (etwa durch entfernte Zwischensummen).
+  3. Für jede abgeleitete Spalte ist die Regel schriftlich festgehalten, und alle Zeilen, bei denen
+     die Zuordnung unsicher war, sind mit `unklar` markiert statt geraten.
+  4. Jede Zahl, die in die Auswertung eingeht, ist per Excel-Formel entstanden – keine Zahl stammt
+     aus einem Chatfenster.
+
+  **Runde 3 – Die Komplikation.** Drei Dinge kommen dazwischen. Erstens meldet die Buchhaltung,
+  dass in den Rohdaten Gutschriften als positive Beträge erfasst sind und eigentlich negativ zählen
+  müssten – erkennbar nur an der Bemerkung. Zweitens stellt sich heraus, dass die Warengruppe
+  `Sonderanfertigung` in Wahrheit drei verschiedene Dinge umfasst und die Vertriebsleitung sie
+  getrennt sehen will; die Information steckt ausschließlich im Freitextblatt. Drittens zeigt deine
+  erste Auswertung einen Umsatzeinbruch im März, den niemand erklären kann. Bearbeite alles:
+  Korrigiere die Gutschriften nachvollziehbar, verfeinere die Warengruppen aus dem Freitext, und
+  gehe dem März-Einbruch datenbasiert nach, bis du eine belegte Erklärung oder eine belegte
+  Datenlücke benennen kannst.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Vertriebsleitung möchte die Auswertung künftig
+  monatlich haben und schlägt vor, „die Datei einfach jeden Monat neu von der KI aufbereiten zu
+  lassen". Außerdem soll der März-Einbruch aus der Präsentation herausgenommen werden, weil er
+  „unerklärt schlecht aussieht". Lass dir Argumente für und gegen beide Vorgaben geben, entscheide
+  begründet zwischen der Fortführung in Excel und dem Aufbau in Power BI, und **widersprich**
+  mindestens einer der beiden Vorgaben mit tragfähiger Begründung.
+
+  **Deliverable:**
+
+  1. bereinigte Tabelle mit vier abgeleiteten Spalten plus vollständige Änderungsliste
+  2. ausgefüllte Prüfmatrix der vier Pflichtkriterien mit Zahlen, nicht mit Häkchen
+  3. Auswertung nach Warengruppe, Region und Monat, die Gutschriftenkorrektur, die verfeinerten
+     Warengruppen und die belegte Erklärung oder Datenlücke zum März
+  4. begründete Entscheidung Excel gegen Power BI, inklusive der abgelehnten Vorgabe
+
+  **Fertig bist du erst, wenn** die Nettosumme vor und nach der Bereinigung zeilengenau erklärt ist,
+  keine Zahl der Auswertung aus einem Chatfenster stammt, der März-Einbruch entweder erklärt oder
+  ausdrücklich als Datenlücke ausgewiesen ist, und deine Entscheidung in Runde 4 einer Vorgabe der
+  Vertriebsleitung begründet widerspricht.
+tip: |
+  Der Lernwert liegt in Runde 2 und 3. Runde 1 ist Handwerk, das nach zwei Durchläufen sitzt.
+  In Runde 2 wirst du feststellen, dass die Summenprobe fast immer eine Abweichung zeigt – und
+  dass genau die Suche nach ihrer Ursache die eigentliche Datenarbeit ist. In Runde 3 ist die
+  Gutschriftenfrage die gefährlichste: Ein Vorzeichenfehler ist in der Auswertung unsichtbar und
+  verdoppelt den Fehlbetrag, weil ein Minus als Plus zählt. Beim März-Einbruch ist die ehrliche
+  Antwort „das können die Daten nicht hergeben" oft die richtige – und die schwerste.
+solution: |
+  Bewertungskriterien: (1) Die Änderungsliste macht jeden Eingriff einzeln nachvollziehbar, und die
+  abgeleiteten Spalten beruhen auf schriftlich festgehaltenen Regeln mit sichtbar markierten
+  Unklarheiten; (2) die Prüfmatrix enthält echte Zahlen, insbesondere eine zeilengenaue Erklärung
+  der Summenabweichung, und weist nach, dass keine Auswertungszahl aus einem Chatfenster stammt;
+  (3) die Gutschriften sind mit erkennbarer Regel und nicht pauschal korrigiert, die Verfeinerung
+  der Sonderanfertigungen ist aus dem Freitext belegt, und der März-Einbruch ist entweder mit Daten
+  erklärt oder ehrlich als Datenlücke ausgewiesen statt weggelassen; (4) die Entscheidung Excel
+  gegen Power BI wägt Häufigkeit, Quellenzahl, Prüfaufwand und Weitergabe ab und behandelt die
+  Vorstellung einer monatlichen KI-Aufbereitung ohne feste Regeln kritisch.
+
+  Lernziel: die vollständige Kette von unsauberen Rohdaten bis zur belastbaren Auswertung
+  beherrschen – mit der Einsicht, dass KI bei Struktur und Zuordnung hilft, dass jede Zahl aus der
+  Tabelle stammen muss, und dass ein unerklärtes Ergebnis nicht durch Weglassen erklärt wird.

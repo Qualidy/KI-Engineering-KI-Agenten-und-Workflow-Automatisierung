@@ -1,0 +1,34 @@
+title: Vorschlag, Prüfung oder Buchung?
+difficulty: 1
+question: |
+  Ordne jeden Vorgang ein: **zulässige KI-Unterstützung**, **zulässig nur mit Auflagen**, oder
+  **nicht zulässig**. Begründe jeweils in einem Satz und nenne bei „nur mit Auflagen" die Auflage.
+
+  1. Ein Werkzeug überträgt die Felder einer Eingangsrechnung in eine Tabelle mit Fundstellen.
+  2. Ein Werkzeug korrigiert einen Rechenfehler auf dem Beleg stillschweigend auf den richtigen Wert.
+  3. Ein Werkzeug erzeugt Kontierungsvorschläge mit Begründung und Sicherheitsgrad.
+  4. Ein Ablauf bucht Vorschläge mit Sicherheitsgrad hoch automatisch ohne Freigabe.
+  5. Ein Werkzeug formuliert vier abgestufte Mahnvorlagen mit Platzhaltern.
+  6. Ein Werkzeug ergänzt in der Mahnung Verzugszinssatz und Mahnkostenpauschale.
+  7. Die offene-Posten-Liste mit Kundennamen und IBAN wird in ein privates Chatkonto kopiert.
+  8. Der Chatverlauf mit dem Kontierungsvorschlag dient als Buchungsnachweis.
+tip: |
+  Drei Prüffragen decken alle Fälle ab: Entsteht eine Buchung oder Freigabe ohne Menschen? Werden
+  rechtlich voraussetzungsabhängige Angaben erzeugt? Verlassen sensible Daten den freigegebenen
+  Datenraum?
+solution: |
+  | Vorgang | Einordnung | Begründung bzw. Auflage |
+  |---|---|---|
+  | 1 Felder übertragen | zulässig | reine Erfassung mit belegbarer Fundstelle |
+  | 2 stille Korrektur | nicht zulässig | versteckt einen fehlerhaften Beleg statt ihn zu melden |
+  | 3 Kontierungsvorschlag | zulässig mit Auflagen | eigener Kontenplan als Kontext, als Vorschlag gekennzeichnet, Freigabe durch Menschen |
+  | 4 automatische Buchung | nicht zulässig | umgeht Vier-Augen-Prinzip und menschliche Entscheidung |
+  | 5 Mahnvorlagen | zulässig | Textarbeit ohne rechtliche Festlegungen |
+  | 6 Zinsen und Mahnkosten | nicht zulässig | voraussetzungsabhängige Rechtsangaben, gehören aus geprüftem Baustein |
+  | 7 Liste in Privatkonto | nicht zulässig | unzulässige Übermittlung personenbezogener Zahlungsdaten |
+  | 8 Chatverlauf als Nachweis | nicht zulässig | nicht revisionssicher, veränderbar, nicht aufbewahrungsfähig |
+
+  Fall 2 ist der lehrreichste, weil er hilfsbereit gemeint ist. Ein Beleg, dessen Summen nicht
+  aufgehen, ist ein Befund für den Lieferanten – korrigiert wird er durch eine korrigierte Rechnung,
+  nicht durch ein Werkzeug. Fall 4 ist der verlockendste: Sicherheitsgrad hoch ist eine
+  Selbsteinschätzung des Werkzeugs, kein Prüfergebnis, und er darf keine Freigabe ersetzen.

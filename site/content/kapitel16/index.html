@@ -1,0 +1,1942 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel15/">
+      
+      
+        <link rel="next" href="../kapitel17/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 16 – Fallbeispiel Rechnungswesen - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-16-fallbeispiel-rechnungswesen-vorschlag-prufung-nachweis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 16 – Fallbeispiel Rechnungswesen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Block 3 · Praxis mit KI-Agenten
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 12 – KI-gestützte Textarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 13 – KI-gestützte Datenarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 14 – Fallbeispiel HR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 15 – Fallbeispiel Vertrieb
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 16 – Fallbeispiel Rechnungswesen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 16 – Fallbeispiel Rechnungswesen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#161-was-im-rechnungswesen-anders-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      16.1 Was im Rechnungswesen anders ist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#162-belegdaten-erfassen-und-plausibilisieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      16.2 Belegdaten erfassen und plausibilisieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#163-kontierungsvorschlage-bleiben-vorschlage" class="md-nav__link">
+    <span class="md-ellipsis">
+      16.3 Kontierungsvorschläge bleiben Vorschläge
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#164-zahlungserinnerung-und-mahnwesen" class="md-nav__link">
+    <span class="md-ellipsis">
+      16.4 Zahlungserinnerung und Mahnwesen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#165-abweichungsanalyse-und-kommentierung-von-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      16.5 Abweichungsanalyse und Kommentierung von Reports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#166-vier-augen-prinzip-nachweis-und-aufbewahrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      16.6 Vier-Augen-Prinzip, Nachweis und Aufbewahrung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-16-fallbeispiel-rechnungswesen-vorschlag-prufung-nachweis">Kapitel 16 – Fallbeispiel Rechnungswesen: Vorschlag, Prüfung, Nachweis<a class="headerlink" href="#kapitel-16-fallbeispiel-rechnungswesen-vorschlag-prufung-nachweis" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Warum im Rechnungswesen die <strong>Nachvollziehbarkeit</strong> wichtiger ist als die Geschwindigkeit</li>
+<li>Wie du <strong>Belegdaten erfassen und plausibilisieren</strong> lässt, ohne die Prüfung abzugeben</li>
+<li>Warum ein <strong>Kontierungsvorschlag</strong> immer ein Vorschlag bleibt und niemals eine Buchung wird</li>
+<li>Wie du <strong>Zahlungserinnerungen und Mahntexte</strong> in abgestufter Tonlage aufbaust</li>
+<li>Wie du <strong>Abweichungen analysierst</strong> und Reports so kommentierst, dass sie belegt sind</li>
+<li>Wie <strong>Vier-Augen-Prinzip</strong>, Dokumentation und Aufbewahrung praktisch aussehen und welche Daten in <strong>keinem Fall</strong> in öffentliche Werkzeuge gelangen dürfen</li>
+</ul>
+</div>
+<hr />
+<h2 id="161-was-im-rechnungswesen-anders-ist">16.1 Was im Rechnungswesen anders ist<a class="headerlink" href="#161-was-im-rechnungswesen-anders-ist" title="Permanent link">&para;</a></h2>
+<p>In Kapitel 12 war ein sprachlich guter Text schon halb gewonnen. Im Rechnungswesen ist er wertlos, wenn die Zahl darunter nicht stimmt und der Weg dahin nicht dokumentiert ist. Drei Besonderheiten prägen den ganzen Bereich.</p>
+<p><strong>Nachvollziehbarkeit ist Pflicht, nicht Kür.</strong> Die Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form – kurz <strong>GoBD</strong> – verlangen, dass jeder Geschäftsvorfall nachvollziehbar, vollständig, richtig, zeitgerecht, geordnet und unveränderbar aufgezeichnet wird. Praktisch heißt das: Ein Dritter muss später erkennen können, welcher Beleg zu welcher Buchung führte, wer sie veranlasst hat und ob sie nachträglich verändert wurde. Nachträgliches Überschreiben ohne Spur ist nicht erlaubt.</p>
+<p><strong>Ein Fehler wirkt nach.</strong> Eine schlecht formulierte Mail kostet Sympathie. Eine falsche Kontierung wandert in den Jahresabschluss, in die Umsatzsteuervoranmeldung und in die Kostenstellenrechnung. Korrekturen sind möglich, aber selbst dokumentationspflichtig. <strong>Zahlungsdaten sind sensibel.</strong> Kontonummern, Zahlungsverhalten einzelner Personen, Gehaltsdaten, offene Posten mit Namen – all das sind personenbezogene oder geschäftskritische Daten. Sie gehören nicht in ein privates Chatkonto, auch nicht als „nur ein Beispiel" (Kap. 4).</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Beleg trifft ein]) --&gt; B([KI erfasst und plausibilisiert])
+    B --&gt; C([Vorschlag zur Kontierung])
+    C --&gt; D([Mensch prueft und entscheidet])
+    D --&gt; E([Buchung im System mit Protokoll])</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Merksatz für den ganzen Bereich</p>
+<p>Im Rechnungswesen ist KI ein <strong>Vorschlagswesen</strong>, kein Ausführungsorgan. Sie liest, ordnet, rechnet vor und formuliert. Sie bucht nicht, sie gibt nicht frei, und sie zahlt nicht aus. Der Nutzen liegt darin, dass ein Mensch weniger abtippt und mehr prüft – nicht darin, dass niemand mehr prüft.</p>
+</div>
+<hr />
+<h2 id="162-belegdaten-erfassen-und-plausibilisieren">16.2 Belegdaten erfassen und plausibilisieren<a class="headerlink" href="#162-belegdaten-erfassen-und-plausibilisieren" title="Permanent link">&para;</a></h2>
+<p>Der erste Schritt ist unspektakulär und spart die meiste Zeit: aus einem Beleg die relevanten Felder in eine strukturierte Form bringen (Kap. 13). Die letzte Zeile des folgenden Auftrags ist dabei die wichtigste.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Uebertrage die Angaben der angehaengten Eingangsrechnung in die folgenden Felder.
+Felder: Lieferant, Rechnungsnummer, Rechnungsdatum, Leistungszeitraum, Nettobetrag,
+Umsatzsteuersatz, Umsatzsteuerbetrag, Bruttobetrag, Zahlungsbedingungen, Bestellbezug,
+Umsatzsteuer-Identifikationsnummer.
+Format: Tabelle mit den Spalten Feld, Wert, Fundstelle im Beleg.
+Einschraenkung: Keinen Wert berechnen, ergaenzen oder korrigieren. Fehlende oder unlesbare
+Angaben als fehlt markieren. Widersprueche im Beleg ausdruecklich benennen statt aufzuloesen.
+</code></pre></div></td></tr></table></div>
+<p>Ein Beleg mit einem Rechenfehler ist ein <strong>fehlerhafter Beleg</strong> und muss als solcher erkannt werden; ein Werkzeug, das den Fehler stillschweigend korrigiert, hat das Problem nicht gelöst, sondern versteckt. Danach folgt die <strong>Plausibilisierung</strong>: nicht die Buchung, sondern die Frage, ob der Beleg überhaupt in Ordnung ist.</p>
+<table>
+<thead>
+<tr>
+<th>Prüfung</th>
+<th>Konkrete Frage</th>
+<th>Typischer Fund</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rechnerische Prüfung</td>
+<td>Netto plus Umsatzsteuer gleich Brutto?</td>
+<td>Rundungsdifferenz oder falscher Steuersatz</td>
+</tr>
+<tr>
+<td>Steuerliche Prüfung</td>
+<td>Steuersatz plausibel für die Leistung?</td>
+<td>7 statt 19 Prozent oder umgekehrt</td>
+</tr>
+<tr>
+<td>Pflichtangaben</td>
+<td>Sind alle erforderlichen Angaben vorhanden?</td>
+<td>fehlende Steuernummer oder Leistungszeitraum</td>
+</tr>
+<tr>
+<td>Dublettenprüfung</td>
+<td>Rechnungsnummer bereits erfasst?</td>
+<td>doppelte Erfassung nach Mahnung</td>
+</tr>
+<tr>
+<td>Sachliche Prüfung</td>
+<td>Bestellbezug und Leistung passen zusammen?</td>
+<td>Menge weicht vom Lieferschein ab</td>
+</tr>
+</tbody>
+</table>
+<p>Die rechnerische Prüfung lässt du <strong>in Excel oder im System</strong> rechnen, nicht im Chatfenster (Kap. 13). Das Werkzeug soll sagen, <em>was</em> zu prüfen ist und <em>wo</em> es hakt – die Zahl kommt aus einer Rechnung, die du nachvollziehen kannst.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: die stillschweigende Korrektur</p>
+<p>Übergibt man einen Beleg mit <code>Netto 1.000,00</code>, <code>Umsatzsteuer 190,00</code>, <code>Brutto 1.209,00</code> ohne die Einschränkung aus dem Prompt, liefern Werkzeuge häufig einfach <code>1.190,00</code> – weil das die richtige Zahl ist. Genau das darf nicht passieren. Der Beleg stimmt nicht, und das ist der Befund. Die Korrektur erfolgt durch eine korrigierte Rechnung des Lieferanten, nicht durch eine hilfsbereite Zusammenfassung.</p>
+</div>
+<hr />
+<h2 id="163-kontierungsvorschlage-bleiben-vorschlage">16.3 Kontierungsvorschläge bleiben Vorschläge<a class="headerlink" href="#163-kontierungsvorschlage-bleiben-vorschlage" title="Permanent link">&para;</a></h2>
+<p>Ein Kontierungsvorschlag ist zulässig und nützlich – unter zwei Bedingungen: Er ist als Vorschlag erkennbar, und er nennt seine Begründung.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du unterstuetzt die Buchhaltung der Musterhandel GmbH mit Kontierungsvorschlaegen.
+Aufgabe: Erstelle einen Vorschlag zur Kontierung fuer die folgenden Belege.
+Kontext: Wir buchen nach unserem internen Kontenplan, angehaengt. Bei Zweifeln gilt der
+Kontenplan, nicht dein allgemeines Wissen.
+Belege:
+Reparatur eines Gabelstaplers, netto 840,00, USt 19 Prozent, Werkstattrechnung
+Jahreslizenz Buchhaltungssoftware, netto 1.200,00, Laufzeit 01.07. bis 30.06.
+Buerostuehle, 6 Stueck, netto 2.940,00, Nutzungsdauer laut Liste 13 Jahre
+Bewirtung von zwei Geschaeftspartnern, brutto 96,40, mit Anlass auf dem Beleg
+Format: Tabelle mit den Spalten Beleg, Kontovorschlag, Begruendung, Sicherheitsgrad hoch
+mittel niedrig, offene Frage an die Buchhaltung.
+Einschraenkung: Kennzeichne jede Zeile ausdruecklich als Vorschlag, buche nichts. Bei
+Sicherheitsgrad niedrig formuliere die konkrete Frage, die vor der Buchung geklaert werden
+muss. Nenne keine Kontonummer, die nicht im angehaengten Kontenplan steht.
+</code></pre></div></td></tr></table></div>
+<p>Die Spalte <strong>Sicherheitsgrad</strong> ist die wichtigste. Sie verwandelt einen Stapel gleich aussehender Vorschläge in eine sortierte Arbeitsliste: Die sicheren Fälle bestätigst du schnell, die unsicheren bearbeitest du bewusst. Die offenen Fragen zeigen dabei, warum die Entscheidung beim Menschen bleiben muss – sie hängen von Beträgen, Wahlrechten und internen Festlegungen ab, die kein Werkzeug kennt.</p>
+<table>
+<thead>
+<tr>
+<th>Beleg aus dem Beispiel</th>
+<th>Typische offene Frage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Staplerreparatur</td>
+<td>Erhaltungsaufwand oder aktivierungspflichtige Verbesserung?</td>
+</tr>
+<tr>
+<td>Jahreslizenz über den Jahreswechsel</td>
+<td>Aktive Rechnungsabgrenzung für das Folgejahr nötig?</td>
+</tr>
+<tr>
+<td>Bürostühle, 6 Stück</td>
+<td>Sammelposten, Sofortabschreibung oder Anlagegut je Stück?</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Die KI kennt doch den Standardkontenrahmen" ist gefährlich richtig. Sie kennt gängige Kontenrahmen ungefähr – und erzeugt daraus im Zweifel eine Kontonummer, die plausibel aussieht und in deinem Kontenplan nicht existiert oder etwas anderes bedeutet. Deshalb gehört der eigene Kontenplan als Kontext in den Prompt, und deshalb steht in der Einschränkung ausdrücklich, dass keine anderen Konten verwendet werden dürfen.</p>
+</div>
+<hr />
+<h2 id="164-zahlungserinnerung-und-mahnwesen">16.4 Zahlungserinnerung und Mahnwesen<a class="headerlink" href="#164-zahlungserinnerung-und-mahnwesen" title="Permanent link">&para;</a></h2>
+<p>Hier ist der Nutzen hoch und das Risiko überschaubar – vorausgesetzt, die <strong>Abstufung</strong> ist bewusst gestaltet. Der häufigste Fehler im Mahnwesen ist nicht ein zu harter Ton, sondern ein Ton, der nicht zur Stufe passt: die erste Erinnerung klingt wie eine Drohung, die dritte wie eine Bitte. Der eigentliche Gewinn liegt deshalb in der Konsistenz – vier geprüfte Stufen, konsequent verwendet, wirken professioneller als jede einzelne besonders gut formulierte Mahnung. Genau deshalb ist das Mahnwesen später ein guter Kandidat für einen automatisierten Ablauf mit Freigabe-Gate (Kap. 27 und Kap. 29).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Erstelle vier abgestufte Textvorlagen zum Zahlungsverzug.
+Kontext: Musterhandel GmbH, Zahlungsziel 14 Tage netto. Vorlagen werden mit Platzhaltern
+befuellt: [Kundenname], [Rechnungsnummer], [Rechnungsdatum], [Betrag], [Faelligkeitsdatum],
+[neue Frist].
+Stufen:
+1. Freundliche Zahlungserinnerung, 7 Tage nach Faelligkeit, geht von einem Versehen aus
+2. Erste Mahnung, 21 Tage nach Faelligkeit, sachlich, mit neuer Frist
+3. Zweite Mahnung, 35 Tage nach Faelligkeit, deutlich, nennt die naechste Eskalationsstufe
+4. Letzte Mahnung vor Uebergabe, nennt Frist und Folge ohne Drohgebaerde
+Format: Je Stufe Betreffzeile und Text, maximal 110 Woerter.
+Einschraenkung: Keine Angabe zu Verzugszinsen, Mahnkosten, Schadensersatz oder rechtlichen
+Schritten mit konkreten Betraegen oder Paragrafen. Keine Unterstellung von Absicht. Keine
+Formulierung, die die Geschaeftsbeziehung in Stufe 1 und 2 in Frage stellt. Jede Stufe nennt
+genau eine Frist mit Datum.
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Stufe</th>
+<th>Grundhaltung</th>
+<th>Was nicht hineingehört</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zahlungserinnerung</td>
+<td>Versehen unterstellen</td>
+<td>Kosten, Fristandrohung, Vorwurf</td>
+</tr>
+<tr>
+<td>Erste Mahnung</td>
+<td>sachliche Feststellung</td>
+<td>Emotion, Rechtsbegriffe</td>
+</tr>
+<tr>
+<td>Zweite Mahnung</td>
+<td>Deutlichkeit mit Weg</td>
+<td>Drohgebärde, Beziehungsentzug</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Zinsen, Kosten und Paragrafen sind nichts für Textgeneratoren</p>
+<p>Sprachmodelle ergänzen im Mahnkontext gern Verzugszinssätze, pauschale Mahnkosten und Paragrafenverweise. Diese Angaben sind rechtlich voraussetzungsabhängig – etwa davon, ob es sich um ein Verbrauchergeschäft handelt, ob Verzug wirksam eingetreten ist und was vertraglich vereinbart wurde. Falsche Angaben können die Forderung schwächen und eigene Ansprüche des Kunden begründen. Solche Bausteine legt die Rechtsabteilung oder eine fachkundige Stelle fest; du fügst sie als geprüften Textbaustein ein.</p>
+</div>
+<hr />
+<h2 id="165-abweichungsanalyse-und-kommentierung-von-reports">16.5 Abweichungsanalyse und Kommentierung von Reports<a class="headerlink" href="#165-abweichungsanalyse-und-kommentierung-von-reports" title="Permanent link">&para;</a></h2>
+<p>Der Monatsbericht ist erstellt, die Zahlen stehen – und dann fehlt der Text, der erklärt, was passiert ist. Diese Kommentierung ist ein sehr guter KI-Anwendungsfall, sofern eine Regel gilt: <strong>Die KI beschreibt, sie erklärt nicht.</strong> Ursachen kennt nur, wer im Betrieb war.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Kommentiere die folgende Abweichungsuebersicht fuer den Monatsbericht.
+Daten:
+Kostenstelle;Plan;Ist;Abweichung
+Fracht ausgehend;42000;51300;9300
+Verpackung;12000;12400;400
+Instandhaltung;18000;9100;-8900
+Reisekosten;9000;14200;5200
+Buerobedarf;3000;2850;-150
+Format: Je Zeile ein Satz Beschreibung mit absoluter und prozentualer Abweichung. Danach die
+drei wesentlichen Abweichungen und je eine konkrete Rueckfrage an die verantwortliche
+Kostenstelle.
+Einschraenkung: Keine Ursachen vermuten, keine Bewertung als gut oder schlecht, keine
+Massnahmenempfehlung. Prozentwerte auf eine Stelle runden und die Rechnung nachvollziehbar
+angeben.
+</code></pre></div></td></tr></table></div>
+<p>Die Prozentwerte prüfst du gegen: Fracht plus 22,1 Prozent, Verpackung plus 3,3 Prozent, Instandhaltung minus 49,4 Prozent, Reisekosten plus 57,8 Prozent, Bürobedarf minus 5,0 Prozent. Rechne mindestens zwei davon selbst nach – die Extremwerte, dort fallen Fehler zuerst auf. Dann kommt der fachliche Teil, den nur du leisten kannst: Die auffälligste Zahl ist nicht die größte Abweichung. Frachtkosten plus 9.300 Euro sehen dramatisch aus, sind aber bei gestiegenen Umsätzen erklärbar. Instandhaltung minus 8.900 Euro sieht nach Einsparung aus und ist häufig eine <strong>verschobene Maßnahme</strong>, die im nächsten Quartal doppelt zuschlägt.</p>
+<p>Wozu die Ursachensperre dient, zeigt der Gegentest: Ohne sie liefert ein Werkzeug zuverlässig Sätze wie „Der Anstieg der Frachtkosten ist auf gestiegene Treibstoffpreise zurückzuführen." Das klingt fachlich, ist aber geraten – und wanderte es in den Monatsbericht, stünde dort eine erfundene Ursache mit Unterschrift. Die Rückfrage an die Kostenstelle ist der einzige Weg zur echten Ursache, und genau sie soll das Werkzeug formulieren.</p>
+<hr />
+<h2 id="166-vier-augen-prinzip-nachweis-und-aufbewahrung">16.6 Vier-Augen-Prinzip, Nachweis und Aufbewahrung<a class="headerlink" href="#166-vier-augen-prinzip-nachweis-und-aufbewahrung" title="Permanent link">&para;</a></h2>
+<p>Der Einsatz von KI verändert die Kontrolllogik nicht – er verschiebt nur, wo der Mensch hinschaut. Damit das funktioniert, brauchst du drei Festlegungen.</p>
+<p><strong>Erstens das Vier-Augen-Prinzip.</strong> Wer einen Vorschlag erzeugt, darf ihn nicht selbst freigeben. Eine KI ersetzt nicht das zweite Augenpaar, sondern höchstens das Abtippen des ersten. Konkret: Erfassung und Vorschlag durch eine Person mit Werkzeugunterstützung, Prüfung und Freigabe durch eine zweite Person, Buchung im System mit Protokoll.</p>
+<p><strong>Zweitens die Dokumentation des KI-Einsatzes.</strong> Für die Nachvollziehbarkeit muss erkennbar bleiben, wie ein Vorschlag entstand – je Prozessschritt also festhalten, welches Werkzeug und welche Prompt-Vorlage genutzt wurden, wer geprüft hat und was geändert wurde.</p>
+<table>
+<thead>
+<tr>
+<th>Zu dokumentieren</th>
+<th>Warum</th>
+<th>Wo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eingesetztes Werkzeug und Zweck</td>
+<td>Nachvollziehbarkeit des Entstehungswegs</td>
+<td>Verfahrensdokumentation</td>
+</tr>
+<tr>
+<td>Verwendete Prompt-Vorlage mit Version</td>
+<td>Ergebnisse sind sonst nicht reproduzierbar</td>
+<td>Vorlagensammlung in SharePoint</td>
+</tr>
+<tr>
+<td>Prüfende Person und Zeitpunkt sowie Änderungen am Vorschlag</td>
+<td>Vier-Augen-Nachweis, zeigt geprüft statt nur bestätigt</td>
+<td>Freigabe- und Buchungsprotokoll</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Drittens die Aufbewahrung.</strong> Der Beleg und die Buchung sind aufbewahrungspflichtig und müssen unveränderbar dokumentiert sein. Ein Chatverlauf ist kein Buchungsnachweis: Er kann verschwinden, er ist nicht revisionssicher, und er lässt sich verändern. Die Ablage des Belegs und die Buchung gehören ins System, nicht in ein Chatfenster.</p>
+<div class="admonition warning">
+<p class="admonition-title">Keine Kontodaten und Zahlungsdaten in öffentliche Werkzeuge</p>
+<p>IBANs, Kontoauszüge, offene-Posten-Listen mit Namen, Gehaltsabrechnungen, Mahnlisten mit Personenbezug: Diese Daten haben in einem privaten ChatGPT- oder Claude-Konto nichts zu suchen. Willst du dort einen Text oder eine Struktur erproben, arbeite mit vollständig erfundenen Daten und Platzhaltern wie <code>[Kundenname]</code> und <code>[Betrag]</code>. Innerhalb von Copilot in M365 bleiben die Daten im Datenraum deiner Organisation (Kap. 11) – auch dort gelten aber Zweckbindung und interne Freigaben.</p>
+</div>
+<p>Der nächste logische Schritt ist die Automatisierung des Belegwegs: Rechnung trifft ein, Felder werden ausgelesen, Plausibilitätsprüfungen laufen automatisch, unsichere Fälle gehen in eine Prüfschleife, sichere Fälle in eine Freigabe. Wie das mit Dokumentenverarbeitung, Konfidenzwerten und Schwellenwerten aufgebaut wird, folgt in Kapitel 31. Die Leitfrage bleibt dabei immer dieselbe: nicht „Kann die KI das?", sondern „Bleibt es nachvollziehbar, prüfbar und unveränderbar dokumentiert?".</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Im Rechnungswesen zählt <strong>Nachvollziehbarkeit</strong> vor Geschwindigkeit: Der GoBD-Gedanke verlangt vollständige, richtige, zeitgerechte, geordnete und <strong>unveränderbare</strong> Dokumentation.</li>
+<li>Bei der <strong>Belegerfassung</strong> gilt: nichts berechnen, nichts korrigieren, Widersprüche benennen – ein fehlerhafter Beleg ist ein Befund, kein Rundungsproblem.</li>
+<li><strong>Kontierungen</strong> sind Vorschläge mit Begründung, Sicherheitsgrad und offener Frage; der eigene Kontenplan muss als Kontext mitgegeben werden.</li>
+<li><strong>Mahntexte</strong> wirken durch bewusste Abstufung; Zinsen, Kosten und Paragrafen kommen aus geprüften Bausteinen.</li>
+<li>Bei <strong>Abweichungsanalysen</strong> beschreibt die KI und fragt nach – Ursachen benennt nur, wer sie kennt. Die größte Zahl ist selten die wichtigste.</li>
+<li>Das <strong>Vier-Augen-Prinzip</strong> bleibt bestehen: Wer den Vorschlag erzeugt, gibt ihn nicht frei. Der <strong>KI-Einsatz selbst gehört dokumentiert</strong>: Werkzeug, Prompt-Vorlage, prüfende Person, Änderungen.</li>
+<li><strong>Kontodaten und personenbezogene Zahlungsdaten</strong> gehören nie in öffentliche Werkzeuge.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Vorschlag, Prüfung oder Buchung?</summary>
+<p>Ordne jeden Vorgang ein: <strong>zulässige KI-Unterstützung</strong>, <strong>zulässig nur mit Auflagen</strong>, oder
+<strong>nicht zulässig</strong>. Begründe jeweils in einem Satz und nenne bei „nur mit Auflagen" die Auflage.</p>
+<ol>
+<li>Ein Werkzeug überträgt die Felder einer Eingangsrechnung in eine Tabelle mit Fundstellen.</li>
+<li>Ein Werkzeug korrigiert einen Rechenfehler auf dem Beleg stillschweigend auf den richtigen Wert.</li>
+<li>Ein Werkzeug erzeugt Kontierungsvorschläge mit Begründung und Sicherheitsgrad.</li>
+<li>Ein Ablauf bucht Vorschläge mit Sicherheitsgrad hoch automatisch ohne Freigabe.</li>
+<li>Ein Werkzeug formuliert vier abgestufte Mahnvorlagen mit Platzhaltern.</li>
+<li>Ein Werkzeug ergänzt in der Mahnung Verzugszinssatz und Mahnkostenpauschale.</li>
+<li>Die offene-Posten-Liste mit Kundennamen und IBAN wird in ein privates Chatkonto kopiert.</li>
+<li>Der Chatverlauf mit dem Kontierungsvorschlag dient als Buchungsnachweis.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Drei Prüffragen decken alle Fälle ab: Entsteht eine Buchung oder Freigabe ohne Menschen? Werden
+rechtlich voraussetzungsabhängige Angaben erzeugt? Verlassen sensible Daten den freigegebenen
+Datenraum?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Vorgang</th>
+<th>Einordnung</th>
+<th>Begründung bzw. Auflage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Felder übertragen</td>
+<td>zulässig</td>
+<td>reine Erfassung mit belegbarer Fundstelle</td>
+</tr>
+<tr>
+<td>2 stille Korrektur</td>
+<td>nicht zulässig</td>
+<td>versteckt einen fehlerhaften Beleg statt ihn zu melden</td>
+</tr>
+<tr>
+<td>3 Kontierungsvorschlag</td>
+<td>zulässig mit Auflagen</td>
+<td>eigener Kontenplan als Kontext, als Vorschlag gekennzeichnet, Freigabe durch Menschen</td>
+</tr>
+<tr>
+<td>4 automatische Buchung</td>
+<td>nicht zulässig</td>
+<td>umgeht Vier-Augen-Prinzip und menschliche Entscheidung</td>
+</tr>
+<tr>
+<td>5 Mahnvorlagen</td>
+<td>zulässig</td>
+<td>Textarbeit ohne rechtliche Festlegungen</td>
+</tr>
+<tr>
+<td>6 Zinsen und Mahnkosten</td>
+<td>nicht zulässig</td>
+<td>voraussetzungsabhängige Rechtsangaben, gehören aus geprüftem Baustein</td>
+</tr>
+<tr>
+<td>7 Liste in Privatkonto</td>
+<td>nicht zulässig</td>
+<td>unzulässige Übermittlung personenbezogener Zahlungsdaten</td>
+</tr>
+<tr>
+<td>8 Chatverlauf als Nachweis</td>
+<td>nicht zulässig</td>
+<td>nicht revisionssicher, veränderbar, nicht aufbewahrungsfähig</td>
+</tr>
+</tbody>
+</table>
+<p>Fall 2 ist der lehrreichste, weil er hilfsbereit gemeint ist. Ein Beleg, dessen Summen nicht
+aufgehen, ist ein Befund für den Lieferanten – korrigiert wird er durch eine korrigierte Rechnung,
+nicht durch ein Werkzeug. Fall 4 ist der verlockendste: Sicherheitsgrad hoch ist eine
+Selbsteinschätzung des Werkzeugs, kein Prüfergebnis, und er darf keine Freigabe ersetzen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Beleg plausibilisieren, ohne zu korrigieren</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude – der Beleg ist vollständig
+erfunden und enthält keine echten Daten).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>Rechnung
+Lieferant: Nordlicht Bueromoebel, Hamburg
+Rechnungsnummer: 2026-0417
+Rechnungsdatum: 14.03.2026
+Leistungszeitraum: 20.12.2025 bis 19.12.2026
+Position 1: Jahreslizenz Lagerverwaltung, netto 1.200,00
+Position 2: Einrichtungsservice, netto 350,00
+Nettobetrag gesamt: 1.550,00
+Umsatzsteuer 19 Prozent: 294,50
+Bruttobetrag: 1.834,50
+Zahlungsbedingungen: 14 Tage netto
+Bestellbezug: fehlt
+Umsatzsteuer-Identifikationsnummer: fehlt
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Lass die Felder mit dem Erfassungs-Prompt aus dem Kapitel in eine Tabelle übertragen –
+   einschließlich der Einschränkung, nichts zu berechnen und Widersprüche zu benennen.</li>
+<li>Prüfe alle sechs Plausibilitätsprüfungen aus dem Kapitel selbst durch. Rechne die Beträge in
+   Excel oder mit einem Taschenrechner nach, nicht im Chat.</li>
+<li>Erstelle eine Befundliste: Was ist zu klären, mit wem, und was blockiert die Buchung?</li>
+<li>Führe den Auftrag danach absichtlich <strong>ohne</strong> die Einschränkung erneut aus und vergleiche.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Beleg enthält mindestens vier Befunde. Zwei betreffen Zahlen, zwei betreffen Angaben, die
+fehlen oder in die falsche Periode fallen. Rechne 19 Prozent von 1.550,00 von Hand nach.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Befunde:</p>
+<table>
+<thead>
+<tr>
+<th>Prüfung</th>
+<th>Befund</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rechnerisch</td>
+<td>19 Prozent von 1.550,00 sind 294,50 – das stimmt. Aber 1.550,00 plus 294,50 sind 1.844,50, nicht 1.834,50. Der Bruttobetrag ist um 10,00 Euro zu niedrig.</td>
+</tr>
+<tr>
+<td>Steuerlich</td>
+<td>19 Prozent sind für Softwarelizenz und Service plausibel, aber ohne Umsatzsteuer-Identifikationsnummer fehlt eine Pflichtangabe.</td>
+</tr>
+<tr>
+<td>Pflichtangaben</td>
+<td>Umsatzsteuer-Identifikationsnummer fehlt, Bestellbezug fehlt.</td>
+</tr>
+<tr>
+<td>Zeitlich</td>
+<td>Der Leistungszeitraum reicht vom 20.12.2025 bis 19.12.2026 und überschreitet damit das Geschäftsjahr – es ist eine Rechnungsabgrenzung zu prüfen.</td>
+</tr>
+<tr>
+<td>Sachlich</td>
+<td>Ohne Bestellbezug ist die sachliche Prüfung gegen eine Bestellung nicht möglich.</td>
+</tr>
+<tr>
+<td>Dublette</td>
+<td>Rechnungsnummer 2026-0417 gegen den Bestand prüfen.</td>
+</tr>
+</tbody>
+</table>
+<p>Der Rechenfehler im Bruttobetrag ist der entscheidende Punkt. Mit der Einschränkung wird er als
+Widerspruch benannt. Ohne die Einschränkung liefern Werkzeuge häufig einfach 1.844,50 und stellen
+die Rechnung als korrekt dar – der Beleg wäre dann scheinbar in Ordnung und würde mit einem Wert
+erfasst, der so nirgends steht.</p>
+<p>Blockierend für die Buchung sind die fehlende Umsatzsteuer-Identifikationsnummer und der falsche
+Bruttobetrag: Beides erfordert eine korrigierte Rechnung des Lieferanten. Die Abgrenzungsfrage ist
+eine Entscheidung der Buchhaltung, keine Rückfrage an den Lieferanten.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Abweichungen kommentieren ohne Ursachen zu erfinden</summary>
+<p>Diese Übung machst du am Werkzeug plus Excel. Alle Daten sind erfunden.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Kostenstelle;Plan;Ist
+Fracht ausgehend;42000;51300
+Verpackung;12000;12400
+Instandhaltung;18000;9100
+Reisekosten;9000;14200
+Buerobedarf;3000;2850
+Fremdleistungen Montage;25000;25100
+Energie;16000;20800
+</code></pre></div></td></tr></table></div>
+<ol>
+<li><strong>Kommentieren.</strong> Lass die Übersicht mit dem Prompt aus dem Kapitel kommentieren – mit der
+   Einschränkung, keine Ursachen zu vermuten, nichts zu bewerten und keine Maßnahmen zu empfehlen.</li>
+<li><strong>Gegenprobe.</strong> Rechne alle Abweichungen und Prozentwerte in Excel nach und vergleiche mit den
+   Angaben aus dem Chat. Notiere jede Differenz.</li>
+<li><strong>Fachlich einordnen.</strong> Bestimme selbst die drei Abweichungen mit dem größten Handlungsbedarf –
+   und begründe, warum das nicht einfach die drei größten Eurobeträge sind.</li>
+<li><strong>Gegenversuch.</strong> Führe den Auftrag noch einmal ohne die Ursachensperre aus. Markiere jeden
+   Satz, der eine Ursache behauptet, und prüfe, ob sie aus den Daten belegbar ist.</li>
+<li>Formuliere je Abweichung mit Handlungsbedarf eine Rückfrage an die verantwortliche Kostenstelle.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Eine Abweichung nach unten ist nicht automatisch eine gute Nachricht. Überlege bei jeder
+Unterschreitung, ob etwas gespart oder etwas verschoben wurde – und was im nächsten Quartal
+daraus folgt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Abweichungen: Fracht plus 9.300 (22,1 Prozent), Verpackung plus 400 (3,3 Prozent), Instandhaltung
+minus 8.900 (49,4 Prozent), Reisekosten plus 5.200 (57,8 Prozent), Bürobedarf minus 150
+(5,0 Prozent), Fremdleistungen plus 100 (0,4 Prozent), Energie plus 4.800 (30,0 Prozent).</p>
+<p>Die drei mit dem größten Handlungsbedarf sind nicht die drei größten Eurobeträge:</p>
+<ul>
+<li><strong>Instandhaltung minus 49,4 Prozent</strong> ist der wichtigste Befund, obwohl es wie eine Einsparung
+  aussieht. Eine Halbierung der Instandhaltung ist meist eine verschobene Maßnahme, die im
+  Folgezeitraum doppelt anfällt – möglicherweise samt Ausfallrisiko.</li>
+<li><strong>Reisekosten plus 57,8 Prozent</strong> ist die höchste relative Abweichung und deutet auf eine
+  Planungsgrundlage hin, die nicht mehr passt.</li>
+<li><strong>Energie plus 30,0 Prozent</strong> trifft eine Position, die ohne Gegenmaßnahme dauerhaft weiterläuft.</li>
+</ul>
+<p>Die Frachtkosten sind in absoluten Zahlen die größte Abweichung, aber bei gestiegenem
+Versandvolumen mengenabhängig und damit erklärbar – hier ist die Rückfrage, ob das Volumen
+entsprechend gestiegen ist. Verpackung, Bürobedarf und Fremdleistungen sind unauffällig.</p>
+<p>In Schritt 4 zeigt sich der Kern: Ohne Ursachensperre entstehen Sätze wie „Der Anstieg der
+Energiekosten resultiert aus gestiegenen Marktpreisen" oder „Die Instandhaltung konnte durch
+effizientere Planung reduziert werden". Keiner dieser Sätze ist aus den Daten belegbar, und der
+zweite ist zusätzlich beschönigend.</p>
+<p>Bewertungskriterien: (1) alle Prozentwerte in Excel nachgerechnet und Differenzen notiert;
+(2) keine Ursachenbehauptung im Kommentar; (3) die Unterschreitung bei der Instandhaltung ist als
+Risiko und nicht als Erfolg eingeordnet; (4) je Abweichung eine konkrete, beantwortbare Rückfrage
+an eine benannte Stelle.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Monatsabschluss mit KI-Unterstützung</summary>
+<p><strong>Szenario:</strong> Du arbeitest in der Buchhaltung der Musterhandel GmbH, ein Team von drei Personen.
+Der Monatsabschluss März steht an, eine Kollegin ist krank, und die Geschäftsführung erwartet den
+Bericht zwei Tage früher als üblich. Zu erledigen sind ein Stapel Eingangsrechnungen, ein Mahnlauf,
+die Kommentierung der Abweichungen und – neu – eine Festlegung, wie der KI-Einsatz künftig
+dokumentiert wird. Der Steuerberater hat angekündigt, im Sommer die Verfahrensdokumentation zu
+prüfen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+Musterhandel GmbH, Handel mit Lager- und Bueroeinrichtung, 140 Beschaeftigte
+Buchhaltung: 3 Personen, aktuell 2 verfuegbar
+Eingangsrechnungen im Monat: rund 260, davon 40 mit Klaerungsbedarf
+Offene Posten ueber Faelligkeit: 34 Rechnungen, 7 davon ueber 30 Tage
+Zahlungsziel 14 Tage netto, Mengenrabatt und Skonto laut Vertrag
+Kontenplan liegt als interne Datei in SharePoint
+Werkzeuge: Copilot in M365 freigegeben, Excel, Buchhaltungssystem mit Protokoll
+Mahnbausteine zu Zinsen und Kosten liegen als geprueftes Dokument vor
+</code></pre></div></td></tr></table></div>
+<p>Lege dir für die Arbeit mindestens acht erfundene Eingangsrechnungen an. Mindestens drei davon
+müssen fehlerhaft sein: ein Rechenfehler, eine fehlende Pflichtangabe und eine Rechnung, die
+periodenübergreifend abzugrenzen ist. Verwende keine echten Belege und keine echten Kontodaten.</p>
+<hr />
+<p><strong>Runde 1 – Grundlage bauen.</strong> Baue die drei Bausteine des Abschlusses. Erstens die
+<strong>Belegerfassung</strong>: Übertrage alle acht Rechnungen mit Fundstellen in eine Tabelle und führe alle
+sechs Plausibilitätsprüfungen aus dem Kapitel durch; jede Rechnung erhält einen Befundstatus.
+Zweitens die <strong>Kontierungsvorschläge</strong>: für jede prüffähige Rechnung ein Vorschlag mit Begründung,
+Sicherheitsgrad und offener Frage. Drittens die vier abgestuften <strong>Mahnvorlagen</strong> mit Platzhaltern.
+Rechne jede Zahl in Excel oder im System, nicht im Chatfenster.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Arbeitsergebnisse müssen <strong>alle vier</strong>
+Kriterien erfüllen. Prüfe einzeln nach und korrigiere:</p>
+<ol>
+<li>Keine Zahl in deinen Unterlagen stammt aus einem Chatfenster – jede ist in Excel oder im System
+   nachgerechnet und die Rechnung ist nachvollziehbar dokumentiert.</li>
+<li>Die drei fehlerhaften Rechnungen sind als Befund ausgewiesen und nicht stillschweigend
+   korrigiert; zu jeder ist festgehalten, was die Buchung blockiert und wer zu kontaktieren ist.</li>
+<li>Jeder Kontierungsvorschlag ist ausdrücklich als Vorschlag gekennzeichnet, nennt nur Konten aus
+   dem internen Kontenplan und hat bei Sicherheitsgrad niedrig eine konkrete offene Frage.</li>
+<li>Keine Mahnvorlage enthält Verzugszinsen, Mahnkosten, Paragrafen oder Schadensersatzangaben aus
+   dem Werkzeug; solche Angaben stammen ausschließlich aus dem geprüften Baustein.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Vier Dinge treffen zusammen. Erstens fällt auf, dass eine
+Eingangsrechnung bereits im Februar erfasst wurde – der Lieferant hat sie nach einer Mahnung erneut
+geschickt, mit abweichender Rechnungsnummer. Zweitens hat ein Kunde aus dem Mahnlauf tatsächlich
+bezahlt, die Zahlung war aber einer falschen Rechnung zugeordnet; die Mahnung ist bereits heraus.
+Drittens ergibt deine Abweichungsübersicht eine Unterschreitung bei der Instandhaltung von fast
+50 Prozent, und die Geschäftsführung möchte das im Bericht als Kostendisziplin gewürdigt sehen.
+Viertens bittet dich die zweite Kollegin, ihre Kontierungsvorschläge „einfach mitzufreigeben", weil
+die Zeit fehlt. Bearbeite alles: Dokumentiere den Dublettenfall nachvollziehbar samt Korrekturweg;
+formuliere eine Nachricht an den fälschlich gemahnten Kunden, die den Fehler benennt ohne
+Rechtsansprüche einzuräumen; formuliere die Instandhaltungsposition sachlich, ohne die geforderte
+Deutung zu übernehmen und ohne eine Ursache zu erfinden; und beantworte die Bitte um Mitfreigabe.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Geschäftsführung schlägt vor, ab dem nächsten Monat
+alle Kontierungsvorschläge mit Sicherheitsgrad hoch automatisch zu buchen, „weil die KI da ohnehin
+richtig liegt", und die Verfahrensdokumentation „später zu machen, wenn wieder Luft ist". Lass dir
+von einem KI-Werkzeug Argumente für und gegen beide Vorschläge geben, entscheide begründet, und
+<strong>widersprich</strong> mindestens einem der beiden Vorschläge mit tragfähiger Begründung. Entwirf
+abschließend einen realistischen Gegenvorschlag: Wo lässt sich Zeit sparen, ohne Vier-Augen-Prinzip
+und Nachvollziehbarkeit aufzugeben?</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Belegtabelle mit Fundstellen, Befundstatus und dokumentierten Rechenwegen sowie die
+   Kontierungsvorschläge mit Sicherheitsgrad und offenen Fragen</li>
+<li>vier Mahnvorlagen plus ausgefüllte Prüfmatrix der vier Pflichtkriterien</li>
+<li>Bearbeitung aller vier Punkte aus Runde 3: Dublettendokumentation mit Korrekturweg, Nachricht an
+   den fälschlich gemahnten Kunden, sachliche Formulierung zur Instandhaltung, Antwort zur
+   Mitfreigabe</li>
+<li>begründete Entscheidung zu Automatikbuchung und Verfahrensdokumentation samt Gegenvorschlag zur
+   Zeitersparnis</li>
+<li>Entwurf des Dokumentationsblatts für den KI-Einsatz: Werkzeug, Prompt-Vorlage mit Version,
+   prüfende Person, Änderungen am Vorschlag, Umgang mit abgelehnten Vorschlägen</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> keine Zahl deiner Unterlagen aus einem Chatfenster stammt, die drei
+fehlerhaften Rechnungen als Befund und nicht als korrigierter Wert erscheinen, die
+Instandhaltungsposition weder als Erfolg gewürdigt noch mit einer erfundenen Ursache versehen ist,
+du die Bitte um Mitfreigabe klar beantwortet hast, und deine Entscheidung in Runde 4 mindestens
+einem Vorschlag der Geschäftsführung begründet widerspricht.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Runde 3 enthält drei Situationen, in denen Bequemlichkeit und
+Erwartungsdruck genau gegen die Regeln dieses Kapitels drücken: Die Mitfreigabe hebelt das
+Vier-Augen-Prinzip aus, ohne dass es jemand böse meint. Die gewünschte Würdigung der
+Instandhaltung verlangt eine Deutung, die die Daten nicht hergeben – und die im nächsten Quartal
+peinlich wird, wenn die verschobenen Maßnahmen anfallen. Der Dublettenfall ist der beste Test für
+Nachvollziehbarkeit: Wichtig ist nicht, dass er gefunden wird, sondern dass Fund, Ursache und
+Korrektur so dokumentiert sind, dass ein Prüfer sie ohne Rückfrage versteht. In Runde 4 liegt die
+Falle im Begriff Sicherheitsgrad hoch: Das ist eine Selbstauskunft des Werkzeugs, kein Prüfergebnis.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Die Belegtabelle weist zu jeder Rechnung Fundstellen und Befundstatus aus,
+und die Kontierungsvorschläge nennen ausschließlich Konten aus dem internen Kontenplan, sind als
+Vorschlag gekennzeichnet und haben bei niedrigem Sicherheitsgrad eine konkrete Frage; (2) die
+Prüfmatrix belegt alle vier Kriterien mit Nachweisen statt Häkchen, insbesondere die Herkunft jeder
+Zahl und die Freiheit der Mahnvorlagen von Rechtsangaben aus dem Werkzeug; (3) die
+Dublettendokumentation macht Fund, Ursache und Korrekturweg für einen Dritten verständlich, die
+Nachricht an den Kunden benennt den Fehler sachlich ohne Anspruchseinräumung, die
+Instandhaltungsposition ist beschreibend formuliert und als Prüfpunkt statt als Erfolg ausgewiesen,
+und die Bitte um Mitfreigabe ist mit Bezug auf das Vier-Augen-Prinzip abgelehnt und durch einen
+praktikablen Vorschlag ersetzt; (4) die Entscheidung in Runde 4 erkennt, dass Sicherheitsgrad hoch
+eine Selbsteinschätzung ohne Prüfwert ist, behandelt die Verfahrensdokumentation als Pflicht und
+nicht als Restarbeit, und der Gegenvorschlag benennt echte Zeitfresser wie Abtippen, Suchen von
+Fundstellen und uneinheitliche Mahntexte; (5) das Dokumentationsblatt enthält alle fünf Felder und
+ist so gestaltet, dass es je Vorgang tatsächlich ausgefüllt werden kann.</p>
+<p>Lernziel: KI im Rechnungswesen so einsetzen, dass Zeitgewinn und Nachvollziehbarkeit sich nicht
+ausschließen – und unter realem Termindruck erkennen, an welchen Stellen Vier-Augen-Prinzip,
+Belegtreue und Dokumentation nicht verhandelbar sind.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel15/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 15 – Fallbeispiel Vertrieb">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 15 – Fallbeispiel Vertrieb
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel17/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 17 – Workflow-Grundlagen">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 17 – Workflow-Grundlagen
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

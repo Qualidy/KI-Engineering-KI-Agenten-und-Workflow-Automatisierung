@@ -1,0 +1,89 @@
+title: Projektetappe 6 – Präsentation vorbereiten, halten und Ausblick planen
+difficulty: 4
+question: |
+  **Projektetappe:** Letzte Etappe. Grundlage ist dein Projekt mit Dokumentation (Kap. 39) und
+  Betriebskonzept (Kap. 38). Am Ende dieses Workshops hast du eine Zehn-Minuten-Präsentation
+  vorbereitet, einmal vollständig gehalten, eine Fragerunde überstanden – und einen Plan für die
+  ersten 90 Tage nach dem Kurs.
+
+  ```text
+  Rueckfallebenen:
+  Flow laeuft nicht vollstaendig -> praesentiere den erreichten Stand ehrlich:
+    Problem, Design, gebauter Teil, Blocker, was du gelernt hast. Das ist eine
+    vollwertige Praesentation.
+  Live-Demo nicht moeglich -> zeige eine Aufzeichnung oder fuehre die Schritte
+    an vorbereiteten Testdaten von Hand vor.
+  Kein Publikum verfuegbar -> halte die Praesentation mit Aufzeichnung und
+    fuehre die Fragerunde mit einem KI-Werkzeug als Fragesteller.
+  ```
+
+  ---
+
+  **Runde 1 – Storyline und Demo aufbauen.** Fülle die Storyline-Vorlage aus: Einstiegssatz,
+  Ausgangslage mit Zahl, Lösung in drei Sätzen, Demo-Ablauf, Nutzenaussage mit Messweg, Grenzen,
+  nächste Schritte, Schlusssatz. Bereite die Demo vollständig vor: Testdaten benannt und
+  bereitgelegt, alle Ansichten vorher geöffnet, keine Echtdaten sichtbar, Aufzeichnung eines
+  gelungenen Durchlaufs als Rückfallebene erstellt.
+
+  **Runde 2 – Probelauf gegen vier Pflichtkriterien.** Halte die Präsentation einmal vollständig
+  mit Stoppuhr, laut gesprochen. Sie muss **alle vier** Kriterien erfüllen:
+
+  1. Die Gesamtzeit liegt zwischen **8 und 11 Minuten**, und der Nutzenteil kommt tatsächlich vor –
+     nicht als abgeschnittener Rest.
+  2. Jede genannte Zahl ist auf eine Messung oder ein Protokoll in deiner Doku zurückführbar.
+  3. Der Abschnitt **Grenzen** benennt mindestens zwei Grenzen und einen bewusst nicht
+     automatisierten Entscheidungspunkt mit Begründung.
+  4. Die **Demo ist abgesichert**: vorher am Einsatzgerät getestet, Testdaten vorbereitet,
+     Aufzeichnung vorhanden, kein Echtdatensatz und keine echten Personennamen zu sehen.
+
+  **Runde 3 – Die Komplikation.** Simuliere den Ausfall: Führe die Präsentation ein zweites Mal
+  durch, aber **ohne funktionierende Live-Demo** – als wäre die Anmeldung abgelaufen oder der
+  Trigger zu langsam. Du hast dafür maximal zwei Minuten Demo-Zeit. Baue den Übergang so, dass das
+  Publikum den Ausfall als eingeplant erlebt und keine inhaltliche Lücke entsteht. Notiere danach,
+  welche Inhalte du in dieser Fassung gestrichen hast und ob die Präsentation dadurch schlechter
+  wurde – oder überraschend besser.
+
+  **Runde 4 – Fragerunde und Entscheidung unter Abwägung.** Lass dir acht kritische Fragen
+  stellen: von einer echten Person oder von deinem KI-Werkzeug in der Rolle einer skeptischen
+  Führungskraft (Datenschutz, Nutzen, Betrieb, Personalwechsel). Beantworte alle acht mündlich,
+  vier davon zusätzlich schriftlich. In den Rückmeldungen wird eine Erwartung auftauchen, die dein
+  Projekt ausweiten will: mehr Automatik, Verzicht auf die Freigabe, Ausrollen in weitere
+  Abteilungen, sofortiger Start ohne die offenen Punkte. **Widersprich mindestens einer dieser
+  Erwartungen begründet** und formuliere daraus deine nächsten Schritte: Was du zusagst, was du
+  ablehnst, und unter welcher Bedingung du es später tun würdest. Schließe mit deinem
+  **90-Tage-Plan** ab: Tage 1–30 sichern, 31–60 zweiter Use Case, 61–90 Wissen weitergeben, mit je
+  einem konkreten Termin.
+
+  **Deliverable:**
+
+  1. ausgefüllte Storyline und die Präsentationsunterlage, die du tatsächlich verwendet hast
+  2. Nachweis der abgesicherten Demo: vorbereitete Testdaten und Aufzeichnung
+  3. Notiz zum Probelauf mit Zeiten je Abschnitt plus die Auswertung der Fassung ohne Live-Demo
+  4. schriftliche Antworten auf vier kritische Fragen, die begründete Zurückweisung einer
+     Ausweitungserwartung und der 90-Tage-Plan mit drei Terminen
+
+  **Fertig bist du erst, wenn** du die Präsentation zweimal vollständig gehalten hast – einmal mit
+  und einmal ohne Live-Demo –, jede genannte Zahl in deiner Doku belegt ist, alle acht kritischen
+  Fragen beantwortet sind, und dein 90-Tage-Plan drei Einträge mit konkretem Termin im Kalender
+  hat statt drei Absichten.
+tip: |
+  Der Lernwert steckt in Runde 3 und 4. Die Fassung ohne Demo ist keine Notlösung, sondern ein
+  Test deiner Storyline: Wenn die Präsentation ohne laufenden Flow zusammenbricht, hat sie zu stark
+  an der Vorführung gehangen und zu wenig an Problem, Nutzen und Entscheidungen. Viele merken hier
+  zum ersten Mal, dass der überzeugendste Teil nicht die Technik ist, sondern der Satz „das haben
+  wir bewusst nicht automatisiert, weil …". In Runde 4 geht es um die letzte Kompetenz dieses
+  Kurses: einer wohlmeinenden Ausweitungserwartung standzuhalten, solange die Betriebsvoraussetzungen
+  dafür fehlen.
+solution: |
+  Bewertungskriterien: (1) die Storyline ist vollständig und die Präsentation folgt der Struktur
+  Problem, Lösung, Demo, Nutzen, Grenzen, nächste Schritte in der vorgesehenen Zeit; (2) alle vier
+  Pflichtkriterien sind erfüllt, insbesondere belegbare Zahlen, benannte Grenzen mit einem bewusst
+  nicht automatisierten Entscheidungspunkt und eine nachweislich abgesicherte Demo ohne Echtdaten;
+  (3) die Fassung ohne Live-Demo aus Runde 3 trägt inhaltlich und die Streichungen sind reflektiert;
+  (4) die Fragerunde ist vollständig beantwortet, mindestens eine Ausweitungserwartung ist begründet
+  zurückgewiesen und in eine Bedingung überführt, und der 90-Tage-Plan enthält drei terminierte,
+  konkrete Vorhaben.
+
+  Lernziel: Ein Ergebnis so zeigen, dass Nutzen belegt und Grenzen sichtbar sind – und den Bogen
+  des gesamten Kurses schließen: verlässliche Automatisierung außen, KI innen, Mensch an den
+  Entscheidungspunkten, auch wenn alle Beteiligten mehr Automatik wünschen.

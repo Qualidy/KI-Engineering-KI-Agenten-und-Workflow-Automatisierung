@@ -1,0 +1,91 @@
+title: Copilot-Startpaket für das Team Kundenservice
+difficulty: 4
+question: |
+  **Szenario:** Bei der Musterhandel GmbH wurde Copilot für das Team Kundenservice
+  freigeschaltet – zwölf Personen, sehr unterschiedliche Vorkenntnisse. Nach zwei Wochen ist
+  die Stimmung gekippt: Drei Personen nutzen es täglich, sieben haben es nach dem ersten
+  enttäuschenden Versuch liegen lassen, zwei kopieren Kundenmails in ein privates
+  ChatGPT-Konto, weil es „dort besser funktioniert". Die Teamleiterin, Frau Berger, bittet dich
+  um ein **Startpaket**, mit dem das Team in einer Stunde arbeitsfähig wird.
+
+  ```text
+  Ausgangslage Team Kundenservice, Musterhandel GmbH:
+  12 Personen, davon 4 in Teilzeit
+  Taeglich rund 180 Kundenmails, 30 Rueckrufe, 5 Eskalationen
+  Ablage: Reklamationsvorlagen und Garantierichtlinie in SharePoint
+  Viele persoenliche Arbeitsdateien liegen lokal auf dem Notebook
+  Copilot Chat verfuegbar, Copilot in Word und Outlook nur fuer 5 Lizenzen
+  ```
+
+  ---
+
+  **Runde 1 – Kontext-Landkarte bauen.** Erstelle eine Übersicht, welche Informationsquellen
+  des Teams für Copilot überhaupt erreichbar sind. Liste mindestens **zehn** Quellen auf
+  (Postfach, Teams-Kanäle, SharePoint-Bibliotheken, Excel-Listen, lokale Ordner, Papierakten,
+  Fachsystem) und ordne jeder zu: erreichbar über Copilot ja/nein, Begründung, und falls nein,
+  welcher Ausweichweg bleibt. Markiere die drei Quellen, deren Verlagerung in die Cloud den
+  größten Effekt hätte.
+
+  **Runde 2 – Auftragsvorlagen erstellen und prüfen.** Entwickle **sechs** wiederverwendbare
+  Auftragsvorlagen für die häufigsten Tätigkeiten des Teams (zum Beispiel Reklamation
+  zusammenfassen, Antwortentwurf, Eskalation aufbereiten, Wochenbericht, Vorlage anpassen,
+  Rückrufnotiz). Jede Vorlage nutzt Platzhalter in eckigen Klammern. Alle sechs müssen **alle
+  vier** Pflichtkriterien erfüllen – prüfe sie einzeln nach und korrigiere:
+
+  1. Rolle, Aufgabe, Kontextquelle, Format und Einschränkung sind ausdrücklich benannt.
+  2. Die Kontextquelle ist konkret nachvollziehbar benannt, nicht als „unsere Unterlagen".
+  3. Eine Einschränkung verbietet Angaben, die nicht in der Quelle stehen, und regelt, was
+     bei fehlenden Angaben geschieht.
+  4. Die Vorlage funktioniert auch für die sieben Personen **ohne** App-Lizenz, also in
+     Copilot Chat mit eingefügtem Text.
+
+  **Runde 3 – Die Komplikation.** Zwei Dinge passieren gleichzeitig. Erstens berichtet ein
+  Teammitglied, dass Copilot in einer Zusammenfassung eine Gehaltsübersicht zitiert hat, die
+  offensichtlich nicht für den Kundenservice gedacht war – die SharePoint-Freigabe ist zu weit
+  gesetzt. Zweitens ist eine deiner Vorlagen bei einem Test durchgefallen: Der erzeugte
+  Antwortentwurf nannte eine Garantiefrist, die es bei Musterhandel nicht gibt. Bearbeite beides:
+  Formuliere für den Freigabefund einen sachlichen Meldeweg an die IT und erkläre dem Team in
+  drei Sätzen, warum Copilot hier **nicht** die Ursache ist. Überarbeite die durchgefallene
+  Vorlage so, dass der Fehler strukturell nicht mehr auftreten kann, und belege die Wirkung mit
+  einem erneuten Testlauf.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Frau Berger möchte die zwei Kolleginnen, die
+  private Konten nutzen, „einfach machen lassen, solange die Ergebnisse gut sind", und
+  zusätzlich alle fünf App-Lizenzen an die drei Vielnutzenden geben, damit sichtbare Erfolge
+  entstehen. Lass dir von einem KI-Werkzeug Argumente für und gegen beide Vorgaben geben,
+  entscheide dann begründet – und **widersprich** mindestens einer der beiden Vorgaben mit einer
+  tragfähigen Begründung und einem konkreten Gegenvorschlag zur Lizenzverteilung.
+
+  **Deliverable:**
+
+  1. Kontext-Landkarte als Tabelle (mindestens zehn Quellen, alle Spalten gefüllt, drei markiert)
+  2. sechs Auftragsvorlagen plus ausgefüllte Prüfliste der vier Pflichtkriterien
+  3. Meldeweg zum Freigabefund, Team-Erklärung in drei Sätzen und die überarbeitete Vorlage mit
+     Vorher-Nachher-Testergebnis
+  4. begründete Entscheidung zu Lizenzverteilung und privaten Konten, inklusive des
+     abgelehnten Vorschlags
+
+  **Fertig bist du erst, wenn** jede der sechs Vorlagen ohne App-Lizenz benutzbar ist, die
+  überarbeitete Vorlage die erfundene Frist im erneuten Test nachweislich nicht mehr erzeugt,
+  und deine Entscheidung in Runde 4 mindestens einer Vorgabe von Frau Berger begründet
+  widerspricht.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Runde 1 und 2 sind Handwerk – wichtig, aber
+  erledigt. In Runde 3 kommt es darauf an, den Berechtigungsfund richtig einzuordnen: Copilot
+  hat kein Recht verletzt, es hat ein bestehendes Freigabeproblem sichtbar gemacht. Wer das
+  verwechselt, produziert ein Werkzeugverbot statt einer Rechtekorrektur. In Runde 4 ist die
+  bequeme Antwort, beide Vorgaben zu übernehmen. Frage dich stattdessen, welches Verhalten du
+  damit dauerhaft belohnst.
+solution: |
+  Bewertungskriterien: (1) Die Kontext-Landkarte unterscheidet korrekt zwischen Cloud-Inhalten
+  und nicht erreichbaren Quellen und benennt für jede nicht erreichbare Quelle einen realistischen
+  Ausweichweg; (2) alle sechs Vorlagen erfüllen die vier Pflichtkriterien nachweislich, insbesondere
+  die Nutzbarkeit ohne App-Lizenz und die Regel für fehlende Angaben; (3) der Berechtigungsfund wird
+  als Freigabeproblem und nicht als Copilot-Fehler eingeordnet, der Meldeweg ist sachlich und ohne
+  Schuldzuweisung, und die überarbeitete Vorlage zeigt im erneuten Test messbar bessere Bindung an
+  die Quelle; (4) die Entscheidung in Runde 4 wägt Nutzen, Vertraulichkeit und Teamwirkung ab,
+  benennt das Risiko privater Konten für Kundendaten konkret und begründet die Lizenzverteilung
+  nicht mit Sichtbarkeit allein.
+
+  Lernziel: Copilot als Werkzeug mit Datenraum, Berechtigungslogik und Kontextbedarf verstehen –
+  und daraus eine Arbeitsweise ableiten, die ein ganzes Team tragfähig statt zufällig nutzt.

@@ -1,0 +1,49 @@
+title: Gesprächsprotokoll zur CRM-Notiz verdichten
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug. Nutze dieses erfundene Gesprächsprotokoll.
+
+  ```text
+  Telefonat 06.03., Frau Berger, Bueroleitung Talwerk Montage, 22 Minuten.
+  Sie braucht 14 Werkbaenke und 60 Regalmeter fuer die neue Halle.
+  Zitat: Der Termin Quartalsende kommt vom Vermieter, die alte Halle ist gekuendigt.
+  Zitat: Ehrlich gesagt ist das Budget dieses Jahr eigentlich schon verplant.
+  Sie sagt, der Geschaeftsfuehrer Herr Kolb entscheidet ueber Betraege ab 20000 Euro.
+  Herr Kolb ist bis 20.03. im Urlaub.
+  Sie erwaehnt zwei weitere Angebote, eines sei deutlich guenstiger.
+  Zitat: Bei unserer letzten Lieferung kam die Haelfte beschaedigt an, das darf
+  nicht wieder passieren.
+  Sie bittet um ein Angebot bis 10.03. und um Angabe der Lieferzeit.
+  Am Ende sagt sie, sie sei optimistisch, dass man zusammenkommt.
+  ```
+
+  1. Erzeuge die CRM-Notiz mit dem Prompt-Muster aus dem Kapitel.
+  2. Prüfe die Notiz gegen das Protokoll: Ist jedes Zitat wortnah erhalten? Ist ein Warnsignal
+     abgeschwächt oder verschwunden?
+  3. Erzeuge dieselbe Notiz absichtlich noch einmal mit dem Auftrag „Fass das Gespräch positiv und
+     knapp zusammen" und vergleiche.
+  4. Benenne die drei Angaben, die in drei Monaten am wichtigsten sein werden, und begründe.
+tip: |
+  Im Protokoll stehen zwei Sätze, die gegen einen Abschluss sprechen, und einer, der dafür spricht.
+  Der positive steht am Ende – genau dort, wo Zusammenfassungen am stärksten gewichten.
+solution: |
+  Die entscheidenden Angaben sind: das verplante Budget, die Entscheidungsgrenze von 20.000 Euro
+  mit Herrn Kolb als Entscheider, seine Abwesenheit bis 20.03. bei einem gewünschten Angebot bis
+  10.03., der günstigere Wettbewerber und die Vorerfahrung mit Transportschäden.
+
+  In Schritt 3 zeigt sich der Kern der Übung. Die positive Kurzfassung produziert typischerweise
+  etwas wie: „Konkreter Bedarf für neue Halle, Termindruck durch Vermieterkündigung, Kundin
+  optimistisch, Angebot bis 10.03. erwünscht." Alles daran ist wahr – und die Notiz ist trotzdem
+  irreführend, weil das verplante Budget, der günstigere Wettbewerber und die Urlaubsabwesenheit des
+  Entscheiders fehlen. Wer in drei Monaten nur diese Notiz liest, versteht nicht, warum nichts
+  passiert ist.
+
+  Zusätzlich steckt hier ein handfester Terminkonflikt: Angebot bis 10.03. gewünscht, Entscheider
+  bis 20.03. im Urlaub, Beträge ab 20.000 Euro nur von ihm freigebbar. Eine gute Notiz benennt das
+  ausdrücklich als Widerspruch und leitet daraus den nächsten Schritt ab.
+
+  Bewertungskriterien: (1) alle vier Zitate wortnah erhalten; (2) keine Bewertung der
+  Abschlusswahrscheinlichkeit und keine Deutung der Stimmung, obwohl das Protokoll mit
+  „optimistisch" dazu einlädt; (3) der Terminkonflikt ist als Widerspruch benannt; (4) der nächste
+  Schritt hat Datum und Verantwortlichen. Kernerkenntnis: Eine Notiz ist nicht dann gut, wenn sie
+  angenehm zu lesen ist, sondern wenn sie in drei Monaten noch trägt.

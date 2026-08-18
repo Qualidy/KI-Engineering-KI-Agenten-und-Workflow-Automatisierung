@@ -1,0 +1,46 @@
+title: Lead qualifizieren mit Bekannt, Vermutung, Offen
+difficulty: 2
+question: |
+  Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude – die Angaben sind erfunden).
+
+  ```text
+  Was ich weiss:
+  Talwerk Montage, Leipzig, Montagedienstleister, rund 45 Beschaeftigte
+  Anfrage per Mail von Frau Berger, Bueroleitung
+  Gefragt wurde nach Werkbaenken und Regalsystemen fuer eine neue Halle
+  Sie schrieb, es muesse bis Ende des Quartals stehen
+  Budget wurde nicht genannt, Entscheider wurde nicht genannt
+  ```
+
+  1. Erzeuge mit dem Prompt-Muster aus dem Kapitel die Tabelle **Bekannt, Vermutung, Offen** sowie
+     acht Qualifizierungsfragen.
+  2. Prüfe die Spalte **Bekannt** Zeile für Zeile: Steht jede Angabe wirklich oben? Streiche alles,
+     was hineingerutscht ist.
+  3. Stelle danach absichtlich die schlechte Frage: „Was weißt du über die Talwerk Montage in
+     Leipzig?" und vergleiche die Antwort mit deiner Faktenliste.
+  4. Notiere aus dem Vergleich eine Regel für deine eigene Lead-Recherche.
+tip: |
+  Achte in Schritt 2 besonders auf Branchenannahmen. Aus „Montagedienstleister" wird schnell
+  „arbeitet überwiegend im Anlagenbau" – das steht nirgends und ist im Gespräch peinlich.
+solution: |
+  Belastbare Aufteilung:
+
+  | Bekannt | Vermutung | Offen |
+  |---|---|---|
+  | Firma, Ort, Branche, Größenordnung 45 Beschäftigte | dass eine neue Halle Wachstum bedeutet | Budgetrahmen |
+  | Kontaktperson Frau Berger, Büroleitung | dass Frau Berger mitentscheidet | Entscheidungsweg und Entscheider |
+  | Bedarf Werkbänke und Regalsysteme | dass Menge und Flächen groß sind | konkrete Mengen und Maße |
+  | Zeitrahmen bis Quartalsende | dass der Termin fix ist | Auslöser für den Termin |
+  | – | dass kein Lieferant gesetzt ist | Wettbewerbssituation |
+
+  Starke Qualifizierungsfragen zielen genau auf die rechte Spalte: Welche Flächen und Stückzahlen?
+  Wer entscheidet neben Ihnen? Woran hängt der Quartalstermin? Gibt es bereits Angebote?
+  Welche Erfahrungen hatten Sie mit der bisherigen Ausstattung?
+
+  In Schritt 3 liefert das Werkzeug typischerweise eine glatte Firmenbeschreibung mit
+  Gründungsjahr, Leistungsspektrum und Standorten – alles erfunden, weil das Unternehmen erfunden
+  ist. Genau das würde bei einem echten Unternehmen ebenfalls teilweise passieren, nur unauffällig.
+
+  Beispielhafte Regel: Recherchefakten kommen aus CRM, Website, Mailverlauf oder Gespräch. Das
+  KI-Werkzeug strukturiert diese Fakten und formuliert die offenen Fragen – es liefert selbst keine
+  Fakten über Unternehmen.

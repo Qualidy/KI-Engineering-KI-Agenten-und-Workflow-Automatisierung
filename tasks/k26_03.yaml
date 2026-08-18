@@ -1,0 +1,55 @@
+title: Fremde Antwort auswerten und Fehlerfall behandeln
+difficulty: 3
+question: |
+  Diese Übung baust du in Power Automate. Ziel ist ein Flow, der eine JSON-Antwort eines fremden
+  Dienstes auswertet und den Fehlerfall nicht verschweigt.
+
+  1. Erstelle einen Instant-Cloud-Flow. Steht dir die Premium-Aktion `HTTP-Anforderung (HTTP)`
+     zur Verfügung, rufe damit den erfundenen Endpunkt
+     `https://api.kursdienst.example/v1/kurse?basis=EUR&ziel=CHF` auf – er wird fehlschlagen,
+     genau das ist Teil der Übung. Andernfalls simuliere die Antwort mit einer `Verfassen`-Aktion,
+     die folgenden Text enthält:
+
+     ```text
+     {
+       "basis": "EUR",
+       "datum": "2026-03-04",
+       "kurse": { "CHF": 0.9612 }
+     }
+     ```
+
+  2. Verarbeite die Antwort mit `JSON analysieren (Parse JSON)` und lies den Kurs für `CHF` heraus.
+  3. Prüfe mit einer `Bedingung`, ob der Aufruf erfolgreich war, und schreibe im Erfolgsfall Datum
+     und Kurs in eine SharePoint-Liste, im Fehlerfall eine Teams-Nachricht mit Statuscode.
+  4. Stelle an der aufrufenden Aktion unter `Einstellungen` die **Wiederholungsrichtlinie** auf
+     einen Wert ein, der zu deinem Fehlerfall passt, und begründe die Einstellung in einem Satz.
+tip: |
+  Für das Schema in `JSON analysieren` brauchst du nichts zu tippen: Schaltfläche
+  `Nutzlast-Beispiel zum Generieren des Schemas verwenden` und den Beispieltext einfügen.
+  Verschachtelte Felder erreichst du über den Pfad, nicht über den Feldnamen allein.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Trigger: Manuell ausloesen
+  Aktion:  HTTP-Anforderung  (oder Verfassen mit Beispieltext)
+             Einstellungen: Wiederholungsrichtlinie exponentiell, 4 Versuche
+  Aktion:  JSON analysieren  (Inhalt = Body des vorigen Schritts, Schema aus Beispiel)
+  Aktion:  Bedingung  ->  Statuscode ist gleich 200
+             Falls ja:
+               Aktion: Element erstellen  (Titel = Feld datum, Kurs = Feld CHF)
+             Falls nein:
+               Aktion: Nachricht in einem Chat oder Kanal veroeffentlichen
+                         Text mit Statuscode und Fehlermeldung
+  ```
+
+  Der Kurs wird über den verschachtelten Pfad gelesen, zum Beispiel
+  `body('JSON_analysieren')?['kurse']?['CHF']`. Das Fragezeichen verhindert einen Abbruch, wenn
+  das Feld fehlt.
+
+  Bewertung: (1) Die Antwort wird geprüft, nicht angenommen – der Fehlerzweig existiert.
+  (2) Beim erfundenen Endpunkt entsteht ein Verbindungsfehler; wer den Ausführungsverlauf liest,
+  erkennt das an der Fehlermeldung des HTTP-Schritts und nicht an einem Statuscode 200.
+  (3) Begründung der Wiederholungsrichtlinie: sinnvoll bei 429 und 500, sinnlos bei 400, 401 und
+  404 – dort verlängert sie nur die Laufzeit. (4) Der Fehlerzweig meldet an einen Kanal, nicht an
+  eine Einzelperson, damit die Meldung im Urlaubsfall gesehen wird.

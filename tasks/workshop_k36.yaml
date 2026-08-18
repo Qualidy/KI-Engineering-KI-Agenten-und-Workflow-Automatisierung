@@ -1,0 +1,87 @@
+title: Projektetappe 2 – Automatisierungsdesign und Testfälle fertigstellen
+difficulty: 4
+question: |
+  **Projektetappe:** Zweite Etappe deines Projekts. Grundlage ist der Projektsteckbrief aus
+  Kapitel 35. Am Ende dieses Workshops liegt ein vollständiges Flow-Design vor, das jemand
+  anderes bauen könnte, dazu Testfälle, Zeitplan, Annahmen und Risiken. Gebaut wird noch nichts.
+
+  ```text
+  Rueckfallebene:
+  Falls dein Steckbrief noch unvollstaendig ist, fuelle die fehlenden Felder
+  jetzt in 20 Minuten aus und markiere Unsicherheiten als Annahme.
+  Falls du deinen Use Case gewechselt hast, arbeite mit dem neuen und notiere
+  den Wechsel mit Datum und Grund.
+  ```
+
+  ---
+
+  **Runde 1 – Soll-Prozess und Flow-Design.** Modelliere zuerst den Soll-Prozess in maximal acht
+  Schritten und markiere für jeden Ist-Schritt, ob er wegfällt, automatisiert wird oder beim
+  Menschen bleibt. Fülle danach das **Flow-Design-Blatt** vollständig aus: Trigger und
+  Trigger-Bedingung, Schritte mit Ergebnis, Datenquellen mit Zugangsstatus, Entscheidungspunkte,
+  KI-Stelle mit erzwungenem Ausgabeformat, Fehlerpfade, menschliche Freigabe mit Frist.
+
+  **Runde 2 – Prüfung gegen vier Pflichtkriterien.** Dein Design muss **alle vier** Kriterien
+  erfüllen. Lass dir Gegenfragen von deinem KI-Werkzeug stellen, schließe die Lücken selbst:
+
+  1. Es gibt mindestens **sechs Testfälle**: zwei Normalfälle, zwei Grenzfälle, ein Negativfall,
+     ein KI-Zweifelsfall – jeder mit prüfbar formuliertem erwarteten Ergebnis.
+  2. Für **jeden** Schritt, der auf ein anderes System zugreift, ist ein Verhalten im Fehlerfall
+     festgelegt, inklusive der Person, die benachrichtigt wird.
+  3. Die **Datenschutz-Vorprüfung** ist ausgefüllt: verarbeitete Datenarten, Speicherort,
+     Aufbewahrung, und die Feststellung, welche Felder die KI-Stelle **nicht** bekommt.
+  4. Es gibt vier **Meilensteine** mit Abschlussbedingung sowie mindestens drei Annahmen und
+     drei Risiken mit jeweils einer Gegenmaßnahme, die du selbst umsetzen kannst.
+
+  **Runde 3 – Die Komplikation.** Eine Woche vor dem Bauen ändert sich die Lage. Wähle die
+  Variante, die zu deinem Projekt passt, und überarbeite dein Design entsprechend:
+
+  - **Variante A:** Die geplante Datenquelle steht nicht zur Verfügung – der Connector fehlt, die
+    Rechte werden nicht erteilt oder die Struktur ist anders als angenommen. Entwirf den
+    Ersatzweg vollständig und benenne, was dadurch schlechter wird.
+  - **Variante B:** Aus dem Fachbereich kommt eine zusätzliche Anforderung, die für sich
+    genommen sinnvoll ist (ein weiteres Feld, ein weiterer Empfänger, ein zweiter Eingangskanal).
+    Entscheide, ob sie in den ersten Schnitt gehört, und passe Design oder Nicht-Ziele an.
+
+  Aktualisiere in beiden Fällen auch die Testfälle – ein geändertes Design ohne geänderte
+  Testfälle ist ungeprüft.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Beschreibe deinem KI-Werkzeug dein Design und lass
+  dir vorschlagen, wie man es „noch besser" macht. Du bekommst mit hoher Wahrscheinlichkeit
+  Empfehlungen für mehr Automatisierung: Freigabeschritt weglassen, KI mehr entscheiden lassen,
+  Schwellenwerte lockern, damit weniger Fälle zur Prüfung gehen. Entscheide begründet – und
+  **widersprich** mindestens einem Vorschlag ausdrücklich. Halte in fünf bis acht Sätzen fest,
+  welchen Entscheidungspunkt du bewusst beim Menschen lässt, was dich das an Automatisierungsgrad
+  kostet und warum du diesen Preis zahlst.
+
+  **Deliverable:**
+
+  1. Soll-Prozess in maximal acht Schritten mit Kennzeichnung wegfallend, automatisiert,
+     menschlich
+  2. vollständig ausgefülltes Flow-Design-Blatt inklusive Fehlerpfaden und Freigabe mit Frist
+  3. Testfall-Tabelle mit mindestens sechs Fällen und ausgefüllte Datenschutz-Vorprüfung
+  4. Meilensteinplan mit Annahmen, Risiken und Gegenmaßnahmen plus die überarbeitete Fassung aus
+     Runde 3 und die Entscheidungsnotiz aus Runde 4
+
+  **Fertig bist du erst, wenn** eine prozessfremde Person dein Design-Blatt lesen und daraus die
+  Schrittfolge nachbauen könnte, kein Schritt mit Systemzugriff ohne Fehlerpfad ist, jede
+  Datenquelle einen geklärten Zugangsstatus hat und dein Negativfall ein Ergebnis beschreibt, bei
+  dem der Fall sichtbar bleibt statt still zu verschwinden.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Ein Design, das nur den Normalfall beschreibt, ist in einer
+  Stunde fertig und in der Bauphase wertlos. Achte in Runde 3 darauf, dass eine Designänderung
+  immer drei Dinge berührt: Schritte, Testfälle und Nicht-Ziele. Runde 4 trifft den Kern dieses
+  Kurses: Mehr Automatisierung ist nicht automatisch besser. Der Freigabeschritt, den du bewusst
+  behältst, ist später dein stärkstes Argument gegen kritische Fragen (Kap. 40).
+solution: |
+  Bewertungskriterien: (1) der Soll-Prozess ist ein Neuentwurf mit erkennbar weggefallenen
+  Schritten und nicht die Ist-Abschrift, und das Flow-Design-Blatt ist in allen sieben
+  Bestandteilen ausgefüllt; (2) alle vier Pflichtkriterien sind erfüllt, insbesondere sechs
+  Testfälle mit prüfbaren Ergebnissen und Fehlerpfade mit benannter Benachrichtigung;
+  (3) die Komplikation aus Runde 3 ist vollständig eingearbeitet – Design, Testfälle und
+  Nicht-Ziele sind konsistent, und der Nachteil des Ersatzwegs bzw. die Scope-Entscheidung ist
+  benannt; (4) die Entscheidungsnotiz aus Runde 4 widerspricht mindestens einem
+  Automatisierungsvorschlag mit einer Begründung, die Fehlerfolgen und Verantwortung abwägt.
+
+  Lernziel: Ein Design so weit vorbereiten, dass die Bauphase nur noch Umsetzung ist – und dabei
+  bewusst entscheiden, welche Entscheidungspunkte beim Menschen bleiben.

@@ -1,0 +1,30 @@
+title: Trigger wählen und begründen
+difficulty: 1
+question: |
+  Für dein Projekt gibt es meist mehr als einen möglichen Auslöser.
+
+  1. Notiere **drei** mögliche Trigger für deinen Flow (z. B. neue Mail im Sammelpostfach,
+     neue Antwort in einem Formular, Zeitplan jeden Morgen, neues Element in einer Liste).
+  2. Schreibe zu jedem Trigger einen Satz, was schiefgehen kann: Läuft er zu oft, zu spät oder
+     zu unzuverlässig?
+  3. Entscheide dich für einen und formuliere zusätzlich die **Trigger-Bedingung**, die
+     verhindert, dass der Flow bei irrelevanten Ereignissen startet.
+tip: |
+  Denk an Doppelausführung (Kap. 18): Ein Trigger, der bei jeder Änderung feuert, kann denselben
+  Fall mehrfach verarbeiten. Eine Trigger-Bedingung oder ein Statusfeld verhindert das.
+solution: |
+  Qualitätskriterien: (1) drei wirklich unterschiedliche Trigger-Arten, nicht drei Varianten
+  derselben; (2) zu jedem Trigger ein konkretes Risiko, nicht „könnte nicht funktionieren";
+  (3) die gewählte Trigger-Bedingung schränkt nachvollziehbar ein.
+
+  Beispiel für ein gutes Ergebnis (Projekt: Rechnungseingang vorsortieren):
+
+  | Trigger | Risiko |
+  |---|---|
+  | Neue Mail im Sammelpostfach | feuert auch bei Werbung und Antwortmails, verarbeitet Nicht-Rechnungen |
+  | Neue Datei in einem SharePoint-Ordner | jemand muss die Datei erst dort ablegen, also bleibt ein manueller Schritt |
+  | Zeitplan täglich 7 Uhr, Postfach durchsuchen | einfacher Ablauf, aber bis zu 24 Stunden Verzögerung |
+
+  Gewählt: neue Mail im Sammelpostfach. Trigger-Bedingung: nur wenn ein Anhang vorhanden ist und
+  der Betreff nicht mit „AW:" oder „WG:" beginnt. Zusätzlich wird die Rechnungsnummer nach dem
+  Auslesen in der Liste geprüft, damit derselbe Beleg nicht doppelt angelegt wird.

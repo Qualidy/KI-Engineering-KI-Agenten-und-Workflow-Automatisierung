@@ -1,0 +1,33 @@
+title: Welches Werkzeug für welchen Fall?
+difficulty: 1
+question: |
+  Ordne jedem Vorhaben das naheliegendste Werkzeug zu: **Power Automate**, **Zapier**
+  oder **Make**. Begründe jeweils mit **einem** Kriterium aus dem Kapitel.
+
+  1. Eingehende Bewerbungen aus dem Postfach in eine SharePoint-Bibliothek ablegen und
+     der Fachabteilung eine Teams-Nachricht senden.
+  2. Aus einem kleinen Nischenwerkzeug für Veranstaltungsanmeldungen Teilnehmerdaten in
+     ein Newsletter-Werkzeug übertragen, ohne Personalbezug zu Beschäftigten.
+  3. Ein Ablauf, der je nach Lieferant sieben unterschiedliche Wege nimmt und dessen
+     Verzweigungen mit dem Einkauf abgestimmt werden müssen.
+  4. Ein älteres Warenwirtschaftsprogramm ohne Schnittstelle soll bedient werden.
+  5. Urlaubsanträge mit Freigabe, Erinnerung und nachvollziehbarem Protokoll.
+  6. Ein Marketingteam will in einer Stunde ausprobieren, ob sich ein Ablauf überhaupt lohnt.
+tip: |
+  Achte auf zwei Signalwörter: „ohne Schnittstelle" und „Protokoll". Beide zeigen sehr
+  eindeutig auf ein bestimmtes Werkzeug.
+solution: |
+  | Nr. | Werkzeug | Entscheidendes Kriterium |
+  |---|---|---|
+  | 1 | Power Automate | Integrationstiefe in Microsoft 365, dazu Bewerberdaten mit hohem Schutzbedarf |
+  | 2 | Zapier | breitester App-Katalog, Nischenanwendung ist dort am wahrscheinlichsten fertig angebunden |
+  | 3 | Make | visuelle Szenario-Ansicht macht sieben Wege für Nicht-Fachleute lesbar |
+  | 4 | Power Automate | Desktop-Automatisierung, nur dort verfügbar |
+  | 5 | Power Automate | Genehmigungsbaustein mit Erinnerung und Protokoll |
+  | 6 | Zapier | flachste Lernkurve, schnelles Ergebnis ohne IT-Beteiligung |
+
+  Zwei Ergänzungen: Bei Nummer 2 ist die Einschränkung „ohne Personalbezug zu
+  Beschäftigten" der Grund, warum die Wahl vertretbar ist – bei Personendaten müsste die
+  Vertragslage geprüft werden. Bei Nummer 6 ist Zapier für den **Versuch** richtig, für den
+  Dauerbetrieb wäre die Frage neu zu stellen. Ein Werkzeug für den Test ist nicht
+  automatisch das Werkzeug für den Betrieb.

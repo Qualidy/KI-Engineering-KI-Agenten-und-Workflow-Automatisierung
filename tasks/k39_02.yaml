@@ -1,0 +1,42 @@
+title: Doku-Abschnitt „KI-Bausteine" schreiben
+difficulty: 2
+question: |
+  Schreibe Abschnitt 4 deiner Dokumentation vollständig: **Eingesetzte KI-Bausteine**.
+
+  1. Aufgabe der KI in einem Satz – was genau übernimmt sie, was nicht.
+  2. Verwendeter Baustein (AI-Builder-Prompt-Aktion, Copilot-Studio-Agent, Chatwerkzeug als
+     manueller Zwischenschritt).
+  3. Der **Prompt im vollständigen Wortlaut**, so wie er tatsächlich eingesetzt ist.
+  4. Erwartetes Ausgabeformat und Verhalten bei unklarer oder fehlender Antwort.
+  5. Zwei Sätze zur Kalibrierung: erste Fassung, Änderung, Grund.
+
+  Falls dein Flow noch keine KI-Stelle enthält, dokumentiere die geplante Stelle und markiere sie
+  ausdrücklich als noch nicht umgesetzt.
+tip: |
+  Kürze den Prompt nicht „für die Lesbarkeit". Ein gekürzter Prompt in der Doku führt dazu, dass
+  jemand später eine andere Fassung einsetzt und sich über anderes Verhalten wundert.
+solution: |
+  Qualitätskriterien: (1) der Prompt steht im vollen Wortlaut und stimmt mit dem tatsächlich
+  eingesetzten überein; (2) das Ausgabeformat ist so beschrieben, dass man die Weiterverarbeitung
+  im Flow nachvollziehen kann; (3) das Verhalten im Zweifelsfall ist benannt; (4) die
+  Kalibrierungssätze nennen eine Änderung und ihren Grund, nicht nur „wurde verbessert".
+
+  Beispiel für ein gutes Ergebnis:
+
+  „Aufgabe: Die KI ordnet den Text des Anliegens einer von vier Kategorien zu und schreibt eine
+  Kurzzusammenfassung. Sie entscheidet nicht über Priorität gegenüber dem Kunden und beantwortet
+  keine Anfragen.
+
+  Baustein: Prompt-Aktion in Power Automate, aufgerufen in Schritt 2.
+
+  Prompt: [vollständiger Wortlaut, mehrere Zeilen, inklusive Werteliste und der Regel, bei
+  fehlender Zuordnung Unklar zu antworten]
+
+  Ausgabeformat: drei Zeilen mit den Bezeichnungen Kategorie, Dringlichkeit, Zusammenfassung. Der
+  Flow liest die Zeilen einzeln aus. Enthält die Antwort keine gültige Kategorie oder lautet sie
+  Unklar, setzt der Flow den Status auf Prüfung erforderlich und informiert die Teamleitung.
+
+  Kalibrierung: Die erste Fassung ohne feste Werteliste erzeugte eigene Kategorienamen wie
+  Reklamation. Ergänzt wurden die erlaubte Werteliste, die Ausweichantwort Unklar und eine Regel
+  für Anfragen zu bestehenden Verträgen, weil diese systematisch als Vertrieb statt Support
+  eingeordnet wurden."

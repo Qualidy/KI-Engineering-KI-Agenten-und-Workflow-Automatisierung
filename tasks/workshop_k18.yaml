@@ -1,0 +1,93 @@
+title: Flow-Entwurf als Schrittliste – Trigger, Felder, Datentypen
+difficulty: 4
+question: |
+  **Szenario:** Die Nordwind Handel GmbH will den Rechnungseingang aus Kapitel 17 endlich
+  ordnen. Gebaut wird noch nichts – du lieferst den vollständigen Entwurf, den man später
+  ohne Rückfragen umsetzen kann. Genau daran scheitern die meisten Vorhaben: Der Entwurf
+  klingt plausibel, aber beim Bauen fehlen Felder, Datentypen passen nicht und niemand hat
+  an die zweite Ausführung gedacht.
+
+  ```text
+  Sammelpostfach rechnung@nordwind-handel.de, ca. 300 Mails pro Monat.
+  Darunter: echte Rechnungen als PDF, Mahnungen, Werbung,
+    Abwesenheitsnotizen, Rueckfragen von Kolleginnen, Gutschriften.
+  Ziel: Ablage in SharePoint, Zeile in der Liste Rechnungseingang,
+    Freigabeanfrage an die zustaendige Kostenstelle.
+  Liste Rechnungseingang, Spalten:
+    Kennzeichen, Lieferant, Rechnungsnummer, Bestellnummer,
+    Eingangsdatum, Betrag, Kostenstelle, Status, Belegpfad
+  Regel: Betrag ueber 5000 Euro zusaetzlich Leitung Finanzen.
+  Skonto: 14 Tage, bei Verlust kostet das real Geld.
+  ```
+
+  ---
+
+  **Runde 1 – Entwurf als Schrittliste.** Schreibe den Ablauf als reine Textliste: eine Zeile
+  `Ausloeser:` und danach nummerierte Schritte. Verwende Platzhalter in eckigen Klammern für
+  alle Werte, die erst zur Laufzeit bekannt sind. Ergänze zwei Anlagen: eine
+  **Mapping-Tabelle** `Zielspalte | Herkunft | Datentyp | Umformung` für alle neun Spalten
+  und eine **Filterliste**, welche eingehenden Mails der Ablauf bearbeitet und welche nicht.
+  Begründe deine Trigger-Wahl in zwei Sätzen.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Entwurf muss **alle vier** Kriterien
+  erfüllen. Gehe sie einzeln durch und dokumentiere jede Änderung:
+
+  1. Jedes Zielfeld hat eine benannte Herkunft, einen Datentyp und – falls nötig – eine
+     Umformungsregel. Felder ohne sichere Herkunft sind ausdrücklich als offen markiert.
+  2. Der Entwurf ist **idempotent**: Es gibt ein eindeutiges Kennzeichen, eine Prüfung vor
+     dem ersten schreibenden Schritt, und die nach außen wirkenden Schritte stehen dahinter.
+  3. Für **jede** der sechs Mailsorten aus den Rahmendaten ist entschieden, was passiert –
+     bearbeiten, aussortieren oder an einen Menschen geben. Aussortierte Mails verschwinden
+     nicht spurlos.
+  4. Mindestens **zwei** Datentyp-Risiken sind benannt und mit einer Gegenmaßnahme versehen,
+     darunter eines zu Datum oder Zeitzone.
+
+  **Runde 3 – Die Komplikation.** Der Testlauf mit 30 echten Mails aus dem Archiv zeigt drei
+  Dinge: Bei 11 Mails steht keine Rechnungsnummer im Betreff. Zwei Lieferanten senden mehrere
+  Rechnungen in **einer** Mail mit drei PDF-Anhängen. Und eine Gutschrift wurde als Rechnung
+  über minus 340 Euro verarbeitet und an die Kostenstelle zur Freigabe geschickt. Überarbeite
+  den Entwurf so, dass alle drei Fälle abgedeckt sind – auch wenn das bedeutet, dass ein Teil
+  der Vorgänge bewusst an einen Menschen geht. Halte fest, wie viele der 30 Mails dein
+  überarbeiteter Ablauf vollautomatisch schafft.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Leitung Finanzen verlangt eine Quote von
+  „mindestens 95 Prozent vollautomatisch", weil sonst der Aufwand nicht lohne. Lass dir von
+  einem KI-Werkzeug Argumente für beide Seiten geben. Entscheide dann begründet, welche Quote
+  du zusagst, und **widersprich** der Vorgabe, wenn sie nur durch riskante Annahmen
+  erreichbar wäre. Rechne dabei gegen: Was kostet eine falsch freigegebene Rechnung im
+  Vergleich zu 20 Prozent manueller Nacharbeit?
+
+  **Deliverable:**
+
+  1. Schrittliste des Entwurfs inklusive Trigger-Begründung, Mapping-Tabelle und Filterliste
+  2. ausgefüllte Checkliste der vier Pflichtkriterien mit dokumentierten Änderungen
+  3. überarbeiteter Entwurf nach dem Testlauf, mit Angabe der erreichten Automatisierungsquote
+  4. begründete Zusage einer Quote inklusive der abgelehnten Alternative und ihrer Risiken
+
+  **Fertig bist du erst, wenn** dein Entwurf ohne Rückfrage baubar ist, das Kennzeichen und
+  die Idempotenzprüfung an der richtigen Stelle stehen, alle sechs Mailsorten behandelt sind,
+  die drei Befunde aus dem Testlauf sichtbar eingearbeitet sind und deine Quotenzusage mit
+  Zahlen statt mit Zuversicht begründet ist.
+tip: |
+  Runde 3 ist der Kern. Die drei Befunde sind keine Ausnahmen, sondern der Alltag: fehlende
+  Kennzeichen, mehrere Vorgänge in einer Sendung und ein Vorzeichen, an das niemand gedacht
+  hat. Die Gutschrift ist der lehrreichste Fall – sie durchläuft jede Prüfung fehlerfrei und
+  erzeugt trotzdem ein fachlich falsches Ergebnis. In Runde 4 liegt die Falle in der
+  Prozentzahl: Eine hohe Quote erreicht man leicht, indem man unsichere Fälle einfach
+  durchlässt. Genau das ist die teuerste Form von Automatisierung.
+solution: |
+  Bewertungskriterien: (1) Die Schrittliste hat genau einen Auslöser, verwendet Platzhalter
+  konsequent und die Mapping-Tabelle benennt für alle neun Spalten Herkunft, Datentyp und
+  Umformung – Betrag und Rechnungsnummer sind als unsicher markiert; (2) alle vier
+  Pflichtkriterien sind erfüllt, insbesondere ein Kennzeichen aus Lieferant und
+  Rechnungsnummer, die Prüfung **vor** dem ersten schreibenden Schritt und ein
+  nachvollziehbarer Verbleib aussortierter Mails; (3) der überarbeitete Entwurf löst alle
+  drei Befunde: fehlende Rechnungsnummer führt in einen Klärkorb statt in ein erfundenes
+  Kennzeichen, mehrere Anhänge erzeugen mehrere Vorgänge über eine Schleife (Kap. 19), und
+  negative Beträge werden als Gutschrift erkannt und getrennt behandelt; (4) die Quotenzusage
+  ist gerechnet, nicht geschätzt, und benennt ausdrücklich, welche Fälle bewusst bei Menschen
+  bleiben.
+
+  Lernziel: Aus einer Prozessaufnahme einen vollständigen, baubaren Ablaufentwurf machen –
+  mit Feldern, Datentypen, Filtern und Idempotenz – und die Versuchung abwehren, eine
+  Automatisierungsquote durch unsichere Annahmen zu erkaufen.

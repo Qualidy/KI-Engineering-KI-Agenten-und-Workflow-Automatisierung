@@ -1,0 +1,33 @@
+title: Drei Testfälle vor dem Bauen
+difficulty: 2
+question: |
+  Schreibe für dein Projekt drei Testfälle auf – **bevor** du etwas baust. Nutze die Spalten
+  Nr, Fallart, Eingabe, erwartetes Ergebnis.
+
+  1. Ein **Normalfall**: der erwartete Standardablauf.
+  2. Ein **Grenzfall**: zulässig, aber am Rand des Erwartbaren.
+  3. Ein **Negativfall**: darf ausdrücklich **nicht** normal durchlaufen, sondern muss zu einem
+     Hinweis oder Abbruch führen.
+
+  Formuliere jedes erwartete Ergebnis so konkret, dass zwei Personen unabhängig voneinander
+  gleich urteilen würden.
+tip: |
+  „Funktioniert" und „läuft durch" sind keine erwarteten Ergebnisse. Nenne den sichtbaren
+  Zustand danach: welcher Eintrag existiert, welchen Status er hat, wer eine Nachricht bekommt.
+solution: |
+  Qualitätskriterien: (1) die drei Fallarten sind wirklich unterschiedlich und nicht dreimal der
+  Normalfall in Variationen; (2) jede Eingabe ist so beschrieben, dass du sie als Testdatensatz
+  herstellen kannst; (3) jedes erwartete Ergebnis benennt einen prüfbaren Zustand; (4) beim
+  Negativfall steht, **wer** informiert wird und **dass** der Fall nicht still verschwindet.
+
+  Beispiel für ein gutes Ergebnis (Projekt: Kontaktanfragen vorsortieren):
+
+  | Nr | Fallart | Eingabe | Erwartetes Ergebnis |
+  |---|---|---|---|
+  | 1 | Normal | Formularantwort mit allen Feldern, Anliegen „Angebot für 50 Lizenzen" | Eintrag in Liste mit Kategorie Vertrieb, Status Neu, Bestätigungsmail an Absender |
+  | 2 | Grenz | Anliegen mit 900 Zeichen, zwei Themen gemischt, Umlaute im Firmennamen | Eintrag angelegt, Zusammenfassung maximal zwei Sätze, Kategorie gesetzt, Firmenname unverfälscht |
+  | 3 | Negativ | Formularantwort ohne Text im Feld Anliegen | kein Kategorisierungsversuch, Eintrag mit Status Prüfung erforderlich, Teams-Hinweis an Teamleitung |
+
+  Der Negativfall ist der lehrreichste: Er zwingt dich, im Design einen Pfad für unvollständige
+  Eingaben vorzusehen, statt später zu entdecken, dass die KI aus einem leeren Feld eine
+  Kategorie erfindet.

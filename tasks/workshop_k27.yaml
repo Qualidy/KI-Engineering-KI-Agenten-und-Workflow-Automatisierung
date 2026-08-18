@@ -1,0 +1,90 @@
+title: Ein Genehmigungsprozess, der nicht liegen bleibt
+difficulty: 4
+question: |
+  **Szenario:** In einer Verwaltung mit vier Standorten werden Schulungsanträge per Mail gestellt.
+  Die Anträge landen bei wechselnden Zuständigen, bleiben in Postfächern liegen und niemand kann
+  sagen, wie viele offen sind. Zweimal im letzten Jahr wurde ein Antrag erst nach Kursbeginn
+  entschieden. Die Bereichsleitung fordert: Jeder Antrag muss jederzeit sichtbar sein, innerhalb
+  von fünf Arbeitstagen entschieden und die Entscheidung muss nachvollziehbar dokumentiert sein.
+  Du baust den Prozess neu.
+
+  ```text
+  Rahmendaten:
+  4 Standorte, etwa 30 Schulungsantraege pro Monat.
+  Kosten je Schulung zwischen 150 und 3.500 Euro.
+  Regel: bis 500 Euro entscheidet die Teamleitung, darueber zusaetzlich die Bereichsleitung.
+  Beteiligte: Antragstellende, Teamleitung, Bereichsleitung, Personalabteilung.
+  Werkzeuge: Power Automate, Forms, SharePoint, Teams, Outlook.
+  ```
+
+  ---
+
+  **Runde 1 – Grundlage bauen.** Lege die Listen `Schulungsantraege` (Titel, Anbieter, Kosten,
+  Termin, Begründung, Antragsteller, Standort, Status, Entscheidung, Entschieden von, Entschieden
+  am, Bemerkung) und `Zustaendigkeiten` (Standort, Teamleitung, Bereichsleitung, Vertretung) an.
+  Baue ein Formular als Antragsweg und einen Flow, der den Vorgang anlegt, eine
+  Eingangsbestätigung mit Vorgangsnummer versendet und je nach Kosten die richtige Genehmigung
+  startet. Teste mit mindestens vier Anträgen, davon zwei über 500 Euro.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Prozess muss **alle vier** Kriterien erfüllen:
+
+  1. Die zuständige Person wird **aus der Liste** `Zustaendigkeiten` ermittelt, nicht fest
+     eingetippt – und die Vertretung ist mit zugewiesen.
+  2. Über 500 Euro sind **beide** Ebenen beteiligt; eine Ablehnung auf der ersten Ebene beendet den
+     Vorgang, ohne die zweite Ebene zu behelligen.
+  3. Ergebnis, Kommentar, entscheidende Person, Zeitpunkt und die angewandte Regel stehen im
+     Listenelement.
+  4. Nach drei Arbeitstagen ohne Antwort geht eine Erinnerung heraus, nach fünf wird eskaliert und
+     das im Vorgang vermerkt.
+
+  **Runde 3 – Die Komplikation.** Nach zwei Wochen Betrieb kommen drei Rückmeldungen: Eine
+  Teamleitung war zwei Wochen krank, drei Anträge sind trotz Vertretungsregel offen geblieben, weil
+  die Vertretung in der Liste falsch eingetragen war. Die Personalabteilung beschwert sich, dass in
+  den Genehmigungstexten die Begründungen der Antragstellenden vollständig auftauchen – darunter
+  ein Hinweis auf eine gesundheitliche Einschränkung. Und die Bereichsleitung will nicht mehr
+  einzeln entscheiden, sondern einmal pro Woche gesammelt. Überarbeite deine Lösung: Kürze die
+  Genehmigungstexte auf das Notwendige und verlege sensible Angaben hinter einen Link mit eigener
+  Berechtigung, baue eine Prüfung ein, die eine fehlende oder ungültige Zuständigkeit erkennt statt
+  stillschweigend ins Leere zu laufen, und finde eine Lösung für die Sammelentscheidung, ohne die
+  Fünf-Tage-Frist zu verletzen.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Bereichsleitung verlangt: „Wenn nach fünf Tagen
+  niemand widerspricht, gilt der Antrag als genehmigt – das beschleunigt alles." Ein KI-Werkzeug
+  wird dir dafür wahrscheinlich elegante Umsetzungen vorschlagen. Prüfe die Forderung inhaltlich:
+  Was bedeutet automatische Genehmigung bei einem Antrag über 3.500 Euro, wer trägt die
+  Verantwortung, was steht im Protokoll? Entscheide begründet und **widersprich** der Vorgabe oder
+  dem KI-Vorschlag, wo es nötig ist. Formuliere eine Alternative, die das Tempoproblem löst, ohne
+  Verantwortung zu verwischen.
+
+  **Deliverable:**
+
+  1. lauffähiger Flow plus beide Listen mit mindestens vier Testvorgängen, davon einer eskaliert
+  2. Nachweis der vier Pflichtkriterien, je Kriterium ein Listenauszug oder Ausführungsverlauf
+  3. überarbeitete Fassung nach Runde 3, inklusive gekürztem Genehmigungstext im Vorher-Nachher
+  4. einseitige Entscheidungsnotiz zur automatischen Genehmigung mit Alternative
+
+  **Fertig bist du erst, wenn** ein Antrag über 500 Euro nachweislich zwei Ebenen durchlaufen hat,
+  eine Ablehnung auf der ersten Ebene die zweite **nicht** ausgelöst hat, ein Vorgang mit fehlender
+  Zuständigkeit als Fehlerfall gemeldet statt verschluckt wurde, dein Genehmigungstext keine
+  gesundheitsbezogenen Angaben mehr enthält und in jedem entschiedenen Vorgang Person, Zeitpunkt
+  und angewandte Regel stehen.
+tip: |
+  Runde 3 trifft zwei Dinge, die in echten Prozessen fast immer schiefgehen: Stammdaten sind
+  falsch, und in Freitextfeldern stehen Angaben, die nicht weitergegeben werden dürfen. Beides
+  kannst du nicht durch bessere Technik lösen, sondern nur durch Prüfungen und durch bewusst
+  reduzierte Inhalte. In Runde 4 liegt der Kern in der Frage, wer bei einer automatischen
+  Genehmigung eigentlich entschieden hat – ein Protokolleintrag ohne Menschen dahinter ist kein
+  Nachweis, sondern eine Lücke.
+solution: |
+  Bewertungskriterien: (1) Der Prozess läuft Ende zu Ende inklusive Eingangsbestätigung,
+  Betragslogik und Rückschreiben der Entscheidung; (2) alle vier Pflichtkriterien sind belegt,
+  insbesondere Zuständigkeit aus Daten mit Vertretung und der frühe Abbruch bei Ablehnung auf
+  erster Ebene; (3) die Überarbeitung aus Runde 3 reduziert personenbezogene Angaben nachweisbar,
+  behandelt eine ungültige Zuständigkeit als sichtbaren Fehlerfall und löst die Sammelentscheidung
+  ohne Fristverletzung; (4) die Entscheidungsnotiz lehnt die automatische Genehmigung mindestens
+  für hohe Beträge begründet ab und bietet eine tragfähige Alternative, etwa Sammelfreigabe mit
+  kurzer Frist, sichtbare Überfälligkeitsansicht oder Vertretung mit Erstantwortregel.
+
+  Lernziel: Menschen so in einen automatisierten Ablauf einbauen, dass Entscheidungen schnell,
+  vertretbar und nachvollziehbar fallen – und erkennen, dass Beschleunigung nicht dadurch entsteht,
+  Verantwortung wegzuautomatisieren.

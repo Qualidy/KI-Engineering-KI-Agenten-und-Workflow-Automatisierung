@@ -1,0 +1,54 @@
+title: Switch, Zähler und Nebenläufigkeit im Zusammenspiel
+difficulty: 3
+question: |
+  Du erweiterst den Flow aus der vorigen Übung zu einem kleinen Verteiler und untersuchst dabei das
+  Verhalten von Variablen in Schleifen. Gebaut wird in Power Automate.
+
+  1. Ergänze einen `Switch` auf eine Kategorie, die du aus dem Betreff ableitest. Nutze dafür eine
+     `Verfassen`-Aktion, die `Rechnung`, `Angebot` oder `Sonstiges` liefert, zum Beispiel über
+     verschachtelte `if`- und `contains`-Ausdrücke. Der Switch braucht drei Fälle und einen
+     Standardzweig, in jedem Zweig genügt eine `Verfassen`-Aktion mit dem Zielteam.
+  2. Initialisiere **vor** der Schleife eine Variable `AnzahlGespeichert` als ganze Zahl mit 0 und
+     erhöhe sie in der Schleife nach jedem gespeicherten Anhang um 1.
+  3. Schicke nach der Schleife eine Nachricht, die Kategorie und Anzahl enthält.
+  4. Benenne jeden Schritt sprechend und hinterlege an mindestens zwei Aktionen einen Kommentar,
+     der das **Warum** erklärt.
+  5. Experiment: Schalte in den Einstellungen der Schleife die **Nebenläufigkeitssteuerung** ein und
+     teste mit einer Mail, die vier PDF-Anhänge enthält. Führe denselben Test dreimal aus und
+     notiere den Endwert der Variable. Schalte die Nebenläufigkeit danach wieder aus und wiederhole.
+tip: |
+  Erwarte beim Experiment keinen Absturz. Der Effekt ist subtiler und genau deshalb gefährlich: Der
+  Zähler ist manchmal richtig und manchmal zu niedrig, ohne dass irgendetwas rot wird.
+solution: |
+  Erwartete Schrittfolge:
+
+  ```text
+  Flow: 24 Verteiler
+    Trigger: Neue Mail mit Anlagen
+    Verfassen: Kategorie ermitteln
+      @{if(contains(toLower(triggerOutputs()?['body/subject']),'rechnung'),'Rechnung',if(contains(toLower(triggerOutputs()?['body/subject']),'angebot'),'Angebot','Sonstiges'))}
+    Variable initialisieren: AnzahlGespeichert, Ganze Zahl, 0
+    Aktion: Array filtern   -> Nur PDF-Anhaenge
+    Switch: Nach Kategorie verteilen   Von: Ausgabe von Kategorie ermitteln
+      Fall Rechnung   -> Verfassen: Zielteam Buchhaltung
+      Fall Angebot    -> Verfassen: Zielteam Vertrieb
+      Fall Sonstiges  -> Verfassen: Zielteam Sekretariat
+      Standard        -> Verfassen: Zielteam Sammelablage
+    Aktion: Auf jedes anwenden   Von: Ausgabe von Nur PDF-Anhaenge
+      Aktion: Anhang speichern
+      Aktion: Variable inkrementieren   AnzahlGespeichert um 1
+    Aktion: Team informieren   Text mit Kategorie und @{variables('AnzahlGespeichert')}
+  ```
+
+  Bewertungskriterien: (1) der Switch hat drei Fälle plus Standardzweig und wird von einer
+  Verfassen-Ausgabe gespeist, nicht von einem Ausdruck direkt im Switch; (2) die Variable ist auf
+  oberster Ebene initialisiert und wird in der Schleife erhöht; (3) alle Schritte tragen sprechende
+  Namen und mindestens zwei Kommentare erklären eine Absicht; (4) das Experiment ist mit drei
+  Messwerten je Einstellung protokolliert.
+
+  Erwartetes Ergebnis des Experiments: Mit ausgeschalteter Nebenläufigkeit steht der Zähler
+  zuverlässig bei 4. Mit eingeschalteter Nebenläufigkeit kommt es vor, dass er bei 3 oder 2 landet,
+  und der Wert schwankt zwischen den Läufen. Ursache: Mehrere Durchläufe lesen den Variablenwert
+  gleichzeitig und schreiben denselben neuen Wert zurück. Konsequenz für die Praxis: In Schleifen mit
+  Zähler, Sammelliste oder Reihenfolge bleibt die Nebenläufigkeit aus – oder du ersetzt den Zähler
+  durch `length` auf der gefilterten Liste und brauchst gar keine Variable.

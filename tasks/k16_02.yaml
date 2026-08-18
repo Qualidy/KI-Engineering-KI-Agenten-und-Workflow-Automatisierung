@@ -1,0 +1,51 @@
+title: Beleg plausibilisieren, ohne zu korrigieren
+difficulty: 2
+question: |
+  Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude – der Beleg ist vollständig
+  erfunden und enthält keine echten Daten).
+
+  ```text
+  Rechnung
+  Lieferant: Nordlicht Bueromoebel, Hamburg
+  Rechnungsnummer: 2026-0417
+  Rechnungsdatum: 14.03.2026
+  Leistungszeitraum: 20.12.2025 bis 19.12.2026
+  Position 1: Jahreslizenz Lagerverwaltung, netto 1.200,00
+  Position 2: Einrichtungsservice, netto 350,00
+  Nettobetrag gesamt: 1.550,00
+  Umsatzsteuer 19 Prozent: 294,50
+  Bruttobetrag: 1.834,50
+  Zahlungsbedingungen: 14 Tage netto
+  Bestellbezug: fehlt
+  Umsatzsteuer-Identifikationsnummer: fehlt
+  ```
+
+  1. Lass die Felder mit dem Erfassungs-Prompt aus dem Kapitel in eine Tabelle übertragen –
+     einschließlich der Einschränkung, nichts zu berechnen und Widersprüche zu benennen.
+  2. Prüfe alle sechs Plausibilitätsprüfungen aus dem Kapitel selbst durch. Rechne die Beträge in
+     Excel oder mit einem Taschenrechner nach, nicht im Chat.
+  3. Erstelle eine Befundliste: Was ist zu klären, mit wem, und was blockiert die Buchung?
+  4. Führe den Auftrag danach absichtlich **ohne** die Einschränkung erneut aus und vergleiche.
+tip: |
+  Der Beleg enthält mindestens vier Befunde. Zwei betreffen Zahlen, zwei betreffen Angaben, die
+  fehlen oder in die falsche Periode fallen. Rechne 19 Prozent von 1.550,00 von Hand nach.
+solution: |
+  Befunde:
+
+  | Prüfung | Befund |
+  |---|---|
+  | Rechnerisch | 19 Prozent von 1.550,00 sind 294,50 – das stimmt. Aber 1.550,00 plus 294,50 sind 1.844,50, nicht 1.834,50. Der Bruttobetrag ist um 10,00 Euro zu niedrig. |
+  | Steuerlich | 19 Prozent sind für Softwarelizenz und Service plausibel, aber ohne Umsatzsteuer-Identifikationsnummer fehlt eine Pflichtangabe. |
+  | Pflichtangaben | Umsatzsteuer-Identifikationsnummer fehlt, Bestellbezug fehlt. |
+  | Zeitlich | Der Leistungszeitraum reicht vom 20.12.2025 bis 19.12.2026 und überschreitet damit das Geschäftsjahr – es ist eine Rechnungsabgrenzung zu prüfen. |
+  | Sachlich | Ohne Bestellbezug ist die sachliche Prüfung gegen eine Bestellung nicht möglich. |
+  | Dublette | Rechnungsnummer 2026-0417 gegen den Bestand prüfen. |
+
+  Der Rechenfehler im Bruttobetrag ist der entscheidende Punkt. Mit der Einschränkung wird er als
+  Widerspruch benannt. Ohne die Einschränkung liefern Werkzeuge häufig einfach 1.844,50 und stellen
+  die Rechnung als korrekt dar – der Beleg wäre dann scheinbar in Ordnung und würde mit einem Wert
+  erfasst, der so nirgends steht.
+
+  Blockierend für die Buchung sind die fehlende Umsatzsteuer-Identifikationsnummer und der falsche
+  Bruttobetrag: Beides erfordert eine korrigierte Rechnung des Lieferanten. Die Abgrenzungsfrage ist
+  eine Entscheidung der Buchhaltung, keine Rückfrage an den Lieferanten.

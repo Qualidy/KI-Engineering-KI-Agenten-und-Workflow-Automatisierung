@@ -1,0 +1,31 @@
+title: Das passende Architekturmuster wählen
+difficulty: 1
+question: |
+  Wähle für jeden Fall das passende Muster aus Abschnitt 33.1: **Agent ruft Flow**, **Flow ruft KI**
+  oder **Agent und Flow nebeneinander mit dem Menschen als Gate**. Begründe jeweils in einem Satz.
+
+  1. Eingehende Bewerbungen sollen automatisch der richtigen Stelle zugeordnet und abgelegt werden.
+  2. Beschäftigte sollen im Teams-Chat den Status ihrer Bestellung erfragen können.
+  3. Aus einem Gesprächsprotokoll soll ein Angebot entstehen, das an den Kunden geht.
+  4. Beschäftigte sollen per Chat eine Krankmeldung erfassen, die eine Meldung an die Führungskraft
+     auslöst.
+  5. Jede eingehende Reklamation soll zusammengefasst und priorisiert in eine Vorgangsliste laufen.
+  6. Ein Kündigungsschreiben an einen Lieferanten soll aus Vertragsdaten erzeugt werden.
+tip: |
+  Frage bei jedem Fall: Wer trägt die Entscheidung – der Ablauf oder ein Mensch? Und gibt es
+  überhaupt ein Gespräch als Einstieg?
+solution: |
+  | Fall | Muster | Begründung |
+  |---|---|---|
+  | 1 Bewerbungen zuordnen | Flow ruft KI | ereignisgesteuert, kein Gespräch, klar abgegrenzter unscharfer Schritt |
+  | 2 Bestellstatus erfragen | Agent ruft Flow | Einstieg ist eine Frage, der Flow liest nur, geringes Risiko |
+  | 3 Angebot an den Kunden | nebeneinander mit Gate | Außenwirkung und wirtschaftliche Bindung, ein Mensch gibt frei |
+  | 4 Krankmeldung erfassen | Agent ruft Flow | Gespräch als Einstieg, klar begrenzte Aktion mit Pflichtfeldern |
+  | 5 Reklamation vorsortieren | Flow ruft KI | ereignisgesteuert, gut testbar, gut protokollierbar |
+  | 6 Kündigungsschreiben | nebeneinander mit Gate | rechtsverbindlich und praktisch nicht zurücknehmbar |
+
+  Beachte Fall 1: Bewerbungen berühren zusätzlich das Diskriminierungsrisiko und gelten im EU AI Act
+  als besonders sensibler Bereich (Kap. 4 und 14). Das Muster stimmt, aber die Automatisierung darf
+  hier nur sortieren und ablegen, nicht bewerten oder aussortieren. Fall 4 ist der Grenzfall: Die
+  Aktion selbst ist harmlos, die ausgelöste Meldung an die Führungskraft aber nicht mehr – hier ist
+  ein Bestätigungsschritt im Gespräch die Mindestabsicherung.

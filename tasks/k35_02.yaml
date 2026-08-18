@@ -1,0 +1,35 @@
+title: Nicht-Ziele-Liste für dein Projekt
+difficulty: 2
+question: |
+  Schreibe für dein Projekt eine Nicht-Ziele-Liste mit **mindestens fünf Einträgen**.
+
+  1. Jeder Eintrag hat die Form: „Nicht Teil des Projekts ist [X], weil [Grund]."
+  2. Mindestens ein Nicht-Ziel muss ein **Wunsch sein, der fachlich sinnvoll wäre** – du
+     schließt ihn nur aus Zeit- oder Zugangsgründen aus.
+  3. Mindestens ein Nicht-Ziel muss eine **Entscheidung sein, die bewusst beim Menschen
+     bleibt** (kein automatischer Abschluss ohne Prüfung).
+  4. Ergänze zu zwei Nicht-Zielen jeweils einen Satz, unter welcher Bedingung du sie später
+     nachziehen würdest.
+tip: |
+  Denk an die Sätze, die im Gespräch mit Kollegen fallen: „Könnte der Flow nicht auch noch …".
+  Genau diese Sätze gehören auf die Liste, bevor sie dein Projekt aufblähen.
+solution: |
+  Qualitätskriterien: (1) mindestens fünf Einträge, jeder mit Begründung; (2) die Begründungen
+  benennen einen echten Grund (Zugang, Zeit, Recht, Verantwortung) und nicht nur „zu
+  aufwendig"; (3) mindestens ein bewusst beim Menschen bleibender Entscheidungspunkt ist
+  enthalten; (4) die Nachzieh-Bedingungen sind überprüfbar formuliert.
+
+  Beispiel für ein gutes Ergebnis (Projekt: Rechnungseingang vorsortieren):
+
+  - Nicht Teil des Projekts ist die Buchung im ERP, weil kein Zugang und kein Premium-Connector
+    verfügbar ist. Nachziehen, sobald die IT einen Lesezugang bereitstellt.
+  - Nicht Teil des Projekts ist die automatische Freigabe von Rechnungen, weil die
+    Zahlungsfreigabe eine Verantwortungsentscheidung ist und beim Menschen bleibt.
+  - Nicht Teil des Projekts sind Papierrechnungen, weil dafür ein Scan-Prozess nötig wäre.
+  - Nicht Teil des Projekts ist die Ablösung der bestehenden Ordnerstruktur, weil daran drei
+    weitere Abteilungen hängen.
+  - Nicht Teil des Projekts sind Gutschriften, weil sie eine andere Prüflogik brauchen.
+    Nachziehen, wenn der Normalfall über zehn Durchläufe stabil läuft.
+
+  Schwach wäre: „Kein ERP, keine Gutschriften, kein Papier" – ohne Gründe ist das eine Lücke,
+  keine Entscheidung.

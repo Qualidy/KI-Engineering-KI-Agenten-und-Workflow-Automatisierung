@@ -1,0 +1,35 @@
+title: Auswahlmatrix mit eigener Gewichtung
+difficulty: 2
+question: |
+  Nimm ein konkretes Vorhaben aus deinem Arbeitsbereich – gern das aus Kapitel 17.
+
+  1. Wähle **sechs** Kriterien aus dem Kapitel, die für dein Vorhaben wirklich relevant
+     sind. Streiche bewusst Kriterien, die in deinem Fall keine Rolle spielen.
+  2. Vergib Gewichte von 1 bis 3 und begründe jedes Gewicht in einem Halbsatz.
+  3. Bewerte Power Automate, Zapier und Make je Kriterium mit 1 bis 5 und bilde die
+     gewichteten Summen.
+  4. Verändere dann **ein** Gewicht so, dass ein anderes Werkzeug gewinnt. Beschreibe in
+     zwei Sätzen, welche Annahme über dein Vorhaben sich damit geändert hat.
+tip: |
+  Der Erkenntnisgewinn liegt in Teilaufgabe 4. Wenn du kein Gewicht findest, das das
+  Ergebnis dreht, ist deine Entscheidung robust – dann schreibe genau das auf. Wenn schon
+  eine kleine Verschiebung das Ergebnis kippt, hängt die Wahl an einer Annahme, die du
+  besser vorher prüfst.
+solution: |
+  Bewertungskriterien für eine gute Bearbeitung:
+
+  - Die Kriterienauswahl passt zum Vorhaben, und **gestrichene** Kriterien sind benannt.
+    Wer alle zehn Kriterien mitschleppt, hat nicht entschieden, sondern abgeschrieben.
+  - Gewichte sind begründet, nicht gleichverteilt. Bei Vorhaben mit Personenbezug muss
+    „Datenhaltung und Auftragsverarbeitung" mit 3 gewichtet sein.
+  - Die Bewertungen sind konsistent mit der Vergleichstabelle des Kapitels; Abweichungen
+    sind begründet, etwa weil im eigenen Haus eine bestimmte Lizenz fehlt.
+  - Die Sensitivitätsprüfung in Teilaufgabe 4 nennt eine **fachliche** Annahme, nicht nur
+    eine Zahl.
+
+  Beispielhaftes Ergebnis: Ein Vorhaben zur Ablage von Angeboten in SharePoint gewinnt
+  Power Automate klar. Erhöht man das Gewicht von „Nischenanwendung muss angebunden werden"
+  auf 3 – weil das CRM doch ein Fremdsystem ohne Standardanbindung ist –, rückt Zapier oder
+  Make nach vorn. Die geänderte Annahme lautet: Das CRM ist nicht Teil der
+  Microsoft-Landschaft. Diese Annahme lässt sich mit einem Blick in die Connector-Liste
+  klären, und genau das sollte vor der Entscheidung geschehen.

@@ -1,0 +1,1854 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel20/">
+      
+      
+        <link rel="next" href="../kapitel22/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 21 – Einführung in Power Automate - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-21-einfuhrung-in-power-automate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 21 – Einführung in Power Automate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Block 5 · Power Automate in der Praxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 21 – Einführung in Power Automate
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 21 – Einführung in Power Automate
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#211-was-power-automate-ist-und-wie-du-hineinkommst" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.1 Was Power Automate ist und wie du hineinkommst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#212-die-oberflache-sechs-bereiche-die-du-brauchst" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.2 Die Oberfläche: sechs Bereiche, die du brauchst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#213-die-flow-typen-und-ihr-einsatzzweck" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.3 Die Flow-Typen und ihr Einsatzzweck
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#214-connectoren-standard-und-premium" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.4 Connectoren: Standard und Premium
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#215-verbindungen-unter-wessen-konto-lauft-der-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.5 Verbindungen: unter wessen Konto läuft der Flow?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#216-umgebungen-lizenzen-und-vorlagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      21.6 Umgebungen, Lizenzen und Vorlagen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 22 – Der erste Cloud-Flow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 24 – Steuerung und Verzweigung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 25 – Integration von Microsoft 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 26 – Integration externer Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 28 – Testing, Fehlerbehandlung und Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-21-einfuhrung-in-power-automate">Kapitel 21 – Einführung in Power Automate<a class="headerlink" href="#kapitel-21-einfuhrung-in-power-automate" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie du <strong>Zugang</strong> zu Power Automate bekommst und wie die Oberfläche aufgebaut ist</li>
+<li>Welche <strong>Flow-Typen</strong> es gibt und welcher zu welcher Aufgabe passt</li>
+<li>Was <strong>Connectoren</strong> sind und was der Unterschied zwischen <strong>Standard</strong> und <strong>Premium</strong> bedeutet</li>
+<li>Warum <strong>Verbindungen (Connections)</strong> an ein Konto gebunden sind und wer damit eigentlich handelt</li>
+<li>Was eine <strong>Umgebung (Environment)</strong> ist und warum sie über Sichtbarkeit und Rechte entscheidet</li>
+<li>Wie du <strong>Vorlagen (Templates)</strong> als Startpunkt nutzt, ohne dich von ihnen in die Irre führen zu lassen</li>
+</ul>
+</div>
+<hr />
+<h2 id="211-was-power-automate-ist-und-wie-du-hineinkommst">21.1 Was Power Automate ist und wie du hineinkommst<a class="headerlink" href="#211-was-power-automate-ist-und-wie-du-hineinkommst" title="Permanent link">&para;</a></h2>
+<p><strong>Power Automate</strong> ist der Automatisierungsdienst von Microsoft und Teil der <strong>Power Platform</strong> – der Familie aus Power Automate, Power Apps, Power BI und Copilot Studio. Du baust darin <strong>Flows</strong>: Abläufe aus einem Auslöser und mehreren Aktionen, die ohne dein Zutun laufen. Die Begriffe Trigger, Aktion, Datenfluss und Trigger-Bedingung kennst du schon werkzeugunabhängig (Kap. 18); ab hier setzt du sie konkret um.</p>
+<p>Der Zugang läuft über den Browser: <code>make.powerautomate.com</code> → Anmeldung mit deinem Geschäfts- oder Schulkonto. Es gibt keine Installation. Oben rechts siehst du zwei Dinge, die du dir angewöhnen solltest zu prüfen: das <strong>Konto</strong>, mit dem du angemeldet bist, und die <strong>Umgebung</strong>, in der du gerade arbeitest.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>In Power Automate arbeitest du immer in drei Koordinaten: <strong>wer</strong> du bist (Konto), <strong>wo</strong> du bist (Umgebung) und <strong>womit</strong> der Flow auf Daten zugreift (Verbindung). Wenn ein Flow „unerklärlich" nicht funktioniert, liegt der Fehler sehr oft in einer dieser drei Angaben und nicht in der Logik.</p>
+</div>
+<hr />
+<h2 id="212-die-oberflache-sechs-bereiche-die-du-brauchst">21.2 Die Oberfläche: sechs Bereiche, die du brauchst<a class="headerlink" href="#212-die-oberflache-sechs-bereiche-die-du-brauchst" title="Permanent link">&para;</a></h2>
+<p>Links liegt die Navigation. Sie ist schmal, aber jeder Punkt hat eine klare Funktion.</p>
+<table>
+<thead>
+<tr>
+<th>Bereich</th>
+<th>Was du dort findest</th>
+<th>Wann du hingehst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Startseite (Home)</strong></td>
+<td>Suchfeld, empfohlene Vorlagen, letzte Aktivität</td>
+<td>Einstieg, schnelle Suche</td>
+</tr>
+<tr>
+<td><strong>Erstellen (Create)</strong></td>
+<td>alle Wege, einen neuen Flow zu beginnen</td>
+<td>jeder neue Flow</td>
+</tr>
+<tr>
+<td><strong>Meine Flows (My flows)</strong></td>
+<td>deine eigenen Flows, geteilte Flows, Desktop-Flows</td>
+<td>bearbeiten, ein- und ausschalten</td>
+</tr>
+<tr>
+<td><strong>Vorlagen (Templates)</strong></td>
+<td>fertige Flow-Muster nach Thema und App</td>
+<td>Startpunkt, Inspiration</td>
+</tr>
+<tr>
+<td><strong>Verbindungen (Connections)</strong></td>
+<td>alle Konten, mit denen deine Flows arbeiten</td>
+<td>Verbindung reparieren oder neu anlegen</td>
+</tr>
+<tr>
+<td><strong>Lösungen (Solutions)</strong></td>
+<td>Container, um Flows als Paket zu verwalten</td>
+<td>Zusammenarbeit, Umzug zwischen Umgebungen</td>
+</tr>
+</tbody>
+</table>
+<p>Unter <strong>Meine Flows</strong> siehst du zu jedem Flow den Status <strong>Ein</strong> oder <strong>Aus</strong>, den Typ und die letzte Änderung. Über das Kontextmenü eines Flows kommst du zu <strong>Bearbeiten</strong>, <strong>Details</strong> und <strong>Ausführungsverlauf (Run history)</strong> – der Verlauf ist deine wichtigste Informationsquelle bei Fehlern (Kap. 22).</p>
+<p>Zwei weitere Punkte tauchen in der Navigation auf, sind aber keine Bauwerkzeuge: <strong>Genehmigungen (Approvals)</strong> sammelt Aufgaben, die Menschen erledigen müssen (Kap. 27), und <strong>Prozessmining</strong> analysiert bestehende Abläufe. Beide brauchst du für die ersten Flows nicht.</p>
+<hr />
+<h2 id="213-die-flow-typen-und-ihr-einsatzzweck">21.3 Die Flow-Typen und ihr Einsatzzweck<a class="headerlink" href="#213-die-flow-typen-und-ihr-einsatzzweck" title="Permanent link">&para;</a></h2>
+<p>Der Weg <code>make.powerautomate.com → Erstellen</code> zeigt dir die Startpunkte. Die wichtigste Entscheidung dabei ist: <strong>Was löst den Ablauf aus?</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    A([Ereignis in einer App]) --&gt; D([Automatisierter Cloud Flow])
+    B([Mensch startet manuell]) --&gt; E([Instant Flow])
+    C([Fester Zeitplan]) --&gt; F([Geplanter Flow])</code></pre>
+<table>
+<thead>
+<tr>
+<th>Flow-Typ</th>
+<th>Auslöser</th>
+<th>Typisches Beispiel</th>
+<th>Grenze</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Automatisierter Cloud-Flow</strong></td>
+<td>Ereignis in einem Dienst</td>
+<td>neue E-Mail, neues Listenelement, Datei hochgeladen</td>
+<td>reagiert nur, wenn der Dienst das Ereignis meldet</td>
+</tr>
+<tr>
+<td><strong>Instant-Flow</strong> (manuell ausgelöst)</td>
+<td>Mensch drückt auf Start, z. B. in der Mobil-App oder aus Teams</td>
+<td>„Diesen Auftrag jetzt melden"</td>
+<td>nichts passiert ohne Auslösung</td>
+</tr>
+<tr>
+<td><strong>Geplanter Flow (Scheduled)</strong></td>
+<td>Zeitplan</td>
+<td>jeden Montag 8 Uhr Wochenbericht</td>
+<td>läuft auch, wenn es nichts zu tun gibt</td>
+</tr>
+<tr>
+<td><strong>Desktop-Flow (RPA)</strong></td>
+<td>wird von einem Cloud-Flow oder manuell gestartet</td>
+<td>Daten in ein Altsystem eintippen, das keinen Connector hat</td>
+<td>braucht Power Automate Desktop auf einem Rechner, ist störanfällig</td>
+</tr>
+<tr>
+<td><strong>Prozess-Flow (Business Process Flow)</strong></td>
+<td>Datensatz in Dataverse</td>
+<td>mehrstufiger Vertriebsprozess mit Phasen</td>
+<td>kein Automatismus, sondern eine Führung für Menschen</td>
+</tr>
+</tbody>
+</table>
+<p>Die ersten drei Typen sind <strong>Cloud-Flows</strong> – sie laufen auf Microsoft-Servern, brauchen keinen eingeschalteten Rechner und sind der Schwerpunkt dieses Blocks. Der <strong>Desktop-Flow</strong> ist die RPA-Variante: Sie bedient Programmoberflächen wie ein Mensch. Wann das sinnvoll und wann es eine Notlösung ist, hast du in Kapitel 2 eingeordnet.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Ein automatisierter Cloud-Flow ist keine Dauerüberwachung deines Bildschirms. Er reagiert ausschließlich auf Ereignisse, die der jeweilige Dienst meldet. „Wenn jemand eine Excel-Datei auf seinem Laufwerk ändert" ist deshalb kein brauchbarer Auslöser – die Datei muss in OneDrive oder SharePoint liegen, damit ein Ereignis überhaupt entsteht.</p>
+</div>
+<hr />
+<h2 id="214-connectoren-standard-und-premium">21.4 Connectoren: Standard und Premium<a class="headerlink" href="#214-connectoren-standard-und-premium" title="Permanent link">&para;</a></h2>
+<p>Ein <strong>Connector</strong> ist die vorgefertigte Brücke zu einem Dienst. Er bringt <strong>Trigger</strong> („Bei Eingang einer neuen E-Mail") und <strong>Aktionen</strong> („Datei erstellen") mit und übernimmt die technische Kommunikation. Es gibt mehrere Hundert davon, und Microsoft teilt sie in zwei Gruppen.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Standard-Connector</th>
+<th>Premium-Connector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beispiele</td>
+<td>Outlook, SharePoint, Teams, OneDrive for Business, Excel Online, Forms, Planner, To Do, Microsoft Lists</td>
+<td>Dataverse, SQL Server, Salesforce, SAP, HTTP, Custom Connector, Azure-Dienste</td>
+</tr>
+<tr>
+<td>Enthalten in</td>
+<td>den meisten Microsoft-365-Plänen</td>
+<td>nur mit Power-Automate-Zusatzlizenz</td>
+</tr>
+<tr>
+<td>Kennzeichnung</td>
+<td>keine</td>
+<td>Hinweis <strong>Premium</strong> direkt am Connector-Namen</td>
+</tr>
+<tr>
+<td>Für diesen Kurs</td>
+<td>Grundlage aller Übungen</td>
+<td>einzelne Ausblicke, vor allem HTTP (Kap. 26)</td>
+</tr>
+</tbody>
+</table>
+<p>Die Kennzeichnung siehst du beim Hinzufügen einer Aktion: <code>Flow bearbeiten → Aktion hinzufügen → Suchfeld</code> – neben dem Namen steht bei kostenpflichtigen Connectoren ein <strong>Premium</strong>-Kennzeichen. Wenn du eine Vorlage auswählst, die Premium enthält, meldet Power Automate das erst beim Speichern oder beim ersten Lauf.</p>
+<div class="admonition info">
+<p class="admonition-title">Falls du keinen Zugang oder keine Premium-Lizenz hast</p>
+<p>Alle Pflichtübungen dieses Blocks kommen mit <strong>Standard-Connectoren</strong> aus – Outlook, OneDrive for Business, SharePoint, Teams, Forms und Excel Online genügen. Falls dir Power Automate gar nicht zur Verfügung steht, hast du diese Möglichkeiten:</p>
+<ul>
+<li>Ein <strong>Microsoft-365-Testkonto</strong> anlegen (der Developer-Plan enthält eine eigene Umgebung mit Postfach, OneDrive, SharePoint und Teams).</li>
+<li>Für Premium-Themen: Es gibt eine zeitlich begrenzte <strong>Testversion</strong> von Power Automate Premium, die du ohne Kauf starten kannst.</li>
+<li>Ohne jeden Zugang: Baue den Flow als <strong>Papier-Entwurf</strong> in der Schrittlisten-Form, die in diesem Block überall verwendet wird, und setze die Logik in <strong>Zapier</strong> oder <strong>Make</strong> im kostenlosen Tarif um (Kap. 20). Trigger, Aktionen, Verzweigung und Ausdrücke sind übertragbar, nur die Bezeichnungen unterscheiden sich.</li>
+</ul>
+</div>
+<hr />
+<h2 id="215-verbindungen-unter-wessen-konto-lauft-der-flow">21.5 Verbindungen: unter wessen Konto läuft der Flow?<a class="headerlink" href="#215-verbindungen-unter-wessen-konto-lauft-der-flow" title="Permanent link">&para;</a></h2>
+<p>Wenn du zum ersten Mal eine Outlook-Aktion einfügst, legt Power Automate eine <strong>Verbindung (Connection)</strong> an: eine gespeicherte Anmeldung an diesen Dienst mit <strong>deinem</strong> Konto. Alles, was der Flow danach tut, tut er als du.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: Rechnungsanhang ablegen
+  Trigger: Bei Eingang einer neuen E-Mail (V3)
+    Verbindung: anna.beispiel@firma.de
+  Aktion: Datei erstellen (OneDrive for Business)
+    Verbindung: anna.beispiel@firma.de
+  Aktion: Nachricht in einem Chat oder Kanal veroeffentlichen (Teams)
+    Verbindung: anna.beispiel@firma.de
+</code></pre></div></td></tr></table></div>
+<p>Das hat drei Konsequenzen, die in der Praxis regelmäßig unterschätzt werden:</p>
+<ol>
+<li>Der Flow sieht genau die Daten, die <strong>dieses Konto</strong> sehen darf – nicht mehr und nicht weniger.</li>
+<li>Empfänger sehen deinen Namen als Absender. Eine automatische Mail aus dem Flow ist von einer persönlichen Mail nicht zu unterscheiden.</li>
+<li>Verlässt die Person das Unternehmen oder wird ihr Passwort geändert, bricht die Verbindung – und der Flow fällt aus.</li>
+</ol>
+<p>Unter <code>Verbindungen</code> siehst du zu jeder Verbindung einen Status. Steht dort <strong>Behoben werden muss</strong> oder <strong>Nicht verbunden</strong>, musst du sie über <code>... → Verbindung repariert</code> neu anmelden. Für Abläufe, die dauerhaft laufen sollen, verwenden Organisationen deshalb häufig ein <strong>Dienstkonto</strong> – ein eigenes Konto ohne persönliche Nutzung, dessen Anmeldedaten der IT bekannt sind. Wie du das mit Berechtigungen und Postfächern zusammenbringst, vertieft Kapitel 25.</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Ich habe den Flow mit einer Kollegin geteilt, jetzt läuft er unter ihrem Konto." Falsch: Teilen gibt Bearbeitungsrechte, ändert aber die Verbindungen nicht. Der Flow handelt weiterhin mit dem Konto, das in den Verbindungen eingetragen ist. Prüfe bei jedem Flow, den andere weiterverwenden sollen, unter <code>Flow-Details → Verbindungen</code>, welches Konto dort steht.</p>
+</div>
+<hr />
+<h2 id="216-umgebungen-lizenzen-und-vorlagen">21.6 Umgebungen, Lizenzen und Vorlagen<a class="headerlink" href="#216-umgebungen-lizenzen-und-vorlagen" title="Permanent link">&para;</a></h2>
+<p>Eine <strong>Umgebung (Environment)</strong> ist ein abgetrennter Bereich eines Mandanten, in dem Flows, Apps und Daten liegen. Jeder Mandant hat eine <strong>Standardumgebung</strong>, in der alle Nutzenden automatisch arbeiten. Größere Organisationen legen zusätzlich eigene Umgebungen an, oft getrennt nach <strong>Entwicklung</strong>, <strong>Test</strong> und <strong>Produktion</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Merkmal</th>
+<th>Standardumgebung</th>
+<th>Eigene Umgebung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wer darf hinein</td>
+<td>alle Nutzenden des Mandanten</td>
+<td>nur zugewiesene Personen</td>
+</tr>
+<tr>
+<td>Typischer Zweck</td>
+<td>persönliche Flows, erste Versuche</td>
+<td>Team- und Abteilungslösungen, getrennte Testläufe</td>
+</tr>
+<tr>
+<td>Verwaltung</td>
+<td>von der IT selten aktiv gepflegt</td>
+<td>bewusst eingerichtet und überwacht</td>
+</tr>
+<tr>
+<td>Risiko</td>
+<td>wächst unkontrolliert, Flows gehen verloren</td>
+<td>Aufwand für Einrichtung und Rechte</td>
+</tr>
+</tbody>
+</table>
+<p>Der <strong>Umgebungsumschalter</strong> liegt oben rechts. Merke dir seine Bedeutung: Ein Flow, den du nicht mehr findest, liegt fast immer in einer anderen Umgebung als der, die gerade ausgewählt ist. Dasselbe gilt für Verbindungen – sie sind an eine Umgebung gebunden.</p>
+<p><strong>Lösungen (Solutions)</strong> sind Pakete innerhalb einer Umgebung. Alles, was zusammengehört – Flows, Verbindungsverweise, Listen – liegt in einer Lösung und kann als Einheit exportiert und in eine andere Umgebung importiert werden. Für deine ersten Flows brauchst du das nicht; sobald ein Ablauf aber produktiv genutzt wird und eine Testversion existieren soll, ist es der saubere Weg (Kap. 38).</p>
+<p>Zur <strong>Lizenzlogik</strong> genügen dir drei Sätze. Erstens: Cloud-Flows mit Standard-Connectoren sind in den gängigen Microsoft-365-Plänen enthalten. Zweitens: Premium-Connectoren, Desktop-Flows im unbeaufsichtigten Betrieb und Prozess-Mining brauchen eine Zusatzlizenz. Drittens: Es gibt Grenzwerte pro Lizenz, etwa für die Zahl der Flow-Aktionen pro Tag – im Kursbetrieb erreichst du sie nicht, in einem Flow, der stündlich über 5.000 Listenelemente läuft, sehr wohl (Kap. 28).</p>
+<div class="admonition example">
+<p class="admonition-title">Vorlage als Startpunkt richtig nutzen</p>
+<p>Weg: <code>make.powerautomate.com → Vorlagen → Suchfeld: Anhang speichern</code>. Wähle eine Vorlage, die deinem Ziel nahekommt, und arbeite sie in dieser Reihenfolge durch:</p>
+<ol>
+<li><strong>Lesen, nicht speichern.</strong> Welche Connectoren sind beteiligt, steht ein Premium-Kennzeichen dabei?</li>
+<li><strong>Verbindungen bestätigen.</strong> Die Vorlage fragt nach jedem beteiligten Konto.</li>
+<li><strong>Erstellen und sofort umbenennen.</strong> Vorlagennamen wie „Save my email attachments to a SharePoint document library" verraten nichts über deinen Anwendungsfall.</li>
+<li><strong>Jeden Schritt einzeln öffnen</strong> und Felder auf deine Ordner, Postfächer und Kanäle umstellen.</li>
+<li><strong>Erst dann einschalten.</strong> Bis alle Felder geprüft sind, bleibt der Flow über <code>Meine Flows → Ausschalten</code> deaktiviert.</li>
+</ol>
+<p>Vorlagen sind gute Gerüste und schlechte Endergebnisse. Sie enthalten oft mehr Schritte als du brauchst, und ihre Feldbelegung ist auf ein fremdes Beispiel zugeschnitten.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Power Automate läuft im Browser über <code>make.powerautomate.com</code>; die Navigation führt zu Erstellen, Meine Flows, Vorlagen, Verbindungen und Lösungen.</li>
+<li>Die Wahl des <strong>Flow-Typs</strong> folgt der Frage nach dem Auslöser: Ereignis, manueller Start oder Zeitplan; Desktop-Flows sind die RPA-Variante, Prozess-Flows führen Menschen.</li>
+<li><strong>Connectoren</strong> liefern Trigger und Aktionen; <strong>Premium</strong> ist am Kennzeichen erkennbar und braucht eine Zusatzlizenz – dieser Block kommt ohne aus.</li>
+<li>Eine <strong>Verbindung</strong> bindet den Flow an ein Konto: Rechte, Absendername und Ausfallrisiko hängen daran, nicht am Teilen des Flows.</li>
+<li><strong>Umgebungen</strong> trennen Bereiche voneinander; wer einen Flow „verloren" hat, prüft zuerst den Umgebungsumschalter.</li>
+<li><strong>Vorlagen</strong> sind Gerüste: übernehmen, umbenennen, jedes Feld prüfen, erst dann einschalten.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Welcher Flow-Typ passt?</summary>
+<p>Ordne jeder Anforderung den passenden Flow-Typ zu: <strong>automatisierter Cloud-Flow</strong>,
+<strong>Instant-Flow</strong>, <strong>geplanter Flow</strong>, <strong>Desktop-Flow (RPA)</strong> oder <strong>Prozess-Flow</strong>.
+Begründe jede Zuordnung mit einem Satz, der den <strong>Auslöser</strong> benennt.</p>
+<ol>
+<li>Jeden Freitag um 16 Uhr soll eine Liste der offenen Aufgaben per Mail rausgehen.</li>
+<li>Sobald in einer SharePoint-Liste ein neuer Eintrag entsteht, soll das Team eine
+   Teams-Nachricht bekommen.</li>
+<li>Ein Servicetechniker will unterwegs auf dem Handy einen Knopf drücken, der seinen
+   Standort und eine Statusmeldung an die Zentrale schickt.</li>
+<li>Daten aus einer Excel-Datei sollen in ein 15 Jahre altes Warenwirtschaftsprogramm
+   eingetippt werden, für das es keinen Connector gibt.</li>
+<li>Ein Angebotsprozess soll die Vertriebsmitarbeitenden durch fünf feste Phasen führen,
+   ohne selbst etwas zu automatisieren.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Stelle bei jeder Zeile nur eine Frage: Was passiert als Erstes, und wer oder was löst es aus –
+ein Ereignis in einer App, ein Mensch, die Uhr, oder muss eine Programmoberfläche bedient werden?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Flow-Typ</th>
+<th>Auslöser und Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>geplanter Flow</td>
+<td>Auslöser ist die Uhr, kein Ereignis in einer App; läuft auch, wenn es nichts zu melden gibt</td>
+</tr>
+<tr>
+<td>2</td>
+<td>automatisierter Cloud-Flow</td>
+<td>SharePoint meldet das Ereignis „neues Element erstellt"</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Instant-Flow</td>
+<td>ein Mensch drückt bewusst auf Start, hier in der Power-Automate-Mobil-App</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Desktop-Flow (RPA)</td>
+<td>kein Connector vorhanden, also muss die Oberfläche bedient werden – braucht Power Automate Desktop und einen laufenden Rechner</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Prozess-Flow</td>
+<td>automatisiert nichts, sondern gibt Menschen eine feste Phasenfolge vor</td>
+</tr>
+</tbody>
+</table>
+<p>Die häufigste Verwechslung ist 1 gegen 2: Beide klingen nach „regelmäßig", aber nur Fall 2 hat ein
+echtes Ereignis. Fall 4 ist die wichtigste Warnung: RPA ist die Lösung für Systeme ohne
+Schnittstelle und damit die störanfälligste Variante – erst prüfen, ob es wirklich keinen
+Connector oder Export gibt.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Zugangs-Check mit einem Instant-Flow</summary>
+<p>Diese Übung baust du direkt in Power Automate. Ziel ist nicht der Nutzen des Flows, sondern
+der Nachweis, dass Konto, Umgebung und Verbindung funktionieren.</p>
+<ol>
+<li>Melde dich unter <code>make.powerautomate.com</code> an. Notiere aus der Kopfzeile das <strong>Konto</strong> und
+   die aktuell gewählte <strong>Umgebung</strong>.</li>
+<li>Baue einen Instant-Flow: <code>Erstellen → Sofortiger Cloud-Flow</code> → Name <code>Zugangs-Check</code>, Trigger
+   <code>Flow manuell auslösen</code>. Füge die Aktion <code>E-Mail senden (V2)</code> aus dem Outlook-Connector hinzu,
+   Empfänger bist du selbst, Betreff <code>Zugangs-Check</code>. Speichern, dann <code>Testen → Manuell</code>.</li>
+<li>Öffne danach den Bereich <code>Verbindungen</code> und notiere, welche Verbindung neu entstanden ist und
+   unter welchem Konto sie steht.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Wenn der Testlauf rot wird, lies nicht die Logik durch, sondern öffne den fehlgeschlagenen Schritt
+im Ausführungsverlauf. Bei einem so einfachen Flow liegt der Fehler fast immer an der Verbindung
+oder an einem leeren Pflichtfeld.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge im fertigen Flow:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: Zugangs-Check   (Instant-Flow)
+  Trigger: Flow manuell ausloesen
+  Aktion: E-Mail senden V2
+    An: eigene Adresse
+    Betreff: Zugangs-Check
+    Text: beliebig, darf kurz sein
+</code></pre></div></td></tr></table></div>
+<p>Nachweis: Der Testlauf steht im Ausführungsverlauf auf <strong>Erfolgreich</strong>, die Mail ist im Postfach,
+und unter <code>Verbindungen</code> steht eine Outlook-Verbindung mit deinem Konto.</p>
+<p>Lernwert liegt in Punkt 3: Der Flow hat sich stillschweigend mit deiner Identität verbunden. Alles,
+was er künftig sendet, sieht für Empfänger aus wie eine Mail von dir – und er sieht nur die Daten,
+die dein Konto sehen darf. Wer die Umgebung nicht notiert hat, sucht den Flow beim nächsten Login
+unter Umständen erfolglos, weil oben rechts eine andere Umgebung ausgewählt ist.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Vorlage sezieren und übernehmen</summary>
+<p>Vorlagen sind Gerüste, keine fertigen Lösungen. Das prüfst du nach.</p>
+<ol>
+<li>Gehe zu <code>Vorlagen</code> und suche nach <code>Anhang</code>. Wähle eine Vorlage, die E-Mail-Anhänge in
+   OneDrive oder SharePoint ablegt.</li>
+<li><strong>Bevor</strong> du sie erstellst: Notiere in einer Tabelle jeden beteiligten Connector, ob er
+   Standard oder Premium ist, und welcher Schritt Trigger und welcher Aktion ist.</li>
+<li>Erstelle den Flow aus der Vorlage, benenne ihn sofort um in <code>21 Vorlagenanalyse</code> und öffne
+   jeden Schritt. Notiere für jedes Pflichtfeld, ob der Vorlagenwert für dich passt oder
+   angepasst werden müsste.</li>
+<li>Schalte den Flow über <code>Meine Flows → ... → Ausschalten</code> aus. Er soll nicht laufen.</li>
+<li>Beantworte schriftlich: Welche Schritte der Vorlage brauchst du nicht, und was würdest du
+   ergänzen?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte besonders auf den Schritt, in dem der Dateiname gebildet wird, und auf die Schleife über die
+Anhänge. Genau dort weichen Vorlagen am häufigsten von dem ab, was du wirklich willst.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge einer typischen Vorlage:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: 21 Vorlagenanalyse   (automatisierter Cloud-Flow)
+  Trigger: Bei Eingang einer neuen E-Mail V3  (Outlook, Standard)
+    Nur mit Anlagen: Ja
+    Anlagen einschliessen: Ja
+  Aktion: Auf jedes anwenden ueber Anlagen
+    Aktion: Datei erstellen  (OneDrive for Business oder SharePoint, Standard)
+      Ordnerpfad: aus der Vorlage, meist anzupassen
+      Dateiname: Name der Anlage
+      Dateiinhalt: Inhalt der Anlage
+</code></pre></div></td></tr></table></div>
+<p>Bewertungskriterien: (1) alle Connectoren benannt und korrekt als Standard eingeordnet – Outlook,
+OneDrive for Business, SharePoint und Teams sind Standard; (2) Trigger von Aktion unterschieden;
+(3) mindestens zwei Felder identifiziert, die zwingend angepasst werden müssen, typischerweise
+Ordnerpfad und Zielbibliothek; (4) der Flow ist ausgeschaltet.</p>
+<p>Typische Erkenntnisse: Vorlagen legen alle Anhänge ab, auch Signaturbilder und Logos. Sie bauen
+keinen sprechenden Dateinamen, sondern übernehmen den Originalnamen – zwei Rechnungen mit dem Namen
+<code>Rechnung.pdf</code> überschreiben sich dann. Und sie filtern den Absender nicht, sodass jede Mail mit
+Anhang den Flow auslöst. Genau diese drei Punkte baust du in Kapitel 22 bewusst selbst.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Erkundung und erster aktiver Flow im eigenen Mandanten</summary>
+<p><strong>Szenario:</strong> Deine Abteilung soll Power Automate einführen. Die IT hat den Zugang freigeschaltet,
+will aber vor jeder weiteren Freigabe wissen, worauf sich das Haus einlässt: Welche Flow-Typen
+entstehen, welche Connectoren werden gebraucht, wessen Konten hängen daran und wo liegen die Flows
+eigentlich. Gleichzeitig verlangt deine Teamleitung ein sichtbares Ergebnis, kein Konzeptpapier.
+Du lieferst beides: einen belastbaren Steckbrief der Umgebung und einen aktiven Flow, der jeden
+Montag eine Wochenstart-Erinnerung mit den Terminen und Zuständigkeiten der Woche verschickt.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Abteilung mit 9 Personen, Microsoft 365 vorhanden, keine Premium-Lizenz.
+Werkzeuge: Outlook, Teams, OneDrive for Business, SharePoint, Excel Online, Forms.
+Die Erinnerung geht heute per Hand raus und wurde in den letzten Monaten dreimal vergessen.
+Die IT hat genau eine Frage: Wer haftet, wenn der Flow etwas Falsches verschickt.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Inventar und Grundgerüst.</strong> Erstelle einen Umgebungs-Steckbrief: Konto, Umgebung
+(Standardumgebung oder eigene), vorhandene Verbindungen mit Status, und eine Tabelle mit acht
+Connectoren, die dein Team realistisch braucht – je mit Standard- oder Premium-Einordnung, geprüft
+über <code>Erstellen → Aktion hinzufügen → Suchfeld</code>. Baue anschließend den Flow: <code>Erstellen →
+Geplanter Cloud-Flow</code>, Wiederholung wöchentlich, Montag, 8 Uhr, danach eine Teams-Nachricht in
+einen Kanal deiner Wahl und eine Mail an dich selbst. Speichern, <code>Testen → Manuell</code>, Lauf prüfen.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Dein Ergebnis muss <strong>alle vier</strong> Punkte erfüllen:</p>
+<ol>
+<li>Der Flow hat mindestens einen erfolgreichen Lauf im <strong>Ausführungsverlauf</strong>, nachgewiesen mit
+   Datum, Uhrzeit und Dauer.</li>
+<li>Für jeden verwendeten Connector ist dokumentiert, <strong>unter welchem Konto</strong> die Verbindung läuft.</li>
+<li>Der Steckbrief benennt für jeden der acht Connectoren korrekt Standard oder Premium – mindestens
+   einer der acht ist bewusst ein Premium-Connector mit Begründung, warum er trotzdem auf der Liste steht.</li>
+<li>Flow-Name und alle Schrittnamen sind sprechend; kein Schritt heißt mehr <code>Aktion 2</code> oder
+   <code>Wiederholung</code>.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Drei Dinge treten ein, alle drei praxistypisch:</p>
+<ul>
+<li>Ein Kollege hat deinen Flow über <code>Speichern unter</code> kopiert und ebenfalls aktiviert. Die
+  Erinnerung geht <strong>doppelt</strong> raus. Finde heraus, wie du das erkennst und was die dauerhafte
+  Lösung ist (Kopie löschen ist nur die halbe Antwort – wie verhinderst du die Kopie künftig?).</li>
+<li>Die Nachricht kommt nicht um 8 Uhr, sondern um 10 Uhr. Prüfe im Trigger die eingestellte
+  <strong>Zeitzone</strong> und korrigiere sie. Notiere, was im Winter passiert, wenn du stattdessen einfach
+  zwei Stunden abgezogen hättest.</li>
+<li>Die Verbindung hängt an deinem persönlichen Konto, und du gehst in vier Wochen in eine längere
+  Abwesenheit. Beschreibe konkret, was am Montag danach passiert, und erarbeite zwei Varianten,
+  das zu verhindern.</li>
+</ul>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die IT verlangt: „Alles in eine eigene Umgebung, in eine
+Lösung verpackt, mit Dienstkonto – ab sofort, für jeden Flow." Deine Teamleitung will das Gegenteil:
+„Einfach in der Standardumgebung bauen, das reicht." Lass dir von einem KI-Werkzeug beide Positionen
+ausarbeiten, entscheide dann selbst und <strong>widersprich</strong> begründet der Seite, die du ablehnst – auch
+wenn es die IT ist. Deine Entscheidung muss die Frage der IT aus dem Szenario beantworten: Wer
+haftet, wenn der Flow etwas Falsches verschickt.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Umgebungs-Steckbrief (Konto, Umgebung, Verbindungen mit Status, Connector-Tabelle mit acht Zeilen)</li>
+<li>aktiver Flow <code>Wochenstart-Erinnerung</code> mit Nachweis eines erfolgreichen Laufs und korrekter Zeitzone</li>
+<li>Analyse der drei Störungen aus Runde 3 mit je einer dauerhaften Maßnahme</li>
+<li>einseitige Entscheidung zu Umgebung und Kontoführung, inklusive begründetem Widerspruch</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> der Steckbrief alle vorhandenen Verbindungen mit Status und acht
+Connectoren mit der Einordnung Standard oder Premium enthält, der Flow <code>Wochenstart-Erinnerung</code>
+aktiv ist und ein Lauf mit korrekter deutscher Uhrzeit belegt ist, für jede der drei Störungen
+aus Runde 3 eine dauerhafte Maßnahme benannt ist und deine Entscheidung zur Kontoführung
+beantwortet, was passiert, wenn die Person, unter deren Konto der Flow läuft, das Unternehmen
+verlässt.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Steckbrief ist Fleißarbeit, der Lernwert steckt in Runde 3 und 4. Die Doppelausführung und die
+Zeitzone sind die zwei Fehler, die dich in diesem Block noch mehrfach treffen werden – wer hier
+versteht, dass ein Zeitplan-Trigger eine eingestellte Zeitzone hat und Sommerzeit nicht selbst
+mitdenkt, spart sich später viel Sucharbeit. In Runde 4 gibt es keine richtige Antwort, nur eine
+begründete: Governance kostet Zeit und schützt vor Ausfall, Standardumgebung ist schnell und
+erzeugt Schatten-IT.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) der Flow ist aktiv, hat einen erfolgreichen Lauf mit belegtem Zeitstempel
+und trägt sprechende Namen; (2) die Connector-Tabelle ordnet Standard und Premium korrekt zu und
+belegt für jede Verbindung das Konto; (3) die drei Störungen sind mit Ursache und dauerhafter
+Maßnahme beschrieben – Doppelausführung über den Ausführungsverlauf zweier Flows erkannt und über
+Eigentümerschaft statt Kopien gelöst, Zeitzone im Trigger korrigiert statt durch Stundenabzug,
+Kontoabhängigkeit über Dienstkonto oder zweite Eigentümerschaft entschärft; (4) die Entscheidung
+wägt Aufwand gegen Ausfallrisiko ab, widerspricht einer der beiden Vorgaben begründet und benennt
+eine verantwortliche Person.</p>
+<p>Lernziel: Power Automate nicht nur bedienen, sondern die drei Koordinaten Konto, Umgebung und
+Verbindung verstehen – und die Folgen einer Fehlkonfiguration am eigenen laufenden Flow sehen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel20/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel22/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 22 – Der erste Cloud-Flow">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 22 – Der erste Cloud-Flow
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1845 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel17/">
+      
+      
+        <link rel="next" href="../kapitel19/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 18 – Trigger, Aktionen und Daten - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-18-trigger-aktionen-und-daten" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 18 – Trigger, Aktionen und Daten
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Block 4 · Einstieg in Workflow-Automatisierung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 17 – Workflow-Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 18 – Trigger, Aktionen und Daten
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 18 – Trigger, Aktionen und Daten
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#181-der-bauplan-jedes-ablaufs" class="md-nav__link">
+    <span class="md-ellipsis">
+      18.1 Der Bauplan jedes Ablaufs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#182-die-vier-trigger-arten" class="md-nav__link">
+    <span class="md-ellipsis">
+      18.2 Die vier Trigger-Arten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#183-aktionen-und-das-zuordnen-von-feldern" class="md-nav__link">
+    <span class="md-ellipsis">
+      18.3 Aktionen und das Zuordnen von Feldern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#184-datentypen-und-typische-konvertierungsfehler" class="md-nav__link">
+    <span class="md-ellipsis">
+      18.4 Datentypen und typische Konvertierungsfehler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#185-trigger-bedingungen-filtern-bevor-gearbeitet-wird" class="md-nav__link">
+    <span class="md-ellipsis">
+      18.5 Trigger-Bedingungen: filtern, bevor gearbeitet wird
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#186-doppelausfuhrung-idempotenz-und-die-grenzen-der-trigger" class="md-nav__link">
+    <span class="md-ellipsis">
+      18.6 Doppelausführung, Idempotenz und die Grenzen der Trigger
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel19/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 19 – Logikbausteine
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-18-trigger-aktionen-und-daten">Kapitel 18 – Trigger, Aktionen und Daten<a class="headerlink" href="#kapitel-18-trigger-aktionen-und-daten" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie jeder automatisierte Ablauf aufgebaut ist: <strong>ein Auslöser, viele Aktionen</strong></li>
+<li>Die vier <strong>Trigger-Arten</strong> – Ereignis, Zeitplan, manueller Start und eingehender Aufruf</li>
+<li>Wie Daten von Schritt zu Schritt weitergegeben werden und was <strong>Mapping</strong> bedeutet</li>
+<li>Welche <strong>Datentypen</strong> es gibt und warum Text, Zahl und Datum so oft verwechselt werden</li>
+<li>Wie du mit einer <strong>Trigger-Bedingung</strong> filterst, bevor überhaupt gearbeitet wird</li>
+<li>Warum Abläufe <strong>doppelt</strong> laufen können und was <strong>Idempotenz</strong> dagegen hilft</li>
+</ul>
+</div>
+<hr />
+<h2 id="181-der-bauplan-jedes-ablaufs">18.1 Der Bauplan jedes Ablaufs<a class="headerlink" href="#181-der-bauplan-jedes-ablaufs" title="Permanent link">&para;</a></h2>
+<p>Jeder automatisierte Ablauf – in Power Automate heißt er <strong>Flow</strong>, in Make <strong>Szenario</strong>, in Zapier <strong>Zap</strong> – hat denselben Aufbau: <strong>genau ein Auslöser</strong>, danach eine Folge von Aktionen, die Daten weitergeben.</p>
+<p>Ein <strong>Trigger</strong> (Auslöser) ist das Ereignis, das den Ablauf startet. Er ist keine Aktion, sondern eine Beobachtungsstelle: Solange nichts passiert, passiert nichts. Eine <strong>Aktion</strong> ist ein einzelner Arbeitsschritt, der etwas liest, schreibt, sendet oder berechnet.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Trigger E-Mail trifft ein]) --&gt; B([Anhang speichern])
+    B --&gt; C([Zeile in Liste anlegen])
+    C --&gt; D([Nachricht senden])</code></pre>
+<p>Entscheidend ist, was zwischen den Kästen fließt. Der Trigger liefert einen Satz von Feldern – bei einer E-Mail etwa Absender, Betreff, Empfangszeit, Anhänge. Jede folgende Aktion kann auf die Ergebnisse <strong>aller vorherigen</strong> Schritte zugreifen, nicht nur auf den direkt davorliegenden. Diesen Datenvorrat nennt Power Automate <strong>dynamische Inhalte</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Ablauf hat <strong>einen</strong> Auslöser und <strong>viele</strong> Aktionen. Wenn du zwei Auslöser brauchst – Mail <em>und</em> Formular – dann brauchst du zwei Abläufe, die dasselbe Ziel bedienen. Das ist keine Einschränkung des Werkzeugs, sondern eine nützliche Disziplin.</p>
+</div>
+<hr />
+<h2 id="182-die-vier-trigger-arten">18.2 Die vier Trigger-Arten<a class="headerlink" href="#182-die-vier-trigger-arten" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Art</th>
+<th>Startet, wenn …</th>
+<th>Beispiel im Rechnungsszenario</th>
+<th>Worauf du achten musst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ereignis</td>
+<td>in einem System etwas passiert</td>
+<td>neue E-Mail im Sammelpostfach, neues Element in einer Liste</td>
+<td>feuert auch bei Dingen, die du nicht meinst</td>
+</tr>
+<tr>
+<td>Zeitplan</td>
+<td>ein Zeitpunkt erreicht ist</td>
+<td>täglich 8 Uhr Erinnerung an offene Freigaben</td>
+<td>Zeitzone und Feiertage bedenken</td>
+</tr>
+<tr>
+<td>Manueller Start</td>
+<td>eine Person den Ablauf startet</td>
+<td>Buchhaltung stößt Nachbearbeitung für einen Beleg an</td>
+<td>braucht eine Eingabemaske für Parameter</td>
+</tr>
+<tr>
+<td>Eingehender Aufruf</td>
+<td>ein anderes System eine Nachricht sendet</td>
+<td>Lieferantenportal meldet neue Rechnung</td>
+<td>Adresse ist ein Geheimnis, sonst kann jeder auslösen</td>
+</tr>
+</tbody>
+</table>
+<p>Der <strong>eingehende Aufruf</strong> heißt technisch <strong>Webhook</strong>: Dein Ablauf bekommt eine eigene Internetadresse, und wer diese Adresse mit einer Nachricht aufruft, startet ihn. Das ist die schnellste und sparsamste Variante, weil nichts abgefragt werden muss – aber sie setzt voraus, dass das andere System so etwas senden kann.</p>
+<p>Der <strong>Zeitplan</strong> ist der unterschätzte Trigger. Viele Aufgaben, die man als Ereignis denkt, sind eigentlich Zeitpunkte: „Erinnere an Freigaben, die älter als drei Tage sind" ist kein Ereignis, sondern ein täglicher Rundgang durch eine Liste.</p>
+<div class="admonition tip">
+<p class="admonition-title">Trigger-Wahl in einem Satz</p>
+<p>Frage dich: <em>Woran genau merkt jemand, dass es losgeht?</em> Merkt es ein System – Ereignis. Merkt es der Kalender – Zeitplan. Merkt es ein Mensch – manueller Start. Meldet es ein Fremdsystem – eingehender Aufruf. Kommt die Antwort „das merkt keiner, das fällt irgendwann auf", dann fehlt noch fachliche Klärung (Kap. 17).</p>
+</div>
+<hr />
+<h2 id="183-aktionen-und-das-zuordnen-von-feldern">18.3 Aktionen und das Zuordnen von Feldern<a class="headerlink" href="#183-aktionen-und-das-zuordnen-von-feldern" title="Permanent link">&para;</a></h2>
+<p>Der eigentliche Bauaufwand liegt selten in den Aktionen selbst, sondern im <strong>Mapping</strong>: Welches Feld aus einem früheren Schritt gehört in welches Eingabefeld des nächsten? Diese Zuordnung schreibt man am besten vor dem Bauen auf.</p>
+<table>
+<thead>
+<tr>
+<th>Zielfeld in der Rechnungsliste</th>
+<th>Herkunft</th>
+<th>Umformung nötig?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lieferant</td>
+<td>Absenderadresse aus dem Trigger</td>
+<td>ja, Domain in Klarnamen übersetzen</td>
+</tr>
+<tr>
+<td>Eingangsdatum</td>
+<td>Empfangszeit aus dem Trigger</td>
+<td>ja, nur Datum ohne Uhrzeit</td>
+</tr>
+<tr>
+<td>Betreff</td>
+<td>Betreff aus dem Trigger</td>
+<td>nein</td>
+</tr>
+<tr>
+<td>Belegdatei</td>
+<td>Anhang aus dem Trigger</td>
+<td>nein, aber Dateiname festlegen</td>
+</tr>
+<tr>
+<td>Betrag</td>
+<td>steht nur im PDF</td>
+<td>ja, muss ausgelesen werden (Kap. 31)</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>fester Wert</td>
+<td>nein, immer „in Prüfung"</td>
+</tr>
+</tbody>
+</table>
+<p>Die Tabelle macht drei Dinge sichtbar. Erstens: Manche Zielfelder kommen direkt aus dem Trigger. Zweitens: Manche brauchen eine kleine Umformung – dafür gibt es <strong>Ausdrücke</strong>, kleine Formeln wie in Excel; in Power Automate schreibt man sie in der Form <code>@{formatDateTime(...)}</code> (Details in Kap. 23). Drittens: Manche Felder sind schlicht <strong>nicht vorhanden</strong>. Der Betrag steckt im PDF, nicht in der E-Mail. Solche Lücken früh zu erkennen, verhindert Abbrüche mitten im Bauen.</p>
+<div class="admonition example">
+<p class="admonition-title">Ein Feldplan, bevor du klickst</p>
+<p>Notiere den Datenfluss als Textskizze. Platzhalter schreibst du in eckigen Klammern:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Ziel: Dateiname in der Ablage
+Muster: [Eingangsdatum]_[Lieferant]_[Betreff].pdf
+Ergebnis: 2026-03-04_Papierwelt_Rechnung 4711.pdf
+
+Regeln:
+Eingangsdatum aus Empfangszeit, Format Jahr-Monat-Tag
+Lieferant aus Absenderdomain, nur der Name ohne Endung
+Betreff auf 40 Zeichen kuerzen, Sonderzeichen entfernen
+</code></pre></div></td></tr></table></div>
+<p>Das Kürzen und Entfernen ist kein Detail: Doppelpunkte, Schrägstriche und Sternchen sind in Dateinamen nicht erlaubt, und ein 200 Zeichen langer Betreff sprengt die Pfadlänge. Solche Regeln fallen beim Feldplan auf – beim Bauen erst im Fehlerprotokoll.</p>
+</div>
+<hr />
+<h2 id="184-datentypen-und-typische-konvertierungsfehler">18.4 Datentypen und typische Konvertierungsfehler<a class="headerlink" href="#184-datentypen-und-typische-konvertierungsfehler" title="Permanent link">&para;</a></h2>
+<p>Ein <strong>Datentyp</strong> legt fest, welche Art von Wert in einem Feld steht und was man damit rechnen darf. Werkzeuge sind hier strenger als Menschen: Für dich ist <code>1.250,00</code> eine Zahl, für den Ablauf ist es Text – und Text kann man nicht addieren.</p>
+<table>
+<thead>
+<tr>
+<th>Datentyp</th>
+<th>Enthält</th>
+<th>Typischer Fehler</th>
+<th>Gegenmaßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text</td>
+<td>Zeichenfolge beliebiger Art</td>
+<td>Zahl als Text ankommen lassen und dann vergleichen</td>
+<td>ausdrücklich in Zahl umwandeln</td>
+</tr>
+<tr>
+<td>Zahl</td>
+<td>Ganzzahl oder Dezimalzahl</td>
+<td>deutsches Komma und Tausenderpunkt</td>
+<td>vor der Umwandlung Punkt und Komma bereinigen</td>
+</tr>
+<tr>
+<td>Ja/Nein</td>
+<td>genau zwei Zustände</td>
+<td>Text „Ja" ist nicht der Wert Ja</td>
+<td>Feld sauber als Ja/Nein anlegen</td>
+</tr>
+<tr>
+<td>Datum und Uhrzeit</td>
+<td>Zeitpunkt mit Zeitzone</td>
+<td>Anzeige im Werkzeug ist UTC, nicht Ortszeit</td>
+<td>Zeitzone explizit umrechnen</td>
+</tr>
+<tr>
+<td>Liste</td>
+<td>mehrere Einträge</td>
+<td>Liste wie einen Einzelwert behandeln</td>
+<td>Schleife verwenden (Kap. 19)</td>
+</tr>
+<tr>
+<td>Datei</td>
+<td>Binärinhalt plus Name</td>
+<td>Dateiinhalt mit Dateipfad verwechseln</td>
+<td>Inhalt und Name getrennt führen</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Der Vergleich <code>Betrag größer als 5000</code> schlägt lautlos fehl, wenn der Betrag als Text <code>"5.000,00"</code> vorliegt. Textvergleiche arbeiten <strong>zeichenweise</strong>: <code>"5.000,00"</code> ist kleiner als <code>"6"</code>, weil die <code>5</code> vor der <code>6</code> kommt – und <code>"10000"</code> ist kleiner als <code>"9"</code>. Der Ablauf läuft dabei ohne Fehlermeldung durch und leitet einfach jahrelang die falschen Rechnungen an die Leitung Finanzen weiter. Deshalb gilt: Beträge und Mengen <strong>immer</strong> in einen Zahlentyp umwandeln, bevor du sie vergleichst.</p>
+</div>
+<p>Der zweite Klassiker ist das <strong>Datum</strong>. Systeme speichern Zeitpunkte fast immer in der Weltzeit UTC. Eine Rechnung, die um 00:30 Uhr Ortszeit eintrifft, wird intern auf den Vortag datiert. In Monatsauswertungen erscheinen dadurch Belege im falschen Monat. Rechne Zeitpunkte deshalb einmal bewusst auf die gewünschte Zeitzone um und arbeite danach nur noch mit dem umgerechneten Wert.</p>
+<hr />
+<h2 id="185-trigger-bedingungen-filtern-bevor-gearbeitet-wird">18.5 Trigger-Bedingungen: filtern, bevor gearbeitet wird<a class="headerlink" href="#185-trigger-bedingungen-filtern-bevor-gearbeitet-wird" title="Permanent link">&para;</a></h2>
+<p>Ein Ereignis-Trigger feuert bei <strong>allem</strong>, was zu seinem Ereignis passt. Im Sammelpostfach löst also auch die Werbemail, die Abwesenheitsnotiz und die Rückfrage einer Kollegin den Ablauf aus. Dagegen gibt es zwei Stellen:</p>
+<ul>
+<li>Eine <strong>Trigger-Bedingung</strong> prüft, ob der Ablauf überhaupt starten soll. Passt sie nicht, läuft nichts – es entsteht kein Ausführungsprotokoll und kein Verbrauch.</li>
+<li>Eine <strong>Bedingung als erste Aktion</strong> startet den Ablauf trotzdem und beendet ihn dann. Das ist leichter zu verstehen und zu prüfen, kostet aber jedes Mal eine Ausführung.</li>
+</ul>
+<p>Für den Anfang ist die Bedingung als erste Aktion die bessere Wahl, weil du im Protokoll sehen kannst, was aussortiert wurde. Sobald ein Ablauf produktiv viele Male am Tag unnötig startet, verschiebst du den Filter nach vorn in die Trigger-Bedingung.</p>
+<p>Sinnvolle Filter im Rechnungsszenario: Anhang vorhanden, Anhangstyp PDF, Absender nicht aus der eigenen Domain, Betreff enthält nicht „Abwesenheit". Formuliere Filter möglichst als <strong>Positivliste</strong> – „nur PDF verarbeiten" ist stabiler als „alles außer den sieben Dingen, die uns bisher eingefallen sind".</p>
+<p>Vergiss dabei nicht: Jeder Filter ist eine Entscheidung darüber, welche Vorgänge <strong>nicht</strong> bearbeitet werden. Das muss jemand fachlich verantworten, und es muss nachvollziehbar bleiben. Aussortierte Nachrichten sollten deshalb nicht spurlos verschwinden, sondern in einem Ordner landen oder in einer Liste protokolliert werden.</p>
+<hr />
+<h2 id="186-doppelausfuhrung-idempotenz-und-die-grenzen-der-trigger">18.6 Doppelausführung, Idempotenz und die Grenzen der Trigger<a class="headerlink" href="#186-doppelausfuhrung-idempotenz-und-die-grenzen-der-trigger" title="Permanent link">&para;</a></h2>
+<p>Automatisierte Abläufe laufen manchmal zweimal für denselben Vorgang. Die häufigsten Gründe: Ein Ablauf wird nach einem Fehler erneut gestartet, ein Fremdsystem sendet denselben Aufruf zur Sicherheit doppelt, jemand bearbeitet ein Element mehrfach, oder ein Zeitplan-Ablauf greift sich einen Vorgang, der noch nicht als bearbeitet markiert ist.</p>
+<p><strong>Idempotenz</strong> bedeutet: Es macht keinen Unterschied, ob ein Schritt einmal oder fünfmal ausgeführt wird. Der Aufzugknopf ist idempotent – fünfmal drücken holt den Aufzug nicht fünfmal. Eine Zahlungsanweisung ist es nicht.</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Vorgang trifft ein]) --&gt; B([Kennzeichen bilden aus Lieferant und Rechnungsnummer])
+    B --&gt; C([Bereits in Liste vorhanden])
+    C --&gt;|ja| D([Nur protokollieren und beenden])
+    C --&gt;|nein| E([Eintrag anlegen und weiterarbeiten])</code></pre>
+<p>Das Muster dahinter ist immer dasselbe: Bilde ein <strong>eindeutiges Kennzeichen</strong> für den Vorgang, prüfe vor dem Schreiben, ob es schon existiert, und schreibe nur, wenn nicht. Im Rechnungsfall ist das Kennzeichen die Kombination aus Lieferant und Rechnungsnummer. Wähle als Kennzeichen niemals die Empfangszeit oder eine laufende Nummer, die der Ablauf selbst erzeugt – beides ist bei einer Wiederholung anders.</p>
+<p>Neben der Doppelausführung haben Trigger drei weitere Grenzen, die du kennen musst:</p>
+<ul>
+<li><strong>Abfrageintervall:</strong> Viele Ereignis-Trigger fragen das Quellsystem in festen Abständen ab, statt sofort benachrichtigt zu werden. Zwischen Ereignis und Start liegt deshalb eine <strong>Verzögerung</strong> von wenigen Minuten bis zu einer Stunde, je nach Werkzeug, Lizenz und Verbindung. Für einen Rechnungseingang ist das belanglos, für eine Chat-Antwort erwartet niemand fünf Minuten Wartezeit.</li>
+<li><strong>Keine Rückwirkung:</strong> Ein neu eingeschalteter Ablauf sieht nur, was <strong>ab jetzt</strong> passiert. Die 300 Rechnungen, die schon im Postfach liegen, muss ein separater Ablauf oder ein Mensch nacharbeiten.</li>
+<li><strong>Stapelverhalten:</strong> Treffen viele Elemente gleichzeitig ein, verarbeiten manche Trigger sie einzeln, andere als Paket. Das entscheidet darüber, ob du eine Schleife brauchst (Kap. 19).</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Der Ablauf ist doch getestet, dann läuft er auch richtig" gilt nur für den Normalfall. Getestet wird fast immer die <strong>einmalige</strong> Ausführung mit sauberen Daten. Die teuren Fehler entstehen bei der zweiten Ausführung desselben Vorgangs, bei leeren Feldern und bei Daten, die anders formatiert sind als im Test. Plane deshalb von Anfang an ein eindeutiges Kennzeichen ein – nachträglich einbauen ist deutlich aufwendiger.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Jeder Ablauf hat <strong>einen Trigger</strong> und <strong>viele Aktionen</strong>; jede Aktion darf auf die Ergebnisse aller vorherigen Schritte zugreifen.</li>
+<li>Vier Trigger-Arten: <strong>Ereignis</strong>, <strong>Zeitplan</strong>, <strong>manueller Start</strong>, <strong>eingehender Aufruf</strong> – die Leitfrage lautet: Woran merkt jemand, dass es losgeht?</li>
+<li>Der Bauaufwand steckt im <strong>Mapping</strong>. Ein Feldplan vor dem Bauen zeigt Umformungen und fehlende Daten.</li>
+<li><strong>Datentypen</strong> sind die häufigste stille Fehlerquelle: Zahl als Text vergleichen und Zeitpunkte in der falschen Zeitzone.</li>
+<li><strong>Trigger-Bedingungen</strong> filtern früh; sie sind fachliche Entscheidungen und müssen nachvollziehbar bleiben.</li>
+<li><strong>Doppelausführung</strong> ist normal. Ein eindeutiges Kennzeichen plus Prüfung vor dem Schreiben macht einen Ablauf <strong>idempotent</strong>.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Welcher Trigger passt?</summary>
+<p>Wähle für jede Aufgabe die passende Trigger-Art: <strong>Ereignis</strong>, <strong>Zeitplan</strong>,
+<strong>manueller Start</strong> oder <strong>eingehender Aufruf</strong>. Begründe jeweils in einem Satz.</p>
+<ol>
+<li>Sobald eine neue Datei in einer SharePoint-Bibliothek liegt, soll eine Nachricht
+   in Teams erscheinen.</li>
+<li>Jeden Montag um 7 Uhr soll eine Übersicht der offenen Freigaben verschickt werden.</li>
+<li>Eine Sachbearbeiterin will für einen einzelnen Kunden ein Willkommensschreiben
+   erzeugen lassen.</li>
+<li>Das Webshop-System soll nach jeder Bestellung sofort eine Meldung an den Ablauf
+   senden.</li>
+<li>Alle Freigaben, die seit mehr als drei Tagen offen sind, sollen angemahnt werden.</li>
+<li>Wenn ein Formular ausgefüllt abgeschickt wird, soll ein Eintrag in einer Liste
+   entstehen.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zwei Aufgaben sehen wie Ereignisse aus, sind aber keine. Frage dich: Gibt es einen
+Moment, in dem ein System etwas melden <strong>kann</strong> – oder muss jemand regelmäßig nachsehen?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Trigger-Art</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ereignis</td>
+<td>das Quellsystem kennt den Moment „neue Datei"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Zeitplan</td>
+<td>fester Zeitpunkt, kein auslösendes Ereignis</td>
+</tr>
+<tr>
+<td>3</td>
+<td>manueller Start</td>
+<td>ein Mensch entscheidet über Zeitpunkt und Kunde</td>
+</tr>
+<tr>
+<td>4</td>
+<td>eingehender Aufruf</td>
+<td>ein Fremdsystem sendet aktiv eine Nachricht</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Zeitplan</td>
+<td>„seit mehr als drei Tagen offen" ist kein Ereignis, sondern ein Rundgang</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ereignis</td>
+<td>das Formularsystem meldet den Abschluss</td>
+</tr>
+</tbody>
+</table>
+<p>Die lehrreiche Zeile ist Nummer 5: „Nichts ist passiert" kann kein System melden.
+Ablaufende Fristen und ausbleibende Reaktionen brauchen immer einen Zeitplan-Trigger,
+der eine Liste durchsieht. Nummer 4 zeigt den Unterschied zwischen Abfragen und
+Gemeldet-werden: Der eingehende Aufruf ist sofort da, ein Ereignis-Trigger mit
+Abfrageintervall braucht möglicherweise Minuten.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Feldplan für den Rechnungseingang</summary>
+<p>Der Ablauf aus Kapitel 17 soll aus einer eingehenden Rechnungsmail eine Zeile in einer
+Liste erzeugen. Der Trigger liefert diese Felder:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Absender: buchhaltung@papierwelt-gmbh.de
+Betreff: Rechnung R-2026-4711 / Bestellung 88231
+Empfangszeit: 2026-03-04T00:42:11Z
+Anhang 1: Rechnung_4711.pdf
+Textkoerper: Sehr geehrte Damen und Herren, anbei erhalten Sie
+  unsere Rechnung ueber 1.250,00 EUR. Zahlbar innerhalb 14 Tagen.
+</code></pre></div></td></tr></table></div>
+<p>Die Liste hat die Spalten <code>Lieferant</code>, <code>Rechnungsnummer</code>, <code>Bestellnummer</code>,
+<code>Eingangsdatum</code>, <code>Betrag</code>, <code>Status</code>.</p>
+<ol>
+<li>Erstelle eine Mapping-Tabelle: <code>Zielspalte | Herkunft | Datentyp | Umformung nötig</code>.</li>
+<li>Markiere jede Spalte, deren Wert <strong>nicht sicher</strong> aus dem Trigger zu gewinnen ist.</li>
+<li>Nenne zwei Datentyp-Probleme, die in diesem Beispiel konkret drohen.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Schau genau auf die Empfangszeit und auf den Betrag. Beide sehen harmlos aus und sind
+die beiden Stellen, an denen dieser Ablauf in der Praxis falsche Ergebnisse liefert,
+ohne eine Fehlermeldung zu erzeugen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Zielspalte</th>
+<th>Herkunft</th>
+<th>Datentyp</th>
+<th>Umformung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lieferant</td>
+<td>Absenderdomain</td>
+<td>Text</td>
+<td>Domain in Klarnamen, besser über Nachschlageliste</td>
+</tr>
+<tr>
+<td>Rechnungsnummer</td>
+<td>Betreff</td>
+<td>Text</td>
+<td>aus dem Betreff herausschneiden, Format unsicher</td>
+</tr>
+<tr>
+<td>Bestellnummer</td>
+<td>Betreff</td>
+<td>Text</td>
+<td>ebenfalls herausschneiden, oft nicht vorhanden</td>
+</tr>
+<tr>
+<td>Eingangsdatum</td>
+<td>Empfangszeit</td>
+<td>Datum</td>
+<td>Zeitzone umrechnen, dann nur Datum</td>
+</tr>
+<tr>
+<td>Betrag</td>
+<td>nur im Textkörper oder im PDF</td>
+<td>Zahl</td>
+<td>Text bereinigen und in Zahl wandeln</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>fester Wert</td>
+<td>Text</td>
+<td>keine, immer „in Prüfung"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nicht sicher gewinnbar:</strong> Rechnungs- und Bestellnummer setzen voraus, dass der Lieferant
+sie stets gleich in den Betreff schreibt – das tut kein Lieferant zuverlässig. Der Betrag
+ist am unsichersten: Im Textkörper steht er zufällig, verbindlich ist nur das PDF.
+Belastbar wird das erst über Dokumentenerkennung (Kap. 31) oder manuelle Erfassung.</p>
+<p><strong>Zwei Datentyp-Probleme:</strong> <code>1.250,00 EUR</code> ist Text mit Tausenderpunkt, Komma und
+Währungskürzel – ohne Bereinigung und Umwandlung schlägt jeder Größenvergleich lautlos
+fehl. Und die Empfangszeit <code>00:42:11Z</code> ist Weltzeit: In Mitteleuropa ist das der <strong>5.</strong>
+März, nicht der 4. Ohne Zeitzonenumrechnung landen Belege im falschen Monat.</p>
+<p>Die eigentliche Erkenntnis: Der Feldplan zeigt, dass dieser Ablauf noch nicht baubar ist.
+Erst die Entscheidung „Betrag wird von Hand erfasst" oder „Betrag kommt aus dem PDF"
+macht ihn eindeutig.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Den doppelt laufenden Ablauf entschärfen</summary>
+<p>Ein Kollege hat folgenden Ablauf entworfen und ist stolz darauf:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Ausloeser: Neue E-Mail im Sammelpostfach rechnung@
+Schritt 1: Anhang in SharePoint speichern, Dateiname
+           Rechnung_[laufende Nummer].pdf
+Schritt 2: Neue Zeile in der Liste Rechnungseingang anlegen
+Schritt 3: Freigabemail an die Kostenstelle senden
+Schritt 4: Bestaetigungsmail an den Lieferanten senden
+</code></pre></div></td></tr></table></div>
+<p>Nach zwei Wochen gibt es Beschwerden: Kostenstellen erhalten dieselbe Rechnung mehrfach
+zur Freigabe, in der Ablage liegen Dateien doppelt unter verschiedenen Nummern, und ein
+Lieferant hat sich über vier identische Bestätigungen beschwert.</p>
+<ol>
+<li>Nenne <strong>drei</strong> Situationen, die diesen Ablauf zweimal für denselben Vorgang starten.</li>
+<li>Prüfe jeden der vier Schritte: Ist er idempotent? Was passiert bei doppelter
+   Ausführung konkret?</li>
+<li>Entwirf ein eindeutiges Kennzeichen für einen Vorgang und beschreibe, wo im Ablauf
+   die Prüfung eingebaut wird.</li>
+<li>Lass dir dann von einem KI-Werkzeug (Copilot, ChatGPT oder Claude) den überarbeiteten
+   Ablauf gegenprüfen. Formuliere den Auftrag so, dass er nach <strong>verbleibenden</strong>
+   Schwachstellen sucht, nicht nach Lob. Prüfe jeden Hinweis selbst nach und notiere,
+   welchen du übernimmst und welchen du verwirfst.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Sortiere die Schritte nach dem Schaden, den eine doppelte Ausführung anrichtet. Eine
+doppelte Datei ist unschön, eine doppelte Mail an einen Lieferanten ist peinlich, eine
+doppelte Freigabe kann zur doppelten Zahlung führen. Achte außerdem auf die laufende
+Nummer in Schritt 1 – sie ist der Grund, warum die Doppelung überhaupt unentdeckt bleibt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p><strong>Ursachen für Doppelläufe:</strong> erneutes Starten nach einem Fehler in Schritt 3 oder 4;
+eine Antwortmail des Lieferanten im selben Postfach, die als neuer Vorgang gilt; ein
+Lieferant, der die Rechnung zur Sicherheit ein zweites Mal sendet; das Weiterleiten
+derselben Mail durch eine Kollegin.</p>
+<table>
+<thead>
+<tr>
+<th>Schritt</th>
+<th>Idempotent?</th>
+<th>Folge bei doppelter Ausführung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Datei speichern mit laufender Nummer</td>
+<td>nein</td>
+<td>zweite Datei unter neuem Namen, Doppelung unsichtbar</td>
+</tr>
+<tr>
+<td>Zeile in Liste anlegen</td>
+<td>nein</td>
+<td>zwei Vorgänge für eine Rechnung</td>
+</tr>
+<tr>
+<td>Freigabemail senden</td>
+<td>nein</td>
+<td>Kostenstelle gibt zweimal frei, Risiko Doppelzahlung</td>
+</tr>
+<tr>
+<td>Bestätigung an Lieferant</td>
+<td>nein</td>
+<td>Außenwirkung, Vertrauensverlust</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Kennzeichen:</strong> Lieferant plus Rechnungsnummer, zum Beispiel
+<code>papierwelt-gmbh_R-2026-4711</code>. Die laufende Nummer taugt nicht, weil der Ablauf sie selbst
+erzeugt und beim zweiten Lauf eine neue vergibt; die Empfangszeit taugt nicht, weil sie
+sich bei einer Wiederholung unterscheidet.</p>
+<p><strong>Einbau:</strong> Direkt nach dem Trigger Kennzeichen bilden und in der Liste danach suchen.
+Vorhanden heißt: nur protokollieren und beenden. Nicht vorhanden heißt: Zeile anlegen,
+dann Datei speichern, dann Mails senden. Die Reihenfolge ist entscheidend – der Eintrag
+ist die Sperre und muss vor den nach außen wirkenden Schritten stehen. Der Dateiname
+sollte das Kennzeichen enthalten, damit ein zweiter Lauf überschreibt statt zu ergänzen.</p>
+<p><strong>Zum KI-Anteil:</strong> Brauchbar sind meist der Hinweis auf den fehlenden Fall
+„Rechnungsnummer nicht erkennbar", auf Groß- und Kleinschreibung im Kennzeichen und auf
+fehlende Fehlerprotokollierung. Verwerfen solltest du pauschale Empfehlungen wie „nutze
+eine Datenbank" – sie beantworten die Frage nicht und ignorieren, dass hier ohne
+Adminrechte gearbeitet wird.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Flow-Entwurf als Schrittliste – Trigger, Felder, Datentypen</summary>
+<p><strong>Szenario:</strong> Die Nordwind Handel GmbH will den Rechnungseingang aus Kapitel 17 endlich
+ordnen. Gebaut wird noch nichts – du lieferst den vollständigen Entwurf, den man später
+ohne Rückfragen umsetzen kann. Genau daran scheitern die meisten Vorhaben: Der Entwurf
+klingt plausibel, aber beim Bauen fehlen Felder, Datentypen passen nicht und niemand hat
+an die zweite Ausführung gedacht.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Sammelpostfach rechnung@nordwind-handel.de, ca. 300 Mails pro Monat.
+Darunter: echte Rechnungen als PDF, Mahnungen, Werbung,
+  Abwesenheitsnotizen, Rueckfragen von Kolleginnen, Gutschriften.
+Ziel: Ablage in SharePoint, Zeile in der Liste Rechnungseingang,
+  Freigabeanfrage an die zustaendige Kostenstelle.
+Liste Rechnungseingang, Spalten:
+  Kennzeichen, Lieferant, Rechnungsnummer, Bestellnummer,
+  Eingangsdatum, Betrag, Kostenstelle, Status, Belegpfad
+Regel: Betrag ueber 5000 Euro zusaetzlich Leitung Finanzen.
+Skonto: 14 Tage, bei Verlust kostet das real Geld.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Entwurf als Schrittliste.</strong> Schreibe den Ablauf als reine Textliste: eine Zeile
+<code>Ausloeser:</code> und danach nummerierte Schritte. Verwende Platzhalter in eckigen Klammern für
+alle Werte, die erst zur Laufzeit bekannt sind. Ergänze zwei Anlagen: eine
+<strong>Mapping-Tabelle</strong> <code>Zielspalte | Herkunft | Datentyp | Umformung</code> für alle neun Spalten
+und eine <strong>Filterliste</strong>, welche eingehenden Mails der Ablauf bearbeitet und welche nicht.
+Begründe deine Trigger-Wahl in zwei Sätzen.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Dein Entwurf muss <strong>alle vier</strong> Kriterien
+erfüllen. Gehe sie einzeln durch und dokumentiere jede Änderung:</p>
+<ol>
+<li>Jedes Zielfeld hat eine benannte Herkunft, einen Datentyp und – falls nötig – eine
+   Umformungsregel. Felder ohne sichere Herkunft sind ausdrücklich als offen markiert.</li>
+<li>Der Entwurf ist <strong>idempotent</strong>: Es gibt ein eindeutiges Kennzeichen, eine Prüfung vor
+   dem ersten schreibenden Schritt, und die nach außen wirkenden Schritte stehen dahinter.</li>
+<li>Für <strong>jede</strong> der sechs Mailsorten aus den Rahmendaten ist entschieden, was passiert –
+   bearbeiten, aussortieren oder an einen Menschen geben. Aussortierte Mails verschwinden
+   nicht spurlos.</li>
+<li>Mindestens <strong>zwei</strong> Datentyp-Risiken sind benannt und mit einer Gegenmaßnahme versehen,
+   darunter eines zu Datum oder Zeitzone.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Der Testlauf mit 30 echten Mails aus dem Archiv zeigt drei
+Dinge: Bei 11 Mails steht keine Rechnungsnummer im Betreff. Zwei Lieferanten senden mehrere
+Rechnungen in <strong>einer</strong> Mail mit drei PDF-Anhängen. Und eine Gutschrift wurde als Rechnung
+über minus 340 Euro verarbeitet und an die Kostenstelle zur Freigabe geschickt. Überarbeite
+den Entwurf so, dass alle drei Fälle abgedeckt sind – auch wenn das bedeutet, dass ein Teil
+der Vorgänge bewusst an einen Menschen geht. Halte fest, wie viele der 30 Mails dein
+überarbeiteter Ablauf vollautomatisch schafft.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Leitung Finanzen verlangt eine Quote von
+„mindestens 95 Prozent vollautomatisch", weil sonst der Aufwand nicht lohne. Lass dir von
+einem KI-Werkzeug Argumente für beide Seiten geben. Entscheide dann begründet, welche Quote
+du zusagst, und <strong>widersprich</strong> der Vorgabe, wenn sie nur durch riskante Annahmen
+erreichbar wäre. Rechne dabei gegen: Was kostet eine falsch freigegebene Rechnung im
+Vergleich zu 20 Prozent manueller Nacharbeit?</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Schrittliste des Entwurfs inklusive Trigger-Begründung, Mapping-Tabelle und Filterliste</li>
+<li>ausgefüllte Checkliste der vier Pflichtkriterien mit dokumentierten Änderungen</li>
+<li>überarbeiteter Entwurf nach dem Testlauf, mit Angabe der erreichten Automatisierungsquote</li>
+<li>begründete Zusage einer Quote inklusive der abgelehnten Alternative und ihrer Risiken</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> dein Entwurf ohne Rückfrage baubar ist, das Kennzeichen und
+die Idempotenzprüfung an der richtigen Stelle stehen, alle sechs Mailsorten behandelt sind,
+die drei Befunde aus dem Testlauf sichtbar eingearbeitet sind und deine Quotenzusage mit
+Zahlen statt mit Zuversicht begründet ist.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Runde 3 ist der Kern. Die drei Befunde sind keine Ausnahmen, sondern der Alltag: fehlende
+Kennzeichen, mehrere Vorgänge in einer Sendung und ein Vorzeichen, an das niemand gedacht
+hat. Die Gutschrift ist der lehrreichste Fall – sie durchläuft jede Prüfung fehlerfrei und
+erzeugt trotzdem ein fachlich falsches Ergebnis. In Runde 4 liegt die Falle in der
+Prozentzahl: Eine hohe Quote erreicht man leicht, indem man unsichere Fälle einfach
+durchlässt. Genau das ist die teuerste Form von Automatisierung.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Die Schrittliste hat genau einen Auslöser, verwendet Platzhalter
+konsequent und die Mapping-Tabelle benennt für alle neun Spalten Herkunft, Datentyp und
+Umformung – Betrag und Rechnungsnummer sind als unsicher markiert; (2) alle vier
+Pflichtkriterien sind erfüllt, insbesondere ein Kennzeichen aus Lieferant und
+Rechnungsnummer, die Prüfung <strong>vor</strong> dem ersten schreibenden Schritt und ein
+nachvollziehbarer Verbleib aussortierter Mails; (3) der überarbeitete Entwurf löst alle
+drei Befunde: fehlende Rechnungsnummer führt in einen Klärkorb statt in ein erfundenes
+Kennzeichen, mehrere Anhänge erzeugen mehrere Vorgänge über eine Schleife (Kap. 19), und
+negative Beträge werden als Gutschrift erkannt und getrennt behandelt; (4) die Quotenzusage
+ist gerechnet, nicht geschätzt, und benennt ausdrücklich, welche Fälle bewusst bei Menschen
+bleiben.</p>
+<p>Lernziel: Aus einer Prozessaufnahme einen vollständigen, baubaren Ablaufentwurf machen –
+mit Feldern, Datentypen, Filtern und Idempotenz – und die Versuchung abwehren, eine
+Automatisierungsquote durch unsichere Annahmen zu erkaufen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel17/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 17 – Workflow-Grundlagen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 17 – Workflow-Grundlagen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel19/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 19 – Logikbausteine">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 19 – Logikbausteine
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

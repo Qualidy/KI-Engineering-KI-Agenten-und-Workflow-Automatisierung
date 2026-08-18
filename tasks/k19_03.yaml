@@ -1,0 +1,70 @@
+title: Verschachtelung auflösen – mit KI als Sparringspartner
+difficulty: 3
+question: |
+  Diese Übung machst du in einem KI-Werkzeug (Copilot, ChatGPT oder Claude).
+
+  Für den Rechnungseingang (Kap. 17) gelten diese fachlichen Regeln:
+
+  ```text
+  Gutschriften gehen ohne Freigabe direkt in die Buchhaltung.
+  Rechnungen bis 500 Euro gibt die Buchhaltung selbst frei.
+  Rechnungen ueber 500 Euro gehen an die Kostenstelle.
+  Rechnungen ueber 5000 Euro gehen an Kostenstelle und Leitung Finanzen.
+  Rechnungen ohne Bestellbezug gehen immer an den Einkauf, unabhaengig vom Betrag.
+  Rechnungen ohne erkennbare Rechnungsnummer gehen in den Klaerkorb.
+  Kostenstellen sind Einkauf, Marketing, IT, Lager, Verwaltung.
+  ```
+
+  1. Entwirf die Logik zunächst selbst als Schrittliste. Entscheide bewusst, wo eine
+     Bedingung, wo eine Mehrfachauswahl und wo eine Nachschlagetabelle passt, und in
+     welcher **Reihenfolge** geprüft wird.
+  2. Lass dir von deinem KI-Werkzeug eine Alternative entwerfen. Formuliere den Auftrag so,
+     dass die Prüfreihenfolge und der Umgang mit fehlenden Werten ausdrücklich Teil der
+     Antwort sind.
+  3. Vergleiche beide Entwürfe. Finde mindestens **zwei** Fälle, die einer der Entwürfe
+     falsch oder gar nicht behandelt.
+  4. Lass dir zum Schluss von der KI die Behauptung prüfen: „Man kann alles mit
+     verschachtelten Bedingungen lösen, eine Mehrfachauswahl ist nur Geschmackssache."
+     Beurteile die Antwort selbst und formuliere deine eigene Position in drei Sätzen.
+tip: |
+  Die Reihenfolge der Prüfungen entscheidet über das Ergebnis, nicht nur über die
+  Lesbarkeit. Überlege konkret: Was passiert mit einer Gutschrift über 6000 Euro ohne
+  Bestellbezug? Genau solche Kombinationen zeigen, ob ein Entwurf tragfähig ist.
+solution: |
+  **Tragfähige Reihenfolge:** Erst die Ausschlussfälle, dann die Betragslogik, zuletzt die
+  Zuständigkeit.
+
+  ```text
+  Schritt 1: WENN Rechnungsnummer nicht erkennbar DANN Klaerkorb, Ende
+  Schritt 2: WENN Dokumenttyp Gutschrift oder Betrag negativ
+             DANN direkt Buchhaltung, Ende
+  Schritt 3: WENN Bestellbezug fehlt DANN Einkauf, Ende
+  Schritt 4: Mehrfachauswahl ueber Betragsstufe
+             bis 500 Euro       -> Buchhaltung
+             ueber 500 Euro     -> Kostenstelle
+             ueber 5000 Euro    -> Kostenstelle und Leitung Finanzen
+  Schritt 5: Empfaenger der Kostenstelle aus Nachschlagetabelle ermitteln
+             Standardfall bei unbekannter Kostenstelle: Klaerkorb und protokollieren
+  ```
+
+  **Warum diese Reihenfolge:** Ohne Kennzeichen ist der Vorgang nicht verfolgbar, also kommt
+  Schritt 1 zuerst. Die Gutschrift vor der Betragslogik zu prüfen, verhindert den Fehler aus
+  Kapitel 18, bei dem minus 340 Euro als „unter 500 Euro" gilt und in die Selbstfreigabe
+  läuft. Und „ohne Bestellbezug immer Einkauf" ist stärker als der Betrag, muss also vor
+  der Betragsstufe stehen.
+
+  **Häufige Lücken in beiden Entwürfen:**
+
+  - Die **Gutschrift über 6000 Euro ohne Bestellbezug** wird oft zweimal behandelt oder
+    landet beim Einkauf, obwohl Schritt 2 sie bereits abschließt.
+  - Die **unbekannte Kostenstelle** fehlt fast immer – ohne Standardfall verschwindet der
+    Vorgang.
+  - Der **leere Betrag** wird als 0 gelesen und damit als „bis 500 Euro" behandelt:
+    Selbstfreigabe für einen unbekannten Betrag.
+  - Die **Grenze selbst** ist unklar. Sind 500,00 Euro noch „bis" oder schon „über"?
+
+  **Zur Behauptung:** Sie ist technisch richtig und fachlich falsch. Jede Mehrfachauswahl
+  lässt sich verschachtelt nachbauen, aber ab drei Ausgängen sinkt die Lesbarkeit so stark,
+  dass fehlende Fälle nicht mehr auffallen – daran scheitern Abläufe im Betrieb. Stimmt das
+  KI-Werkzeug der Behauptung zu, ist das ein guter Anlass für Widerspruch mit dem Argument
+  Wartbarkeit.

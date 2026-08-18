@@ -1,0 +1,62 @@
+title: Fehlerhaften Entwurf reparieren
+difficulty: 2
+question: |
+  Der folgende Entwurf soll offene Freigaben anmahnen. Er ist mehrfach fehlerhaft.
+
+  ```text
+  Ausloeser: Taeglich 7 Uhr
+  Schritt 1: Alle Zeilen der Liste Rechnungseingang lesen, 4200 Zeilen
+  Schritt 2: Fuer jede Zeile:
+      Schritt 2a: WENN Status ist nicht gleich Genehmigt
+          Schritt 2b: Erinnerungsmail an Kostenstelle senden
+          Schritt 2c: Feld Letzte Erinnerung auf heute setzen
+      SONST: nichts
+  Schritt 3: Ende
+  ```
+
+  Zusätzlich ist bekannt: Der Ablauf wird auch ausgelöst, wenn eine Zeile der Liste
+  geändert wird. Und die Liste enthält Zeilen mit leerem Status, weil die Erfassung
+  noch nicht abgeschlossen ist.
+
+  1. Finde **mindestens vier** Fehler und benenne jeweils die konkrete Auswirkung.
+  2. Schreibe den Entwurf korrigiert als Schrittliste neu.
+  3. Benenne alle Schritte deines neuen Entwurfs so, dass sie ohne Öffnen verständlich sind.
+tip: |
+  Achte auf drei Wörter: „alle", „nicht gleich" und „auch". Jedes davon versteckt einen
+  eigenen Fehler. Und überlege, was der Ablauf am zweiten Tag mit einer Rechnung macht,
+  die er am ersten Tag schon angemahnt hat.
+solution: |
+  **Fehler und Auswirkungen:**
+
+  1. **Kein Filter beim Lesen.** 4200 Durchläufe für wenige Mahnungen – langsam, teuer,
+    Protokoll unlesbar. Abhilfe: im lesenden Schritt filtern.
+  2. **`Status ist nicht gleich Genehmigt` trifft leere Werte.** Noch nicht erfasste
+    Vorgänge werden angemahnt, obwohl niemand etwas versäumt hat. Abhilfe: auf Status
+    gleich `in Pruefung` prüfen statt auf das Gegenteil von `Genehmigt`.
+  3. **Keine Frist.** Die Bedingung „älter als drei Tage" fehlt, deshalb wird jede offene
+    Rechnung sofort und dann täglich angemahnt.
+  4. **Endlosschleife.** Schritt 2c ändert eine Zeile, und Änderungen lösen den Ablauf
+    erneut aus. Abhilfe: Trigger-Bedingung, die Änderungen am Feld `Letzte Erinnerung`
+    ausschließt – oder ausschließlich per Zeitplan starten.
+  5. **Leere Sonst-Zweige ohne Protokoll.** Im Fehlerfall fehlt jede Spur.
+  6. **Keine Notbremse.** Bei einem Datenfehler gehen tausende Mails hinaus.
+
+  **Korrigierter Entwurf:**
+
+  ```text
+  Ausloeser: Taeglich 7 Uhr, nur Zeitplan
+  Schritt 1: Offene Freigaben lesen
+             Filter Status gleich in Pruefung
+             und Freigabe angefordert am aelter als 3 Tage
+             und Letzte Erinnerung leer oder aelter als 2 Tage
+  Schritt 2: Notbremse Anzahl pruefen
+             WENN mehr als 50 Treffer DANN Meldung an Buchhaltung und Ende
+  Schritt 3: Fuer jede offene Freigabe:
+      Schritt 3a: Erinnerung an Kostenstelle senden
+      Schritt 3b: Feld Letzte Erinnerung auf heute setzen
+      Schritt 3c: Bei Fehler Vorgang als Erinnerung fehlgeschlagen markieren
+  Schritt 4: Zusammenfassung an Buchhaltung senden mit Anzahl der Erinnerungen
+  ```
+
+  Der wichtigste Lernpunkt ist Fehler 2. Er erzeugt keine Fehlermeldung, sondern falsche
+  Mails an Kolleginnen und Kollegen – und wird deshalb erst über Beschwerden entdeckt.

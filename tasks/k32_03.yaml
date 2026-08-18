@@ -1,0 +1,48 @@
+title: Einen Agenten bauen und an seine Grenzen bringen
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug. Mit Zugang zu Copilot Studio baust du dort. Ohne Zugang nutzt du
+  den Ersatzweg aus Abschnitt 32.6 in ChatGPT oder Claude.
+
+  1. Erzeuge dir zuerst eine Wissensbasis. Lasse dir in einem Chatwerkzeug eine fiktive
+     Reisekostenrichtlinie erstellen:
+
+     ```text
+     Schreibe eine fiktive Reisekostenrichtlinie einer mittelstaendischen Firma
+     auf etwa einer Seite. Enthalten sein muessen Kilometerpauschale,
+     Uebernachtungsgrenzen, Verpflegungspauschalen, Fristen fuer die Einreichung
+     und ein kurzer Abschnitt zum Abrechnungsablauf. Lass zwei Punkte bewusst
+     ungeregelt, zum Beispiel Auslandsreisen und Bahncard-Kosten.
+     ```
+
+  2. Lege den Agenten an: Name, Beschreibung, vollständige Instruktion mit mindestens drei
+     Nicht-Zuständigkeiten und einer Regel für den Fall, dass etwas nicht in der Quelle steht.
+  3. Binde die Richtlinie als Wissensquelle ein.
+  4. Teste mit vier Fragen: eine Standardfrage, eine ungewöhnlich formulierte Variante davon, eine
+     knapp außerhalb der Zuständigkeit, und eine zu einem der bewusst ungeregelten Punkte.
+  5. Notiere zu jeder Antwort: Wurde die Fundstelle genannt? Wurde die Grenze eingehalten? Wurde
+     Nicht-Wissen zugegeben oder etwas erfunden?
+  6. Verbessere Instruktion oder Wissensquelle an genau der Stelle, die im Test versagt hat, und
+     wiederhole den Test.
+tip: |
+  Die vierte Frage ist der Kern der Übung. Ein Agent, der bei einem ungeregelten Punkt eine plausible
+  Antwort formuliert, ist gefährlicher als einer, der gar nichts sagt – weil niemand die Lücke
+  bemerkt. Achte darauf, ob deine Instruktion diesen Fall wirklich abfängt.
+solution: |
+  Typische Beobachtungen und die richtige Reaktion:
+
+  - **Standardfrage** wird meist gut beantwortet. Fehlt die Fundstelle, ist die Instruktion an dieser
+    Stelle nicht bindend genug formuliert – ergänze, dass jede Antwort mit dem Abschnittsnamen endet.
+  - **Umformulierte Variante** zeigt, ob die Wissenssuche greift. Scheitert sie, liegt es meist an
+    einer Quelle, die den Begriff des Fragenden nicht enthält. Ein zusätzlicher Abschnitt mit
+    Synonymen in der Richtlinie hilft mehr als jede Instruktionsänderung.
+  - **Frage außerhalb der Zuständigkeit** muss zurückgewiesen werden. Wird sie beantwortet, fehlt die
+    passende Nicht-Zuständigkeit oder sie ist zu allgemein formuliert.
+  - **Ungeregelter Punkt** ist der Härtetest. Ohne ausdrückliche Regel erfindet der Agent hier oft
+    eine plausible Auskunft, etwa eine Pauschale, die nirgends steht. Die wirksame Reparatur ist
+    zweiteilig: eine bindende Regel in der Instruktion für Nicht-Wissen, und ein Verweis auf eine
+    zuständige Stelle, damit die Antwort trotzdem hilft.
+
+  Ein gutes Ergebnis zeigt den Vorher-Nachher-Vergleich: die problematische Antwort aus Durchlauf
+  eins, die konkrete Änderung, und die Antwort aus Durchlauf zwei. Wer nur schreibt „hat danach
+  funktioniert", hat die Ursache nicht benannt.

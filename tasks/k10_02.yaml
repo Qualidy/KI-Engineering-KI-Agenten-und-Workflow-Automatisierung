@@ -1,0 +1,49 @@
+title: Ein Ausgabeformat wirklich erzwingen
+difficulty: 2
+question: |
+  Diese Übung machst du direkt im KI-Werkzeug. Du prüfst, wie stabil ein Format ist – nicht, ob
+  es einmal klappt.
+
+  1. **Material vorbereiten.** Nimm fünf kurze Texte, die etwas mit Anfragen zu tun haben: E-Mails,
+     Ticket-Texte, Notizen. Anonymisiere sie.
+  2. **Erste Fassung.** Lass jeden Text mit diesem Prompt verarbeiten:
+
+     ```text
+     Ordne die folgende Anfrage ein. Gib Kategorie, Dringlichkeit und eine
+     Kurzfassung aus.
+     Anfrage: [Text]
+     ```
+
+     Notiere, wie die Ausgabe jeweils aussieht.
+  3. **Zweite Fassung.** Ergänze eine feste Feldstruktur, erlaubte Werte für Kategorie und
+     Dringlichkeit, ein Verhalten bei fehlender Angabe und das Verbot jeglichen Begleittextes.
+     Verarbeite dieselben fünf Texte erneut.
+  4. **Auswerten.** Zähle für beide Fassungen: Wie oft war die Ausgabe **exakt** so aufgebaut,
+     wie du es brauchst? Notiere jede Abweichung.
+tip: |
+  Achte in Fassung 1 besonders auf die Dringlichkeit. Sehr wahrscheinlich bekommst du fünf
+  verschiedene Bezeichnungen für drei Stufen. Genau das macht eine spätere maschinelle
+  Weiterverarbeitung unmöglich.
+solution: |
+  Typisches Ergebnis:
+
+  | Fassung | Trefferquote | Häufigste Abweichungen |
+  |---|---|---|
+  | ohne Vorgaben | selten mehr als ein bis zwei von fünf | freie Wertebezeichnungen, Einleitungssatz, wechselnde Reihenfolge, unterschiedliche Länge |
+  | mit Feldstruktur und Wertelisten | meist vier bis fünf von fünf | gelegentlich ein zusätzlicher Hinweissatz oder eine Erklärung in Klammern |
+
+  Beispiel einer stabilen zweiten Fassung:
+
+  ```text
+  Ordne die folgende Anfrage ein und antworte ausschliesslich in diesem Format,
+  ein Feld pro Zeile, ohne Einleitung und ohne Schlusssatz:
+  Kategorie: <eine von Reklamation, Anfrage, Bestellung, Sonstiges>
+  Dringlichkeit: <hoch, mittel oder niedrig>
+  Kurzfassung: <ein Satz, maximal 20 Woerter>
+  Fehlende Angabe: <UNBEKANNT oder die fehlende Information>
+  Anfrage: [Text]
+  ```
+
+  Die Lehre: Erlaubte Werte und das ausdrückliche Verbot von Begleittext bringen den größten
+  Sprung. Restabweichungen bleiben – deshalb prüft ein Ablauf die Ausgabe später zusätzlich, statt
+  ihr zu vertrauen (Kap. 29).

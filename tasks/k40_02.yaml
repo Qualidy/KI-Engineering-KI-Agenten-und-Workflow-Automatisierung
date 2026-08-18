@@ -1,0 +1,37 @@
+title: Eine Nutzenzahl herleiten und offen rechnen
+difficulty: 2
+question: |
+  Mache aus deiner Nutzenaussage eine belegte Zahl.
+
+  1. Notiere den **Ausgangswert** mit Herkunft: Zeit oder Fehleranzahl vorher, und woher du die
+     Zahl hast (gemessen an wie vielen Fällen, wann).
+  2. Notiere den **neuen Wert** mit derselben Angabe.
+  3. Schreibe den **Rechenweg** in einer Zeile auf, sodass jemand ihn nachrechnen kann.
+  4. Formuliere zusätzlich eine **Nutzenaussage ohne Zeiteinsparung** – zu Qualität,
+     Nachvollziehbarkeit oder Entlastung.
+  5. Notiere zum Schluss, welche Zahl du **nicht** nennen wirst, weil du sie nicht belegen kannst.
+tip: |
+  Widerstehe der Hochrechnung auf das Jahr. „Das wären 200 Stunden im Jahr" führt sofort zu einer
+  Diskussion über deine Annahmen statt über dein Ergebnis. Kleine, geprüfte Zahlen sind stärker.
+solution: |
+  Qualitätskriterien: (1) Ausgangs- und neuer Wert haben jeweils eine benannte Herkunft;
+  (2) der Rechenweg ist nachrechenbar und nutzt keine unbelegten Zwischenannahmen; (3) die
+  Nutzenaussage ohne Zeitbezug ist konkret; (4) es ist ausdrücklich benannt, welche Zahl weggelassen
+  wird.
+
+  Beispiel für ein gutes Ergebnis:
+
+  „Vorher: 8 Minuten je Rechnung, gemessen an 5 Fällen am 5. März.
+  Jetzt: unter 2 Minuten Prüfzeit, gemessen an 5 Fällen am 12. März.
+  Rechnung: 6 Minuten Einsparung mal 40 Rechnungen pro Woche entspricht etwa 4 Stunden pro Woche.
+  Bau- und Testaufwand rund 12 Stunden, also nach etwa 3 Wochen ausgeglichen.
+
+  Ohne Zeitbezug: Jede Rechnung erzeugt jetzt sofort einen Listeneintrag mit Status. Vorher wurden
+  Belege im Postfach verfolgt, im letzten Quartal sind dabei zwei Rechnungen erst nach der
+  Zahlungsfrist aufgefallen.
+
+  Nicht genannt: eine Fehlerquote vorher – sie wurde nie erfasst, also gibt es keinen
+  Vergleichswert. Stattdessen nenne ich das Ergebnis der 15 Testfälle."
+
+  Der letzte Punkt ist der eigentliche Lerninhalt: Eine bewusst weggelassene Zahl schützt dich
+  davor, in der Fragerunde auf einer erfundenen Grundlage zu stehen.

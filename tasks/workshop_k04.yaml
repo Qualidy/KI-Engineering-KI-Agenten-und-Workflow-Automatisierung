@@ -1,0 +1,98 @@
+title: Leitplanken und Rechts-Check für ein KI-Vorhaben
+difficulty: 4
+question: |
+  **Szenario:** Du arbeitest in der Personalabteilung eines mittelständischen Unternehmens mit
+  600 Beschäftigten. Die Geschäftsführung möchte die Bewerbungsbearbeitung beschleunigen und hat
+  ein Werkzeug ins Auge gefasst, das Unterlagen auswertet, eine Eignungsbewertung vergibt und
+  Absageschreiben erzeugt. Parallel soll für alle Beschäftigten eine Handreichung entstehen, was
+  in KI-Werkzeuge eingegeben werden darf. Der Betriebsrat hat von dem Vorhaben aus dem Flurfunk
+  erfahren und ist verärgert. Du bereitest die Entscheidungsgrundlage vor.
+
+  ```text
+  Rahmendaten:
+  600 Beschaeftigte, 4 Personen in der Personalabteilung.
+  Etwa 900 Bewerbungen pro Jahr auf rund 40 Stellen.
+  Angebotenes Werkzeug: externer Anbieter, Rechenzentrum in den USA,
+  Auftragsverarbeitungsvertrag laut Anbieter moeglich.
+  Vorhandene Systeme: Microsoft 365, Bewerberpostfach, Excel-Liste.
+  Es existiert keine Richtlinie zur KI-Nutzung, keine Betriebsvereinbarung.
+  ```
+
+  ---
+
+  **Runde 1 – Rechts-Check erstellen.** Prüfe das Vorhaben getrennt nach den vier Rechtsfeldern
+  aus Abschnitt 4.1 sowie der Mitbestimmung. Notiere pro Feld: die einschlägige Frage, deine
+  Einschätzung, die offene Frage an eine Fachstelle. Ordne außerdem jede der drei Funktionen des
+  Werkzeugs einzeln einer Risikoklasse des AI Act zu: Unterlagen auswerten, Eignung bewerten,
+  Absagen erzeugen.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Rechts-Check muss **alle vier** Kriterien
+  erfüllen. Lass ihn von einem KI-Werkzeug gegenprüfen und ergänze die Lücken selbst:
+
+  1. Zu Artikel 22 DSGVO ist ausdrücklich beantwortet, ob eine ausschließlich automatisierte
+     Entscheidung vorliegt – und was menschliche Beteiligung konkret bedeuten müsste.
+  2. Die Fragen zum Anbieter sind benannt: Auftragsverarbeitungsvertrag, Datenübertragung in
+     Drittländer, Speicherdauer, Verwendung der Daten zur Modellverbesserung.
+  3. Mindestens **eine** Funktion ist als „so nicht umsetzbar" markiert, mit Begründung.
+  4. Die Mitbestimmungsfrage ist mit den einschlägigen Regelungen belegt und enthält einen
+     Vorschlag, wann und wie der Betriebsrat einbezogen wird.
+
+  **Runde 3 – Die Komplikation.** Drei Dinge kommen dazu. Erstens teilt die Rechtsabteilung mit,
+  dass eine Eignungsbewertung durch das Werkzeug nicht mitgetragen wird. Zweitens fragt eine
+  abgelehnte Bewerberin nach Artikel 15 DSGVO an, welche Daten über sie verarbeitet wurden und
+  wie die Entscheidung zustande kam. Drittens stellt sich heraus, dass zwei Kolleginnen bereits
+  seit Monaten Bewerbungsunterlagen in ein öffentliches KI-Werkzeug kopieren, um Absagen zu
+  formulieren. Überarbeite dein Vorhaben:
+
+  - Entwerfe eine Variante des Prozesses **ohne** maschinelle Eignungsbewertung, die den
+    Zeitgewinn ganz oder teilweise trotzdem erreicht.
+  - Beschreibe, wie du das Auskunftsverlangen beantwortest und welche Protokollierung dafür
+    von Anfang an nötig gewesen wäre.
+  - Lege fest, wie du mit der bereits laufenden inoffiziellen Nutzung umgehst – sachlich und
+    ohne die Kolleginnen zu Sündenböcken zu machen.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Geschäftsführung drängt: „Andere machen das
+  auch, das Restrisiko tragen wir." Lass dir von deinem KI-Werkzeug Pro und Contra geben und
+  entscheide dann begründet, was ihr einführt und was nicht. **Widersprich** der Vorgabe oder dem
+  KI-Vorschlag dort, wo es nötig ist, und begründe deinen Widerspruch mit Rechtsfeld, möglicher
+  Folge und Alternative – nicht mit Vorsicht als Haltung.
+
+  **Deliverable:**
+
+  1. Rechts-Check über vier Rechtsfelder plus Mitbestimmung, mit Risikoklasse je Funktion
+  2. ausgefüllte Checkliste der vier Pflichtkriterien
+  3. überarbeitete Prozessvariante nach Runde 3, inklusive Antwort auf das Auskunftsverlangen
+     und Vorgehen bei der inoffiziellen Nutzung
+  4. Leitplanken-Handreichung für alle Beschäftigten auf einer Seite: was darf hinein, was nicht,
+     wen frage ich im Zweifel, mit mindestens zehn Einträgen
+
+  **Fertig bist du erst, wenn** jede der drei Funktionen eine Risikoklasse trägt, die Frage nach
+  Artikel 22 beantwortet ist, mindestens eine Funktion begründet abgelehnt wurde, dein Vorgehen
+  gegenüber dem Betriebsrat benannt ist und deine Handreichung so formuliert ist, dass eine
+  Kollegin sie ohne Rückfrage anwenden kann.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Runde 3 zeigt, dass Auskunftsrechte nachträglich nicht
+  mehr zu bedienen sind, wenn niemand protokolliert hat, welche Daten wohin gingen – das ist ein
+  Argument dafür, Nachvollziehbarkeit von Anfang an mitzubauen, nicht erst bei Beschwerden. Die
+  inoffizielle Nutzung ist der realistischste Teil des Szenarios: Sie entsteht immer dort, wo es
+  keine Richtlinie und kein freigegebenes Werkzeug gibt. Ein Verbot ohne brauchbare Alternative
+  verlagert das Problem nur ins Verborgene. In Runde 4 geht es nicht um maximale Vorsicht, sondern
+  um eine tragfähige Grenze: Das Formulieren von Absagetexten ist gestaltbar, die maschinelle
+  Eignungsbewertung ist es nicht.
+solution: |
+  Bewertungskriterien: (1) der Rechts-Check behandelt AI Act, DSGVO, Urheberrecht,
+  Geheimnisschutz und Mitbestimmung getrennt und ordnet die drei Funktionen einzeln zu –
+  Unterlagen auswerten und Eignung bewerten als Hochrisiko im Beschäftigungskontext, Absagetexte
+  erzeugen als gestaltbarer Fall; (2) alle vier Pflichtkriterien erfüllt, insbesondere die
+  ausdrückliche Antwort zu Artikel 22 mit einer Beschreibung echter menschlicher Beteiligung
+  sowie die belegte Mitbestimmungsfrage; (3) die Überarbeitung liefert eine tragfähige Variante
+  ohne maschinelle Eignungsbewertung, eine konkrete Antwortstrategie auf das Auskunftsverlangen
+  samt der fehlenden Protokollierung, und einen sachlichen Umgang mit der inoffiziellen Nutzung,
+  der eine freigegebene Alternative anbietet statt nur zu verbieten; (4) die Empfehlung weist die
+  Haltung „Restrisiko tragen wir" mit Rechtsfeld, Folge und Alternative zurück, ohne pauschal
+  abzulehnen, und die Handreichung ist mit mindestens zehn Einträgen und einer benannten
+  Ansprechstelle unmittelbar anwendbar.
+
+  Lernziel: Ein KI-Vorhaben entlang der vier Rechtsfelder und der Mitbestimmung strukturiert
+  prüfen, den Unterschied zwischen gestaltbar und unzulässig erkennen und daraus eine
+  Handreichung machen, die Kolleginnen und Kollegen im Alltag wirklich hilft.

@@ -1,0 +1,1878 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel29/">
+      
+      
+        <link rel="next" href="../kapitel31/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 30 – AI Builder und KI-Aktionen in Power Automate - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-30-ai-builder-und-ki-aktionen-in-power-automate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 30 – AI Builder und KI-Aktionen in Power Automate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Block 6 · Kombination von KI & Workflow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 29 – KI-Bausteine im Workflow: Muster und Einsatzstellen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 30 – AI Builder und KI-Aktionen in Power Automate
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 30 – AI Builder und KI-Aktionen in Power Automate
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#301-ai-builder-der-ki-baukasten-der-power-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      30.1 AI Builder: der KI-Baukasten der Power Platform
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#302-die-vorgefertigten-modelle-im-uberblick" class="md-nav__link">
+    <span class="md-ellipsis">
+      30.2 Die vorgefertigten Modelle im Überblick
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#303-die-prompt-aktion-ki-mit-eigener-anweisung" class="md-nav__link">
+    <span class="md-ellipsis">
+      30.3 Die Prompt-Aktion: KI mit eigener Anweisung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#304-das-ergebnis-strukturiert-weiterverwenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      30.4 Das Ergebnis strukturiert weiterverwenden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#305-voraussetzungen-umgebung-lizenz-kontingent" class="md-nav__link">
+    <span class="md-ellipsis">
+      30.5 Voraussetzungen: Umgebung, Lizenz, Kontingent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#306-der-alternativweg-uber-die-http-aktion" class="md-nav__link">
+    <span class="md-ellipsis">
+      30.6 Der Alternativweg über die HTTP-Aktion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 31 – Dokumentenverarbeitung automatisieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel33/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 33 – Agent und Workflow verbinden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel34/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-30-ai-builder-und-ki-aktionen-in-power-automate">Kapitel 30 – AI Builder und KI-Aktionen in Power Automate<a class="headerlink" href="#kapitel-30-ai-builder-und-ki-aktionen-in-power-automate" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Was <strong>AI Builder</strong> ist und wie er sich in die Power Platform einfügt</li>
+<li>Welche <strong>vorgefertigten Modelle</strong> es gibt und wann sich ein <strong>eigenes trainiertes Modell</strong> lohnt</li>
+<li>Wie du die <strong>Prompt-Aktion</strong> im Flow einsetzt und einen vollständigen Prompt dafür schreibst</li>
+<li>Der entscheidende Trick: die KI-Ausgabe in eine <strong>feste Struktur zwingen</strong> und danach zerlegen</li>
+<li>Welche <strong>Voraussetzungen</strong> gelten: Umgebung, Lizenz, Kontingent</li>
+<li>Wie du über die <strong>HTTP-Aktion</strong> einen KI-Dienst ansprichst, wenn AI Builder nicht verfügbar ist</li>
+</ul>
+</div>
+<hr />
+<h2 id="301-ai-builder-der-ki-baukasten-der-power-platform">30.1 AI Builder: der KI-Baukasten der Power Platform<a class="headerlink" href="#301-ai-builder-der-ki-baukasten-der-power-platform" title="Permanent link">&para;</a></h2>
+<p><strong>AI Builder</strong> ist der KI-Werkzeugkasten innerhalb der Power Platform. Er stellt fertige KI-Funktionen als ganz normale Aktionen bereit, die du in einem Cloud-Flow genauso einfügst wie eine SharePoint- oder Outlook-Aktion (Kap. 25). Du brauchst dafür kein Modell zu verstehen und nichts zu programmieren.</p>
+<p>AI Builder kennt zwei grundverschiedene Arten von Modellen:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Vorgefertigtes Modell</th>
+<th>Eigenes trainiertes Modell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Woher es kommt</td>
+<td>von Microsoft trainiert und bereitgestellt</td>
+<td>du trainierst es mit eigenen Beispielen</td>
+</tr>
+<tr>
+<td>Vorbereitung</td>
+<td>keine – direkt einsetzbar</td>
+<td>Beispieldaten sammeln, markieren, trainieren, veröffentlichen</td>
+</tr>
+<tr>
+<td>Passgenauigkeit</td>
+<td>allgemein, kennt deine Begriffe nicht</td>
+<td>genau auf deine Dokumente und Kategorien zugeschnitten</td>
+</tr>
+<tr>
+<td>Typischer Fall</td>
+<td>Stimmung, Sprache, Texterkennung, Rechnungen</td>
+<td>eure spezifischen Formulare und Lieferscheine</td>
+</tr>
+<tr>
+<td>Aufwand</td>
+<td>Minuten</td>
+<td>Stunden bis Tage, plus Pflege</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Fang <strong>immer</strong> mit einem vorgefertigten Modell oder einem Prompt an. Ein eigenes Modell trainierst du erst, wenn du nachweisen kannst, dass die fertige Variante an einer konkreten Stelle systematisch versagt. Das Training eigener Dokumentmodelle vertiefst du in Kap. 31.</p>
+</div>
+<hr />
+<h2 id="302-die-vorgefertigten-modelle-im-uberblick">30.2 Die vorgefertigten Modelle im Überblick<a class="headerlink" href="#302-die-vorgefertigten-modelle-im-uberblick" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modell</th>
+<th>Was es liefert</th>
+<th>Sinnvoller Einsatz im Flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stimmungsanalyse</strong></td>
+<td>positiv, negativ oder neutral zu einem Text</td>
+<td>Rückmeldungen aus Formularen vorsortieren</td>
+</tr>
+<tr>
+<td><strong>Kategorieklassifizierung</strong></td>
+<td>eine oder mehrere Kategorien zu einem Text</td>
+<td>eingehende Anfragen einem Team zuordnen</td>
+</tr>
+<tr>
+<td><strong>Schlüsselbegriffserkennung</strong></td>
+<td>die zentralen Begriffe eines Textes</td>
+<td>Stichworte für die Suche in einer Vorgangsliste</td>
+</tr>
+<tr>
+<td><strong>Spracherkennung</strong></td>
+<td>die Sprache eines Textes</td>
+<td>Weiterleitung an ein fremdsprachiges Team</td>
+</tr>
+<tr>
+<td><strong>Übersetzung</strong></td>
+<td>denselben Text in einer Zielsprache</td>
+<td>Anfragen für die Bearbeitung übersetzen</td>
+</tr>
+<tr>
+<td><strong>Texterkennung</strong></td>
+<td>den Text aus Bildern und Scans</td>
+<td>Inhalt eines Fotos durchsuchbar machen</td>
+</tr>
+<tr>
+<td><strong>Visitenkartenleser</strong></td>
+<td>Name, Firma, Telefon, Mail aus einem Foto</td>
+<td>Kontakte nach einer Messe erfassen</td>
+</tr>
+<tr>
+<td><strong>Rechnungsverarbeitung</strong></td>
+<td>Rechnungsfelder wie Betrag, Datum, Lieferant</td>
+<td>Belege vorerfassen (Kap. 31)</td>
+</tr>
+<tr>
+<td><strong>Belegverarbeitung</strong></td>
+<td>Felder aus Kassenbelegen</td>
+<td>Reisekostenabrechnung vorbereiten</td>
+</tr>
+</tbody>
+</table>
+<p>Diese Modelle haben eine angenehme Eigenschaft: Ihre Ausgabe ist <strong>strukturiert</strong>. Du bekommst ein Feld „Stimmung" mit dem Wert <code>negativ</code> und einen Zahlenwert dazu, kein Fließtextabsatz. Damit lässt sich sofort weiterarbeiten.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: Stimmung ist keine Dringlichkeit</p>
+<p>Die Stimmungsanalyse misst den <strong>Ton</strong>, nicht die Wichtigkeit. Eine sachlich formulierte Kündigung wird als neutral eingestuft, ein verärgerter Hinweis auf einen Tippfehler als negativ. Wer daraus eine Eskalationslogik baut, eskaliert die falschen Fälle. Stimmung ist ein Zusatzsignal, nie das Entscheidungskriterium (Kap. 29).</p>
+</div>
+<hr />
+<h2 id="303-die-prompt-aktion-ki-mit-eigener-anweisung">30.3 Die Prompt-Aktion: KI mit eigener Anweisung<a class="headerlink" href="#303-die-prompt-aktion-ki-mit-eigener-anweisung" title="Permanent link">&para;</a></h2>
+<p>Für alles, was die vorgefertigten Modelle nicht abdecken, gibt es die <strong>Prompt-Aktion</strong>. Sie heißt in Power Automate je nach Version „Text mit GPT erstellen" oder erscheint als eigener Prompt, den du zuvor in AI Builder angelegt hast. Du findest sie unter <code>Power Automate → Aktion hinzufügen → AI Builder</code>.</p>
+<p>Der Ablauf ist immer derselbe: Du schreibst eine Anweisung, markierst die Stellen, an denen Daten aus dem Flow eingesetzt werden, und bekommst eine Textantwort zurück. Alles, was du in Kap. 9 und 10 über Prompt-Design gelernt hast, gilt hier unverändert – mit einer Verschärfung: Im Flow liest niemand mit. Ein Prompt, der im Chat „meistens gut genug" ist, reicht nicht.</p>
+<p>Hier ein vollständiger Prompt für die Einordnung eingehender Serviceanfragen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist Sachbearbeiter im Kundenservice eines Bueromoebelhaendlers.
+Ordne die folgende Kundennachricht ein.
+
+Erlaubte Kategorien, waehle genau eine:
+Reklamation, Angebotsanfrage, Rechnungsfrage, Terminfrage, Sonstiges
+
+Erlaubte Dringlichkeitsstufen, waehle genau eine:
+hoch, mittel, niedrig
+Hoch gilt nur bei Lieferstopp, Reklamation mit Fristsetzung oder Kuendigung.
+
+Regeln:
+- Erfinde keine Angaben. Wenn ein Feld nicht im Text steht, schreibe null.
+- Ordne im Zweifel Sonstiges zu, statt zu raten.
+- Die Begruendung ist hoechstens 15 Woerter lang.
+
+Antworte ausschliesslich mit diesem JSON, ohne Einleitung und ohne Kommentar:
+
+{
+  &quot;kategorie&quot;: &quot;eine der erlaubten Kategorien&quot;,
+  &quot;dringlichkeit&quot;: &quot;eine der erlaubten Stufen&quot;,
+  &quot;kundennummer&quot;: &quot;gefundene Nummer oder null&quot;,
+  &quot;konfidenz&quot;: 0.0,
+  &quot;begruendung&quot;: &quot;kurzer Satz&quot;
+}
+
+Kundennachricht:
+[Hier wird der Mailtext aus dem Flow eingesetzt]
+</code></pre></div></td></tr></table></div>
+<p>Drei Dinge machen diesen Prompt flowtauglich: Die <strong>Kategorien sind aufgezählt</strong>, sodass das Modell nichts erfinden kann. Es gibt eine <strong>ausdrückliche Regel für den Zweifelsfall</strong>. Und die Ausgabe ist auf ein <strong>festes Format</strong> festgelegt.</p>
+<p>Der entscheidende Trick ist der letzte Punkt: <strong>Erzwinge die Struktur, und erzwinge sie hart.</strong> „Antworte ausschließlich mit diesem JSON, ohne Einleitung und ohne Kommentar" ist kein Stilwunsch, sondern die Voraussetzung dafür, dass der nächste Schritt im Flow überhaupt funktioniert. Sprachmodelle neigen dazu, höflich einzuleiten – und genau dieses „Gerne! Hier ist das Ergebnis:" bricht die weitere Verarbeitung.</p>
+<hr />
+<h2 id="304-das-ergebnis-strukturiert-weiterverwenden">30.4 Das Ergebnis strukturiert weiterverwenden<a class="headerlink" href="#304-das-ergebnis-strukturiert-weiterverwenden" title="Permanent link">&para;</a></h2>
+<p>Die Prompt-Aktion liefert dir zunächst nur <strong>Text</strong>. Damit der Flow damit verzweigen kann, musst du ihn in echte Felder zerlegen. Der Standardweg dafür ist die Aktion <code>JSON analysieren</code>.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Mail trifft ein]) --&gt; B([Prompt-Aktion])
+    B --&gt; C([JSON analysieren])
+    C --&gt; D([Bedingung auf Konfidenz])
+    D --&gt; E([Vorgang anlegen oder Pruefliste])</code></pre>
+<p>Nach <code>JSON analysieren</code> stehen dir <code>kategorie</code>, <code>dringlichkeit</code>, <code>konfidenz</code> und <code>begruendung</code> als normale dynamische Inhalte zur Verfügung, so wie jedes andere Feld im Flow (Kap. 23). Die Verzweigung ist danach wieder vollständig deterministisch:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Bedingung:
+  konfidenz  ist groesser oder gleich  0.85
+  UND
+  kategorie  ist nicht gleich  Sonstiges
+
+Ja-Zweig:   Vorgang in der Liste anlegen, Zustaendigkeit nach Kategorie setzen
+Nein-Zweig: Eintrag in der Pruefliste, Zuweisung an den Innendienst
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis: das Format hält nicht von allein</p>
+<p>Auch mit klarer Anweisung kann die Ausgabe gelegentlich abweichen – ein zusätzlicher Satz davor, ein fehlendes Feld, ein Komma zu viel. <code>JSON analysieren</code> bricht dann mit einem Fehler ab, und der Flow bleibt stehen. Baue deshalb immer ab: Setze die Prompt-Aktion und das Zerlegen in einen <code>Bereich</code> und hänge einen Fehlerzweig mit <code>Nach Fehler ausführen</code> daran, der den Vorgang in die Prüfliste schreibt (Kap. 28). So wird ein Formatfehler zu einem Prüffall statt zu einem Ausfall.</p>
+</div>
+<p>Ein zweiter Stolperstein sind Zahlenwerte. Wenn das Modell <code>0.85</code> mit Punkt liefert, dein Vergleich aber einen Text erwartet, vergleichst du Zeichenketten statt Zahlen – und <code>0.9</code> ist als Text kleiner als <code>0.85</code>. Wandle den Wert deshalb ausdrücklich um, etwa mit <code>@{float(body('JSON_analysieren')?['konfidenz'])}</code>, und definiere das Feld im Schema als Zahl.</p>
+<hr />
+<h2 id="305-voraussetzungen-umgebung-lizenz-kontingent">30.5 Voraussetzungen: Umgebung, Lizenz, Kontingent<a class="headerlink" href="#305-voraussetzungen-umgebung-lizenz-kontingent" title="Permanent link">&para;</a></h2>
+<p>AI-Builder-Aktionen sind keine Standardaktionen. Drei Dinge müssen zusammenkommen, damit sie dir überhaupt angezeigt werden:</p>
+<table>
+<thead>
+<tr>
+<th>Voraussetzung</th>
+<th>Worum es geht</th>
+<th>Woran du merkst, dass es fehlt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Umgebung</strong></td>
+<td>AI Builder läuft in einer Power-Platform-Umgebung mit Dataverse</td>
+<td>die Aktionen erscheinen gar nicht in der Suche</td>
+</tr>
+<tr>
+<td><strong>Lizenz</strong></td>
+<td>AI Builder ist kostenpflichtig, teils in Plänen enthalten</td>
+<td>Aktion ist sichtbar, meldet aber fehlende Berechtigung</td>
+</tr>
+<tr>
+<td><strong>Kontingent</strong></td>
+<td>jeder Aufruf verbraucht Credits aus einem Kontingent</td>
+<td>Flows brechen ab, sobald das Kontingent leer ist</td>
+</tr>
+</tbody>
+</table>
+<p>Das Kontingent ist der Punkt, den man beim Bauen unterschätzt. Es hängt an der Umgebung, nicht an dir – ein einzelner Flow mit einer Schleife über eine große Liste kann das Kontingent eines ganzen Teams aufbrauchen. Zwei Regeln helfen: Teste mit <strong>wenigen</strong> Datensätzen, und prüfe vor dem Produktivgang, wie oft der KI-Schritt pro Tag tatsächlich läuft (Kap. 29).</p>
+<div class="admonition info">
+<p class="admonition-title">Falls dir AI Builder nicht zur Verfügung steht</p>
+<p>Du kannst dieses Kapitel vollständig ohne AI-Builder-Zugang durcharbeiten. Nutze diesen Ersatzweg:</p>
+<ol>
+<li>Teste den Prompt <strong>manuell</strong> im Chatwerkzeug (Copilot, ChatGPT oder Claude) mit fünf bis zehn Beispielnachrichten und schärfe ihn dort nach, bis die Ausgabe zuverlässig dem geforderten Format entspricht.</li>
+<li>Kopiere eine der so erzeugten Ausgaben in eine <code>Verfassen</code>-Aktion in deinem Flow. Sie tritt an die Stelle der Prompt-Aktion.</li>
+<li>Baue alles Weitere – <code>JSON analysieren</code>, Bedingung, Ablage, Prüfliste, Fehlerzweig – ganz normal auf dieser Testausgabe auf.</li>
+</ol>
+<p>Du lernst dabei genau das, worauf es ankommt: einen flowtauglichen Prompt schreiben und eine strukturierte Ausgabe weiterverarbeiten. Steht AI Builder später zur Verfügung, ersetzt du die <code>Verfassen</code>-Aktion durch die echte Prompt-Aktion, ohne den Rest anzufassen.</p>
+</div>
+<hr />
+<h2 id="306-der-alternativweg-uber-die-http-aktion">30.6 Der Alternativweg über die HTTP-Aktion<a class="headerlink" href="#306-der-alternativweg-uber-die-http-aktion" title="Permanent link">&para;</a></h2>
+<p>Wenn AI Builder dauerhaft nicht infrage kommt, dein Unternehmen aber Zugang zu einem KI-Dienst hat, führt der Weg über die <code>HTTP</code>-Aktion (Kap. 26). Der Aufbau ist derselbe wie bei jedem anderen Dienstaufruf:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Methode:  POST
+URL:      Endpunkt des KI-Dienstes laut interner Dokumentation
+Header:   Content-Type: application/json
+          Authorization: Schluessel aus einer sicheren Quelle
+Body:     JSON mit Anweisung und Nutzertext
+</code></pre></div></td></tr></table></div>
+<p>Die Antwort ist wieder JSON und wird wieder mit <code>JSON analysieren</code> zerlegt – ab da unterscheidet sich nichts von Abschnitt 30.4.</p>
+<div class="admonition warning">
+<p class="admonition-title">Schlüssel gehören nicht in den Flow</p>
+<p>Ein API-Schlüssel im Klartext in einer HTTP-Aktion ist für jeden lesbar, der den Flow öffnen oder exportieren darf – und das sind in geteilten Umgebungen mehr Personen als gedacht. Schlüssel gehören in eine dafür vorgesehene sichere Ablage, in der Microsoft-Welt üblicherweise Azure Key Vault, und werden von dort zur Laufzeit geholt. Kläre das mit der IT, bevor du baust. Ein eigenmächtig angelegter Dienstzugang mit Schlüssel im Flow ist genau die Schatten-IT, die dir in Kap. 38 als Problem begegnet.</p>
+</div>
+<p>Beim Umweg über einen externen Dienst kommt außerdem der Datenschutz zurück auf den Tisch: Welche Daten verlassen das Unternehmen, wohin, und gibt es dafür eine Grundlage? Ein Flow, der Kundennachrichten an einen nicht freigegebenen Dienst schickt, ist unabhängig von seiner technischen Qualität ein Problem (Kap. 4).</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>AI Builder</strong> stellt KI als normale Flow-Aktionen bereit – vorgefertigte Modelle für Standardfälle, eigene trainierte Modelle für spezifische Dokumente.</li>
+<li>Vorgefertigte Modelle liefern <strong>strukturierte Ausgaben</strong> und sind sofort einsetzbar; Stimmung ist dabei ein Zusatzsignal, keine Dringlichkeit.</li>
+<li>Die <strong>Prompt-Aktion</strong> deckt alles Übrige ab: Kategorien aufzählen, Zweifelsregel setzen, Ausgabeformat hart vorschreiben.</li>
+<li>Der Schlüssel zur Weiterverarbeitung ist <strong>JSON analysieren</strong> – danach verzweigt der Flow wieder rein deterministisch.</li>
+<li>Formatabweichungen sind einzuplanen: <code>Bereich</code> plus Fehlerzweig macht aus einem Ausfall einen Prüffall.</li>
+<li><strong>Umgebung, Lizenz und Kontingent</strong> entscheiden über die Verfügbarkeit; ohne AI Builder trägt der Weg über getesteten Prompt plus <code>Verfassen</code> oder die <code>HTTP</code>-Aktion.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Vorgefertigtes Modell, Prompt oder eigenes Modell?</summary>
+<p>Für jede der folgenden Aufgaben stehen drei Wege offen: ein <strong>vorgefertigtes AI-Builder-Modell</strong>,
+die <strong>Prompt-Aktion</strong> oder ein <strong>eigenes trainiertes Modell</strong>. Wähle jeweils den günstigsten Weg
+und begründe in einem Satz.</p>
+<ol>
+<li>Aus einem Foto einer Visitenkarte sollen Name, Firma und Telefonnummer erfasst werden.</li>
+<li>Eingehende Nachrichten sollen einer von fünf hausinternen Zuständigkeiten zugeordnet werden,
+   die es so nirgends sonst gibt.</li>
+<li>Von jeder Rückmeldung aus einem Forms-Formular soll die Stimmung erfasst werden.</li>
+<li>Aus einem hausinternen Urlaubsantragsformular mit festem Layout sollen sechs Felder
+   ausgelesen werden – täglich rund 40 Stück.</li>
+<li>Zu jeder Reklamation soll ein dreizeiliger Antwortentwurf im Hausstil entstehen.</li>
+<li>Die Sprache eingehender Mails soll erkannt werden, um sie an das richtige Team zu leiten.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Vorgefertigte Modelle lösen Standardaufgaben ohne Vorbereitung. Die Prompt-Aktion ist der flexible
+Allrounder für alles, was mit Text und eigenen Regeln zu tun hat. Ein eigenes Modell lohnt erst bei
+vielen gleichartigen Dokumenten mit festem Aufbau.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Aufgabe</th>
+<th>Weg</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Visitenkarte</td>
+<td>vorgefertigtes Modell</td>
+<td>genau dafür gibt es den Visitenkartenleser</td>
+</tr>
+<tr>
+<td>2 Hausinterne Zuständigkeiten</td>
+<td>Prompt-Aktion</td>
+<td>die Kategorien sind eigene Begriffe, sie lassen sich im Prompt aufzählen</td>
+</tr>
+<tr>
+<td>3 Stimmung</td>
+<td>vorgefertigtes Modell</td>
+<td>Standardfall, sofort einsetzbar, strukturierte Ausgabe</td>
+</tr>
+<tr>
+<td>4 Urlaubsantrag</td>
+<td>eigenes trainiertes Modell</td>
+<td>festes Layout, hohe Stückzahl, wiederkehrende Felder</td>
+</tr>
+<tr>
+<td>5 Antwortentwurf</td>
+<td>Prompt-Aktion</td>
+<td>Texterzeugung mit eigenem Ton, kein fertiges Modell dafür</td>
+</tr>
+<tr>
+<td>6 Sprache erkennen</td>
+<td>vorgefertigtes Modell</td>
+<td>Spracherkennung ist ein Standardmodell</td>
+</tr>
+</tbody>
+</table>
+<p>Wichtig ist die Reihenfolge des Nachdenkens: erst prüfen, ob ein vorgefertigtes Modell passt, dann
+die Prompt-Aktion, und erst ganz zuletzt ein eigenes Modell. Fall 2 könnte man auch mit einem
+eigenen Klassifizierungsmodell lösen – das wäre aber deutlich mehr Aufwand für dasselbe Ergebnis,
+solange die Kategorien in den Prompt passen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Einen Prompt flowtauglich machen</summary>
+<p>Ein Kollege hat diesen Prompt in eine Prompt-Aktion eingesetzt. Der Flow bricht in etwa jedem
+vierten Durchlauf ab, und die Zuordnungen sind uneinheitlich.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Schau dir bitte diese Nachricht an und sag mir, worum es geht und wie
+dringend es ist. Wenn du eine Kundennummer findest, nenne sie auch.
+Danke!
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Benenne <strong>mindestens vier</strong> konkrete Mängel, die diesen Prompt für den Einsatz im Flow
+   untauglich machen.</li>
+<li>Schreibe den Prompt vollständig neu, sodass er im Flow zuverlässig funktioniert.</li>
+<li>Erkläre in zwei Sätzen, warum der Flow überhaupt abbricht und nicht einfach ein schlechtes
+   Ergebnis liefert.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Denke daran, dass hinter der Prompt-Aktion eine Aktion steht, die die Ausgabe zerlegen soll. Alles,
+was ein Mensch beim Lesen mühelos überliest, ist für diese Aktion ein Formatfehler.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p><strong>Mängel:</strong> (1) Kein festes Ausgabeformat, die Antwort ist Fließtext. (2) Keine geschlossene Liste
+erlaubter Kategorien, das Modell erfindet bei jedem Durchlauf neue Bezeichnungen. (3) Keine
+Definition von „dringend", also keine Vergleichbarkeit zwischen zwei Nachrichten. (4) Keine Regel
+für fehlende Angaben, deshalb wird eine nicht vorhandene Kundennummer notfalls erfunden. (5) Keine
+Rolle und kein Kontext. Höflichkeitsfloskeln wie „Danke" laden das Modell zusätzlich zu einer
+gesprächigen Antwort ein.</p>
+<p><strong>Neufassung:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist Sachbearbeiter im Kundenservice eines Bueromoebelhaendlers.
+Ordne die folgende Kundennachricht ein.
+
+Erlaubte Kategorien, waehle genau eine:
+Reklamation, Angebotsanfrage, Rechnungsfrage, Terminfrage, Sonstiges
+
+Erlaubte Dringlichkeit, waehle genau eine: hoch, mittel, niedrig
+Hoch gilt nur bei Lieferstopp, Fristsetzung oder Kuendigung.
+
+Erfinde nichts. Fehlende Angaben werden als null ausgegeben.
+Antworte ausschliesslich mit diesem JSON, ohne Einleitung:
+
+{
+  &quot;kategorie&quot;: &quot;eine der erlaubten Kategorien&quot;,
+  &quot;dringlichkeit&quot;: &quot;eine der erlaubten Stufen&quot;,
+  &quot;kundennummer&quot;: &quot;gefundene Nummer oder null&quot;,
+  &quot;konfidenz&quot;: 0.0
+}
+
+Nachricht:
+[Mailtext aus dem Flow]
+</code></pre></div></td></tr></table></div>
+<p><strong>Warum der Flow abbricht:</strong> Die nachfolgende Aktion <code>JSON analysieren</code> erwartet eine Ausgabe, die
+exakt zum hinterlegten Schema passt. Liefert das Modell stattdessen einen Fließtext oder stellt es
+dem JSON einen einleitenden Satz voran, schlägt das Zerlegen fehl und der gesamte Durchlauf
+scheitert – nicht, weil das Ergebnis inhaltlich schlecht wäre, sondern weil es formal unlesbar ist.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Strukturierte KI-Ausgabe im Flow verarbeiten</summary>
+<p>Diese Übung baust du in <strong>Power Automate</strong>. Steht dir AI Builder nicht zur Verfügung, nutze den
+Ersatzweg aus Abschnitt 30.5.</p>
+<ol>
+<li>Lege einen manuell auslösbaren Cloud-Flow an: <code>Power Automate → Erstellen → Sofortiger Cloud-Flow</code>.</li>
+<li>Füge eine <code>Verfassen</code>-Aktion mit einem erfundenen Nachrichtentext ein, zum Beispiel:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Guten Tag, unsere Lieferung zur Bestellung 44182 ist seit zehn Tagen
+ueberfaellig. Wir brauchen die Ware bis Freitag, sonst stornieren wir.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Setze den KI-Schritt ein – entweder als echte Prompt-Aktion mit dem Prompt aus Abschnitt 30.3
+   oder als zweite <code>Verfassen</code>-Aktion, in die du eine im Chatwerkzeug erzeugte JSON-Ausgabe kopierst.</li>
+<li>Füge <code>JSON analysieren</code> an und erzeuge das Schema über <code>Beispielnutzlast zum Generieren des
+   Schemas verwenden</code>.</li>
+<li>Baue eine <code>Bedingung</code>: Ist die Konfidenz mindestens 0,85 <strong>und</strong> die Kategorie nicht <code>Sonstiges</code>,
+   sende dir selbst eine Mail mit Kategorie und Dringlichkeit. Andernfalls sende eine Mail mit dem
+   Betreff <code>Pruefung noetig</code>.</li>
+<li>Teste den Flow zweimal: einmal mit dem obigen Text, einmal mit einem bewusst leeren oder
+   unsinnigen Text.</li>
+</ol>
+<p>Notiere, was bei Durchlauf zwei passiert ist und an welcher Stelle genau.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte beim Schema darauf, dass <code>konfidenz</code> als Zahl und nicht als Zeichenkette erkannt wird. Wenn
+deine Bedingung immer denselben Zweig nimmt, vergleichst du wahrscheinlich Text statt Zahl.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Ein gelungenes Ergebnis zeigt drei Dinge:</p>
+<ul>
+<li><strong>Durchlauf eins</strong> läuft in den Ja-Zweig. Kategorie <code>Reklamation</code>, Dringlichkeit <code>hoch</code>, weil im
+  Text eine Frist gesetzt wird – genau die Regel aus dem Prompt.</li>
+<li><strong>Durchlauf zwei</strong> endet je nach Aufbau entweder im Nein-Zweig mit niedriger Konfidenz oder mit
+  einem Fehler in <code>JSON analysieren</code>. Beides ist ein gültiges Ergebnis und die eigentliche
+  Erkenntnis der Übung: Ein leerer Text ist kein Sonderfall der KI, sondern ein Fall für eine
+  deterministische Vorprüfung, bevor überhaupt ein KI-Aufruf stattfindet.</li>
+<li>Der <strong>Datentyp</strong> der Konfidenz ist entscheidend. Als Zeichenkette verglichen ist <code>0.9</code> kleiner als
+  <code>0.85</code>, weil zeichenweise verglichen wird. Im Schema muss der Typ <code>number</code> stehen, oder du wandelst
+  im Ausdruck mit <code>float(...)</code> um.</li>
+</ul>
+<p>Wer die Übung erweitern will: Setze Prompt-Aktion und <code>JSON analysieren</code> in einen <code>Bereich</code> und
+hänge einen zweiten <code>Bereich</code> mit <code>Nach Fehler ausführen</code> an, der bei Formatfehlern eine Mail mit
+dem Betreff <code>Formatfehler</code> schickt. Damit ist der Flow gegen die häufigste Ausfallursache
+produktiver KI-Schritte abgesichert.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Triage-Flow mit KI-Baustein bauen und härten</summary>
+<p><strong>Szenario:</strong> Die Vennhoff Fachgroßhandel GmbH sammelt alle Anliegen ihrer Wiederverkäufer in einem
+gemeinsamen Postfach. Eine Kollegin sortiert sie morgens von Hand und legt Vorgänge in einer
+SharePoint-Liste an. Sie geht in vier Wochen in Elternzeit, eine Vertretung gibt es nicht. Du sollst
+einen Flow bauen, der die Vorsortierung übernimmt und nur die unklaren Fälle an Menschen gibt.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+Postfach haendleranfragen, rund 50 Nachrichten pro Arbeitstag.
+Kategorien: Reklamation, Angebotsanfrage, Rechnungsfrage, Terminfrage, Sonstiges.
+Dringlichkeit hoch gilt bei Lieferstopp, Fristsetzung oder Kuendigung.
+Zielsysteme: SharePoint-Liste Vorgaenge, SharePoint-Liste Pruefliste.
+Zustaendig fuer die Pruefliste: die Innendienstleitung.
+</code></pre></div></td></tr></table></div>
+<p>Ohne AI-Builder-Zugang arbeitest du durchgehend mit dem Ersatzweg aus Abschnitt 30.5: Prompt im
+Chatwerkzeug testen, Ausgabe über eine <code>Verfassen</code>-Aktion in den Flow geben.</p>
+<hr />
+<p><strong>Runde 1 – Prompt und Flow bauen.</strong> Schreibe zuerst den Prompt vollständig aus, mit Rolle,
+geschlossener Kategorienliste, Dringlichkeitsdefinition, Regel für fehlende Angaben und festem
+JSON-Ausgabeformat mit mindestens den Feldern Kategorie, Dringlichkeit, Kundennummer, Konfidenz und
+Begründung. Teste ihn an <strong>zehn selbst erfundenen Nachrichten</strong>, davon drei mehrdeutige, eine leere
+und eine auf Englisch. Baue anschließend den Flow: Trigger, KI-Schritt, <code>JSON analysieren</code>,
+Bedingung, Eintrag in <code>Vorgaenge</code> oder in <code>Pruefliste</code>.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Dein Flow muss <strong>alle vier</strong> erfüllen:</p>
+<ol>
+<li>Die Ausgabe des KI-Schritts wird tatsächlich <strong>zerlegt</strong> und in einzelne Listenfelder
+   geschrieben – nicht als Textblock in ein Notizfeld gekippt.</li>
+<li>Es gibt eine <strong>deterministische Vorprüfung</strong> vor dem KI-Aufruf, die leere oder extrem kurze
+   Nachrichten ohne KI direkt in die Prüfliste schickt.</li>
+<li>Der Vergleich der Konfidenz funktioniert nachweislich als <strong>Zahlenvergleich</strong>. Weise das nach,
+   indem ein Testfall mit 0,9 und einer mit 0,85 unterschiedlich behandelt werden.</li>
+<li>Ein <strong>Formatfehler bricht den Flow nicht ab</strong>: KI-Schritt und Zerlegen liegen in einem <code>Bereich</code>,
+   ein Fehlerzweig schreibt den Fall in die Prüfliste.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Nach dem Testbetrieb liegen drei Befunde vor:</p>
+<ul>
+<li>Bei sechs von fünfzig Nachrichten hat das Modell die Felder <code>lieferdatum</code> und <code>betreffend</code>
+  zusätzlich erfunden – <code>JSON analysieren</code> lief durch, die Zusatzfelder landeten nirgends, aber in
+  zwei Fällen fehlte dafür die Kundennummer.</li>
+<li>Die englische Nachricht wurde als <code>Sonstiges</code> mit Konfidenz 0,92 eingeordnet.</li>
+<li>Die Innendienstleitung meldet, dass die Prüfliste inzwischen 60 Einträge hat und niemand
+  hineinschaut.</li>
+</ul>
+<p>Behandle alle drei Befunde getrennt. Für den ersten überarbeitest du Prompt <strong>und</strong> Schema. Für den
+zweiten entscheidest du, ob eine Sprachbehandlung vor den KI-Schritt gehört. Für den dritten
+entwirfst du eine Regelung, die die Prüfliste am Leben hält – mit Zuständigkeit, Frist und
+Eskalation. Halte fest, welcher der drei Befunde der gefährlichste ist und warum.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Geschäftsführung will die Prüfliste ganz abschaffen:
+Der Flow soll bei niedriger Konfidenz einfach <code>Sonstiges</code> setzen und den Vorgang trotzdem anlegen,
+damit „nichts liegen bleibt". Lass dir vom KI-Werkzeug Pro und Contra geben, entscheide begründet
+und <strong>widersprich</strong>, wenn der Vorschlag die Fehler nur unsichtbar macht statt sie zu beseitigen.
+Formuliere eine Gegenvorschlag, der das berechtigte Anliegen der Geschäftsführung aufnimmt.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>vollständiger Prompt in Endfassung plus die Ergebnistabelle der zehn Testnachrichten</li>
+<li>Flow-Skizze als nummerierte Schrittliste und ausgefüllte Checkliste der vier Pflichtkriterien</li>
+<li>Version 2 nach Runde 3, mit getrennter Antwort auf alle drei Befunde und einer Regelung für die
+   Prüfliste</li>
+<li>begründete Entscheidung zur Abschaffung der Prüfliste, inklusive Gegenvorschlag</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> dein Flow eine leere Nachricht ohne KI-Aufruf abfängt, ein Formatfehler
+nachweislich nicht zum Abbruch führt, die Prüfliste eine namentliche Zuständigkeit und eine Frist
+hat und deine Entscheidung in Runde 4 benennt, welcher konkrete Fehlerfall durch die
+Geschäftsführungs-Idee unsichtbar würde.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Erfundene Zusatzfelder sind kein Schönheitsfehler: Sie zeigen,
+dass das Modell das Format als Vorschlag behandelt, und sie gehen oft mit ausgelassenen Pflichtfeldern
+einher. Die englische Nachricht mit hoher Konfidenz ist der klassische Fall, in dem das Modell sich
+sicher ist und trotzdem falsch liegt – eine Schwelle hilft dagegen prinzipiell nicht. Und Runde 4
+ist die häufigste Wendung in echten Projekten: Der Rückfallweg wird abgeschafft, weil er Arbeit
+macht. Damit verschwindet nicht der Fehler, sondern nur seine Sichtbarkeit.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) der Prompt enthält Rolle, geschlossene Kategorienliste, definierte
+Dringlichkeit, Regel für fehlende Angaben und ein hart vorgeschriebenes Ausgabeformat, und die
+Testtabelle zeigt für alle zehn Nachrichten Ergebnis und Auffälligkeit; (2) alle vier Pflichtkriterien
+sind belegt, insbesondere die Vorprüfung vor dem KI-Aufruf und der nachgewiesene Zahlenvergleich;
+(3) Version 2 beantwortet die drei Befunde getrennt, ergänzt beim ersten sowohl Prompt als auch
+Schema, behandelt den zweiten nicht über eine höhere Schwelle und gibt der Prüfliste Zuständigkeit,
+Frist und Eskalation; (4) die Entscheidung in Runde 4 unterscheidet zwischen dem Anliegen
+„nichts bleibt liegen" und der Maßnahme „Rückfallweg streichen" und bietet eine Alternative an,
+etwa eine tägliche Zusammenfassung offener Prüffälle statt der Abschaffung.</p>
+<p>Lernziel: einen KI-Baustein so in einen Flow einbauen, dass die Ausgabe strukturiert
+weiterverarbeitet wird und weder ein Formatfehler noch eine selbstsichere Fehleinschätzung den
+Prozess unbemerkt beschädigt.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel29/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 29 – KI-Bausteine im Workflow: Muster und Einsatzstellen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 29 – KI-Bausteine im Workflow: Muster und Einsatzstellen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel31/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 31 – Dokumentenverarbeitung automatisieren">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 31 – Dokumentenverarbeitung automatisieren
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

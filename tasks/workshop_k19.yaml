@@ -1,0 +1,107 @@
+title: Fehleranalyse und Umbau eines fehlerhaften Ablaufentwurfs
+difficulty: 4
+question: |
+  **Szenario:** Ein ausgeschiedener Kollege hat für die Nordwind Handel GmbH einen Ablauf für
+  Urlaubsanträge entworfen. Er läuft seit drei Monaten und gilt als „grundsätzlich in
+  Ordnung, nur manchmal komisch". Tatsächlich sind zwei Anträge verschwunden, eine Kollegin
+  hat elf identische Erinnerungen erhalten, und einmal wurde ein Antrag genehmigt, obwohl die
+  Führungskraft nie geantwortet hat. Du sollst den Entwurf analysieren und umbauen – auf
+  Papier, nicht im Werkzeug.
+
+  ```text
+  Ausloeser: Neues Element in der Liste Urlaubsantraege
+  Schritt 1: Variable Genehmigt anlegen, Startwert Ja
+  Schritt 2: Alle Zeilen der Liste Urlaubsantraege lesen
+  Schritt 3: Fuer jede Zeile parallel:
+      Schritt 3a: WENN Status ist nicht gleich Abgelehnt
+          Schritt 3b: WENN Tage groesser 10
+              Schritt 3c: WENN Vertretung eingetragen
+                  Schritt 3d: Mail an Fuehrungskraft senden
+                  Schritt 3e: 24 Stunden warten
+                  Schritt 3f: Erneut Mail an Fuehrungskraft senden
+              SONST: nichts
+          SONST: Variable Genehmigt auf Ja setzen
+      SONST: nichts
+  Schritt 4: WENN Genehmigt gleich Ja
+      Schritt 4a: Status auf Genehmigt setzen
+      Schritt 4b: Urlaubskonto in Excel-Datei reduzieren
+      Schritt 4c: Bestaetigung an Antragsteller senden
+  ```
+
+  ---
+
+  **Runde 1 – Vollständige Fehleranalyse.** Erstelle eine Fundtabelle mit den Spalten
+  `Nr. | Schritt | Fehlerart | konkrete Auswirkung | Schweregrad`. Als Fehlerarten verwendest
+  du: Endlosschleife, leerer Wert falsch geprüft, fehlender Fall, falsche Verschachtelung,
+  fehlende Idempotenz, Datentyp, Parallelität, fehlender Fehlerpfad, irreführende Benennung.
+  Finde **mindestens acht** Befunde. Ordne den Schweregrad danach, ob der Fehler nur
+  unschön ist, Nacharbeit erzeugt oder ein fachlich falsches Ergebnis liefert.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Baue den Ablauf neu als Schrittliste. Dein
+  Neuentwurf muss **alle vier** Kriterien erfüllen:
+
+  1. Jeder Bedingungszweig und jeder Standardfall ist gefüllt – kein „SONST: nichts" mehr.
+     Wo fachlich nichts zu tun ist, steht ein Protokollschritt.
+  2. Der Ablauf ist **idempotent**: Ein zweiter Lauf für denselben Antrag erzeugt keine
+     zweite Mail, keine zweite Genehmigung und keine zweite Buchung im Urlaubskonto.
+  3. Die Erinnerung an ausbleibende Freigaben läuft über einen **Zeitplan-Ablauf** mit
+     Frist und Obergrenze, nicht über Warteschritte im Antragsablauf.
+  4. Es gibt einen **Fehlerpfad** mit benannter zuständiger Rolle plus Vertretung sowie
+     mindestens eine **Notbremse**.
+
+  **Runde 3 – Die Komplikation.** Beim Durchsprechen mit der Personalabteilung kommen drei
+  neue Anforderungen, die den Entwurf sprengen: Bei Abwesenheit der Führungskraft muss nach
+  zwei Tagen automatisch an deren Vertretung eskaliert werden. Anträge über 20 Tage brauchen
+  zusätzlich die Personalleitung. Und Sonderurlaub und unbezahlter Urlaub folgen ganz
+  anderen Regeln und dürfen auf keinen Fall automatisch genehmigt werden. Baue das ein –
+  und entscheide dabei bewusst, ob du verschachtelte Bedingungen, eine Mehrfachauswahl oder
+  eine Nachschlagetabelle verwendest. Begründe jede der drei Entscheidungen.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Personalleitung möchte, dass Anträge, auf
+  die niemand reagiert, nach fünf Tagen **automatisch genehmigt** werden – „damit nichts
+  liegen bleibt". Lass dir von einem KI-Werkzeug Pro und Contra geben. Entscheide dann
+  begründet und **widersprich** dieser Vorgabe oder dem KI-Vorschlag, wenn Schweigen als
+  Zustimmung fachlich nicht tragbar ist. Entwirf eine Alternative, die das Liegenbleiben
+  löst, ohne eine Entscheidung zu erfinden.
+
+  **Deliverable:**
+
+  1. Fundtabelle mit mindestens acht Befunden, Auswirkung und Schweregrad
+  2. Neuentwurf als benannte Schrittliste plus Checkliste der vier Pflichtkriterien
+  3. erweiterter Entwurf nach den drei neuen Anforderungen, mit Begründung der gewählten
+     Logikbausteine
+  4. begründete Entscheidung zur automatischen Genehmigung inklusive Alternativvorschlag
+     und benannter Restrisiken
+
+  **Fertig bist du erst, wenn** deine Fundtabelle die drei real gemeldeten Symptome –
+  verschwundene Anträge, elf Erinnerungen, Genehmigung ohne Antwort – jeweils einem
+  konkreten Schritt zuordnet, dein Neuentwurf alle vier Pflichtkriterien erfüllt, die drei
+  neuen Anforderungen ohne dritte Verschachtelungsebene abgebildet sind und deine
+  Entscheidung in Runde 4 begründet vom Wunsch der Personalleitung abweicht oder ihn mit
+  belastbaren Absicherungen annimmt.
+tip: |
+  Arbeite Runde 1 rückwärts von den Symptomen: Welcher Schritt kann elf Mails erzeugen?
+  Welcher kann einen Antrag genehmigen, ohne dass jemand geantwortet hat? Die Variable
+  `Genehmigt` mit Startwert `Ja` ist der gefährlichste Befund im ganzen Entwurf – sie
+  bedeutet, dass Untätigkeit zur Genehmigung führt. Genau dieselbe Denkfigur begegnet dir in
+  Runde 4 als offizielle Anforderung. Wer sie in Runde 1 als Fehler erkennt und in Runde 4
+  akzeptiert, hat sich selbst widersprochen.
+solution: |
+  Bewertungskriterien: (1) Die Fundtabelle enthält mindestens acht Befunde und ordnet die
+  drei Symptome konkret zu – Startwert `Ja` der Variablen führt zur Genehmigung ohne Antwort,
+  die Schleife über **alle** Zeilen bei einem Ereignis-Trigger erzeugt Mehrfachmails, und die
+  leeren Sonst-Zweige lassen Anträge spurlos verschwinden; (2) der Neuentwurf erfüllt alle
+  vier Pflichtkriterien, insbesondere ein Kennzeichen je Antrag, die Prüfung vor jedem
+  schreibenden Schritt, die Trennung von Antragsablauf und Erinnerungsablauf sowie ein
+  Fehlerpfad mit benannter Rolle und Vertretung; (3) die drei neuen Anforderungen sind ohne
+  dritte Verschachtelungsebene gelöst, Eskalation und Vertretung stammen aus einer
+  Nachschlagetabelle, die Urlaubsarten aus einer Mehrfachauswahl mit Standardfall, und
+  Sonderurlaub ist ausdrücklich von jeder Automatik ausgenommen; (4) die Entscheidung in
+  Runde 4 wägt Liegenbleiben gegen unbegründete Genehmigung ab und liefert eine tragfähige
+  Alternative wie Eskalationsstufen, Sichtbarkeit über eine Übersichtsliste und eine
+  Sammelentscheidung durch die Personalleitung.
+
+  Lernziel: Logikfehler in einem fremden Entwurf systematisch finden, den Ablauf mit den
+  richtigen Bausteinen neu aufbauen – und erkennen, dass eine bequeme Automatik wie
+  „Schweigen gilt als Zustimmung" eine fachliche Entscheidung ersetzt, die niemand
+  getroffen hat.

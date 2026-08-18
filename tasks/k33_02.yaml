@@ -1,0 +1,53 @@
+title: Einen Datenvertrag schreiben
+difficulty: 2
+question: |
+  Ein Agent im Innendienst soll Beschäftigten Auskunft über offene Reklamationen geben. Dafür ruft er
+  einen Flow auf, der eine SharePoint-Liste durchsucht. Bisher gibt es nur diese Notiz:
+
+  ```text
+  Agent gibt Kundenname an den Flow, Flow gibt die offenen Reklamationen zurueck.
+  ```
+
+  1. Schreibe einen vollständigen **Datenvertrag** nach dem Muster aus Abschnitt 33.2, mit Eingaben,
+     Ausgaben, Formaten, Pflichtangaben und dem Verhalten bei fehlenden Werten.
+  2. Benenne **drei** Situationen, in denen die ursprüngliche Notiz zu einem falschen oder
+     unzulässigen Ergebnis führt.
+  3. Ergänze mindestens eine Prüfung, die den Zugriff der anfragenden Person berücksichtigt.
+tip: |
+  Der Kundenname ist ein schlechter Schlüssel. Überlege, was passiert, wenn zwei Kunden ähnlich
+  heißen, wenn der Name falsch geschrieben wird – und wenn jemand nach einem Kunden fragt, für den er
+  gar nicht zuständig ist.
+solution: |
+  **Beispielhafter Datenvertrag:**
+
+  ```text
+  Eingaben vom Agenten an den Flow
+    kundennummer      Text, Muster KD- gefolgt von vier Ziffern   Pflicht
+    anfragende_person Text, Anmeldename der aufrufenden Person    Pflicht
+    nur_offene        Wahrheitswert, Standard wahr                optional
+
+  Ausgaben vom Flow an den Agenten
+    gefunden          Wahrheitswert
+    anzahl            Ganzzahl
+    reklamationen     Liste aus Vorgangsnummer, Datum, Status, Kurztext
+    zugriff_erlaubt   Wahrheitswert
+
+  Verhalten bei fehlenden Werten
+    Fehlt die Kundennummer: Der Agent fragt nach und ruft den Flow nicht auf.
+    Nummer entspricht nicht dem Muster: Flow bricht mit klarer Meldung ab.
+    Kein Treffer: gefunden ist falsch, der Agent nennt keine Vermutung.
+    zugriff_erlaubt ist falsch: Der Agent nennt keine Inhalte, sondern verweist
+    auf die zustaendige Stelle.
+  ```
+
+  **Drei Problemsituationen der Ursprungsnotiz:** (1) Zwei Kunden mit ähnlichem Namen – der Flow
+  liefert die falschen Vorgänge, und der Agent hat keine Möglichkeit, das zu bemerken. (2) Der Name
+  ist falsch geschrieben oder unvollständig; der Agent erfindet im Zweifel eine Schreibweise, statt
+  nachzufragen. (3) Es ist nirgends geprüft, ob die fragende Person diesen Kunden überhaupt sehen
+  darf – der Agent wird zum Umweg um das Berechtigungskonzept.
+
+  **Zur Zugriffsprüfung:** Der Flow bekommt die anfragende Person als Pflichtfeld und prüft gegen die
+  Zuständigkeitsliste, bevor er Inhalte zurückgibt. Wichtig ist, dass er bei fehlender Berechtigung
+  nicht einfach eine leere Liste liefert – sonst wirkt es, als gäbe es keine Reklamationen. Ein
+  eigenes Feld `zugriff_erlaubt` macht den Unterschied zwischen „nichts vorhanden" und „nicht
+  einsehbar" sichtbar.

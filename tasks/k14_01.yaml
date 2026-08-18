@@ -1,0 +1,32 @@
+title: Erlaubte Assistenz oder verbotene Entscheidung?
+difficulty: 1
+question: |
+  Ordne jeden Vorgang ein: **erlaubte Assistenz**, **grenzwertig und nur mit Auflagen**, oder
+  **unzulässig**. Begründe jeweils in einem Satz.
+
+  1. Copilot bringt zehn Bewerbungen in ein einheitliches Übersichtsformat ohne Bewertung.
+  2. Ein Werkzeug erzeugt eine Punktzahl je Bewerbung und sortiert die Liste danach.
+  3. Ein Anzeigentext wird auf diskriminierende Formulierungen geprüft.
+  4. Ein Lebenslauf wird in ein privates ChatGPT-Konto kopiert, um Rückfragen zu sammeln.
+  5. Nach getroffener Entscheidung wird ein Absageschreiben formuliert.
+  6. Ein Assistent beantwortet Fragen zum Urlaubsübertrag aus der internen Richtlinie.
+  7. Aus einer Lücke im Lebenslauf wird eine Einschätzung zur Zuverlässigkeit abgeleitet.
+tip: |
+  Zwei Fragen genügen fast immer: Entsteht eine Reihenfolge oder ein Urteil über einen Menschen?
+  Und verlassen personenbezogene Daten den freigegebenen Datenraum?
+solution: |
+  | Vorgang | Einordnung | Begründung |
+  |---|---|---|
+  | 1 Übersichtsformat | erlaubt | reine Aufbereitung, keine Bewertung, gleiche Struktur für alle |
+  | 2 Punktzahl und Sortierung | unzulässig | erzeugt eine Rangfolge und damit faktisch die Auswahlentscheidung |
+  | 3 Anzeigenprüfung | erlaubt | betrifft einen Text, keine Person, senkt Diskriminierungsrisiko |
+  | 4 Lebenslauf in Privatkonto | unzulässig | unzulässige Übermittlung personenbezogener Daten |
+  | 5 Absageschreiben | erlaubt | Entscheidung ist bereits von Menschen getroffen |
+  | 6 Richtlinien-Assistent | erlaubt mit Auflagen | nur interne Quelle, Fundstellenpflicht, Verweis an HR bei Einzelfällen |
+  | 7 Rückschluss aus Lücke | unzulässig | Eignungsurteil über eine Person und sachlich unhaltbar |
+
+  Der schwierigste Fall ist Nummer 2, weil er praktisch verlockend ist. Er bleibt auch dann
+  unzulässig, wenn ein Mensch die Liste anschließend „prüft": Eine vorgelegte Reihenfolge lenkt die
+  Aufmerksamkeit auf die oberen Plätze und hat die Entscheidung damit vorweggenommen. Nummer 7 ist
+  zusätzlich fachlich falsch – Lücken haben Ursachen wie Pflege, Krankheit oder Kindererziehung,
+  deren Bewertung direkt in Diskriminierung führt.

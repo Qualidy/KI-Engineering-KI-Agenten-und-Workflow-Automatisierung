@@ -1,0 +1,1972 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel22/">
+      
+      
+        <link rel="next" href="../kapitel24/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-23-daten-im-flow-dynamische-inhalte-und-ausdrucke" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Block 5 · Power Automate in der Praxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 21 – Einführung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 22 – Der erste Cloud-Flow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#231-dynamische-inhalte-ausdrucke-und-die-ausdrucksleiste" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.1 Dynamische Inhalte, Ausdrücke und die Ausdrucksleiste
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#232-datentypen-und-json-was-im-feld-wirklich-steckt" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.2 Datentypen und JSON: was im Feld wirklich steckt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#233-text-formen-die-sechs-funktionen-fur-den-alltag" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.3 Text formen: die sechs Funktionen für den Alltag
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#234-entscheiden-und-prufen-if-equals-empty-int" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.4 Entscheiden und prüfen: if, equals, empty, int
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#235-datum-und-zeitzone-die-haufigste-fehlerquelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.5 Datum und Zeitzone: die häufigste Fehlerquelle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#236-verfassen-als-debugging-werkzeug" class="md-nav__link">
+    <span class="md-ellipsis">
+      23.6 Verfassen als Debugging-Werkzeug
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 24 – Steuerung und Verzweigung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 25 – Integration von Microsoft 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 26 – Integration externer Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 28 – Testing, Fehlerbehandlung und Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-23-daten-im-flow-dynamische-inhalte-und-ausdrucke">Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke<a class="headerlink" href="#kapitel-23-daten-im-flow-dynamische-inhalte-und-ausdrucke" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wann ein <strong>dynamischer Inhalt</strong> genügt und wann du einen <strong>Ausdruck (Expression)</strong> brauchst</li>
+<li>Wie du die <strong>Ausdrucksleiste</strong> benutzt und wie ein Ausdruck im Feld aussieht</li>
+<li>Die wichtigsten <strong>Textfunktionen</strong> und wie du damit Dateinamen und Betreffzeilen formst</li>
+<li>Wie du mit <strong>if</strong>, <strong>equals</strong>, <strong>empty</strong> und <strong>int</strong> Entscheidungen und Prüfungen in ein Feld bekommst</li>
+<li>Warum Datumsangaben in <strong>UTC</strong> ankommen und wie du ein deutsches Datum daraus machst</li>
+<li>Wie du mit der Aktion <strong>Verfassen (Compose)</strong> Ausdrücke sichtbar machst und Fehler eingrenzt</li>
+</ul>
+</div>
+<hr />
+<h2 id="231-dynamische-inhalte-ausdrucke-und-die-ausdrucksleiste">23.1 Dynamische Inhalte, Ausdrücke und die Ausdrucksleiste<a class="headerlink" href="#231-dynamische-inhalte-ausdrucke-und-die-ausdrucksleiste" title="Permanent link">&para;</a></h2>
+<p>Wenn du in ein Feld einer Aktion klickst, öffnet sich ein Auswahlfenster mit zwei Registern. Der <strong>dynamische Inhalt (Dynamic Content)</strong> ist eine Liste fertiger Werte aus den vorherigen Schritten: <code>Betreff</code>, <code>Von</code>, <code>Name der Anlage</code>. Du klickst einen an, er landet als farbige Kachel im Feld. Damit kommst du überraschend weit – solange du den Wert <strong>unverändert</strong> übernehmen willst.</p>
+<p>Der <strong>Ausdruck (Expression)</strong> ist die zweite Registerkarte. Dort gibst du in der <strong>Ausdrucksleiste</strong> eine Formel ein, die aus einem oder mehreren Werten einen neuen berechnet. Ausdrücke brauchst du, sobald du etwas mit dem Wert <strong>tun</strong> willst: kürzen, zusammensetzen, umwandeln, formatieren, prüfen.</p>
+<table>
+<thead>
+<tr>
+<th>Aufgabe</th>
+<th>Dynamischer Inhalt reicht</th>
+<th>Ausdruck nötig</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Betreff in eine Mail übernehmen</td>
+<td>ja</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Betreff in Kleinbuchstaben schreiben</td>
+<td>–</td>
+<td><code>toLower</code></td>
+</tr>
+<tr>
+<td>Empfangszeit anzeigen</td>
+<td>ja, aber als UTC-Zeitstempel</td>
+<td><code>formatDateTime</code> für ein lesbares Datum</td>
+</tr>
+<tr>
+<td>Dateiname aus Datum und Absender</td>
+<td>–</td>
+<td><code>concat</code></td>
+</tr>
+<tr>
+<td>Prüfen, ob ein Feld leer ist</td>
+<td>–</td>
+<td><code>empty</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ausdrücke werden im Feld als Kachel mit dem Formelsymbol angezeigt. Steht ein Ausdruck <strong>innerhalb</strong> von Text, schreibt Power Automate ihn in der Form <code>@{...}</code>. Das brauchst du beim Bauen von Nachrichten ständig:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Neue Anfrage von @{triggerOutputs()?[&#39;body/from&#39;]} am @{formatDateTime(utcNow(),&#39;dd.MM.yyyy&#39;)}
+</code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Ausdruck ist eine <strong>Funktion mit runden Klammern</strong>, die einen Wert zurückgibt. Alles, was du in Power Automate mit Daten machst, ist eine Verschachtelung solcher Funktionen. Du musst keine Programmiersprache lernen, aber drei Dinge musst du beherrschen: Klammern zählen, einfache Anführungszeichen um Text setzen, Kommas zwischen Argumenten.</p>
+</div>
+<hr />
+<h2 id="232-datentypen-und-json-was-im-feld-wirklich-steckt">23.2 Datentypen und JSON: was im Feld wirklich steckt<a class="headerlink" href="#232-datentypen-und-json-was-im-feld-wirklich-steckt" title="Permanent link">&para;</a></h2>
+<p>Jeder Wert im Flow hat einen <strong>Datentyp</strong>. Der Typ entscheidet, welche Funktionen erlaubt sind und warum ein Ausdruck manchmal scheitert, obwohl er richtig aussieht.</p>
+<table>
+<thead>
+<tr>
+<th>Datentyp</th>
+<th>Wie es aussieht</th>
+<th>Typische Quelle</th>
+<th>Typische Falle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text (String)</strong></td>
+<td><code>Rechnung 2024-118</code></td>
+<td>Betreff, Dateiname, Formularantwort</td>
+<td><code>12</code> als Text lässt sich nicht addieren</td>
+</tr>
+<tr>
+<td><strong>Zahl (Integer, Float)</strong></td>
+<td><code>42</code>, <code>19.99</code></td>
+<td>Anzahl, Betrag, Dateigröße</td>
+<td>Dezimaltrennzeichen ist der <strong>Punkt</strong>, nicht das Komma</td>
+</tr>
+<tr>
+<td><strong>Datum/Zeit</strong></td>
+<td><code>2024-11-05T14:02:31Z</code></td>
+<td>Empfangszeit, Erstellungsdatum, <code>utcNow</code></td>
+<td>kommt fast immer in UTC an</td>
+</tr>
+<tr>
+<td><strong>Boolean</strong></td>
+<td><code>true</code>, <code>false</code></td>
+<td>Kontrollkästchen, Ergebnis von <code>equals</code></td>
+<td>„Ja" als Text ist <strong>nicht</strong> <code>true</code></td>
+</tr>
+<tr>
+<td><strong>Array (Liste)</strong></td>
+<td><code>[Anlage1, Anlage2]</code></td>
+<td>Anlagen, Listenelemente, Suchergebnisse</td>
+<td>ein Array in ein Textfeld setzen erzeugt eine automatische Schleife (Kap. 24)</td>
+</tr>
+<tr>
+<td><strong>Objekt</strong></td>
+<td><code>Absender mit Name und Adresse</code></td>
+<td>Trigger-Ausgaben, API-Antworten</td>
+<td>einzelnes Feld muss gezielt angesprochen werden</td>
+</tr>
+</tbody>
+</table>
+<p>Objekte und Arrays kommen in einem Format namens <strong>JSON</strong> daher. JSON ist nur eine Schreibweise für „Feldname und Wert", verschachtelt in geschweiften Klammern für Objekte und eckigen Klammern für Listen. Du musst JSON nicht schreiben können, aber lesen. Ein einzelnes Feld sprichst du mit eckigen Klammern und Anführungszeichen an; der Schrägstrich trennt die Ebenen, das Fragezeichen bedeutet „falls vorhanden":</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Antwort des Triggers, vereinfacht:
+  from    = anna.beispiel@firma.de
+  subject = Rechnung 2024-118
+  attachments = Liste mit zwei Eintraegen
+      Eintrag 1: name = LV.pdf        size = 84213
+      Eintrag 2: name = Signatur.png  size = 1204
+
+Zugriff auf einzelne Werte:
+@{triggerOutputs()?[&#39;body/subject&#39;]}
+@{outputs(&#39;Verfassen_Dateiname&#39;)}
+@{items(&#39;Fuer_jeden_Anhang&#39;)?[&#39;name&#39;]}
+</code></pre></div></td></tr></table></div>
+<p>Merke dir die Regel für Schrittnamen in Ausdrücken: <strong>Leerzeichen werden zu Unterstrichen.</strong> Der Schritt <code>Für jeden Anhang</code> heißt im Ausdruck <code>Fuer_jeden_Anhang</code>. Genau deshalb benennst du Schritte einmal am Anfang sauber und danach nicht mehr um – bestehende Ausdrücke verweisen sonst auf einen Namen, den es nicht mehr gibt.</p>
+<hr />
+<h2 id="233-text-formen-die-sechs-funktionen-fur-den-alltag">23.3 Text formen: die sechs Funktionen für den Alltag<a class="headerlink" href="#233-text-formen-die-sechs-funktionen-fur-den-alltag" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Funktion</th>
+<th>Zweck</th>
+<th>Beispiel</th>
+<th>Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>concat</code></td>
+<td>Texte aneinanderhängen</td>
+<td><code>@{concat('RE-','2024','-118')}</code></td>
+<td><code>RE-2024-118</code></td>
+</tr>
+<tr>
+<td><code>trim</code></td>
+<td>Leerzeichen am Anfang und Ende entfernen</td>
+<td><code>@{trim('  Meier  ')}</code></td>
+<td><code>Meier</code></td>
+</tr>
+<tr>
+<td><code>toLower</code></td>
+<td>alles klein schreiben</td>
+<td><code>@{toLower('Anna.Beispiel@Firma.de')}</code></td>
+<td><code>anna.beispiel@firma.de</code></td>
+</tr>
+<tr>
+<td><code>length</code></td>
+<td>Länge eines Textes oder Anzahl der Einträge einer Liste</td>
+<td><code>@{length('Rechnung')}</code></td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td><code>split</code></td>
+<td>Text an einem Trennzeichen in eine Liste zerlegen</td>
+<td><code>@{split('anna@firma.de','@')}</code></td>
+<td>Liste mit <code>anna</code> und <code>firma.de</code></td>
+</tr>
+<tr>
+<td><code>replace</code></td>
+<td>Zeichenfolge ersetzen</td>
+<td><code>@{replace('Angebot/Nr 5','/','-')}</code></td>
+<td><code>Angebot-Nr 5</code></td>
+</tr>
+</tbody>
+</table>
+<p>Die Kombination dieser Funktionen löst die häufigste Praxisaufgabe überhaupt: einen <strong>eindeutigen, sauberen Dateinamen</strong> bauen. Der Anhangname allein reicht nicht, weil drei Absender ihre Datei <code>Anfrage.pdf</code> nennen (Kap. 22). Und er ist riskant, weil Schrägstrich, Doppelpunkt, Fragezeichen, Sternchen und Anführungszeichen in Datei- und Ordnernamen verboten sind – eine Betreffzeile wie <code>Rechnung 05/2024</code> bringt den Schritt <code>Datei erstellen</code> sonst zum Absturz.</p>
+<div class="admonition example">
+<p class="admonition-title">Dateiname Schritt für Schritt aufgebaut</p>
+<p>Ziel ist ein Name der Form <code>2024-11-05_anna.beispiel_LV.pdf</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Baustein 1 - Datum sortierbar:
+@{formatDateTime(utcNow(),&#39;yyyy-MM-dd&#39;)}
+
+Baustein 2 - Absender klein und ohne Domain:
+@{toLower(first(split(triggerOutputs()?[&#39;body/from&#39;],&#39;@&#39;)))}
+
+Baustein 3 - Originalname ohne verbotene Zeichen:
+@{replace(items(&#39;Fuer_jeden_Anhang&#39;)?[&#39;name&#39;],&#39;/&#39;,&#39;-&#39;)}
+
+Alles zusammen im Feld Dateiname:
+@{concat(outputs(&#39;Datum&#39;),&#39;_&#39;,outputs(&#39;Absender&#39;),&#39;_&#39;,outputs(&#39;Dateiname_bereinigt&#39;))}
+</code></pre></div></td></tr></table></div>
+<p>Baue solche Ausdrücke <strong>nie</strong> in einem Zug. Lege für jeden Baustein eine eigene <code>Verfassen</code>-Aktion mit sprechendem Namen an, prüfe sie im Testlauf und setze erst am Ende zusammen. Das ist lesbar und im Fehlerfall in Sekunden zu prüfen.</p>
+</div>
+<hr />
+<h2 id="234-entscheiden-und-prufen-if-equals-empty-int">23.4 Entscheiden und prüfen: if, equals, empty, int<a class="headerlink" href="#234-entscheiden-und-prufen-if-equals-empty-int" title="Permanent link">&para;</a></h2>
+<p>Nicht jede Verzweigung braucht eine eigene Aktion. Wenn nur <strong>ein Feld</strong> unterschiedlich gefüllt werden soll, gehört die Entscheidung in den Ausdruck. Braucht dagegen ein ganzer <strong>Zweig</strong> unterschiedliche Schritte, nimmst du die Aktion <code>Bedingung (Condition)</code> (Kap. 24).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Ersatztext, falls der Betreff leer ist:
+@{if(empty(triggerOutputs()?[&#39;body/subject&#39;]),&#39;Ohne Betreff&#39;,triggerOutputs()?[&#39;body/subject&#39;])}
+Pruefen, ob ein Wert genau einem anderen entspricht:
+@{equals(toLower(triggerOutputs()?[&#39;body/from&#39;]),&#39;einkauf@firma.de&#39;)}
+Pruefen, ob eine Liste keine Eintraege hat:
+@{empty(triggerOutputs()?[&#39;body/attachments&#39;])}
+Text in eine Zahl umwandeln, um damit zu rechnen:
+@{add(int(&#39;14&#39;),7)}
+</code></pre></div></td></tr></table></div>
+<p>Drei Regeln dazu ersparen dir viel Sucharbeit. Erstens: <code>if</code> hat genau <strong>drei</strong> Argumente – Bedingung, Wert wenn wahr, Wert wenn falsch; der erste muss ein Boolean sein, deshalb steht dort meist <code>equals</code>, <code>empty</code>, <code>greater</code> oder <code>contains</code>. Zweitens: <code>equals</code> vergleicht <strong>exakt</strong>, auch Groß- und Kleinschreibung, also Adressen und Kategorien immer mit <code>toLower</code> auf beiden Seiten vergleichen. Drittens: <code>int</code> erwartet einen Text aus reinen Ziffern – <code>int('14 Tage')</code> scheitert, und bei Beträgen mit deutschem Komma musst du erst <code>replace</code> anwenden.</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p><code>empty</code> prüft, ob etwas <strong>keinen Inhalt</strong> hat – bei Text, Listen und Objekten. Es prüft <strong>nicht</strong>, ob ein Feld existiert. Fehlt ein Feld ganz, liefert der Zugriff ohne Fragezeichen einen Fehler; mit dem Fragezeichen in <code>?['feldname']</code> bekommst du stattdessen einen leeren Wert, den <code>empty</code> dann sauber erkennt. Setze das Fragezeichen bei allen optionalen Feldern.</p>
+</div>
+<hr />
+<h2 id="235-datum-und-zeitzone-die-haufigste-fehlerquelle">23.5 Datum und Zeitzone: die häufigste Fehlerquelle<a class="headerlink" href="#235-datum-und-zeitzone-die-haufigste-fehlerquelle" title="Permanent link">&para;</a></h2>
+<p>Power Automate rechnet intern in <strong>UTC</strong>, der koordinierten Weltzeit. Deutschland liegt im Winter eine Stunde und im Sommer zwei Stunden davor. Ein Zeitstempel, der im Flow ankommt, sieht so aus: <code>2024-11-05T14:02:31Z</code>. Das <code>Z</code> am Ende bedeutet UTC – in Deutschland war es zu diesem Zeitpunkt 15:02 Uhr.</p>
+<table>
+<thead>
+<tr>
+<th>Funktion</th>
+<th>Zweck</th>
+<th>Beispiel</th>
+<th>Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>utcNow</code></td>
+<td>aktueller Zeitpunkt in UTC</td>
+<td><code>@{utcNow()}</code></td>
+<td><code>2024-11-05T14:02:31Z</code></td>
+</tr>
+<tr>
+<td><code>formatDateTime</code></td>
+<td>Zeitstempel in ein Anzeigeformat bringen</td>
+<td><code>@{formatDateTime(utcNow(),'dd.MM.yyyy')}</code></td>
+<td><code>05.11.2024</code></td>
+</tr>
+<tr>
+<td><code>addDays</code></td>
+<td>Tage addieren oder abziehen</td>
+<td><code>@{addDays(utcNow(),14,'dd.MM.yyyy')}</code></td>
+<td><code>19.11.2024</code></td>
+</tr>
+<tr>
+<td><code>convertTimeZone</code></td>
+<td>von einer Zeitzone in eine andere rechnen</td>
+<td><code>@{convertTimeZone(utcNow(),'UTC','W. Europe Standard Time','dd.MM.yyyy HH:mm')}</code></td>
+<td><code>05.11.2024 15:02</code></td>
+</tr>
+</tbody>
+</table>
+<p>Die Formatzeichen musst du dir merken: <code>dd</code> Tag, <code>MM</code> Monat, <code>yyyy</code> Jahr, <code>HH</code> Stunde im 24-Stunden-Format, <code>mm</code> Minute. Groß- und Kleinschreibung ist entscheidend – <code>mm</code> sind Minuten, <code>MM</code> ist der Monat; <code>dd.mm.yyyy</code> liefert deshalb im November nicht <code>11</code>, sondern die Minutenzahl. Für Dateinamen und Sortierungen nimm <code>yyyy-MM-dd</code>, für Texte, die Menschen lesen, <code>dd.MM.yyyy</code>. Der Zeitzonenname für Deutschland lautet <code>W. Europe Standard Time</code>; er umfasst Sommer- und Winterzeit automatisch.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Rechne Zeitzonen <strong>nie</strong> mit <code>addHours(utcNow(),2)</code> um. Das ist im Sommer richtig und im Winter eine Stunde falsch – ein Fehler, der ein halbes Jahr unentdeckt bleibt und dann Fristen und Terminmails verschiebt. Verwende immer <code>convertTimeZone</code>. Dieselbe Falle betrifft geplante Flows: Dort stellst du die Zeitzone direkt im Trigger ein (Kap. 21).</p>
+</div>
+<hr />
+<h2 id="236-verfassen-als-debugging-werkzeug">23.6 Verfassen als Debugging-Werkzeug<a class="headerlink" href="#236-verfassen-als-debugging-werkzeug" title="Permanent link">&para;</a></h2>
+<p>Die Aktion <strong>Verfassen (Compose)</strong> aus der Gruppe <code>Datenvorgang (Data Operation)</code> tut nur eine Sache: Sie nimmt einen Wert an und gibt ihn unverändert wieder aus. Genau das macht sie zum wichtigsten Diagnosewerkzeug für Ausdrücke, denn ihre Ausgabe steht im Ausführungsverlauf und ist damit sichtbar.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Ausdruck in Verfassen setzen]) --&gt; B([Flow testen])
+    B --&gt; C([Ausgabe im Verlauf lesen])
+    C --&gt; D([Ausdruck korrigieren])
+    D --&gt; B</code></pre>
+<p>Typischer Einsatz: Du willst wissen, was der Trigger überhaupt liefert. Setze eine <code>Verfassen</code>-Aktion direkt nach den Trigger, trage <code>@{triggerOutputs()}</code> ein, teste und lies die Ausgabe. Danach weißt du, welche Feldnamen es wirklich gibt, statt zu raten.</p>
+<p>Wenn ein Ausdruck einen Fehler wirft, arbeite diese Reihenfolge ab: <strong>Fehlertext lesen</strong> – er nennt fast immer Funktion und Problem. <strong>Ausdruck zerlegen</strong> – die innerste Funktion in eine eigene <code>Verfassen</code>-Aktion setzen, allein testen, dann nach außen arbeiten. <strong>Eingaben prüfen</strong> – der Block <code>Eingaben</code> im Verlauf zeigt, mit welchem Wert der Ausdruck tatsächlich gearbeitet hat; oft ist er leer. <strong>Typ und Klammern prüfen</strong> – die meisten Ausdrucksfehler sind Typfehler, und die Ausdrucksleiste färbt zusammengehörige Klammern ein.</p>
+<table>
+<thead>
+<tr>
+<th>Fehlermeldung im Verlauf</th>
+<th>Ursache</th>
+<th>Abhilfe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>The template language function ... expects ... parameters</code></td>
+<td>falsche Anzahl Argumente</td>
+<td>Kommas und Klammern prüfen, <code>if</code> braucht drei</td>
+</tr>
+<tr>
+<td><code>... cannot be converted to ...</code></td>
+<td>Typfehler</td>
+<td><code>int</code>, <code>string</code> oder <code>formatDateTime</code> einsetzen</td>
+</tr>
+<tr>
+<td><code>Property ... doesn't exist</code></td>
+<td>Feldname falsch oder Feld fehlt</td>
+<td>mit <code>@{triggerOutputs()}</code> die echten Feldnamen ansehen, Fragezeichen setzen</td>
+</tr>
+<tr>
+<td><code>Unable to process template language expressions ... is null</code></td>
+<td>Wert ist leer</td>
+<td>mit <code>if</code> und <code>empty</code> einen Ersatzwert vorsehen</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Verfassen statt Variable</p>
+<p>Für einen berechneten Wert, der sich nicht ändert, ist <code>Verfassen</code> die richtige Wahl: kein Initialisieren, kein Zuweisen, im Verlauf sichtbar. Variablen brauchst du erst, wenn ein Wert <strong>innerhalb</strong> des Flows fortgeschrieben wird – etwa ein Zähler in einer Schleife. Diese Unterscheidung und ihre Fallstricke behandelt Kapitel 24.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Dynamische Inhalte</strong> übernehmen Werte unverändert; sobald du etwas mit einem Wert machst, brauchst du einen <strong>Ausdruck</strong> aus der Ausdrucksleiste.</li>
+<li>Jeder Wert hat einen <strong>Datentyp</strong>; die meisten Ausdrucksfehler sind Typfehler, nicht Schreibfehler.</li>
+<li><strong>JSON</strong> ist nur Feldname und Wert; ein einzelnes Feld sprichst du mit <code>?['feld']</code> an, Leerzeichen in Schrittnamen werden zu Unterstrichen.</li>
+<li>Mit <code>concat</code>, <code>trim</code>, <code>toLower</code>, <code>length</code>, <code>split</code> und <code>replace</code> formst du Dateinamen und Betreffzeilen – Sonderzeichen vorher ersetzen.</li>
+<li>Zeitstempel kommen in <strong>UTC</strong>; deutsche Zeiten immer mit <code>convertTimeZone</code> und <code>W. Europe Standard Time</code>, niemals durch Stundenaddition.</li>
+<li><strong>Verfassen</strong> macht Ausdrücke im Ausführungsverlauf sichtbar; komplexe Ausdrücke von innen nach außen zerlegen und einzeln prüfen.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Ausdrücke lesen und Ergebnis vorhersagen</summary>
+<p>Sage für jeden Ausdruck vorher, was er zurückgibt, und benenne den <strong>Datentyp</strong> des Ergebnisses.
+Zwei der Ausdrücke enthalten einen Fehler – finde sie und korrigiere sie.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>1  @{concat(&#39;RE-&#39;,&#39;2024&#39;,&#39;-118&#39;)}
+2  @{toLower(trim(&#39;  Anna.Beispiel@Firma.de  &#39;))}
+3  @{length(&#39;Rechnung 118&#39;)}
+4  @{formatDateTime(&#39;2024-11-05T14:02:31Z&#39;,&#39;dd.mm.yyyy&#39;)}
+5  @{if(empty(&#39;Testbetreff&#39;),&#39;leer&#39;)}
+6  @{int(&#39;19,99&#39;)}
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte bei 4 auf Groß- und Kleinschreibung der Formatzeichen und bei 5 darauf, wie viele Argumente
+die Funktion braucht. Bei 6 hilft die Frage, welches Dezimaltrennzeichen Power Automate erwartet.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Ergebnis</th>
+<th>Datentyp</th>
+<th>Anmerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>RE-2024-118</code></td>
+<td>Text</td>
+<td><code>concat</code> verträgt beliebig viele Argumente</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>anna.beispiel@firma.de</code></td>
+<td>Text</td>
+<td><code>trim</code> entfernt die Leerzeichen, <code>toLower</code> schreibt klein</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>12</code></td>
+<td>Zahl</td>
+<td>Leerzeichen zählen mit</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>05.02.2024</code></td>
+<td>Text</td>
+<td><strong>Fehler:</strong> <code>mm</code> sind Minuten. Korrekt ist <code>dd.MM.yyyy</code> und ergibt <code>05.11.2024</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Fehler</td>
+<td>–</td>
+<td><strong>Fehler:</strong> <code>if</code> braucht drei Argumente. Korrekt: <code>@{if(empty('Testbetreff'),'leer','gefuellt')}</code> und ergibt <code>gefuellt</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fehler</td>
+<td>–</td>
+<td><code>int</code> erwartet reine Ziffern. Korrekt: <code>@{float(replace('19,99',',','.'))}</code> und ergibt <code>19.99</code></td>
+</tr>
+</tbody>
+</table>
+<p>Nummer 4 ist der gefährlichste Fehler des ganzen Kapitels, weil er keinen Absturz erzeugt: Der Flow
+läuft grün durch und schreibt ein falsches Datum in Dateinamen, Betreffzeilen und Fristen. Nummer 5
+und 6 scheitern sofort und sind damit die harmloseren Fälle.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Ausdruckslabor mit Verfassen bauen</summary>
+<p>Diese Übung baust du in Power Automate. Du legst dir eine Werkbank an, in der du jeden Ausdruck
+dieses Kapitels ausprobieren kannst.</p>
+<ol>
+<li><code>Erstellen → Sofortiger Cloud-Flow</code>, Name <code>23 Ausdruckslabor</code>, Trigger <code>Flow manuell auslösen</code>.</li>
+<li>Füge fünf Aktionen <code>Verfassen</code> (Gruppe <code>Datenvorgang</code>) hinzu und benenne jede nach ihrem Zweck,
+   zum Beispiel <code>Datum sortierbar</code>, <code>Datum deutsch</code>, <code>Uhrzeit lokal</code>, <code>Frist plus 14 Tage</code>,
+   <code>Absender ohne Domain</code>.</li>
+<li>Trage in die fünf Aktionen ein: <code>utcNow</code> unformatiert, <code>formatDateTime</code> mit deutschem Datum,
+   <code>convertTimeZone</code> nach <code>W. Europe Standard Time</code> mit Datum und Uhrzeit, <code>addDays</code> mit 14 Tagen,
+   sowie <code>toLower</code> in Verbindung mit <code>split</code> auf eine Beispiel-Mailadresse.</li>
+<li>Speichern, <code>Testen → Manuell</code>. Öffne den Lauf und lies die <strong>Ausgaben</strong> aller fünf Schritte ab.</li>
+<li>Notiere die Differenz zwischen <code>utcNow</code> und dem Ergebnis von <code>convertTimeZone</code> in Stunden und
+   erkläre, warum sie im Winter anders ist als im Sommer.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Trage in jede Verfassen-Aktion nur <strong>einen</strong> Ausdruck ein. Der Sinn der Übung ist, dass du fünf
+einzeln lesbare Ergebnisse im Ausführungsverlauf hast statt eines langen Textes.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge und Inhalte:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: 23 Ausdruckslabor   (Instant-Flow)
+  Trigger: Flow manuell ausloesen
+  Verfassen: Zeitstempel roh        @{utcNow()}
+  Verfassen: Datum deutsch          @{formatDateTime(utcNow(),&#39;dd.MM.yyyy&#39;)}
+  Verfassen: Uhrzeit lokal          @{convertTimeZone(utcNow(),&#39;UTC&#39;,&#39;W. Europe Standard Time&#39;,&#39;dd.MM.yyyy HH:mm&#39;)}
+  Verfassen: Frist plus 14 Tage     @{addDays(utcNow(),14,&#39;dd.MM.yyyy&#39;)}
+  Verfassen: Absender ohne Domain   @{toLower(first(split(&#39;Anna.Beispiel@Firma.de&#39;,&#39;@&#39;)))}
+</code></pre></div></td></tr></table></div>
+<p>Erwartete Ausgaben im Verlauf: ein Zeitstempel mit <code>Z</code> am Ende, ein deutsches Datum, eine
+Ortszeit, die im Sommer zwei und im Winter eine Stunde nach der UTC-Zeit liegt, ein Datum 14 Tage
+in der Zukunft und der Wert <code>anna.beispiel</code>.</p>
+<p>Erklärung zur Zeitdifferenz: Deutschland verwendet im Winter MEZ mit einer Stunde Abstand zu UTC
+und im Sommer MESZ mit zwei Stunden. <code>convertTimeZone</code> mit <code>W. Europe Standard Time</code> berücksichtigt
+diesen Wechsel automatisch – deshalb ist ein handgerechnetes <code>addHours</code> mit fester Stundenzahl
+immer für ein halbes Jahr falsch.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Sicheren Dateinamen im echten Flow bauen</summary>
+<p>Du machst den Flow aus Kapitel 22 kollisionssicher. Gebaut wird in Power Automate.</p>
+<ol>
+<li>Öffne <code>22 Rechnungsanhang ablegen</code> (oder baue den Kern neu) und ergänze <strong>vor</strong> der Ablage drei
+   <code>Verfassen</code>-Aktionen mit sprechenden Namen: <code>Datum</code>, <code>Absender</code>, <code>Dateiname bereinigt</code>.</li>
+<li><code>Datum</code> liefert das Datum sortierbar, <code>Absender</code> den Absender klein und ohne Domain,
+   <code>Dateiname bereinigt</code> den Anhangnamen ohne Schrägstrich und ohne Doppelpunkt.</li>
+<li>Setze im Schritt <code>Datei erstellen</code> als Dateinamen einen <code>concat</code>-Ausdruck aus den drei
+   Verfassen-Ausgaben, getrennt durch Unterstriche.</li>
+<li>Ergänze eine Absicherung für den Fall eines leeren Betreffs: Die Benachrichtigung soll
+   <code>Ohne Betreff</code> schreiben, wenn der Betreff leer ist.</li>
+<li>Teste drei Fälle: normale Mail, Mail mit <code>05/2024</code> im Anhangnamen, Mail ohne Betreff. Halte für
+   jeden Fall den erzeugten Dateinamen aus den Eingaben des Schrittes <code>Datei erstellen</code> fest.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die Ausgabe einer Verfassen-Aktion sprichst du mit <code>outputs</code> und dem Schrittnamen an, wobei
+Leerzeichen im Namen zu Unterstrichen werden. Wenn der Ausdruck rot bleibt, prüfe zuerst, ob der
+Schrittname im Ausdruck exakt so geschrieben ist wie die Karte im Designer.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: 22 Rechnungsanhang ablegen
+  Trigger: Neue Rechnungsmail
+  Verfassen: Datum               @{formatDateTime(utcNow(),&#39;yyyy-MM-dd&#39;)}
+  Verfassen: Absender            @{toLower(first(split(triggerOutputs()?[&#39;body/from&#39;],&#39;@&#39;)))}
+  Aktion: Fuer jeden Anhang
+    Verfassen: Dateiname bereinigt
+      @{replace(replace(items(&#39;Fuer_jeden_Anhang&#39;)?[&#39;name&#39;],&#39;/&#39;,&#39;-&#39;),&#39;:&#39;,&#39;-&#39;)}
+    Aktion: Anhang speichern
+      Dateiname: @{concat(outputs(&#39;Datum&#39;),&#39;_&#39;,outputs(&#39;Absender&#39;),&#39;_&#39;,outputs(&#39;Dateiname_bereinigt&#39;))}
+  Aktion: Team informieren
+    Betreffzeile: @{if(empty(triggerOutputs()?[&#39;body/subject&#39;]),&#39;Ohne Betreff&#39;,triggerOutputs()?[&#39;body/subject&#39;])}
+</code></pre></div></td></tr></table></div>
+<p>Beachte die Verschachtelung: <code>Datum</code> und <code>Absender</code> gehören <strong>vor</strong> die Schleife, weil sie pro Mail
+gleich bleiben. <code>Dateiname bereinigt</code> muss <strong>in</strong> die Schleife, weil es pro Anhang unterschiedlich ist.</p>
+<p>Bewertungskriterien: (1) drei Verfassen-Aktionen mit sprechenden Namen an der richtigen
+Verschachtelungsebene; (2) der Dateiname enthält Datum, Absender und Originalname und ist damit
+auch bei gleichnamigen Anhängen verschiedener Absender eindeutig; (3) der Sonderzeichenfall ist
+nachgewiesen, der Schrägstrich erscheint als Bindestrich und der Schritt läuft grün; (4) der leere
+Betreff wird über <code>if</code> und <code>empty</code> abgefangen statt zu einer leeren Nachricht zu führen.</p>
+<p>Zwei Testergebnisse, die du sehen solltest: <code>2024-11-05_anna.beispiel_LV.pdf</code> im Normalfall und
+<code>2024-11-05_anna.beispiel_Rechnung 05-2024.pdf</code> im Sonderzeichenfall. Ohne die Bereinigung wäre der
+Schritt mit einer Fehlermeldung zum ungültigen Pfad abgebrochen.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Anmeldedaten veredeln: Datum, Fristen und saubere Namen</summary>
+<p><strong>Szenario:</strong> Eine Weiterbildungsabteilung nimmt Kursanmeldungen entgegen. Die Daten kommen
+unsauber an: Namen mit Leerzeichen am Anfang, Mailadressen in gemischter Schreibweise, Beträge mit
+deutschem Komma, Kursdaten als Text. Aus jeder Anmeldung sollen eine Bestätigungsnachricht mit
+deutschem Datum, eine Widerrufsfrist von 14 Tagen und eine sauber benannte Ablagedatei entstehen.
+Bisher macht das eine Person von Hand und hat sich dabei schon zweimal in der Frist verrechnet.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Etwa 40 Anmeldungen pro Monat, Bearbeitung bisher manuell.
+Eingabefelder: Name, E-Mail-Adresse, Kursbezeichnung, Kursbeginn, Teilnahmebetrag.
+Beispieldaten aus der Praxis:
+  Name:          &quot;  Meier-Schulz, Anna  &quot;
+  E-Mail:        Anna.Meier-Schulz@Firma.DE
+  Kurs:          Excel/Aufbau Modul 2
+  Kursbeginn:    2026-03-09
+  Betrag:        1.190,00
+Ziel: Bestaetigung mit deutschem Datum, Widerrufsfrist, Ablagedatei mit eindeutigem Namen.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Grundlage bauen.</strong> Erstelle einen Instant-Flow <code>23 Anmeldung veredeln</code>
+(<code>Erstellen → Sofortiger Cloud-Flow</code>, Trigger <code>Flow manuell auslösen</code>) und füge dem Trigger fünf
+Eingaben hinzu: Name, E-Mail, Kurs, Kursbeginn, Betrag. Baue anschließend für jede Umwandlung eine
+eigene <code>Verfassen</code>-Aktion mit sprechendem Namen und teste nach jeweils zwei Aktionen. Am Ende
+erzeugt der Flow eine Datei in OneDrive oder SharePoint und schickt eine Bestätigungsmail mit den
+veredelten Werten.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Führe den Flow mit den Beispieldaten aus dem Rahmen
+aus. Alle <strong>vier</strong> Punkte müssen im Ausführungsverlauf nachweisbar sein:</p>
+<ol>
+<li>Name und E-Mail sind bereinigt: keine Leerzeichen am Rand, Adresse durchgängig klein.</li>
+<li>Der Kursbeginn erscheint in der Bestätigung als <code>09.03.2026</code>, die Widerrufsfrist als Datum
+   14 Tage nach dem Kursbeginn.</li>
+<li>Der Dateiname ist eindeutig und enthält kein verbotenes Zeichen, obwohl die Kursbezeichnung
+   einen Schrägstrich enthält.</li>
+<li>Jede <code>Verfassen</code>-Aktion enthält genau <strong>einen</strong> Umwandlungsschritt und trägt einen Namen, der
+   ihren Zweck beschreibt.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Der Flow geht in den Probebetrieb, drei Meldungen kommen zurück:</p>
+<ul>
+<li>Die Bestätigungsmail nennt als Ausstellungsdatum <code>05.11.2026 08:14</code>, obwohl sie um 10:14 Uhr
+  verschickt wurde. Finde die Ursache, korrigiere sie richtig und begründe, warum ein fester
+  Stundenzuschlag keine Lösung ist.</li>
+<li>Eine Anmeldung kam ohne Kursbezeichnung. Der Flow ist mit einer Meldung über einen ungültigen
+  Ausdruck abgebrochen. Fange den Fall so ab, dass der Flow durchläuft und stattdessen
+  <code>Kurs unbekannt</code> einsetzt.</li>
+<li>Die Buchhaltung braucht den Betrag als Zahl, um damit zu rechnen. <code>1.190,00</code> lässt sich nicht
+  umwandeln. Löse das und dokumentiere die Reihenfolge der nötigen Umwandlungen.</li>
+</ul>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Lass dir von einem KI-Werkzeug den gesamten Ablauf als
+<strong>einen</strong> verschachtelten Ausdruck für ein einziges Feld erzeugen. Er wird funktionieren und kurz
+sein. Entscheide dann begründet, ob du ihn übernimmst oder bei den einzelnen <code>Verfassen</code>-Schritten
+bleibst, und <strong>widersprich</strong> dem KI-Vorschlag mit mindestens zwei konkreten Argumenten aus deiner
+eigenen Testerfahrung. Zweite Abwägung: Die Kollegin, die die Ablage pflegt, will das Datum im
+Dateinamen als <code>09.03.2026</code>, weil sie es so lesen kann. Prüfe, was das mit der Sortierung des
+Ordners macht, und entscheide.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>lauffähiger Flow <code>23 Anmeldung veredeln</code> mit sprechend benannten Verfassen-Schritten</li>
+<li>Testprotokoll mit vier Läufen: Beispieldaten, fehlende Kursbezeichnung, Betrag mit Komma,
+   Sonderzeichen im Kursnamen – je mit den Ausgaben der relevanten Schritte</li>
+<li>Liste aller verwendeten Ausdrücke mit einem Satz Zweck je Ausdruck</li>
+<li>Entscheidung zu Riesenausdruck gegen Einzelschritte und zum Datumsformat im Dateinamen,
+   inklusive der beiden Gegenargumente zum KI-Vorschlag</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> alle vier Testläufe ohne Abbruch durchlaufen, Bestätigungsdatum und
+Widerrufsfrist in deutscher Schreibweise und in der richtigen Zeitzone stimmen, der erzeugte
+Dateiname weder Sonderzeichen noch doppelte Leerzeichen enthält, jeder verwendete Ausdruck mit
+seinem Zweck dokumentiert ist und deine Entscheidung beide Gegenargumente ausdrücklich benennt.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Runde 3 ist der Kern. Die Zeitzonenfalle, der leere Wert und das deutsche Dezimalkomma sind die
+drei Datenfehler, die in echten Flows fast garantiert vorkommen – und alle drei zeigen sich erst
+bei fremden Daten, nie beim eigenen Test. In Runde 4 ist der kurze KI-Ausdruck technisch nicht
+falsch: Er ist nur im Fehlerfall nicht prüfbar, weil du bei einem falschen Ergebnis nicht sehen
+kannst, welcher der acht verschachtelten Schritte daneben lag.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) der Flow läuft mit den Beispieldaten fehlerfrei durch, Name und Adresse
+sind über <code>trim</code> und <code>toLower</code> bereinigt, das Datum erscheint als <code>09.03.2026</code> und die Frist ist
+über <code>addDays</code> berechnet; (2) das Ausstellungsdatum wird über <code>convertTimeZone</code> mit
+<code>W. Europe Standard Time</code> gebildet und die Begründung nennt den Sommerzeitwechsel als Grund gegen
+einen festen Stundenzuschlag; (3) der fehlende Wert wird über <code>if</code> und <code>empty</code> mit Ersatzwert
+abgefangen und der Betrag über <code>replace</code> in Verbindung mit <code>float</code> in eine Zahl gewandelt, wobei
+Tausenderpunkt und Dezimalkomma in der richtigen Reihenfolge behandelt sind; (4) die Entscheidung
+gegen oder für den Sammelausdruck ist mit Prüfbarkeit, Wartbarkeit und Fehlersuche begründet, und
+beim Dateinamen ist erkannt, dass nur <code>yyyy-MM-dd</code> chronologisch sortiert.</p>
+<p>Lernziel: Ausdrücke nicht als Formelakrobatik verstehen, sondern als kontrollierte Kette kleiner,
+einzeln prüfbarer Umwandlungen – und die drei klassischen Datenfallen Zeitzone, leerer Wert und
+Zahlenformat selbstständig entschärfen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel22/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 22 – Der erste Cloud-Flow">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 22 – Der erste Cloud-Flow
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel24/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 24 – Steuerung und Verzweigung in Power Automate">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 24 – Steuerung und Verzweigung in Power Automate
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

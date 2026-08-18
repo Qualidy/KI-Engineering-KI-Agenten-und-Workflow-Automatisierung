@@ -1,0 +1,46 @@
+title: Design-Review am Werkzeug – Lücken und Fehlerpfade finden
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Übertrage dein ausgefülltes Flow-Design-Blatt in das KI-Werkzeug und gib diesen Auftrag:
+
+     ```text
+     Hier ist das Design fuer einen kleinen Automatisierungs-Workflow.
+     Pruefe es in vier Durchgaengen und antworte je Durchgang als Liste:
+     1. Welche Schritte koennen scheitern und haben keinen Fehlerpfad?
+     2. Welche Eingaben wuerden das Design zum Stolpern bringen
+        leere Felder, unerwartete Formate, doppelte Faelle?
+     3. Welche Stelle koennte denselben Fall zweimal verarbeiten?
+     4. An welcher Stelle entscheidet die Automatik etwas, das besser ein
+        Mensch entscheidet? Nenne pro Punkt eine konkrete Ergaenzung.
+     Design: [dein Design-Blatt]
+     ```
+
+  2. Übernimm **nicht alles**. Sortiere die Vorschläge in drei Gruppen: übernehme ich, verschiebe
+     ich in die Nicht-Ziele, lehne ich ab.
+  3. Ergänze dein Design-Blatt um mindestens **zwei Fehlerpfade** und **einen** zusätzlichen
+     Prüfschritt.
+  4. Notiere zu einem abgelehnten Vorschlag deine Begründung in einem Satz.
+tip: |
+  Die KI neigt dazu, Vollständigkeit zu empfehlen: Protokollierung, Retry überall, drei
+  Benachrichtigungen. Für ein Projekt mit engem Zeitbudget ist das schädlich. Entscheide nach der
+  Frage: Was passiert im schlimmsten Fall, wenn dieser Vorschlag fehlt – merkt es überhaupt jemand?
+solution: |
+  Qualitätskriterien: (1) das Design enthält danach mindestens zwei konkrete Fehlerpfade mit
+  benannter Reaktion und benannter Person; (2) die Vorschläge sind in übernehmen, verschieben und
+  ablehnen sortiert, nicht pauschal übernommen; (3) mindestens eine Ablehnung ist begründet;
+  (4) der zusätzliche Prüfschritt adressiert einen echten Zweifelsfall, nicht nur den Normalfall.
+
+  Beispiel für ein gutes Ergebnis:
+
+  Übernommen: „Wenn die KI keine Kategorie liefert, Status auf Prüfung erforderlich setzen und
+  Teams-Hinweis senden" sowie „Rechnungsnummer vor dem Anlegen gegen die Liste prüfen, damit
+  Doppelverarbeitung ausgeschlossen ist".
+
+  Verschoben in die Nicht-Ziele: „Vollständige Protokollierung aller Zwischenergebnisse in einer
+  Audit-Liste" – sinnvoll, aber für den ersten Schnitt zu aufwendig.
+
+  Abgelehnt mit Begründung: „Eskalation an die Bereichsleitung nach zwei Stunden" – der Prozess
+  hat keine Zwei-Stunden-Dringlichkeit, die Eskalation würde nur Aufmerksamkeit verbrauchen und
+  die Akzeptanz senken.

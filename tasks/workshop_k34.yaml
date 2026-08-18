@@ -1,0 +1,102 @@
+title: Die eigene Ideenliste aufbauen, bewerten und priorisieren
+difficulty: 4
+question: |
+  **Szenario:** Du bereitest die Entscheidung vor, welches Vorhaben du selbst umsetzt. Ausgangspunkt
+  ist dein eigener Arbeitsbereich – oder, falls du dich dort nicht festlegen willst, der unten
+  beschriebene fiktive Bereich. Am Ende dieses Workshops steht eine bewertete Ideenliste, aus der du
+  in der Projektarbeit dein Vorhaben wählst.
+
+  ```text
+  Alternative Ausgangslage, falls du keinen eigenen Bereich waehlst:
+  Bergmueller Haustechnik GmbH, 120 Beschaeftigte.
+  Innendienst sechs Personen, Buchhaltung drei, Aussendienst zwoelf.
+  Vorhanden: Microsoft 365, SharePoint, Power Automate, ein Fachsystem fuer
+  Auftraege, Excel-Listen fuer alles Uebrige.
+  Keine eigene Entwicklung, IT besteht aus zwei Personen mit vollem Tagesgeschaeft.
+  Bekannte Schmerzpunkte: Eingangsrechnungen, Serviceanfragen, Wochenberichte,
+  Rueckfragen des Aussendiensts, Materialbestellungen.
+  ```
+
+  ---
+
+  **Runde 1 – Sammeln und formulieren.** Arbeite die sieben Suchmuster aus Abschnitt 34.1 nacheinander
+  durch und sammle **mindestens zwölf Ideen**. Für die Tag-im-Leben-Analyse gehst du einen typischen
+  Arbeitstag in Blöcken durch und notierst auch die Kleinigkeiten. Formuliere jede Idee als Verb plus
+  Gegenstand, höchstens acht Wörter. Ergänze je Idee eine Zeile: Wer macht es heute, wie oft, wie lange.
+  Nutze ein KI-Werkzeug, um deine Liste auf Dubletten und Themengebiete zu prüfen – aber übernimm
+  keine erfundenen Ideen.
+
+  **Runde 2 – Bewerten gegen Pflichtkriterien.** Bewerte alle Ideen im Raster mit 1 bis 5 Punkten.
+  Deine Liste muss **alle vier** Kriterien erfüllen:
+
+  1. Mindestens **zwei Ideen** sind als „braucht keine KI, klassische Automatisierung genügt"
+     markiert – mit Begründung, welche Regel den KI-Schritt ersetzt.
+  2. Mindestens **eine Idee** löst die Ausschlussregel beim Risiko aus oder scheitert an der
+     Datenverfügbarkeit; die Ablehnung ist schriftlich begründet.
+  3. Für jede Idee mit KI-Anteil ist benannt, welche der acht Einsatzstellen aus Kap. 29 gemeint ist
+     und wer das Ergebnis prüft.
+  4. Keine Idee ist doppelt, keine ist so vage formuliert, dass sich Aufwand oder Nutzen nicht
+     einschätzen lassen.
+
+  Trage anschließend alle verbliebenen Ideen in die Aufwand-Nutzen-Matrix ein.
+
+  **Runde 3 – Die Komplikation.** Du legst deine Top-3 einer erfahrenen Kollegin vor. Drei Rückmeldungen
+  kommen:
+
+  - „Bei deinem Favoriten liegen die Daten gar nicht so vor, wie du denkst. Die Hälfte kommt als
+    Anhang, den jemand von Hand umbenennt."
+  - „Die Leute in dem Team haben letztes Jahr schon ein Digitalisierungsprojekt erlebt, das im Sand
+    verlaufen ist. Die machen nicht noch mal mit."
+  - „Was du da an Zeitersparnis aufschreibst, hast du geschätzt. Gemessen hat das nie jemand."
+
+  Behandle jede Rückmeldung ernst und getrennt. Bei der ersten korrigierst du die Bewertung der
+  Datenverfügbarkeit und prüfst, ob die Idee dadurch die Startposition verliert. Bei der zweiten
+  entwirfst du eine konkrete Maßnahme für die Akzeptanz, die nicht aus einer Ankündigung besteht. Bei
+  der dritten planst du eine **Vorher-Messung**, die du ab morgen mit wenigen Minuten Aufwand pro Tag
+  durchführen könntest – mit Messgröße, Erhebungsweise und Zeitraum. Erstelle danach eine überarbeitete
+  Rangfolge.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Du sollst dich auf **eine** Idee festlegen. Die
+  Bereichsleitung wünscht sich ausdrücklich die Idee mit dem größten Nutzen. Lass dir vom KI-Werkzeug
+  Pro und Contra für deine beiden aussichtsreichsten Kandidaten geben. Entscheide begründet – und
+  **widersprich** der Vorgabe oder dem KI-Vorschlag, wenn die nutzenstärkste Idee zugleich die
+  aufwendigste, riskanteste oder datenschwächste ist. Fülle für deine Wahl den Use-Case-Steckbrief aus
+  Abschnitt 34.5 vollständig aus und formuliere zusätzlich, wie ein auf **eine** Achse begrenzter
+  Pilot aussehen würde.
+
+  **Deliverable:**
+
+  1. Ideenliste mit mindestens zwölf als Tätigkeit formulierten Einträgen samt Zeile zu Person,
+     Häufigkeit und Dauer
+  2. vollständige Bewertungstabelle mit allen sechs Dimensionen, Summen, Matrix-Einordnung und
+     ausgefüllter Pflichtkriterien-Checkliste
+  3. überarbeitete Rangfolge nach Runde 3, mit getrennter Antwort auf alle drei Rückmeldungen und
+     einem konkreten Plan für die Vorher-Messung
+  4. ausgefüllter Use-Case-Steckbrief für die gewählte Idee, Beschreibung des Piloten und eine kurze
+     schriftliche Begründung der abgelehnten Alternative
+
+  **Fertig bist du erst, wenn** deine Liste sowohl KI-taugliche als auch bewusst ohne KI umsetzbare
+  Ideen enthält, mindestens eine Ablehnung schriftlich begründet ist, dein Steckbrief kein leeres Feld
+  hat, dein Erfolgskriterium eine Zahl und eine Frist enthält und deine Vorher-Messung so beschrieben
+  ist, dass eine andere Person sie morgen beginnen könnte.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Die drei Rückmeldungen sind genau die, die in echten Projekten
+  kommen – meist erst, wenn schon gebaut wurde. Die dritte ist die unangenehmste: Fast jede
+  Nutzenschätzung in einer Ideenliste ist geraten, und geraten heißt angreifbar. Eine Strichliste über
+  eine Woche kostet fast nichts und macht aus einer Behauptung ein Argument. In Runde 4 gilt: Die
+  nutzenstärkste Idee ist selten die beste erste Idee. Wer trotzdem den großen Wurf wählt, muss
+  erklären können, warum Aufwand, Risiko und Datenlage in diesem Fall beherrschbar sind.
+solution: |
+  Bewertungskriterien: (1) mindestens zwölf als Tätigkeit formulierte Ideen, die erkennbar aus
+  mehreren der sieben Suchmuster stammen und nicht nur aus einem, jeweils mit Angaben zu Person,
+  Häufigkeit und Dauer; (2) vollständige Bewertung aller Ideen mit nachvollziehbarer Punktvergabe,
+  alle vier Pflichtkriterien belegt, insbesondere die bewusst ohne KI umsetzbaren Ideen und die
+  begründete Ablehnung; (3) die überarbeitete Rangfolge reagiert auf alle drei Rückmeldungen einzeln,
+  korrigiert die Datenbewertung ehrlich auch dann, wenn dadurch der Favorit fällt, und enthält eine
+  Vorher-Messung mit Messgröße, Erhebungsweise und Zeitraum; (4) der Steckbrief ist vollständig, das
+  Erfolgskriterium ist mit Zahl und Frist messbar, der Pilot ist auf genau eine Achse begrenzt, und
+  die Entscheidung übernimmt weder die Vorgabe der Bereichsleitung noch den KI-Vorschlag ungeprüft.
+
+  Lernziel: aus einer ungeordneten Sammlung von Schmerzpunkten eine belastbare, bewertete Ideenliste
+  machen und daraus ein Vorhaben auswählen, das man tatsächlich zu Ende bringen und dessen Nutzen man
+  hinterher belegen kann.

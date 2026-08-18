@@ -1,0 +1,43 @@
+title: Erfolgskriterium messbar machen – mit KI als Sparringspartner
+difficulty: 3
+question: |
+  Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Formuliere dein Erfolgskriterium zunächst selbst, so gut du kannst.
+  2. Gib deinem KI-Werkzeug folgenden Auftrag:
+
+     ```text
+     Ich beschreibe dir ein Erfolgskriterium fuer ein kleines
+     Automatisierungsprojekt. Pruefe es auf drei Punkte: Enthaelt es eine
+     zaehlbare Groesse, einen Zielwert und eine Messmethode, die eine einzelne
+     Person selbst durchfuehren kann? Nenne fuer jeden fehlenden Punkt eine
+     konkrete Ergaenzung und formuliere zwei Alternativfassungen.
+     Kriterium: [dein Kriterium]
+     ```
+
+  3. Prüfe die Vorschläge kritisch: Verwirf jede Fassung, deren Messmethode du in der
+     verfügbaren Zeit **nicht** wirklich durchführen kannst.
+  4. Schreibe die Endfassung auf und ergänze in einem Satz, **wann und wie** du die Messung
+     durchführen wirst.
+tip: |
+  Die KI liefert gern Kennzahlen, die gut klingen und niemand erheben kann („Zufriedenheit der
+  Fachabteilung steigt um 20 Prozent"). Deine Aufgabe ist das Aussortieren: Was kannst du mit
+  einer Stoppuhr, einer Liste von Testfällen oder dem Ausführungsverlauf des Flows selbst
+  nachweisen?
+solution: |
+  Qualitätskriterien: (1) die Endfassung enthält zählbare Größe, Zielwert und Messmethode;
+  (2) die Messmethode ist ohne fremde Hilfe durchführbar; (3) mindestens ein KI-Vorschlag wurde
+  begründet verworfen; (4) es ist genau ein Hauptkriterium, keine Sammlung.
+
+  Beispiel für ein gutes Ergebnis:
+
+  Erste Fassung: „Der Rechnungseingang läuft schneller und mit weniger Fehlern."
+
+  Endfassung: „Für 15 Testrechnungen liest der Flow Rechnungsnummer, Betrag und Lieferant in
+  mindestens 13 Fällen korrekt aus, und die verbleibende Prüfzeit pro Rechnung liegt unter
+  2 Minuten. Messung: 15 vorbereitete Testrechnungen einmal durchlaufen lassen, Ergebnisse in
+  der Testfall-Tabelle abhaken, Prüfzeit bei fünf Fällen mit der Stoppuhr nehmen."
+
+  Verworfener KI-Vorschlag mit Begründung: „Fehlerquote im Rechnungseingang sinkt um 30 Prozent"
+  – die bisherige Fehlerquote ist nirgends erfasst, also gibt es keinen Ausgangswert, gegen den
+  gemessen werden könnte.

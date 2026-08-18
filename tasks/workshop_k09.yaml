@@ -1,0 +1,75 @@
+title: Prompt-Bibliothek für deinen Arbeitsbereich
+difficulty: 4
+question: |
+  **Szenario:** In deinem Team nutzt jeder KI-Werkzeuge anders. Die Ergebnisse schwanken stark,
+  und dieselbe Aufgabe wird jeden Morgen neu in ein leeres Chatfenster getippt. Ihr wollt das
+  ändern: eine gemeinsame **Prompt-Bibliothek**, die auch jemand nutzen kann, der beim Aufbau
+  nicht dabei war. Die Leitung erwartet keinen Prosatext, sondern etwas, das am Montag benutzbar
+  ist.
+
+  ```text
+  Rahmen:
+  Bereich frei waehlbar. 6 bis 12 Beschaeftigte.
+  Ablage: ein geteiltes Dokument, eine OneNote-Seite oder eine SharePoint-Liste.
+  Werkzeug: das, welches im Team tatsaechlich verfuegbar ist.
+  Keine vertraulichen Inhalte in den Prompts, nur Platzhalter.
+  ```
+
+  ---
+
+  **Runde 1 – Bibliothek aufbauen.** Erstelle **sechs** Prompts für die häufigsten Aufgaben deines
+  Bereichs. Jeder Prompt enthält die passenden Bausteine aus Abschnitt 9.2, mindestens zwei
+  Platzhalter in eckigen Klammern und mindestens eine Einschränkung. Mindestens **einer** der
+  sechs arbeitet mit Few-Shot-Beispielen. Lege jeden Prompt in der Feldstruktur aus Abschnitt 9.6
+  an und teste jeden mindestens einmal am Werkzeug.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Die Bibliothek muss **alle vier** Kriterien
+  erfüllen:
+
+  1. Jeder Prompt hat ein **Beispielergebnis**, das im Team als „so soll es aussehen" gilt.
+  2. Jeder Prompt enthält eine Regel für **fehlende Angaben**, damit nichts stillschweigend
+     ergänzt wird.
+  3. Zu jedem Prompt stehen mindestens **zwei Prüfpunkte**, die eine andere Person ohne Rückfrage
+     anwenden kann.
+  4. Kein Prompt enthält Namen, Kundendaten, Preise oder andere vertrauliche Angaben.
+
+  **Runde 3 – Die Komplikation.** Gib zwei deiner Prompts einer anderen Person – ohne Erklärung.
+  Sie nutzt sie für einen eigenen Fall. Werte aus, was schiefgeht: unklare Platzhalter, fehlender
+  Kontext, ein Format, das für ihren Fall nicht passt, oder eine Einschränkung, die zu eng ist.
+  Überarbeite beide Prompts anhand der Rückmeldung. Falls dir niemand zur Verfügung steht, nimm
+  einen Prompt, den du seit zwei Tagen nicht angesehen hast, und arbeite streng nach dem, was
+  dort steht – ohne Wissen aus deinem Kopf zu ergänzen.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Lass dir von deinem KI-Werkzeug deinen aufwendigsten
+  Prompt „professionell optimieren". Du bekommst mit hoher Wahrscheinlichkeit eine deutlich
+  längere Fassung mit vielen Zusatzanweisungen. Teste beide Fassungen gegen dieselben drei Fälle
+  und entscheide begründet. **Widersprich** dem Vorschlag dort, wo Länge keinen Mehrwert bringt,
+  und benenne pro gestrichenem Zusatz, warum er nichts beiträgt.
+
+  **Deliverable:**
+
+  1. Prompt-Bibliothek mit sechs vollständigen Einträgen, davon einer mit Few-Shot-Beispielen
+  2. ausgefüllte Checkliste der vier Pflichtkriterien
+  3. Rückmeldung und überarbeitete Fassung der beiden Prompts aus Runde 3
+  4. Vergleich der beiden Fassungen aus Runde 4 mit begründeter Entscheidung
+
+  **Fertig bist du erst, wenn** alle sechs Einträge vollständig ausgefüllt und getestet sind,
+  jeder Prompt eine Regel für fehlende Angaben enthält, die beiden überarbeiteten Prompts ohne
+  mündliche Erklärung funktionieren, und deine Entscheidung aus Runde 4 mindestens zwei
+  Streichungen einzeln begründet.
+tip: |
+  Der Lernwert liegt in Runde 3. Ein Prompt, den nur der Autor bedienen kann, ist keine Vorlage,
+  sondern eine Notiz. Fast immer fehlt der Kontext, den du im Kopf hattest und deshalb nicht
+  aufgeschrieben hast. In Runde 4 gilt: Länger ist nicht besser. Zusatzanweisungen, die nichts
+  ausschließen und nichts festlegen, kosten nur Lesezeit – und verdecken die Anweisungen, auf die
+  es ankommt.
+solution: |
+  Bewertungskriterien: (1) sechs getestete Prompts mit passenden Bausteinen, mindestens zwei
+  Platzhaltern und einer Einschränkung je Prompt, darunter ein funktionierender Few-Shot-Prompt;
+  (2) alle vier Pflichtkriterien erfüllt, insbesondere Beispielergebnis und anwendbare Prüfpunkte;
+  (3) die Überarbeitung in Runde 3 beruht auf echter Rückmeldung und behebt konkrete Lücken, statt
+  den Prompt nur zu verlängern; (4) der Vergleich in Runde 4 nutzt dieselben Testfälle für beide
+  Fassungen und begründet Streichungen einzeln statt pauschal.
+
+  Lernziel: Aus einzelnen gelungenen Prompts ein geteiltes Arbeitsmittel machen – und erkennen,
+  dass Prompt-Qualität an Übertragbarkeit und Prüfbarkeit hängt, nicht an Länge.

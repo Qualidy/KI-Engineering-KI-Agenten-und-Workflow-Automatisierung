@@ -1,0 +1,28 @@
+title: Den richtigen Genehmigungstyp wählen
+difficulty: 1
+question: |
+  Wähle für jeden Fall den passenden **Genehmigungstyp** (Alle müssen genehmigen, Erste Antwort
+  zählt, Eigene Antwortoptionen) und begründe kurz.
+
+  1. Urlaubsantrag, der von drei Teamleitungen freigegeben werden darf – eine genügt.
+  2. Investition über 10.000 Euro, die Fachbereich **und** Buchhaltung freigeben müssen.
+  3. Angebotstext, bei dem der Vertrieb entweder freigibt, mit Änderung freigibt oder zurückgibt.
+  4. Zutritt für einen externen Dienstleister, dem Empfang und Sicherheit zustimmen müssen.
+  5. Materialbestellung unter 50 Euro, die von jedem im Einkauf freigegeben werden kann.
+tip: |
+  Frage dich: Muss jede Stimme gehört werden – oder genügt eine? Und reichen zwei Antworten
+  überhaupt aus, um den Vorgang sinnvoll weiterzuführen?
+solution: |
+  | Fall | Typ | Begründung |
+  |---|---|---|
+  | 1. Urlaub, drei Leitungen | Erste Antwort zählt | eine Zustimmung genügt, Urlaub der anderen fällt nicht auf |
+  | 2. Investition | Alle müssen genehmigen | Vier-Augen-Prinzip, beide Sichten sind zwingend |
+  | 3. Angebotstext | Eigene Antwortoptionen | drei mögliche Ausgänge, Ja/Nein greift zu kurz |
+  | 4. Zutritt extern | Alle müssen genehmigen | zwei getrennte Zuständigkeiten, beide nötig |
+  | 5. Kleinbestellung | Erste Antwort zählt | schnelle Entscheidung wichtiger als Zuständigkeitsfeinheit |
+
+  Merke: `Erste Antwort zählt` ist zugleich die einfachste **Vertretungsregel** – niemand muss an
+  Urlaub denken. Wo das fachlich nicht zulässig ist, brauchst du Frist, Erinnerung und eine
+  bewusste Eskalationsregel. Und bei Fall 3 zeigt sich der Wert eigener Antwortoptionen: Ein
+  „Zurück an Antragsteller" ist etwas anderes als eine Ablehnung, und der Flow muss beides
+  unterschiedlich weiterführen.

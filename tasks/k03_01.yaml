@@ -1,0 +1,27 @@
+title: Nutzenart bestimmen
+difficulty: 1
+question: |
+  Ordne jede Aussage einer Nutzenart zu: **Zeitnutzen**, **Qualitätsnutzen** oder
+  **Skalierungsnutzen**. Begründe jeweils in einem Satz.
+
+  1. „Seit wir Protokolle automatisch erstellen, hat jede Besprechung eines – vorher etwa jede zweite."
+  2. „Der Antwortentwurf steht in 20 Sekunden statt in 10 Minuten."
+  3. „Wir werten jetzt alle 400 Rückmeldungen aus der Kundenumfrage aus, vorher nur die letzten 30."
+  4. „Alle Angebotstexte folgen derselben Struktur, egal wer sie schreibt."
+  5. „Die monatliche Abweichungsanalyse ist eine Stunde früher fertig."
+tip: |
+  Frage bei jedem Punkt: Wird etwas **schneller**, wird etwas **besser oder gleichmäßiger**,
+  oder wird etwas gemacht, das vorher **überhaupt nicht** stattfand?
+solution: |
+  | Aussage | Nutzenart | Begründung |
+  |---|---|---|
+  | 1 Jede Besprechung hat ein Protokoll | Qualität | Vollständigkeit und Gleichmäßigkeit steigen, nicht die Geschwindigkeit |
+  | 2 Entwurf in 20 Sekunden | Zeit | dieselbe Aufgabe, kürzere Dauer |
+  | 3 Alle 400 Rückmeldungen auswerten | Skalierung | 370 Fälle wären ohne das Werkzeug unbearbeitet geblieben |
+  | 4 Einheitliche Angebotsstruktur | Qualität | Ergebnis ist unabhängig von Person und Tagesform |
+  | 5 Analyse eine Stunde früher | Zeit | Beschleunigung eines bestehenden Ablaufs |
+
+  Beachte Aussage 2 und 5: Beide sind Zeitnutzen und beide sind mit Vorsicht zu behandeln, weil
+  die Prüfzeit noch nicht enthalten ist. Aussage 1 und 4 sind die stabileren Argumente, weil
+  Gleichmäßigkeit nicht durch Nacharbeit aufgezehrt wird. Aussage 3 ist das stärkste Argument
+  überhaupt – hier gibt es keine Vergleichsleistung, die eingespart wird.

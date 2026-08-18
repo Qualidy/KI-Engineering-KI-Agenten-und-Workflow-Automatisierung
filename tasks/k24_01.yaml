@@ -1,0 +1,32 @@
+title: Den richtigen Steuerungsbaustein wählen
+difficulty: 1
+question: |
+  Wähle für jede Anforderung den passenden Baustein aus: **Bedingung**, **Switch**,
+  **Auf jedes anwenden**, **Array filtern**, **Beenden**, **Trigger-Bedingung** oder **Variable**.
+  Begründe jede Wahl in einem Satz.
+
+  1. Anfragen sollen je nach Abteilung im Betreff an eines von vier Teams gehen.
+  2. Von zehn Anhängen sollen nur die PDF-Dateien weiterverarbeitet werden.
+  3. Der Flow soll überhaupt nicht anlaufen, wenn die Mail keinen Anhang hat.
+  4. Am Ende soll in der Bestätigungsmail stehen, wie viele Dateien gespeichert wurden.
+  5. Wenn nach dem Filtern keine Datei übrig ist, soll der Flow ohne Fehlermeldung aufhören.
+  6. Für jede Zeile einer Excel-Tabelle soll ein Listeneintrag entstehen.
+  7. Ein Betrag über 5.000 Euro soll einen anderen Weg nehmen als ein Betrag darunter.
+tip: |
+  Zwei Fragen entscheiden fast immer: Geht es um genau zwei Wege oder um mehrere feste Fälle? Und
+  muss der Wert sich während des Laufs verändern oder steht er von Anfang an fest?
+solution: |
+  | Nr. | Baustein | Begründung |
+  |---|---|---|
+  | 1 | Switch | ein Wert wird gegen mehrere feste Fälle geprüft, plus Standardzweig für Unbekanntes |
+  | 2 | Array filtern | reduziert die Liste in einem Schritt, ohne Schleife und ohne Bedingung pro Eintrag |
+  | 3 | Trigger-Bedingung | filtert vor dem Start, spart einen kompletten Lauf und einen Verlaufseintrag |
+  | 4 | Variable | der Zähler verändert sich während des Laufs, das kann `Verfassen` nicht leisten |
+  | 5 | Beenden mit Status Erfolgreich | bewusster Abbruch ohne roten Lauf, weil kein Fehler vorliegt |
+  | 6 | Auf jedes anwenden | eine Aktion muss pro Listeneintrag einmal ausgeführt werden |
+  | 7 | Bedingung | genau zwei Wege mit einem Größenvergleich, den ein Switch nicht kann |
+
+  Zwei Feinheiten: Bei 4 wäre auch `Array filtern` plus `length` auf der Gesamtliste möglich – und
+  sogar die robustere Lösung, weil sie ohne Variable und damit ohne Probleme bei paralleler
+  Ausführung arbeitet. Bei 7 scheitert der Switch daran, dass er nur auf Gleichheit prüft und keine
+  Bereiche kennt.

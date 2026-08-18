@@ -1,0 +1,110 @@
+title: Ein komplettes Recruiting für eine Stelle
+difficulty: 4
+question: |
+  **Szenario:** Die Musterhandel GmbH sucht eine Person für die Sachbearbeitung
+  Auftragsabwicklung. Die Vorgängerin hat gekündigt, die Stelle muss in sechs Wochen besetzt sein.
+  Die letzte Ausschreibung ist elf Jahre alt, das Anforderungsprofil existiert nicht, und die
+  Fachbereichsleitung sagt: „Wir brauchen einfach jemanden wie Frau Berger." Du verantwortest das
+  Verfahren von der Anforderungsanalyse bis zur Absage – vollständig, dokumentiert und rechtlich
+  tragfähig.
+
+  ```text
+  Rahmendaten:
+  Musterhandel GmbH, Handel mit Lager- und Bueroeinrichtung, 140 Beschaeftigte
+  Team Auftragsabwicklung: 8 Personen, Leitung Frau Berger
+  Taetigkeiten: Auftraege aus Mail und Telefon erfassen und pruefen,
+  Liefertermine mit Lager und Spedition abstimmen, Reklamationen aufnehmen,
+  monatliche Auswertung offener Auftraege in Excel
+  Erwartet werden 40 bis 60 Bewerbungen
+  Betriebsrat vorhanden, bisher nicht einbezogen
+  Werkzeuge: Copilot in M365 freigegeben, kein Bewerbermanagementsystem
+  ```
+
+  Arbeite ausschließlich mit erfundenen Bewerbungsunterlagen, die du selbst anlegst – mindestens
+  fünf, mit unterschiedlichen Werdegängen, davon zwei mit Lücken im Lebenslauf und eine mit
+  ausländischem Abschluss. Verwende keine echten Unterlagen.
+
+  ---
+
+  **Runde 1 – Grundlage bauen.** Erstelle das **Anforderungsprofil** mit mindestens acht
+  Anforderungen, jede mit Muss- oder Kann-Einstufung, Ableitung aus einer konkreten Tätigkeit und
+  geplantem Nachweis im Verfahren. Erstelle daraus die **Stellenanzeige** und prüfe sie mit dem
+  Prüf-Prompt aus dem Kapitel auf Diskriminierungsrisiko. Erstelle außerdem das
+  **Sichtungsformular**: das einheitliche Übersichtsformat, in das alle Unterlagen ohne Bewertung
+  übertragen werden. Halte schriftlich fest, welche Werkzeuge du in welchem Schritt einsetzt.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Dein Verfahren muss **alle vier** Kriterien
+  erfüllen. Prüfe einzeln nach und korrigiere:
+
+  1. Jede Muss-Anforderung ist aus einer benannten Tätigkeit abgeleitet, und keine Anforderung
+     bezieht sich mittelbar oder unmittelbar auf Alter, Geschlecht, Herkunft, Sprache als
+     Muttersprache, Familiensituation, Aussehen, Religion oder Behinderung.
+  2. Kein Schritt des Verfahrens erzeugt eine Rangfolge, eine Punktzahl oder ein Eignungsurteil
+     durch ein Werkzeug – die Sichtungsübersicht hat für alle Unterlagen dieselbe neutrale Struktur.
+  3. Es liegt schriftlich fest, welche Daten in welchem Werkzeug verarbeitet werden, und
+     Bewerberdaten erscheinen in keinem öffentlichen Werkzeug – auch nicht auszugsweise.
+  4. Der Einbezug des Betriebsrats ist geplant und begründet: Für welche Schritte ist er
+     erforderlich, für welche nicht, und mit welcher Begründung?
+
+  **Runde 3 – Die Komplikation.** Vier Dinge geschehen. Erstens schlägt die Fachbereichsleitung
+  vor, „die Bewerbungen von Copilot vorsortieren zu lassen, damit wir nur die Top Ten lesen
+  müssen" – der Zeitdruck ist echt. Zweitens fällt bei der Sichtung auf, dass eine Bewerbung mit
+  ausländischem Abschluss von deinem Übersichtsformat schlecht abgebildet wird, weil das Feld
+  Abschluss auf deutsche Bezeichnungen ausgelegt ist. Drittens erfährst du, dass eine
+  Gesprächsführende die Bewerbung einer Person schon einmal aus einem anderen Verfahren kennt.
+  Viertens meldet der Betriebsrat, dass er über den Einsatz von KI im Verfahren informiert werden
+  will, bevor Gespräche stattfinden. Bearbeite alle vier Punkte: Formuliere eine Antwort auf den
+  Vorsortier-Vorschlag mit einer **umsetzbaren Alternative**, die tatsächlich Zeit spart; überarbeite
+  das Übersichtsformat; regle den Befangenheitsfall; und erstelle eine sachliche Information für
+  den Betriebsrat, die Zweck, Werkzeuge, Daten und Grenzen benennt.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Nach den Gesprächen liegen zwei Personen sehr nah
+  beieinander. Die Fachbereichsleitung tendiert klar zu der Person, die „am besten ins Team passt";
+  die Gesprächsnotizen zeigen bei dieser Person Schwächen bei zwei von vier Muss-Anforderungen.
+  Zusätzlich bittet dich die Leitung, die Absagen „von der KI schreiben zu lassen, kurz und ohne
+  Begründung". Führe die Bewertung anhand deiner Beobachtungsanker zusammen, entscheide begründet,
+  und **widersprich** mindestens einer der beiden Vorgaben mit tragfähiger Begründung. Formuliere
+  anschließend die Absagen so, dass sie sachlich, wertschätzend und rechtlich unbedenklich sind.
+
+  **Deliverable:**
+
+  1. Anforderungsprofil, geprüfte Stellenanzeige und neutrales Sichtungsformular
+  2. ausgefüllte Prüfmatrix der vier Pflichtkriterien plus die schriftliche Festlegung, welche
+     Daten in welchem Werkzeug verarbeitet werden
+  3. Bearbeitung aller vier Punkte aus Runde 3, darunter die Antwort auf den Vorsortier-Vorschlag
+     mit umsetzbarer Alternative und die Information für den Betriebsrat
+  4. Interviewleitfaden mit Beobachtungsankern, zusammengeführte Bewertung, begründete
+     Auswahlentscheidung inklusive Widerspruch, und zwei Absageschreiben
+  5. Verfahrensdokumentation, die von außen nachvollziehbar macht, wer wann was entschieden hat
+
+  **Fertig bist du erst, wenn** in keinem Schritt eine maschinelle Rangfolge entstanden ist, die
+  Antwort auf den Vorsortier-Vorschlag eine Alternative enthält, die den Zeitdruck wirklich
+  adressiert, deine Auswahlentscheidung sich auf Beobachtungsanker und nicht auf Passung beruft,
+  und deine Absageschreiben keine Begründung enthalten, die als Merkmal im Sinne des
+  Gleichbehandlungsrechts gelesen werden kann.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Der Vorsortier-Vorschlag ist die realistischste und
+  gefährlichste Stelle des ganzen Kapitels: Ein pauschales Nein ohne Alternative führt dazu, dass es
+  jemand anders heimlich macht. Suche deshalb nach dem, was wirklich hilft – Vollständigkeitsprüfung
+  der Unterlagen, einheitliche Übersicht, Vorbereitung der Rückfragen, Terminorganisation. Das spart
+  echte Stunden, ohne eine Rangfolge zu erzeugen. In Runde 4 ist „passt ins Team" das schwierigste
+  Argument: Es ist nicht per se falsch, aber es ist nicht überprüfbar und deckt sich erfahrungsgemäß
+  häufig mit Ähnlichkeit zu den Entscheidenden. Wer ihm folgt, muss es in beobachtbares Verhalten
+  übersetzen können – oder es fallen lassen.
+solution: |
+  Bewertungskriterien: (1) Das Anforderungsprofil leitet jede Muss-Anforderung sichtbar aus einer
+  Tätigkeit ab, die Anzeige ist nach der Prüfung frei von mittelbar ausschließenden Formulierungen,
+  und das Sichtungsformular ist für alle Unterlagen identisch und bewertungsfrei; (2) die Prüfmatrix
+  belegt alle vier Kriterien konkret, insbesondere die schriftliche Datenfestlegung und die
+  begründete Betriebsratsplanung; (3) die Antwort auf den Vorsortier-Vorschlag lehnt die Rangfolge
+  ab und liefert eine Alternative, die den Zeitdruck real reduziert, das Übersichtsformat ist für
+  ausländische Abschlüsse tragfähig überarbeitet, der Befangenheitsfall ist geregelt statt
+  ignoriert, und die Betriebsratsinformation benennt Zweck, Werkzeuge, Daten und Grenzen ohne
+  Beschönigung; (4) die Auswahlentscheidung stützt sich auf Beobachtungsanker, benennt die Schwächen
+  bei den Muss-Anforderungen ausdrücklich, widerspricht mindestens einer Vorgabe der Leitung
+  begründet, und die Absagen sind sachlich ohne merkmalsbezogene Begründung; (5) die
+  Verfahrensdokumentation macht Entscheidungen und Verantwortliche von außen nachvollziehbar.
+
+  Lernziel: ein vollständiges Auswahlverfahren mit KI-Unterstützung durchführen, ohne die Grenze zur
+  automatisierten Entscheidung über Menschen zu überschreiten – und dabei Zeitdruck, Bequemlichkeit
+  und Passungsargumente als die drei realen Einfallstore für Rechtsverstöße erkennen.

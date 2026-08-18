@@ -1,0 +1,30 @@
+title: Das Skelett deines Flows festlegen
+difficulty: 1
+question: |
+  Bevor du baust, legst du fest, was dein **Skelett** ist – der kürzeste Durchlauf, der von vorn
+  bis hinten funktioniert.
+
+  1. Notiere die Aktionen deines Skeletts in Reihenfolge (drei bis fünf Stück).
+  2. Schreibe zu jeder Aktion, mit welchem **festen Platzhalterwert** du sie zunächst füllst,
+     statt echte Daten zu verarbeiten.
+  3. Notiere in einem Satz, woran du erkennst, dass das Skelett durchgelaufen ist.
+tip: |
+  Im Skelett gibt es keine Bedingungen, keinen KI-Aufruf und keine Fehlerbehandlung. Wenn dein
+  Skelett eine Verzweigung enthält, ist es noch kein Skelett.
+solution: |
+  Qualitätskriterien: (1) das Skelett hat höchstens fünf Aktionen und keine Verzweigung, keine
+  KI-Stelle; (2) jede Aktion hat einen festen Platzhalterwert, keinen dynamischen Inhalt;
+  (3) das Abschlusskriterium ist ein sichtbarer Zustand, nicht „läuft".
+
+  Beispiel für ein gutes Ergebnis (Projekt: Kontaktanfragen vorsortieren):
+
+  | Aktion | Platzhalterwert im Skelett |
+  |---|---|
+  | Trigger: Neue Antwort in Forms | wird durch eine selbst ausgefüllte Testantwort ausgelöst |
+  | Antwortdetails abrufen | keine Belegung nötig |
+  | Element in Testliste erstellen | Titel: TEST, Kategorie: Sonstiges, Status: Neu |
+  | Mail an mich selbst | Betreff: TEST Skelettdurchlauf |
+
+  Abschlusskriterium: „In der Testliste steht ein Eintrag mit Titel TEST und in meinem Postfach
+  liegt eine Mail mit dem Betreff TEST Skelettdurchlauf." Damit ist bewiesen, dass Trigger,
+  Schreibrecht und Mailversand funktionieren – bevor irgendeine Fachlogik dazukommt.

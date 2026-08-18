@@ -1,17 +1,54 @@
-site_name: "M1.1 WISO: Berufsbildung, Arbeits- u. Tarifrecht"
+site_name: "KI-Engineering: KI-Agenten und Workflow-Automatisierung"
 
 nav:
   - Übersicht: index.md
-  - "Kapitel 1 – Berufsbildung und Umschulung": content/kapitel1.md
-  - "Kapitel 2 – Ausbildungsvertrag": content/kapitel2.md
-  - "Kapitel 3 – Ausbildungsplan und Ausbildungsordnung": content/kapitel3.md
-  - "Kapitel 4 – Arbeitsrecht Grundlagen": content/kapitel4.md
-  - "Kapitel 5 – Sozialversicherung und Sozialrecht": content/kapitel5.md
-  - "Kapitel 6 – Mitbestimmungsrecht": content/kapitel6.md
-  - "Kapitel 7 – Tarifrecht und Arbeitszeit": content/kapitel7.md
-  - "Kapitel 8 – Entgeltabrechnung": content/kapitel8.md
-  - "Kapitel 9 – Lern- und Arbeitstechniken": content/kapitel9.md
-  - "Kapitel 10 – Lebenslanges Lernen und IT-Karriere": content/kapitel10.md
+  - "Block 1 · Einführung in KI und Automatisierung":
+      - "Kapitel 1 – Was ist Künstliche Intelligenz?": content/kapitel1.md
+      - "Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich": content/kapitel2.md
+      - "Kapitel 3 – Chancen, Risiken und ethische Verantwortung": content/kapitel3.md
+      - "Kapitel 4 – Rechtliche Grundlagen und Datenschutz": content/kapitel4.md
+  - "Block 2 · KI-Agenten verstehen und nutzen":
+      - "Kapitel 5 – Wie Sprachmodelle arbeiten": content/kapitel5.md
+      - "Kapitel 6 – Vom Chatbot zum Agenten": content/kapitel6.md
+      - "Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.": content/kapitel7.md
+      - "Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche": content/kapitel8.md
+      - "Kapitel 9 – Prompt-Design: Grundlagen": content/kapitel9.md
+      - "Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen": content/kapitel10.md
+  - "Block 3 · Praxis mit KI-Agenten":
+      - "Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise": content/kapitel11.md
+      - "Kapitel 12 – KI-gestützte Textarbeit": content/kapitel12.md
+      - "Kapitel 13 – KI-gestützte Datenarbeit": content/kapitel13.md
+      - "Kapitel 14 – Fallbeispiel HR": content/kapitel14.md
+      - "Kapitel 15 – Fallbeispiel Vertrieb": content/kapitel15.md
+      - "Kapitel 16 – Fallbeispiel Rechnungswesen": content/kapitel16.md
+  - "Block 4 · Einstieg in Workflow-Automatisierung":
+      - "Kapitel 17 – Workflow-Grundlagen": content/kapitel17.md
+      - "Kapitel 18 – Trigger, Aktionen und Daten": content/kapitel18.md
+      - "Kapitel 19 – Logikbausteine": content/kapitel19.md
+      - "Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make": content/kapitel20.md
+  - "Block 5 · Power Automate in der Praxis":
+      - "Kapitel 21 – Einführung in Power Automate": content/kapitel21.md
+      - "Kapitel 22 – Der erste Cloud-Flow": content/kapitel22.md
+      - "Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke": content/kapitel23.md
+      - "Kapitel 24 – Steuerung und Verzweigung in Power Automate": content/kapitel24.md
+      - "Kapitel 25 – Integration von Microsoft 365": content/kapitel25.md
+      - "Kapitel 26 – Integration externer Apps": content/kapitel26.md
+      - "Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare": content/kapitel27.md
+      - "Kapitel 28 – Testing, Fehlerbehandlung und Optimierung": content/kapitel28.md
+  - "Block 6 · Kombination von KI & Workflow":
+      - "Kapitel 29 – KI-Bausteine im Workflow: Muster und Einsatzstellen": content/kapitel29.md
+      - "Kapitel 30 – AI Builder und KI-Aktionen in Power Automate": content/kapitel30.md
+      - "Kapitel 31 – Dokumentenverarbeitung automatisieren": content/kapitel31.md
+      - "Kapitel 32 – Eigene Agenten bauen mit Copilot Studio": content/kapitel32.md
+      - "Kapitel 33 – Agent und Workflow verbinden": content/kapitel33.md
+      - "Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren": content/kapitel34.md
+  - "Block 7 · Projektarbeit":
+      - "Kapitel 35 – Den eigenen Use Case auswählen und schärfen": content/kapitel35.md
+      - "Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign": content/kapitel36.md
+      - "Kapitel 37 – Umsetzung: bauen, iterieren, testen": content/kapitel37.md
+      - "Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen": content/kapitel38.md
+      - "Kapitel 39 – Dokumentation der Projektarbeit": content/kapitel39.md
+      - "Kapitel 40 – Präsentation und Ausblick": content/kapitel40.md
 
 theme:
   name: material
@@ -32,6 +69,7 @@ theme:
     - navigation.top
     - navigation.footer
     - navigation.prune
+    - navigation.indexes
     - toc.follow
     - toc.integrate
     - content.code.copy

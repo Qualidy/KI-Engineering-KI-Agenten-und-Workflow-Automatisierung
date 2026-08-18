@@ -1,0 +1,55 @@
+title: Die Werkzeugempfehlung der KI auf die Probe stellen
+difficulty: 3
+question: |
+  Diese Übung machst du in einem KI-Werkzeug (Copilot, ChatGPT oder Claude).
+
+  1. Lass dir eine Empfehlung geben. Beschreibe dein Vorhaben knapp und fordere ausdrücklich
+     eine Begründung je Kriterium:
+
+     ```text
+     Ich moechte eingehende Rechnungen aus einem Sammelpostfach ablegen, in einer
+     Liste erfassen und eine Freigabe einholen. Wir arbeiten mit Microsoft 365.
+     Vergleiche Power Automate, Zapier und Make anhand dieser Kriterien und
+     begruende jede Bewertung: Integrationstiefe, Datenhaltung, Verzweigungslogik,
+     Kostenlogik, Betrieb. Nenne am Ende eine Empfehlung und die aus deiner Sicht
+     groesste Unsicherheit deiner Aussagen.
+     ```
+
+  2. Prüfe die Antwort auf **drei Arten von Schwächen**: veraltete oder unbelegte
+     Aussagen zu Funktionsumfang und Tarifen, fehlende Unterscheidung zwischen Test und
+     Dauerbetrieb, sowie Aussagen zu Datenschutz und Serverstandort, die so pauschal nicht
+     stimmen können.
+  3. Notiere **drei Fragen**, die du nur beim Anbieter selbst oder bei deiner IT klären
+     kannst.
+  4. Widersprich der Empfehlung in einem kurzen Absatz mit einem Argument, das die KI nicht
+     genannt hat – oder begründe, warum du ihr trotz der gefundenen Schwächen folgst.
+tip: |
+  Achte besonders auf Zahlen. Sobald die Antwort konkrete Tarifstufen, Ausführungsgrenzen
+  oder Preise nennt, ist Vorsicht geboten: Diese Angaben ändern sich mehrmals im Jahr und
+  gehören zum unzuverlässigsten Teil des Modellwissens. Prüfe auch, ob die Antwort den
+  Unterschied zwischen „Abläufe zählen" und „Schritte zählen" überhaupt erwähnt.
+solution: |
+  Typische Befunde:
+
+  - **Unbelegte Zahlen:** Tarifgrenzen, Preise und Ausführungslimits werden häufig konkret
+    genannt und sind oft überholt – sie stammen aus dem Trainingsstand, nicht aus einer
+    Quelle (Kap. 5).
+  - **Fehlende Kostenlogik:** Der Unterschied zwischen der Zählung nach Abläufen und nach
+    Schritten fehlt meist, obwohl er bei Schleifen über die tatsächlichen Kosten entscheidet.
+  - **Pauschale Datenschutzaussagen:** „ist DSGVO-konform" ist inhaltsleer. Konformität
+    hängt am Vertrag zur Auftragsverarbeitung, an der Region und an den verarbeiteten
+    Datenarten – nicht am Produkt (Kap. 4).
+  - **Kein Betriebsblick:** Wem die Verbindung gehört, wer vertritt und was beim Austritt
+    passiert, kommt fast nie vor, obwohl das über die Lebensdauer eines Ablaufs entscheidet.
+  - **Empfehlung ohne Bedingung:** Eine brauchbare Empfehlung nennt ihre Annahmen. Fehlen
+    sie, ist sie nicht überprüfbar.
+
+  **Gute Fragen an Anbieter oder IT:** (1) In welcher Region liegt unser Mandant, und gibt
+  es für Zapier oder Make einen Vertrag zur Auftragsverarbeitung? (2) Welche Connectoren
+  gelten in unserer Lizenz als Premium? (3) Dürfen wir Verbindungen auf ein Funktionskonto
+  legen, und wer verwaltet dessen Kennwort?
+
+  Ein gutes Widerspruchsargument ist der Betrieb über Jahre: Auch wenn ein anderes Werkzeug
+  schneller zum ersten Ergebnis führt, entscheidet, ob der Ablauf einen Personalwechsel und
+  eine Datenschutzprüfung übersteht. Das nennt eine KI selten von sich aus, weil es nicht
+  aus dem Funktionsvergleich stammt, sondern aus der Organisation.

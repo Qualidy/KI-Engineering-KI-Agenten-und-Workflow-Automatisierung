@@ -1,0 +1,48 @@
+title: Kontext- und Berechtigungstest
+difficulty: 3
+question: |
+  Diese Übung machst du direkt am Werkzeug. Du prüfst experimentell, woher Copilot sein
+  Wissen bezieht.
+
+  1. **Ohne Kontext fragen.** Stelle in Copilot Chat eine Frage zu einem internen Thema,
+     ohne eine Quelle anzuhängen, zum Beispiel:
+
+     ```text
+     Welche Frist gilt bei uns fuer die Rueckmeldung auf interne Anfragen?
+     Antworte in zwei Saetzen und nenne die Quelle.
+     ```
+
+     Notiere, ob eine Quelle genannt wird und ob die Aussage stimmt.
+
+  2. **Mit Kontext fragen.** Hänge ein passendes internes Dokument an (Anleitung,
+     Richtlinie, Handbuch) und stelle dieselbe Frage, ergänzt um:
+
+     ```text
+     Antworte ausschliesslich auf Basis der angehaengten Datei. Steht die Antwort
+     dort nicht, schreibe nicht enthalten.
+     ```
+
+  3. **Ort prüfen.** Lege eine Testdatei mit einem eindeutigen Kunstwort im Text an, etwa
+     `Musterhandel Projektkuerzel Blauwal`. Speichere sie **lokal** und frage nach dem
+     Kunstwort. Speichere sie dann in OneDrive und frage erneut.
+
+  4. Notiere aus allen drei Schritten drei Regeln für deinen eigenen Arbeitsalltag.
+tip: |
+  Rechne damit, dass Schritt 3 beim zweiten Versuch nicht sofort funktioniert. Bis eine
+  neu hochgeladene Datei durchsuchbar ist, kann Zeit vergehen. Hänge sie in der Zwischenzeit
+  direkt als Anlage an den Prompt – dann ist der Kontext sofort verfügbar.
+solution: |
+  Erwartbare Beobachtungen:
+
+  - **Schritt 1:** Ohne Quelle entsteht entweder eine allgemeine Antwort ohne Bezug zu deiner
+    Organisation oder eine erfundene, plausibel klingende Frist. Genau das ist die Halluzination
+    aus Kapitel 5 – hier im betrieblichen Kontext, wo sie teuer werden kann.
+  - **Schritt 2:** Mit angehängter Datei wird die Antwort belegbar und die Formulierung
+    `nicht enthalten` erscheint dort, wo tatsächlich nichts steht. Das ist das gewünschte
+    Verhalten: Lücken sichtbar machen statt füllen.
+  - **Schritt 3:** Die lokale Datei ist unsichtbar, die Cloud-Datei wird gefunden. Damit ist
+    die häufigste Alltagsenttäuschung erklärt.
+
+  Beispielhafte eigene Regeln: (1) Interne Fragen nie ohne angehängte Quelle stellen.
+  (2) In jedem Auftrag verbieten, Angaben zu ergänzen. (3) Arbeitsdateien grundsätzlich in
+  OneDrive oder SharePoint ablegen, nicht auf dem lokalen Laufwerk.

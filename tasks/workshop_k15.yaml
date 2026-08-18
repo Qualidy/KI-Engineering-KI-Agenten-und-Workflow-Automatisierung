@@ -1,0 +1,105 @@
+title: Ein Vertriebsvorgang von der Anfrage bis zur Entscheidung
+difficulty: 4
+question: |
+  **Szenario:** Du arbeitest im Vertrieb der Musterhandel GmbH. Über das Kontaktformular kommt eine
+  Anfrage der Talwerk Montage aus Leipzig: Ausstattung einer neuen Halle mit Werkbänken und
+  Regalsystemen. Der Vorgang ist der größte deines Quartals, das Zeitfenster ist knapp, und drei
+  Mitbewerber sind ebenfalls angefragt. Du führst den kompletten Vorgang von der Qualifizierung bis
+  zur Entscheidung – mit KI-Unterstützung an jeder Stelle, an der sie zulässig und nützlich ist.
+
+  ```text
+  Rahmendaten:
+  Talwerk Montage, Leipzig, Montagedienstleister, rund 45 Beschaeftigte
+  Bedarf: 14 Werkbaenke, 60 Regalmeter, Aufbau vor Ort gewuenscht
+  Kontakt: Frau Berger, Bueroleitung. Entscheider ab 20000 Euro: Herr Kolb
+  Termin: Halle muss zum Quartalsende nutzbar sein, alte Halle ist gekuendigt
+  Wettbewerb: drei weitere Anbieter angefragt, einer deutlich guenstiger
+  Vorerfahrung: bei der letzten Lieferung eines anderen Anbieters kam die Haelfte
+  beschaedigt an
+  Unsere Konditionen: Listenpreise laut Preisliste, Mengenrabatt bis 8 Prozent nur
+  mit Freigabe der Vertriebsleitung, Standardlieferzeit 3 Wochen ab Auftrag,
+  Aufbau durch Partnerfirma gegen Aufpreis, 5 Jahre Garantie auf Mechanik
+  ```
+
+  ---
+
+  **Runde 1 – Grundlage bauen.** Erstelle vier Artefakte: die **Qualifizierungsübersicht** mit den
+  Spalten Bekannt, Vermutung, Offen und mindestens acht Qualifizierungsfragen; die
+  **Gesprächsvorbereitung** mit Sachstand, offenen Punkten und erwartbaren Widerständen; den
+  **Nutzenteil des Angebots**, der jedes Leistungsmerkmal auf diese Kundensituation bezieht; und
+  eine **Einwandliste** mit den fünf härtesten Einwänden, jeweils eingeordnet nach Typ und mit dem
+  Informationsbedarf, den du zur Antwort brauchst. Die Antworten auf die Einwände formulierst du
+  selbst, ohne Werkzeug.
+
+  **Runde 2 – Prüfung gegen Pflichtkriterien.** Alle vier Artefakte müssen **alle vier** Kriterien
+  erfüllen. Prüfe einzeln nach und korrigiere:
+
+  1. Keine Angabe über die Talwerk Montage steht in deinen Unterlagen, die nicht aus den Rahmendaten
+     stammt – Branchenannahmen sind als Vermutung gekennzeichnet oder gestrichen.
+  2. Der Nutzenteil enthält keine Preise, Rabatte, Lieferzeiten, Garantiezusagen oder Aufpreise, die
+     von den oben genannten Konditionen abweichen, und keine Referenzkunden, Zertifikate oder
+     Prüfsiegel.
+  3. Jeder Nutzensatz verweist auf ein konkretes Element der Kundensituation – kein Satz würde
+     unverändert für einen beliebigen anderen Kunden passen.
+  4. Der Entscheidungsweg ist abgebildet: Wer entscheidet ab welchem Betrag, wer ist zu beteiligen,
+     und was folgt daraus für Reihenfolge und Terminplanung?
+
+  **Runde 3 – Die Komplikation.** Drei Dinge treffen gleichzeitig ein. Erstens ruft Frau Berger an:
+  Das Budget ist dieses Jahr eigentlich verplant, Herr Kolb ist bis zum 20. des Monats im Urlaub, das
+  Angebot war aber bis zum 10. gewünscht. Zweitens meldet das Lager, dass 60 Regalmeter in der
+  gewünschten Ausführung erst in fünf Wochen komplett lieferbar sind – die Standardlieferzeit von
+  drei Wochen ist nicht zu halten. Drittens fällt dir beim Gegenlesen auf, dass dein
+  KI-erzeugter Angebotstext den Satz enthält: „Selbstverständlich übernehmen wir den Aufbau vor Ort
+  und garantieren die Fertigstellung bis Quartalsende." Bearbeite alles: Korrigiere den Angebotstext
+  und benenne genau, welche Zusagen darin unzulässig waren; entwickle einen tragfähigen Vorschlag
+  für den Terminkonflikt (etwa gestaffelte Lieferung), der ohne erfundene Zusagen funktioniert;
+  und passe die Gesprächsstrategie an die Budget- und Entscheiderlage an, ohne künstliche Verknappung.
+
+  **Runde 4 – Entscheidung unter Abwägung.** Die Vertriebsleitung gibt zwei Vorgaben: Erstens sollst
+  du den Mengenrabatt von 8 Prozent sofort und ungefragt ins Angebot schreiben, „damit wir gegen den
+  günstigen Wettbewerber nicht rausfallen". Zweitens sollst du im Angebot zwei Referenzkunden
+  nennen, „irgendwas Passendes aus der Region wird sich finden lassen". Lass dir von einem
+  KI-Werkzeug Argumente für und gegen beide Vorgaben geben, entscheide begründet – und
+  **widersprich** mindestens einer der beiden Vorgaben mit tragfähiger Begründung und konkretem
+  Gegenvorschlag. Erstelle abschließend die Follow-up-Sequenz aus vier Nachrichten und die CRM-Notiz
+  zum gesamten Vorgang.
+
+  **Deliverable:**
+
+  1. Qualifizierungsübersicht, Gesprächsvorbereitung, Nutzenteil und Einwandliste mit selbst
+     formulierten Antworten
+  2. ausgefüllte Prüfmatrix der vier Pflichtkriterien für alle Artefakte
+  3. korrigierter Angebotstext mit Liste der unzulässigen Zusagen, Lösungsvorschlag zum
+     Terminkonflikt und angepasste Gesprächsstrategie
+  4. begründete Entscheidung zu Rabatt und Referenzen inklusive des abgelehnten Vorschlags, plus
+     Follow-up-Sequenz und CRM-Notiz
+
+  **Fertig bist du erst, wenn** in keinem deiner Texte eine Kondition, Referenz oder Zusage steht,
+  die nicht aus den Rahmendaten stammt, jeder Nutzensatz einen erkennbaren Bezug zur Situation der
+  Talwerk Montage hat, dein Terminvorschlag ohne Erfindung auskommt, die CRM-Notiz das verplante
+  Budget und den günstigeren Wettbewerber ausdrücklich enthält, und du mindestens einer Vorgabe der
+  Vertriebsleitung begründet widersprochen hast.
+tip: |
+  Der Lernwert liegt in Runde 3 und 4. Der Satz mit „selbstverständlich" und „garantieren" in Runde 3
+  ist der typischste KI-Fehler im Vertrieb: Er entsteht ungefragt, klingt kundenfreundlich und ist
+  eine Zusage, die zwei Fakten widerspricht – dem Aufpreis für den Aufbau und der Lieferzeit von
+  fünf Wochen. In Runde 4 ist die Rabattfrage die interessantere: Ein sofort gewährter Maximalrabatt
+  nimmt dir jedes Verhandlungsmittel und signalisiert, dass die Liste nie ernst gemeint war. Bei den
+  Referenzen gibt es dagegen keine Abwägung – dort geht es nur darum, ob du den Auftrag klar
+  zurückweisen kannst und eine tragfähige Alternative anbietest.
+solution: |
+  Bewertungskriterien: (1) Die Qualifizierungsübersicht trennt Bekanntes sauber von Vermutungen, und
+  die Einwandliste ordnet jeden Einwand einem Typ zu und benennt den Informationsbedarf statt eine
+  Verkaufsformel; (2) die Prüfmatrix belegt für jedes Artefakt alle vier Kriterien, insbesondere die
+  Freiheit von erfundenen Konditionen und die Abbildung des Entscheidungswegs mit der Grenze von
+  20.000 Euro; (3) die unzulässigen Zusagen im Angebotstext sind vollständig benannt – kostenloser
+  Aufbau statt Aufpreis und Fertigstellungsgarantie trotz fünf Wochen Lieferzeit – und der
+  Terminvorschlag arbeitet mit gestaffelter Lieferung oder Teilnutzung statt mit einer Zusage, die
+  nicht gedeckt ist; (4) die Entscheidung in Runde 4 lehnt die erfundenen Referenzen unmissverständlich
+  ab, behandelt die Rabattvorgabe als Verhandlungsfrage mit Begründung, und die Follow-up-Sequenz
+  enthält vier eigenständige Anlässe ohne künstliche Verknappung sowie einen Abschluss ohne Druck;
+  (5) die CRM-Notiz erhält Zitate wortnah und glättet kein Warnsignal.
+
+  Lernziel: einen vollständigen Vertriebsvorgang mit KI-Unterstützung führen und dabei die Grenze
+  zwischen schneller Vorbereitung und unzulässiger Behauptung sicher halten – auch dann, wenn
+  Zeitdruck, Wettbewerb und Vorgaben von oben in die andere Richtung drücken.
