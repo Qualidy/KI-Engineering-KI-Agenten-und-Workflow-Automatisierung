@@ -1,0 +1,1827 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel38/">
+      
+      
+        <link rel="next" href="../kapitel40/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 39 – Dokumentation der Projektarbeit - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-39-dokumentation-der-projektarbeit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 39 – Dokumentation der Projektarbeit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Block 7 · Projektarbeit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 37 – Umsetzung: bauen, iterieren, testen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 39 – Dokumentation der Projektarbeit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 39 – Dokumentation der Projektarbeit
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#391-fur-wen-du-dokumentierst" class="md-nav__link">
+    <span class="md-ellipsis">
+      39.1 Für wen du dokumentierst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#392-die-gliederung-als-vorlage" class="md-nav__link">
+    <span class="md-ellipsis">
+      39.2 Die Gliederung als Vorlage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#393-ki-bausteine-nachvollziehbar-festhalten" class="md-nav__link">
+    <span class="md-ellipsis">
+      39.3 KI-Bausteine nachvollziehbar festhalten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#394-umfang-sprache-und-diagramme" class="md-nav__link">
+    <span class="md-ellipsis">
+      39.4 Umfang, Sprache und Diagramme
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#395-bewertung-gegen-das-erfolgskriterium" class="md-nav__link">
+    <span class="md-ellipsis">
+      39.5 Bewertung gegen das Erfolgskriterium
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#396-ki-beim-dokumentieren-nutzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      39.6 KI beim Dokumentieren nutzen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 40 – Präsentation und Ausblick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-39-dokumentation-der-projektarbeit">Kapitel 39 – Dokumentation der Projektarbeit<a class="headerlink" href="#kapitel-39-dokumentation-der-projektarbeit" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Für <strong>wen</strong> du dokumentierst – Nachfolgende, IT und Fachbereich lesen unterschiedlich</li>
+<li>Welche <strong>neun Abschnitte</strong> eine vollständige Projektdokumentation enthält</li>
+<li>Wie du <strong>KI-Bausteine mit den verwendeten Prompts</strong> nachvollziehbar festhältst</li>
+<li>Wie du den <strong>Testnachweis</strong> und die <strong>Bewertung gegen das Erfolgskriterium</strong> aufschreibst</li>
+<li>Welchen <strong>Umfang</strong> eine gute Doku hat und wie du Diagramme und Bilder sinnvoll einsetzt</li>
+<li>Wie du <strong>KI beim Dokumentieren</strong> nutzt – und warum eine erfundene Beschreibung schlimmer ist als keine</li>
+</ul>
+</div>
+<hr />
+<h2 id="391-fur-wen-du-dokumentierst">39.1 Für wen du dokumentierst<a class="headerlink" href="#391-fur-wen-du-dokumentierst" title="Permanent link">&para;</a></h2>
+<p>Eine Doku, die für niemanden Bestimmten geschrieben ist, wird von niemandem gelesen. Drei Gruppen greifen darauf zu, mit völlig unterschiedlichen Fragen.</p>
+<table>
+<thead>
+<tr>
+<th>Zielgruppe</th>
+<th>Kernfrage</th>
+<th>Was sie braucht</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nachfolgende</strong></td>
+<td>Wie funktioniert das und wie ändere ich es, ohne es zu zerstören?</td>
+<td>Schrittfolge, Prompts, Feldnamen, bekannte Grenzen</td>
+</tr>
+<tr>
+<td><strong>IT</strong></td>
+<td>Was hängt wo dran und wer haftet für den Betrieb?</td>
+<td>Datenquellen, Konten und Verbindungen, Schnittstellen, Berechtigungen</td>
+</tr>
+<tr>
+<td><strong>Fachbereich</strong></td>
+<td>Was passiert jetzt automatisch, was muss ich noch selbst tun?</td>
+<td>Zweck, Nutzen, Ablauf in Alltagssprache, Meldeweg bei Problemen</td>
+</tr>
+</tbody>
+</table>
+<p>Löse das nicht mit drei Dokumenten, sondern mit einer klaren Gliederung: Die vorderen Abschnitte sind für den Fachbereich lesbar, die mittleren technisch, die hinteren betrieblich. Jeder findet seinen Teil, ohne den Rest lesen zu müssen.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Die Doku ist für die Person geschrieben, die dein Projekt in einem Jahr übernimmt und dich nicht fragen kann. Diese Person kennt den Prozess vielleicht, aber nicht deine Entscheidungen – und schon gar nicht die Gründe dafür.</p>
+</div>
+<hr />
+<h2 id="392-die-gliederung-als-vorlage">39.2 Die Gliederung als Vorlage<a class="headerlink" href="#392-die-gliederung-als-vorlage" title="Permanent link">&para;</a></h2>
+<p>Neun Abschnitte, in dieser Reihenfolge. Du hast die meisten Inhalte schon: Steckbrief (Kap. 35), Design und Testfälle (Kap. 36), Protokoll und Kalibrierung (Kap. 37), Betriebsblatt (Kap. 38). Dokumentieren heißt hier zusammenführen und einordnen, nicht neu erfinden.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code>DOKUMENTATION [Projektname]                       Stand: [Datum]
+Verfasst von: [Name]
+
+1. ZIEL UND NUTZEN
+   Problem heute, Zielbild, Erfolgskriterium, betroffene Personen
+
+2. IST- UND SOLL-PROZESS
+   Ist-Ablauf mit Aufwand, Soll-Ablauf, was wegfaellt und was
+   beim Menschen bleibt
+
+3. ARCHITEKTUR UND FLOW-BESCHREIBUNG
+   Trigger und Trigger-Bedingung, Schritte in Reihenfolge mit Zweck,
+   Entscheidungspunkte und Regeln, Freigabeschritte mit Fristen
+
+4. EINGESETZTE KI-BAUSTEINE
+   Aufgabe der KI, verwendeter Baustein, vollstaendiger Prompt im
+   Wortlaut, erwartetes Ausgabeformat, Verhalten bei unklarer Antwort
+
+5. DATENQUELLEN UND BERECHTIGUNGEN
+   Gelesene und geschriebene Quellen mit Feldnamen, verwendete
+   Verbindungen und Konten, Datenschutz-Einordnung
+
+6. TESTNACHWEIS
+   Testfall-Tabelle mit Ergebnis und Datum, Stichprobe des
+   KI-Anteils mit Trefferquote und Fehlerrichtung
+
+7. BETRIEBSHINWEISE UND FEHLERBEHANDLUNG
+   Verantwortliche und Vertretung, Monitoring, Fehlerbenachrichtigung,
+   Rueckfallweg, Abschaltplan
+
+8. GRENZEN UND OFFENE PUNKTE
+   Nicht-Ziele mit Begruendung, bekannte Schwaechen, geparkte Punkte
+
+9. BEWERTUNG DES ERGEBNISSES
+   Erfolgskriterium erreicht ja oder nein mit Messwerten,
+   Nutzenrechnung, was du beim naechsten Mal anders machen wuerdest
+</code></pre></div></td></tr></table></div>
+<p>Abschnitt 8 ist der, der am häufigsten fehlt und am meisten wert ist. Eine offen benannte Grenze schützt Nachfolgende vor falschen Erwartungen – eine verschwiegene Grenze wird zum Fehler, den sie dir zuschreiben.</p>
+<hr />
+<h2 id="393-ki-bausteine-nachvollziehbar-festhalten">39.3 KI-Bausteine nachvollziehbar festhalten<a class="headerlink" href="#393-ki-bausteine-nachvollziehbar-festhalten" title="Permanent link">&para;</a></h2>
+<p>Bei klassischen Flow-Schritten kann man im Werkzeug nachsehen, was konfiguriert ist. Beim KI-Anteil geht das nur eingeschränkt: Der Prompt ist zwar hinterlegt, aber <strong>warum</strong> er so formuliert ist, steht nirgends. Genau das ist der Teil, der ohne Doku verloren geht.</p>
+<p>Dokumentiere jede KI-Stelle mit fünf Angaben: Aufgabe, verwendeter Baustein, Prompt im vollständigen Wortlaut, erwartetes Ausgabeformat, Verhalten bei unklarer oder fehlender Antwort. Ergänze zwei Sätze zur Kalibrierung: Was war die erste Fassung, was hast du geändert und warum.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Aufgabe der KI]) --&gt; B([Prompt im Wortlaut])
+    B --&gt; C([Erwartetes Format])
+    C --&gt; D([Verhalten bei Zweifel])
+    D --&gt; E([Kalibrierung und Stichprobe])</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>„Die KI kategorisiert die Anfrage" ist keine Dokumentation eines KI-Bausteins. Wer den Prompt nicht im Wortlaut findet, kann das Verhalten weder nachvollziehen noch verbessern – und ändert bei der ersten Beschwerde blind daran herum. Kopiere den Prompt vollständig hinein, auch wenn er lang ist.</p>
+</div>
+<hr />
+<h2 id="394-umfang-sprache-und-diagramme">39.4 Umfang, Sprache und Diagramme<a class="headerlink" href="#394-umfang-sprache-und-diagramme" title="Permanent link">&para;</a></h2>
+<p>Für ein Projekt dieser Größe sind <strong>sechs bis zwölf Seiten</strong> ein guter Umfang, Anhänge nicht mitgerechnet. Weniger ist meist unvollständig, deutlich mehr wird nicht gelesen. Entscheidend ist nicht die Seitenzahl, sondern ob jeder Abschnitt seine Kernfrage beantwortet.</p>
+<table>
+<thead>
+<tr>
+<th>Schwach formuliert</th>
+<th>Nachvollziehbar formuliert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Der Flow verarbeitet die eingehenden Daten."</td>
+<td>„Bei jeder neuen Formularantwort liest der Flow die Felder Name, Firma und Anliegen aus."</td>
+</tr>
+<tr>
+<td>„Bei Fehlern wird informiert."</td>
+<td>„Scheitert Schritt 4, sendet der Flow eine Mail an A. Beispiel mit Formular-ID und Fehlermeldung."</td>
+</tr>
+<tr>
+<td>„Die Erkennung funktioniert gut."</td>
+<td>„Bei 20 Testfällen war die Kategorie 18-mal korrekt; die zwei Fehler betrafen Mischanfragen."</td>
+</tr>
+<tr>
+<td>„Sensible Daten werden beachtet."</td>
+<td>„Der Prompt erhält nur den Text des Anliegens, nicht Name und Mailadresse."</td>
+</tr>
+<tr>
+<td>„Perspektivisch ist eine ERP-Anbindung denkbar."</td>
+<td>„Nicht umgesetzt: ERP-Anbindung, weil kein Zugang und kein Premium-Connector vorliegt."</td>
+</tr>
+</tbody>
+</table>
+<p>Bei <strong>Diagrammen</strong> gilt: eines pro Aussage. Ein Ablaufdiagramm des Soll-Prozesses und eine Übersicht der Datenflüsse reichen fast immer. Diagramme, die den Flow eins zu eins nachzeichnen, veralten mit jeder Änderung und stiften dann Verwirrung.</p>
+<p><strong>Bildschirmfotos</strong> sind nur an drei Stellen sinnvoll: bei einer Konfiguration, die man sonst nicht findet, bei einem Ergebnis, das man sehen muss, um es zu verstehen, und bei einem Fehlerbild, das wiederkehrt. Achte darauf, dass keine personenbezogenen Daten sichtbar sind – nutze Aufnahmen aus deiner Testumgebung.</p>
+<div class="admonition tip">
+<p class="admonition-title">Der Feldnamen-Test</p>
+<p>Suche in deiner Doku nach den konkreten Namen: Liste, Spalte, Ordner, Formularfeld, Aktion. Kommen sie nicht vor, ist der Text zu allgemein, um damit zu arbeiten. Umgekehrt gilt: Wenn ein Absatz nur aus Feldnamen besteht, fehlt der Zweck.</p>
+</div>
+<hr />
+<h2 id="395-bewertung-gegen-das-erfolgskriterium">39.5 Bewertung gegen das Erfolgskriterium<a class="headerlink" href="#395-bewertung-gegen-das-erfolgskriterium" title="Permanent link">&para;</a></h2>
+<p>Der letzte Abschnitt ist eine <strong>Selbstprüfung</strong> und der ehrlichste Teil der Arbeit. Du hast in Kapitel 35 ein messbares Erfolgskriterium formuliert. Jetzt trägst du den gemessenen Wert daneben.</p>
+<table>
+<thead>
+<tr>
+<th>Bestandteil</th>
+<th>Was hineingehört</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kriterium</strong></td>
+<td>der Satz aus dem Steckbrief, unverändert zitiert</td>
+</tr>
+<tr>
+<td><strong>Messung</strong></td>
+<td>wie und wann gemessen wurde, mit Anzahl der Fälle</td>
+</tr>
+<tr>
+<td><strong>Ergebnis</strong></td>
+<td>der Wert, auch wenn er das Ziel verfehlt</td>
+</tr>
+<tr>
+<td><strong>Einordnung</strong></td>
+<td>erreicht, teilweise erreicht oder nicht erreicht – mit Begründung</td>
+</tr>
+<tr>
+<td><strong>Nutzenrechnung</strong></td>
+<td>Zeit vorher gegen Zeit nachher, Rechenweg offen gelegt</td>
+</tr>
+<tr>
+<td><strong>Rückblick</strong></td>
+<td>was du beim nächsten Mal anders machen würdest</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Eine belastbare Bewertung</p>
+<p>„Kriterium: Bei 15 Testrechnungen werden Nummer, Betrag und Lieferant in mindestens 13 Fällen korrekt ausgelesen, Prüfzeit unter 2 Minuten je Rechnung.</p>
+<p>Messung am 12. März mit 15 vorbereiteten Testrechnungen, Prüfzeit bei 5 Fällen mit der Stoppuhr.</p>
+<p>Ergebnis: 12 von 15 vollständig korrekt, in 2 weiteren Fällen war nur der Lieferantenname unvollständig, 1 Fall wurde nicht erkannt. Prüfzeit im Mittel 1 Minute 40 Sekunden.</p>
+<p>Einordnung: teilweise erreicht. Die Trefferquote liegt knapp unter dem Ziel, die Zeitvorgabe ist erfüllt. Alle drei Abweichungen betrafen Rechnungen mit Firmennamen in zwei Zeilen. Diese Grenze ist in Abschnitt 8 aufgenommen; der Betrag war in allen 15 Fällen korrekt, deshalb bleibt der Nutzen erhalten.</p>
+<p>Nutzen: vorher etwa 8 Minuten je Rechnung (gemessen an 5 Fällen), jetzt unter 2 Minuten Prüfzeit; bei etwa 40 Rechnungen pro Woche entspricht das gut 4 Stunden weniger Handarbeit."</p>
+<p>Diese Bewertung ist stärker als ein „Ziel erreicht", weil sie prüfbar ist und die Abweichung erklärt.</p>
+</div>
+<hr />
+<h2 id="396-ki-beim-dokumentieren-nutzen">39.6 KI beim Dokumentieren nutzen<a class="headerlink" href="#396-ki-beim-dokumentieren-nutzen" title="Permanent link">&para;</a></h2>
+<p>Dokumentieren ist eine Textaufgabe, also genau das, wofür KI-Werkzeuge taugen (Kap. 12). Sinnvoll ist die Reihenfolge <strong>du lieferst die Substanz, die KI formt sie</strong>, nie umgekehrt.</p>
+<table>
+<thead>
+<tr>
+<th>Gut geeignet</th>
+<th>Ungeeignet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aus deinen Stichworten einen lesbaren Abschnitt formulieren</td>
+<td>die Flow-Beschreibung „aus dem Kontext" erzeugen lassen</td>
+</tr>
+<tr>
+<td>einen technischen Absatz für den Fachbereich verständlich umschreiben</td>
+<td>Testergebnisse oder Zahlen ergänzen lassen</td>
+</tr>
+<tr>
+<td>die Gliederung auf Lücken prüfen: welche Kernfrage bleibt offen?</td>
+<td>die Bewertung gegen das Erfolgskriterium formulieren lassen</td>
+</tr>
+<tr>
+<td>Fragen sammeln, die Nachfolgende stellen würden</td>
+<td>Prompts „rekonstruieren" lassen, die du nicht gesichert hast</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Ich schreibe die Dokumentation fuer einen kleinen Automatisierungs-Workflow.
+Hier sind meine Stichpunkte zu Abschnitt [Nummer und Titel].
+Formuliere daraus einen zusammenhaengenden Text fuer die Zielgruppe
+[Nachfolgende / IT / Fachbereich].
+Regeln: Ergaenze keine Inhalte, die nicht in meinen Stichpunkten stehen.
+Markiere jede Stelle, an der dir eine Angabe fehlt, mit LUECKE und einer
+kurzen Frage. Verwende keine Werbesprache.
+Stichpunkte:
+[deine Stichpunkte]
+</code></pre></div></td></tr></table></div>
+<p>Die Anweisung „ergänze keine Inhalte" ist der wichtigste Teil. Ohne sie füllt das Werkzeug Lücken mit plausiblen Erfindungen – Feldnamen, die es nicht gibt, Prüfschritte, die niemand gebaut hat, Zahlen, die nie gemessen wurden.</p>
+<div class="admonition warning">
+<p class="admonition-title">Eine erfundene Beschreibung ist schlimmer als keine</p>
+<p>Eine fehlende Angabe merkt der nächste Leser sofort und fragt nach. Eine falsche Angabe glaubt er – und baut darauf auf. Deshalb gilt für jeden KI-erzeugten Satz deiner Doku eine <strong>Prüfpflicht</strong>: Jede Aussage über Feldnamen, Schrittfolgen, Prompts, Zahlen und Zuständigkeiten musst du gegen das tatsächliche Werkzeug und deine Protokolle abgleichen, bevor sie stehen bleibt. Lieber ein Satz „Zu diesem Punkt liegt keine Messung vor" als eine erfundene Trefferquote.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Dokumentiert wird für <strong>drei Zielgruppen</strong> – Nachfolgende, IT, Fachbereich – in einer Gliederung, in der jede ihren Teil findet.</li>
+<li>Die <strong>neun Abschnitte</strong> reichen von Ziel und Nutzen über Flow-Beschreibung, KI-Bausteine und Testnachweis bis zur Bewertung.</li>
+<li><strong>KI-Stellen</strong> brauchen den Prompt im vollständigen Wortlaut, das erwartete Format und das Verhalten im Zweifelsfall.</li>
+<li><strong>Sechs bis zwölf Seiten</strong>, konkrete Feld- und Aktionsnamen, sparsam eingesetzte Diagramme und Bildschirmfotos ohne echte Daten.</li>
+<li>Die <strong>Bewertung</strong> zitiert das Erfolgskriterium, nennt Messweg und Ergebnis – auch bei Zielverfehlung – und legt die Nutzenrechnung offen.</li>
+<li><strong>KI hilft beim Formulieren, nicht beim Erfinden</strong>: Anweisung „ergänze nichts", Lücken markieren, jede Angabe gegenprüfen.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Drei Fragen der Nachfolge beantworten</summary>
+<p>Stell dir vor, du übergibst dein Projekt in einem Jahr an eine Person, die dich nicht fragen
+kann.</p>
+<ol>
+<li>Notiere die <strong>drei Fragen</strong>, die diese Person zuerst stellen würde.</li>
+<li>Beantworte jede Frage in zwei bis drei Sätzen so konkret, dass die Antwort ohne dich reicht.</li>
+<li>Markiere, in welchen Abschnitt der Doku-Gliederung jede Antwort gehört.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die ersten Fragen sind selten „wie funktioniert die KI". Meist lauten sie: Warum ist das so
+gebaut, was darf ich nicht anfassen, und was mache ich, wenn es nicht läuft?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) die Fragen sind Übernahmefragen, nicht Verständnisfragen zur Technik
+allgemein; (2) jede Antwort enthält konkrete Namen von Listen, Feldern, Personen oder Schritten;
+(3) die Zuordnung zur Gliederung passt.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<table>
+<thead>
+<tr>
+<th>Frage</th>
+<th>Antwort in Kurzform</th>
+<th>Abschnitt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Woran merke ich, dass etwas nicht läuft?</td>
+<td>Kommt zwischen 8 und 18 Uhr kein neuer Eintrag in der Liste Anfragen oder ist die Spalte Kategorie leer, ist der Flow gestört. Die Fehlermail geht an A. Beispiel.</td>
+<td>7 Betriebshinweise</td>
+</tr>
+<tr>
+<td>Was darf ich nicht ohne Prüfung ändern?</td>
+<td>Die Spaltennamen der Liste Anfragen und die Kategorie-Werteliste im Prompt müssen zusammenpassen. Wird eine Spalte umbenannt, bricht Schritt 4 ab.</td>
+<td>3 und 5</td>
+</tr>
+<tr>
+<td>Warum bestätigt die Teamleitung die Kategorie noch von Hand?</td>
+<td>Die Trefferquote liegt bei etwa 90 Prozent, und eine falsche Kategorie führt zu verzögerten Support-Fällen. Die Freigabe ist bewusst behalten.</td>
+<td>1 und 8</td>
+</tr>
+</tbody>
+</table>
+<p>Schwach wäre: „Wie funktioniert Power Automate?" – das steht nicht in deiner Projektdoku,
+sondern in der Produktdokumentation.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Doku-Abschnitt „KI-Bausteine" schreiben</summary>
+<p>Schreibe Abschnitt 4 deiner Dokumentation vollständig: <strong>Eingesetzte KI-Bausteine</strong>.</p>
+<ol>
+<li>Aufgabe der KI in einem Satz – was genau übernimmt sie, was nicht.</li>
+<li>Verwendeter Baustein (AI-Builder-Prompt-Aktion, Copilot-Studio-Agent, Chatwerkzeug als
+   manueller Zwischenschritt).</li>
+<li>Der <strong>Prompt im vollständigen Wortlaut</strong>, so wie er tatsächlich eingesetzt ist.</li>
+<li>Erwartetes Ausgabeformat und Verhalten bei unklarer oder fehlender Antwort.</li>
+<li>Zwei Sätze zur Kalibrierung: erste Fassung, Änderung, Grund.</li>
+</ol>
+<p>Falls dein Flow noch keine KI-Stelle enthält, dokumentiere die geplante Stelle und markiere sie
+ausdrücklich als noch nicht umgesetzt.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Kürze den Prompt nicht „für die Lesbarkeit". Ein gekürzter Prompt in der Doku führt dazu, dass
+jemand später eine andere Fassung einsetzt und sich über anderes Verhalten wundert.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) der Prompt steht im vollen Wortlaut und stimmt mit dem tatsächlich
+eingesetzten überein; (2) das Ausgabeformat ist so beschrieben, dass man die Weiterverarbeitung
+im Flow nachvollziehen kann; (3) das Verhalten im Zweifelsfall ist benannt; (4) die
+Kalibrierungssätze nennen eine Änderung und ihren Grund, nicht nur „wurde verbessert".</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<p>„Aufgabe: Die KI ordnet den Text des Anliegens einer von vier Kategorien zu und schreibt eine
+Kurzzusammenfassung. Sie entscheidet nicht über Priorität gegenüber dem Kunden und beantwortet
+keine Anfragen.</p>
+<p>Baustein: Prompt-Aktion in Power Automate, aufgerufen in Schritt 2.</p>
+<p>Prompt: [vollständiger Wortlaut, mehrere Zeilen, inklusive Werteliste und der Regel, bei
+fehlender Zuordnung Unklar zu antworten]</p>
+<p>Ausgabeformat: drei Zeilen mit den Bezeichnungen Kategorie, Dringlichkeit, Zusammenfassung. Der
+Flow liest die Zeilen einzeln aus. Enthält die Antwort keine gültige Kategorie oder lautet sie
+Unklar, setzt der Flow den Status auf Prüfung erforderlich und informiert die Teamleitung.</p>
+<p>Kalibrierung: Die erste Fassung ohne feste Werteliste erzeugte eigene Kategorienamen wie
+Reklamation. Ergänzt wurden die erlaubte Werteliste, die Ausweichantwort Unklar und eine Regel
+für Anfragen zu bestehenden Verträgen, weil diese systematisch als Vertrieb statt Support
+eingeordnet wurden."</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> KI-Rohentwurf erzeugen und faktisch prüfen</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li>Wähle einen Abschnitt deiner Doku, für den du bisher nur Stichpunkte hast – zum Beispiel
+   Abschnitt 3 Flow-Beschreibung oder Abschnitt 7 Betriebshinweise.</li>
+<li>Lass daraus einen Rohentwurf erzeugen:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Formuliere aus meinen Stichpunkten einen zusammenhaengenden
+Dokumentationsabschnitt fuer die Zielgruppe [Nachfolgende oder IT oder
+Fachbereich]. Regeln: Ergaenze keine Inhalte, die nicht in den
+Stichpunkten stehen. Markiere jede fehlende Angabe mit LUECKE und einer
+kurzen Frage. Keine Werbesprache, sachlicher Ton, du-Form vermeiden.
+Stichpunkte:
+[deine Stichpunkte]
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Gehe den Entwurf <strong>Satz für Satz</strong> durch und markiere jede Aussage mit P für geprüft, F für
+   falsch oder E für ergänzt ohne Grundlage. Prüfe dabei tatsächlich im Werkzeug nach: Feldnamen,
+   Schrittnamen, Empfänger, Zahlen.</li>
+<li>Erstelle die Endfassung: falsche Aussagen korrigieren, unbelegte Aussagen streichen oder
+   durch einen ehrlichen Hinweis ersetzen.</li>
+<li>Notiere, wie viele Sätze du korrigieren oder streichen musstest.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte besonders auf Sätze, die sehr souverän klingen und Details enthalten, die du nie geliefert
+hast: „Die Verarbeitung erfolgt in der Regel innerhalb von zwei Minuten", „Ein Protokoll wird in
+der Liste Protokoll gespeichert". Das sind typische Ergänzungen ohne Grundlage.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) der Prompt enthält die Anweisung, nichts zu ergänzen, und die
+Lückenmarkierung; (2) jeder Satz des Entwurfs ist einzeln bewertet, nicht der Abschnitt als
+Ganzes; (3) mindestens eine Ergänzung ohne Grundlage wurde gefunden oder es ist begründet, warum
+keine vorlag; (4) die Endfassung enthält keine unbelegte Aussage, offene Punkte sind als solche
+benannt.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<p>Aus 14 Sätzen des Rohentwurfs waren 11 geprüft korrekt, 2 falsch und 1 unbelegt ergänzt.</p>
+<ul>
+<li>Falsch: „Der Flow prüft, ob die Rechnungsnummer bereits existiert." Diese Prüfung ist geplant,
+  aber nicht gebaut. Korrigiert und in Abschnitt 8 als offener Punkt aufgenommen.</li>
+<li>Falsch: „Benachrichtigungen gehen an das Team." Sie gehen an eine benannte Person. Korrigiert.</li>
+<li>Unbelegt ergänzt: „Die Verarbeitung dauert in der Regel unter einer Minute." Nie gemessen.
+  Gestrichen und ersetzt durch „Zur Verarbeitungsdauer liegt keine Messung vor."</li>
+</ul>
+<p>Die Lehre: Der Rohentwurf hat sprachlich Zeit gespart und inhaltlich drei Fehler eingebaut. Ohne
+satzweise Prüfung wären alle drei in der Doku stehen geblieben – und eine erfundene Beschreibung
+ist schlimmer als eine fehlende, weil Nachfolgende ihr glauben.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Projektetappe 5 – Dokumentation fertigstellen</summary>
+<p><strong>Projektetappe:</strong> Fünfte Etappe. Grundlage sind Steckbrief (Kap. 35), Design und Testfälle
+(Kap. 36), Bau- und Testprotokoll (Kap. 37) und Betriebsblatt (Kap. 38). Am Ende dieses
+Workshops liegt die vollständige Projektdokumentation vor – das Dokument, mit dem eine andere
+Person dein Projekt übernehmen könnte.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Rueckfallebenen:
+Einzelne Artefakte fehlen -&gt; schreibe den Abschnitt mit dem vorhandenen Wissen
+  und markiere Fehlendes ausdruecklich als offenen Punkt in Abschnitt 8.
+Flow ist unvollstaendig -&gt; dokumentiere gebauten Stand, geplanten Stand und
+  Blocker getrennt. Abschnitt 9 bewertet dann den erreichten Stand.
+Keine Messwerte vorhanden -&gt; schreibe, welche Messung geplant war und warum
+  sie nicht moeglich war. Erfinde keine Zahlen.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Rohfassung aller neun Abschnitte.</strong> Führe deine bestehenden Artefakte in der
+Doku-Gliederung zusammen und schreibe alle neun Abschnitte in einer Rohfassung: Ziel und Nutzen,
+Ist und Soll, Architektur und Flow-Beschreibung, KI-Bausteine mit Prompts im Wortlaut,
+Datenquellen und Berechtigungen, Testnachweis, Betriebshinweise, Grenzen und offene Punkte,
+Bewertung. Nutze dabei ein KI-Werkzeug zum Formulieren, mit der Anweisung, keine Inhalte zu
+ergänzen und Lücken zu markieren.</p>
+<p><strong>Runde 2 – Prüfung gegen vier Pflichtkriterien.</strong> Deine Doku muss <strong>alle vier</strong> Kriterien
+erfüllen:</p>
+<ol>
+<li>Für <strong>jede</strong> KI-Stelle steht der Prompt im vollständigen Wortlaut, mit erwartetem
+   Ausgabeformat und dem Verhalten bei unklarer Antwort.</li>
+<li>Der <strong>Testnachweis</strong> enthält die Testfall-Tabelle mit Ergebnis und Datum sowie die
+   Stichprobe des KI-Anteils mit Trefferquote und benannter Fehlerrichtung.</li>
+<li>Abschnitt 8 nennt <strong>mindestens fünf</strong> Grenzen oder offene Punkte, jeweils mit Begründung –
+   einschließlich der bewusst nicht automatisierten Entscheidungen.</li>
+<li>Jede Zahl und jeder Feldname im Dokument ist gegen Werkzeug oder Protokoll geprüft; keine
+   Aussage stammt ungeprüft aus einem KI-Entwurf.</li>
+</ol>
+<p><strong>Runde 3 – Der Lesetest als Komplikation.</strong> Gib deine Doku einer Person, die dein Projekt nicht
+kennt – oder simuliere den Test, indem du deinem KI-Werkzeug <strong>nur</strong> die Doku gibst und es
+auffordert, den Flow aus der Beschreibung nachzubauen und alle Stellen zu nennen, an denen es
+raten müsste. Erwarte unangenehme Ergebnisse: fehlende Feldnamen, unklare
+Verzweigungsbedingungen, ein Prompt ohne Kontext. Arbeite <strong>jede</strong> genannte Ratestelle ein. Wenn
+du dabei feststellst, dass eine Angabe fehlt, weil du sie nie festgehalten hast, hole sie jetzt
+am Werkzeug nach – nicht aus der Erinnerung.</p>
+<p><strong>Runde 4 – Bewertung und Entscheidung unter Abwägung.</strong> Schreibe Abschnitt 9 fertig: Kriterium
+zitieren, Messweg, Ergebnis, Einordnung, Nutzenrechnung mit offenem Rechenweg, Rückblick. Lass
+dir von deinem KI-Werkzeug helfen, den Nutzen darzustellen – und erwarte den Vorschlag,
+günstig zu runden, den Effekt hochzurechnen („bei 500 Fällen im Jahr wären das …") oder
+Zielverfehlungen als „im Wesentlichen erreicht" zu formulieren. <strong>Widersprich mindestens einer
+dieser Verschönerungen begründet</strong> und formuliere die ehrliche Fassung. Halte in drei bis fünf
+Sätzen fest, welche Verschönerung du abgelehnt hast und welchen Schaden sie angerichtet hätte.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>vollständige Dokumentation mit allen neun Abschnitten, sechs bis zwölf Seiten</li>
+<li>Testnachweis und KI-Baustein-Abschnitt mit Prompts im Wortlaut</li>
+<li>Protokoll des Lesetests aus Runde 3: genannte Ratestellen und wie du sie behoben hast</li>
+<li>Abschnitt 9 mit Bewertung, offener Nutzenrechnung und der Notiz zur abgelehnten
+   Verschönerung aus Runde 4</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> aus dem Lesetest keine offene Ratestelle mehr übrig ist, jede Zahl
+im Dokument auf eine Messung oder ein Protokoll zurückführbar ist, Abschnitt 8 mindestens fünf
+begründete Grenzen enthält, und die Bewertung in Abschnitt 9 auch dann nachvollziehbar ist, wenn
+das Erfolgskriterium verfehlt wurde.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert steckt in Runde 3 und 4. Die Rohfassung schreibt sich mit KI-Unterstützung schnell –
+und liest sich für dich vollständig, weil du das Fehlende im Kopf ergänzt. Erst der Lesetest zeigt,
+was wirklich im Dokument steht. Runde 4 trifft eine Haltungsfrage: Eine schön gerechnete
+Nutzenzahl hält bis zur ersten kritischen Rückfrage (Kap. 40), eine belegte Zahl hält immer. Und
+eine ehrlich benannte Zielverfehlung mit erklärter Ursache wirkt kompetenter als ein
+geschöntes „erreicht".</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) alle neun Abschnitte sind inhaltlich gefüllt und die Zielgruppen finden
+ihren Teil – vorne fachlich lesbar, in der Mitte technisch, hinten betrieblich; (2) alle vier
+Pflichtkriterien sind erfüllt, insbesondere Prompts im Wortlaut, ein Testnachweis mit Datum und
+Fehlerrichtung sowie fünf begründete Grenzen; (3) der Lesetest aus Runde 3 ist dokumentiert und
+jede Ratestelle nachweislich behoben, wobei fehlende Angaben am Werkzeug nachgeholt und nicht aus
+der Erinnerung ergänzt wurden; (4) Abschnitt 9 zitiert das Erfolgskriterium, legt Messweg und
+Rechenweg offen und weist eine begründet abgelehnte Verschönerung nach.</p>
+<p>Lernziel: Eine Dokumentation schreiben, mit der eine fremde Person das Projekt übernehmen kann –
+und dabei die Versuchung zurückweisen, Lücken mit plausiblen Formulierungen statt mit Fakten zu
+füllen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel38/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel40/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 40 – Präsentation und Ausblick">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 40 – Präsentation und Ausblick
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1773 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel2/">
+      
+      
+        <link rel="next" href="../kapitel4/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 3 – Chancen, Risiken und ethische Verantwortung - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-3-chancen-risiken-und-ethische-verantwortung" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 3 – Chancen, Risiken und ethische Verantwortung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Block 1 · Einführung in KI und Automatisierung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 1 – Was ist Künstliche Intelligenz?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 3 – Chancen, Risiken und ethische Verantwortung
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 3 – Chancen, Risiken und ethische Verantwortung
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-drei-arten-von-nutzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Drei Arten von Nutzen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-wann-der-nutzen-verpufft" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Wann der Nutzen verpufft
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-die-funf-groen-risiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Die fünf großen Risiken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-automatisierungsverzerrung-das-risiko-das-dich-betrifft" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Automatisierungsverzerrung: das Risiko, das dich betrifft
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-ethik-praktisch-vier-pflichten-im-alltag" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Ethik praktisch: vier Pflichten im Alltag
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-sorgen-im-team-ernst-nehmen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Sorgen im Team ernst nehmen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 4 – Rechtliche Grundlagen und Datenschutz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-3-chancen-risiken-und-ethische-verantwortung">Kapitel 3 – Chancen, Risiken und ethische Verantwortung<a class="headerlink" href="#kapitel-3-chancen-risiken-und-ethische-verantwortung" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Die drei Nutzenarten <strong>Zeit</strong>, <strong>Qualität</strong> und <strong>Skalierung</strong> – und woran du sie unterscheidest</li>
+<li>Warum ein rechnerischer Zeitgewinn in der Praxis oft <strong>verpufft</strong></li>
+<li>Die zentralen Risiken: <strong>Halluzination</strong>, <strong>Bias</strong>, <strong>Kontrollverlust</strong>, <strong>Kompetenzverlust</strong>, <strong>Anbieterabhängigkeit</strong></li>
+<li>Was <strong>Automatisierungsverzerrung</strong> ist und warum sie dich persönlich betrifft</li>
+<li>Ethik als Alltagspraxis: <strong>Transparenz</strong>, <strong>Fairness</strong>, <strong>Verantwortung</strong>, <strong>Mensch in der Entscheidungsschleife</strong></li>
+<li>Wie du mit Sorgen im Team umgehst, ohne sie kleinzureden oder zu bestätigen</li>
+</ul>
+</div>
+<hr />
+<h2 id="31-drei-arten-von-nutzen">3.1 Drei Arten von Nutzen<a class="headerlink" href="#31-drei-arten-von-nutzen" title="Permanent link">&para;</a></h2>
+<p>„KI spart Zeit" ist die häufigste und die schwächste Begründung für ein Projekt. Sie ist schwach, weil sie den Nutzen auf eine Größe verkürzt, die sich schwer messen lässt und die oft gar nicht der wichtigste Effekt ist. Trenne stattdessen drei Nutzenarten:</p>
+<p><strong>Zeitnutzen</strong> entsteht, wenn eine Tätigkeit schneller erledigt ist: Ein Antwortentwurf steht in zwanzig Sekunden statt in zehn Minuten. Zeitnutzen ist der offensichtlichste und der unzuverlässigste – er verschwindet, sobald die Prüfung des Ergebnisses so lange dauert wie die ursprüngliche Arbeit.</p>
+<p><strong>Qualitätsnutzen</strong> entsteht, wenn das Ergebnis besser oder gleichmäßiger wird: Alle Angebotstexte folgen derselben Struktur, keine Reklamation bleibt unbeantwortet, jede Besprechung hat ein Protokoll. Dieser Nutzen ist häufig der wertvollste, weil er nicht von der Tagesform abhängt.</p>
+<p><strong>Skalierungsnutzen</strong> entsteht, wenn etwas überhaupt erst möglich wird: Alle 400 offenen Rückmeldungen werden ausgewertet, nicht nur die letzten 30. Vorher hätte niemand die Zeit gehabt – es wäre gar nicht gemacht worden.</p>
+<table>
+<thead>
+<tr>
+<th>Nutzenart</th>
+<th>Woran du sie erkennst</th>
+<th>Belegbar durch</th>
+<th>Typische Täuschung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zeit</td>
+<td>dieselbe Aufgabe geht schneller</td>
+<td>Vorher-Nachher-Messung an echten Fällen</td>
+<td>Prüfzeit wird nicht mitgerechnet</td>
+</tr>
+<tr>
+<td>Qualität</td>
+<td>Ergebnisse werden gleichmäßiger und vollständiger</td>
+<td>Fehler- und Rückfragequote</td>
+<td>„fühlt sich besser an" ohne Kennzahl</td>
+</tr>
+<tr>
+<td>Skalierung</td>
+<td>etwas wird gemacht, was vorher entfiel</td>
+<td>Menge der bearbeiteten Fälle</td>
+<td>Menge wird mit Wert verwechselt</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Der belastbarste Nutzen ist selten der Zeitgewinn. Er liegt meist in <strong>Gleichmäßigkeit</strong> und in <strong>Dingen, die vorher liegen blieben</strong>. Wer nur mit Zeitersparnis argumentiert, verliert die Diskussion beim ersten kritischen Nachrechnen.</p>
+</div>
+<hr />
+<h2 id="32-wann-der-nutzen-verpufft">3.2 Wann der Nutzen verpufft<a class="headerlink" href="#32-wann-der-nutzen-verpufft" title="Permanent link">&para;</a></h2>
+<p>Rechne den Nutzen immer über den <strong>gesamten</strong> Weg, nicht über den KI-Schritt. Ein Beispiel, das in dieser Form ständig vorkommt:</p>
+<div class="admonition example">
+<p class="admonition-title">Die Rechnung, die nicht aufgeht</p>
+<p>Eine Sachbearbeiterin beantwortet täglich 20 Kundenanfragen, je 8 Minuten – 160 Minuten. Mit KI-Entwurf braucht sie pro Antwort noch 3 Minuten – 60 Minuten. Ersparnis auf dem Papier: 100 Minuten pro Tag.</p>
+<p>Jetzt der vollständige Weg:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Entwurf lesen und pruefen           20 x 2 Minuten  = 40 Minuten
+Bei 4 von 20 Faellen nachschaerfen   4 x 4 Minuten  = 16 Minuten
+Bei 2 Faellen Entwurf verwerfen und
+von Hand schreiben                   2 x 8 Minuten  = 16 Minuten
+Ergebnis: 60 + 40 + 16 + 16          = 132 Minuten
+</code></pre></div></td></tr></table></div>
+<p>Die echte Ersparnis liegt bei 28 Minuten, nicht bei 100. Das ist immer noch ein guter Wert – aber ein völlig anderes Versprechen. Und wenn die Fälle komplexer sind, kippt die Rechnung ins Negative.</p>
+</div>
+<p>Drei Ursachen lassen den Nutzen regelmäßig verschwinden:</p>
+<ul>
+<li><strong>Prüfaufwand:</strong> Ein Ergebnis, dem man nicht trauen kann, muss vollständig gelesen werden. Bei kurzen Texten ist Prüfen fast so teuer wie Schreiben.</li>
+<li><strong>Verlagerter Aufwand:</strong> Was in der Fachabteilung eingespart wird, fällt bei der IT als Wartung oder bei der Führungskraft als Freigabe wieder an.</li>
+<li><strong>Nacharbeit:</strong> Ein plausibel klingendes, aber falsches Ergebnis kostet mehr als ein leeres Blatt, weil der Fehler erst gefunden werden muss.</li>
+</ul>
+<p>Der ehrliche Nutzentest ist deshalb einfach: Miss an <strong>zehn echten Fällen</strong> aus deinem Alltag, inklusive Prüfen und Nacharbeit, und vergleiche mit der bisherigen Bearbeitung. Zehn Fälle genügen für eine belastbare Größenordnung – und sie schützen vor der Begeisterung, die nach dem einen gelungenen Beispiel entsteht. Die systematische Bewertung von Anwendungsfällen vertiefst du in Kapitel 34.</p>
+<hr />
+<h2 id="33-die-funf-groen-risiken">3.3 Die fünf großen Risiken<a class="headerlink" href="#33-die-funf-groen-risiken" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risiko</th>
+<th>Was passiert</th>
+<th>Wo es besonders wehtut</th>
+<th>Erste Gegenmaßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Halluzination</td>
+<td>erfundene Inhalte, überzeugend formuliert</td>
+<td>Zahlen, Zitate, Paragrafen, interne Regeln</td>
+<td>Quellenpflicht, Nachprüfen, keine Fakten aus dem Modell</td>
+</tr>
+<tr>
+<td>Bias</td>
+<td>systematische Benachteiligung von Gruppen</td>
+<td>Bewerbung, Bewertung, Auswahl, Kreditwürdigkeit</td>
+<td>keine Personalentscheidung durch KI, Ergebnisse gruppenweise prüfen</td>
+</tr>
+<tr>
+<td>Kontrollverlust</td>
+<td>niemand weiß, warum etwas passiert ist</td>
+<td>mehrstufige Agenten ohne Protokoll</td>
+<td>Protokollierung, Freigabepunkte, Abschaltbarkeit</td>
+</tr>
+<tr>
+<td>Kompetenzverlust</td>
+<td>Fähigkeiten verkümmern durch Nichtgebrauch</td>
+<td>Formulieren, Rechnen, Fachprüfung</td>
+<td>bewusst Aufgaben ohne KI erledigen, Vier-Augen-Prinzip</td>
+</tr>
+<tr>
+<td>Anbieterabhängigkeit</td>
+<td>Preise, Funktionen, Verfügbarkeit ändern sich fremdbestimmt</td>
+<td>Prozesse, die ohne das Werkzeug stillstehen</td>
+<td>Rückfallebene, Export von Prompts und Daten</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Halluzination</strong> ist keine Fehlfunktion, sondern die Kehrseite der Funktionsweise: Ein Sprachmodell erzeugt wahrscheinliche Fortsetzungen, nicht geprüfte Wahrheiten (Details in Kapitel 5). Deshalb ist die Fehlerform so gefährlich – sie kommt nie als Fehlermeldung, sondern immer als flüssiger, selbstsicherer Satz.</p>
+<p><strong>Bias</strong>, auf Deutsch <strong>Verzerrung</strong>, bezeichnet eine systematische Schieflage im Ergebnis. Sie entsteht, weil Trainingsdaten die Welt so abbilden, wie sie war, samt aller Ungleichheiten. Ein System, das aus vergangenen Einstellungsentscheidungen lernt, lernt auch die Muster mit, die dort falsch waren. Genau deshalb behandelt der EU AI Act die Auswahl von Beschäftigten als Hochrisiko-Anwendung (Kapitel 4).</p>
+<p><strong>Kontrollverlust</strong> ist das Risiko, das mit der Autonomie wächst. Bei einem regelbasierten Ablauf kannst du jeden Schritt nachlesen. Bei einem Agenten, der seinen Weg selbst wählt, brauchst du eine Protokollierung, die festhält, <strong>was</strong> er getan hat und <strong>womit</strong> – sonst ist eine Fehlersuche unmöglich (Kapitel 33).</p>
+<p><strong>Kompetenzverlust</strong> wird meist unterschätzt, weil er langsam eintritt. Wer zwei Jahre lang keinen Text mehr selbst formuliert, verliert die Fähigkeit, einen schlechten Entwurf als schlecht zu erkennen. Damit fällt genau die Kontrolle weg, auf der die gesamte Absicherung beruht.</p>
+<p><strong>Anbieterabhängigkeit</strong> entsteht leise. Ein Prozess, der auf einem einzigen Werkzeug aufsetzt, ist dessen Preis- und Funktionsentscheidungen ausgeliefert. Die Frage lautet nicht „was, wenn der Anbieter verschwindet", sondern „was passiert am Montag, wenn das Werkzeug drei Stunden nicht erreichbar ist".</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Die Risiken treten nicht einzeln auf, sondern verstärken sich. Eine halluzinierte Zahl in einem Bericht, die niemand prüft, weil man dem Werkzeug inzwischen vertraut, und die in einem Ablauf ohne Protokoll entstanden ist – das ist keine Verkettung unglücklicher Umstände, sondern der Normalfall bei fehlenden Kontrollpunkten.</p>
+</div>
+<hr />
+<h2 id="34-automatisierungsverzerrung-das-risiko-das-dich-betrifft">3.4 Automatisierungsverzerrung: das Risiko, das dich betrifft<a class="headerlink" href="#34-automatisierungsverzerrung-das-risiko-das-dich-betrifft" title="Permanent link">&para;</a></h2>
+<p><strong>Automatisierungsverzerrung</strong> beschreibt die menschliche Neigung, Vorschlägen einer Maschine mehr zu vertrauen als eigenen Beobachtungen. Sie ist gut untersucht und tritt umso stärker auf, je zuverlässiger das System in der Vergangenheit war.</p>
+<p>Das Muster ist immer dasselbe: In den ersten Wochen wird jedes Ergebnis genau geprüft. Weil fast alles stimmt, sinkt die Prüftiefe. Nach einigen Monaten ist die Freigabe ein Klick. Der Kontrollpunkt existiert dann nur noch auf dem Papier – und genau in dieser Phase richtet der erste unbemerkte Fehler den größten Schaden an.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Neues Werkzeug]) --&gt; B([Gruendliche Pruefung])
+    B --&gt; C([Ergebnisse stimmen meist])
+    C --&gt; D([Pruefung wird oberflaechlich])
+    D --&gt; E([Fehler faellt nicht mehr auf])</code></pre>
+<p>Gegen diese Verzerrung hilft kein guter Vorsatz, sondern nur ein Aufbau, der Prüfung erzwingt:</p>
+<ul>
+<li><strong>Stichproben mit festem Anteil:</strong> Zum Beispiel jeder zehnte Fall wird vollständig gegengelesen, unabhängig davon, wie gut es gerade läuft.</li>
+<li><strong>Prüfung an der richtigen Stelle:</strong> Nicht „ist der Text schön", sondern „stimmen Betrag, Datum, Name und Zusage".</li>
+<li><strong>Sichtbare Unsicherheit:</strong> Wenn ein KI-Schritt einen Konfidenzwert liefert, gehören Fälle unterhalb einer Schwelle in eine Prüfschleife statt in den Automatikpfad (Kapitel 31).</li>
+<li><strong>Fehler zählen:</strong> Wer nicht mitschreibt, wie oft nachgearbeitet werden musste, merkt eine Verschlechterung des Werkzeugs nicht.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Der Mensch prüft ja" ist keine Schutzmaßnahme, solange nicht festgelegt ist, <strong>was</strong> geprüft wird, <strong>wie oft</strong> und <strong>wer</strong> es verantwortet. Ein Freigabeknopf ohne Prüfauftrag erzeugt nur die Illusion von Kontrolle – und verschiebt die Verantwortung auf jemanden, der sie nicht wahrnehmen kann.</p>
+</div>
+<hr />
+<h2 id="35-ethik-praktisch-vier-pflichten-im-alltag">3.5 Ethik praktisch: vier Pflichten im Alltag<a class="headerlink" href="#35-ethik-praktisch-vier-pflichten-im-alltag" title="Permanent link">&para;</a></h2>
+<p>Ethik wird in diesem Kurs nicht philosophisch behandelt. Es geht um vier Fragen, die vor jedem Einsatz beantwortbar sein müssen.</p>
+<p><strong>Transparenz.</strong> Wissen die Betroffenen, dass KI beteiligt ist? Bei Kunden ist die Antwort im Zweifel Ja – nicht weil jede E-Mail einen Hinweis braucht, sondern weil verdeckter Einsatz Vertrauen zerstört, sobald er auffällt. Konkret heißt das: Ein Chatbot auf der Website muss sich als solcher erkennbar machen. Ein von KI entworfener, von einem Menschen geprüfter und verantworteter Brief muss es nicht. Die rechtlichen Transparenzpflichten dazu findest du in Kapitel 4.</p>
+<p><strong>Fairness.</strong> Werden Menschen durch den Einsatz systematisch unterschiedlich behandelt? Diese Frage stellt sich überall, wo über Personen entschieden wird – Bewerbung, Beurteilung, Mahnung, Kulanz. Prüfe nicht Einzelfälle, sondern Muster: Fallen bestimmte Gruppen häufiger durch?</p>
+<p><strong>Verantwortung.</strong> Wer haftet für das Ergebnis? Die Antwort ist immer ein Mensch mit Namen, niemals „das System". Ein Ablauf ohne benannte Verantwortliche ist nicht fertig, sondern unfertig (Kapitel 38).</p>
+<p><strong>Mensch in der Entscheidungsschleife.</strong> Auf Englisch <strong>Human in the Loop</strong> – das Prinzip, dass ein Mensch vor der wirksamen Entscheidung eingreifen kann. Wichtig ist die Unterscheidung dreier Aufbauten:</p>
+<table>
+<thead>
+<tr>
+<th>Aufbau</th>
+<th>Bedeutung</th>
+<th>Geeignet für</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mensch entscheidet, KI schlägt vor</td>
+<td>nichts wird ohne Zustimmung wirksam</td>
+<td>Personalfragen, Kundenzusagen, Geld, Recht</td>
+</tr>
+<tr>
+<td>Mensch prüft nachträglich</td>
+<td>wirkt sofort, wird stichprobenweise kontrolliert</td>
+<td>Ablage, Kategorisierung, interne Hinweise</td>
+</tr>
+<tr>
+<td>Kein Mensch beteiligt</td>
+<td>vollautomatisch</td>
+<td>nur bei harmlosen, umkehrbaren Schritten</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Die Frage, die alles entscheidet</p>
+<p>Nicht „darf KI das", sondern: <strong>Was passiert, wenn das Ergebnis falsch ist – wie schnell fällt es auf und wie teuer ist die Korrektur?</strong> Ist der Fehler sichtbar und reversibel, darf mehr automatisch laufen. Ist er unsichtbar oder unumkehrbar, entscheidet ein Mensch vorher.</p>
+</div>
+<hr />
+<h2 id="36-sorgen-im-team-ernst-nehmen">3.6 Sorgen im Team ernst nehmen<a class="headerlink" href="#36-sorgen-im-team-ernst-nehmen" title="Permanent link">&para;</a></h2>
+<p>Wenn du in deinem Bereich Automatisierung einführst, wirst du auf Widerstand treffen. Er ist meistens kein Missverständnis, sondern eine berechtigte Frage in ungünstiger Formulierung.</p>
+<table>
+<thead>
+<tr>
+<th>Was gesagt wird</th>
+<th>Was gemeint ist</th>
+<th>Was hilft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Das ersetzt doch nur unsere Arbeit."</td>
+<td>Wird meine Stelle noch gebraucht?</td>
+<td>benennen, welche Tätigkeit entfällt und welche bleibt; nicht pauschal beruhigen</td>
+</tr>
+<tr>
+<td>„Bei uns ist jeder Fall ein Sonderfall."</td>
+<td>Meine Erfahrung wird nicht anerkannt.</td>
+<td>Häufigkeiten gemeinsam auszählen; Sonderfälle bewusst ausnehmen</td>
+</tr>
+<tr>
+<td>„Ich soll das jetzt auch noch kontrollieren."</td>
+<td>Mehr Verantwortung, keine Entlastung.</td>
+<td>Prüfumfang begrenzen und Zeit dafür einplanen</td>
+</tr>
+<tr>
+<td>„Und wenn das Ding Mist macht, bin ich schuld."</td>
+<td>Haftungsfrage ist ungeklärt.</td>
+<td>Verantwortlichkeiten schriftlich festhalten</td>
+</tr>
+</tbody>
+</table>
+<p>Drei Dinge tragen mehr als jede Präsentation: <strong>Ehrlichkeit</strong> darüber, was sich ändert; <strong>Beteiligung</strong> der Menschen, die die Aufgabe heute machen, weil sie die Sonderfälle kennen; und ein <strong>kleiner Anfang</strong> an einer unstrittigen Aufgabe statt eines Prestigeprojekts.</p>
+<p>Ein Versprechen solltest du dabei nie geben: „Es wird sich nichts ändern." Das ist nicht wahr, und der Vertrauensverlust bei der ersten Änderung ist größer als der Gewinn durch die Beruhigung. Sage stattdessen konkret, welche Tätigkeit wegfällt, welche neu dazukommt und wer die Freigabe behält.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Nutzen zerfällt in <strong>Zeit</strong>, <strong>Qualität</strong> und <strong>Skalierung</strong>; die belastbaren Argumente liegen meist bei den letzten beiden.</li>
+<li>Rechne Nutzen über den <strong>gesamten</strong> Weg inklusive <strong>Prüfaufwand</strong> und <strong>Nacharbeit</strong> – an zehn echten Fällen, nicht an einem Vorzeigebeispiel.</li>
+<li>Die fünf großen Risiken sind <strong>Halluzination</strong>, <strong>Bias</strong>, <strong>Kontrollverlust</strong>, <strong>Kompetenzverlust</strong> und <strong>Anbieterabhängigkeit</strong>; sie verstärken sich gegenseitig.</li>
+<li><strong>Automatisierungsverzerrung</strong> entwertet Kontrollpunkte im Laufe der Zeit – dagegen helfen nur feste Stichproben, klare Prüfpunkte und gezählte Fehler.</li>
+<li>Ethik im Alltag heißt <strong>Transparenz</strong>, <strong>Fairness</strong>, benannte <strong>Verantwortung</strong> und ein passend gewählter <strong>Mensch-in-der-Schleife</strong>-Aufbau.</li>
+<li>Sorgen im Team sind Sachfragen: ehrlich benennen, was sich ändert, Betroffene beteiligen, klein anfangen.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Nutzenart bestimmen</summary>
+<p>Ordne jede Aussage einer Nutzenart zu: <strong>Zeitnutzen</strong>, <strong>Qualitätsnutzen</strong> oder
+<strong>Skalierungsnutzen</strong>. Begründe jeweils in einem Satz.</p>
+<ol>
+<li>„Seit wir Protokolle automatisch erstellen, hat jede Besprechung eines – vorher etwa jede zweite."</li>
+<li>„Der Antwortentwurf steht in 20 Sekunden statt in 10 Minuten."</li>
+<li>„Wir werten jetzt alle 400 Rückmeldungen aus der Kundenumfrage aus, vorher nur die letzten 30."</li>
+<li>„Alle Angebotstexte folgen derselben Struktur, egal wer sie schreibt."</li>
+<li>„Die monatliche Abweichungsanalyse ist eine Stunde früher fertig."</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Frage bei jedem Punkt: Wird etwas <strong>schneller</strong>, wird etwas <strong>besser oder gleichmäßiger</strong>,
+oder wird etwas gemacht, das vorher <strong>überhaupt nicht</strong> stattfand?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Aussage</th>
+<th>Nutzenart</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Jede Besprechung hat ein Protokoll</td>
+<td>Qualität</td>
+<td>Vollständigkeit und Gleichmäßigkeit steigen, nicht die Geschwindigkeit</td>
+</tr>
+<tr>
+<td>2 Entwurf in 20 Sekunden</td>
+<td>Zeit</td>
+<td>dieselbe Aufgabe, kürzere Dauer</td>
+</tr>
+<tr>
+<td>3 Alle 400 Rückmeldungen auswerten</td>
+<td>Skalierung</td>
+<td>370 Fälle wären ohne das Werkzeug unbearbeitet geblieben</td>
+</tr>
+<tr>
+<td>4 Einheitliche Angebotsstruktur</td>
+<td>Qualität</td>
+<td>Ergebnis ist unabhängig von Person und Tagesform</td>
+</tr>
+<tr>
+<td>5 Analyse eine Stunde früher</td>
+<td>Zeit</td>
+<td>Beschleunigung eines bestehenden Ablaufs</td>
+</tr>
+</tbody>
+</table>
+<p>Beachte Aussage 2 und 5: Beide sind Zeitnutzen und beide sind mit Vorsicht zu behandeln, weil
+die Prüfzeit noch nicht enthalten ist. Aussage 1 und 4 sind die stabileren Argumente, weil
+Gleichmäßigkeit nicht durch Nacharbeit aufgezehrt wird. Aussage 3 ist das stärkste Argument
+überhaupt – hier gibt es keine Vergleichsleistung, die eingespart wird.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Risiko, Auswirkung und Gegenmaßnahme</summary>
+<p>Für jede der folgenden Situationen: Benenne das <strong>Hauptrisiko</strong> aus Abschnitt 3.3 oder 3.4,
+beschreibe in einem Satz die <strong>konkrete Auswirkung</strong>, und formuliere <strong>eine</strong> Gegenmaßnahme,
+die im Ablauf verankert ist – nicht nur ein guter Vorsatz.</p>
+<ol>
+<li>Ein Ablauf entwirft Mahnschreiben und trägt Beträge und Fristen automatisch ein.</li>
+<li>Ein System sortiert Bewerbungen vor und legt eine Rangfolge an.</li>
+<li>Ein Agent recherchiert selbstständig in mehreren Quellen und verschickt das Ergebnis.</li>
+<li>Die gesamte Angebotserstellung läuft über ein einziges externes KI-Werkzeug.</li>
+<li>Nach acht Monaten ohne Beanstandung gibt das Team KI-Entwürfe ohne Lesen frei.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Unterschied zwischen einer echten Gegenmaßnahme und einem Vorsatz: Eine Gegenmaßnahme
+funktioniert auch dann, wenn die betroffene Person müde, im Urlaub oder neu im Team ist.
+„Wir passen besser auf" ist kein Mechanismus.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Hauptrisiko</th>
+<th>Auswirkung</th>
+<th>Verankerte Gegenmaßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Mahnschreiben</td>
+<td>Halluzination</td>
+<td>erfundene oder vertauschte Beträge und Fristen gehen an Kunden</td>
+<td>Betrag und Frist nicht aus dem Modell, sondern regelbasiert aus dem Quellsystem einsetzen</td>
+</tr>
+<tr>
+<td>2 Bewerbungen vorsortieren</td>
+<td>Bias</td>
+<td>ganze Gruppen fallen systematisch früher heraus</td>
+<td>keine Rangfolge durch KI; Auswahl bleibt beim Menschen, siehe Kapitel 4 und Kapitel 14</td>
+</tr>
+<tr>
+<td>3 Agent verschickt selbst</td>
+<td>Kontrollverlust</td>
+<td>niemand kann nachvollziehen, welche Quelle zur Aussage führte</td>
+<td>Protokollierung aller Werkzeugaufrufe und Freigabe vor jedem Versand</td>
+</tr>
+<tr>
+<td>4 Ein einziges Werkzeug</td>
+<td>Anbieterabhängigkeit</td>
+<td>Ausfall oder Preisänderung legt den Angebotsprozess lahm</td>
+<td>Rückfallebene als dokumentierter manueller Weg, Prompts und Vorlagen extern gesichert</td>
+</tr>
+<tr>
+<td>5 Freigabe ohne Lesen</td>
+<td>Automatisierungsverzerrung</td>
+<td>der Kontrollpunkt existiert nur formal</td>
+<td>fester Stichprobenanteil mit definierter Prüfliste, Nacharbeitsquote wird mitgezählt</td>
+</tr>
+</tbody>
+</table>
+<p>Zwei Muster sind übertragbar. Erstens: Zahlen, Fristen und Namen sollten möglichst nie aus
+einem Sprachmodell stammen, sondern regelbasiert eingesetzt werden – das entfernt die
+gefährlichste Halluzinationsquelle vollständig. Zweitens: Jede Gegenmaßnahme, die eine
+Verhaltensänderung verlangt, verfällt mit der Zeit. Wirksam sind nur Maßnahmen, die im Ablauf
+selbst stecken.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Halluzination provozieren und dokumentieren</summary>
+<p>Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude). Ziel ist nicht,
+das Werkzeug schlechtzumachen, sondern die <strong>Form</strong> seiner Fehler kennenzulernen.</p>
+<ol>
+<li>Stelle drei Fragen, deren Antwort du sicher überprüfen kannst:</li>
+<li>eine Frage nach einer <strong>Zahl</strong> aus einem Bereich, den du gut kennst</li>
+<li>eine Frage nach einer <strong>internen Regelung</strong> deines Arbeitgebers</li>
+<li>
+<p>eine Frage nach einer <strong>Quelle</strong>, zum Beispiel: nenne mir drei Fachartikel zum Thema X mit Titel und Jahr</p>
+</li>
+<li>
+<p>Prüfe jede Antwort nach. Notiere pro Antwort: richtig, teilweise richtig oder erfunden –
+   und <strong>wie sicher</strong> die Formulierung klang.</p>
+</li>
+<li>
+<p>Stelle nun dieselbe Frage nach der internen Regelung erneut, diesmal mit dem relevanten
+   Textauszug als Kontext im Prompt. Vergleiche das Ergebnis.</p>
+</li>
+<li>
+<p>Formuliere aus deinen Beobachtungen <strong>drei Regeln</strong> dafür, welche Art von Information du
+   künftig nie aus dem Modell selbst beziehst.</p>
+</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte besonders auf Punkt 1c. Erfundene Quellenangaben sind der klarste Fall: Sie sehen
+vollständig und korrekt formatiert aus, existieren aber nicht. Und achte darauf, ob eine
+falsche Antwort sprachlich unsicherer klingt als eine richtige – meistens tut sie das nicht.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li><strong>Zahlenfrage:</strong> Häufig plausible Größenordnung, im Detail falsch. Gefährlich, weil die
+  Abweichung nur auffällt, wenn man den echten Wert kennt.</li>
+<li><strong>Interne Regelung:</strong> Fast immer erfunden. Das Modell kennt interne Dokumente nicht, füllt
+  die Lücke aber mit einer branchenüblich klingenden Regel, statt die Wissenslücke zu benennen.</li>
+<li><strong>Quellenangaben:</strong> Häufig frei erfunden, mit korrekt aussehenden Titeln, Autoren und
+  Jahreszahlen. Der stärkste Beleg dafür, dass Sicherheit im Ton nichts über Richtigkeit sagt.</li>
+<li><strong>Mit Kontext im Prompt:</strong> Die Antwort wird deutlich besser, weil das Modell nun aus
+  vorgelegtem Text arbeitet statt aus Erinnerung. Genau darauf beruht die Wissensanbindung
+  von Agenten in Kapitel 6.</li>
+</ul>
+<p>Beispielhafte eigene Regeln: (1) Zahlen, Fristen und Beträge stammen aus dem Quellsystem, nie
+aus dem Modell. (2) Internes Wissen liefere ich als Kontext mit, statt es abzufragen.
+(3) Jede Quellenangabe wird einzeln überprüft oder gestrichen.</p>
+<p>Ein gutes Ergebnis hält zusätzlich fest, dass der Ton der Antwort kein Warnsignal liefert –
+das ist der eigentliche Grund, warum Halluzinationen im Arbeitsalltag durchrutschen.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Nutzen-Risiko-Bilanz für einen KI-Einsatz im Kundenservice</summary>
+<p><strong>Szenario:</strong> Du arbeitest im Kundenservice eines Versandhändlers. Täglich kommen rund 180
+E-Mails herein: Lieferstatus, Reklamationen, Rücksendungen, Rechnungsfragen. Die Bearbeitung
+dauert im Schnitt sieben Minuten, die Antwortzeit liegt bei zwei Tagen, in Spitzenwochen bei
+fünf. Die Bereichsleitung will KI-Antwortentwürfe einführen und rechnet mit „mindestens einer
+halben Stelle Einsparung". Das Team ist skeptisch, der Betriebsrat hat Fragen angekündigt.
+Du sollst eine belastbare Nutzen-Risiko-Bilanz vorlegen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+180 Mails pro Tag, 6 Mitarbeitende, Bearbeitung im Schnitt 7 Minuten.
+Verteilung: 45 Prozent Lieferstatus, 25 Prozent Reklamation,
+20 Prozent Ruecksendung, 10 Prozent Rechnungsfragen.
+Rund 5 Prozent der Faelle enthalten Gesundheits- oder Beschwerdedetails.
+Systeme: Microsoft 365, Shopsystem mit Sendungsdaten, Ticketpostfach.
+Vorgabe der Bereichsleitung: Antwortzeit unter einen Tag.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Nutzen ehrlich rechnen.</strong> Wähle <strong>zwei</strong> der vier Fallgruppen aus und rechne für
+jede den vollständigen Weg durch: bisherige Bearbeitungszeit, Zeit mit KI-Entwurf, zusätzliche
+Prüfzeit, Anteil der Fälle mit Nachschärfen, Anteil der Fälle, in denen der Entwurf verworfen
+wird. Weise für jede Gruppe alle drei Nutzenarten getrennt aus – Zeit, Qualität, Skalierung –
+und benenne, welche du <strong>nicht</strong> belegen kannst.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Bilanz muss <strong>alle vier</strong> Kriterien
+erfüllen. Lass sie von einem KI-Werkzeug gegenprüfen und ergänze die Lücken selbst:</p>
+<ol>
+<li>Für jede Fallgruppe ist die Prüfzeit <strong>beziffert</strong> und in der Gesamtrechnung enthalten.</li>
+<li>Mindestens <strong>drei</strong> Risiken aus Kapitel 3 sind benannt, jeweils mit einer Gegenmaßnahme,
+   die im Ablauf verankert ist und nicht von Aufmerksamkeit abhängt.</li>
+<li>Für jede Fallgruppe ist der Mensch-in-der-Schleife-Aufbau festgelegt: Freigabe vorher,
+   Stichprobe nachher oder vollautomatisch – jeweils mit Begründung.</li>
+<li>Es ist benannt, welche Fälle <strong>grundsätzlich nicht</strong> über den automatischen Pfad laufen,
+   und warum.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Nach vier Wochen Pilotbetrieb treten drei Dinge ein: Die
+gemessene Ersparnis liegt bei einem Drittel des Versprochenen. In zwei Fällen wurde ein
+Kulanzbetrag zugesagt, den es so nicht gibt – beide Entwürfe waren freigegeben worden. Und die
+Stichprobenprüfung ist in Woche drei stillschweigend eingestellt worden, weil „ohnehin alles
+passte". Überarbeite deine Bilanz:</p>
+<ul>
+<li>Korrigiere die Nutzenzahlen und benenne, was du in Runde 1 zu optimistisch angesetzt hast.</li>
+<li>Verändere den Ablauf so, dass eine falsche Zusage <strong>strukturell</strong> nicht mehr in eine
+  Kundenmail gelangen kann. Ein besserer Prompt genügt als Antwort nicht.</li>
+<li>Baue die Stichprobenprüfung so um, dass ihr Ausfall auffällt.</li>
+</ul>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Bereichsleitung hält an der halben Stelle fest
+und schlägt vor, die Freigabe bei Lieferstatus-Mails ganz zu streichen, um das Ziel zu
+erreichen. Lass dir von deinem KI-Werkzeug Pro und Contra geben und entscheide dann begründet.
+<strong>Widersprich</strong> der Vorgabe oder dem KI-Vorschlag, wo du es für nötig hältst, und formuliere
+eine Empfehlung, die die Bereichsleitung nachvollziehen kann: welcher Teil automatisch läuft,
+welcher nicht, welches Einsparziel realistisch ist und wie du das Team und den Betriebsrat
+informierst.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Nutzenrechnung für zwei Fallgruppen mit allen Zeitanteilen und getrennten Nutzenarten</li>
+<li>Risikoliste mit mindestens drei Risiken und je einer verankerten Gegenmaßnahme</li>
+<li>überarbeitete Bilanz nach den drei Vorfällen aus Runde 3, mit korrigierten Zahlen</li>
+<li>einseitige Empfehlung inklusive begründetem Widerspruch und Informationsplan für das Team</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> deine Rechnung Prüfzeit und Nacharbeit enthält, für jede
+Fallgruppe ein Mensch-in-der-Schleife-Aufbau festgelegt ist, deine Lösung für die falsche
+Kulanzzusage ohne menschliche Aufmerksamkeit funktioniert und deine Empfehlung ein
+<strong>realistisches</strong> Einsparziel nennt statt des ursprünglich versprochenen.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Die zu optimistische Rechnung aus Runde 1 ist kein
+Malus – fast alle Erstrechnungen fallen so aus, weil Prüfzeit und Verwerfen unterschätzt
+werden. Entscheidend ist, dass du den Fehler benennen kannst. Bei der falschen Kulanzzusage
+liegt die tragfähige Lösung nicht im Prompt, sondern in der Struktur: Zusagen und Beträge
+gehören nicht in den vom Modell erzeugten Text, sondern werden regelbasiert aus dem Quellsystem
+eingesetzt oder gar nicht erwähnt. In Runde 4 ist der Vorschlag, die Freigabe zu streichen,
+nicht grundsätzlich falsch – bei rein informativen Lieferstatus-Antworten kann er richtig sein.
+Die Kunst ist, die Grenze genau zu ziehen und zu begründen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) die Nutzenrechnung für beide Fallgruppen enthält bezifferte Prüfzeit,
+Nachschärf- und Verwurfquote und weist Zeit-, Qualitäts- und Skalierungsnutzen getrennt aus,
+einschließlich der ehrlich als nicht belegbar markierten Anteile; (2) mindestens drei Risiken
+mit Gegenmaßnahmen, die im Ablauf verankert sind und nicht von Aufmerksamkeit abhängen;
+(3) die Überarbeitung nach Runde 3 korrigiert die Zahlen nachvollziehbar, verhindert falsche
+Zusagen strukturell durch regelbasierte Datenübernahme oder Ausschluss des Themas und macht
+den Ausfall der Stichprobe sichtbar; (4) die Empfehlung zieht eine begründete Grenze zwischen
+automatisch und freigabepflichtig, nennt ein realistisches Einsparziel statt der halben Stelle
+und enthält einen Informationsplan, der die Sorgen des Teams sachlich adressiert.</p>
+<p>Lernziel: Nutzen und Risiko eines KI-Einsatzes über den gesamten Weg abwägen, Kontrollpunkte
+so bauen, dass sie ihren Ausfall selbst anzeigen, und eine Erwartung nach oben korrigierten
+Zahlen gegenüber begründet zurückweisen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel4/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 4 – Rechtliche Grundlagen und Datenschutz">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 4 – Rechtliche Grundlagen und Datenschutz
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

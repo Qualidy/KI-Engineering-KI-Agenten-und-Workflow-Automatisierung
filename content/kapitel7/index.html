@@ -1,0 +1,1796 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel6/">
+      
+      
+        <link rel="next" href="../kapitel8/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co. - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-7-die-agenten-landschaft-copilot-chatgpt-claude-co" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Block 2 · KI-Agenten verstehen und nutzen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 5 – Wie Sprachmodelle arbeiten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 6 – Vom Chatbot zum Agenten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-die-entscheidende-trennlinie" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Die entscheidende Trennlinie
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-microsoft-copilot-in-microsoft-365" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Microsoft Copilot in Microsoft 365
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-chatgpt-projekte-und-custom-gpts" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 ChatGPT: Projekte und Custom GPTs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-claude-und-gemini-als-randnotiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Claude – und Gemini als Randnotiz
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-was-mit-deinen-eingaben-passiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Was mit deinen Eingaben passiert
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#76-auswahlraster-nach-aufgabentyp" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.6 Auswahlraster nach Aufgabentyp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 9 – Prompt-Design: Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-7-die-agenten-landschaft-copilot-chatgpt-claude-co">Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude &amp; Co.<a class="headerlink" href="#kapitel-7-die-agenten-landschaft-copilot-chatgpt-claude-co" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Warum die wichtigste Trennlinie nicht zwischen Anbietern verläuft, sondern zwischen <strong>Zugriff auf Unternehmensdaten</strong> und <strong>öffentlichen Werkzeugen</strong></li>
+<li>Wie <strong>Microsoft Copilot</strong> in Microsoft 365 aufgebaut ist und was <strong>Copilot Chat</strong> davon unterscheidet</li>
+<li>Was <strong>ChatGPT</strong> mit Projekten und Custom GPTs bietet und wo geschäftliche und private Nutzung auseinanderfallen</li>
+<li>Was <strong>Claude</strong> mit Projects anders macht und welche Rolle <strong>Gemini</strong> spielt</li>
+<li>Was mit den Daten passiert, die du eingibst – und welche Fragen du dazu selbst klären musst</li>
+<li>Ein <strong>Auswahlraster</strong>, mit dem du für eine konkrete Aufgabe das passende Werkzeug bestimmst</li>
+</ul>
+</div>
+<hr />
+<h2 id="71-die-entscheidende-trennlinie">7.1 Die entscheidende Trennlinie<a class="headerlink" href="#71-die-entscheidende-trennlinie" title="Permanent link">&para;</a></h2>
+<p>Wer Werkzeuge vergleicht, vergleicht meist Funktionen. Im Unternehmen zählt zuerst etwas anderes: <strong>Worauf darf das Werkzeug zugreifen, und wo landen deine Eingaben?</strong> Daraus ergeben sich zwei Welten.</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Deine Aufgabe]) --&gt; B([Frage nach internen Daten])
+    B --&gt;|ja| C([Werkzeug im Unternehmenskontext])
+    B --&gt;|nein| D([Oeffentliches Werkzeug moeglich])
+    C --&gt; E([Antwort mit Bezug auf eure Dateien])
+    D --&gt; F([Antwort aus allgemeinem Wissen])</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Werkzeug im Unternehmenskontext</th>
+<th>Öffentliches Werkzeug</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beispiel</td>
+<td>Copilot mit M365-Lizenz, firmeneigener Agent</td>
+<td>privates ChatGPT-Konto, Claude ohne Firmenvertrag</td>
+</tr>
+<tr>
+<td>Datenzugriff</td>
+<td>eure Mails, Dateien, Chats – im Rahmen der Berechtigungen</td>
+<td>nur das, was du in den Prompt schreibst</td>
+</tr>
+<tr>
+<td>Vertragslage</td>
+<td>über den Unternehmensvertrag geregelt</td>
+<td>Vertrag zwischen dir und dem Anbieter</td>
+</tr>
+<tr>
+<td>Typischer Einsatz</td>
+<td>Alltagsarbeit an echten Vorgängen</td>
+<td>allgemeine Texte, Lernen, Ideensammlung</td>
+</tr>
+<tr>
+<td>Größtes Risiko</td>
+<td>zu weit gefasste Berechtigungen</td>
+<td>Weitergabe vertraulicher Inhalte</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Die Frage lautet nie „Welches Werkzeug ist das beste?", sondern <strong>„Welches Werkzeug darf diese Aufgabe mit diesen Daten übernehmen?"</strong>. Ein Werkzeug ohne Zugriff auf eure Ablage kann eure Vorgänge nicht kennen (Kap. 5). Ein Werkzeug mit Zugriff braucht saubere Berechtigungen.</p>
+</div>
+<p>Ein Hinweis zur Haltbarkeit dieses Kapitels: Die Produkte ändern sich schnell – Funktionsnamen, Paketzuschnitte und Verfügbarkeiten verschieben sich mehrmals pro Jahr. Die <strong>Unterscheidungslogik</strong> in diesem Kapitel bleibt stabil, die Detailfunktionen prüfst du bei Bedarf in der Oberfläche oder der Anbieterdokumentation nach.</p>
+<hr />
+<h2 id="72-microsoft-copilot-in-microsoft-365">7.2 Microsoft Copilot in Microsoft 365<a class="headerlink" href="#72-microsoft-copilot-in-microsoft-365" title="Permanent link">&para;</a></h2>
+<p>Copilot ist kein einzelnes Produkt, sondern eine Familie. Für den Arbeitsalltag sind drei Erscheinungsformen wichtig:</p>
+<ul>
+<li><strong>Copilot in den Apps</strong>: direkt in Word, Excel, Outlook, PowerPoint und Teams. Der Bezugspunkt ist das, woran du gerade arbeitest – das offene Dokument, der Mail-Verlauf, die Besprechung.</li>
+<li><strong>Copilot Chat</strong>: ein eigenes Chatfenster im Browser oder in Teams. Je nach Lizenz arbeitet es nur mit allgemeinem Wissen und Webinhalten oder zusätzlich mit euren Unternehmensdaten.</li>
+<li><strong>Eigene Agenten</strong>: mit Copilot Studio gebaute Agenten, die auf definierte Wissensquellen und Aktionen zugreifen (Kap. 32).</li>
+</ul>
+<p>Der eigentliche Unterschied zu allen anderen Werkzeugen ist der <strong>Kontextzugriff</strong>: Copilot kann in dem Umfang auf Mails, Dateien, Chats und Kalender zugreifen, in dem du selbst darauf zugreifen darfst. Es entsteht kein neues Berechtigungssystem – aber bestehende Nachlässigkeiten werden sichtbar.</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Copilot zeigt mir Dokumente, die ich nicht sehen dürfte." Fast immer stimmt das nicht: Copilot zeigt Dokumente, für die du <strong>formal berechtigt</strong> bist, die du bisher nur nie gefunden hast – etwa eine für alle freigegebene SharePoint-Bibliothek. Das ist kein KI-Problem, sondern ein Berechtigungsproblem, das die KI nur sichtbar macht. Details in Kapitel 11.</p>
+</div>
+<p>Weil Copilot Chat und Copilot mit Datenzugriff gleich aussehen, lohnt ein bewusster Blick: Wenn ein Chat auf deine Nachfrage nach einem konkreten internen Dokument nichts findet, arbeitest du vermutlich in der Variante ohne Unternehmenszugriff.</p>
+<hr />
+<h2 id="73-chatgpt-projekte-und-custom-gpts">7.3 ChatGPT: Projekte und Custom GPTs<a class="headerlink" href="#73-chatgpt-projekte-und-custom-gpts" title="Permanent link">&para;</a></h2>
+<p>ChatGPT von OpenAI ist das bekannteste öffentliche Werkzeug und in mehreren Kontovarianten verfügbar – von kostenlos über persönliche Bezahlpakete bis zu Team- und Unternehmensverträgen. Für die Arbeit sind drei Bausteine relevant:</p>
+<ul>
+<li><strong>Custom Instructions</strong>: dauerhafte Angaben zu Person, Aufgabengebiet und gewünschtem Antwortstil, die in jedem Chat mitgelten (Kap. 10).</li>
+<li><strong>Projekte</strong>: abgegrenzte Arbeitsräume mit eigenen Anweisungen und hinterlegten Dateien. Alle Chats im Projekt teilen diesen Rahmen – praktisch für eine wiederkehrende Aufgabe mit festen Unterlagen.</li>
+<li><strong>Custom GPTs</strong>: konfigurierte Varianten mit fester Instruktion und eigenem Wissen, die man teilen kann. Faktisch ein einfacher Agent nach der Anatomie aus Kapitel 6, ohne dass man etwas programmieren muss.</li>
+</ul>
+<p>Dazu kommen Funktionen wie Websuche, Dateianalyse und ein Modus, in dem Berechnungen in einer echten Rechenumgebung ausgeführt werden – letzteres entschärft die Rechenschwäche aus Kapitel 5, weil nicht mehr das Modell rechnet.</p>
+<div class="admonition tip">
+<p class="admonition-title">Der wichtigste Unterschied ist der Vertrag, nicht die Funktion</p>
+<p>Ob du ChatGPT geschäftlich nutzen darfst, hängt nicht davon ab, was das Werkzeug kann, sondern davon, ob dein Arbeitgeber einen entsprechenden Vertrag hat und die Nutzung freigegeben ist. Ein privates Konto ist auch dann ein privates Konto, wenn du damit dienstliche Texte schreibst.</p>
+</div>
+<hr />
+<h2 id="74-claude-und-gemini-als-randnotiz">7.4 Claude – und Gemini als Randnotiz<a class="headerlink" href="#74-claude-und-gemini-als-randnotiz" title="Permanent link">&para;</a></h2>
+<p><strong>Claude</strong> von Anthropic ist im Aufbau vergleichbar: Chat, dauerhafte Anweisungen, Dateianalyse und <strong>Projects</strong> als Arbeitsräume mit hinterlegten Unterlagen und projektweiter Instruktion. In der Praxis wird Claude oft für Arbeiten an längeren, zusammenhängenden Texten geschätzt – Vertragsentwürfe durchsehen, Richtlinien vergleichen, lange Protokolle strukturieren. Das ist eine Erfahrungstendenz, keine harte Eigenschaft, und sie verschiebt sich mit jeder Modellgeneration.</p>
+<p><strong>Gemini</strong> von Google folgt derselben Logik im Google-Umfeld: Chat plus Anbindung an Workspace-Dienste. Für Unternehmen, die mit Microsoft 365 arbeiten, ist es meist nur dann ein Thema, wenn es bereits Google-Dienste im Einsatz gibt.</p>
+<table>
+<thead>
+<tr>
+<th>Werkzeug</th>
+<th>Arbeitsraum-Funktion</th>
+<th>Typische Stärke im Alltag</th>
+<th>Zugriff auf eure Ablage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copilot (M365)</td>
+<td>eigene Agenten über Copilot Studio</td>
+<td>Vorgänge in Outlook, Teams, Word, Excel</td>
+<td>ja, im Rahmen der Berechtigungen</td>
+</tr>
+<tr>
+<td>ChatGPT</td>
+<td>Projekte, Custom GPTs</td>
+<td>breite Aufgabenvielfalt, gute Werkzeuganbindung</td>
+<td>nein, außer über eingerichtete Verbindungen</td>
+</tr>
+<tr>
+<td>Claude</td>
+<td>Projects</td>
+<td>lange Texte und Dokumentarbeit</td>
+<td>nein, außer über eingerichtete Verbindungen</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>Gems</td>
+<td>Google-Workspace-Umfeld</td>
+<td>im Google-Umfeld</td>
+</tr>
+</tbody>
+</table>
+<p>In diesem Kapitel steht bewusst keine Rangliste: Vergleichstests veralten innerhalb von Wochen, und die Unterschiede zwischen den führenden Werkzeugen sind bei Standardaufgaben – zusammenfassen, formulieren, strukturieren – geringer als der Unterschied zwischen einem schlechten und einem guten Prompt (Kap. 9). Investiere deine Zeit lieber dort.</p>
+<hr />
+<h2 id="75-was-mit-deinen-eingaben-passiert">7.5 Was mit deinen Eingaben passiert<a class="headerlink" href="#75-was-mit-deinen-eingaben-passiert" title="Permanent link">&para;</a></h2>
+<p>Diese Frage entscheidet in vielen Unternehmen über die Freigabe. Sie zerfällt in vier Teilfragen, die du für jedes eingesetzte Werkzeug beantworten können solltest:</p>
+<ol>
+<li><strong>Wird mit meinen Eingaben trainiert?</strong> Bei geschäftlichen Verträgen ist das üblicherweise ausgeschlossen, bei kostenlosen Privatkonten häufig nicht – teils abschaltbar.</li>
+<li><strong>Wie lange werden Eingaben gespeichert?</strong> Chatverläufe bleiben in der Regel im Konto, bis sie gelöscht werden; zusätzlich gibt es Aufbewahrung beim Anbieter.</li>
+<li><strong>Wo wird verarbeitet?</strong> Für personenbezogene Daten relevant, weil der Verarbeitungsort Teil der datenschutzrechtlichen Bewertung ist (Kap. 4).</li>
+<li><strong>Wer kann mitlesen?</strong> Im Unternehmenskontext gibt es Protokollierung und Administration; das ist gewollt, sollte aber bekannt sein.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Die Leitplanke für den Alltag</p>
+<p>Unabhängig vom Anbieter gilt: <strong>Was du nicht in eine externe E-Mail schreiben würdest, schreibst du auch nicht in ein öffentliches KI-Werkzeug.</strong> Personenbezogene Daten, Gesundheitsdaten, Bewerbungsunterlagen, Vertragsentwürfe, Preiskalkulationen und Zugangsdaten gehören nicht hinein. Wenn du das Material brauchst: anonymisieren, kürzen oder in ein freigegebenes Werkzeug wechseln (Kap. 4).</p>
+</div>
+<p>Zur <strong>Kosten- und Lizenzlogik</strong> genügt fürs Erste das Muster, ohne Zahlen: Öffentliche Werkzeuge haben meist eine kostenlose Basisstufe, ein Bezahlpaket pro Person und Monat und darüber Team- oder Unternehmensverträge mit zusätzlichen Zusicherungen. Copilot mit Zugriff auf Unternehmensdaten ist eine kostenpflichtige Zusatzlizenz zur bestehenden Microsoft-365-Lizenz. KI in Abläufen wird oft nach Verbrauch abgerechnet (Kap. 30). Merke dir vor allem: Die Nutzung eines Werkzeugs im Unternehmenskontext ist selten eine reine Funktionsfrage, sondern fast immer auch eine Lizenz- und Freigabefrage.</p>
+<hr />
+<h2 id="76-auswahlraster-nach-aufgabentyp">7.6 Auswahlraster nach Aufgabentyp<a class="headerlink" href="#76-auswahlraster-nach-aufgabentyp" title="Permanent link">&para;</a></h2>
+<p>Statt „welches Werkzeug nehme ich" fragst du besser: „Was für eine Aufgabe habe ich?" Das Raster führt dich in wenigen Schritten zur Antwort.</p>
+<table>
+<thead>
+<tr>
+<th>Aufgabentyp</th>
+<th>Beispiel</th>
+<th>Passendes Werkzeug</th>
+<th>Warum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vorgang im Postfach oder Kalender</td>
+<td>Mail-Verlauf zusammenfassen, Termin vorbereiten</td>
+<td>Copilot in der App</td>
+<td>braucht den echten Kontext</td>
+</tr>
+<tr>
+<td>Arbeit an einem internen Dokument</td>
+<td>Angebot umschreiben, Protokoll straffen</td>
+<td>Copilot in Word, alternativ öffentliches Werkzeug mit <strong>anonymisiertem</strong> Text</td>
+<td>Zugriff oder bewusste Anonymisierung</td>
+</tr>
+<tr>
+<td>Auskunft aus internen Unterlagen</td>
+<td>Frage zur Reisekostenregelung</td>
+<td>Copilot mit Datenzugriff oder eigener Agent (Kap. 32)</td>
+<td>Wissensanbindung nötig (Kap. 6)</td>
+</tr>
+<tr>
+<td>Allgemeines Formulieren und Strukturieren</td>
+<td>Gliederung, Textvarianten, Erklärung</td>
+<td>jedes verfügbare Werkzeug</td>
+<td>keine internen Daten im Spiel</td>
+</tr>
+<tr>
+<td>Wiederkehrende Aufgabe mit festen Unterlagen</td>
+<td>monatlicher Report nach gleichem Muster</td>
+<td>Projekt in ChatGPT oder Claude, Custom GPT</td>
+<td>Arbeitsraum mit fester Instruktion</td>
+</tr>
+<tr>
+<td>Lange Dokumente durcharbeiten</td>
+<td>Vertragsentwurf, Richtlinienvergleich</td>
+<td>Claude Projects oder ChatGPT-Projekt</td>
+<td>Stärke bei langen Texten</td>
+</tr>
+<tr>
+<td>Schritt in einem automatisierten Ablauf</td>
+<td>eingehende Anfrage einsortieren</td>
+<td>KI-Aktion in Power Automate (Kap. 30)</td>
+<td>läuft ohne Mensch am Chatfenster</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Selbsttest in drei Fragen</p>
+<p>Nimm eine Aufgabe von heute und beantworte der Reihe nach:</p>
+<ol>
+<li><strong>Stecken interne oder personenbezogene Daten drin?</strong> Wenn ja: nur freigegebenes Werkzeug oder anonymisieren.</li>
+<li><strong>Braucht die Antwort Zugriff auf eure Ablage?</strong> Wenn ja: Copilot mit Datenzugriff oder ein eigener Agent, sonst geht jedes Werkzeug.</li>
+<li><strong>Kommt die Aufgabe wieder?</strong> Wenn ja: als Projekt oder Vorlage einrichten (Kap. 9, Kap. 10), statt jedes Mal neu zu tippen.</li>
+</ol>
+<p>Erst danach ist die Produktwahl überhaupt eine sinnvolle Frage – und dann oft eine kleine.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Die wichtigste Unterscheidung ist nicht der Anbieter, sondern <strong>Zugriff auf Unternehmensdaten ja oder nein</strong>.</li>
+<li><strong>Copilot</strong> sitzt in den M365-Apps und arbeitet im Rahmen deiner bestehenden Berechtigungen; Copilot Chat gibt es mit und ohne Unternehmenszugriff.</li>
+<li><strong>ChatGPT</strong> bietet Custom Instructions, Projekte und Custom GPTs – Letztere sind einfache Agenten ohne Programmierung.</li>
+<li><strong>Claude</strong> setzt mit Projects auf denselben Arbeitsraum-Gedanken und wird oft für lange Dokumente genutzt; <strong>Gemini</strong> ist vor allem im Google-Umfeld relevant.</li>
+<li>Bei <strong>Daten</strong> klärst du vier Fragen: Training, Speicherdauer, Verarbeitungsort, Einsichtnahme – und hältst dich an die Leitplanke für vertrauliche Inhalte.</li>
+<li>Das <strong>Auswahlraster</strong> geht vom Aufgabentyp aus: erst Daten, dann Kontextbedarf, dann Wiederholung – die Produktfrage kommt zuletzt.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Welches Werkzeug für welche Aufgabe?</summary>
+<p>Ordne jeder Aufgabe zu, welches Werkzeug passt: <strong>Copilot mit Zugriff auf Unternehmensdaten</strong>,
+<strong>ein öffentliches Werkzeug</strong> (ChatGPT, Claude) oder <strong>ein eigener Agent mit Wissensanbindung</strong>.
+Begründe jeweils in einem Satz.</p>
+<ol>
+<li>Einen Besprechungsverlauf aus Teams zusammenfassen und Aufgaben ableiten.</li>
+<li>Eine Gliederung für einen Vortrag über Projektmanagement erstellen.</li>
+<li>Beschäftigten immer wieder dieselben Fragen zur Reisekostenrichtlinie beantworten.</li>
+<li>Einen englischen Fachartikel verständlich zusammenfassen.</li>
+<li>Prüfen, ob in eurem Angebotsordner schon ein Angebot für einen bestimmten Kunden liegt.</li>
+<li>Aus einer anonymisierten Kundenbeschwerde einen Antwortentwurf formulieren.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Stelle bei jeder Aufgabe zuerst die Frage aus dem Kapitel: Braucht die Antwort Zugriff auf eure
+Ablage – oder liefere ich alles Nötige selbst mit?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Werkzeug</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Copilot mit Datenzugriff</td>
+<td>Der Besprechungsverlauf liegt in eurem System, ohne Zugriff geht es nicht</td>
+</tr>
+<tr>
+<td>2</td>
+<td>öffentliches Werkzeug</td>
+<td>reine Allgemeinaufgabe, keine internen Daten im Spiel</td>
+</tr>
+<tr>
+<td>3</td>
+<td>eigener Agent mit Wissensanbindung</td>
+<td>wiederkehrend, feste Quelle, Antwort mit Fundstelle nötig</td>
+</tr>
+<tr>
+<td>4</td>
+<td>öffentliches Werkzeug</td>
+<td>der Text wird mitgeliefert, kein interner Bezug</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Copilot mit Datenzugriff</td>
+<td>setzt Suche in eurer Ablage und eure Berechtigungen voraus</td>
+</tr>
+<tr>
+<td>6</td>
+<td>öffentliches Werkzeug möglich</td>
+<td>durch die Anonymisierung fällt der schützenswerte Teil weg</td>
+</tr>
+</tbody>
+</table>
+<p>Fall 3 und Fall 5 sehen sich ähnlich, unterscheiden sich aber im Aufwand: Eine einmalige Suche
+erledigt Copilot, eine hundertfach wiederkehrende Auskunft rechtfertigt einen eigenen Agenten.
+Bei Fall 6 ist die Anonymisierung die Bedingung – ohne sie wandert die Aufgabe in die erste
+Spalte.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Darf das in den Prompt?</summary>
+<p>Bewerte für jeden Inhalt, ob er in ein <strong>öffentliches</strong> KI-Werkzeug eingegeben werden darf:
+<strong>ja</strong>, <strong>nur anonymisiert</strong> oder <strong>nein, nur in ein freigegebenes Werkzeug</strong>.</p>
+<ol>
+<li>Der Wortlaut einer Kundenbeschwerde inklusive Name, Kundennummer und Anschrift</li>
+<li>Ein Auszug aus einem Fachartikel, den du zusammengefasst haben möchtest</li>
+<li>Eine Preiskalkulation für ein laufendes Ausschreibungsverfahren</li>
+<li>Der Lebenslauf einer Bewerberin</li>
+<li>Eine Beschreibung eures Urlaubsantragsprozesses ohne Namen und Systembezeichnungen</li>
+<li>Ein Protokoll einer Teambesprechung mit Namen und Leistungsbeurteilungen</li>
+</ol>
+<p>Schreibe anschließend Punkt 1 so um, dass er unbedenklich wird – ohne dass die Aufgabe
+„formuliere einen Antwortentwurf" dadurch unlösbar wird.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Frage dich bei jedem Punkt: Wäre der Inhalt auch in einer E-Mail an einen externen Dienstleister
+ohne Vertrag in Ordnung? Und: Welcher Teil der Information wird für die Aufgabe wirklich
+gebraucht?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Bewertung</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>nur anonymisiert</td>
+<td>personenbezogene Daten; der Sachverhalt genügt für die Aufgabe</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ja</td>
+<td>fremder, aber öffentlicher Text ohne Personenbezug</td>
+</tr>
+<tr>
+<td>3</td>
+<td>nein</td>
+<td>Geschäftsgeheimnis mit unmittelbarem wirtschaftlichem Schaden im Ernstfall</td>
+</tr>
+<tr>
+<td>4</td>
+<td>nein</td>
+<td>besonders sensibel, Bewerberdaten gehören in ein freigegebenes Umfeld (Kap. 14)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ja</td>
+<td>Prozessbeschreibung ohne Personenbezug und ohne schützenswerte Details</td>
+</tr>
+<tr>
+<td>6</td>
+<td>nein</td>
+<td>Personenbezug plus Leistungsbewertung, doppelt heikel</td>
+</tr>
+</tbody>
+</table>
+<p>Beispielhafte Umschreibung von Punkt 1:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Ein Kunde beschwert sich schriftlich, dass eine bestellte Ware nach drei Wochen
+nicht geliefert wurde und zwei Rueckfragen unbeantwortet blieben.
+Der Ton ist deutlich veraergert, eine Kuendigung wird angedeutet.
+Formuliere einen Antwortentwurf, Platzhalter fuer Name und Bestellnummer
+in eckigen Klammern.
+</code></pre></div></td></tr></table></div>
+<p>Der entscheidende Punkt: Für die Formulierungsleistung braucht das Werkzeug den Sachverhalt und
+den Ton – nicht die Identität. Die Platzhalter setzt du beim Übertragen selbst ein.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Zwei Werkzeuge, eine Aufgabe</summary>
+<p>Diese Übung machst du direkt an den Werkzeugen. Nutze zwei verschiedene, die dir zur Verfügung
+stehen – zum Beispiel Copilot und ChatGPT, oder ChatGPT und Claude.</p>
+<ol>
+<li><strong>Gleiche Aufgabe, gleicher Prompt.</strong> Gib beiden Werkzeugen exakt denselben Auftrag. Nimm
+   eine realistische Aufgabe mit mitgeliefertem Material, etwa: einen zweiseitigen Text auf
+   fünf Stichpunkte verdichten und drei offene Fragen benennen.</li>
+<li><strong>Bewerten statt bauchgefühlen.</strong> Bewerte beide Ergebnisse anhand von vier Kriterien, die du
+   <strong>vorher</strong> festlegst – zum Beispiel: Vollständigkeit, Formattreue, Erfundenes, Nacharbeit in
+   Minuten. Halte je Kriterium eine kurze Beobachtung fest, keine Punktzahl.</li>
+<li><strong>Kontexttest.</strong> Frage beide Werkzeuge nach einer Information, die nur in eurer internen
+   Ablage steht (etwa nach einem konkreten Dokument). Notiere, was passiert: Zugriff, ehrliche
+   Absage oder erfundene Antwort?</li>
+<li><strong>Fazit.</strong> Schreibe drei Sätze: Für welchen Aufgabentyp würdest du welches Werkzeug wählen,
+   und woran hast du das festgemacht?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Lege die vier Kriterien wirklich vorher fest und schreibe sie auf. Sonst bewertest du im
+Nachhinein das Ergebnis, das dir besser gefällt, und suchst die Begründung dazu. Genau so
+entstehen die Werkzeugdebatten, die im Betrieb niemanden weiterbringen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li>Bei der <strong>Zusammenfassung</strong> liegen die Ergebnisse meist dicht beieinander. Unterschiede zeigen
+  sich eher in Länge, Gliederungsstil und Formattreue als in der inhaltlichen Qualität.</li>
+<li>Beim <strong>Kontexttest</strong> trennt sich die Lage deutlich: Ein Werkzeug mit Unternehmenszugriff findet
+  das Dokument oder sagt begründet, dass es nichts findet. Ein öffentliches Werkzeug hat zwei
+  Möglichkeiten – ehrliche Absage oder erfundene Antwort. Beides kommt vor.</li>
+<li><strong>Formattreue</strong> ist häufig der praxisrelevanteste Unterschied, weil sie direkt Nacharbeit
+  kostet.</li>
+</ul>
+<p>Ein gutes Fazit klingt nicht nach „Werkzeug A ist besser", sondern nach: „Für Aufgaben mit
+internem Bezug nutze ich A, weil nur dort der Zugriff besteht. Für längere Textarbeit nutze ich
+B, weil ich dort weniger nacharbeiten musste. Für alles Allgemeine ist es mir gleich." Genau
+diese Differenzierung ist das Lernziel – die Werkzeugwahl folgt der Aufgabe, nicht der Vorliebe.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Werkzeug-Spielregeln für ein Team</summary>
+<p><strong>Szenario:</strong> In deinem Bereich hat sich Wildwuchs eingestellt. Ein Teil des Teams arbeitet mit
+Copilot, ein anderer mit einem privaten ChatGPT-Konto, zwei Personen nutzen ein Werkzeug, das
+niemand kennt. Letzte Woche wurde ein Angebotstext samt Kalkulation in ein öffentliches Werkzeug
+kopiert. Es gab keinen Schaden, aber Aufregung. Die Bereichsleitung will keine Verbotsliste,
+sondern eine <strong>Spielregel-Seite</strong>, die im Alltag tatsächlich benutzt wird.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Team mit 12 Personen, Microsoft 365 vorhanden.
+Copilot-Lizenzen nur fuer 5 Personen, weitere sind angefragt.
+Haeufige Aufgaben: Angebote, Kundenkorrespondenz, Recherche,
+Protokolle, Auswertungen in Excel.
+Du darfst das Szenario durch deinen eigenen Bereich ersetzen.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Aufgaben und Werkzeuge kartieren.</strong> Sammle <strong>mindestens acht</strong> konkrete Aufgaben aus
+dem Bereich. Ordne jeder Aufgabe zu: Welche Daten sind im Spiel, braucht sie Zugriff auf eure
+Ablage, kommt sie wiederkehrend vor, welches Werkzeug passt? Notiere zu jeder Zeile eine
+Begründung in einem Satz. Nutze dafür das Auswahlraster aus dem Kapitel.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Die Spielregeln müssen <strong>alle vier</strong> Kriterien
+erfüllen:</p>
+<ol>
+<li>Es gibt eine Regel für <strong>vertrauliche Inhalte</strong>, die ohne juristische Begriffe auskommt und
+   an einem Beispiel zeigt, wie anonymisiert wird.</li>
+<li>Mindestens <strong>zwei</strong> Aufgaben sind ausdrücklich als „KI hier nicht einsetzen" markiert, mit
+   Begründung.</li>
+<li>Für jede Aufgabe ist benannt, <strong>wer das Ergebnis freigibt</strong>, bevor es das Haus verlässt.</li>
+<li>Die Seite kommt ohne den Satz „X ist das beste Werkzeug" aus und enthält keine Aussage über
+   ein Werkzeug, das ihr nicht nutzt.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Die zusätzlichen Copilot-Lizenzen werden abgelehnt: Es bleibt
+bei fünf. Gleichzeitig kündigt eine Kollegin an, sie werde weiter ihr privates Konto nutzen,
+weil sie „sonst nicht arbeiten kann". Überarbeite die Spielregeln: Welche Aufgaben verschieben
+sich zu den fünf Lizenzinhabern, welche lassen sich anonymisiert im öffentlichen Werkzeug
+erledigen, und was tust du, damit die private Nutzung nicht heimlich weiterläuft? Formuliere
+eine Regelung, die die Kollegin akzeptieren kann, ohne dass ihr die Datenregel aufgebt.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Bereichsleitung will „ein Werkzeug für alle,
+Schluss mit dem Durcheinander". Lass dir von einem KI-Werkzeug die Argumente für die
+Vereinheitlichung und für einen gemischten Betrieb geben. Entscheide dann selbst und
+<strong>widersprich</strong> begründet, wenn du die Einheitslösung für falsch hältst. Deine Empfehlung muss
+benennen, was die unterlegene Variante besser gekonnt hätte, und welche Aufgabe nach deiner
+Entscheidung schlechter läuft als vorher.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Aufgaben-Werkzeug-Karte mit mindestens acht Zeilen und Begründungsspalte</li>
+<li>Spielregel-Seite (eine Seite) mit Datenregel, Freigaben und Negativliste</li>
+<li>überarbeitete Fassung nach dem Lizenzengpass aus Runde 3</li>
+<li>begründete Empfehlung aus Runde 4 samt benanntem Nachteil der eigenen Entscheidung</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> jede Zeile der Karte eine Begründung hat, die Datenregel an einem
+eigenen Beispiel vorführt, wie anonymisiert wird, mindestens zwei Aufgaben bewusst ohne KI
+bleiben, die Lizenzlösung ohne heimliche Privatnutzung auskommt, und deine Empfehlung offen
+benennt, was sie kostet.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3. Regeln, die im Alltag nicht durchhaltbar sind, erzeugen genau das,
+was sie verhindern sollen: Nutzung im Verborgenen. Eine Regel, die knappe Lizenzen ignoriert,
+wird umgangen – eine, die einen gangbaren Weg anbietet, wird befolgt. In Runde 4 ist die
+Versuchung groß, der Vereinheitlichung zuzustimmen, weil sie ordentlich klingt. Prüfe erst, ob
+ein Werkzeug alle Aufgabentypen aus deiner Karte wirklich abdeckt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) mindestens acht konkrete Aufgaben mit sauberer Zuordnung nach Datenlage,
+Kontextbedarf und Wiederholung, jeweils begründet; (2) alle vier Pflichtkriterien erfüllt,
+insbesondere das vorgeführte Anonymisierungsbeispiel und die benannten Freigaben; (3) die
+Überarbeitung löst den Lizenzengpass praktisch, statt ihn zu beklagen, und bietet der Kollegin
+einen erlaubten Weg an; (4) die Empfehlung aus Runde 4 wägt ab, übernimmt die Vorgabe
+Einheitswerkzeug nicht ungeprüft und benennt ehrlich, welche Aufgabe darunter leidet.</p>
+<p>Lernziel: Werkzeugauswahl als Frage von Daten, Kontext und Aufgabe behandeln statt als
+Produktvorliebe – und Regeln so schreiben, dass sie unter realen Lizenz- und Alltagsbedingungen
+eingehalten werden können.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel6/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 6 – Vom Chatbot zum Agenten">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 6 – Vom Chatbot zum Agenten
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel8/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

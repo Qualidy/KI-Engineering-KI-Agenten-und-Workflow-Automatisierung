@@ -1,0 +1,1778 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel4/">
+      
+      
+        <link rel="next" href="../kapitel6/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 5 – Wie Sprachmodelle arbeiten - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-5-wie-sprachmodelle-arbeiten" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 5 – Wie Sprachmodelle arbeiten
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Block 2 · KI-Agenten verstehen und nutzen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 5 – Wie Sprachmodelle arbeiten
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 5 – Wie Sprachmodelle arbeiten
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51-was-ein-sprachmodell-wirklich-tut" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Was ein Sprachmodell wirklich tut
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-token-die-bausteine-mit-denen-gerechnet-wird" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Token: die Bausteine, mit denen gerechnet wird
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-das-kontextfenster-das-arbeitsgedachtnis" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Das Kontextfenster: das Arbeitsgedächtnis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-trainingsstichtag-das-modell-lebt-in-der-vergangenheit" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Trainingsstichtag: das Modell lebt in der Vergangenheit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-temperatur-warum-dieselbe-frage-verschiedene-antworten-liefert" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Temperatur: warum dieselbe Frage verschiedene Antworten liefert
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-halluzinationen-kein-defekt-sondern-die-bauart" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 Halluzinationen: kein Defekt, sondern die Bauart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 6 – Vom Chatbot zum Agenten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 9 – Prompt-Design: Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-5-wie-sprachmodelle-arbeiten">Kapitel 5 – Wie Sprachmodelle arbeiten<a class="headerlink" href="#kapitel-5-wie-sprachmodelle-arbeiten" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Was ein <strong>großes Sprachmodell</strong> tatsächlich berechnet – und warum das kein Nachschlagen in einer Datenbank ist</li>
+<li>Was <strong>Token</strong> sind und warum daraus Schwächen beim Zählen, Buchstabieren und exakten Rechnen folgen</li>
+<li>Wie das <strong>Kontextfenster</strong> funktioniert und warum lange Chats an Qualität verlieren</li>
+<li>Warum der <strong>Trainingsstichtag</strong> dafür sorgt, dass das Modell dein Unternehmen und die letzte Woche nicht kennt</li>
+<li>Was <strong>Temperatur</strong> bedeutet und warum dieselbe Frage unterschiedliche Antworten liefert</li>
+<li>Warum <strong>Halluzinationen</strong> systembedingt sind und mit welchen Gegenmitteln du sie klein hältst</li>
+</ul>
+</div>
+<hr />
+<h2 id="51-was-ein-sprachmodell-wirklich-tut">5.1 Was ein Sprachmodell wirklich tut<a class="headerlink" href="#51-was-ein-sprachmodell-wirklich-tut" title="Permanent link">&para;</a></h2>
+<p>Hinter Copilot, ChatGPT und Claude steckt ein <strong>großes Sprachmodell</strong> (Large Language Model, kurz LLM) – ein statistisches Modell, das auf riesigen Textmengen trainiert wurde. Seine einzige Grundoperation ist verblüffend schlicht:</p>
+<blockquote>
+<p>Gegeben der Text, der bisher da steht: Welches nächste Textstück ist am wahrscheinlichsten?</p>
+</blockquote>
+<p>Das Modell berechnet dafür eine Wahrscheinlichkeit für sehr viele mögliche Fortsetzungen, wählt eine davon aus, hängt sie an – und beginnt von vorn. Ein längerer Antworttext entsteht also Stück für Stück, nicht als fertiger Gedanke.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Bisheriger Text]) --&gt; B([Modell berechnet Wahrscheinlichkeiten])
+    B --&gt; C([Ein Textstueck wird ausgewaehlt])
+    C --&gt; D([Text ist um ein Stueck laenger])
+    D --&gt; B</code></pre>
+<p>Es gibt in diesem Ablauf <strong>keine Datenbank</strong>, in der Antworten stehen, und <strong>keine Prüfinstanz</strong>, die vor der Ausgabe kontrolliert, ob das Gesagte stimmt. Das Modell hat kein Modell von „wahr" und „falsch", sondern von „passt sprachlich gut zusammen".</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Sprachmodell ist kein Wissensspeicher, sondern ein <strong>Fortsetzungsrechner</strong>. Dass dabei sehr oft Richtiges herauskommt, liegt daran, dass in den Trainingstexten Richtiges häufiger vorkam als Falsches – nicht daran, dass das Modell nachgeschlagen hätte.</p>
+</div>
+<p>Damit ist auch klar, warum die Einordnung aus Kapitel 1 gilt: Diese Systeme sind <strong>schwache KI</strong>. Sie sind sprachlich stark und inhaltlich ungesichert. Alles Weitere in diesem Kapitel folgt aus dieser einen Bauweise.</p>
+<hr />
+<h2 id="52-token-die-bausteine-mit-denen-gerechnet-wird">5.2 Token: die Bausteine, mit denen gerechnet wird<a class="headerlink" href="#52-token-die-bausteine-mit-denen-gerechnet-wird" title="Permanent link">&para;</a></h2>
+<p>Das Modell arbeitet nicht mit Wörtern und schon gar nicht mit Buchstaben, sondern mit <strong>Token</strong> – kleinen Textbausteinen. Ein Token kann ein ganzes kurzes Wort sein, häufiger aber ein Wortteil, eine Endung, ein Satzzeichen oder ein Leerzeichen mit dem folgenden Wortanfang. Als grobe Faustregel entsprechen im Deutschen einige wenige Zeichen einem Token; lange zusammengesetzte Wörter werden in mehrere Stücke zerlegt.</p>
+<table>
+<thead>
+<tr>
+<th>Eingabe</th>
+<th>Zerlegung (schematisch)</th>
+<th>Was daraus folgt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Rechnung</code></td>
+<td><code>Rech</code> + <code>nung</code></td>
+<td>Das Modell „sieht" die Buchstabenfolge nicht als Kette einzelner Buchstaben</td>
+</tr>
+<tr>
+<td><code>Rechnungseingangsprüfung</code></td>
+<td>5–7 Stücke</td>
+<td>Seltene lange Wörter werden stark zerlegt und schlechter getroffen</td>
+</tr>
+<tr>
+<td><code>4837</code></td>
+<td>z. B. <code>48</code> + <code>37</code></td>
+<td>Zahlen zerfallen in Bruchstücke, Stellenwerte gehen verloren</td>
+</tr>
+<tr>
+<td><code>RG-2024-00871</code></td>
+<td>mehrere Stücke</td>
+<td>Belegnummern und Kürzel werden leicht verfälscht</td>
+</tr>
+</tbody>
+</table>
+<p>Daraus folgen drei ganz praktische Schwächen:</p>
+<ul>
+<li><strong>Zählen und Buchstabieren.</strong> Fragen wie „Wie viele r stecken in <em>Terminvereinbarung</em>?" oder „Schreibe das Wort rückwärts" treffen das Modell an seiner schwächsten Stelle, weil es die Einzelbuchstaben gar nicht als Einheiten verarbeitet.</li>
+<li><strong>Exaktes Rechnen.</strong> Bei <code>4837 mal 926</code> erzeugt das Modell die <strong>plausibelste Zifferfolge</strong>, es rechnet nicht. Die Größenordnung stimmt meist, die letzten Stellen oft nicht.</li>
+<li><strong>Genaue Zeichenketten.</strong> Kundennummern, IBANs, Artikelnummern oder Aktenzeichen werden beim Abschreiben gern still verändert.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Ein falsches Rechenergebnis sieht genauso souverän aus wie ein richtiges. Lass Zahlen deshalb nie vom Sprachmodell selbst ausrechnen, wenn es auf Genauigkeit ankommt. Nutze Excel, den Taschenrechner – oder ein Werkzeug, das das Modell an einen echten Rechner anbindet. Genau das unterscheidet einen reinen Chat von einem <strong>Agenten mit Werkzeugen</strong> (Kap. 6). Wie du mit Zahlen in Excel sinnvoll arbeitest, vertiefst du in Kapitel 13.</p>
+</div>
+<p>Token sind außerdem die <strong>Abrechnungs- und Größeneinheit</strong>: Anbieter messen Verbrauch, Grenzen und Kosten in Token. Das wird relevant, sobald du KI-Bausteine in automatisierte Abläufe einbaust (Kap. 29, Kap. 30).</p>
+<hr />
+<h2 id="53-das-kontextfenster-das-arbeitsgedachtnis">5.3 Das Kontextfenster: das Arbeitsgedächtnis<a class="headerlink" href="#53-das-kontextfenster-das-arbeitsgedachtnis" title="Permanent link">&para;</a></h2>
+<p>Das <strong>Kontextfenster</strong> ist die Menge an Text, die das Modell bei einer einzelnen Antwort gleichzeitig überblicken kann. Es ist begrenzt – und es enthält deutlich mehr als nur deine letzte Frage.</p>
+<table>
+<thead>
+<tr>
+<th>Was im Kontextfenster liegt</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Systemvorgaben des Anbieters</td>
+<td>Verhaltensregeln des Produkts, für dich unsichtbar</td>
+</tr>
+<tr>
+<td>Deine eigenen Dauer-Anweisungen</td>
+<td>Custom Instructions, Agenten-Instruktion (Kap. 10)</td>
+</tr>
+<tr>
+<td>Der bisherige Gesprächsverlauf</td>
+<td>alle Fragen und Antworten dieses Chats</td>
+</tr>
+<tr>
+<td>Beigefügte Inhalte</td>
+<td>hochgeladene Datei, markierte Textstelle, gefundene Dokumente</td>
+</tr>
+<tr>
+<td>Deine aktuelle Frage</td>
+<td>der eigentliche Prompt</td>
+</tr>
+<tr>
+<td>Die entstehende Antwort</td>
+<td>wächst während der Ausgabe mit hinein</td>
+</tr>
+</tbody>
+</table>
+<p>Ist das Fenster voll, muss etwas weichen. Die Werkzeuge kürzen oder verdichten dann ältere Teile des Gesprächs. Das erklärt Beobachtungen, die fast alle Nutzenden kennen:</p>
+<ul>
+<li>Nach vielen Nachrichten „vergisst" das Werkzeug eine Vorgabe vom Anfang.</li>
+<li>Ein sehr langer Chat wird zäh, wiederholt sich oder driftet vom Thema ab.</li>
+<li>Ein frischer Chat mit einem gut formulierten Prompt liefert plötzlich wieder saubere Ergebnisse.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Praxisregeln zum Kontextfenster</p>
+<ul>
+<li><strong>Ein Thema, ein Chat.</strong> Für eine neue Aufgabe lieber neu anfangen, statt anzuhängen.</li>
+<li><strong>Wichtiges wiederholen.</strong> Zentrale Vorgaben am Ende eines langen Chats noch einmal kurz nennen.</li>
+<li><strong>Gezielt füttern.</strong> Nicht das 80-seitige Handbuch anhängen, sondern die drei relevanten Seiten.</li>
+<li><strong>Zwischenstände sichern.</strong> Ein gutes Ergebnis kopierst du heraus, statt darauf zu vertrauen, dass es im Chat erhalten bleibt.</li>
+</ul>
+</div>
+<p>Wichtig: Das Kontextfenster ist <strong>kein Gedächtnis über Chats hinweg</strong>. Was ein Werkzeug sich dauerhaft merkt, ist eine zusätzliche Funktion – dazu mehr in Kapitel 6.</p>
+<hr />
+<h2 id="54-trainingsstichtag-das-modell-lebt-in-der-vergangenheit">5.4 Trainingsstichtag: das Modell lebt in der Vergangenheit<a class="headerlink" href="#54-trainingsstichtag-das-modell-lebt-in-der-vergangenheit" title="Permanent link">&para;</a></h2>
+<p>Ein Modell wird zu einem bestimmten Zeitpunkt trainiert. Alles, was danach passiert ist, steckt nicht in ihm. Diesen Zeitpunkt nennt man <strong>Trainingsstichtag</strong> (englisch <em>knowledge cutoff</em>).</p>
+<p>Zwei Lücken folgen daraus, und sie sind unterschiedlich:</p>
+<ul>
+<li>Die <strong>Zeitlücke</strong>: aktuelle Ereignisse, neue Gesetzesfassungen, geänderte Preise, neue Produktversionen.</li>
+<li>Die <strong>Interne Lücke</strong>: dein Unternehmen. Deine Prozesse, Kundennamen, Reisekostenrichtlinie oder Artikelstammdaten waren nie Trainingsmaterial – egal wie aktuell das Modell ist.</li>
+</ul>
+<p>Beide Lücken schließt du auf verschiedenen Wegen. Gegen die Zeitlücke hilft eine <strong>Websuche</strong>, die viele Werkzeuge automatisch anstoßen; dann hängt die Qualität aber an den gefundenen Quellen, und du musst sie prüfen. Gegen die interne Lücke hilft nur, dem Modell die Information <strong>mitzugeben</strong> – als Anhang, als eingefügter Text oder über eine angebundene Wissensquelle (Kap. 6, Kap. 11).</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>Die Frage „Bis wann reichen deine Daten?" ist keine verlässliche Auskunft. Das Modell erzeugt auch hier nur eine plausible Antwort und liegt beim eigenen Stichtag regelmäßig daneben. Verlass dich stattdessen auf die Angabe des Anbieters – und prüfe bei allem Zeitkritischen die Quelle selbst.</p>
+</div>
+<hr />
+<h2 id="55-temperatur-warum-dieselbe-frage-verschiedene-antworten-liefert">5.5 Temperatur: warum dieselbe Frage verschiedene Antworten liefert<a class="headerlink" href="#55-temperatur-warum-dieselbe-frage-verschiedene-antworten-liefert" title="Permanent link">&para;</a></h2>
+<p>Wenn das Modell das nächste Textstück auswählt, nimmt es nicht immer das wahrscheinlichste, sondern würfelt unter den wahrscheinlichen Kandidaten. Wie stark gewürfelt wird, steuert ein Parameter, der meist <strong>Temperatur</strong> heißt.</p>
+<table>
+<thead>
+<tr>
+<th>Einstellung</th>
+<th>Verhalten</th>
+<th>Passt zu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Niedrig</td>
+<td>nah am Wahrscheinlichsten, wiederholbar, nüchtern</td>
+<td>Klassifizieren, Extrahieren, feste Formate, Abläufe</td>
+</tr>
+<tr>
+<td>Mittel</td>
+<td>ausgewogen, natürliche Sprache</td>
+<td>Zusammenfassungen, Antwortentwürfe, Standardtexte</td>
+</tr>
+<tr>
+<td>Hoch</td>
+<td>variantenreich, überraschend, manchmal abwegig</td>
+<td>Ideensammlung, Formulierungsalternativen, Brainstorming</td>
+</tr>
+</tbody>
+</table>
+<p>In den Chat-Oberflächen von Copilot, ChatGPT und Claude kannst du diesen Wert normalerweise nicht direkt einstellen. Sichtbar und einstellbar wird er dort, wo du KI in eigene Bausteine einbaust – etwa in Copilot Studio (Kap. 32) oder bei KI-Aktionen in Power Automate (Kap. 30). Manche Oberflächen bieten stattdessen Voreinstellungen wie „präzise" oder „kreativ", die im Kern dasselbe tun.</p>
+<p>Was das für dich bedeutet: Zweimal dieselbe Frage kann zwei unterschiedliche Antworten liefern, ohne dass etwas kaputt ist. Für kreative Aufgaben ist das ein Vorteil – du kannst dieselbe Anfrage bewusst mehrfach stellen und die beste Variante wählen. Für Abläufe ist es ein Risiko: Verlass dich nie darauf, dass die Ausgabe morgen wortgleich aussieht. Erzwinge stattdessen ein festes Ausgabeformat (Kap. 10) und prüfe es maschinell weiter (Kap. 29).</p>
+<hr />
+<h2 id="56-halluzinationen-kein-defekt-sondern-die-bauart">5.6 Halluzinationen: kein Defekt, sondern die Bauart<a class="headerlink" href="#56-halluzinationen-kein-defekt-sondern-die-bauart" title="Permanent link">&para;</a></h2>
+<p>Als <strong>Halluzination</strong> bezeichnet man eine erfundene, aber überzeugend formulierte Aussage. Sie ist die logische Folge aus Abschnitt 5.1: Wenn ein System immer die plausibelste Fortsetzung erzeugt, dann erzeugt es auch dort eine, wo es nichts weiß. Eine Lücke im Wissen sieht für das Modell aus wie jede andere Textstelle, an der es weitergehen muss.</p>
+<table>
+<thead>
+<tr>
+<th>Erscheinungsform</th>
+<th>Typisches Beispiel</th>
+<th>Gegenmittel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Erfundene Quelle</td>
+<td>Studie, Autor oder Jahreszahl, die es nicht gibt</td>
+<td>Quellen selbst öffnen und prüfen; wörtliche Zitate anfordern</td>
+</tr>
+<tr>
+<td>Erfundene Regelung</td>
+<td>„Nach Paragraph 12 Absatz 3 gilt …"</td>
+<td>Rechtliches immer im Originaltext gegenprüfen (Kap. 4)</td>
+</tr>
+<tr>
+<td>Erfundene Interna</td>
+<td>vermeintliche Firmenrichtlinie, die nie existierte</td>
+<td>Interne Unterlagen mitgeben statt Wissen zu erwarten</td>
+</tr>
+<tr>
+<td>Erfundene Details</td>
+<td>Funktionen einer Software, die es nicht gibt</td>
+<td>An der Oberfläche des Produkts nachsehen</td>
+</tr>
+<tr>
+<td>Stille Auslassung</td>
+<td>ein Punkt der Vorlage fehlt kommentarlos</td>
+<td>Checkliste gegenlesen, Vollständigkeit einfordern</td>
+</tr>
+</tbody>
+</table>
+<p>Die Gefahr liegt nicht in der Falschaussage selbst, sondern in ihrer <strong>Form</strong>: Sie klingt genau wie eine richtige Antwort. Der Tonfall des Modells trägt keine Information über Sicherheit.</p>
+<div class="admonition example">
+<p class="admonition-title">Halluzinationen klein halten – vier Handgriffe</p>
+<ol>
+<li><strong>Material mitliefern.</strong> „Beantworte ausschließlich auf Basis des folgenden Textes." Alles, was du mitgibst, muss das Modell nicht erfinden.</li>
+<li><strong>Unsicherheit erlauben.</strong> „Wenn die Information im Text nicht enthalten ist, schreibe: nicht enthalten." Ohne diese Erlaubnis füllt das Modell die Lücke.</li>
+<li><strong>Belege verlangen.</strong> „Zitiere zu jeder Aussage die Textstelle wörtlich." Erfundene Zitate fallen beim Nachschlagen sofort auf.</li>
+<li><strong>Aufteilen.</strong> Erst Fakten sammeln lassen, dann prüfen, dann formulieren lassen. Ein großer Auftrag verdeckt Fehler, drei kleine legen sie offen.</li>
+</ol>
+</div>
+<p>Vollständig verschwinden Halluzinationen dadurch nicht. Deshalb gilt die Grundregel dieses Kurses: KI liefert <strong>Entwürfe</strong>, die Freigabe bleibt beim Menschen (Kap. 3, Kap. 8).</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ein Sprachmodell berechnet Schritt für Schritt die <strong>wahrscheinlichste Fortsetzung</strong> eines Textes – es schlägt nichts nach und prüft nichts.</li>
+<li>Es arbeitet mit <strong>Token</strong>, nicht mit Buchstaben oder Zahlen; daraus folgen Schwächen beim Zählen, Buchstabieren, exakten Rechnen und beim Übernehmen von Nummern.</li>
+<li>Das <strong>Kontextfenster</strong> ist ein begrenztes Arbeitsgedächtnis für einen Chat: Lange Gespräche verlieren Vorgaben, gezielt gefütterte kurze Gespräche sind besser.</li>
+<li>Der <strong>Trainingsstichtag</strong> erzeugt zwei Lücken – Aktualität und internes Wissen. Die erste schließt eine Websuche, die zweite nur dein eigener Input.</li>
+<li>Die <strong>Temperatur</strong> erklärt schwankende Antworten: gut für Ideen, riskant für Abläufe, dort mit festen Formaten arbeiten.</li>
+<li><strong>Halluzinationen</strong> sind systembedingt. Material mitgeben, Unsicherheit erlauben, Belege verlangen und aufteilen senken das Risiko – Verantwortung bleibt beim Menschen.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Symptom und Ursache zuordnen</summary>
+<p>Sechs Beobachtungen aus dem Alltag mit KI-Werkzeugen. Ordne jeder Beobachtung die
+<strong>technische Ursache</strong> zu: Token, Kontextfenster, Trainingsstichtag, Temperatur oder
+die Grundfunktion „wahrscheinlichste Fortsetzung".</p>
+<ol>
+<li>Das Werkzeug behauptet, eine Förderrichtlinie enthalte einen Paragrafen, den es nicht gibt.</li>
+<li>Nach 40 Nachrichten hält sich das Werkzeug nicht mehr an die Formatvorgabe vom Anfang.</li>
+<li>Auf dieselbe Frage kommen an zwei Tagen zwei unterschiedlich formulierte Antworten.</li>
+<li>Eine Multiplikation mit vierstelligen Zahlen ist um einige Hundert daneben.</li>
+<li>Das Werkzeug kennt eine Softwareversion nicht, die seit einem halben Jahr im Einsatz ist.</li>
+<li>Die Frage „Wie viele n stecken in Kundenkommunikation?" wird falsch beantwortet.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zwei der sechs Fälle haben dieselbe Ursache. Frage dich bei jedem Punkt: Liegt es daran,
+<strong>womit</strong> das Modell rechnet, <strong>wie viel</strong> es überblickt, <strong>wann</strong> es gelernt hat oder
+<strong>wie</strong> es auswählt?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Ursache</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>wahrscheinlichste Fortsetzung</td>
+<td>Das Modell füllt eine Wissenslücke mit einer plausiblen Formulierung – eine klassische Halluzination</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Kontextfenster</td>
+<td>Ältere Teile des Gesprächs werden gekürzt oder verdichtet, die Vorgabe fällt heraus</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Temperatur</td>
+<td>Die Auswahl unter wahrscheinlichen Fortsetzungen enthält eine Zufallskomponente</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Token</td>
+<td>Zahlen zerfallen in Bruchstücke, das Modell erzeugt eine plausible Zifferfolge statt zu rechnen</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Trainingsstichtag</td>
+<td>Nach dem Stichtag Entstandenes steckt nicht im Modell</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Token</td>
+<td>Einzelbuchstaben sind keine Verarbeitungseinheit, Zählen ist deshalb unzuverlässig</td>
+</tr>
+</tbody>
+</table>
+<p>Die wichtigste Einsicht: Keiner dieser Fälle ist ein Defekt, der sich melden ließe. Alle sechs
+folgen aus der Bauweise – deshalb hilft nur eine passende Arbeitsweise, kein Warten auf ein Update.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Varianz messen und einfangen</summary>
+<p>Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li>Stelle in <strong>drei getrennten, neuen Chats</strong> exakt dieselbe Anfrage:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Nenne drei Gruende, warum ein Team eine Urlaubsplanung digitalisieren sollte.
+</code></pre></div></td></tr></table></div>
+<p>Notiere, worin sich die drei Antworten unterscheiden: Anzahl, Reihenfolge, Wortwahl, Länge,
+   inhaltliche Schwerpunkte.</p>
+<ol>
+<li>Wiederhole dasselbe dreimal mit einer engeren Fassung:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Nenne genau drei Gruende, warum ein Team eine Urlaubsplanung digitalisieren sollte.
+Format: eine nummerierte Liste, pro Punkt maximal 12 Woerter, keine Einleitung,
+kein Schlusssatz.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Beantworte schriftlich: Was hat sich durch die zweite Fassung verändert – und was
+   <strong>nicht</strong>?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte darauf, wirklich neue Chats zu öffnen. Hängst du die Frage im selben Chat an, sieht das
+Werkzeug die vorherige Antwort im Kontextfenster und variiert schon deshalb anders.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typisches Ergebnis:</p>
+<ul>
+<li><strong>Fassung 1:</strong> Der Inhalt ist meist ähnlich, die Form schwankt stark – mal drei Stichpunkte,
+  mal drei Absätze mit Einleitung. Die Reihenfolge der Argumente wechselt.</li>
+<li><strong>Fassung 2:</strong> Anzahl, Länge und Struktur sind über alle drei Durchläufe stabil. Die
+  <strong>Formulierung</strong> bleibt trotzdem unterschiedlich.</li>
+</ul>
+<p>Genau das ist die Lehre: Ein Format lässt sich erzwingen, exakte Wortgleichheit nicht. Für die
+spätere Arbeit mit KI in Abläufen heißt das, dass du dich auf <strong>Struktur</strong> verlassen darfst und
+auf <strong>Wortlaut</strong> nie. Wer eine Auswertung baut, die auf einer bestimmten Formulierung beruht,
+baut auf Sand.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Eine Halluzination erzeugen und wieder einfangen</summary>
+<p>Diese Übung machst du direkt im KI-Werkzeug. Ziel ist nicht, das Werkzeug vorzuführen, sondern
+die Wirkung der Gegenmittel aus Abschnitt 5.6 selbst zu messen.</p>
+<ol>
+<li><strong>Lücke öffnen.</strong> Frage nach etwas sehr Speziellem, das es plausibel gäbe, das du aber
+   nachprüfen kannst – etwa eine interne Regelung deines Arbeitgebers, ein Nischenprodukt oder
+   eine kleine Verordnung. Notiere die Antwort wörtlich.</li>
+<li><strong>Unsicherheit erlauben.</strong> Stelle dieselbe Frage in einem neuen Chat mit dem Zusatz:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Wenn du das nicht sicher weisst, antworte ausschliesslich mit: nicht bekannt.
+Rate nicht und nenne keine Beispiele.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li><strong>Material mitgeben.</strong> Stelle die Frage ein drittes Mal, diesmal mit dem echten Text
+   (Auszug aus der Regelung, dem Datenblatt, der Verordnung) und dem Zusatz:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Beantworte ausschliesslich auf Basis des folgenden Textes und zitiere die
+Stelle woertlich, auf die du dich stuetzt.
+</code></pre></div></td></tr></table></div>
+<p>Halte in einer kleinen Tabelle fest: Was war in den drei Durchläufen richtig, was falsch, was
+fehlte? Formuliere daraus zwei Regeln für deine eigene Arbeit.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Wähle etwas, das du <strong>wirklich</strong> überprüfen kannst. Bei einem Thema, das du selbst nur ungefähr
+kennst, hältst du die flüssigere Antwort leicht für die bessere – genau das ist der Kern des
+Problems.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li><strong>Durchlauf 1</strong> liefert oft eine vollständige, gut formulierte und in Teilen erfundene
+  Antwort. Auffällig ist die Sicherheit im Ton: Es gibt keinen sprachlichen Unterschied zwischen
+  Gewusstem und Erfundenem.</li>
+<li><strong>Durchlauf 2</strong> liefert häufiger „nicht bekannt" oder eine deutlich vorsichtigere Antwort.
+  Die Erlaubnis, nichts zu wissen, wirkt – nicht immer, aber messbar.</li>
+<li><strong>Durchlauf 3</strong> ist meist korrekt, weil das Modell nur noch zusammenfassen muss. Fehler
+  verschieben sich hier von „erfunden" zu „unvollständig" oder „falscher Bezug", und das
+  wörtliche Zitat macht sie sofort prüfbar.</li>
+</ul>
+<p>Beispielhafte Regeln: (1) Bei jeder Frage zu internen oder speziellen Themen liefere ich den
+Text mit, statt Wissen zu erwarten. (2) In jeden Prompt zu Sachfragen schreibe ich, was das
+Werkzeug tun soll, wenn ihm eine Angabe fehlt.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Belastbarkeitsprüfung eines KI-Werkzeugs</summary>
+<p><strong>Szenario:</strong> In deinem Bereich nutzen inzwischen alle irgendein KI-Werkzeug, aber niemand weiß
+genau, worauf man sich verlassen kann. Zwei Vorfälle haben Unruhe erzeugt: In einem Angebot
+stand eine falsch summierte Position, in einer Kundenantwort ein Verweis auf eine Regelung, die
+es nicht gibt. Die Bereichsleitung möchte eine <strong>Handreichung auf zwei Seiten</strong>, die für euer
+Werkzeug belegt, was zuverlässig funktioniert und was nicht. Belegt heißt: mit eigenen Tests,
+nicht mit Behauptungen aus dem Internet.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Ein Werkzeug eurer Wahl (Copilot, ChatGPT oder Claude).
+Zielgruppe der Handreichung: Kolleginnen und Kollegen ohne IT-Hintergrund.
+Umfang: maximal zwei Seiten, jede Aussage mit einem Testbeispiel belegt.
+Keine Aussagen ueber Werkzeuge, die ihr nicht getestet habt.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Testreihe bauen und durchführen.</strong> Erstelle zu <strong>fünf Bereichen</strong> je zwei konkrete
+Testaufgaben und führe alle zehn durch. Die fünf Bereiche: exaktes Rechnen, Zählen und
+Vollständigkeit, Aktualität, internes Wissen, Verhalten in langen Gesprächen. Dokumentiere zu
+jedem Test: Eingabe, Ausgabe, was du erwartet hast, ob das Ergebnis richtig war und woran du
+das erkannt hast.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Testreihe muss <strong>alle vier</strong> Kriterien
+erfüllen:</p>
+<ol>
+<li>Mindestens <strong>drei</strong> Tests haben ein Ergebnis, das du <strong>objektiv</strong> prüfen kannst – Rechnung,
+   Anzahl, Datum, Wortlaut einer Quelle.</li>
+<li>Mindestens <strong>ein</strong> Test zeigt einen Fall, in dem das Werkzeug <strong>richtig</strong> und <strong>schnell</strong>
+   ist. Eine Handreichung, die nur Schwächen auflistet, wird zu Recht ignoriert.</li>
+<li>Zu jeder festgestellten Schwäche steht eine <strong>konkrete Arbeitsanweisung</strong>, was man stattdessen
+   tut – nicht „vorsichtig sein", sondern „Summen in Excel prüfen".</li>
+<li>Kein Testergebnis beruht auf einem einzigen Durchlauf; jeder Test wurde mindestens zweimal
+   in getrennten Chats ausgeführt.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Eine Kollegin zeigt dir, dass ihr Werkzeug dieselbe
+Rechenaufgabe fehlerfrei löst, weil es intern ein Rechenwerkzeug aufruft. Deine pauschale
+Aussage „KI kann nicht rechnen" ist damit falsch. Überarbeite die betroffenen Stellen der
+Handreichung so, dass sie zwischen <strong>reiner Textvorhersage</strong> und <strong>Werkzeugnutzung</strong>
+unterscheidet. Prüfe außerdem nach, ob dieselbe Unterscheidung auch bei Aktualität greift
+(Websuche aktiv oder nicht) und korrigiere entsprechend.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Bereichsleitung will die Handreichung auf einen
+einzigen Satz eindampfen: „Jedes KI-Ergebnis ist vor Verwendung vollständig zu prüfen." Lass dir
+von deinem Werkzeug Argumente dafür und dagegen geben. Entscheide dann selbst und
+<strong>widersprich</strong> begründet, wenn du die Regel für falsch hältst: Formuliere eine abgestufte
+Regel, die benennt, welche Ergebnisse eine vollständige Prüfung brauchen, welche eine
+Stichprobe und welche gar keine – jeweils mit Begründung aus deinen Testergebnissen.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Testprotokoll mit zehn Tests (Eingabe, Ausgabe, Erwartung, Bewertung, Prüfweg)</li>
+<li>Handreichung auf maximal zwei Seiten mit Stärken, Schwächen und Arbeitsanweisungen</li>
+<li>überarbeitete Fassung der Stellen aus Runde 3, mit sichtbarer Unterscheidung</li>
+<li>abgestufte Prüfregel aus Runde 4 samt Begründung, warum die Ein-Satz-Regel nicht genügt</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> jeder Test zweimal ausgeführt und mit angegebenem Prüfweg belegt
+ist, die Handreichung mindestens eine belegte Stärke und zu jeder Schwäche eine konkrete
+Arbeitsanweisung enthält, keine Aussage mehr pauschal „KI kann nicht …" lautet, und deine
+abgestufte Prüfregel für jede Stufe ein Beispiel aus deinen eigenen Tests nennt.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Pauschale Aussagen über KI sind bequem und halten der
+ersten Nachfrage nicht stand – das gilt für „KI kann alles" genauso wie für „KI kann nicht
+rechnen". Und eine Regel, die alles unter Generalverdacht stellt, wird im Alltag nicht befolgt,
+weil sie den Nutzen auffrisst. Nützlich wird eine Regel erst, wenn sie unterscheidet.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) zehn nachvollziehbar dokumentierte Tests über alle fünf Bereiche, mit
+angegebenem Prüfweg statt Bauchgefühl; (2) alle vier Pflichtkriterien erfüllt, insbesondere die
+Mehrfachausführung und die konkreten Arbeitsanweisungen; (3) die Überarbeitung trennt sauber
+zwischen dem, was das Sprachmodell selbst tut, und dem, was ein angebundenes Werkzeug übernimmt,
+und überträgt diese Unterscheidung auf die Aktualitätsfrage; (4) die abgestufte Prüfregel
+benennt mindestens drei Stufen mit klaren Beispielen und begründet den Widerspruch zur
+Ein-Satz-Vorgabe aus den eigenen Testergebnissen.</p>
+<p>Lernziel: Die Eigenschaften eines Sprachmodells nicht nur kennen, sondern am eigenen Werkzeug
+belegen – und daraus eine Arbeitsregel machen, die differenziert genug ist, um befolgt zu werden.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 4 – Rechtliche Grundlagen und Datenschutz">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 4 – Rechtliche Grundlagen und Datenschutz
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel6/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 6 – Vom Chatbot zum Agenten">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 6 – Vom Chatbot zum Agenten
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

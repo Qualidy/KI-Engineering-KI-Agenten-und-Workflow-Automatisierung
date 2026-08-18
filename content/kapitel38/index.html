@@ -1,0 +1,1825 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel37/">
+      
+      
+        <link rel="next" href="../kapitel39/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-38-betrieb-und-ubergabe-governance-im-kleinen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Block 7 · Projektarbeit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 37 – Umsetzung: bauen, iterieren, testen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#381-ein-flow-ohne-zustandigkeit-ist-ein-risiko" class="md-nav__link">
+    <span class="md-ellipsis">
+      38.1 Ein Flow ohne Zuständigkeit ist ein Risiko
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#382-verantwortung-konto-und-vertretung" class="md-nav__link">
+    <span class="md-ellipsis">
+      38.2 Verantwortung, Konto und Vertretung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#383-monitoring-und-fehlerbenachrichtigung" class="md-nav__link">
+    <span class="md-ellipsis">
+      38.3 Monitoring und Fehlerbenachrichtigung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#384-anderungen-und-der-datenschutz-check-vor-dem-live-gang" class="md-nav__link">
+    <span class="md-ellipsis">
+      38.4 Änderungen und der Datenschutz-Check vor dem Live-Gang
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#385-rollout-einweisung-und-ruckfallweg" class="md-nav__link">
+    <span class="md-ellipsis">
+      38.5 Rollout, Einweisung und Rückfallweg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#386-betriebsblatt-abschaltplan-und-die-grenze-zur-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      38.6 Betriebsblatt, Abschaltplan und die Grenze zur IT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 39 – Dokumentation der Projektarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 40 – Präsentation und Ausblick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-38-betrieb-und-ubergabe-governance-im-kleinen">Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen<a class="headerlink" href="#kapitel-38-betrieb-und-ubergabe-governance-im-kleinen" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Warum ein Flow ohne zuständige Person ein <strong>Risiko</strong> ist und kein Nutzen</li>
+<li>Wie du <strong>Verantwortung, Vertretung und Konto</strong> festlegst – und was bei Personalwechsel passiert</li>
+<li>Wie <strong>Monitoring</strong> und automatische <strong>Fehlerbenachrichtigung</strong> aussehen, damit Ausfälle auffallen</li>
+<li>Wie du mit <strong>Änderungen</strong> an angebundenen Systemen umgehst und den <strong>Datenschutz-Check</strong> vor dem Live-Gang führst</li>
+<li>Wie <strong>Rollout, Einweisung</strong> und ein <strong>Rückfallweg</strong> für den Ausfall aussehen</li>
+<li>Wann du die <strong>IT einbinden</strong> musst und wie du <strong>Schatten-IT</strong> vermeidest – inklusive Abschaltplan</li>
+</ul>
+</div>
+<hr />
+<h2 id="381-ein-flow-ohne-zustandigkeit-ist-ein-risiko">38.1 Ein Flow ohne Zuständigkeit ist ein Risiko<a class="headerlink" href="#381-ein-flow-ohne-zustandigkeit-ist-ein-risiko" title="Permanent link">&para;</a></h2>
+<p>Ein funktionierender Flow verschwindet aus der Aufmerksamkeit. Genau das ist gewollt – und genau das macht ihn gefährlich. Nach einigen Monaten arbeiten Kollegen darauf, ohne zu wissen, dass er existiert. Bleibt er dann stehen, merkt es zuerst niemand, dann alle gleichzeitig.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Flow laeuft]) --&gt; B([Aufmerksamkeit sinkt])
+    B --&gt; C([Aenderung im Umfeld])
+    C --&gt; D([Flow faellt still aus])
+    D --&gt; E([Faelle bleiben liegen])</code></pre>
+<p>Die schlimmste Variante ist der <strong>stille Ausfall</strong>: Der Flow läuft weiter, verarbeitet aber falsch – weil ein Feld umbenannt wurde und nun leer ankommt. Es gibt keine Fehlermeldung, nur zunehmend nutzlose Einträge.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Flow, für den niemand zuständig ist, ist ein Risiko, kein Nutzen. Übergabe heißt nicht „ich habe es erzählt", sondern: Es gibt eine Person, ein Betriebsblatt und einen Weg, den Ausfall zu bemerken.</p>
+</div>
+<hr />
+<h2 id="382-verantwortung-konto-und-vertretung">38.2 Verantwortung, Konto und Vertretung<a class="headerlink" href="#382-verantwortung-konto-und-vertretung" title="Permanent link">&para;</a></h2>
+<p>Governance im Kleinen bedeutet: vier Rollen benennen, auch wenn drei davon dieselbe Person sind. Aufgeschrieben ist entscheidend, nicht die Organisationsgröße.</p>
+<table>
+<thead>
+<tr>
+<th>Rolle</th>
+<th>Aufgabe</th>
+<th>Wichtig</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Verantwortliche Person</strong></td>
+<td>fachliche Zuständigkeit, entscheidet über Änderungen</td>
+<td>genau eine Person, kein Team</td>
+</tr>
+<tr>
+<td><strong>Vertretung</strong></td>
+<td>übernimmt bei Abwesenheit, kennt das Betriebsblatt</td>
+<td>muss die Zugänge tatsächlich haben</td>
+</tr>
+<tr>
+<td><strong>Technischer Kontakt</strong></td>
+<td>prüft Verbindungen, ändert den Flow</td>
+<td>oft dieselbe Person, bei IT-Nähe die IT</td>
+</tr>
+<tr>
+<td><strong>Nutzende</strong></td>
+<td>arbeiten mit dem Ergebnis, melden Auffälligkeiten</td>
+<td>brauchen einen Meldeweg, der ankommt</td>
+</tr>
+</tbody>
+</table>
+<p>Die unangenehmste Frage ist die nach dem <strong>Konto</strong>. Ein Flow läuft mit den Verbindungen der Person, die ihn erstellt hat. Verlässt diese Person das Unternehmen oder wechselt die Abteilung, wird das Konto deaktiviert – und der Flow bricht ab, oft ohne dass jemand den Zusammenhang erkennt.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Folge</th>
+<th>Vorsorge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flow läuft unter deinem persönlichen Konto</td>
+<td>bricht bei Deaktivierung oder Passwortwechsel ab</td>
+<td>im Betriebsblatt vermerken, Miteigentümer ergänzen</td>
+</tr>
+<tr>
+<td>Verbindung zu einem Postfach über dein Konto</td>
+<td>Nachfolger sieht die Verbindung nicht</td>
+<td>Freigabe über eine Gruppe oder ein Funktionspostfach</td>
+</tr>
+<tr>
+<td>Flow liegt in deinem persönlichen Bereich</td>
+<td>niemand kann ihn nach dem Ausscheiden öffnen</td>
+<td>Flow teilen oder in eine geteilte Lösung legen</td>
+</tr>
+<tr>
+<td>Niemand kennt die verwendeten Prompts</td>
+<td>Verhalten lässt sich nicht nachvollziehen</td>
+<td>Prompts in die Dokumentation aufnehmen (Kap. 39)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>„Ich bin ja da" ist keine Betriebsregelung, sondern eine Zeitbombe mit unbekannter Laufzeit. Wenn dein Flow für andere arbeitet, muss er auch ohne dich weiterlaufen oder wenigstens ohne dich abschaltbar sein.</p>
+</div>
+<hr />
+<h2 id="383-monitoring-und-fehlerbenachrichtigung">38.3 Monitoring und Fehlerbenachrichtigung<a class="headerlink" href="#383-monitoring-und-fehlerbenachrichtigung" title="Permanent link">&para;</a></h2>
+<p>Monitoring in dieser Größenordnung heißt nicht Überwachungssystem, sondern drei Dinge: Der Flow meldet sich, wenn ein Schritt scheitert. Jemand schaut in festen Abständen in den Ausführungsverlauf. Und es gibt einen Wert, an dem man einen stillen Ausfall erkennt.</p>
+<p>Die technischen Bausteine kennst du aus Kapitel 28: einen <code>Bereich</code> um die kritischen Schritte, dahinter eine Aktion mit der Einstellung <code>Nach Fehler ausführen</code>, die eine Nachricht an die verantwortliche Person schickt. Wichtig ist der <strong>Inhalt</strong> der Nachricht.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Betreff: Flow [Flowname] fehlgeschlagen
+Inhalt:
+  Zeitpunkt:        [Zeit des Fehlers]
+  Betroffener Fall: [Kennzeichen, z. B. Rechnungsnummer oder Vorgangs-ID]
+  Fehlgeschlagener Schritt: [Name der Aktion]
+  Fehlermeldung:    [Meldung]
+  Was zu tun ist:   Fall [Kennzeichen] von Hand bearbeiten und im
+                    Betriebsblatt eintragen.
+  Link zum Ausfuehrungsverlauf: [Verweis]
+</code></pre></div></td></tr></table></div>
+<p>Eine Fehlermail ohne Fallkennzeichen ist fast nutzlos: Man weiß, dass etwas schiefging, aber nicht, welcher Vorgang nachgearbeitet werden muss.</p>
+<div class="admonition tip">
+<p class="admonition-title">Gegen den stillen Ausfall</p>
+<p>Vereinbare eine einfache Plausibilitätsprüfung, die dir ein Ausbleiben zeigt: „Wenn zwischen 8 und 18 Uhr kein einziger neuer Eintrag entsteht, stimmt etwas nicht." Ein geplanter Flow, der einmal täglich zählt und bei Null eine Nachricht sendet, kostet zehn Minuten und ist der wirksamste einzelne Betriebsbaustein.</p>
+</div>
+<hr />
+<h2 id="384-anderungen-und-der-datenschutz-check-vor-dem-live-gang">38.4 Änderungen und der Datenschutz-Check vor dem Live-Gang<a class="headerlink" href="#384-anderungen-und-der-datenschutz-check-vor-dem-live-gang" title="Permanent link">&para;</a></h2>
+<p>Dein Flow hängt an Systemen, die andere ändern: Spaltennamen in einer Liste, ein umgebautes Formular, eine neue Ordnerstruktur, ein Postfach, das zur geteilten Ressource wird. Jede dieser Änderungen kann deinen Flow lautlos beschädigen. Vorsorge ist unspektakulär: Notiere im Betriebsblatt, <strong>an welchen fremden Objekten</strong> dein Flow hängt, und informiere die dafür zuständigen Personen, dass dort eine Automatisierung mitliest. Wer nicht weiß, dass etwas an seiner Liste hängt, nimmt Rücksicht nicht.</p>
+<p>Vor dem Live-Gang gehst du eine Checkliste durch. Sie ersetzt keine Rechtsprüfung, verhindert aber die typischen Fehler (Grundlagen in Kap. 4, Vorprüfung in Kap. 36).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>DATENSCHUTZ-CHECK VOR DEM LIVE-GANG
+
+[ ] Verarbeitete Datenarten sind aufgelistet, personenbezogene Felder markiert
+[ ] Jedes Feld hat einen Zweck, ueberfluessige Felder sind entfernt
+[ ] Die KI-Stelle bekommt nur die Felder, die sie fuer ihre Aufgabe braucht
+[ ] Es werden keine Daten an Werkzeuge ausserhalb der freigegebenen
+    Umgebung gegeben
+[ ] Die Zielablage hat die richtigen Berechtigungen, nicht mehr Personen als
+    vorher sehen die Daten
+[ ] Aufbewahrung und Loeschung sind festgelegt, auch fuer Testdaten und
+    Protokolle
+[ ] Alle Testdaten sind aus produktiven Ablagen entfernt
+[ ] Betroffene wissen, dass der Vorgang automatisiert unterstuetzt wird
+[ ] Es findet keine automatische Entscheidung ueber Personen statt
+[ ] Bei Unsicherheit: Datenschutzbeauftragte Person gefragt , Datum: [Datum]
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Das sind ja nur interne Daten" ist die häufigste Fehleinschätzung. Namen von Kolleginnen, Krankmeldungen, Leistungsdaten und Beurteilungen sind personenbezogene Daten – auch wenn sie das Unternehmen nie verlassen. Der Unterschied liegt nicht innen oder außen, sondern in Zweck, Rechtsgrundlage und Zugriff.</p>
+</div>
+<hr />
+<h2 id="385-rollout-einweisung-und-ruckfallweg">38.5 Rollout, Einweisung und Rückfallweg<a class="headerlink" href="#385-rollout-einweisung-und-ruckfallweg" title="Permanent link">&para;</a></h2>
+<p>Der Live-Gang ist ein eigener Schritt, kein Nebeneffekt des letzten Tests. Vier Handgriffe gehören dazu: Empfänger von deiner Testadresse auf die echten Personen umstellen, Testablagen von produktiven trennen, Testdaten entfernen, und den Flow in den ersten Tagen bewusst beobachten.</p>
+<p>Die <strong>Einweisung</strong> der Nutzenden braucht keine Schulungsunterlage, sondern eine halbe Seite mit vier Punkten: Was passiert jetzt automatisch, was musst du weiterhin selbst tun, woran erkennst du ein Problem, und an wen wendest du dich. Formuliere aus Sicht der Nutzenden, nicht aus Sicht des Flows.</p>
+<p>Der <strong>Rückfallweg</strong> ist der Teil, den fast alle vergessen. Es muss beschrieben sein, wie der Prozess ohne den Flow weiterläuft – als manueller Notbetrieb.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>RUECKFALLWEG BEI AUSFALL
+
+Erkennungsmerkmal:  [woran man merkt, dass der Flow nicht laeuft]
+Sofortmassnahme:    [was sofort zu tun ist, z. B. Postfach von Hand pruefen]
+Manueller Ablauf:   1. [Schritt]  2. [Schritt]  3. [Schritt]
+Nacharbeit danach:  [welche Faelle nachgezogen werden muessen und wie]
+Zustaendig:         [Person] , Vertretung: [Person]
+Wie lange tragbar:  [Zeitraum, ab wann eskaliert wird und an wen]
+</code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Warum der Rückfallweg praktisch wichtig ist</p>
+<p>Ein Flow sortiert Anfragen aus einem Formular vor. Nach einem Umbau des Formulars fällt er aus. Ohne Rückfallweg passiert Folgendes: Die Anfragen kommen weiter an, niemand schaut in das Formular selbst, weil das seit Monaten der Flow tat, und nach vier Tagen sind zwanzig Anfragen unbeantwortet. Mit Rückfallweg steht auf einer halben Seite: „Formularantworten in Forms direkt öffnen, Kategorie von Hand in die Liste eintragen, tragbar für maximal fünf Arbeitstage, danach Meldung an die Bereichsleitung." Der Ausfall bleibt lästig, aber er wird kein Schaden.</p>
+</div>
+<hr />
+<h2 id="386-betriebsblatt-abschaltplan-und-die-grenze-zur-it">38.6 Betriebsblatt, Abschaltplan und die Grenze zur IT<a class="headerlink" href="#386-betriebsblatt-abschaltplan-und-die-grenze-zur-it" title="Permanent link">&para;</a></h2>
+<p>Alles Betriebsrelevante gehört auf ein Blatt, das dort liegt, wo man es sucht – neben dem Flow, in der Dokumentation, im Teamkanal.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>BETRIEBSBLATT
+
+Flow-Name:            [Name]           Stand: [Datum]
+Zweck in einem Satz:  [Zweck]
+Verantwortlich:       [Name]   Vertretung: [Name]
+Technischer Kontakt:  [Name]
+Laeuft unter Konto:   [Konto oder Verbindung]  Miteigentuemer: [Name]
+Ausfuehrung:          [Trigger und typische Haeufigkeit]
+
+Abhaengigkeiten:      [Liste fremder Objekte: Listen, Postfaecher, Formulare]
+                      Zustaendige Personen dort informiert: [ja / nein]
+Fehlerbenachrichtigung: geht an [Person] , Pruefrhythmus Verlauf: [z. B. montags]
+Bekannte Grenzen:     [was der Flow nicht kann, Verweis auf Nicht-Ziele]
+Rueckfallweg:         [Verweis auf das Rueckfallblatt]
+Aenderungshistorie:   [Datum] [Aenderung] [von wem]
+Abschaltung:          Wer darf abschalten: [Name] , wie: [Weg]
+                      Was danach zu tun ist: [Aufraeumschritte]
+</code></pre></div></td></tr></table></div>
+<p>Ein <strong>Abschaltplan</strong> klingt pessimistisch und ist Zeichen von Reife. Er beantwortet: Wer darf abschalten, wie schaltet man ab (Flow deaktivieren, nicht löschen), was passiert mit laufenden Fällen, welche Ablagen und Verbindungen werden aufgeräumt, und wer wird informiert. Ein deaktivierter, dokumentierter Flow ist harmlos. Ein halb gelöschter mit verwaisten Verbindungen und Testlisten ist genau die <strong>Schatten-IT</strong>, die niemand haben will: technische Lösungen, die produktiv genutzt werden, aber weder dokumentiert noch der IT bekannt sind.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Selbst betreiben genügt</th>
+<th>IT einbinden</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nur eigene Daten, nur du als Nutzer</td>
+<td>ja</td>
+<td>nein</td>
+</tr>
+<tr>
+<td>Mehrere Abteilungen arbeiten damit</td>
+<td>nein</td>
+<td>ja, Zuständigkeit und Umgebung klären</td>
+</tr>
+<tr>
+<td>Externe Schnittstelle, HTTP-Aufruf, API-Schlüssel</td>
+<td>nein</td>
+<td>ja, Sicherheit und Geheimnisverwaltung</td>
+</tr>
+<tr>
+<td>Personenbezogene Daten in größerem Umfang</td>
+<td>nein</td>
+<td>ja, gemeinsam mit dem Datenschutz</td>
+</tr>
+<tr>
+<td>Prozess ist geschäftskritisch oder fristgebunden</td>
+<td>nein</td>
+<td>ja, Betrieb und Vertretung müssen belastbar sein</td>
+</tr>
+<tr>
+<td>Premium-Connector oder Lizenz nötig</td>
+<td>nein</td>
+<td>ja, Lizenzentscheidung liegt nicht bei dir</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Selbstprüfung vor der Übergabe</p>
+<p>Stelle dir vor, du bist ab morgen vier Wochen nicht erreichbar. Kann jemand mit deinem Betriebsblatt erkennen, was der Flow tut, dass er ausgefallen ist, was dann zu tun ist und wie man ihn abschaltet? Wenn du bei einer dieser vier Fragen zögerst, fehlt genau dort eine Zeile.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ein Flow ohne zuständige Person ist ein <strong>Risiko</strong>; der gefährlichste Fall ist der <strong>stille Ausfall</strong> mit falschen Ergebnissen.</li>
+<li>Benenne <strong>Verantwortliche, Vertretung, technischen Kontakt</strong> und kläre, <strong>unter welchem Konto</strong> der Flow läuft – Personalwechsel ist der häufigste Abbruchgrund.</li>
+<li><strong>Fehlerbenachrichtigungen</strong> müssen Fallkennzeichen, Schritt und Handlungsanweisung enthalten; eine Zählprüfung deckt stille Ausfälle auf.</li>
+<li>Notiere <strong>Abhängigkeiten</strong> von fremden Objekten und informiere die dort zuständigen Personen; vor dem Live-Gang läuft der <strong>Datenschutz-Check</strong>.</li>
+<li><strong>Rollout</strong> heißt Empfänger umstellen, Testdaten entfernen, einweisen – und einen <strong>Rückfallweg</strong> für den manuellen Notbetrieb bereitstellen.</li>
+<li><strong>Betriebsblatt und Abschaltplan</strong> verhindern Schatten-IT; bei mehreren Abteilungen, Schnittstellen oder kritischen Prozessen gehört die <strong>IT</strong> eingebunden.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Betriebsblatt-Kopf für deinen Flow ausfüllen</summary>
+<p>Fülle die ersten sechs Zeilen des Betriebsblatts für dein Projekt aus:</p>
+<ol>
+<li>Flow-Name und Zweck in einem Satz</li>
+<li>Verantwortliche Person und Vertretung – jeweils mit Namen, nicht „das Team"</li>
+<li>Unter welchem Konto bzw. mit welcher Verbindung der Flow läuft</li>
+<li>Welchen Trigger er hat und wie oft er typischerweise ausgeführt wird</li>
+</ol>
+<p>Ergänze einen Satz zu der Frage: Was passiert mit dem Flow, wenn du in drei Monaten die
+Abteilung wechselst?</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Prüfe bei der Vertretung nicht nur, ob die Person zuständig sein soll, sondern ob sie die
+nötigen Zugänge tatsächlich hat. Eine Vertretung ohne Zugriff ist keine.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) Verantwortliche und Vertretung sind einzelne Personen; (2) das Konto
+bzw. die Verbindung ist konkret benannt, nicht „mein Zugang"; (3) der Satz zum Wechsel benennt
+eine echte Folge und eine Maßnahme.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow-Name:           Kontaktanfragen Vorsortierung
+Zweck:               Formularanfragen kategorisieren, in Liste eintragen,
+                     Eingang bestaetigen
+Verantwortlich:      A. Beispiel   Vertretung: B. Muster
+Laeuft unter Konto:  persoenliches Konto A. Beispiel,
+                     Miteigentuemer B. Muster ergaenzt
+Ausfuehrung:         Trigger neue Forms-Antwort, etwa 15 mal pro Woche
+</code></pre></div></td></tr></table></div>
+<p>Satz zum Wechsel: „Der Flow läuft über meine persönliche Verbindung zum Formular. Bei einem
+Wechsel würde er abbrechen, deshalb ist B. Muster als Miteigentümer eingetragen und das
+Formular ist an eine Gruppe statt an mein Konto gebunden."</p>
+<p>Schwach wäre: „Verantwortlich: Team Vertrieb, Vertretung: wird noch geklärt." Damit ist niemand
+zuständig.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Rückfallweg für den Ausfall beschreiben</summary>
+<p>Beschreibe für dein Projekt den manuellen Notbetrieb auf maximal einer halben Seite:</p>
+<ol>
+<li><strong>Erkennungsmerkmal:</strong> Woran merkt jemand, dass der Flow nicht mehr läuft? Beschreibe auch
+   den stillen Ausfall, bei dem der Flow läuft, aber falsche oder leere Ergebnisse liefert.</li>
+<li><strong>Manueller Ablauf</strong> in maximal fünf Schritten, so formuliert, dass eine eingearbeitete
+   Kollegin ihn ohne Rückfrage ausführen kann.</li>
+<li><strong>Nacharbeit:</strong> Welche Fälle müssen nach der Behebung nachgezogen werden, und woran erkennt
+   man sie?</li>
+<li><strong>Tragbarkeit:</strong> Wie lange ist der Notbetrieb vertretbar, und was passiert danach?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Schreibe den manuellen Ablauf so, wie du ihn jemandem am Telefon erklären würdest. Wenn ein
+Schritt „dann im System nachsehen" heißt, fehlt die Angabe, wo genau und was dort zu prüfen ist.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) das Erkennungsmerkmal deckt sowohl harten Ausfall als auch stillen
+Ausfall ab; (2) die Schritte sind ohne Vorwissen ausführbar und nennen konkrete Orte und Felder;
+(3) die Nacharbeit beschreibt, wie man die betroffenen Fälle findet; (4) es gibt eine
+Zeitgrenze mit Eskalation an eine benannte Stelle.</p>
+<p>Beispiel für ein gutes Ergebnis (Projekt: Kontaktanfragen vorsortieren):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>Erkennungsmerkmal: In der Liste Anfragen kommt zwischen 8 und 18 Uhr kein
+  neuer Eintrag dazu, oder Eintraege haben die Kategorie leer.
+Manueller Ablauf:
+  1. Formular in Forms oeffnen, Reiter Antworten.
+  2. Alle Antworten seit dem letzten Listeneintrag durchgehen.
+  3. Fuer jede Antwort einen Listeneintrag anlegen, Kategorie selbst waehlen,
+     Status Neu.
+  4. Absender per Mail bestaetigen, Textvorlage im Teamkanal.
+Nacharbeit: Nach Behebung Antworten mit Zeitstempel nach dem letzten
+  automatischen Eintrag pruefen und Doppeleintraege entfernen.
+Tragbar: maximal 5 Arbeitstage, danach Meldung an die Bereichsleitung mit
+  Entscheidung, ob der Flow abgeschaltet wird.
+</code></pre></div></td></tr></table></div>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Fehlerbenachrichtigung ergänzen und auslösen</summary>
+<p>Diese Übung machst du am Werkzeug – in Power Automate (oder in Zapier bzw. Make mit deren
+Fehlerbehandlung).</p>
+<ol>
+<li>Fasse die kritischen Schritte deines Flows in einen <code>Bereich</code> und ergänze dahinter eine
+   Aktion mit der Einstellung <code>Nach Fehler ausführen</code> (Kap. 28), die eine Nachricht an dich
+   sendet.</li>
+<li>Die Nachricht muss <strong>mindestens vier Angaben</strong> enthalten: Zeitpunkt, Kennzeichen des
+   betroffenen Falls, Name des fehlgeschlagenen Schrittes und eine Handlungsanweisung.</li>
+<li><strong>Löse den Fehler absichtlich aus</strong> – zum Beispiel indem du ein Pflichtfeld leer lässt, einen
+   Listennamen verfälschst oder einen Testdatensatz ohne Anhang schickst.</li>
+<li>Prüfe die eingegangene Nachricht: Könntest du allein damit den betroffenen Fall
+   nachbearbeiten, ohne den Ausführungsverlauf zu öffnen? Ergänze, was fehlt.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die häufigste Schwäche ist eine Fehlermail, die nur die technische Meldung weitergibt. Stell dir
+vor, deine Vertretung liest sie im Urlaub auf dem Handy: Sie muss daraus erkennen, welcher
+Vorgang betroffen ist und was jetzt zu tun ist.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) Bereich und Fehleraktion sind gebaut und der Fehler wurde tatsächlich
+ausgelöst, nicht nur geplant; (2) die Nachricht enthält alle vier Angaben, insbesondere ein
+Fallkennzeichen; (3) die Handlungsanweisung ist konkret; (4) die Nachricht ist nach der Prüfung
+nachgebessert worden.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Betreff: Flow Kontaktanfragen Vorsortierung fehlgeschlagen
+Zeitpunkt: 12.03. 09:14
+Betroffener Fall: Anfrage von Muster GmbH, Formular-ID 1042
+Fehlgeschlagener Schritt: Element in Liste Anfragen erstellen
+Fehlermeldung: Die Spalte Kategorie erwartet einen der zulaessigen Werte
+Was zu tun ist: Anfrage 1042 in Forms oeffnen, Eintrag von Hand anlegen,
+  Status Neu setzen, Absender bestaetigen.
+</code></pre></div></td></tr></table></div>
+<p>Typische Nachbesserung nach dem Test: Beim ersten Versuch fehlte die Formular-ID, weil sie erst
+in einem späteren Schritt gesetzt wurde. Lösung: Das Kennzeichen früh in eine Variable oder eine
+<code>Verfassen</code>-Aktion schreiben, damit es auch im Fehlerfall verfügbar ist. Genau diese Erkenntnis
+bekommt man nur, wenn man den Fehler wirklich auslöst.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Projektetappe 4 – Betriebs- und Übergabekonzept erstellen</summary>
+<p><strong>Projektetappe:</strong> Vierte Etappe. Grundlage ist dein gebauter und abgenommener Flow aus
+Kapitel 37. Am Ende dieses Workshops ist dein Projekt übergabefähig: Es gibt eine zuständige
+Person, eine funktionierende Fehlerbenachrichtigung, einen Rückfallweg, einen bestandenen
+Datenschutz-Check und einen Abschaltplan.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Rueckfallebenen:
+Flow laeuft nur teilweise -&gt; erstelle das Betriebskonzept fuer den Teil, der
+  laeuft, und notiere fuer den Rest, was noch fehlt.
+Flow laeuft gar nicht -&gt; erstelle das Betriebskonzept fuer den geplanten
+  Zustand und markiere jede Zeile, die noch nicht ueberprueft werden konnte,
+  ausdruecklich als ungeprueft.
+Kein produktiver Einsatz vorgesehen -&gt; plane den Live-Gang vollstaendig durch
+  und fuehre alle Schritte in der Testumgebung aus.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Betriebsblatt und Monitoring aufbauen.</strong> Fülle das <strong>Betriebsblatt</strong> vollständig aus:
+Verantwortliche, Vertretung, technischer Kontakt, Konto und Miteigentümer, Trigger und
+Häufigkeit, Abhängigkeiten von fremden Objekten, bekannte Grenzen, Änderungshistorie. Baue
+danach die Fehlerbenachrichtigung so, dass sie Fallkennzeichen und Handlungsanweisung enthält,
+und ergänze eine einfache Prüfung gegen den stillen Ausfall (Zählung ohne Ergebnis, ausbleibende
+Einträge).</p>
+<p><strong>Runde 2 – Prüfung gegen vier Pflichtkriterien.</strong> Dein Konzept muss <strong>alle vier</strong> Kriterien
+erfüllen:</p>
+<ol>
+<li>Die Fehlerbenachrichtigung wurde <strong>absichtlich ausgelöst</strong> und enthält Zeitpunkt,
+   Fallkennzeichen, Schrittname und Handlungsanweisung.</li>
+<li>Der <strong>Datenschutz-Check</strong> ist vollständig abgehakt, jede offene Zeile hat eine benannte
+   Maßnahme mit Datum – „passt schon" ist keine Antwort.</li>
+<li>Der <strong>Rückfallweg</strong> ist so geschrieben, dass eine andere Person ihn ohne Rückfrage ausführen
+   kann, inklusive Nacharbeit und Zeitgrenze mit Eskalation.</li>
+<li>Für <strong>jede</strong> Abhängigkeit von einem fremden Objekt ist vermerkt, wer dort zuständig ist und
+   ob diese Person informiert wurde, dass eine Automatisierung mitliest.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Es passiert etwas, das den Betrieb bedroht. Arbeite <strong>beide</strong>
+Fälle durch:</p>
+<ul>
+<li><strong>Fall 1 – Personalwechsel:</strong> Die verantwortliche Person (also du) verlässt in vier Wochen die
+  Abteilung. Prüfe konkret, was dann abbricht: Verbindungen, Postfachzugriff, Eigentum am Flow,
+  Kenntnis der Prompts. Setze die machbaren Maßnahmen sofort um und notiere die restlichen als
+  Übergabepunkte mit Termin.</li>
+<li><strong>Fall 2 – Änderung am Nachbarsystem:</strong> Ein angebundenes Objekt wird umgebaut, zum Beispiel
+  eine Spalte umbenannt oder ein Formularfeld entfernt. Beschreibe, wie du das <strong>merken</strong> würdest,
+  wie lange es unbemerkt bleiben könnte und was du am Flow oder am Monitoring änderst, damit es
+  auffällt.</li>
+</ul>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Frage lautet: Geht dieser Flow überhaupt live,
+und wenn ja, in welchem Umfang? Beschreibe deinem KI-Werkzeug Zustand, Trefferquote,
+Verantwortlichkeiten und offene Punkte und lass dir eine Empfehlung geben. Erwartbar ist ein
+optimistisches „ja, live gehen". Entscheide selbst und <strong>widersprich begründet</strong>, wenn eine
+Voraussetzung fehlt – etwa keine belastbare Vertretung, ein offener Punkt im
+Datenschutz-Check oder eine Abhängigkeit, über die niemand informiert ist. Formuliere in fünf bis
+acht Sätzen eine der drei Entscheidungen: vollständiger Live-Gang, eingeschränkter Start (nur
+ein Teil, nur ein Team, nur mit Freigabe je Fall) oder bewusst kein Live-Gang mit Begründung und
+Bedingungen dafür.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>vollständig ausgefülltes Betriebsblatt inklusive Abhängigkeiten und Änderungshistorie</li>
+<li>Nachweis der ausgelösten Fehlerbenachrichtigung plus Prüfung gegen den stillen Ausfall</li>
+<li>abgehakter Datenschutz-Check und Rückfallweg für den manuellen Notbetrieb</li>
+<li>Einweisung für Nutzende auf einer halben Seite, Abschaltplan und die Entscheidungsnotiz aus
+   Runde 4 samt Übergabepunkten aus Runde 3</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> eine andere Person mit deinen Unterlagen erkennen kann, was der
+Flow tut, dass er ausgefallen ist, was dann zu tun ist und wie man ihn abschaltet – und wenn im
+Datenschutz-Check keine Zeile ohne Häkchen oder ohne benannte Maßnahme mit Datum steht.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert steckt in Runde 3 und 4. Betriebsunterlagen zu schreiben wirkt wie Bürokratie, bis
+Fall 1 eintritt: Die meisten selbst gebauten Flows sterben nicht an einem Fehler, sondern an
+einem Kontowechsel. Runde 4 ist die unbequemste Entscheidung des ganzen Projekts. „Wir gehen
+nicht live, weil es keine Vertretung mit Zugriff gibt" ist ein vollwertiges, professionelles
+Ergebnis – und deutlich besser als ein Flow, der im Urlaub still ausfällt und Fälle verschluckt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) das Betriebsblatt ist vollständig, benennt einzelne Personen statt
+Teams und macht die Kontoabhängigkeit sichtbar; (2) alle vier Pflichtkriterien sind erfüllt,
+insbesondere die tatsächlich ausgelöste Fehlerbenachrichtigung mit Fallkennzeichen und der ohne
+Rückfrage ausführbare Rückfallweg; (3) beide Komplikationen aus Runde 3 sind bearbeitet – der
+Personalwechsel mit konkreten Maßnahmen und Terminen, die Systemänderung mit einer Aussage zur
+Erkennungszeit und einer Verbesserung am Monitoring; (4) die Entscheidung aus Runde 4 ist
+begründet, wägt Nutzen gegen fehlende Betriebsvoraussetzungen ab und übernimmt die
+KI-Empfehlung nicht ungeprüft.</p>
+<p>Lernziel: Ein selbst gebauter Flow wird erst durch Zuständigkeit, Monitoring, Datenschutz-Check
+und Rückfallweg zu einem tragfähigen Ergebnis – und ein bewusst verschobener Live-Gang ist eine
+richtige Entscheidung, keine Niederlage.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel37/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 37 – Umsetzung: bauen, iterieren, testen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 37 – Umsetzung: bauen, iterieren, testen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel39/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 39 – Dokumentation der Projektarbeit">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 39 – Dokumentation der Projektarbeit
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

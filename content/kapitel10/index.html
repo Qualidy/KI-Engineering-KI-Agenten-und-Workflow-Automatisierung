@@ -1,0 +1,1803 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel9/">
+      
+      
+        <link rel="next" href="../kapitel11/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-10-fortgeschrittenes-prompt-design-und-agenten-instruktionen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Block 2 · KI-Agenten verstehen und nutzen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 5 – Wie Sprachmodelle arbeiten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 6 – Vom Chatbot zum Agenten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 9 – Prompt-Design: Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101-zerlegen-statt-alles-auf-einmal-verlangen" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 Zerlegen statt alles auf einmal verlangen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-denken-lassen-und-selbstprufung-anfordern" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 Denken lassen und Selbstprüfung anfordern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-ausgabeformate-erzwingen" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 Ausgabeformate erzwingen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-systemprompt-custom-instructions-und-agenten-instruktionen" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.4 Systemprompt, Custom Instructions und Agenten-Instruktionen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#105-vorlagen-mit-platzhaltern" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.5 Vorlagen mit Platzhaltern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#106-prompts-testen-und-versionieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.6 Prompts testen und versionieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-10-fortgeschrittenes-prompt-design-und-agenten-instruktionen">Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen<a class="headerlink" href="#kapitel-10-fortgeschrittenes-prompt-design-und-agenten-instruktionen" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie du eine große Aufgabe in <strong>Teilschritte zerlegst</strong> und damit Qualität und Prüfbarkeit gewinnst</li>
+<li>Wie du das Modell <strong>schrittweise arbeiten</strong> lässt und eine <strong>Selbstprüfung</strong> anforderst, die wirklich etwas bringt</li>
+<li>Wie du <strong>Ausgabeformate erzwingst</strong> – Tabelle, feste Feldstruktur, Vorlage – damit Ergebnisse weiterverarbeitbar werden</li>
+<li>Was <strong>Systemprompt</strong>, <strong>Custom Instructions</strong> und <strong>Agenten-Instruktionen</strong> sind und wie du sie schreibst</li>
+<li>Wie du <strong>wiederverwendbare Vorlagen mit Platzhaltern</strong> baust</li>
+<li>Wie du Prompts <strong>testest und versionierst</strong>, statt sie stillschweigend zu verschlimmbessern</li>
+</ul>
+</div>
+<hr />
+<h2 id="101-zerlegen-statt-alles-auf-einmal-verlangen">10.1 Zerlegen statt alles auf einmal verlangen<a class="headerlink" href="#101-zerlegen-statt-alles-auf-einmal-verlangen" title="Permanent link">&para;</a></h2>
+<p>Kapitel 9 hat einen einzelnen Auftrag scharfgestellt. Manche Aufgaben werden dadurch trotzdem nicht gut, weil sie mehrere Denkschritte enthalten, die sich gegenseitig im Weg stehen. Ein Sprachmodell erzeugt Text von vorne nach hinten (Kap. 5) – es kann nicht am Ende merken, dass die Struktur am Anfang falsch war.</p>
+<table>
+<thead>
+<tr>
+<th>Muster</th>
+<th>Wann sinnvoll</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Erst sammeln, dann formulieren</strong></td>
+<td>Text soll vollständig werden</td>
+<td>erst alle Beschwerdepunkte auflisten, dann antworten</td>
+</tr>
+<tr>
+<td><strong>Erst strukturieren, dann füllen</strong></td>
+<td>längere Dokumente</td>
+<td>erst Gliederung abstimmen, dann Abschnitte schreiben</td>
+</tr>
+<tr>
+<td><strong>Erst prüfen, dann entscheiden</strong></td>
+<td>Bewertungen, Auswahl</td>
+<td>erst Kriterien festlegen, dann Angebote danach bewerten</td>
+</tr>
+<tr>
+<td><strong>Erst extrahieren, dann rechnen</strong></td>
+<td>Zahlen im Spiel</td>
+<td>Werte herausziehen, außerhalb rechnen (Kap. 8)</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    A([Schritt 1 sammeln]) --&gt; B([Zwischenergebnis pruefen])
+    B --&gt; C([Schritt 2 strukturieren])
+    C --&gt; D([Zwischenergebnis pruefen])
+    D --&gt; E([Schritt 3 ausformulieren])</code></pre>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Der Gewinn liegt nicht nur im besseren Endergebnis, sondern in den <strong>Zwischenergebnissen</strong>: Du siehst, wo es schiefgeht, und korrigierst dort – statt am Ende eine plausible, aber falsche Gesamtausgabe zu bekommen. Ein Auftrag, den du am Ergebnis nicht prüfen kannst, ist zu groß. Zerlege ihn, bis jeder Schritt einzeln prüfbar ist – dieselbe Logik, nach der du später einen Ablauf in einzelne Aktionen zerlegst (Kap. 19).</p>
+</div>
+<hr />
+<h2 id="102-denken-lassen-und-selbstprufung-anfordern">10.2 Denken lassen und Selbstprüfung anfordern<a class="headerlink" href="#102-denken-lassen-und-selbstprufung-anfordern" title="Permanent link">&para;</a></h2>
+<p>Ein Modell wird zuverlässiger, wenn es die Zwischenschritte tatsächlich <strong>ausschreibt</strong>, statt direkt das Ergebnis zu nennen. Der Grund liegt in der Bauweise: Was schon im Text steht, geht in die nächste Vorhersage ein. Ein vorher notierter Rechenweg oder eine notierte Prüfliste beeinflusst also die Fortsetzung.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Gehe in dieser Reihenfolge vor und schreibe jeden Schritt sichtbar auf:
+1. Liste alle Anforderungen auf, die im Text genannt werden.
+2. Ordne jeder Anforderung zu, ob unser Angebot sie erfuellt.
+3. Fasse erst danach in drei Saetzen zusammen.
+</code></pre></div></td></tr></table></div>
+<p>Die zweite Technik ist die <strong>Selbstprüfung</strong>. Sie funktioniert nur, wenn du sie konkret machst. „Prüfe deine Antwort" bringt fast nichts – geprüft wird gegen nichts. Nützlich wird es mit einer Prüfliste:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Pruefe deinen Entwurf danach gegen diese Punkte und gib eine Pruefnotiz aus:
+- Steht jede Zahl so im Ausgangstext, oder wurde sie ergaenzt?
+- Sind alle fuenf Gliederungspunkte enthalten?
+- Wurde ein Termin oder eine Zusage genannt, die nicht vorgegeben war?
+Gib danach nur die korrigierte Fassung und die Pruefnotiz aus.
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Grenzen der Selbstprüfung</p>
+<p>Die Prüfung läuft im selben System, das den Fehler gemacht hat. Sie findet zuverlässig <strong>formale</strong> Abweichungen – fehlende Abschnitte, überschrittene Länge, nicht eingehaltene Struktur. Sie findet <strong>nicht</strong> zuverlässig, dass eine Aussage sachlich falsch ist. Eine Selbstprüfung ersetzt deine Prüfung nicht, sie reduziert nur die Anzahl der Fälle, die dich erreichen. Wirksamer ist der <strong>Rollenwechsel im zweiten Durchgang</strong>: Entwurf erzeugen, dann in einem neuen Chat als kritischer Reviewer prüfen lassen (Kap. 8) – ohne den eigenen Entwurfsverlauf im Kontext fällt die Kritik deutlich schärfer aus.</p>
+</div>
+<hr />
+<h2 id="103-ausgabeformate-erzwingen">10.3 Ausgabeformate erzwingen<a class="headerlink" href="#103-ausgabeformate-erzwingen" title="Permanent link">&para;</a></h2>
+<p>Solange du Ergebnisse selbst liest, reicht schöner Fließtext. Sobald etwas weiterverarbeitet wird – in eine Liste, eine Tabelle, einen Ablauf – brauchst du ein <strong>festes Format</strong>.</p>
+<p><strong>Tabelle mit definierten Spalten:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Gib das Ergebnis als Markdown-Tabelle mit genau diesen Spalten aus:
+Anliegen | Kategorie | Dringlichkeit | Zustaendig | Fehlende Angabe
+Erlaubt in Kategorie: Reklamation, Anfrage, Bestellung, Sonstiges.
+Erlaubt in Dringlichkeit: hoch, mittel, niedrig.
+Keine Erklaerung vor oder nach der Tabelle.
+</code></pre></div></td></tr></table></div>
+<p><strong>Feste Feldstruktur</strong> – die Grundlage dafür, dass ein Ablauf die Antwort maschinell auseinandernehmen kann (Kap. 30):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Antworte ausschliesslich in diesem Format, ein Feld pro Zeile:
+Kategorie: &lt;eine von Reklamation, Anfrage, Bestellung, Sonstiges&gt;
+Dringlichkeit: &lt;hoch, mittel oder niedrig&gt;
+Kundennummer: &lt;Nummer aus dem Text oder UNBEKANNT&gt;
+Kurzfassung: &lt;ein Satz, maximal 20 Woerter&gt;
+</code></pre></div></td></tr></table></div>
+<p><strong>Vorlage mit Leerstellen</strong> – wenn ein Dokument einer festen Hausform folgen muss:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Fuelle die Vorlage aus, aendere ihre Struktur nicht und trage
+FEHLT ein, wo eine Angabe fehlt.
+Betreff:
+Anlass:
+Sachstand:
+Naechster Schritt:
+</code></pre></div></td></tr></table></div>
+<p>Für die Weiterverarbeitung gilt: Je enger das Format, desto weniger Nacharbeit. Bei Freitext gibst du Länge und Ton vor, bei Tabellen Spalten und erlaubte Werte, bei Feldstrukturen zusätzlich das Verbot jeglichen Begleittextes – sonst steht vor deiner Struktur ein freundlicher Einleitungssatz, der jede maschinelle Auswertung stört.</p>
+<div class="admonition tip">
+<p class="admonition-title">Erlaubte Werte statt freier Formulierung</p>
+<p>Der wirksamste Handgriff bei Formaten ist die <strong>Werteliste</strong>: „Verwende ausschließlich hoch, mittel, niedrig." Ohne sie bekommst du beim ersten Durchlauf „hoch", beim zweiten „sehr dringend" und beim dritten „Priorität A" – und jede nachgelagerte Auswertung bricht (Kap. 29).</p>
+</div>
+<hr />
+<h2 id="104-systemprompt-custom-instructions-und-agenten-instruktionen">10.4 Systemprompt, Custom Instructions und Agenten-Instruktionen<a class="headerlink" href="#104-systemprompt-custom-instructions-und-agenten-instruktionen" title="Permanent link">&para;</a></h2>
+<p>Bisher ging es um Aufträge für einen Einzelfall. Für wiederkehrende Arbeit setzt du Vorgaben eine Ebene höher an – sie gelten dann für <strong>alle</strong> Gespräche.</p>
+<table>
+<thead>
+<tr>
+<th>Ebene</th>
+<th>Wo eingestellt</th>
+<th>Reichweite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Systemprompt</strong></td>
+<td>vom Anbieter gesetzt, für dich unsichtbar</td>
+<td>das gesamte Produkt</td>
+</tr>
+<tr>
+<td><strong>Custom Instructions</strong></td>
+<td>in deinem Konto, etwa in ChatGPT</td>
+<td>alle deine Chats</td>
+</tr>
+<tr>
+<td><strong>Projekt- oder Raum-Instruktion</strong></td>
+<td>im Projekt oder Arbeitsraum (Kap. 7)</td>
+<td>alle Chats dieses Projekts</td>
+</tr>
+<tr>
+<td><strong>Agenten-Instruktion</strong></td>
+<td>im selbst gebauten Agenten, etwa Copilot Studio (Kap. 32)</td>
+<td>jeder Aufruf des Agenten</td>
+</tr>
+<tr>
+<td><strong>Prompt</strong></td>
+<td>im Chatfenster</td>
+<td>ein einzelner Fall</td>
+</tr>
+</tbody>
+</table>
+<p>Eine gute <strong>Agenten-Instruktion</strong> beantwortet fünf Fragen und ist deutlich strenger formuliert als ein Chat-Prompt, weil niemand daneben sitzt und nachbessert:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du bist Auskunftsassistent fuer Reisekostenfragen der Beschaeftigten.
+Aufgabe: Beantworte Fragen zu Reisekosten ausschliesslich auf Basis der
+hinterlegten Richtlinie und nenne immer den Abschnitt als Fundstelle.
+Umgangston: sachlich, kurz, in du-Form, maximal 120 Woerter.
+Grenzen:
+- Deckt die Richtlinie den Fall nicht ab, sage das und verweise an die Personalabteilung.
+- Genehmige nichts und sage keine Erstattung zu.
+- Nenne keine Betraege, die nicht in der Richtlinie stehen.
+Bei Unklarheit: Stelle genau eine Rueckfrage, bevor du antwortest.
+</code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Der Unterschied in einem Satz</p>
+<p>Ein Prompt sagt, was <strong>jetzt</strong> zu tun ist. Eine Instruktion sagt, wie sich das System <strong>immer</strong> verhält – einschließlich der Fälle, an die du gerade nicht denkst. Deshalb ist der wichtigste Teil jeder Instruktion der Abschnitt <strong>Grenzen</strong>: Was tust du nicht, und was tust du bei Unsicherheit? Und weil Instruktionen dauerhaft wirken, wirken auch ihre Fehler dauerhaft – eine unglückliche Formulierung in den Custom Instructions verzerrt wochenlang jede Antwort, ohne dass du die Ursache im Chat siehst. Sieh sie regelmäßig durch und halte sie kurz.</p>
+</div>
+<hr />
+<h2 id="105-vorlagen-mit-platzhaltern">10.5 Vorlagen mit Platzhaltern<a class="headerlink" href="#105-vorlagen-mit-platzhaltern" title="Permanent link">&para;</a></h2>
+<p>Aus einem bewährten Prompt wird eine Vorlage, indem du die veränderlichen Stellen als <strong>Platzhalter in eckigen Klammern</strong> markierst. Die eckige Klammer ist bewusst gewählt: Sie fällt auf, wenn du sie zu ersetzen vergisst.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist [Rolle, z. B. Sachbearbeiterin im Einkauf].
+Aufgabe: Formuliere [Textart, z. B. eine Absage] an [Empfaenger].
+Kontext: [Sachverhalt in Stichpunkten]
+Format: maximal [Anzahl] Woerter, [mit oder ohne Betreffzeile]. Ton: [Tonvorgabe].
+Einschraenkungen: Nutze ausschliesslich die Angaben im Kontext.
+Fehlende Angaben markierst du mit FEHLT. [weitere Einschraenkung]
+</code></pre></div></td></tr></table></div>
+<p>Solche Vorlagen sind die Vorstufe zu allem, was danach kommt. Dieselbe Struktur findest du wieder, wenn ein Ablauf einen Prompt mit Werten aus einem Formular oder einer Mail befüllt (Kap. 29, Kap. 30) oder wenn du einen Agenten mit fester Instruktion in Copilot Studio baust (Kap. 32). Der Unterschied ist nur, wer die Platzhalter füllt: heute du von Hand, später der Ablauf automatisch. Willst du eine Vorlage im Team teilen, gehören drei Angaben dazu – wofür sie gedacht ist, wie ein gutes Ergebnis aussieht und worauf zu prüfen ist. Ohne sie wird die Vorlage falsch eingesetzt und dann als „funktioniert nicht" verworfen.</p>
+<hr />
+<h2 id="106-prompts-testen-und-versionieren">10.6 Prompts testen und versionieren<a class="headerlink" href="#106-prompts-testen-und-versionieren" title="Permanent link">&para;</a></h2>
+<p>Prompts werden gerne „verbessert", bis sie schlechter sind als vorher – weil niemand vergleicht. Behandle einen produktiv genutzten Prompt wie ein kleines Arbeitsmittel und lege <strong>Testfälle</strong> fest. Drei bis fünf reichen, aber sie müssen die Bandbreite abdecken:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Testfall 1 Normalfall:  vollstaendige Angaben, klarer Sachverhalt
+Testfall 2 Luecke:      eine wichtige Angabe fehlt absichtlich
+Testfall 3 Sonderfall:  zwei Anliegen in einem Text
+Testfall 4 Grenzfall:   Anliegen, das der Prompt bewusst ablehnen soll
+</code></pre></div></td></tr></table></div>
+<p>Der <strong>Lückenfall</strong> ist der wichtigste: Er zeigt, ob dein Prompt Fehlendes markiert oder erfindet. Der <strong>Grenzfall</strong> zeigt, ob die Einschränkungen halten.</p>
+<p><strong>Versionieren.</strong> Notiere zu jedem Prompt eine Version, das Datum und in einem Satz, was du geändert hast und warum. Wenn eine Änderung ein Ergebnis verschlechtert, kannst du zurück.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>v1  Erstfassung
+v2  Einschraenkung ergaenzt: kein Liefertermin nennen
+v3  Ausgabeformat auf feste Felder umgestellt, fuer Ablauf noetig
+v4  Werteliste fuer Dringlichkeit ergaenzt, Freitext war zu bunt
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Vor jeder Änderung an einem laufenden Prompt</p>
+<p>Ändere nie mehrere Dinge gleichzeitig und teste immer gegen dieselben Testfälle. Sonst weißt du hinterher nicht, welche Änderung gewirkt hat. Diese Disziplin brauchst du spätestens, wenn ein Prompt in einem automatisierten Ablauf steckt und niemand mehr sieht, was er ausgibt (Kap. 28, Kap. 37).</p>
+</div>
+<p>Damit ist der Werkzeugkasten aus Block 2 komplett. Ab Kapitel 11 wendest du ihn in Microsoft 365 an.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Zerlegen</strong> macht Aufgaben prüfbar: erst sammeln, dann strukturieren, dann formulieren – mit Kontrolle an den Zwischenständen.</li>
+<li>Sichtbar ausgeschriebene Zwischenschritte verbessern das Ergebnis; eine <strong>Selbstprüfung</strong> wirkt nur mit konkreter Prüfliste und ersetzt deine Prüfung nicht.</li>
+<li><strong>Ausgabeformate</strong> – Tabelle, feste Feldstruktur, Vorlage – machen Ergebnisse weiterverarbeitbar; entscheidend sind vorgegebene <strong>erlaubte Werte</strong>.</li>
+<li><strong>Custom Instructions</strong> und <strong>Agenten-Instruktionen</strong> gelten dauerhaft; ihr wichtigster Teil sind die Grenzen und das Verhalten bei Unsicherheit.</li>
+<li><strong>Vorlagen mit Platzhaltern</strong> in eckigen Klammern sind die Vorstufe zu Prompts, die später von Abläufen befüllt werden.</li>
+<li>Produktive Prompts werden gegen feste <strong>Testfälle</strong> geprüft und <strong>versioniert</strong> – besonders Lücken- und Grenzfall.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Einen Großauftrag zerlegen</summary>
+<p>Gegeben ist dieser Auftrag an ein KI-Werkzeug:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Erstelle ein Konzept zur Einfuehrung eines digitalen Urlaubsantrags
+bei uns im Unternehmen.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Nenne <strong>drei Gründe</strong>, warum dieser Auftrag ein schlechtes Ergebnis liefern wird.</li>
+<li>Zerlege ihn in <strong>vier Teilschritte</strong>, die nacheinander bearbeitet werden. Formuliere jeden
+   Teilschritt als eigenen Auftrag.</li>
+<li>Notiere zu jedem Teilschritt, <strong>woran du prüfst</strong>, ob das Zwischenergebnis brauchbar ist,
+   bevor du weitergehst.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Orientiere dich an den Zerlegungsmustern aus Abschnitt 10.1. Ein guter Teilschritt hat ein
+Ergebnis, das man ansehen und beurteilen kann – „Ideen sammeln" ist zu unscharf, „zehn
+Anforderungen als Liste" nicht.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Zu 1 – typische Gründe: Der Auftrag enthält keinen Kontext über euer Unternehmen, kein Format
+und keinen Adressaten; er verlangt Recherche, Struktur und Formulierung gleichzeitig; und das
+Ergebnis ist als Ganzes nicht prüfbar, weil man nicht sieht, welche Annahmen darin stecken.</p>
+<p>Zu 2 und 3 – beispielhafte Zerlegung:</p>
+<table>
+<thead>
+<tr>
+<th>Teilschritt</th>
+<th>Auftrag</th>
+<th>Prüfung des Zwischenergebnisses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Liste die Anforderungen an einen digitalen Urlaubsantrag, getrennt nach Beschäftigten, Führungskräften und Personalabteilung</td>
+<td>Sind alle drei Gruppen vertreten? Ist etwas dabei, das bei uns nicht gilt?</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Beschreibe den heutigen Ablauf in Schritten, auf Basis meiner Stichpunkte</td>
+<td>Stimmen die Schritte mit der Realität überein?</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Schlage auf Basis von 1 und 2 einen Soll-Ablauf vor, mit Entscheidungspunkten</td>
+<td>Ist jeder Schritt zuständigkeitsklar? Fehlt ein Sonderfall?</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Formuliere daraus ein zweiseitiges Konzept für die Geschäftsleitung</td>
+<td>Steht etwas darin, das nicht aus 1 bis 3 stammt?</td>
+</tr>
+</tbody>
+</table>
+<p>Die Prüfung in Schritt 4 ist die wirksamste: Alles, was dort neu auftaucht, ist entweder eine
+gute Ergänzung oder eine Erfindung – und du siehst es nur, weil du die Zwischenstände hast.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Ein Ausgabeformat wirklich erzwingen</summary>
+<p>Diese Übung machst du direkt im KI-Werkzeug. Du prüfst, wie stabil ein Format ist – nicht, ob
+es einmal klappt.</p>
+<ol>
+<li><strong>Material vorbereiten.</strong> Nimm fünf kurze Texte, die etwas mit Anfragen zu tun haben: E-Mails,
+   Ticket-Texte, Notizen. Anonymisiere sie.</li>
+<li><strong>Erste Fassung.</strong> Lass jeden Text mit diesem Prompt verarbeiten:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Ordne die folgende Anfrage ein. Gib Kategorie, Dringlichkeit und eine
+Kurzfassung aus.
+Anfrage: [Text]
+</code></pre></div></td></tr></table></div>
+<p>Notiere, wie die Ausgabe jeweils aussieht.
+3. <strong>Zweite Fassung.</strong> Ergänze eine feste Feldstruktur, erlaubte Werte für Kategorie und
+   Dringlichkeit, ein Verhalten bei fehlender Angabe und das Verbot jeglichen Begleittextes.
+   Verarbeite dieselben fünf Texte erneut.
+4. <strong>Auswerten.</strong> Zähle für beide Fassungen: Wie oft war die Ausgabe <strong>exakt</strong> so aufgebaut,
+   wie du es brauchst? Notiere jede Abweichung.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte in Fassung 1 besonders auf die Dringlichkeit. Sehr wahrscheinlich bekommst du fünf
+verschiedene Bezeichnungen für drei Stufen. Genau das macht eine spätere maschinelle
+Weiterverarbeitung unmöglich.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typisches Ergebnis:</p>
+<table>
+<thead>
+<tr>
+<th>Fassung</th>
+<th>Trefferquote</th>
+<th>Häufigste Abweichungen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ohne Vorgaben</td>
+<td>selten mehr als ein bis zwei von fünf</td>
+<td>freie Wertebezeichnungen, Einleitungssatz, wechselnde Reihenfolge, unterschiedliche Länge</td>
+</tr>
+<tr>
+<td>mit Feldstruktur und Wertelisten</td>
+<td>meist vier bis fünf von fünf</td>
+<td>gelegentlich ein zusätzlicher Hinweissatz oder eine Erklärung in Klammern</td>
+</tr>
+</tbody>
+</table>
+<p>Beispiel einer stabilen zweiten Fassung:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Ordne die folgende Anfrage ein und antworte ausschliesslich in diesem Format,
+ein Feld pro Zeile, ohne Einleitung und ohne Schlusssatz:
+Kategorie: &lt;eine von Reklamation, Anfrage, Bestellung, Sonstiges&gt;
+Dringlichkeit: &lt;hoch, mittel oder niedrig&gt;
+Kurzfassung: &lt;ein Satz, maximal 20 Woerter&gt;
+Fehlende Angabe: &lt;UNBEKANNT oder die fehlende Information&gt;
+Anfrage: [Text]
+</code></pre></div></td></tr></table></div>
+<p>Die Lehre: Erlaubte Werte und das ausdrückliche Verbot von Begleittext bringen den größten
+Sprung. Restabweichungen bleiben – deshalb prüft ein Ablauf die Ausgabe später zusätzlich, statt
+ihr zu vertrauen (Kap. 29).</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Eine Agenten-Instruktion schreiben und angreifen</summary>
+<p>Diese Übung machst du direkt im KI-Werkzeug. Du schreibst eine Instruktion, wie sie später in
+einem eigenen Agenten stehen könnte (Kap. 32) – und prüfst sie so, wie es ein unfreundlicher
+Alltag tun würde.</p>
+<ol>
+<li><strong>Instruktion schreiben.</strong> Wähle einen Auskunftsfall aus deinem Umfeld (Urlaubsregeln,
+   Bestellwege, IT-Zugänge, Reisekosten). Schreibe eine Instruktion mit Rolle, Aufgabe,
+   Umgangston, mindestens <strong>drei Grenzen</strong> und einer Regel für den Fall, dass die Quelle die
+   Frage nicht beantwortet.</li>
+<li><strong>Als Dauervorgabe einsetzen.</strong> Lege die Instruktion in einem Projekt, einem Custom GPT oder
+   ganz einfach als ersten Chatbeitrag fest und hänge einen kurzen Auszug der echten Regelung an.</li>
+<li><strong>Vier Testfälle durchspielen:</strong></li>
+<li>Normalfall: eine Frage, die die Regelung eindeutig beantwortet</li>
+<li>Lücke: eine Frage, zu der die Regelung nichts sagt</li>
+<li>Grenzfall: eine Frage, die auf eine Zusage zielt, die der Agent nicht geben darf</li>
+<li>Störfall: eine unhöflich oder unklar gestellte Frage</li>
+<li><strong>Nachschärfen.</strong> Ergänze die Instruktion dort, wo ein Test danebenging, und wiederhole
+   <strong>alle vier</strong> Tests. Notiere Version, Änderung und Grund.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Grenzfall ist der eigentliche Test. Formuliere ihn verführerisch, etwa: „Kannst du mir das
+bitte einfach genehmigen, es eilt." Eine Instruktion, die nur bei höflichen Standardfragen hält,
+hält im Betrieb nicht.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li>Der <strong>Normalfall</strong> klappt fast immer und sagt am wenigsten aus.</li>
+<li>Die <strong>Lücke</strong> ist die häufigste Schwachstelle: Ohne ausdrückliche Regel antwortet das Werkzeug
+  aus allgemeinem Wissen weiter, statt die Grenze zu benennen.</li>
+<li>Der <strong>Grenzfall</strong> scheitert oft an weich formulierten Grenzen. „Sei zurückhaltend mit Zusagen"
+  wirkt kaum, „Genehmige nichts und sage keine Erstattung zu" wirkt.</li>
+<li>Der <strong>Störfall</strong> zeigt, ob der Umgangston Bestand hat, wenn das Gegenüber ihn nicht spiegelt.</li>
+</ul>
+<p>Merkmale einer belastbaren Instruktion: Die Grenzen sind als Verbote mit klarem Gegenstand
+formuliert, es gibt eine ausdrückliche Ausweichhandlung („verweise an [Stelle]"), und für
+Unsicherheit ist ein Verhalten definiert (genau eine Rückfrage).</p>
+<p>Bewertungskriterien: vier dokumentierte Testläufe vor und nach dem Nachschärfen, mindestens eine
+Änderung mit Begründung, und ein Grenzfall, der nach der Überarbeitung sauber abgelehnt wird,
+ohne dass der Normalfall dabei kaputtgeht – das ist die eigentliche Kunst.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Ein Prompt-Baustein, der in einen Ablauf passt</summary>
+<p><strong>Szenario:</strong> Im Sammelpostfach eures Bereichs landen täglich Anfragen aller Art. Später soll
+ein automatisierter Ablauf jede eingehende Anfrage einsortieren, zusammenfassen und an das
+richtige Team weiterleiten (Kap. 29, Kap. 30). Bevor irgendetwas gebaut wird, braucht ihr das
+Herzstück: einen <strong>Prompt-Baustein</strong>, der jede Anfrage in eine feste Struktur überführt – so
+zuverlässig, dass eine Maschine damit weiterarbeiten kann und ein Mensch nur noch die
+Zweifelsfälle sieht.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Rund 40 Anfragen taeglich, Laenge von zwei Zeilen bis zwei Seiten.
+Zielteams: Vertrieb, Technik, Buchhaltung, Sonstiges.
+Etwa jede zehnte Anfrage enthaelt zwei Anliegen gleichzeitig.
+Alle Beispieltexte anonymisieren.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Baustein bauen.</strong> Entwickle den Prompt: feste Feldstruktur mit mindestens fünf
+Feldern, erlaubte Werte für Zielteam und Dringlichkeit, ein Feld für Unsicherheit, eine Regel
+für fehlende Angaben und das Verbot jeglichen Begleittextes. Ergänze eine kurze, sichtbare
+Selbstprüfung mit mindestens drei Punkten. Teste den Baustein an <strong>acht</strong> anonymisierten
+Beispieltexten und protokolliere jede Ausgabe.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Der Baustein muss <strong>alle vier</strong> Kriterien erfüllen:</p>
+<ol>
+<li>Über acht Durchläufe erscheinen <strong>ausschließlich</strong> erlaubte Werte in den festen Feldern.</li>
+<li>Es gibt ein Feld, an dem ein Ablauf erkennen kann, dass ein <strong>Mensch</strong> draufschauen muss –
+   nicht nur eine Kategorie.</li>
+<li>Mindestens <strong>ein</strong> Testfall ist eine Anfrage mit zwei Anliegen, und der Baustein geht
+   definiert damit um.</li>
+<li>Kein Durchlauf enthält Begleittext, Einleitung oder Nachfrage außerhalb der Struktur.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Zwei Dinge kommen dazu: Erstens gibt es künftig ein fünftes
+Zielteam. Zweitens tauchen Anfragen auf Englisch auf, und in drei deiner Testläufe kippt die
+Ausgabe teilweise ins Englische – die festen Feldnamen inklusive. Überarbeite den Baustein für
+beide Punkte und wiederhole <strong>alle acht</strong> Testfälle. Halte fest, welche Änderung welche Wirkung
+hatte, und ob eine davon einen vorher funktionierenden Fall verschlechtert hat.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Bereichsleitung möchte, dass der spätere Ablauf
+die Anfragen ohne Zwischenstopp direkt zuweist – die Prüfschleife koste zu viel Zeit. Lass dir
+von deinem KI-Werkzeug Argumente für beide Seiten geben und miss an deinen acht Testläufen, wie
+oft die Zuordnung tatsächlich falsch oder unsicher war. Entscheide begründet und <strong>widersprich</strong>,
+wenn deine Messung gegen die Vorgabe spricht. Lege fest, bei welchem Feldwert ein Mensch
+eingreift und wie ihr feststellt, ob sich diese Schwelle bewährt.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Prompt-Baustein in der Endfassung, mit Feldstruktur, Wertelisten und Selbstprüfung</li>
+<li>Testprotokoll mit acht Durchläufen vor und nach Runde 3</li>
+<li>Versionsliste mit mindestens vier Einträgen: Änderung und Grund</li>
+<li>Entscheidungsnotiz aus Runde 4 mit gemessener Fehlerquote und festgelegter Eingriffsschwelle</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> alle acht Testläufe in der Endfassung ausschließlich erlaubte
+Werte und keinen Begleittext enthalten, der Fall mit zwei Anliegen definiert behandelt wird, die
+Versionsliste jede Änderung begründet, und deine Eingriffsschwelle aus deinen eigenen Messwerten
+hergeleitet ist statt aus dem Gefühl.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. In Runde 3 erlebst du das Grundproblem jeder Prompt-Pflege:
+Eine Änderung repariert einen Fall und beschädigt einen anderen – deshalb testest du immer alle
+Fälle, nicht nur den neuen. In Runde 4 zählt nicht deine Meinung über Automatisierung, sondern
+deine Messung: Wer sagen kann, wie oft die Zuordnung danebenlag, kann eine Schwelle begründen.
+Wer es nicht gemessen hat, diskutiert nur.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Der Baustein hat mindestens fünf Felder, geschlossene Wertelisten, ein
+Unsicherheitsfeld und eine Selbstprüfung; die acht Testläufe sind vollständig protokolliert;
+(2) alle vier Pflichtkriterien erfüllt, insbesondere die maschinell erkennbare Eingriffsmarkierung
+und der definierte Umgang mit Mehrfachanliegen; (3) die Überarbeitung deckt beide Komplikationen
+ab, alle Testfälle wurden erneut durchlaufen, und Verschlechterungen sind benannt statt
+verschwiegen; (4) die Entscheidung stützt sich auf die eigene Fehlerquote, legt eine konkrete
+Eingriffsschwelle fest und benennt, woran man später erkennt, ob sie richtig gewählt war.</p>
+<p>Lernziel: Einen Prompt so bauen, dass er nicht nur schöne Antworten liefert, sondern als
+verlässlicher Baustein in einem automatisierten Ablauf funktioniert – mit erzwungenem Format,
+eingebauter Unsicherheitsmeldung, Versionierung und einer aus Messwerten begründeten
+Kontrollschwelle.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel9/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 9 – Prompt-Design: Grundlagen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 9 – Prompt-Design: Grundlagen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel11/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

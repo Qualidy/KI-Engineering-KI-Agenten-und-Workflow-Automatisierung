@@ -1,0 +1,1859 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel10/">
+      
+      
+        <link rel="next" href="../kapitel12/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-11-copilot-in-microsoft-365-uberblick-und-arbeitsweise" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Block 3 · Praxis mit KI-Agenten
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#111-copilot-ist-nicht-ein-produkt-sondern-eine-familie" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1 Copilot ist nicht ein Produkt, sondern eine Familie
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-woher-copilot-deine-daten-kennt" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.2 Woher Copilot deine Daten kennt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-kontext-gezielt-mitgeben-statt-hoffen" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.3 Kontext gezielt mitgeben statt hoffen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-vertraulichkeit-der-unterschied-der-zahlt" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.4 Vertraulichkeit: der Unterschied, der zählt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-typische-enttauschungen-und-ihre-ursachen" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.5 Typische Enttäuschungen und ihre Ursachen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-eine-arbeitsweise-die-tragt" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.6 Eine Arbeitsweise, die trägt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 12 – KI-gestützte Textarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 13 – KI-gestützte Datenarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 14 – Fallbeispiel HR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 15 – Fallbeispiel Vertrieb
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 16 – Fallbeispiel Rechnungswesen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-11-copilot-in-microsoft-365-uberblick-und-arbeitsweise">Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise<a class="headerlink" href="#kapitel-11-copilot-in-microsoft-365-uberblick-und-arbeitsweise" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wo <strong>Copilot</strong> überhaupt sitzt: Copilot Chat im Browser und in Teams gegenüber Copilot <strong>in</strong> Word, Excel, Outlook, PowerPoint und Teams</li>
+<li>Wie Copilot auf deine <strong>eigenen Dateien und Mails</strong> zugreift und warum dabei genau deine bestehenden <strong>Berechtigungen</strong> gelten</li>
+<li>Wie du <strong>Dateien und Links als Kontext</strong> mitgibst, statt auf Erraten zu hoffen</li>
+<li>Warum Copilot in M365 bei <strong>Vertraulichkeit</strong> anders zu bewerten ist als öffentliche Werkzeuge</li>
+<li>Die häufigsten <strong>Enttäuschungen</strong> im Copilot-Alltag und ihre echten Ursachen</li>
+<li>Eine belastbare <strong>Arbeitsweise</strong> aus Auftrag, Kontext, Prüfung und Übernahme</li>
+</ul>
+</div>
+<hr />
+<h2 id="111-copilot-ist-nicht-ein-produkt-sondern-eine-familie">11.1 Copilot ist nicht ein Produkt, sondern eine Familie<a class="headerlink" href="#111-copilot-ist-nicht-ein-produkt-sondern-eine-familie" title="Permanent link">&para;</a></h2>
+<p>„Wir haben jetzt Copilot" sagt fast nichts darüber aus, was du konkret vor dir hast. Hinter dem Namen stecken mehrere Zugänge mit deutlich unterschiedlichem Verhalten. Der wichtigste Unterschied verläuft zwischen <strong>Copilot Chat</strong> und <strong>Copilot in der App</strong>.</p>
+<p><strong>Copilot Chat</strong> ist ein Chatfenster – erreichbar über den Browser unter <code>microsoft365.com/chat</code>, über die Copilot-App in Teams oder über das Copilot-Symbol in der Titelleiste vieler Office-Programme. Du beschreibst dort einen Auftrag, gibst Kontext mit und bekommst Text zurück, den du selbst weiterverwendest.</p>
+<p><strong>Copilot in der App</strong> arbeitet dagegen im Dokument, in dem du gerade stehst. In Word schreibt es in den Text, in Excel in die Tabelle, in Outlook in den Antwortentwurf. Der Kontext ist dabei meist schon gesetzt: das offene Dokument, die offene Mail, der markierte Bereich.</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Copilot Familie]) --&gt; B([Copilot Chat im Browser und Teams])
+    A --&gt; C([Copilot in Word Excel Outlook PowerPoint])
+    B --&gt; D([Auftrag mit selbst gewaehltem Kontext])
+    C --&gt; E([Arbeit im offenen Dokument])</code></pre>
+<table>
+<thead>
+<tr>
+<th>Zugang</th>
+<th>Wo du ihn findest</th>
+<th>Stärke</th>
+<th>Typische Aufgabe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copilot Chat (Browser)</td>
+<td><code>microsoft365.com/chat</code></td>
+<td>freie Aufträge, viele Dateien als Kontext</td>
+<td>Recherche in eigenen Dokumenten, Entwürfe</td>
+</tr>
+<tr>
+<td>Copilot Chat (Teams)</td>
+<td>Teams → linke Leiste → Copilot</td>
+<td>schneller Zugriff im Arbeitsfluss</td>
+<td>„Was ist in Projekt X passiert?"</td>
+</tr>
+<tr>
+<td>Copilot in Word</td>
+<td>Word → Registerkarte Start → Copilot</td>
+<td>Formulieren im Dokument</td>
+<td>Entwurf, Umschreiben, Zusammenfassen</td>
+</tr>
+<tr>
+<td>Copilot in Outlook</td>
+<td>Outlook → Nachricht → Copilot</td>
+<td>Kommunikation verdichten</td>
+<td>Thread zusammenfassen, Antwort entwerfen</td>
+</tr>
+<tr>
+<td>Copilot in Excel</td>
+<td>Excel → Registerkarte Start → Copilot</td>
+<td>Tabellen und Formeln</td>
+<td>Formel erzeugen, Auffälligkeiten suchen</td>
+</tr>
+<tr>
+<td>Copilot in Teams-Besprechungen</td>
+<td>Besprechung → Copilot</td>
+<td>Gesprächsinhalte festhalten</td>
+<td>Zusammenfassung, offene Punkte</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Der Funktionsumfang hängt an Lizenz und Freigabe</p>
+<p>Welche dieser Zugänge du siehst, entscheidet nicht das Programm, sondern deine <strong>Lizenz</strong> und die <strong>Freigaben deiner Organisation</strong>. Es gibt Umgebungen mit vollem Copilot in allen Apps, Umgebungen mit ausschließlich Copilot Chat und Umgebungen ohne Copilot. Wenn dir eine im Kapitel beschriebene Schaltfläche fehlt, ist das kein Fehler deinerseits.</p>
+<p><strong>Ausweichweg:</strong> Fast jede Aufgabe dieses Blocks lässt sich auch in Copilot Chat lösen, indem du den benötigten Text von Hand in den Chat einfügst. Ohne jeden Copilot-Zugang nutzt du ChatGPT oder Claude – aber ausschließlich mit Inhalten, die dafür freigegeben sind (Kap. 4). Kopiere dann nur den fachlich nötigen Ausschnitt und ersetze Namen durch Platzhalter wie <code>[Kundenname]</code>.</p>
+</div>
+<hr />
+<h2 id="112-woher-copilot-deine-daten-kennt">11.2 Woher Copilot deine Daten kennt<a class="headerlink" href="#112-woher-copilot-deine-daten-kennt" title="Permanent link">&para;</a></h2>
+<p>Der entscheidende Unterschied zu einem öffentlichen Chatwerkzeug ist der Zugriff auf deine Arbeitsumgebung. Copilot in Microsoft 365 kann auf die Inhalte zugreifen, die in <strong>Microsoft Graph</strong> liegen – das ist die gemeinsame Datenschicht hinter M365: Mails in Outlook, Chats und Kanäle in Teams, Dateien in OneDrive und SharePoint, Termine im Kalender.</p>
+<p>Dabei gilt eine Regel, die du dir merken solltest: <strong>Copilot sieht genau das, was du auch selbst sehen könntest.</strong> Es gibt keine Sonderrechte. Wenn du auf eine SharePoint-Bibliothek keinen Zugriff hast, findet Copilot dort nichts für dich. Umgekehrt gilt aber auch: Wenn eine Datei versehentlich für „alle im Unternehmen" freigegeben ist, kann Copilot sie finden und zitieren – ein bestehendes Berechtigungsproblem wird durch Copilot also nicht erzeugt, aber sehr wohl <strong>sichtbar</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Frage</th>
+<th>Antwort</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sieht Copilot mehr als ich?</td>
+<td>Nein. Es gelten deine Berechtigungen.</td>
+</tr>
+<tr>
+<td>Sieht Copilot Dateien auf meiner Festplatte?</td>
+<td>Nein. Nur Cloud-Speicher (OneDrive, SharePoint, Teams).</td>
+</tr>
+<tr>
+<td>Sieht Copilot meine Mails?</td>
+<td>Ja, deine eigenen – nicht die von Kolleginnen und Kollegen.</td>
+</tr>
+<tr>
+<td>Lernt das Modell aus meinen Daten?</td>
+<td>Nein, deine Inhalte werden nicht zum Training des Modells verwendet.</td>
+</tr>
+<tr>
+<td>Bleiben Ergebnisse nachvollziehbar?</td>
+<td>Copilot Chat nennt Quellen als Verweis auf Dateien und Mails – prüfe sie.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: Die Datei liegt lokal</p>
+<p>Der häufigste Grund für „Copilot findet mein Dokument nicht" ist banal: Die Datei liegt in einem lokalen Ordner oder auf einem Netzlaufwerk, nicht in OneDrive oder SharePoint. Copilot durchsucht nur Cloud-Inhalte. Verschiebe die Datei nach OneDrive und versuche es erneut. Dasselbe gilt für sehr frisch hochgeladene Dateien: Bis sie durchsuchbar sind, kann es einige Zeit dauern.</p>
+</div>
+<hr />
+<h2 id="113-kontext-gezielt-mitgeben-statt-hoffen">11.3 Kontext gezielt mitgeben statt hoffen<a class="headerlink" href="#113-kontext-gezielt-mitgeben-statt-hoffen" title="Permanent link">&para;</a></h2>
+<p>Copilot ist kein Hellseher. Die meisten schwachen Ergebnisse entstehen nicht, weil das Modell schlecht ist, sondern weil es den entscheidenden Kontext nicht hatte. Deshalb ist die wichtigste praktische Fähigkeit in diesem Block: <strong>Kontext bewusst anhängen</strong>.</p>
+<p>In Copilot Chat gibst du Kontext auf drei Wegen mit:</p>
+<ol>
+<li>Über das <strong>Anlagen-Symbol</strong> im Eingabefeld: <code>Copilot Chat → Anlage hinzufügen → Cloud-Dateien</code> und dann die Datei auswählen.</li>
+<li>Über einen <strong>Verweis im Text</strong> mit dem Schrägstrich: Du tippst <code>/</code> und danach den Dateinamen, zum Beispiel <code>/Angebotsvorlage</code>.</li>
+<li>Über <strong>eingefügten Text</strong>: Du kopierst den relevanten Ausschnitt direkt in den Prompt. Das ist der zuverlässigste Weg, wenn die Dateisuche nicht greift.</li>
+</ol>
+<p>Der Unterschied ist gewaltig. Vergleiche diese beiden Aufträge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Schreib mir eine Zusammenfassung des Projektstands.
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du bist Projektassistenz in einem Mittelstandsunternehmen.
+Aufgabe: Fasse den Stand des Projekts Lagerumbau fuer die Geschaeftsfuehrung
+zusammen.
+Kontext: Nutze ausschliesslich die angehaengte Datei Projektstatus_Lagerumbau.docx
+und die Teams-Kanalbeitraege der letzten vier Wochen im Kanal Lagerumbau.
+Format: Ueberschrift, dann drei Absaetze mit maximal 60 Woertern
+Stand, Risiken, naechste Schritte. Danach eine Tabelle mit offenen
+Entscheidungen und der jeweils verantwortlichen Person.
+Einschraenkung: Nenne keine Zahl, die nicht in den Quellen steht. Wenn eine
+Angabe fehlt, schreibe dort ausdruecklich unklar.
+</code></pre></div></td></tr></table></div>
+<p>Der zweite Auftrag enthält Rolle, Aufgabe, Kontextquelle, Format und eine Einschränkung gegen Erfundenes. Genau dieses Muster hast du in Kapitel 9 kennengelernt – hier kommt die Kontextquelle als vierter Baustein dazu.</p>
+<div class="admonition example">
+<p class="admonition-title">Links als Kontext</p>
+<p>Auch ein Link auf eine SharePoint-Datei oder eine Teams-Nachricht funktioniert als Kontext, solange du selbst Zugriff darauf hast:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Vergleiche die beiden Angebotsvorlagen unter den folgenden Links und
+liste die Unterschiede in Aufbau, Tonalitaet und Zahlungsbedingungen als
+Tabelle auf.
+Links:
+[SharePoint-Link Vorlage 2024]
+[SharePoint-Link Vorlage 2026]
+Format: Tabelle mit den Spalten Aspekt, Vorlage 2024, Vorlage 2026, Bewertung.
+Einschraenkung: Keine Empfehlung, nur Beschreibung der Unterschiede.
+</code></pre></div></td></tr></table></div>
+</div>
+<hr />
+<h2 id="114-vertraulichkeit-der-unterschied-der-zahlt">11.4 Vertraulichkeit: der Unterschied, der zählt<a class="headerlink" href="#114-vertraulichkeit-der-unterschied-der-zahlt" title="Permanent link">&para;</a></h2>
+<p>Für die Praxis reicht es, zwei Kategorien sauber zu unterscheiden.</p>
+<table>
+<thead>
+<tr>
+<th>Merkmal</th>
+<th>Copilot in Microsoft 365</th>
+<th>Öffentliches Werkzeug im Privatkonto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Datenraum</td>
+<td>innerhalb des Mandanten deiner Organisation</td>
+<td>Anbieterinfrastruktur außerhalb</td>
+</tr>
+<tr>
+<td>Berechtigungen</td>
+<td>bestehende M365-Rechte gelten</td>
+<td>keine, alles Eingefügte ist verfügbar</td>
+</tr>
+<tr>
+<td>Training mit deinen Eingaben</td>
+<td>nein</td>
+<td>je nach Tarif und Einstellung möglich</td>
+</tr>
+<tr>
+<td>Zugriff auf interne Dateien</td>
+<td>ja, im Rahmen deiner Rechte</td>
+<td>nur, was du manuell hineinkopierst</td>
+</tr>
+<tr>
+<td>Geeignet für personenbezogene Daten</td>
+<td>nur nach interner Freigabe und Prüfung</td>
+<td>nein</td>
+</tr>
+</tbody>
+</table>
+<p>Das heißt nicht, dass in Copilot alles erlaubt ist. Es heißt: Der <strong>Datenraum</strong> ist ein anderer. Ob du Bewerberdaten, Gehaltslisten oder Kundenkontodaten überhaupt verarbeiten darfst, entscheidet nicht das Werkzeug, sondern die Rechtsgrundlage und die internen Regeln (Kap. 4). In den Fallbeispielen ab Kapitel 14 wird das je Fachbereich konkret.</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Copilot ist von Microsoft, also ist es datenschutzkonform" ist ein Trugschluss. Datenschutzkonform ist nicht ein Werkzeug, sondern eine <strong>Verarbeitung</strong>: bestimmte Daten, bestimmter Zweck, bestimmte Rechtsgrundlage. Copilot in M365 erleichtert die Sache erheblich, ersetzt aber weder Freigabe noch Zweckbindung noch die Beteiligung der Mitbestimmung.</p>
+</div>
+<hr />
+<h2 id="115-typische-enttauschungen-und-ihre-ursachen">11.5 Typische Enttäuschungen und ihre Ursachen<a class="headerlink" href="#115-typische-enttauschungen-und-ihre-ursachen" title="Permanent link">&para;</a></h2>
+<p>Nach den ersten Tagen mit Copilot hört man fast immer die gleichen Sätze. In den meisten Fällen liegt die Ursache nicht im Modell.</p>
+<table>
+<thead>
+<tr>
+<th>Erlebnis</th>
+<th>Wahrscheinliche Ursache</th>
+<th>Was du tun kannst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Es findet meine Datei nicht."</td>
+<td>Datei liegt lokal, nicht in OneDrive oder SharePoint</td>
+<td>Datei in die Cloud verschieben, Dateiname exakt nennen</td>
+</tr>
+<tr>
+<td>„Die Antwort ist beliebig."</td>
+<td>Auftrag ohne Rolle, Format und Einschränkung</td>
+<td>Auftragsmuster aus 11.3 verwenden</td>
+</tr>
+<tr>
+<td>„Es erfindet Zahlen."</td>
+<td>keine Quelle mitgegeben, Modell füllt Lücken</td>
+<td>Quelle anhängen und Erfinden ausdrücklich verbieten</td>
+</tr>
+<tr>
+<td>„In Word passiert nichts Sinnvolles."</td>
+<td>leeres Dokument ohne Kontext</td>
+<td>Stichpunkte oder Quelldokument zuerst einfügen</td>
+</tr>
+<tr>
+<td>„Kollegin bekommt andere Ergebnisse."</td>
+<td>andere Berechtigungen, andere Kontextdateien</td>
+<td>Kontext explizit gleich setzen und vergleichen</td>
+</tr>
+<tr>
+<td>„Die Zusammenfassung lässt Wichtiges weg."</td>
+<td>keine Angabe, was wichtig ist</td>
+<td>Prioritäten und Zielgruppe im Auftrag nennen</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Die Zwei-Versuche-Regel</p>
+<p>Verwirf ein Ergebnis nie nach dem ersten Versuch. Formuliere stattdessen einen <strong>Nachschärfer</strong> – eine kurze Korrekturanweisung im gleichen Chat:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Zu allgemein. Streiche alle Saetze, die auch fuer ein beliebiges anderes
+Projekt gelten wuerden. Ergaenze zu jedem Risiko die betroffene Abteilung und
+ein Datum. Maximal 150 Woerter.
+</code></pre></div></td></tr></table></div>
+<p>Erst wenn auch der zweite Versuch nichts bringt, fehlt in der Regel Kontext – nicht Modellqualität.</p>
+</div>
+<hr />
+<h2 id="116-eine-arbeitsweise-die-tragt">11.6 Eine Arbeitsweise, die trägt<a class="headerlink" href="#116-eine-arbeitsweise-die-tragt" title="Permanent link">&para;</a></h2>
+<p>Damit aus Einzelversuchen verlässliche Routine wird, brauchst du einen festen Ablauf. Er ist immer derselbe, unabhängig vom Fachbereich:</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Auftrag formulieren]) --&gt; B([Kontext anhaengen])
+    B --&gt; C([Ergebnis erzeugen])
+    C --&gt; D([Fachlich pruefen])
+    D --&gt; E([Uebernehmen und dokumentieren])
+    D --&gt;|nicht tragfaehig| A</code></pre>
+<p>Der Schritt, der in der Praxis am häufigsten übersprungen wird, ist die <strong>fachliche Prüfung</strong>. Sie ist keine Formalie: Ein sprachlich perfekter Text kann eine falsche Frist, eine erfundene Referenz oder eine nicht existierende interne Regel enthalten. Ab Kapitel 12 bekommst du dafür eine konkrete Prüfliste. Denn Copilot verkürzt den Weg vom leeren Blatt zum Entwurf – nicht den Weg vom Entwurf zur Verantwortung. Wer unterschreibt, versendet oder bucht, haftet, nicht das Werkzeug.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Copilot ist eine Familie: <strong>Copilot Chat</strong> für freie Aufträge mit selbst gewähltem Kontext, <strong>Copilot in der App</strong> für Arbeit im offenen Dokument.</li>
+<li>Der Zugriff läuft über <strong>Microsoft Graph</strong> und respektiert exakt deine <strong>bestehenden Berechtigungen</strong> – lokale Dateien bleiben unsichtbar.</li>
+<li>Gute Ergebnisse entstehen durch <strong>bewusst angehängten Kontext</strong>: Datei, Link oder eingefügter Text plus Rolle, Format und Einschränkung.</li>
+<li>Copilot in M365 arbeitet in einem anderen <strong>Datenraum</strong> als öffentliche Werkzeuge – das ersetzt aber keine Freigabe und keine Zweckbindung.</li>
+<li>Die meisten Enttäuschungen haben drei Ursachen: <strong>fehlender Kontext</strong>, <strong>unklarer Auftrag</strong>, <strong>Datei nicht in der Cloud</strong>.</li>
+<li>Der tragfähige Ablauf lautet immer: Auftrag, Kontext, Ergebnis, <strong>Prüfung</strong>, Übernahme.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Welcher Copilot-Zugang passt?</summary>
+<p>Ordne jeder Aufgabe den passenden Zugang zu: <strong>Copilot Chat</strong> (Browser oder Teams)
+oder <strong>Copilot in der App</strong> (Word, Excel, Outlook, Teams-Besprechung).</p>
+<ol>
+<li>Einen 24-seitigen Projektbericht, der gerade offen ist, auf eine Seite kürzen</li>
+<li>Herausfinden, was in den letzten drei Wochen im Kanal Lagerumbau besprochen wurde</li>
+<li>Einen Antwortentwurf auf eine gerade eingegangene Kundenmail erzeugen</li>
+<li>Zwei Angebotsvorlagen aus SharePoint miteinander vergleichen</li>
+<li>Aus einer markierten Tabelle eine Formel für die Marge erzeugen</li>
+<li>Nach einer Besprechung die offenen Aufgaben mit Verantwortlichen festhalten</li>
+</ol>
+<p>Notiere zu jeder Zuordnung in einem Halbsatz, <strong>woran</strong> du sie erkannt hast.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Frage dich: Steht der Inhalt schon offen vor mir – oder muss ich mehrere Quellen
+zusammenziehen, die ich erst benennen muss?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Aufgabe</th>
+<th>Zugang</th>
+<th>Erkennungsmerkmal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bericht kürzen</td>
+<td>Copilot in Word</td>
+<td>Dokument ist offen, Ergebnis soll ins Dokument</td>
+</tr>
+<tr>
+<td>Kanalverlauf auswerten</td>
+<td>Copilot Chat</td>
+<td>mehrere verstreute Quellen, kein offenes Dokument</td>
+</tr>
+<tr>
+<td>Antwortentwurf</td>
+<td>Copilot in Outlook</td>
+<td>Kontext ist die offene Nachricht</td>
+</tr>
+<tr>
+<td>Zwei Vorlagen vergleichen</td>
+<td>Copilot Chat</td>
+<td>zwei Dateien müssen als Kontext benannt werden</td>
+</tr>
+<tr>
+<td>Formel erzeugen</td>
+<td>Copilot in Excel</td>
+<td>Bezug auf markierten Tabellenbereich</td>
+</tr>
+<tr>
+<td>Offene Aufgaben festhalten</td>
+<td>Copilot in der Teams-Besprechung</td>
+<td>Gesprächsinhalt als Quelle</td>
+</tr>
+</tbody>
+</table>
+<p>Faustregel: <strong>Ein offenes Objekt</strong> führt zu Copilot in der App, <strong>mehrere zu benennende
+Quellen</strong> führen zu Copilot Chat. Beide Wege liefern übrigens unterschiedliche Ergebnisse
+für denselben Auftrag – das ist normal, weil sie unterschiedlichen Kontext sehen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Vom schwachen zum tragfähigen Auftrag</summary>
+<p>Diese Übung machst du direkt am Werkzeug (Copilot Chat, alternativ ChatGPT oder Claude
+mit manuell eingefügtem Text).</p>
+<p>Ausgangspunkt ist ein bewusst schwacher Auftrag:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Fass das mal zusammen.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Wähle ein echtes, unkritisches Dokument aus deinem Arbeitsumfeld – zum Beispiel ein
+   Protokoll oder eine interne Anleitung. Enthält es personenbezogene oder vertrauliche
+   Angaben, ersetze sie durch Platzhalter wie <code>[Kundenname]</code>.</li>
+<li>Schreibe den Auftrag neu, sodass er <strong>alle fünf</strong> Bausteine enthält: Rolle, Aufgabe,
+   Kontextquelle, Format, Einschränkung.</li>
+<li>Führe beide Aufträge aus und vergleiche die Ergebnisse.</li>
+<li>Notiere drei konkrete Unterschiede.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die wirkungsvollste Einschränkung ist fast immer dieselbe: das Verbot, Angaben zu
+ergänzen, die nicht in der Quelle stehen. Ergänze sie um eine Anweisung, was bei
+fehlenden Angaben passieren soll.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>So sieht ein tragfähiger Auftrag aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du bist Assistenz der Bereichsleitung.
+Aufgabe: Fasse das angehaengte Protokoll fuer eine Person zusammen, die nicht
+teilgenommen hat.
+Kontext: Nutze ausschliesslich die angehaengte Datei. Die Leserin kennt das
+Projekt, aber nicht die Details.
+Format: Drei Abschnitte mit je maximal 50 Woertern
+Ergebnis, offene Punkte, naechster Schritt. Danach eine Tabelle
+Aufgabe, Verantwortlich, Termin.
+Einschraenkung: Ergaenze nichts, was nicht im Protokoll steht. Fehlende
+Angaben markiere mit unklar.
+</code></pre></div></td></tr></table></div>
+<p>Typische Unterschiede: (1) Der schwache Auftrag liefert eine gleichmäßige Nacherzählung,
+der starke eine nach Zweck gewichtete Auswahl. (2) Nur der starke Auftrag macht Lücken
+sichtbar, statt sie plausibel zu füllen. (3) Das Ergebnis des starken Auftrags ist ohne
+Nachbearbeitung weiterverwendbar, weil das Format vorgegeben war.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Kontext- und Berechtigungstest</summary>
+<p>Diese Übung machst du direkt am Werkzeug. Du prüfst experimentell, woher Copilot sein
+Wissen bezieht.</p>
+<ol>
+<li><strong>Ohne Kontext fragen.</strong> Stelle in Copilot Chat eine Frage zu einem internen Thema,
+   ohne eine Quelle anzuhängen, zum Beispiel:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Welche Frist gilt bei uns fuer die Rueckmeldung auf interne Anfragen?
+Antworte in zwei Saetzen und nenne die Quelle.
+</code></pre></div></td></tr></table></div>
+<p>Notiere, ob eine Quelle genannt wird und ob die Aussage stimmt.</p>
+<ol>
+<li><strong>Mit Kontext fragen.</strong> Hänge ein passendes internes Dokument an (Anleitung,
+   Richtlinie, Handbuch) und stelle dieselbe Frage, ergänzt um:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>Antworte ausschliesslich auf Basis der angehaengten Datei. Steht die Antwort
+dort nicht, schreibe nicht enthalten.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>
+<p><strong>Ort prüfen.</strong> Lege eine Testdatei mit einem eindeutigen Kunstwort im Text an, etwa
+   <code>Musterhandel Projektkuerzel Blauwal</code>. Speichere sie <strong>lokal</strong> und frage nach dem
+   Kunstwort. Speichere sie dann in OneDrive und frage erneut.</p>
+</li>
+<li>
+<p>Notiere aus allen drei Schritten drei Regeln für deinen eigenen Arbeitsalltag.</p>
+</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Rechne damit, dass Schritt 3 beim zweiten Versuch nicht sofort funktioniert. Bis eine
+neu hochgeladene Datei durchsuchbar ist, kann Zeit vergehen. Hänge sie in der Zwischenzeit
+direkt als Anlage an den Prompt – dann ist der Kontext sofort verfügbar.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartbare Beobachtungen:</p>
+<ul>
+<li><strong>Schritt 1:</strong> Ohne Quelle entsteht entweder eine allgemeine Antwort ohne Bezug zu deiner
+  Organisation oder eine erfundene, plausibel klingende Frist. Genau das ist die Halluzination
+  aus Kapitel 5 – hier im betrieblichen Kontext, wo sie teuer werden kann.</li>
+<li><strong>Schritt 2:</strong> Mit angehängter Datei wird die Antwort belegbar und die Formulierung
+  <code>nicht enthalten</code> erscheint dort, wo tatsächlich nichts steht. Das ist das gewünschte
+  Verhalten: Lücken sichtbar machen statt füllen.</li>
+<li><strong>Schritt 3:</strong> Die lokale Datei ist unsichtbar, die Cloud-Datei wird gefunden. Damit ist
+  die häufigste Alltagsenttäuschung erklärt.</li>
+</ul>
+<p>Beispielhafte eigene Regeln: (1) Interne Fragen nie ohne angehängte Quelle stellen.
+(2) In jedem Auftrag verbieten, Angaben zu ergänzen. (3) Arbeitsdateien grundsätzlich in
+OneDrive oder SharePoint ablegen, nicht auf dem lokalen Laufwerk.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Copilot-Startpaket für das Team Kundenservice</summary>
+<p><strong>Szenario:</strong> Bei der Musterhandel GmbH wurde Copilot für das Team Kundenservice
+freigeschaltet – zwölf Personen, sehr unterschiedliche Vorkenntnisse. Nach zwei Wochen ist
+die Stimmung gekippt: Drei Personen nutzen es täglich, sieben haben es nach dem ersten
+enttäuschenden Versuch liegen lassen, zwei kopieren Kundenmails in ein privates
+ChatGPT-Konto, weil es „dort besser funktioniert". Die Teamleiterin, Frau Berger, bittet dich
+um ein <strong>Startpaket</strong>, mit dem das Team in einer Stunde arbeitsfähig wird.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Ausgangslage Team Kundenservice, Musterhandel GmbH:
+12 Personen, davon 4 in Teilzeit
+Taeglich rund 180 Kundenmails, 30 Rueckrufe, 5 Eskalationen
+Ablage: Reklamationsvorlagen und Garantierichtlinie in SharePoint
+Viele persoenliche Arbeitsdateien liegen lokal auf dem Notebook
+Copilot Chat verfuegbar, Copilot in Word und Outlook nur fuer 5 Lizenzen
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Kontext-Landkarte bauen.</strong> Erstelle eine Übersicht, welche Informationsquellen
+des Teams für Copilot überhaupt erreichbar sind. Liste mindestens <strong>zehn</strong> Quellen auf
+(Postfach, Teams-Kanäle, SharePoint-Bibliotheken, Excel-Listen, lokale Ordner, Papierakten,
+Fachsystem) und ordne jeder zu: erreichbar über Copilot ja/nein, Begründung, und falls nein,
+welcher Ausweichweg bleibt. Markiere die drei Quellen, deren Verlagerung in die Cloud den
+größten Effekt hätte.</p>
+<p><strong>Runde 2 – Auftragsvorlagen erstellen und prüfen.</strong> Entwickle <strong>sechs</strong> wiederverwendbare
+Auftragsvorlagen für die häufigsten Tätigkeiten des Teams (zum Beispiel Reklamation
+zusammenfassen, Antwortentwurf, Eskalation aufbereiten, Wochenbericht, Vorlage anpassen,
+Rückrufnotiz). Jede Vorlage nutzt Platzhalter in eckigen Klammern. Alle sechs müssen <strong>alle
+vier</strong> Pflichtkriterien erfüllen – prüfe sie einzeln nach und korrigiere:</p>
+<ol>
+<li>Rolle, Aufgabe, Kontextquelle, Format und Einschränkung sind ausdrücklich benannt.</li>
+<li>Die Kontextquelle ist konkret nachvollziehbar benannt, nicht als „unsere Unterlagen".</li>
+<li>Eine Einschränkung verbietet Angaben, die nicht in der Quelle stehen, und regelt, was
+   bei fehlenden Angaben geschieht.</li>
+<li>Die Vorlage funktioniert auch für die sieben Personen <strong>ohne</strong> App-Lizenz, also in
+   Copilot Chat mit eingefügtem Text.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Zwei Dinge passieren gleichzeitig. Erstens berichtet ein
+Teammitglied, dass Copilot in einer Zusammenfassung eine Gehaltsübersicht zitiert hat, die
+offensichtlich nicht für den Kundenservice gedacht war – die SharePoint-Freigabe ist zu weit
+gesetzt. Zweitens ist eine deiner Vorlagen bei einem Test durchgefallen: Der erzeugte
+Antwortentwurf nannte eine Garantiefrist, die es bei Musterhandel nicht gibt. Bearbeite beides:
+Formuliere für den Freigabefund einen sachlichen Meldeweg an die IT und erkläre dem Team in
+drei Sätzen, warum Copilot hier <strong>nicht</strong> die Ursache ist. Überarbeite die durchgefallene
+Vorlage so, dass der Fehler strukturell nicht mehr auftreten kann, und belege die Wirkung mit
+einem erneuten Testlauf.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Frau Berger möchte die zwei Kolleginnen, die
+private Konten nutzen, „einfach machen lassen, solange die Ergebnisse gut sind", und
+zusätzlich alle fünf App-Lizenzen an die drei Vielnutzenden geben, damit sichtbare Erfolge
+entstehen. Lass dir von einem KI-Werkzeug Argumente für und gegen beide Vorgaben geben,
+entscheide dann begründet – und <strong>widersprich</strong> mindestens einer der beiden Vorgaben mit einer
+tragfähigen Begründung und einem konkreten Gegenvorschlag zur Lizenzverteilung.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Kontext-Landkarte als Tabelle (mindestens zehn Quellen, alle Spalten gefüllt, drei markiert)</li>
+<li>sechs Auftragsvorlagen plus ausgefüllte Prüfliste der vier Pflichtkriterien</li>
+<li>Meldeweg zum Freigabefund, Team-Erklärung in drei Sätzen und die überarbeitete Vorlage mit
+   Vorher-Nachher-Testergebnis</li>
+<li>begründete Entscheidung zu Lizenzverteilung und privaten Konten, inklusive des
+   abgelehnten Vorschlags</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> jede der sechs Vorlagen ohne App-Lizenz benutzbar ist, die
+überarbeitete Vorlage die erfundene Frist im erneuten Test nachweislich nicht mehr erzeugt,
+und deine Entscheidung in Runde 4 mindestens einer Vorgabe von Frau Berger begründet
+widerspricht.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Runde 1 und 2 sind Handwerk – wichtig, aber
+erledigt. In Runde 3 kommt es darauf an, den Berechtigungsfund richtig einzuordnen: Copilot
+hat kein Recht verletzt, es hat ein bestehendes Freigabeproblem sichtbar gemacht. Wer das
+verwechselt, produziert ein Werkzeugverbot statt einer Rechtekorrektur. In Runde 4 ist die
+bequeme Antwort, beide Vorgaben zu übernehmen. Frage dich stattdessen, welches Verhalten du
+damit dauerhaft belohnst.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Die Kontext-Landkarte unterscheidet korrekt zwischen Cloud-Inhalten
+und nicht erreichbaren Quellen und benennt für jede nicht erreichbare Quelle einen realistischen
+Ausweichweg; (2) alle sechs Vorlagen erfüllen die vier Pflichtkriterien nachweislich, insbesondere
+die Nutzbarkeit ohne App-Lizenz und die Regel für fehlende Angaben; (3) der Berechtigungsfund wird
+als Freigabeproblem und nicht als Copilot-Fehler eingeordnet, der Meldeweg ist sachlich und ohne
+Schuldzuweisung, und die überarbeitete Vorlage zeigt im erneuten Test messbar bessere Bindung an
+die Quelle; (4) die Entscheidung in Runde 4 wägt Nutzen, Vertraulichkeit und Teamwirkung ab,
+benennt das Risiko privater Konten für Kundendaten konkret und begründet die Lizenzverteilung
+nicht mit Sichtbarkeit allein.</p>
+<p>Lernziel: Copilot als Werkzeug mit Datenraum, Berechtigungslogik und Kontextbedarf verstehen –
+und daraus eine Arbeitsweise ableiten, die ein ganzes Team tragfähig statt zufällig nutzt.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel10/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel12/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 12 – KI-gestützte Textarbeit">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 12 – KI-gestützte Textarbeit
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

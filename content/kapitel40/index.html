@@ -1,0 +1,1812 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel39/">
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 40 – Präsentation und Ausblick - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-40-prasentation-und-ausblick" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 40 – Präsentation und Ausblick
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Block 7 · Projektarbeit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel36/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 37 – Umsetzung: bauen, iterieren, testen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 39 – Dokumentation der Projektarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 40 – Präsentation und Ausblick
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 40 – Präsentation und Ausblick
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#401-die-storyline-einer-zehn-minuten-prasentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      40.1 Die Storyline einer Zehn-Minuten-Präsentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#402-die-live-demo-absichern" class="md-nav__link">
+    <span class="md-ellipsis">
+      40.2 Die Live-Demo absichern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#403-nutzen-belegen-statt-behaupten" class="md-nav__link">
+    <span class="md-ellipsis">
+      40.3 Nutzen belegen statt behaupten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#404-mit-kritischen-fragen-umgehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      40.4 Mit kritischen Fragen umgehen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#405-nach-dem-kurs-bibliothek-kompetenz-entwicklungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      40.5 Nach dem Kurs: Bibliothek, Kompetenz, Entwicklungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#406-die-ersten-90-tage-und-der-bogen-zuruck" class="md-nav__link">
+    <span class="md-ellipsis">
+      40.6 Die ersten 90 Tage – und der Bogen zurück
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-40-prasentation-und-ausblick">Kapitel 40 – Präsentation und Ausblick<a class="headerlink" href="#kapitel-40-prasentation-und-ausblick" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie eine <strong>Zehn-Minuten-Präsentation</strong> aufgebaut ist: Problem, Lösung, Demo, Nutzen, Grenzen, nächste Schritte</li>
+<li>Wie du eine <strong>Live-Demo absicherst</strong> und eine Rückfallebene vorbereitest</li>
+<li>Wie du <strong>Nutzen belegst statt behauptest</strong></li>
+<li>Wie du mit <strong>kritischen Fragen</strong> umgehst – mit einer Haltung, die trägt</li>
+<li>Wie du deine <strong>Prompt- und Flow-Bibliothek</strong> pflegst und deine Kompetenz weiterentwickelst</li>
+<li>Welche <strong>Entwicklungen</strong> du im Blick behalten solltest und wie deine <strong>ersten 90 Tage</strong> aussehen</li>
+</ul>
+</div>
+<hr />
+<h2 id="401-die-storyline-einer-zehn-minuten-prasentation">40.1 Die Storyline einer Zehn-Minuten-Präsentation<a class="headerlink" href="#401-die-storyline-einer-zehn-minuten-prasentation" title="Permanent link">&para;</a></h2>
+<p>Zehn Minuten sind kurz, und sie werden noch kürzer, wenn die Demo hängt. Deshalb bekommt jeder Teil ein festes Zeitfenster und eine einzige Aufgabe.</p>
+<table>
+<thead>
+<tr>
+<th>Teil</th>
+<th>Zeit</th>
+<th>Aufgabe</th>
+<th>Häufigster Fehler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Problem und Ausgangslage</strong></td>
+<td>1–2 min</td>
+<td>den Schmerz greifbar machen</td>
+<td>zu lange Vorrede zum Unternehmen</td>
+</tr>
+<tr>
+<td><strong>Lösungsidee</strong></td>
+<td>1–2 min</td>
+<td>in drei Sätzen erklären, was gebaut wurde</td>
+<td>technische Details statt Wirkung</td>
+</tr>
+<tr>
+<td><strong>Demo</strong></td>
+<td>3–4 min</td>
+<td>einen Durchlauf zeigen</td>
+<td>zu viele Klicks, zu viele Sonderfälle</td>
+</tr>
+<tr>
+<td><strong>Nutzen mit Zahlen</strong></td>
+<td>1–2 min</td>
+<td>Wirkung belegen</td>
+<td>behaupten statt rechnen</td>
+</tr>
+<tr>
+<td><strong>Grenzen und Risiken</strong></td>
+<td>1 min</td>
+<td>Vertrauen schaffen</td>
+<td>weglassen aus Sorge um den Eindruck</td>
+</tr>
+<tr>
+<td><strong>Nächste Schritte</strong></td>
+<td>1 min</td>
+<td>zeigen, dass es weitergeht</td>
+<td>vage Absichtserklärungen</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    A([Problem]) --&gt; B([Loesungsidee])
+    B --&gt; C([Demo])
+    C --&gt; D([Nutzen mit Zahlen])
+    D --&gt; E([Grenzen])
+    E --&gt; F([Naechste Schritte])</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>STORYLINE
+
+Einstiegssatz:   [ein Satz, der das Problem konkret macht, ohne Fachjargon]
+Ausgangslage:    [Zahl oder Beispiel: Faelle pro Woche, Zeit pro Fall]
+Loesung in 3 Saetzen:
+  1. Ausgeloest wird der Ablauf durch [Trigger].
+  2. Automatisch passiert [Kernschritte inkl. KI-Anteil].
+  3. Entschieden wird weiterhin von [Person] an der Stelle [Entscheidung].
+Demo-Ablauf:     1. [Ausgangszustand zeigen]  2. [Auslesen]  3. [Ergebnis zeigen]
+Nutzenaussage:   Vorher [Wert] , nachher [Wert] , gemessen an [Anzahl] Faellen
+Grenzen:         [Grenze 1] , [Grenze 2] , bewusst nicht automatisiert: [Punkt]
+Naechste Schritte: [Schritt] bis [Zeitpunkt] , verantwortlich [Person]
+Schlusssatz:     [ein Satz, der Nutzen und Verantwortung verbindet]
+</code></pre></div></td></tr></table></div>
+<p>Der <strong>Einstiegssatz</strong> entscheidet über die Aufmerksamkeit. „Jede Reklamation lag bei uns im Durchschnitt zwei Tage, bevor überhaupt jemand sie gelesen hatte" wirkt sofort. „Ich möchte Ihnen heute mein Automatisierungsprojekt vorstellen" verschenkt die erste Minute.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Die Demo ist nicht der Höhepunkt, sondern der Beweis. Der Höhepunkt ist der belegte Nutzen. Eine schöne Demo ohne Zahl bleibt eine Vorführung; eine Zahl ohne Demo bleibt eine Behauptung. Du brauchst beides, in dieser Reihenfolge.</p>
+</div>
+<hr />
+<h2 id="402-die-live-demo-absichern">40.2 Die Live-Demo absichern<a class="headerlink" href="#402-die-live-demo-absichern" title="Permanent link">&para;</a></h2>
+<p>Live-Demos scheitern selten am Flow. Sie scheitern an Anmeldefenstern, langen Ladezeiten, einem Trigger, der ein paar Minuten braucht, und daran, dass genau jetzt eine echte Mail dazwischenkommt.</p>
+<table>
+<thead>
+<tr>
+<th>Regel</th>
+<th>Warum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vorher testen, am selben Gerät und Netz</strong></td>
+<td>die meisten Überraschungen sind Umgebungsprobleme</td>
+</tr>
+<tr>
+<td><strong>Testdaten vorbereiten und benennen</strong></td>
+<td>du musst nicht tippen, sondern nur auslösen</td>
+</tr>
+<tr>
+<td><strong>Kurze Wege</strong></td>
+<td>Tabs vorher öffnen, Zielansicht bereitlegen, nichts suchen</td>
+</tr>
+<tr>
+<td><strong>Aufzeichnung als Rückfallebene</strong></td>
+<td>ein zweiminütiges Video des Durchlaufs rettet die Demo</td>
+</tr>
+<tr>
+<td><strong>Keine Echtdaten</strong></td>
+<td>keine Kundennamen, keine Kollegennamen, keine echten Beträge</td>
+</tr>
+<tr>
+<td><strong>Wartezeit einplanen</strong></td>
+<td>ein Trigger, der langsam auslöst, wird zur Stille im Raum</td>
+</tr>
+</tbody>
+</table>
+<p>Der beste Schutz gegen Wartezeit ist eine Demo in zwei Teilen: Du löst den Durchlauf am Anfang der Präsentation aus und zeigst währenddessen Lösungsidee und Nutzen. Wenn du zur Demo kommst, ist das Ergebnis schon da – und du zeigst zusätzlich einen vorbereiteten, bereits abgeschlossenen Fall.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Der Wunsch, „auch noch den Sonderfall" zu zeigen. Jeder zusätzliche gezeigte Fall verdoppelt das Risiko und halbiert die verbleibende Zeit für den Nutzenteil. Zeige <strong>einen</strong> Durchlauf vollständig und erwähne die Sonderfälle mündlich.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Der Probelauf mit Stoppuhr</p>
+<p>Halte die Präsentation einmal komplett, mit Stoppuhr und laut gesprochen. Fast alle Präsentationen sind beim ersten Probelauf zu lang, und fast immer ist der Grund derselbe: zu viel Vorrede vor dem Problem. Kürze vorne, nicht hinten – Grenzen und nächste Schritte sind der Teil, der Souveränität zeigt.</p>
+</div>
+<hr />
+<h2 id="403-nutzen-belegen-statt-behaupten">40.3 Nutzen belegen statt behaupten<a class="headerlink" href="#403-nutzen-belegen-statt-behaupten" title="Permanent link">&para;</a></h2>
+<p>Eine Nutzenaussage ist belastbar, wenn drei Dinge sichtbar sind: der Ausgangswert, der neue Wert und wie beides gemessen wurde. Rechne offen und in kleinen Zahlen – hochgerechnete Jahreseffekte wirken beeindruckend und sind der schnellste Weg in eine Diskussion über deine Annahmen statt über dein Ergebnis.</p>
+<table>
+<thead>
+<tr>
+<th>Behauptet</th>
+<th>Belegt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Spart massiv Zeit."</td>
+<td>„8 Minuten je Fall vorher, unter 2 Minuten Prüfzeit jetzt, gemessen an 5 Fällen."</td>
+</tr>
+<tr>
+<td>„Weniger Fehler."</td>
+<td>„In 15 Testfällen wurde kein Betrag falsch übernommen; vorher gab es monatlich zwei Korrekturbuchungen."</td>
+</tr>
+<tr>
+<td>„Die KI erkennt alles zuverlässig."</td>
+<td>„18 von 20 Kategorien korrekt; die 2 Fehler betrafen Mischanfragen und gehen zur Prüfung."</td>
+</tr>
+<tr>
+<td>„Alle sind begeistert."</td>
+<td>„Zwei von drei Personen im Team nutzen die Liste seit dem Start; eine wartet auf den zweiten Eingangskanal."</td>
+</tr>
+<tr>
+<td>„Amortisiert sich in wenigen Wochen."</td>
+<td>„Bau- und Testaufwand etwa 12 Stunden; bei 40 Fällen pro Woche und 6 Minuten Einsparung ist das nach etwa 3 Wochen ausgeglichen."</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Nutzen ohne Zeiteinsparung</p>
+<p>Nicht jedes Projekt spart Zeit – und das ist kein Mangel. Belege dann die Wirkung, die tatsächlich eintritt: „Kein Fall bleibt mehr unbemerkt liegen, weil jeder Eingang sofort einen Eintrag mit Status erzeugt; vorher wurden Fälle über das Postfach verfolgt und in zwei Fällen im letzten Quartal übersehen." Qualität, Nachvollziehbarkeit und Entlastung von unangenehmer Routine sind genauso gültige Nutzenarten wie gesparte Minuten (Kap. 3).</p>
+</div>
+<hr />
+<h2 id="404-mit-kritischen-fragen-umgehen">40.4 Mit kritischen Fragen umgehen<a class="headerlink" href="#404-mit-kritischen-fragen-umgehen" title="Permanent link">&para;</a></h2>
+<p>Kritische Fragen sind ein gutes Zeichen: Sie bedeuten, dass jemand über den Einsatz nachdenkt. Die tragende Haltung ist einfach – du hast Entscheidungen getroffen, du kannst sie begründen, und du kennst die Grenzen deiner Lösung besser als alle im Raum.</p>
+<table>
+<thead>
+<tr>
+<th>Typische Frage</th>
+<th>Gute Antworthaltung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„Was ist, wenn die KI sich irrt?"</td>
+<td>„Deshalb entscheidet an dieser Stelle ein Mensch. Unklare Fälle gehen mit Status Prüfung erforderlich in die Liste, sie verschwinden nicht."</td>
+</tr>
+<tr>
+<td>„Ist das datenschutzkonform?"</td>
+<td>„Der Prompt bekommt nur den Anliegentext ohne Namen. Der Datenschutz-Check ist dokumentiert; bei einer Ausweitung würde ich die zuständige Stelle einbeziehen."</td>
+</tr>
+<tr>
+<td>„Wer macht das, wenn du weg bist?"</td>
+<td>„Verantwortlich ist X, Vertretung Y mit eigenem Zugriff. Betriebsblatt und Rückfallweg liegen vor."</td>
+</tr>
+<tr>
+<td>„Warum habt ihr nicht gleich alles automatisiert?"</td>
+<td>„Das haben wir bewusst nicht automatisiert, weil die Freigabe eine Verantwortungsentscheidung ist und ein Fehler dort teurer wäre als die eingesparte Minute."</td>
+</tr>
+<tr>
+<td>„Das rechnet sich doch nicht."</td>
+<td>„Bei 40 Fällen pro Woche und 6 Minuten Einsparung ist der Aufwand nach etwa 3 Wochen ausgeglichen. Hier ist die Rechnung."</td>
+</tr>
+<tr>
+<td>„Kann das nicht viel mehr?"</td>
+<td>„Ja, technisch. Ich habe absichtlich klein angefangen, damit das Ergebnis prüfbar bleibt. Die nächsten Schritte stehen fest."</td>
+</tr>
+</tbody>
+</table>
+<p>Drei Sätze, die immer funktionieren: „Das haben wir bewusst nicht automatisiert, weil …", „Das weiß ich nicht, ich prüfe es und melde mich" und „Diese Grenze ist bekannt und dokumentiert". Was <strong>nicht</strong> funktioniert: eine Grenze wegdiskutieren, eine Zahl im Moment erfinden oder eine Frage als Angriff behandeln.</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>Grenzen zu nennen wirkt nicht schwach, sondern kompetent. Wer ausschließlich Erfolge zeigt, weckt Misstrauen – jeder im Raum weiß, dass jede Automatisierung Grenzen hat. Nenne sie selbst, dann bestimmst du, in welchem Licht sie stehen.</p>
+</div>
+<hr />
+<h2 id="405-nach-dem-kurs-bibliothek-kompetenz-entwicklungen">40.5 Nach dem Kurs: Bibliothek, Kompetenz, Entwicklungen<a class="headerlink" href="#405-nach-dem-kurs-bibliothek-kompetenz-entwicklungen" title="Permanent link">&para;</a></h2>
+<p>Das Wissen aus diesem Kurs verfällt nicht, aber es verstaubt, wenn du es nicht anwendest. Drei Dinge halten es lebendig.</p>
+<p><strong>Deine Prompt- und Flow-Bibliothek.</strong> Du hast in Kapitel 9 und 10 begonnen, Prompts zu sammeln. Führe sie weiter als eigene Sammlung – eine Liste, ein OneNote, eine SharePoint-Liste – mit jeweils vier Angaben: Zweck, Prompt im Wortlaut, wo eingesetzt, was du geändert hast und warum. Dieselbe Logik für Flows: Zweck, Trigger, Besonderheiten, Fallen. Nach einem halben Jahr ist das dein wertvollster Besitz aus diesem Kurs, weil es deine Erfahrung enthält und nicht das Wissen aus einem Handbuch.</p>
+<p><strong>Deine Kompetenz.</strong> Der wirksamste Weg ist nicht der nächste Kurs, sondern der nächste kleine Use Case – am besten einer, der einer anderen Person hilft. Erklären festigt mehr als Lesen: Wer im Team zeigt, wie ein Flow aufgebaut ist, merkt sofort, welche Stellen er selbst noch nicht durchdrungen hat.</p>
+<p><strong>Die Entwicklungen.</strong> Der Bereich verändert sich schnell. Drei Richtungen sind absehbar:</p>
+<table>
+<thead>
+<tr>
+<th>Entwicklung</th>
+<th>Was das bedeutet</th>
+<th>Was daraus für dich folgt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agenten-Ökosysteme</strong></td>
+<td>Agenten rufen andere Agenten und Werkzeuge auf, statt einzelne Aufgaben zu lösen</td>
+<td>die Frage „wer handelt hier eigentlich" wird wichtiger (Kap. 33)</td>
+</tr>
+<tr>
+<td><strong>Tiefere Integration</strong></td>
+<td>KI-Funktionen sitzen direkt in den Fachanwendungen, nicht in einem Chatfenster</td>
+<td>weniger Bastelei, mehr Bedarf an Regeln und Freigaben</td>
+</tr>
+<tr>
+<td><strong>Mehr Autonomie</strong></td>
+<td>Systeme handeln über mehrere Schritte selbstständig</td>
+<td>Kontrollpunkte, Protokollierung und Abschaltbarkeit werden zur Pflicht, nicht zur Kür</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Die Konstante hinter allen Entwicklungen</p>
+<p>Je mehr ein System selbst tut, desto wichtiger wird die Frage, wo ein Mensch prüft und wer verantwortet. Die Werkzeuge in diesem Kurs werden sich ändern, vermutlich schnell. Die Fragen bleiben: Was passiert im Fehlerfall? Wer ist zuständig? Wie merken wir, dass es schiefgeht? Wie schalten wir es ab?</p>
+</div>
+<hr />
+<h2 id="406-die-ersten-90-tage-und-der-bogen-zuruck">40.6 Die ersten 90 Tage – und der Bogen zurück<a class="headerlink" href="#406-die-ersten-90-tage-und-der-bogen-zuruck" title="Permanent link">&para;</a></h2>
+<p>Ein Plan mit drei Etappen genügt und hat mehr Wirkung als ein Vorsatz.</p>
+<table>
+<thead>
+<tr>
+<th>Zeitraum</th>
+<th>Ziel</th>
+<th>Konkret</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tage 1–30</strong></td>
+<td>Bestehendes sichern</td>
+<td>Projektdoku ablegen, wo andere sie finden; Betriebsblatt aktuell halten; Prompt-Bibliothek anlegen</td>
+</tr>
+<tr>
+<td><strong>Tage 31–60</strong></td>
+<td>Zweiten Use Case umsetzen</td>
+<td>einen kleinen Kandidaten aus deiner Liste (Kap. 34) mit Steckbrief, Design und Testfällen durchziehen</td>
+</tr>
+<tr>
+<td><strong>Tage 61–90</strong></td>
+<td>Wissen weitergeben</td>
+<td>einer Kollegin einen Flow erklären und mit ihr gemeinsam einen kleinen bauen; Erfahrungen in die Bibliothek zurückschreiben</td>
+</tr>
+</tbody>
+</table>
+<p>Setze dir dafür drei feste Termine in den Kalender – ohne Termin passiert es nicht. Und behalte die Reihenfolge: sichern, dann erweitern, dann teilen. Wer sofort das nächste große Vorhaben startet, verliert das erste.</p>
+<p>Damit schließt sich der Bogen zu den ersten beiden Kapiteln. In Kapitel 1 stand die Unterscheidung zwischen einem System, das festen Regeln folgt, und einem, das aus Daten Wahrscheinlichkeiten ableitet. In Kapitel 2 kam die Einordnung dazu, welche Technologie zu welcher Aufgabe passt. Dein Projekt ist die Anwendung genau dieser beiden Einsichten: <strong>verlässliche Automatisierung außen, KI innen, Mensch an den Entscheidungspunkten.</strong> Der Flow transportiert Daten und hält Regeln ein, weil man sich darauf verlassen kann. Der KI-Baustein übernimmt das, was sich nicht in Regeln fassen lässt – und liefert deshalb Vorschläge, keine Wahrheiten. Und an den Stellen, an denen Verantwortung entsteht, steht ein Mensch.</p>
+<div class="admonition tip">
+<p class="admonition-title">Der letzte Merksatz</p>
+<p>Du brauchst keine großen Systeme, um wirksam zu sein. Ein sauber zugeschnittener, getesteter, dokumentierter und betreuter Ablauf verändert einen Arbeitsalltag mehr als eine Strategie, die niemand umsetzt. Und die Fähigkeit, die dich dabei am weitesten trägt, ist nicht das Beherrschen eines Werkzeugs, sondern die Gewohnheit zu fragen: Was passiert, wenn es schiefgeht – und wer merkt es?</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Die <strong>Zehn-Minuten-Storyline</strong>: Problem, Lösungsidee, Demo, Nutzen mit Zahlen, Grenzen, nächste Schritte – jeder Teil mit festem Zeitfenster.</li>
+<li>Die <strong>Live-Demo</strong> wird vorher am selben Gerät getestet, läuft mit vorbereiteten Testdaten und hat eine Aufzeichnung als Rückfallebene.</li>
+<li><strong>Nutzen belegen</strong> heißt: Ausgangswert, neuer Wert, Messweg – kleine geprüfte Zahlen statt hochgerechneter Jahreseffekte.</li>
+<li>Bei <strong>kritischen Fragen</strong> trägt die Haltung „das haben wir bewusst nicht automatisiert, weil …"; Grenzen selbst zu nennen wirkt kompetent.</li>
+<li>Nach dem Kurs: <strong>Prompt- und Flow-Bibliothek</strong> pflegen, den nächsten kleinen Use Case umsetzen, Wissen weitergeben.</li>
+<li>Mehr Autonomie bedeutet mehr <strong>Kontrollbedarf</strong> – die Konstante bleibt: verlässliche Automatisierung außen, KI innen, Mensch an den Entscheidungspunkten.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Einstiegssatz und Lösung in drei Sätzen</summary>
+<p>Formuliere den Anfang deiner Präsentation.</p>
+<ol>
+<li>Ein <strong>Einstiegssatz</strong>, der das Problem konkret macht – ohne Fachjargon, ohne Vorrede zum
+   Unternehmen, möglichst mit einer Zahl oder einem Beispiel.</li>
+<li>Die <strong>Lösung in genau drei Sätzen</strong>: Was löst den Ablauf aus, was passiert automatisch
+   (inklusive KI-Anteil), wer entscheidet weiterhin was.</li>
+<li>Lies beides laut und kürze alles, was du beim Sprechen nicht flüssig sagen kannst.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Streiche jeden Satz, der mit „Ich möchte heute vorstellen" oder „Zunächst ein paar Worte zu"
+beginnt. Die erste Minute gehört dem Problem, nicht der Einleitung.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) der Einstiegssatz nennt einen konkreten Zustand, keine Absicht;
+(2) die drei Sätze enthalten Trigger, automatischen Teil und menschlichen Entscheidungspunkt –
+in dieser Reihenfolge; (3) kein Werkzeugname ersetzt die Beschreibung der Wirkung.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<p>Einstiegssatz: „Eine Kundenanfrage lag bei uns im Schnitt anderthalb Tage im Sammelpostfach,
+bevor überhaupt jemand entschieden hat, wer sie bearbeitet."</p>
+<p>Lösung in drei Sätzen:
+„Ausgelöst wird der Ablauf durch jede neue Antwort in unserem Kontaktformular.
+Automatisch wird das Anliegen einer von vier Kategorien zugeordnet, mit zwei Sätzen
+zusammengefasst und mit Status Neu in unsere Liste eingetragen; der Absender bekommt sofort eine
+Eingangsbestätigung.
+Über die Kategorie entscheidet weiterhin die Teamleitung – sie bestätigt oder korrigiert den
+Vorschlag, bevor der Fall zugewiesen wird."</p>
+<p>Schwach wäre: „Wir haben mit Power Automate und KI einen Workflow gebaut, der eingehende
+Anfragen effizienter verarbeitet." Diese Fassung nennt Werkzeuge und Absichten, aber nichts
+Vorstellbares.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Eine Nutzenzahl herleiten und offen rechnen</summary>
+<p>Mache aus deiner Nutzenaussage eine belegte Zahl.</p>
+<ol>
+<li>Notiere den <strong>Ausgangswert</strong> mit Herkunft: Zeit oder Fehleranzahl vorher, und woher du die
+   Zahl hast (gemessen an wie vielen Fällen, wann).</li>
+<li>Notiere den <strong>neuen Wert</strong> mit derselben Angabe.</li>
+<li>Schreibe den <strong>Rechenweg</strong> in einer Zeile auf, sodass jemand ihn nachrechnen kann.</li>
+<li>Formuliere zusätzlich eine <strong>Nutzenaussage ohne Zeiteinsparung</strong> – zu Qualität,
+   Nachvollziehbarkeit oder Entlastung.</li>
+<li>Notiere zum Schluss, welche Zahl du <strong>nicht</strong> nennen wirst, weil du sie nicht belegen kannst.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Widerstehe der Hochrechnung auf das Jahr. „Das wären 200 Stunden im Jahr" führt sofort zu einer
+Diskussion über deine Annahmen statt über dein Ergebnis. Kleine, geprüfte Zahlen sind stärker.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) Ausgangs- und neuer Wert haben jeweils eine benannte Herkunft;
+(2) der Rechenweg ist nachrechenbar und nutzt keine unbelegten Zwischenannahmen; (3) die
+Nutzenaussage ohne Zeitbezug ist konkret; (4) es ist ausdrücklich benannt, welche Zahl weggelassen
+wird.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<p>„Vorher: 8 Minuten je Rechnung, gemessen an 5 Fällen am 5. März.
+Jetzt: unter 2 Minuten Prüfzeit, gemessen an 5 Fällen am 12. März.
+Rechnung: 6 Minuten Einsparung mal 40 Rechnungen pro Woche entspricht etwa 4 Stunden pro Woche.
+Bau- und Testaufwand rund 12 Stunden, also nach etwa 3 Wochen ausgeglichen.</p>
+<p>Ohne Zeitbezug: Jede Rechnung erzeugt jetzt sofort einen Listeneintrag mit Status. Vorher wurden
+Belege im Postfach verfolgt, im letzten Quartal sind dabei zwei Rechnungen erst nach der
+Zahlungsfrist aufgefallen.</p>
+<p>Nicht genannt: eine Fehlerquote vorher – sie wurde nie erfasst, also gibt es keinen
+Vergleichswert. Stattdessen nenne ich das Ergebnis der 15 Testfälle."</p>
+<p>Der letzte Punkt ist der eigentliche Lerninhalt: Eine bewusst weggelassene Zahl schützt dich
+davor, in der Fragerunde auf einer erfundenen Grundlage zu stehen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Die KI als kritischer Fragesteller</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li>Beschreibe dein Projekt in etwa zehn Sätzen: Problem, Lösung, KI-Anteil, Nutzenzahl, Grenzen.</li>
+<li>Gib diesen Auftrag:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist eine skeptische Fuehrungskraft und eine kritische Fachkollegin in
+einer Person. Stelle mir acht kritische Fragen zu diesem Projekt, davon
+mindestens zwei zu Datenschutz und Verantwortung, zwei zum Nutzen und
+seiner Herleitung, zwei zum Betrieb bei Ausfall oder Personalwechsel.
+Stelle nur Fragen, keine Ratschlaege.
+Projekt: [deine Beschreibung]
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Beantworte <strong>mindestens vier</strong> Fragen schriftlich in je zwei bis drei Sätzen. Mindestens eine
+   Antwort muss die Form haben: „Das haben wir bewusst nicht automatisiert, weil …"</li>
+<li>Markiere die Frage, die du <strong>nicht</strong> gut beantworten konntest, und notiere, was du dafür
+   nachliefern oder klären musst.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die unbeantwortbare Frage ist der Gewinn dieser Übung. Sie zeigt dir vorher, wo deine Unterlagen
+eine Lücke haben – und es ist wesentlich angenehmer, das jetzt zu merken als in der Fragerunde.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) mindestens vier schriftlich ausformulierte Antworten, jede mit konkretem
+Bezug auf dein Projekt statt allgemeiner Aussagen; (2) eine Antwort begründet ausdrücklich eine
+bewusst nicht automatisierte Entscheidung; (3) die schwache Stelle ist benannt, nicht
+weggeschrieben; (4) keine Antwort behauptet eine Zahl, die nicht in deinen Unterlagen steht.</p>
+<p>Beispiele für gute Antworten:</p>
+<p>Frage: „Was passiert, wenn die KI eine Anfrage falsch einordnet?"
+Antwort: „Die Kategorie ist ein Vorschlag; die Teamleitung bestätigt sie, bevor der Fall
+zugewiesen wird. Unklare Fälle bekommen den Status Prüfung erforderlich und bleiben in der Liste
+sichtbar. In 20 Testfällen waren 18 Kategorien korrekt, beide Fehler betrafen Mischanfragen."</p>
+<p>Frage: „Warum genehmigt der Flow nicht selbst?"
+Antwort: „Das haben wir bewusst nicht automatisiert, weil die Zuweisung an ein Team eine
+Verantwortungsentscheidung ist und ein Fehler dort mehr Zeit kostet, als die Freigabe spart. Die
+Freigabe dauert unter einer Minute pro Fall."</p>
+<p>Beispiel für eine erkannte Schwachstelle: „Frage nach der Löschfrist für die Zusammenfassungen
+konnte ich nicht beantworten – in der Liste gibt es keine Regel dafür. Nachzuliefern: Löschfrist
+festlegen und im Datenschutz-Abschnitt der Doku ergänzen."</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Projektetappe 6 – Präsentation vorbereiten, halten und Ausblick planen</summary>
+<p><strong>Projektetappe:</strong> Letzte Etappe. Grundlage ist dein Projekt mit Dokumentation (Kap. 39) und
+Betriebskonzept (Kap. 38). Am Ende dieses Workshops hast du eine Zehn-Minuten-Präsentation
+vorbereitet, einmal vollständig gehalten, eine Fragerunde überstanden – und einen Plan für die
+ersten 90 Tage nach dem Kurs.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Rueckfallebenen:
+Flow laeuft nicht vollstaendig -&gt; praesentiere den erreichten Stand ehrlich:
+  Problem, Design, gebauter Teil, Blocker, was du gelernt hast. Das ist eine
+  vollwertige Praesentation.
+Live-Demo nicht moeglich -&gt; zeige eine Aufzeichnung oder fuehre die Schritte
+  an vorbereiteten Testdaten von Hand vor.
+Kein Publikum verfuegbar -&gt; halte die Praesentation mit Aufzeichnung und
+  fuehre die Fragerunde mit einem KI-Werkzeug als Fragesteller.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Storyline und Demo aufbauen.</strong> Fülle die Storyline-Vorlage aus: Einstiegssatz,
+Ausgangslage mit Zahl, Lösung in drei Sätzen, Demo-Ablauf, Nutzenaussage mit Messweg, Grenzen,
+nächste Schritte, Schlusssatz. Bereite die Demo vollständig vor: Testdaten benannt und
+bereitgelegt, alle Ansichten vorher geöffnet, keine Echtdaten sichtbar, Aufzeichnung eines
+gelungenen Durchlaufs als Rückfallebene erstellt.</p>
+<p><strong>Runde 2 – Probelauf gegen vier Pflichtkriterien.</strong> Halte die Präsentation einmal vollständig
+mit Stoppuhr, laut gesprochen. Sie muss <strong>alle vier</strong> Kriterien erfüllen:</p>
+<ol>
+<li>Die Gesamtzeit liegt zwischen <strong>8 und 11 Minuten</strong>, und der Nutzenteil kommt tatsächlich vor –
+   nicht als abgeschnittener Rest.</li>
+<li>Jede genannte Zahl ist auf eine Messung oder ein Protokoll in deiner Doku zurückführbar.</li>
+<li>Der Abschnitt <strong>Grenzen</strong> benennt mindestens zwei Grenzen und einen bewusst nicht
+   automatisierten Entscheidungspunkt mit Begründung.</li>
+<li>Die <strong>Demo ist abgesichert</strong>: vorher am Einsatzgerät getestet, Testdaten vorbereitet,
+   Aufzeichnung vorhanden, kein Echtdatensatz und keine echten Personennamen zu sehen.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Simuliere den Ausfall: Führe die Präsentation ein zweites Mal
+durch, aber <strong>ohne funktionierende Live-Demo</strong> – als wäre die Anmeldung abgelaufen oder der
+Trigger zu langsam. Du hast dafür maximal zwei Minuten Demo-Zeit. Baue den Übergang so, dass das
+Publikum den Ausfall als eingeplant erlebt und keine inhaltliche Lücke entsteht. Notiere danach,
+welche Inhalte du in dieser Fassung gestrichen hast und ob die Präsentation dadurch schlechter
+wurde – oder überraschend besser.</p>
+<p><strong>Runde 4 – Fragerunde und Entscheidung unter Abwägung.</strong> Lass dir acht kritische Fragen
+stellen: von einer echten Person oder von deinem KI-Werkzeug in der Rolle einer skeptischen
+Führungskraft (Datenschutz, Nutzen, Betrieb, Personalwechsel). Beantworte alle acht mündlich,
+vier davon zusätzlich schriftlich. In den Rückmeldungen wird eine Erwartung auftauchen, die dein
+Projekt ausweiten will: mehr Automatik, Verzicht auf die Freigabe, Ausrollen in weitere
+Abteilungen, sofortiger Start ohne die offenen Punkte. <strong>Widersprich mindestens einer dieser
+Erwartungen begründet</strong> und formuliere daraus deine nächsten Schritte: Was du zusagst, was du
+ablehnst, und unter welcher Bedingung du es später tun würdest. Schließe mit deinem
+<strong>90-Tage-Plan</strong> ab: Tage 1–30 sichern, 31–60 zweiter Use Case, 61–90 Wissen weitergeben, mit je
+einem konkreten Termin.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>ausgefüllte Storyline und die Präsentationsunterlage, die du tatsächlich verwendet hast</li>
+<li>Nachweis der abgesicherten Demo: vorbereitete Testdaten und Aufzeichnung</li>
+<li>Notiz zum Probelauf mit Zeiten je Abschnitt plus die Auswertung der Fassung ohne Live-Demo</li>
+<li>schriftliche Antworten auf vier kritische Fragen, die begründete Zurückweisung einer
+   Ausweitungserwartung und der 90-Tage-Plan mit drei Terminen</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> du die Präsentation zweimal vollständig gehalten hast – einmal mit
+und einmal ohne Live-Demo –, jede genannte Zahl in deiner Doku belegt ist, alle acht kritischen
+Fragen beantwortet sind, und dein 90-Tage-Plan drei Einträge mit konkretem Termin im Kalender
+hat statt drei Absichten.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert steckt in Runde 3 und 4. Die Fassung ohne Demo ist keine Notlösung, sondern ein
+Test deiner Storyline: Wenn die Präsentation ohne laufenden Flow zusammenbricht, hat sie zu stark
+an der Vorführung gehangen und zu wenig an Problem, Nutzen und Entscheidungen. Viele merken hier
+zum ersten Mal, dass der überzeugendste Teil nicht die Technik ist, sondern der Satz „das haben
+wir bewusst nicht automatisiert, weil …". In Runde 4 geht es um die letzte Kompetenz dieses
+Kurses: einer wohlmeinenden Ausweitungserwartung standzuhalten, solange die Betriebsvoraussetzungen
+dafür fehlen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) die Storyline ist vollständig und die Präsentation folgt der Struktur
+Problem, Lösung, Demo, Nutzen, Grenzen, nächste Schritte in der vorgesehenen Zeit; (2) alle vier
+Pflichtkriterien sind erfüllt, insbesondere belegbare Zahlen, benannte Grenzen mit einem bewusst
+nicht automatisierten Entscheidungspunkt und eine nachweislich abgesicherte Demo ohne Echtdaten;
+(3) die Fassung ohne Live-Demo aus Runde 3 trägt inhaltlich und die Streichungen sind reflektiert;
+(4) die Fragerunde ist vollständig beantwortet, mindestens eine Ausweitungserwartung ist begründet
+zurückgewiesen und in eine Bedingung überführt, und der 90-Tage-Plan enthält drei terminierte,
+konkrete Vorhaben.</p>
+<p>Lernziel: Ein Ergebnis so zeigen, dass Nutzen belegt und Grenzen sichtbar sind – und den Bogen
+des gesamten Kurses schließen: verlässliche Automatisierung außen, KI innen, Mensch an den
+Entscheidungspunkten, auch wenn alle Beteiligten mehr Automatik wünschen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel39/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 39 – Dokumentation der Projektarbeit">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 39 – Dokumentation der Projektarbeit
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

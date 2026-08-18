@@ -1,0 +1,1799 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel1/">
+      
+      
+        <link rel="next" href="../kapitel3/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-2-ki-automatisierung-rpa-und-agenten-im-vergleich" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Block 1 · Einführung in KI und Automatisierung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 1 – Was ist Künstliche Intelligenz?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-vier-begriffe-die-im-alltag-durcheinandergehen" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Vier Begriffe, die im Alltag durcheinandergehen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-das-automatisierungs-spektrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Das Automatisierungs-Spektrum
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-rpa-automatisierung-uber-die-oberflache" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 RPA: Automatisierung über die Oberfläche
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-ki-ist-ein-baustein-ein-agent-ist-ein-akteur" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 KI ist ein Baustein, ein Agent ist ein Akteur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-entscheidungsraster-welche-technologie-fur-welche-aufgabe" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Entscheidungsraster: welche Technologie für welche Aufgabe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-kombinieren-statt-wahlen" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.6 Kombinieren statt wählen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 3 – Chancen, Risiken und ethische Verantwortung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 4 – Rechtliche Grundlagen und Datenschutz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-2-ki-automatisierung-rpa-und-agenten-im-vergleich">Kapitel 2 – KI, Automatisierung, RPA und Agenten im Vergleich<a class="headerlink" href="#kapitel-2-ki-automatisierung-rpa-und-agenten-im-vergleich" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie sich <strong>Automatisierung</strong>, <strong>RPA</strong>, <strong>KI</strong> und <strong>Agent</strong> sauber voneinander trennen lassen</li>
+<li>Das <strong>Automatisierungs-Spektrum</strong> von Makro über Workflow und RPA bis zum Agenten</li>
+<li>Warum <strong>RPA</strong> die Oberfläche bedient und wann das eine gute oder eine schlechte Idee ist</li>
+<li>Was einen <strong>Agenten</strong> von einem Chatfenster unterscheidet: Zielvorgabe, Werkzeuge, mehrere Schritte</li>
+<li>Ein praktisches <strong>Entscheidungsraster</strong>, welche Technologie zu welcher Aufgabe passt</li>
+<li>Wie du die Ansätze <strong>kombinierst</strong>, statt dich für einen entscheiden zu müssen</li>
+</ul>
+</div>
+<hr />
+<h2 id="21-vier-begriffe-die-im-alltag-durcheinandergehen">2.1 Vier Begriffe, die im Alltag durcheinandergehen<a class="headerlink" href="#21-vier-begriffe-die-im-alltag-durcheinandergehen" title="Permanent link">&para;</a></h2>
+<p>„Wir automatisieren das mit KI" – dieser Satz fällt in Projekten ständig, und meistens meinen zwei Personen am Tisch etwas völlig anderes damit. Deshalb steht dieses Kapitel früh im Kurs: Ohne saubere Begriffe wird jede Diskussion über Nutzen, Aufwand und Risiko beliebig.</p>
+<p><strong>Automatisierung</strong> heißt: Ein Ablauf läuft ohne menschliches Zutun, weil vorher festgelegt wurde, was in welcher Reihenfolge passieren soll. Die Intelligenz steckt im Kopf der Person, die den Ablauf entworfen hat – nicht im System.</p>
+<p><strong>RPA</strong> steht für <strong>Robotic Process Automation</strong>, auf Deutsch „robotergesteuerte Prozessautomatisierung". Eine Software bedient andere Programme so, wie ein Mensch es täte: Fenster öffnen, Felder ausfüllen, Knöpfe klicken, kopieren und einfügen.</p>
+<p><strong>KI</strong> liefert eine <strong>Einschätzung oder einen Inhalt</strong> – sie ordnet ein, extrahiert, fasst zusammen, formuliert. KI ist damit ein <strong>Baustein</strong>, kein Ablauf. Sie erledigt einen einzelnen Denkschritt, aber sie ruft von sich aus nichts auf und schickt keine E-Mail.</p>
+<p>Ein <strong>Agent</strong> ist ein KI-System, das ein <strong>Ziel</strong> erhält, dazu <strong>Werkzeuge</strong> benutzen darf und selbst entscheidet, in welcher Reihenfolge es Schritte ausführt, bis das Ziel erreicht ist.</p>
+<table>
+<thead>
+<tr>
+<th>Begriff</th>
+<th>Kernidee</th>
+<th>Wer legt die Schritte fest</th>
+<th>Ergebnis ist</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automatisierung</td>
+<td>fester Ablauf ohne Zutun</td>
+<td>der Mensch beim Bauen</td>
+<td>exakt vorhersehbar</td>
+</tr>
+<tr>
+<td>RPA</td>
+<td>Oberflächen bedienen wie ein Mensch</td>
+<td>der Mensch beim Aufzeichnen</td>
+<td>vorhersehbar, aber störanfällig</td>
+</tr>
+<tr>
+<td>KI</td>
+<td>einen Denkschritt erledigen</td>
+<td>der Mensch ruft den Baustein auf</td>
+<td>eine Wahrscheinlichkeit, keine Gewissheit</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td>Ziel erreichen mit Werkzeugen</td>
+<td>das System zur Laufzeit</td>
+<td>variabel, muss begrenzt werden</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Bei Automatisierung sagst du dem System <strong>wie</strong>. Bei einem Agenten sagst du ihm <strong>was</strong> – und gibst ihm die Werkzeuge dazu. Alles, was dazwischenliegt, ist eine Mischform.</p>
+</div>
+<hr />
+<h2 id="22-das-automatisierungs-spektrum">2.2 Das Automatisierungs-Spektrum<a class="headerlink" href="#22-das-automatisierungs-spektrum" title="Permanent link">&para;</a></h2>
+<p>Die vier Begriffe sind keine Gegensätze, sondern Stationen auf einer Linie. Je weiter rechts, desto mehr Entscheidungsspielraum gibt du ab – und desto mehr Kontrolle musst du bewusst wieder einbauen.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Makro und Skript]) --&gt; B([Regelbasierter Workflow])
+    B --&gt; C([RPA ueber Oberflaechen])
+    C --&gt; D([KI als Baustein])
+    D --&gt; E([Agent mit Zielvorgabe])</code></pre>
+<p><strong>Stufe 1 – Makro und Skript.</strong> Eine aufgezeichnete Abfolge innerhalb eines Programms, klassisch das Excel-Makro. Es läuft nur dort, wo es aufgezeichnet wurde, und nur, wenn jemand es startet.</p>
+<p><strong>Stufe 2 – Regelbasierter Workflow.</strong> Ein Ablauf über Systemgrenzen hinweg, ausgelöst durch ein Ereignis oder einen Zeitplan: Mail mit Anhang kommt an, Datei landet in SharePoint, das Team wird informiert. Dies ist die Stufe, die du ab Block 4 mit <strong>Power Automate</strong> selbst baust. Sie arbeitet über <strong>Connectoren</strong>, also vorgefertigte Verbindungen zu Diensten wie Outlook, Teams oder Excel.</p>
+<p><strong>Stufe 3 – RPA.</strong> Kommt ins Spiel, wenn es keine Connectoren gibt – etwa bei einem alten Fachprogramm ohne Schnittstelle.</p>
+<p><strong>Stufe 4 – KI als Baustein.</strong> Innerhalb eines Ablaufs übernimmt ein KI-Schritt genau die Stelle, die sich nicht in Regeln fassen lässt: „Ist diese Nachricht eine Reklamation, eine Anfrage oder eine Kündigung?"</p>
+<p><strong>Stufe 5 – Agent.</strong> Erhält ein Ziel statt einer Schrittfolge und wählt seinen Weg selbst.</p>
+<table>
+<thead>
+<tr>
+<th>Stufe</th>
+<th>Typisches Werkzeug</th>
+<th>Vorhersehbarkeit</th>
+<th>Beispielaufgabe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Makro</td>
+<td>Excel, Word</td>
+<td>vollständig</td>
+<td>Monatsbericht formatieren</td>
+</tr>
+<tr>
+<td>Workflow</td>
+<td>Power Automate Cloud-Flow, Zapier, Make</td>
+<td>vollständig</td>
+<td>Anhang ablegen und benachrichtigen</td>
+</tr>
+<tr>
+<td>RPA</td>
+<td>Power Automate Desktop</td>
+<td>hoch, aber bruchgefährdet</td>
+<td>Daten in Altsystem eintippen</td>
+</tr>
+<tr>
+<td>KI-Baustein</td>
+<td>AI Builder, Copilot, ChatGPT, Claude</td>
+<td>statistisch</td>
+<td>Anfrage einordnen, Text entwerfen</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td>Copilot Studio, ChatGPT, Claude</td>
+<td>variabel</td>
+<td>Rechercheauftrag mehrstufig abarbeiten</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Weiter rechts" bedeutet nicht „besser". Jede Stufe nach rechts kostet mehr Aufwand, mehr Prüfzeit und mehr Erklärungsbedarf. Wenn eine Aufgabe mit einer Regel gelöst ist, ist die Regel die richtige Antwort – auch dann, wenn ein Agent das ebenfalls könnte.</p>
+</div>
+<hr />
+<h2 id="23-rpa-automatisierung-uber-die-oberflache">2.3 RPA: Automatisierung über die Oberfläche<a class="headerlink" href="#23-rpa-automatisierung-uber-die-oberflache" title="Permanent link">&para;</a></h2>
+<p>RPA ist der pragmatische Notausgang. Es gibt in fast jedem Unternehmen ein System, das seit fünfzehn Jahren läuft, keine Schnittstelle hat und aus dem trotzdem täglich Daten heraus- oder hineinmüssen. Genau dort setzt RPA an: Der Software-Roboter meldet sich an, navigiert durch Masken, liest Felder aus, tippt ein.</p>
+<p>Der Preis dafür ist <strong>Zerbrechlichkeit</strong>. Weil RPA sieht, was ein Mensch sieht, stört es alles, was ein Mensch mühelos wegklickt: ein verschobener Knopf nach dem Update, ein unerwartetes Dialogfenster, eine längere Ladezeit.</p>
+<table>
+<thead>
+<tr>
+<th>Merkmal</th>
+<th>Workflow über Connector</th>
+<th>RPA über Oberfläche</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zugriffsweg</td>
+<td>dokumentierte Schnittstelle</td>
+<td>Bildschirm und Maus</td>
+</tr>
+<tr>
+<td>Stabilität bei Updates</td>
+<td>hoch</td>
+<td>niedrig, bricht bei Layoutänderung</td>
+</tr>
+<tr>
+<td>Geschwindigkeit</td>
+<td>schnell, viele Fälle parallel</td>
+<td>langsam, Fall für Fall</td>
+</tr>
+<tr>
+<td>Wartungsaufwand</td>
+<td>gering</td>
+<td>dauerhaft und spürbar</td>
+</tr>
+<tr>
+<td>Sinnvoll, wenn</td>
+<td>eine Schnittstelle existiert</td>
+<td>keine Schnittstelle existiert</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Reihenfolge der Prüfung</p>
+<p>Frage in dieser Reihenfolge: Erstens – gibt es einen Connector oder eine Schnittstelle? Zweitens – kann die Fachabteilung den Zwischenschritt anders lösen, etwa über einen Export? Erst wenn beides Nein ist, ist RPA die richtige Wahl. Die Werkzeuglandschaft und ihre Auswahlkriterien vertiefst du in Kapitel 20.</p>
+</div>
+<hr />
+<h2 id="24-ki-ist-ein-baustein-ein-agent-ist-ein-akteur">2.4 KI ist ein Baustein, ein Agent ist ein Akteur<a class="headerlink" href="#24-ki-ist-ein-baustein-ein-agent-ist-ein-akteur" title="Permanent link">&para;</a></h2>
+<p>Der wichtigste Unterschied in diesem Kapitel ist der zwischen Stufe 4 und Stufe 5 – weil er im Marketing der Anbieter systematisch verwischt wird.</p>
+<p>Ein <strong>KI-Baustein</strong> wird aufgerufen, bekommt eine Eingabe, gibt eine Ausgabe zurück und ist fertig. Er hat keinen Auftrag, der über diesen einen Schritt hinausgeht. Wenn du in einem Ablauf einen Prompt-Schritt einbaust, der eine Reklamation in drei Sätzen zusammenfasst, dann ist das ein Baustein: Der umgebende Ablauf entscheidet, was mit der Zusammenfassung passiert.</p>
+<p>Ein <strong>Agent</strong> hat ein Ziel und eine Schleife. Er beobachtet die Lage, plant einen nächsten Schritt, führt ihn mit einem Werkzeug aus, sieht das Ergebnis und entscheidet erneut. Dazu braucht er vier Dinge: eine <strong>Instruktion</strong> (wie er sich verhalten soll), <strong>Werkzeuge</strong> (was er aufrufen darf), <strong>Wissen</strong> (auf welche Dokumente er zugreift) und ein <strong>Gedächtnis</strong> (was im Gespräch schon geklärt ist). Diese Anatomie baust du in Kapitel 6 systematisch auf, eigene Agenten mit Copilot Studio in Kapitel 32.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Ziel vom Menschen]) --&gt; B([Agent plant Schritt])
+    B --&gt; C([Werkzeug wird aufgerufen])
+    C --&gt; D([Agent bewertet Ergebnis])
+    D --&gt; B
+    D --&gt; E([Ergebnis zur Freigabe])</code></pre>
+<div class="admonition example">
+<p class="admonition-title">Dieselbe Aufgabe auf drei Stufen</p>
+<p>Aufgabe: Eingangsrechnungen prüfen und bei Abweichung nachfragen.</p>
+<ul>
+<li><strong>Workflow:</strong> Rechnung kommt per Mail, wird in SharePoint abgelegt, eine Aufgabe für die Buchhaltung wird erstellt. Immer gleich, kein Denkschritt.</li>
+<li><strong>Workflow mit KI-Baustein:</strong> Zusätzlich liest ein KI-Schritt Rechnungsnummer, Betrag und Lieferant aus dem PDF. Ein Vergleich mit der Bestellung erfolgt danach wieder regelbasiert – nur bei Abweichung geht eine Aufgabe an den Menschen.</li>
+<li><strong>Agent:</strong> Erhält das Ziel „kläre offene Abweichungen bei Eingangsrechnungen". Er darf die Bestelldatenbank abfragen, beim Einkauf nachfragen und eine Rückfrage an den Lieferanten entwerfen. Welche Schritte er in welcher Reihenfolge geht, entscheidet er selbst.</li>
+</ul>
+<p>Die dritte Variante ist die mächtigste und gleichzeitig die, die du am genauesten begrenzen und protokollieren musst.</p>
+</div>
+<hr />
+<h2 id="25-entscheidungsraster-welche-technologie-fur-welche-aufgabe">2.5 Entscheidungsraster: welche Technologie für welche Aufgabe<a class="headerlink" href="#25-entscheidungsraster-welche-technologie-fur-welche-aufgabe" title="Permanent link">&para;</a></h2>
+<p>Statt mit der Technologie anzufangen, fängst du mit der Aufgabe an. Fünf Fragen genügen für eine erste belastbare Zuordnung:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Frage 1: Laesst sich die Aufgabe vollstaendig in Regeln beschreiben?
+         Ja  -&gt; Workflow. Nein -&gt; weiter.
+Frage 2: Steckt der schwierige Teil in Sprache, Text oder Dokumenten?
+         Ja  -&gt; KI-Baustein im Workflow. Nein -&gt; weiter.
+Frage 3: Fehlt eine Schnittstelle zum Zielsystem?
+         Ja  -&gt; RPA pruefen. Nein -&gt; weiter.
+Frage 4: Sind Anzahl und Reihenfolge der Schritte vorab unbekannt?
+         Ja  -&gt; Agent pruefen. Nein -&gt; Workflow genuegt.
+Frage 5: Waere ein Fehler teuer, rechtlich relevant oder schwer erkennbar?
+         Ja  -&gt; Freigabe durch Menschen ist Pflicht, Autonomie senken.
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Aufgabenmerkmal</th>
+<th>Passende Stufe</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immer gleiche Schrittfolge, klare Daten</td>
+<td>Workflow</td>
+<td>vorhersehbar, günstig, wartbar</td>
+</tr>
+<tr>
+<td>Ein Schritt braucht Urteil über Text</td>
+<td>Workflow plus KI-Baustein</td>
+<td>KI nur an der Stelle, wo Regeln versagen</td>
+</tr>
+<tr>
+<td>Zielsystem ohne Schnittstelle</td>
+<td>RPA</td>
+<td>letzte Möglichkeit, wenn kein Connector existiert</td>
+</tr>
+<tr>
+<td>Offener Auftrag, Weg unklar</td>
+<td>Agent</td>
+<td>Reihenfolge entsteht erst zur Laufzeit</td>
+</tr>
+<tr>
+<td>Rechtsverbindliche oder personenbezogene Entscheidung</td>
+<td>Mensch entscheidet</td>
+<td>KI liefert höchstens den Entwurf</td>
+</tr>
+<tr>
+<td>Aufgabe fällt zweimal im Jahr an</td>
+<td>gar nichts automatisieren</td>
+<td>Bau- und Wartungsaufwand lohnt nicht</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Die letzte Zeile wird am häufigsten übersehen. Eine Automatisierung, die zwei Tage Bauzeit kostet und dreimal jährlich zehn Minuten spart, ist ein Verlustgeschäft – auch wenn sie technisch gelungen ist. Wie du Kandidaten nach Häufigkeit, Aufwand und Regelmäßigkeit priorisierst, vertiefst du in Kapitel 17 und Kapitel 34.</p>
+</div>
+<hr />
+<h2 id="26-kombinieren-statt-wahlen">2.6 Kombinieren statt wählen<a class="headerlink" href="#26-kombinieren-statt-wahlen" title="Permanent link">&para;</a></h2>
+<p>In der Praxis ist die Frage fast nie „Workflow <strong>oder</strong> KI". Das tragfähige Muster lautet <strong>deterministisch außen, KI innen</strong>: Der Ablauf, der Daten transportiert, Fristen wahrt und protokolliert, ist regelbasiert und damit nachvollziehbar. Die KI sitzt in einem klar begrenzten Innenschritt. Und an jeder Stelle mit Folgen sitzt ein Mensch als Freigabepunkt.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Anfrage trifft ein]) --&gt; B([Workflow nimmt auf])
+    B --&gt; C([KI ordnet ein und entwirft])
+    C --&gt; D([Mensch prueft und gibt frei])
+    D --&gt; E([Workflow versendet und archiviert])</code></pre>
+<p>Der Vorteil dieses Aufbaus ist die <strong>Fehlereingrenzung</strong>. Wenn etwas schiefgeht, kannst du unterscheiden: Hat der Ablauf nicht ausgelöst? Hat die KI falsch eingeordnet? Oder hat die Freigabe gefehlt? Bei einem Agenten, der alles auf einmal macht, ist diese Unterscheidung sehr viel schwerer – ein Grund, warum Agenten selten der beste erste Schritt sind. Die Einsatzstellen für KI in Abläufen behandelt Kapitel 29, das Zusammenspiel von Agent und Workflow Kapitel 33.</p>
+<p>Ab jetzt lohnt es sich, die Begriffe konsequent zu trennen: Sprich nicht von „KI", wenn du einen Ablauf meinst, und nicht von „Agent", wenn du einen einzelnen KI-Aufruf meinst. Diese Präzision hilft nicht nur im Kurs, sondern vor allem in Gesprächen mit der IT, der Datenschutzbeauftragten und dem Betriebsrat – die dort gestellten Fragen unterscheiden sich je Stufe erheblich (Kapitel 4).</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Automatisierung</strong> legt Schritte fest, <strong>KI</strong> erledigt einen Denkschritt, ein <strong>Agent</strong> verfolgt ein Ziel mit Werkzeugen – das sind drei verschiedene Dinge.</li>
+<li>Das Spektrum reicht von <strong>Makro</strong> über <strong>Workflow</strong> und <strong>RPA</strong> bis zum <strong>KI-Baustein</strong> und zum <strong>Agenten</strong>; weiter rechts heißt mehr Freiheitsgrade und mehr Kontrollbedarf.</li>
+<li><strong>RPA</strong> ist die Notlösung ohne Schnittstelle: schnell gebaut, dauerhaft wartungsintensiv, empfindlich gegen Updates.</li>
+<li>Der Unterschied zwischen <strong>Baustein</strong> und <strong>Agent</strong> liegt in Zielvorgabe, Werkzeugen und der eigenen Entscheidung über die Schrittfolge.</li>
+<li>Das Entscheidungsraster fragt nach Regelhaftigkeit, Sprachanteil, Schnittstellen, Offenheit des Wegs und Fehlerfolgen – erst danach fällt die Werkzeugwahl.</li>
+<li>Das belastbarste Muster ist <strong>deterministisch außen, KI innen, Mensch an den Entscheidungspunkten</strong>.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Stufe im Spektrum bestimmen</summary>
+<p>Ordne jeden Fall einer Stufe des Automatisierungs-Spektrums zu:
+<strong>Makro</strong>, <strong>regelbasierter Workflow</strong>, <strong>RPA</strong>, <strong>KI-Baustein</strong> oder <strong>Agent</strong>.</p>
+<ol>
+<li>Ein Excel-Ablauf formatiert jeden Monat den Umsatzbericht auf Knopfdruck.</li>
+<li>Trifft eine Mail mit Anhang ein, wird die Datei in SharePoint abgelegt und das Team informiert.</li>
+<li>Eine Software meldet sich am alten Lagersystem an und tippt Bestellmengen in die Maske.</li>
+<li>Ein Schritt liest aus einem Rechnungs-PDF Nummer, Betrag und Lieferant heraus.</li>
+<li>Ein System erhält den Auftrag, offene Rückfragen zu einer Reklamation zu klären, und
+   entscheidet selbst, welche Quellen es dafür abfragt.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zwei Leitfragen genügen: Wer hat die Reihenfolge der Schritte festgelegt – ein Mensch beim
+Bauen oder das System zur Laufzeit? Und wird über die Oberfläche oder über eine Schnittstelle
+zugegriffen?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Fall</th>
+<th>Stufe</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Umsatzbericht formatieren</td>
+<td>Makro</td>
+<td>feste Abfolge innerhalb eines Programms, manuell gestartet</td>
+</tr>
+<tr>
+<td>2 Anhang ablegen und informieren</td>
+<td>regelbasierter Workflow</td>
+<td>Ereignis als Auslöser, Connectoren, immer gleicher Ablauf</td>
+</tr>
+<tr>
+<td>3 Bestellmengen eintippen</td>
+<td>RPA</td>
+<td>bedient eine Oberfläche, weil keine Schnittstelle existiert</td>
+</tr>
+<tr>
+<td>4 Felder aus PDF lesen</td>
+<td>KI-Baustein</td>
+<td>ein Denkschritt mit statistischem Ergebnis, danach geht es regelbasiert weiter</td>
+</tr>
+<tr>
+<td>5 Rückfragen klären</td>
+<td>Agent</td>
+<td>erhält ein Ziel, wählt Werkzeuge und Reihenfolge selbst</td>
+</tr>
+</tbody>
+</table>
+<p>Fall 4 ist der lehrreichste: Der KI-Anteil ist nur ein einzelner Schritt. Alles davor und
+danach bleibt regelbasiert – genau das Muster „deterministisch außen, KI innen".</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Das Entscheidungsraster anwenden</summary>
+<p>Nimm die folgenden vier Aufgaben und gehe für jede die fünf Fragen des Entscheidungsrasters
+aus Abschnitt 2.5 durch. Notiere pro Aufgabe: die empfohlene Stufe, die Frage, die den
+Ausschlag gegeben hat, und – falls nötig – den Punkt, an dem ein Mensch freigeben muss.</p>
+<ol>
+<li>Jeden Montag um 8 Uhr eine Liste aller überfälligen Aufgaben an die Teamleitung senden.</li>
+<li>Eingehende Servicemails den Kategorien Reklamation, Anfrage oder Kündigung zuordnen.</li>
+<li>Urlaubsanträge in ein Zeitwirtschaftssystem übertragen, das keine Schnittstelle hat.</li>
+<li>Aus mehreren Quellen ein Kurzprofil zu einem Neukunden zusammenstellen, ohne dass vorher
+   feststeht, welche Quellen gebraucht werden.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Halte dich strikt an die Reihenfolge der Fragen und höre bei der ersten auf, die mit Ja
+beantwortet wird. Frage 5 stellst du zusätzlich – sie schließt keine Stufe aus, sondern
+verlangt einen Freigabepunkt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Aufgabe</th>
+<th>Empfehlung</th>
+<th>Entscheidende Frage</th>
+<th>Freigabe durch Menschen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Montagsliste</td>
+<td>regelbasierter Workflow</td>
+<td>Frage 1: vollständig in Regeln beschreibbar</td>
+<td>nicht nötig, Fehler sind harmlos und sichtbar</td>
+</tr>
+<tr>
+<td>2 Servicemails einordnen</td>
+<td>Workflow mit KI-Baustein</td>
+<td>Frage 2: der schwierige Teil steckt in Sprache</td>
+<td>Stichprobe, bei Kategorie Kündigung immer</td>
+</tr>
+<tr>
+<td>3 Urlaubsanträge übertragen</td>
+<td>RPA</td>
+<td>Frage 3: keine Schnittstelle vorhanden</td>
+<td>Kontrollblick auf das Ergebnis, da Eingabefehler stumm bleiben</td>
+</tr>
+<tr>
+<td>4 Kurzprofil Neukunde</td>
+<td>Agent</td>
+<td>Frage 4: Schritte und Quellen sind vorab unbekannt</td>
+<td>Pflicht, weil Quellen und Aussagen geprüft werden müssen</td>
+</tr>
+</tbody>
+</table>
+<p>Zwei Einsichten sind wichtiger als die Zuordnung selbst. Erstens: Aufgabe 3 wandert nur
+deshalb zu RPA, weil eine Schnittstelle fehlt – existierte eine, wäre ein Workflow die
+bessere und stabilere Wahl. Zweitens: Frage 5 verändert nicht die Stufe, sondern die
+Autonomie. Bei Aufgabe 2 macht der Unterschied zwischen „automatisch weiterleiten" und
+„Vorschlag zur Bestätigung" den entscheidenden Teil des Risikos aus.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Baustein oder Agent im Werkzeug prüfen</summary>
+<p>Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li>Gib einen reinen <strong>Baustein-Auftrag</strong> – eine eng umrissene Einzelaufgabe:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Ordne den folgenden Text genau einer Kategorie zu: Reklamation, Anfrage oder Kuendigung.
+Antworte nur mit der Kategorie.
+Text: Ich habe die Lieferung am Montag erhalten, aber zwei Teile fehlen. Bitte klaeren.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Gib danach einen <strong>Ziel-Auftrag</strong> mit offenem Weg:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Ziel: Klaere den Fall aus Punkt 1 vollstaendig. Plane selbst, welche Schritte dazu
+noetig sind, und nenne jeden Schritt mit dem Werkzeug oder der Quelle, die du dafuer
+brauchst. Fuehre noch nichts aus.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Vergleiche beide Ergebnisse und beantworte schriftlich:</li>
+<li>Was hat sich am <strong>Ergebnistyp</strong> verändert?</li>
+<li>Welche Werkzeuge fordert das Werkzeug in Punkt 2 ein, die es gar nicht hat?</li>
+<li>An welcher Stelle des vorgeschlagenen Plans würdest du eine <strong>Freigabe</strong> einbauen und warum?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der interessante Teil ist nicht die Qualität der Antworten, sondern der Unterschied in ihrer
+Form. Achte darauf, ob das Werkzeug in Punkt 2 Zugriffe voraussetzt, die es nicht besitzt –
+etwa auf Bestelldaten, Kundenhistorie oder ein Ticketsystem.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li><strong>Ergebnistyp:</strong> Punkt 1 liefert ein Wort, also einen fertigen Wert, der maschinell
+  weiterverarbeitbar ist. Punkt 2 liefert einen Plan, also mehrere Schritte mit
+  Voraussetzungen. Das ist genau der Unterschied zwischen Baustein und Agent.</li>
+<li><strong>Fehlende Werkzeuge:</strong> Der Plan verlangt fast immer Zugriffe, die ein Chatfenster nicht
+  hat – Lieferdaten, Bestellpositionen, Kundenkontakt, Versand eines Antwortschreibens.
+  Ohne angebundene Werkzeuge bleibt ein Agent eine Absichtserklärung. Diese Anbindung ist
+  das Thema von Kapitel 6 und Kapitel 32.</li>
+<li><strong>Freigabepunkt:</strong> Sinnvoll ist die Freigabe unmittelbar vor jeder Außenwirkung, also vor
+  dem Versand an den Kunden und vor jeder Buchung oder Gutschrift. Interne Recherche und
+  Entwurf können ohne Freigabe laufen.</li>
+</ul>
+<p>Ein gutes Ergebnis erkennt zusätzlich, dass Punkt 1 wiederholbar und prüfbar ist, während
+der Plan aus Punkt 2 bei erneuter Ausführung anders ausfallen kann. Wiederholbarkeit ist ein
+Argument für den Baustein, Flexibilität ein Argument für den Agenten.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Technologie-Entscheidung für den Angebotsprozess</summary>
+<p><strong>Szenario:</strong> Du arbeitest im Vertriebsinnendienst eines Maschinenbau-Zulieferers. Anfragen
+kommen per Mail, über ein Webformular und telefonisch herein. Der Weg bis zum Angebot ist
+gewachsen, nicht entworfen: Jemand liest die Anfrage, sucht Preise in einer Excel-Datei, legt
+einen Vorgang im alten ERP-System an, schreibt das Angebot in Word und schickt es raus.
+Angebote gehen regelmäßig unter, Rückfragen dauern Tage. Die Geschäftsführung hat gehört,
+„ein KI-Agent" könne das übernehmen, und erwartet von dir eine belastbare Einschätzung.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+Etwa 120 Anfragen pro Monat, davon rund 70 angebotsrelevant.
+Team: 4 Personen im Innendienst, 1 Vertriebsleitung.
+Systeme: Microsoft 365, Preisliste in Excel auf SharePoint, ERP ohne Schnittstelle.
+Rund 20 Prozent der Anfragen sind Sonderanfertigungen ohne Listenpreis.
+Keine Entwicklungsressourcen, kein Budget fuer Individualsoftware.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Ist-Prozess in Schritte zerlegen.</strong> Schreibe den Ablauf von der eingehenden
+Anfrage bis zum versendeten Angebot in <strong>mindestens acht einzelne Schritte</strong> auf. Notiere pro
+Schritt: wer ihn ausführt, welches System beteiligt ist, ob ein Urteil nötig ist, und was
+passiert, wenn er ausfällt. Ordne anschließend jedem Schritt eine Stufe des Spektrums zu –
+Makro, Workflow, RPA, KI-Baustein, Agent oder „bleibt beim Menschen".</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Deine Zuordnung muss <strong>alle vier</strong> Kriterien
+erfüllen. Lass sie von einem KI-Werkzeug gegenprüfen und schließe Lücken selbst:</p>
+<ol>
+<li>Mindestens <strong>zwei</strong> Schritte sind als regelbasierter Workflow <strong>ohne</strong> KI markiert, mit
+   Begründung, warum hier keine KI nötig ist.</li>
+<li>Für jeden RPA-Vorschlag ist belegt, dass zuvor nach einer Schnittstelle oder einem
+   Export-Weg gesucht wurde.</li>
+<li>Jeder KI-Baustein ist auf <strong>eine</strong> Aufgabe eingegrenzt und mit einem Prüfschritt versehen,
+   der benennt, wer das Ergebnis kontrolliert.</li>
+<li>Kein Schritt mit Außenwirkung gegenüber Kunden läuft ohne menschliche Freigabe.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Zwei Dinge treten ein. Erstens: Die IT teilt mit, dass das ERP
+in sechs Monaten ein Update erhält, bei dem sich die Masken ändern. Zweitens: Ein Testlauf
+zeigt, dass die KI bei den Sonderanfertigungen Preise erfindet, die plausibel aussehen, aber
+falsch sind. Überarbeite deinen Entwurf:</p>
+<ul>
+<li>Entscheide, was mit dem RPA-Anteil passiert, und benenne die Konsequenz für Aufwand und
+  Zeitplan.</li>
+<li>Verändere die Behandlung der Sonderanfertigungen so, dass der Fehler <strong>nicht mehr
+  unbemerkt</strong> durchlaufen kann. Eine Verbesserung des Prompts allein genügt nicht.</li>
+</ul>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Geschäftsführung besteht auf „einem Agenten,
+der den ganzen Angebotsprozess übernimmt", weil das nach außen am besten wirkt. Lass dir von
+deinem KI-Werkzeug Pro und Contra dazu geben und entscheide dann begründet, mit <strong>welchem
+einen Schritt</strong> ihr startet. <strong>Widersprich</strong> der Vorgabe – oder dem Vorschlag deines
+KI-Werkzeugs – wenn du sie für falsch hältst, und formuliere den Widerspruch so, dass die
+Geschäftsführung ihn nachvollziehen kann: Nutzen, Aufwand, Fehlerfolgen, Rückfallebene.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Schritt-Tabelle des Ist-Prozesses mit Stufen-Zuordnung, mindestens acht Schritte</li>
+<li>ausgefüllte Checkliste der vier Pflichtkriterien</li>
+<li>überarbeitete Fassung nach ERP-Update und Preis-Fehlern, inklusive Begründung</li>
+<li>einseitige Empfehlung für den Startschritt mit begründeter Ablehnung der Agenten-Vorgabe</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> jeder Schritt genau eine Stufe trägt, alle vier Pflichtkriterien
+erfüllt sind, deine Sonderanfertigungs-Lösung einen erkennbaren Kontrollmechanismus enthält
+und deine Empfehlung erklärt, warum du <strong>nicht</strong> mit dem Gesamtprozess beginnst.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Runde 3 zeigt, dass die Technologiewahl kein einmaliger
+Beschluss ist: Ein angekündigtes Update entwertet eine RPA-Lösung, bevor sie fertig ist, und
+eine falsche Zahl ist gefährlicher als ein sichtbarer Fehler, weil sie niemandem auffällt.
+In Runde 4 geht es nicht darum, Recht zu haben, sondern darum, einen Widerspruch mit Zahlen
+und Fehlerfolgen zu begründen statt mit Bauchgefühl. Wer bei Sonderanfertigungen nur den
+Prompt verbessert, hat die Aufgabe nicht gelöst – dort gehört ein Ausschluss oder eine
+Pflichtprüfung hin.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) mindestens acht sauber getrennte Schritte mit Ausführendem, System,
+Urteilsanteil und Ausfallfolge, jeweils genau einer Stufe zugeordnet; (2) alle vier
+Pflichtkriterien nachweisbar erfüllt, insbesondere die bewusst KI-freien Schritte und die
+Suche nach einer Schnittstelle vor jedem RPA-Vorschlag; (3) die überarbeitete Fassung reagiert
+auf beide Komplikationen konkret – der RPA-Anteil wird verschoben, begrenzt oder durch einen
+Export ersetzt, und Sonderanfertigungen werden vom automatischen Pfad ausgenommen oder mit
+Pflichtprüfung versehen statt nur mit besserem Prompt; (4) die Startempfehlung wägt Nutzen,
+Aufwand, Fehlerfolgen und Rückfallebene ab und begründet die Ablehnung des Gesamt-Agenten
+mit Fehlereingrenzung, nicht mit Skepsis.</p>
+<p>Lernziel: Eine Technologieentscheidung entlang von Aufgabenmerkmalen treffen statt entlang von
+Schlagworten – und die Entscheidung gegen Änderungen und gegen Erwartungsdruck verteidigen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 1 – Was ist Künstliche Intelligenz?">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 1 – Was ist Künstliche Intelligenz?
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel3/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 3 – Chancen, Risiken und ethische Verantwortung">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 3 – Chancen, Risiken und ethische Verantwortung
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

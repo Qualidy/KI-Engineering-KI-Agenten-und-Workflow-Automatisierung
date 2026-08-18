@@ -1,0 +1,1883 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel35/">
+      
+      
+        <link rel="next" href="../kapitel37/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-36-planung-vom-konzept-zum-automatisierungsdesign" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Block 7 · Projektarbeit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel35/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#361-vom-ist-zum-soll" class="md-nav__link">
+    <span class="md-ellipsis">
+      36.1 Vom Ist zum Soll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#362-vom-soll-prozess-zum-flow-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      36.2 Vom Soll-Prozess zum Flow-Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#363-zugange-berechtigungen-und-datenschutz-vorprufung" class="md-nav__link">
+    <span class="md-ellipsis">
+      36.3 Zugänge, Berechtigungen und Datenschutz-Vorprüfung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#364-testfalle-vor-dem-bauen-definieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      36.4 Testfälle vor dem Bauen definieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#365-meilensteine-annahmen-und-risiken" class="md-nav__link">
+    <span class="md-ellipsis">
+      36.5 Meilensteine, Annahmen und Risiken
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#366-ein-vollstandiges-beispiel-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      36.6 Ein vollständiges Beispiel-Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel37/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 37 – Umsetzung: bauen, iterieren, testen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 38 – Betrieb und Übergabe: Governance im Kleinen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel39/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 39 – Dokumentation der Projektarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel40/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 40 – Präsentation und Ausblick
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-36-planung-vom-konzept-zum-automatisierungsdesign">Kapitel 36 – Planung: Vom Konzept zum Automatisierungsdesign<a class="headerlink" href="#kapitel-36-planung-vom-konzept-zum-automatisierungsdesign" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie du aus dem Ist-Prozess einen <strong>Soll-Prozess</strong> modellierst, der bewusst anders aussieht</li>
+<li>Wie du daraus ein <strong>Flow-Design</strong> ableitest: Trigger, Schritte, Datenquellen, Entscheidungen, KI-Stellen, Fehlerpfade, Freigaben</li>
+<li>Wie du <strong>Zugänge und Berechtigungen</strong> vorab klärst, statt sie beim Bauen zu entdecken</li>
+<li>Warum du <strong>Testfälle vor dem Bauen</strong> definierst – inklusive Grenz- und Negativfälle</li>
+<li>Wie du <strong>Meilensteine</strong>, Annahmen und Risiken realistisch aufschreibst</li>
+<li>Wie eine <strong>Datenschutz-Vorprüfung</strong> Teil der Planung wird, nicht ein Nachgedanke</li>
+</ul>
+</div>
+<hr />
+<h2 id="361-vom-ist-zum-soll">36.1 Vom Ist zum Soll<a class="headerlink" href="#361-vom-ist-zum-soll" title="Permanent link">&para;</a></h2>
+<p>Der Ist-Prozess aus Kapitel 35 beschreibt, wie heute gearbeitet wird. Der <strong>Soll-Prozess</strong> beschreibt den Ablauf nach der Automatisierung – und er ist keine Kopie mit weniger Handarbeit. Gute Soll-Prozesse verändern die Reihenfolge, bündeln Prüfungen und verschieben Entscheidungen an eine Stelle, an der die nötigen Informationen schon vorliegen.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Ausloeser]) --&gt; B([System sammelt Daten])
+    B --&gt; C([KI bereitet auf])
+    C --&gt; D([Mensch prueft und entscheidet])
+    D --&gt; E([System schreibt Ergebnis])</code></pre>
+<p>Drei Fragen führen vom Ist zum Soll: Welche Schritte fallen <strong>komplett weg</strong>, weil sie nur der Weiterleitung von Informationen dienten? Welche übernimmt der Flow <strong>unverändert</strong>, nur eben automatisch? Und welche bleiben beim Menschen, weil sie Verantwortung tragen oder Ausnahmen betreffen?</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Wer den Ist-Prozess eins zu eins automatisiert, automatisiert auch seine Umwege. Sieh den Soll-Prozess als Neuentwurf mit dem Wissen, dass Datentransport nichts kostet.</p>
+</div>
+<hr />
+<h2 id="362-vom-soll-prozess-zum-flow-design">36.2 Vom Soll-Prozess zum Flow-Design<a class="headerlink" href="#362-vom-soll-prozess-zum-flow-design" title="Permanent link">&para;</a></h2>
+<p>Das <strong>Flow-Design</strong> ist die technische Übersetzung des Soll-Prozesses – auf Papier, vor dem ersten Klick in Power Automate. Sieben Bestandteile gehören hinein.</p>
+<table>
+<thead>
+<tr>
+<th>Bestandteil</th>
+<th>Was du festlegst</th>
+<th>Typische Entscheidung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trigger</strong></td>
+<td>was den Flow startet (Kap. 18)</td>
+<td>Ereignis, Zeitplan, Formular oder manuell</td>
+</tr>
+<tr>
+<td><strong>Schritte</strong></td>
+<td>die Aktionen in Reihenfolge, benannt und lesbar (Kap. 19)</td>
+<td>wie fein die Schritte geschnitten sind</td>
+</tr>
+<tr>
+<td><strong>Datenquellen</strong></td>
+<td>woher Daten kommen und wohin sie geschrieben werden</td>
+<td>SharePoint-Liste, Excel-Tabelle, Postfach</td>
+</tr>
+<tr>
+<td><strong>Entscheidungspunkte</strong></td>
+<td>wo verzweigt wird und nach welcher Regel (Kap. 24)</td>
+<td>Bedingung, Switch oder Filter</td>
+</tr>
+<tr>
+<td><strong>KI-Stellen</strong></td>
+<td>welche Aufgabe die KI übernimmt und in welchem Format sie antwortet (Kap. 29, 30)</td>
+<td>klassifizieren, extrahieren, zusammenfassen, formulieren</td>
+</tr>
+<tr>
+<td><strong>Fehlerpfade</strong></td>
+<td>was passiert, wenn ein Schritt scheitert (Kap. 28)</td>
+<td>Wiederholung, Benachrichtigung, Abbruch mit Hinweis</td>
+</tr>
+<tr>
+<td><strong>Menschliche Freigaben</strong></td>
+<td>wo ein Mensch entscheidet und wie lange er Zeit hat (Kap. 27)</td>
+<td>Genehmigungsaktion, Adaptive Card, Erinnerung</td>
+</tr>
+</tbody>
+</table>
+<p>Halte das Design in einem einzigen Blatt fest. Diese Vorlage füllst du aus und schreibst sie in der Bauphase fort:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code>FLOW-DESIGN-BLATT
+
+Flow-Name:        [sprechender Name, z. B. Rechnungseingang Vorsortierung]
+Trigger:          [Art] , genau: [Ereignis oder Zeitplan]
+Trigger-Bedingung: [Einschraenkung, damit der Flow nicht zu oft laeuft]
+
+Schritte:
+  1. [Aktion] -&gt; Ergebnis: [Feld oder Wert]
+  2. KI-Stelle: [Aufgabe] , Ausgabeformat: [z. B. drei Zeilen mit fester Bezeichnung]
+  3. Entscheidungspunkt: WENN [Bedingung] DANN [Zweig A] SONST [Zweig B]
+  4. Freigabe: [wer entscheidet] , Frist: [Zeit] , Erinnerung nach: [Zeit]
+  5. [Aktion] -&gt; Ergebnis: [Eintrag oder Ablage]
+
+Datenquellen:
+  Lesen:    [Quelle] , Zugang: [vorhanden / fehlt]
+  Schreiben:[Ziel] , Rechte: [vorhanden / fehlt]
+
+Fehlerpfade:
+  Schritt [Nr] scheitert -&gt; [Reaktion] , Benachrichtigung an: [Person]
+  KI-Antwort unbrauchbar -&gt; [Rueckfallverhalten]
+
+Nicht im Design enthalten: [Verweis auf die Nicht-Ziele aus dem Steckbrief]
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Ein Design ohne Fehlerpfade ist kein Design, sondern ein Wunsch. Erfahrungsgemäß entstehen die meisten Nacharbeiten nicht am Normalfall, sondern an der Frage „was passiert, wenn das Feld leer ist". Notiere für jeden Schritt, der auf ein anderes System zugreift, ein Verhalten für den Fehlerfall.</p>
+</div>
+<hr />
+<h2 id="363-zugange-berechtigungen-und-datenschutz-vorprufung">36.3 Zugänge, Berechtigungen und Datenschutz-Vorprüfung<a class="headerlink" href="#363-zugange-berechtigungen-und-datenschutz-vorprufung" title="Permanent link">&para;</a></h2>
+<p>Zugänge klärst du <strong>vor</strong> dem Bauen, weil sie der häufigste Grund für Verzögerungen sind. Drei Fragen pro Datenquelle: Kannst du die Quelle heute öffnen? Darfst du dort schreiben? Unter welchem Konto läuft die Verbindung, und existiert dieses Konto in zwei Monaten noch (Kap. 21, Kap. 25)?</p>
+<div class="admonition info">
+<p class="admonition-title">Falls dir ein Connector fehlt</p>
+<p>Wird dir eine Verbindung nicht angezeigt oder verlangt sie eine Premium-Lizenz, plane ohne sie. Gleichwertige Ersatzwege: eine SharePoint-Liste oder Excel-Tabelle als Zwischenspeicher, ein manueller Import einmal täglich, oder ein Zapier- bzw. Make-Aufbau im kostenfreien Tarif. Notiere den fehlenden Connector als Annahme – er ist ein Thema für den Ausblick, nicht für dein Projekt.</p>
+</div>
+<p>Die <strong>Datenschutz-Vorprüfung</strong> gehört in die Planung, weil sie das Design verändern kann. Sie ist keine Rechtsprüfung, sondern eine strukturierte Selbstprüfung auf Basis von Kapitel 4.</p>
+<table>
+<thead>
+<tr>
+<th>Prüffrage</th>
+<th>Wenn Ja, dann</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verarbeitet der Flow personenbezogene Daten (Namen, Mailadressen, Beurteilungen)?</td>
+<td>Datenarten auflisten und im Steckbrief vermerken</td>
+</tr>
+<tr>
+<td>Gehen Daten an ein Werkzeug außerhalb der freigegebenen M365-Umgebung?</td>
+<td>auf freigegebene Dienste umplanen oder Daten vorher reduzieren</td>
+</tr>
+<tr>
+<td>Werden Daten länger gespeichert als für den Zweck nötig?</td>
+<td>Aufbewahrung und Löschung im Design festlegen</td>
+</tr>
+<tr>
+<td>Betrifft der Prozess Beurteilung oder Auswahl von Menschen?</td>
+<td>Vorhaben umbauen, sodass die KI nur Entwürfe liefert und ein Mensch entscheidet</td>
+</tr>
+<tr>
+<td>Sehen durch die neue Ablage plötzlich mehr Personen die Daten als vorher?</td>
+<td>Berechtigungen der Zielablage vor dem Bauen anpassen</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Datensparsamkeit als Designmittel</p>
+<p>Prüfe für jede KI-Stelle, welche Felder die KI wirklich braucht. Oft genügt der Text ohne Absendernamen, oder eine Kundennummer statt des Klarnamens. Was nicht im Prompt steht, muss nicht geschützt werden – und das Ergebnis wird dadurch selten schlechter.</p>
+</div>
+<hr />
+<h2 id="364-testfalle-vor-dem-bauen-definieren">36.4 Testfälle vor dem Bauen definieren<a class="headerlink" href="#364-testfalle-vor-dem-bauen-definieren" title="Permanent link">&para;</a></h2>
+<p>Testfälle vor dem Bauen zu schreiben, fühlt sich verkehrt an und ist der wirksamste Einzelschritt dieser Etappe. Wer erst nach dem Bauen testet, testet gegen das, was der Flow tut – nicht gegen das, was er tun sollte.</p>
+<table>
+<thead>
+<tr>
+<th>Fallart</th>
+<th>Was du prüfst</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normalfall</strong></td>
+<td>der erwartete Standardablauf</td>
+<td>vollständige Rechnung als PDF im Postfach</td>
+</tr>
+<tr>
+<td><strong>Grenzfall</strong></td>
+<td>zulässig, aber am Rand</td>
+<td>Betrag mit Nachkommastelle, Umlaute im Lieferantennamen, zwei Anhänge</td>
+</tr>
+<tr>
+<td><strong>Negativfall</strong></td>
+<td>darf nicht durchlaufen</td>
+<td>Mail ohne Anhang, unlesbarer Scan, doppelte Rechnungsnummer</td>
+</tr>
+<tr>
+<td><strong>KI-Zweifelsfall</strong></td>
+<td>KI-Ergebnis ist unsicher</td>
+<td>Text passt zu zwei Kategorien, Feld nicht erkennbar</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>TESTFALL-TABELLE
+
+| Nr | Fallart | Eingabe | Erwartetes Ergebnis | Ergebnis | Datum |
+|----|---------|---------|---------------------|----------|-------|
+| 1  | Normal  | [Beschreibung der Eingabe] | [was genau passieren soll] | offen | |
+| 2  | Grenz   | [Beschreibung] | [erwartetes Verhalten] | offen | |
+| 3  | Negativ | [Beschreibung] | [Abbruch mit Hinweis an Person X] | offen | |
+| 4  | KI-Zweifel | [Beschreibung] | [Zuweisung zur Pruefung, kein Automatik-Abschluss] | offen | |
+</code></pre></div></td></tr></table></div>
+<p>Plane mindestens sechs Testfälle: zwei Normalfälle, zwei Grenzfälle, ein Negativfall, ein KI-Zweifelsfall. Das erwartete Ergebnis muss so konkret sein, dass zwei Personen unabhängig zum gleichen Urteil kommen – „funktioniert" ist kein erwartetes Ergebnis, „Eintrag in Liste mit Status Prüfung offen und Mail an Sachbearbeitung" schon.</p>
+<hr />
+<h2 id="365-meilensteine-annahmen-und-risiken">36.5 Meilensteine, Annahmen und Risiken<a class="headerlink" href="#365-meilensteine-annahmen-und-risiken" title="Permanent link">&para;</a></h2>
+<p>Ein Zeitplan für wenige Arbeitstage braucht keine Projektsoftware, aber vier Meilensteine mit einer klaren Abschlussbedingung.</p>
+<table>
+<thead>
+<tr>
+<th>Meilenstein</th>
+<th>Abschlussbedingung</th>
+<th>Anteil am Zeitbudget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>M1 Skelett läuft</strong></td>
+<td>Trigger löst aus, letzter Schritt wird erreicht, ohne fachliche Logik</td>
+<td>etwa ein Fünftel</td>
+</tr>
+<tr>
+<td><strong>M2 Fachlogik steht</strong></td>
+<td>Entscheidungspunkte und KI-Stelle liefern plausible Ergebnisse</td>
+<td>etwa zwei Fünftel</td>
+</tr>
+<tr>
+<td><strong>M3 Testfälle bestanden</strong></td>
+<td>alle Testfälle abgehakt, Fehlerpfade geprüft</td>
+<td>etwa ein Fünftel</td>
+</tr>
+<tr>
+<td><strong>M4 Übergabefähig</strong></td>
+<td>Betriebsblatt und Dokumentation liegen vor (Kap. 38, 39)</td>
+<td>etwa ein Fünftel</td>
+</tr>
+</tbody>
+</table>
+<p>Plane die zweite Hälfte deines Zeitbudgets nicht mit Bauen zu, sondern mit Testen, Dokumentieren und Aufräumen. <strong>Annahmen</strong> sind Dinge, die du glaubst, aber nicht geprüft hast – schreibe sie auf, sonst werden sie später zu Überraschungen: „Ich nehme an, dass alle Rechnungen als PDF kommen." <strong>Risiken</strong> sind mögliche Ereignisse mit Gegenmaßnahme: „Der KI-Baustein liest Beträge bei schlechten Scans falsch – Gegenmaßnahme: Betrag bleibt Pflichtfeld in der menschlichen Prüfung."</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>„Risiko: Der Flow könnte Fehler machen" ist kein Risiko, sondern eine Selbstverständlichkeit. Ein brauchbar formuliertes Risiko benennt <strong>ein konkretes Ereignis</strong>, <strong>seine Folge</strong> und <strong>eine Gegenmaßnahme, die du selbst umsetzen kannst</strong>.</p>
+</div>
+<hr />
+<h2 id="366-ein-vollstandiges-beispiel-design">36.6 Ein vollständiges Beispiel-Design<a class="headerlink" href="#366-ein-vollstandiges-beispiel-design" title="Permanent link">&para;</a></h2>
+<p>Zur Illustration ein kleines, realistisch zugeschnittenes Projekt: Anfragen aus einem Kontaktformular vorsortieren.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow-Name:        Kontaktanfragen Vorsortierung
+Trigger:          Neue Antwort in Microsoft Forms
+Trigger-Bedingung: keine, das Formular wird nur fuer diesen Zweck genutzt
+
+Schritte:
+  1. Antwortdetails abrufen -&gt; Felder: Name, Firma, Anliegen, Wunschtermin
+  2. KI-Stelle: Anliegen einer von vier Kategorien zuordnen
+     Ausgabeformat: Kategorie, Dringlichkeit hoch oder normal, Zusammenfassung
+     in maximal zwei Saetzen
+  3. Entscheidungspunkt: WENN Dringlichkeit hoch DANN Teams-Nachricht an
+     Bereitschaft SONST nur Listeneintrag
+  4. Eintrag in SharePoint-Liste Anfragen mit Status Neu
+  5. Freigabe: Teamleitung bestaetigt Kategorie, Frist 1 Arbeitstag,
+     Erinnerung nach 4 Stunden
+  6. Bestaetigungsmail an den Absender
+
+Datenquellen:
+  Lesen: Forms-Antworten , Schreiben: SharePoint-Liste Anfragen
+
+Fehlerpfade:
+  Schritt 2 scheitert -&gt; Kategorie auf Unklar, Eintrag trotzdem anlegen,
+    Hinweis an Teamleitung
+  Schritt 4 scheitert -&gt; Wiederholung, danach Mail an Flow-Verantwortliche
+
+Erfolgskriterium: Bei 20 Testanfragen ist die Kategorie in mindestens
+  17 Faellen korrekt und keine Anfrage bleibt ohne Eingangsbestaetigung.
+</code></pre></div></td></tr></table></div>
+<div class="admonition example">
+<p class="admonition-title">Was dieses Design gut macht</p>
+<p>Es hat genau <strong>eine</strong> KI-Stelle mit erzwungenem Ausgabeformat, einen einzigen Entscheidungspunkt, einen menschlichen Freigabeschritt mit Frist, und für jeden kritischen Schritt ein definiertes Verhalten im Fehlerfall. Der Flow bleibt auch dann brauchbar, wenn die KI-Stelle ausfällt: Die Anfrage landet trotzdem in der Liste, nur ohne Kategorie. Genau dieses Muster – <strong>verlässliche Automatisierung außen, KI innen</strong> (Kap. 29) – solltest du in deinem eigenen Design wiederfinden.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Der <strong>Soll-Prozess</strong> ist ein Neuentwurf, keine Abschrift des Ist-Prozesses mit weniger Handarbeit.</li>
+<li>Ein <strong>Flow-Design</strong> legt sieben Dinge fest: Trigger, Schritte, Datenquellen, Entscheidungspunkte, KI-Stellen, Fehlerpfade, menschliche Freigaben.</li>
+<li><strong>Zugänge und Berechtigungen</strong> werden vorab geklärt; fehlende Connectoren werden zur Annahme, nicht zum Plan.</li>
+<li>Die <strong>Datenschutz-Vorprüfung</strong> ist Teil der Planung und kann das Design verändern – Datensparsamkeit ist dabei ein Designmittel.</li>
+<li><strong>Testfälle vor dem Bauen</strong> verhindern, dass du am Ende nur prüfst, was der Flow ohnehin tut.</li>
+<li>Vier <strong>Meilensteine</strong> mit Abschlussbedingung, plus aufgeschriebene Annahmen und Risiken mit Gegenmaßnahme.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Trigger wählen und begründen</summary>
+<p>Für dein Projekt gibt es meist mehr als einen möglichen Auslöser.</p>
+<ol>
+<li>Notiere <strong>drei</strong> mögliche Trigger für deinen Flow (z. B. neue Mail im Sammelpostfach,
+   neue Antwort in einem Formular, Zeitplan jeden Morgen, neues Element in einer Liste).</li>
+<li>Schreibe zu jedem Trigger einen Satz, was schiefgehen kann: Läuft er zu oft, zu spät oder
+   zu unzuverlässig?</li>
+<li>Entscheide dich für einen und formuliere zusätzlich die <strong>Trigger-Bedingung</strong>, die
+   verhindert, dass der Flow bei irrelevanten Ereignissen startet.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Denk an Doppelausführung (Kap. 18): Ein Trigger, der bei jeder Änderung feuert, kann denselben
+Fall mehrfach verarbeiten. Eine Trigger-Bedingung oder ein Statusfeld verhindert das.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) drei wirklich unterschiedliche Trigger-Arten, nicht drei Varianten
+derselben; (2) zu jedem Trigger ein konkretes Risiko, nicht „könnte nicht funktionieren";
+(3) die gewählte Trigger-Bedingung schränkt nachvollziehbar ein.</p>
+<p>Beispiel für ein gutes Ergebnis (Projekt: Rechnungseingang vorsortieren):</p>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Risiko</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Neue Mail im Sammelpostfach</td>
+<td>feuert auch bei Werbung und Antwortmails, verarbeitet Nicht-Rechnungen</td>
+</tr>
+<tr>
+<td>Neue Datei in einem SharePoint-Ordner</td>
+<td>jemand muss die Datei erst dort ablegen, also bleibt ein manueller Schritt</td>
+</tr>
+<tr>
+<td>Zeitplan täglich 7 Uhr, Postfach durchsuchen</td>
+<td>einfacher Ablauf, aber bis zu 24 Stunden Verzögerung</td>
+</tr>
+</tbody>
+</table>
+<p>Gewählt: neue Mail im Sammelpostfach. Trigger-Bedingung: nur wenn ein Anhang vorhanden ist und
+der Betreff nicht mit „AW:" oder „WG:" beginnt. Zusätzlich wird die Rechnungsnummer nach dem
+Auslesen in der Liste geprüft, damit derselbe Beleg nicht doppelt angelegt wird.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Drei Testfälle vor dem Bauen</summary>
+<p>Schreibe für dein Projekt drei Testfälle auf – <strong>bevor</strong> du etwas baust. Nutze die Spalten
+Nr, Fallart, Eingabe, erwartetes Ergebnis.</p>
+<ol>
+<li>Ein <strong>Normalfall</strong>: der erwartete Standardablauf.</li>
+<li>Ein <strong>Grenzfall</strong>: zulässig, aber am Rand des Erwartbaren.</li>
+<li>Ein <strong>Negativfall</strong>: darf ausdrücklich <strong>nicht</strong> normal durchlaufen, sondern muss zu einem
+   Hinweis oder Abbruch führen.</li>
+</ol>
+<p>Formuliere jedes erwartete Ergebnis so konkret, dass zwei Personen unabhängig voneinander
+gleich urteilen würden.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>„Funktioniert" und „läuft durch" sind keine erwarteten Ergebnisse. Nenne den sichtbaren
+Zustand danach: welcher Eintrag existiert, welchen Status er hat, wer eine Nachricht bekommt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) die drei Fallarten sind wirklich unterschiedlich und nicht dreimal der
+Normalfall in Variationen; (2) jede Eingabe ist so beschrieben, dass du sie als Testdatensatz
+herstellen kannst; (3) jedes erwartete Ergebnis benennt einen prüfbaren Zustand; (4) beim
+Negativfall steht, <strong>wer</strong> informiert wird und <strong>dass</strong> der Fall nicht still verschwindet.</p>
+<p>Beispiel für ein gutes Ergebnis (Projekt: Kontaktanfragen vorsortieren):</p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Fallart</th>
+<th>Eingabe</th>
+<th>Erwartetes Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Normal</td>
+<td>Formularantwort mit allen Feldern, Anliegen „Angebot für 50 Lizenzen"</td>
+<td>Eintrag in Liste mit Kategorie Vertrieb, Status Neu, Bestätigungsmail an Absender</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Grenz</td>
+<td>Anliegen mit 900 Zeichen, zwei Themen gemischt, Umlaute im Firmennamen</td>
+<td>Eintrag angelegt, Zusammenfassung maximal zwei Sätze, Kategorie gesetzt, Firmenname unverfälscht</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Negativ</td>
+<td>Formularantwort ohne Text im Feld Anliegen</td>
+<td>kein Kategorisierungsversuch, Eintrag mit Status Prüfung erforderlich, Teams-Hinweis an Teamleitung</td>
+</tr>
+</tbody>
+</table>
+<p>Der Negativfall ist der lehrreichste: Er zwingt dich, im Design einen Pfad für unvollständige
+Eingaben vorzusehen, statt später zu entdecken, dass die KI aus einem leeren Feld eine
+Kategorie erfindet.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Design-Review am Werkzeug – Lücken und Fehlerpfade finden</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li>Übertrage dein ausgefülltes Flow-Design-Blatt in das KI-Werkzeug und gib diesen Auftrag:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Hier ist das Design fuer einen kleinen Automatisierungs-Workflow.
+Pruefe es in vier Durchgaengen und antworte je Durchgang als Liste:
+1. Welche Schritte koennen scheitern und haben keinen Fehlerpfad?
+2. Welche Eingaben wuerden das Design zum Stolpern bringen
+   leere Felder, unerwartete Formate, doppelte Faelle?
+3. Welche Stelle koennte denselben Fall zweimal verarbeiten?
+4. An welcher Stelle entscheidet die Automatik etwas, das besser ein
+   Mensch entscheidet? Nenne pro Punkt eine konkrete Ergaenzung.
+Design: [dein Design-Blatt]
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Übernimm <strong>nicht alles</strong>. Sortiere die Vorschläge in drei Gruppen: übernehme ich, verschiebe
+   ich in die Nicht-Ziele, lehne ich ab.</li>
+<li>Ergänze dein Design-Blatt um mindestens <strong>zwei Fehlerpfade</strong> und <strong>einen</strong> zusätzlichen
+   Prüfschritt.</li>
+<li>Notiere zu einem abgelehnten Vorschlag deine Begründung in einem Satz.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die KI neigt dazu, Vollständigkeit zu empfehlen: Protokollierung, Retry überall, drei
+Benachrichtigungen. Für ein Projekt mit engem Zeitbudget ist das schädlich. Entscheide nach der
+Frage: Was passiert im schlimmsten Fall, wenn dieser Vorschlag fehlt – merkt es überhaupt jemand?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Qualitätskriterien: (1) das Design enthält danach mindestens zwei konkrete Fehlerpfade mit
+benannter Reaktion und benannter Person; (2) die Vorschläge sind in übernehmen, verschieben und
+ablehnen sortiert, nicht pauschal übernommen; (3) mindestens eine Ablehnung ist begründet;
+(4) der zusätzliche Prüfschritt adressiert einen echten Zweifelsfall, nicht nur den Normalfall.</p>
+<p>Beispiel für ein gutes Ergebnis:</p>
+<p>Übernommen: „Wenn die KI keine Kategorie liefert, Status auf Prüfung erforderlich setzen und
+Teams-Hinweis senden" sowie „Rechnungsnummer vor dem Anlegen gegen die Liste prüfen, damit
+Doppelverarbeitung ausgeschlossen ist".</p>
+<p>Verschoben in die Nicht-Ziele: „Vollständige Protokollierung aller Zwischenergebnisse in einer
+Audit-Liste" – sinnvoll, aber für den ersten Schnitt zu aufwendig.</p>
+<p>Abgelehnt mit Begründung: „Eskalation an die Bereichsleitung nach zwei Stunden" – der Prozess
+hat keine Zwei-Stunden-Dringlichkeit, die Eskalation würde nur Aufmerksamkeit verbrauchen und
+die Akzeptanz senken.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Projektetappe 2 – Automatisierungsdesign und Testfälle fertigstellen</summary>
+<p><strong>Projektetappe:</strong> Zweite Etappe deines Projekts. Grundlage ist der Projektsteckbrief aus
+Kapitel 35. Am Ende dieses Workshops liegt ein vollständiges Flow-Design vor, das jemand
+anderes bauen könnte, dazu Testfälle, Zeitplan, Annahmen und Risiken. Gebaut wird noch nichts.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Rueckfallebene:
+Falls dein Steckbrief noch unvollstaendig ist, fuelle die fehlenden Felder
+jetzt in 20 Minuten aus und markiere Unsicherheiten als Annahme.
+Falls du deinen Use Case gewechselt hast, arbeite mit dem neuen und notiere
+den Wechsel mit Datum und Grund.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Soll-Prozess und Flow-Design.</strong> Modelliere zuerst den Soll-Prozess in maximal acht
+Schritten und markiere für jeden Ist-Schritt, ob er wegfällt, automatisiert wird oder beim
+Menschen bleibt. Fülle danach das <strong>Flow-Design-Blatt</strong> vollständig aus: Trigger und
+Trigger-Bedingung, Schritte mit Ergebnis, Datenquellen mit Zugangsstatus, Entscheidungspunkte,
+KI-Stelle mit erzwungenem Ausgabeformat, Fehlerpfade, menschliche Freigabe mit Frist.</p>
+<p><strong>Runde 2 – Prüfung gegen vier Pflichtkriterien.</strong> Dein Design muss <strong>alle vier</strong> Kriterien
+erfüllen. Lass dir Gegenfragen von deinem KI-Werkzeug stellen, schließe die Lücken selbst:</p>
+<ol>
+<li>Es gibt mindestens <strong>sechs Testfälle</strong>: zwei Normalfälle, zwei Grenzfälle, ein Negativfall,
+   ein KI-Zweifelsfall – jeder mit prüfbar formuliertem erwarteten Ergebnis.</li>
+<li>Für <strong>jeden</strong> Schritt, der auf ein anderes System zugreift, ist ein Verhalten im Fehlerfall
+   festgelegt, inklusive der Person, die benachrichtigt wird.</li>
+<li>Die <strong>Datenschutz-Vorprüfung</strong> ist ausgefüllt: verarbeitete Datenarten, Speicherort,
+   Aufbewahrung, und die Feststellung, welche Felder die KI-Stelle <strong>nicht</strong> bekommt.</li>
+<li>Es gibt vier <strong>Meilensteine</strong> mit Abschlussbedingung sowie mindestens drei Annahmen und
+   drei Risiken mit jeweils einer Gegenmaßnahme, die du selbst umsetzen kannst.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Eine Woche vor dem Bauen ändert sich die Lage. Wähle die
+Variante, die zu deinem Projekt passt, und überarbeite dein Design entsprechend:</p>
+<ul>
+<li><strong>Variante A:</strong> Die geplante Datenquelle steht nicht zur Verfügung – der Connector fehlt, die
+  Rechte werden nicht erteilt oder die Struktur ist anders als angenommen. Entwirf den
+  Ersatzweg vollständig und benenne, was dadurch schlechter wird.</li>
+<li><strong>Variante B:</strong> Aus dem Fachbereich kommt eine zusätzliche Anforderung, die für sich
+  genommen sinnvoll ist (ein weiteres Feld, ein weiterer Empfänger, ein zweiter Eingangskanal).
+  Entscheide, ob sie in den ersten Schnitt gehört, und passe Design oder Nicht-Ziele an.</li>
+</ul>
+<p>Aktualisiere in beiden Fällen auch die Testfälle – ein geändertes Design ohne geänderte
+Testfälle ist ungeprüft.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Beschreibe deinem KI-Werkzeug dein Design und lass
+dir vorschlagen, wie man es „noch besser" macht. Du bekommst mit hoher Wahrscheinlichkeit
+Empfehlungen für mehr Automatisierung: Freigabeschritt weglassen, KI mehr entscheiden lassen,
+Schwellenwerte lockern, damit weniger Fälle zur Prüfung gehen. Entscheide begründet – und
+<strong>widersprich</strong> mindestens einem Vorschlag ausdrücklich. Halte in fünf bis acht Sätzen fest,
+welchen Entscheidungspunkt du bewusst beim Menschen lässt, was dich das an Automatisierungsgrad
+kostet und warum du diesen Preis zahlst.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Soll-Prozess in maximal acht Schritten mit Kennzeichnung wegfallend, automatisiert,
+   menschlich</li>
+<li>vollständig ausgefülltes Flow-Design-Blatt inklusive Fehlerpfaden und Freigabe mit Frist</li>
+<li>Testfall-Tabelle mit mindestens sechs Fällen und ausgefüllte Datenschutz-Vorprüfung</li>
+<li>Meilensteinplan mit Annahmen, Risiken und Gegenmaßnahmen plus die überarbeitete Fassung aus
+   Runde 3 und die Entscheidungsnotiz aus Runde 4</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> eine prozessfremde Person dein Design-Blatt lesen und daraus die
+Schrittfolge nachbauen könnte, kein Schritt mit Systemzugriff ohne Fehlerpfad ist, jede
+Datenquelle einen geklärten Zugangsstatus hat und dein Negativfall ein Ergebnis beschreibt, bei
+dem der Fall sichtbar bleibt statt still zu verschwinden.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Ein Design, das nur den Normalfall beschreibt, ist in einer
+Stunde fertig und in der Bauphase wertlos. Achte in Runde 3 darauf, dass eine Designänderung
+immer drei Dinge berührt: Schritte, Testfälle und Nicht-Ziele. Runde 4 trifft den Kern dieses
+Kurses: Mehr Automatisierung ist nicht automatisch besser. Der Freigabeschritt, den du bewusst
+behältst, ist später dein stärkstes Argument gegen kritische Fragen (Kap. 40).</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) der Soll-Prozess ist ein Neuentwurf mit erkennbar weggefallenen
+Schritten und nicht die Ist-Abschrift, und das Flow-Design-Blatt ist in allen sieben
+Bestandteilen ausgefüllt; (2) alle vier Pflichtkriterien sind erfüllt, insbesondere sechs
+Testfälle mit prüfbaren Ergebnissen und Fehlerpfade mit benannter Benachrichtigung;
+(3) die Komplikation aus Runde 3 ist vollständig eingearbeitet – Design, Testfälle und
+Nicht-Ziele sind konsistent, und der Nachteil des Ersatzwegs bzw. die Scope-Entscheidung ist
+benannt; (4) die Entscheidungsnotiz aus Runde 4 widerspricht mindestens einem
+Automatisierungsvorschlag mit einer Begründung, die Fehlerfolgen und Verantwortung abwägt.</p>
+<p>Lernziel: Ein Design so weit vorbereiten, dass die Bauphase nur noch Umsetzung ist – und dabei
+bewusst entscheiden, welche Entscheidungspunkte beim Menschen bleiben.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel35/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 35 – Den eigenen Use Case auswählen und schärfen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 35 – Den eigenen Use Case auswählen und schärfen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel37/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 37 – Umsetzung: bauen, iterieren, testen">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 37 – Umsetzung: bauen, iterieren, testen
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

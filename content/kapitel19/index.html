@@ -1,0 +1,1875 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel18/">
+      
+      
+        <link rel="next" href="../kapitel20/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 19 – Logikbausteine - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-19-logikbausteine" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 19 – Logikbausteine
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Block 4 · Einstieg in Workflow-Automatisierung
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 17 – Workflow-Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 18 – Trigger, Aktionen und Daten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 19 – Logikbausteine
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 19 – Logikbausteine
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#191-bedingung-und-verzweigung" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.1 Bedingung und Verzweigung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-mehrfachauswahl-mit-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.2 Mehrfachauswahl mit Switch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-schleifen-uber-listen-und-variablen" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.3 Schleifen über Listen und Variablen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#194-zeit-und-gleichzeitigkeit" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.4 Zeit und Gleichzeitigkeit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#195-fehlerpfade-wiederholungen-und-notbremsen" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.5 Fehlerpfade, Wiederholungen und Notbremsen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#196-lesbarkeit-benennung-und-typische-logikfehler" class="md-nav__link">
+    <span class="md-ellipsis">
+      19.6 Lesbarkeit, Benennung und typische Logikfehler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel20/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-19-logikbausteine">Kapitel 19 – Logikbausteine<a class="headerlink" href="#kapitel-19-logikbausteine" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie <strong>Bedingung</strong> und <strong>Verzweigung</strong> einen Ablauf in Wege aufteilen</li>
+<li>Wann eine <strong>Mehrfachauswahl</strong> die bessere Wahl ist als verschachtelte Bedingungen</li>
+<li>Wie <strong>Schleifen</strong> über Listen arbeiten, wo sie teuer werden und wofür du <strong>Variablen</strong> wirklich brauchst</li>
+<li>Wie du mit <strong>Warten</strong>, <strong>Verzögern</strong> und <strong>parallelen Zweigen</strong> umgehst</li>
+<li>Wie <strong>Fehlerpfade</strong>, <strong>Wiederholungen</strong> und <strong>Notbremsen</strong> einen Ablauf beherrschbar machen</li>
+<li>Warum <strong>Benennung</strong> kein Schönheitsthema ist und welche <strong>Logikfehler</strong> typisch sind</li>
+</ul>
+</div>
+<hr />
+<h2 id="191-bedingung-und-verzweigung">19.1 Bedingung und Verzweigung<a class="headerlink" href="#191-bedingung-und-verzweigung" title="Permanent link">&para;</a></h2>
+<p>Eine <strong>Bedingung</strong> prüft eine Aussage und teilt den Ablauf in genau zwei Wege: erfüllt oder nicht erfüllt. Beide Wege müssen bedacht werden – auch der, den du „eigentlich nicht brauchst".</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Rechnung erfasst]) --&gt; B([Betrag ueber 5000 Euro])
+    B --&gt;|ja| C([Freigabe Kostenstelle und Leitung Finanzen])
+    B --&gt;|nein| D([Freigabe Kostenstelle])
+    C --&gt; E([Buchen])
+    D --&gt; E</code></pre>
+<p>Eine gute Bedingung erfüllt drei Anforderungen: Sie vergleicht <strong>einen</strong> klar benannten Wert, sie arbeitet mit dem <strong>richtigen Datentyp</strong> (Kap. 18), und ihr Nein-Weg ist genauso ausgearbeitet wie ihr Ja-Weg. Zusammengesetzte Bedingungen mit „und" und „oder" sind erlaubt, aber ab drei Teilaussagen wird nicht mehr nachvollziehbar, welcher Fall welchen Weg nimmt.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Jede Bedingung erzeugt <strong>zwei</strong> Wege, und beide werden irgendwann betreten. Ein leerer Nein-Zweig heißt in der Praxis: Der Vorgang verschwindet stillschweigend. Schreibe dort mindestens einen protokollierenden Schritt hinein – „Vorgang [Kennzeichen] ohne Behandlung beendet".</p>
+</div>
+<hr />
+<h2 id="192-mehrfachauswahl-mit-switch">19.2 Mehrfachauswahl mit Switch<a class="headerlink" href="#192-mehrfachauswahl-mit-switch" title="Permanent link">&para;</a></h2>
+<p>Sobald ein Wert mehr als zwei sinnvolle Ausgänge hat, ist die verschachtelte Bedingung das falsche Werkzeug. Die <strong>Mehrfachauswahl</strong>, in Power Automate <code>Switch</code> genannt, prüft einen Wert gegen mehrere feste Fälle und hat zusätzlich einen Standardfall für alles Übrige.</p>
+<table>
+<thead>
+<tr>
+<th>Merkmal</th>
+<th>Bedingung</th>
+<th>Mehrfachauswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anzahl Wege</td>
+<td>zwei</td>
+<td>beliebig viele plus Standardfall</td>
+</tr>
+<tr>
+<td>Prüfbar auf</td>
+<td>Vergleich, Größer, Enthält, Und/Oder</td>
+<td>Gleichheit mit festen Werten</td>
+</tr>
+<tr>
+<td>Lesbarkeit bei fünf Fällen</td>
+<td>schlecht, tief verschachtelt</td>
+<td>gut, alle Fälle nebeneinander</td>
+</tr>
+<tr>
+<td>Typischer Einsatz</td>
+<td>Schwellenwert, Ja/Nein-Prüfung</td>
+<td>Kategorie, Abteilung, Dokumentart</td>
+</tr>
+<tr>
+<td>Gefahr</td>
+<td>vergessener Nein-Zweig</td>
+<td>vergessener Standardfall</td>
+</tr>
+</tbody>
+</table>
+<p>Im Rechnungsszenario ist die Kostenstelle ein klassischer Fall für die Mehrfachauswahl: Einkauf, Marketing, IT, Lager, Verwaltung – fünf Werte, fünf Empfänger. Als verschachtelte Bedingung wären das fünf Ebenen, in denen jeder spätere Fall tiefer eingerückt ist als der vorherige. Nach zwei Monaten weiß niemand mehr, welche Ebene wofür zuständig ist.</p>
+<p>Der <strong>Standardfall</strong> ist der wichtigste Zweig, nicht der unwichtigste. Er fängt genau die Werte auf, an die niemand gedacht hat: eine neu gegründete Kostenstelle, ein Tippfehler, ein leeres Feld. Wenn der Standardfall leer ist, verschwinden diese Vorgänge. Lege stattdessen fest: Standardfall bedeutet immer „an einen Menschen geben und protokollieren".</p>
+<div class="admonition tip">
+<p class="admonition-title">Wann Mehrfachauswahl, wann Nachschlagetabelle</p>
+<p>Wächst die Liste der Fälle regelmäßig – neue Kostenstellen, neue Lieferanten, neue Dokumentarten –, dann gehört die Zuordnung nicht in den Ablauf, sondern in eine <strong>Nachschlagetabelle</strong>: eine kleine Liste mit den Spalten Schlüssel und Zuständigkeit. Der Ablauf liest darin nach. So kann der Fachbereich Änderungen selbst pflegen, ohne dass jemand den Ablauf anfasst.</p>
+</div>
+<hr />
+<h2 id="193-schleifen-uber-listen-und-variablen">19.3 Schleifen über Listen und Variablen<a class="headerlink" href="#193-schleifen-uber-listen-und-variablen" title="Permanent link">&para;</a></h2>
+<p>Viele Aktionen liefern nicht einen Wert, sondern eine <strong>Liste</strong>: alle Anhänge einer Mail, alle offenen Zeilen einer Freigabeliste, alle Dateien eines Ordners. Um jedes Element einzeln zu behandeln, brauchst du eine <strong>Schleife</strong> – in Power Automate heißt sie <code>Auf jedes anwenden</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Fuer jedes Element in [Liste der Anhaenge]:
+    Schritt A: pruefen, ob Dateiendung pdf ist
+    Schritt B: wenn ja, Datei speichern
+    Schritt C: wenn nein, Element protokollieren und ueberspringen
+</code></pre></div></td></tr></table></div>
+<p>Drei Dinge musst du wissen:</p>
+<ul>
+<li><strong>Die Schleife läuft auch nullmal.</strong> Ist die Liste leer, wird der Inhalt nie ausgeführt. Wenn danach etwas vom Ergebnis abhängt, muss die leere Liste ein eigener Fall sein.</li>
+<li><strong>Die Reihenfolge ist nicht garantiert.</strong> Viele Werkzeuge verarbeiten Elemente gleichzeitig, um Zeit zu sparen. Wenn Reihenfolge fachlich wichtig ist – etwa bei einer laufenden Nummer –, muss die gleichzeitige Verarbeitung ausgeschaltet werden.</li>
+<li><strong>Schleifen sind der größte Kostenfaktor.</strong> Jeder Durchlauf verbraucht Aktionen. 200 Elemente mal 6 Aktionen sind 1200 Ausführungen, nicht 6.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Erst filtern, dann schleifen</p>
+<p>Ein täglicher Ablauf soll offene Freigaben anmahnen. Naiver Entwurf: alle 4000 Zeilen der Liste holen, in der Schleife prüfen, ob Status offen und älter als drei Tage ist. Ergebnis: 4000 Durchläufe für vielleicht 12 Mahnungen.</p>
+<p>Besser: Schon beim Lesen der Liste filtern, sodass nur die 12 passenden Zeilen zurückkommen, und erst darüber schleifen. Der Ablauf wird nicht nur billiger, sondern auch schneller und im Protokoll lesbar. Als Regel: <strong>Filtere so früh wie möglich, am besten im lesenden Schritt selbst.</strong></p>
+</div>
+<p>Eng mit Schleifen verbunden sind <strong>Variablen</strong>. Eine Variable ist ein benannter Behälter, dessen Inhalt sich während des Ablaufs ändern darf. Anfänger legen zu viele davon an, weil sie es aus Excel gewohnt sind. Meistens genügt es, direkt auf das Ergebnis eines früheren Schrittes zuzugreifen.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Variable nötig?</th>
+<th>Warum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wert eines früheren Schrittes wiederverwenden</td>
+<td>nein</td>
+<td>Ergebnis ist ohnehin verfügbar</td>
+</tr>
+<tr>
+<td>Zwischenergebnis lesbar benennen</td>
+<td>nein, besser feste Zwischenaktion</td>
+<td>ändert sich nicht, braucht keinen Behälter</td>
+</tr>
+<tr>
+<td>In einer Schleife mitzählen</td>
+<td>ja</td>
+<td>Wert muss je Durchlauf verändert werden</td>
+</tr>
+<tr>
+<td>Liste über mehrere Durchläufe aufbauen</td>
+<td>ja</td>
+<td>Sammelbehälter für die Zusammenfassung</td>
+</tr>
+<tr>
+<td>Kennzeichen einmal berechnen</td>
+<td>nein</td>
+<td>einmal berechnen, mehrfach lesen</td>
+</tr>
+<tr>
+<td>Zwei Zweige sollen dasselbe Feld füllen</td>
+<td>ja</td>
+<td>jeder Zweig schreibt in denselben Behälter</td>
+</tr>
+</tbody>
+</table>
+<p>Die Faustregel: <strong>Variablen nur dort, wo sich ein Wert wirklich verändert.</strong> Wer alles in Variablen ablegt, verliert die Nachvollziehbarkeit, weil im Protokoll nicht mehr zu erkennen ist, woher ein Wert stammt. Und in Schleifen mit gleichzeitiger Verarbeitung führen Zählvariablen zu falschen Ergebnissen, weil mehrere Durchläufe gleichzeitig hochzählen.</p>
+<hr />
+<h2 id="194-zeit-und-gleichzeitigkeit">19.4 Zeit und Gleichzeitigkeit<a class="headerlink" href="#194-zeit-und-gleichzeitigkeit" title="Permanent link">&para;</a></h2>
+<p>Drei Bausteine steuern, wann etwas passiert:</p>
+<ul>
+<li><strong>Verzögern</strong> hält den Ablauf für eine feste Dauer an: „warte 15 Minuten, dann prüfe erneut". Nützlich, wenn ein Fremdsystem Zeit zum Verarbeiten braucht.</li>
+<li><strong>Warten bis</strong> hält bis zu einem Zeitpunkt an: „warte bis morgen 8 Uhr, dann sende die Erinnerung". Vermeidet Mails um drei Uhr nachts.</li>
+<li><strong>Parallele Zweige</strong> führen mehrere unabhängige Stränge gleichzeitig aus und laufen danach wieder zusammen: Datei ablegen und Eintrag anlegen können parallel geschehen.</li>
+</ul>
+<p>Parallelität lohnt nur, wenn die Zweige wirklich unabhängig sind. Braucht Zweig B einen Wert aus Zweig A, ist das Ergebnis von der Zufälligkeit der Ausführung abhängig – ein Fehler, der beim Testen selten und im Betrieb regelmäßig auftritt. Und lange Wartezeiten von Tagen gehören nicht in einen wartenden Ablauf, sondern in einen <strong>täglichen Zeitplan-Ablauf</strong>, der eine Liste durchsieht (Kap. 18). Ein Ablauf, der neun Tage auf eine Freigabe wartet, ist neun Tage lang unsichtbar, nicht änderbar und geht bei jedem Zwischenfall verloren.</p>
+<hr />
+<h2 id="195-fehlerpfade-wiederholungen-und-notbremsen">19.5 Fehlerpfade, Wiederholungen und Notbremsen<a class="headerlink" href="#195-fehlerpfade-wiederholungen-und-notbremsen" title="Permanent link">&para;</a></h2>
+<p>Jeder Ablauf, der andere Systeme anspricht, wird irgendwann scheitern: ein Dienst ist nicht erreichbar, eine Berechtigung wurde entzogen, eine Datei ist gesperrt. Ohne Vorsorge bricht der Ablauf mitten im Vorgang ab – Datei gespeichert, Eintrag fehlt, niemand merkt es.</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Aktion ausfuehren]) --&gt; B([Erfolgreich])
+    B --&gt;|ja| C([Weiter im Ablauf])
+    B --&gt;|nein| D([Automatisch bis zu dreimal wiederholen])
+    D --&gt; E([Immer noch Fehler])
+    E --&gt;|nein| C
+    E --&gt;|ja| F([Fehlerpfad Vorgang markieren und Verantwortliche benachrichtigen])</code></pre>
+<p>Drei Mittel greifen ineinander:</p>
+<ol>
+<li>Eine <strong>Wiederholung</strong> startet die fehlgeschlagene Aktion automatisch erneut, meist mit wachsendem Abstand. Sie hilft bei vorübergehenden Störungen und nur dort – bei einer fehlenden Berechtigung nützt der zehnte Versuch nichts. Wiederhole nur <strong>idempotente</strong> Aktionen (Kap. 18), sonst versendest du eine Mail dreimal.</li>
+<li>Ein <strong>Fehlerpfad</strong> ist ein Zweig, der nur nach einem Fehler ausgeführt wird. Er sorgt dafür, dass der Vorgang einen sichtbaren Zustand bekommt: Status auf „Fehler" setzen, Kennzeichen und Fehlertext protokollieren, eine benannte Person benachrichtigen. Nicht die Person, die den Ablauf gebaut hat – die Person, die fachlich zuständig ist.</li>
+<li>Eine <strong>Notbremse</strong> stoppt den Ablauf, bevor er Schaden anrichtet. Bewährt sind drei Formen: eine <strong>Obergrenze</strong> („mehr als 50 Vorgänge in einem Lauf sind unplausibel, abbrechen und melden"), ein <strong>Schalter</strong> in einer Liste („Ablauf aktiv Ja/Nein" – auf Nein beendet der Ablauf sich selbst) und eine <strong>Plausibilitätsprüfung</strong> vor kritischen Schritten („Betrag größer null und kleiner 100000").</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Eine Fehlerbenachrichtigung, die an ein Sammelpostfach oder an den Erbauer geht, wird nach zwei Wochen ignoriert. Danach läuft der Ablauf monatelang halb kaputt. Lege deshalb bei jedem Ablauf schriftlich fest, <strong>wer</strong> benachrichtigt wird, <strong>wer vertritt</strong> und <strong>was diese Person tun soll</strong> – „Vorgang in Liste suchen, Status prüfen, von Hand nacharbeiten" ist eine brauchbare Anweisung, „bitte prüfen" nicht.</p>
+</div>
+<hr />
+<h2 id="196-lesbarkeit-benennung-und-typische-logikfehler">19.6 Lesbarkeit, Benennung und typische Logikfehler<a class="headerlink" href="#196-lesbarkeit-benennung-und-typische-logikfehler" title="Permanent link">&para;</a></h2>
+<p>Ein Ablauf wird einmal gebaut und jahrelang gelesen – oft von jemand anderem. Deshalb ist Benennung Teil der Funktion, nicht Kosmetik.</p>
+<table>
+<thead>
+<tr>
+<th>Schlecht</th>
+<th>Gut</th>
+<th>Warum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bedingung</td>
+<td>Betrag ueber 5000 Euro</td>
+<td>die Bedingung ist ohne Öffnen verständlich</td>
+</tr>
+<tr>
+<td>Auf jedes anwenden 2</td>
+<td>Fuer jeden PDF-Anhang</td>
+<td>zeigt, worüber geschleift wird</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Zaehler verarbeitete Belege</td>
+<td>zeigt Inhalt und Zweck</td>
+</tr>
+<tr>
+<td>E-Mail senden 3</td>
+<td>Freigabeanfrage an Kostenstelle</td>
+<td>zeigt Empfänger und Zweck</td>
+</tr>
+<tr>
+<td>Verfassen</td>
+<td>Kennzeichen bilden</td>
+<td>zeigt das Ergebnis, nicht die Technik</td>
+</tr>
+</tbody>
+</table>
+<p>Dazu vier Regeln, die den Unterschied machen: Benenne Schritte <strong>beim Anlegen</strong>, nicht später. Beschreibe das <strong>Ergebnis</strong>, nicht die Technik. Halte die <strong>Verschachtelung flach</strong> – mehr als zwei Ebenen ist ein Hinweis, dass eine Mehrfachauswahl oder eine Nachschlagetabelle fehlt. Und notiere im Ablauf selbst in einem Kommentarfeld, <strong>warum</strong> eine ungewöhnliche Regel existiert; die Regel „Absender ignorieren, wenn Betreff mit AW beginnt" ist ohne Begründung nach einem Jahr nicht mehr wartbar.</p>
+<table>
+<thead>
+<tr>
+<th>Logikfehler</th>
+<th>Symptom</th>
+<th>Ursache und Abhilfe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Endlosschleife</td>
+<td>Ablauf startet sich immer wieder, Kontingent erschöpft</td>
+<td>Ablauf ändert ein Element, dessen Änderung ihn selbst auslöst; über Trigger-Bedingung oder Statusfeld ausschließen</td>
+</tr>
+<tr>
+<td>Bedingung prüft leeren Wert</td>
+<td>falscher Zweig, obwohl scheinbar alles stimmt</td>
+<td>leeres Feld ist nicht gleich Nein; Vorhandensein separat prüfen</td>
+</tr>
+<tr>
+<td>Verschachtelte Bedingungen statt Mehrfachauswahl</td>
+<td>niemand versteht den Ablauf, Fälle fehlen</td>
+<td>ab drei Ausgängen Mehrfachauswahl oder Nachschlagetabelle</td>
+</tr>
+<tr>
+<td>Vergessener Nein- oder Standardfall</td>
+<td>Vorgänge verschwinden ohne Spur</td>
+<td>jeden Zweig mit mindestens einem Protokollschritt füllen</td>
+</tr>
+<tr>
+<td>Vergleich auf dem falschen Datentyp</td>
+<td>Schwellenwert greift willkürlich</td>
+<td>vor dem Vergleich in Zahl oder Datum umwandeln (Kap. 18)</td>
+</tr>
+<tr>
+<td>Schleife ohne Filter</td>
+<td>Ablauf läuft minutenlang, Kosten steigen</td>
+<td>im lesenden Schritt filtern, nicht in der Schleife</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>Der Klassiker unter den Logikfehlern ist die Prüfung <code>Status ist nicht gleich Genehmigt</code>. Sie ist auch dann erfüllt, wenn der Status <strong>leer</strong> ist – etwa weil noch niemand entschieden hat. Der Ablauf behandelt einen unbearbeiteten Vorgang damit wie eine Ablehnung. Prüfe deshalb immer zuerst, ob ein Wert überhaupt vorhanden ist, und entscheide erst danach über seinen Inhalt. Drei Zustände sind zu unterscheiden: <strong>leer</strong>, <strong>abgelehnt</strong>, <strong>genehmigt</strong> – nicht zwei.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Eine <strong>Bedingung</strong> erzeugt zwei Wege, und beide werden betreten – der Nein-Zweig braucht mindestens einen Protokollschritt.</li>
+<li>Ab drei Ausgängen gehört der Fall in eine <strong>Mehrfachauswahl</strong>, bei wachsenden Listen in eine <strong>Nachschlagetabelle</strong>; der Standardfall ist der wichtigste Zweig.</li>
+<li><strong>Schleifen</strong> laufen auch nullmal, garantieren keine Reihenfolge und kosten pro Element – deshalb so früh wie möglich filtern.</li>
+<li><strong>Variablen</strong> nur dort, wo sich ein Wert wirklich ändert; sonst leidet die Nachvollziehbarkeit.</li>
+<li>Lange Wartezeiten gehören in einen <strong>Zeitplan-Ablauf</strong>, nicht in einen wartenden Ablauf; <strong>parallele Zweige</strong> nur, wenn sie wirklich unabhängig sind.</li>
+<li><strong>Wiederholung</strong>, <strong>Fehlerpfad</strong> und <strong>Notbremse</strong> greifen zusammen: automatisch nachfassen, Fehler sichtbar machen, Schaden begrenzen.</li>
+<li><strong>Benennung</strong> ist Funktion: Ein Ablauf wird einmal gebaut und jahrelang gelesen.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Bedingung, Mehrfachauswahl oder Schleife?</summary>
+<p>Welcher Logikbaustein passt? Wähle zwischen <strong>Bedingung</strong>, <strong>Mehrfachauswahl</strong>,
+<strong>Schleife</strong>, <strong>Variable</strong> und <strong>Warten</strong>. Begründe jeweils in einem Satz.</p>
+<ol>
+<li>Rechnungen über 5000 Euro brauchen eine zusätzliche Freigabe.</li>
+<li>Eine Mail enthält bis zu fünf PDF-Anhänge, jeder soll einzeln abgelegt werden.</li>
+<li>Die Zuständigkeit richtet sich nach der Kostenstelle: Einkauf, Marketing, IT,
+   Lager oder Verwaltung.</li>
+<li>Am Ende soll in der Zusammenfassung stehen, wie viele Belege verarbeitet wurden.</li>
+<li>Nach dem Anlegen im Fremdsystem braucht die Suche dort etwa zehn Minuten, bis der
+   Eintrag gefunden wird.</li>
+<li>Gutschriften werden anders behandelt als Rechnungen.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zwei Aufgaben werden regelmäßig verwechselt: Zähle bei Nummer 3 die möglichen Ausgänge.
+Und frage bei Nummer 4, ob sich der Wert während des Ablaufs verändert.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Baustein</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Bedingung</td>
+<td>genau zwei Wege über einen Schwellenwert</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Schleife</td>
+<td>die Anzahl ist unbekannt, jedes Element wird gleich behandelt</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Mehrfachauswahl</td>
+<td>fünf feste Werte plus Standardfall für Unbekanntes</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Variable</td>
+<td>der Zählerstand verändert sich in jedem Durchlauf</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Warten</td>
+<td>das Fremdsystem braucht Zeit, danach wird erneut geprüft</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Bedingung</td>
+<td>zwei Wege, unterscheidbar am Vorzeichen oder Dokumenttyp</td>
+</tr>
+</tbody>
+</table>
+<p>Zwei Vertiefungen: Bei Nummer 3 wäre eine Kette aus fünf Bedingungen technisch möglich,
+aber nach kurzer Zeit unlesbar – und wenn die Kostenstellenliste wächst, gehört die
+Zuordnung ohnehin in eine Nachschlagetabelle. Bei Nummer 4 gilt der Sonderfall: Läuft
+die Schleife mit gleichzeitiger Verarbeitung, zählt eine Variable falsch. Dann ist es
+sicherer, am Ende die Anzahl der Elemente in der Liste zu bestimmen, statt mitzuzählen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Fehlerhaften Entwurf reparieren</summary>
+<p>Der folgende Entwurf soll offene Freigaben anmahnen. Er ist mehrfach fehlerhaft.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Ausloeser: Taeglich 7 Uhr
+Schritt 1: Alle Zeilen der Liste Rechnungseingang lesen, 4200 Zeilen
+Schritt 2: Fuer jede Zeile:
+    Schritt 2a: WENN Status ist nicht gleich Genehmigt
+        Schritt 2b: Erinnerungsmail an Kostenstelle senden
+        Schritt 2c: Feld Letzte Erinnerung auf heute setzen
+    SONST: nichts
+Schritt 3: Ende
+</code></pre></div></td></tr></table></div>
+<p>Zusätzlich ist bekannt: Der Ablauf wird auch ausgelöst, wenn eine Zeile der Liste
+geändert wird. Und die Liste enthält Zeilen mit leerem Status, weil die Erfassung
+noch nicht abgeschlossen ist.</p>
+<ol>
+<li>Finde <strong>mindestens vier</strong> Fehler und benenne jeweils die konkrete Auswirkung.</li>
+<li>Schreibe den Entwurf korrigiert als Schrittliste neu.</li>
+<li>Benenne alle Schritte deines neuen Entwurfs so, dass sie ohne Öffnen verständlich sind.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Achte auf drei Wörter: „alle", „nicht gleich" und „auch". Jedes davon versteckt einen
+eigenen Fehler. Und überlege, was der Ablauf am zweiten Tag mit einer Rechnung macht,
+die er am ersten Tag schon angemahnt hat.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p><strong>Fehler und Auswirkungen:</strong></p>
+<ol>
+<li><strong>Kein Filter beim Lesen.</strong> 4200 Durchläufe für wenige Mahnungen – langsam, teuer,
+  Protokoll unlesbar. Abhilfe: im lesenden Schritt filtern.</li>
+<li><strong><code>Status ist nicht gleich Genehmigt</code> trifft leere Werte.</strong> Noch nicht erfasste
+  Vorgänge werden angemahnt, obwohl niemand etwas versäumt hat. Abhilfe: auf Status
+  gleich <code>in Pruefung</code> prüfen statt auf das Gegenteil von <code>Genehmigt</code>.</li>
+<li><strong>Keine Frist.</strong> Die Bedingung „älter als drei Tage" fehlt, deshalb wird jede offene
+  Rechnung sofort und dann täglich angemahnt.</li>
+<li><strong>Endlosschleife.</strong> Schritt 2c ändert eine Zeile, und Änderungen lösen den Ablauf
+  erneut aus. Abhilfe: Trigger-Bedingung, die Änderungen am Feld <code>Letzte Erinnerung</code>
+  ausschließt – oder ausschließlich per Zeitplan starten.</li>
+<li><strong>Leere Sonst-Zweige ohne Protokoll.</strong> Im Fehlerfall fehlt jede Spur.</li>
+<li><strong>Keine Notbremse.</strong> Bei einem Datenfehler gehen tausende Mails hinaus.</li>
+</ol>
+<p><strong>Korrigierter Entwurf:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>Ausloeser: Taeglich 7 Uhr, nur Zeitplan
+Schritt 1: Offene Freigaben lesen
+           Filter Status gleich in Pruefung
+           und Freigabe angefordert am aelter als 3 Tage
+           und Letzte Erinnerung leer oder aelter als 2 Tage
+Schritt 2: Notbremse Anzahl pruefen
+           WENN mehr als 50 Treffer DANN Meldung an Buchhaltung und Ende
+Schritt 3: Fuer jede offene Freigabe:
+    Schritt 3a: Erinnerung an Kostenstelle senden
+    Schritt 3b: Feld Letzte Erinnerung auf heute setzen
+    Schritt 3c: Bei Fehler Vorgang als Erinnerung fehlgeschlagen markieren
+Schritt 4: Zusammenfassung an Buchhaltung senden mit Anzahl der Erinnerungen
+</code></pre></div></td></tr></table></div>
+<p>Der wichtigste Lernpunkt ist Fehler 2. Er erzeugt keine Fehlermeldung, sondern falsche
+Mails an Kolleginnen und Kollegen – und wird deshalb erst über Beschwerden entdeckt.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Verschachtelung auflösen – mit KI als Sparringspartner</summary>
+<p>Diese Übung machst du in einem KI-Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<p>Für den Rechnungseingang (Kap. 17) gelten diese fachlichen Regeln:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Gutschriften gehen ohne Freigabe direkt in die Buchhaltung.
+Rechnungen bis 500 Euro gibt die Buchhaltung selbst frei.
+Rechnungen ueber 500 Euro gehen an die Kostenstelle.
+Rechnungen ueber 5000 Euro gehen an Kostenstelle und Leitung Finanzen.
+Rechnungen ohne Bestellbezug gehen immer an den Einkauf, unabhaengig vom Betrag.
+Rechnungen ohne erkennbare Rechnungsnummer gehen in den Klaerkorb.
+Kostenstellen sind Einkauf, Marketing, IT, Lager, Verwaltung.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Entwirf die Logik zunächst selbst als Schrittliste. Entscheide bewusst, wo eine
+   Bedingung, wo eine Mehrfachauswahl und wo eine Nachschlagetabelle passt, und in
+   welcher <strong>Reihenfolge</strong> geprüft wird.</li>
+<li>Lass dir von deinem KI-Werkzeug eine Alternative entwerfen. Formuliere den Auftrag so,
+   dass die Prüfreihenfolge und der Umgang mit fehlenden Werten ausdrücklich Teil der
+   Antwort sind.</li>
+<li>Vergleiche beide Entwürfe. Finde mindestens <strong>zwei</strong> Fälle, die einer der Entwürfe
+   falsch oder gar nicht behandelt.</li>
+<li>Lass dir zum Schluss von der KI die Behauptung prüfen: „Man kann alles mit
+   verschachtelten Bedingungen lösen, eine Mehrfachauswahl ist nur Geschmackssache."
+   Beurteile die Antwort selbst und formuliere deine eigene Position in drei Sätzen.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die Reihenfolge der Prüfungen entscheidet über das Ergebnis, nicht nur über die
+Lesbarkeit. Überlege konkret: Was passiert mit einer Gutschrift über 6000 Euro ohne
+Bestellbezug? Genau solche Kombinationen zeigen, ob ein Entwurf tragfähig ist.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p><strong>Tragfähige Reihenfolge:</strong> Erst die Ausschlussfälle, dann die Betragslogik, zuletzt die
+Zuständigkeit.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>Schritt 1: WENN Rechnungsnummer nicht erkennbar DANN Klaerkorb, Ende
+Schritt 2: WENN Dokumenttyp Gutschrift oder Betrag negativ
+           DANN direkt Buchhaltung, Ende
+Schritt 3: WENN Bestellbezug fehlt DANN Einkauf, Ende
+Schritt 4: Mehrfachauswahl ueber Betragsstufe
+           bis 500 Euro       -&gt; Buchhaltung
+           ueber 500 Euro     -&gt; Kostenstelle
+           ueber 5000 Euro    -&gt; Kostenstelle und Leitung Finanzen
+Schritt 5: Empfaenger der Kostenstelle aus Nachschlagetabelle ermitteln
+           Standardfall bei unbekannter Kostenstelle: Klaerkorb und protokollieren
+</code></pre></div></td></tr></table></div>
+<p><strong>Warum diese Reihenfolge:</strong> Ohne Kennzeichen ist der Vorgang nicht verfolgbar, also kommt
+Schritt 1 zuerst. Die Gutschrift vor der Betragslogik zu prüfen, verhindert den Fehler aus
+Kapitel 18, bei dem minus 340 Euro als „unter 500 Euro" gilt und in die Selbstfreigabe
+läuft. Und „ohne Bestellbezug immer Einkauf" ist stärker als der Betrag, muss also vor
+der Betragsstufe stehen.</p>
+<p><strong>Häufige Lücken in beiden Entwürfen:</strong></p>
+<ul>
+<li>Die <strong>Gutschrift über 6000 Euro ohne Bestellbezug</strong> wird oft zweimal behandelt oder
+  landet beim Einkauf, obwohl Schritt 2 sie bereits abschließt.</li>
+<li>Die <strong>unbekannte Kostenstelle</strong> fehlt fast immer – ohne Standardfall verschwindet der
+  Vorgang.</li>
+<li>Der <strong>leere Betrag</strong> wird als 0 gelesen und damit als „bis 500 Euro" behandelt:
+  Selbstfreigabe für einen unbekannten Betrag.</li>
+<li>Die <strong>Grenze selbst</strong> ist unklar. Sind 500,00 Euro noch „bis" oder schon „über"?</li>
+</ul>
+<p><strong>Zur Behauptung:</strong> Sie ist technisch richtig und fachlich falsch. Jede Mehrfachauswahl
+lässt sich verschachtelt nachbauen, aber ab drei Ausgängen sinkt die Lesbarkeit so stark,
+dass fehlende Fälle nicht mehr auffallen – daran scheitern Abläufe im Betrieb. Stimmt das
+KI-Werkzeug der Behauptung zu, ist das ein guter Anlass für Widerspruch mit dem Argument
+Wartbarkeit.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Fehleranalyse und Umbau eines fehlerhaften Ablaufentwurfs</summary>
+<p><strong>Szenario:</strong> Ein ausgeschiedener Kollege hat für die Nordwind Handel GmbH einen Ablauf für
+Urlaubsanträge entworfen. Er läuft seit drei Monaten und gilt als „grundsätzlich in
+Ordnung, nur manchmal komisch". Tatsächlich sind zwei Anträge verschwunden, eine Kollegin
+hat elf identische Erinnerungen erhalten, und einmal wurde ein Antrag genehmigt, obwohl die
+Führungskraft nie geantwortet hat. Du sollst den Entwurf analysieren und umbauen – auf
+Papier, nicht im Werkzeug.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code>Ausloeser: Neues Element in der Liste Urlaubsantraege
+Schritt 1: Variable Genehmigt anlegen, Startwert Ja
+Schritt 2: Alle Zeilen der Liste Urlaubsantraege lesen
+Schritt 3: Fuer jede Zeile parallel:
+    Schritt 3a: WENN Status ist nicht gleich Abgelehnt
+        Schritt 3b: WENN Tage groesser 10
+            Schritt 3c: WENN Vertretung eingetragen
+                Schritt 3d: Mail an Fuehrungskraft senden
+                Schritt 3e: 24 Stunden warten
+                Schritt 3f: Erneut Mail an Fuehrungskraft senden
+            SONST: nichts
+        SONST: Variable Genehmigt auf Ja setzen
+    SONST: nichts
+Schritt 4: WENN Genehmigt gleich Ja
+    Schritt 4a: Status auf Genehmigt setzen
+    Schritt 4b: Urlaubskonto in Excel-Datei reduzieren
+    Schritt 4c: Bestaetigung an Antragsteller senden
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Vollständige Fehleranalyse.</strong> Erstelle eine Fundtabelle mit den Spalten
+<code>Nr. | Schritt | Fehlerart | konkrete Auswirkung | Schweregrad</code>. Als Fehlerarten verwendest
+du: Endlosschleife, leerer Wert falsch geprüft, fehlender Fall, falsche Verschachtelung,
+fehlende Idempotenz, Datentyp, Parallelität, fehlender Fehlerpfad, irreführende Benennung.
+Finde <strong>mindestens acht</strong> Befunde. Ordne den Schweregrad danach, ob der Fehler nur
+unschön ist, Nacharbeit erzeugt oder ein fachlich falsches Ergebnis liefert.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Baue den Ablauf neu als Schrittliste. Dein
+Neuentwurf muss <strong>alle vier</strong> Kriterien erfüllen:</p>
+<ol>
+<li>Jeder Bedingungszweig und jeder Standardfall ist gefüllt – kein „SONST: nichts" mehr.
+   Wo fachlich nichts zu tun ist, steht ein Protokollschritt.</li>
+<li>Der Ablauf ist <strong>idempotent</strong>: Ein zweiter Lauf für denselben Antrag erzeugt keine
+   zweite Mail, keine zweite Genehmigung und keine zweite Buchung im Urlaubskonto.</li>
+<li>Die Erinnerung an ausbleibende Freigaben läuft über einen <strong>Zeitplan-Ablauf</strong> mit
+   Frist und Obergrenze, nicht über Warteschritte im Antragsablauf.</li>
+<li>Es gibt einen <strong>Fehlerpfad</strong> mit benannter zuständiger Rolle plus Vertretung sowie
+   mindestens eine <strong>Notbremse</strong>.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Beim Durchsprechen mit der Personalabteilung kommen drei
+neue Anforderungen, die den Entwurf sprengen: Bei Abwesenheit der Führungskraft muss nach
+zwei Tagen automatisch an deren Vertretung eskaliert werden. Anträge über 20 Tage brauchen
+zusätzlich die Personalleitung. Und Sonderurlaub und unbezahlter Urlaub folgen ganz
+anderen Regeln und dürfen auf keinen Fall automatisch genehmigt werden. Baue das ein –
+und entscheide dabei bewusst, ob du verschachtelte Bedingungen, eine Mehrfachauswahl oder
+eine Nachschlagetabelle verwendest. Begründe jede der drei Entscheidungen.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Personalleitung möchte, dass Anträge, auf
+die niemand reagiert, nach fünf Tagen <strong>automatisch genehmigt</strong> werden – „damit nichts
+liegen bleibt". Lass dir von einem KI-Werkzeug Pro und Contra geben. Entscheide dann
+begründet und <strong>widersprich</strong> dieser Vorgabe oder dem KI-Vorschlag, wenn Schweigen als
+Zustimmung fachlich nicht tragbar ist. Entwirf eine Alternative, die das Liegenbleiben
+löst, ohne eine Entscheidung zu erfinden.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Fundtabelle mit mindestens acht Befunden, Auswirkung und Schweregrad</li>
+<li>Neuentwurf als benannte Schrittliste plus Checkliste der vier Pflichtkriterien</li>
+<li>erweiterter Entwurf nach den drei neuen Anforderungen, mit Begründung der gewählten
+   Logikbausteine</li>
+<li>begründete Entscheidung zur automatischen Genehmigung inklusive Alternativvorschlag
+   und benannter Restrisiken</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> deine Fundtabelle die drei real gemeldeten Symptome –
+verschwundene Anträge, elf Erinnerungen, Genehmigung ohne Antwort – jeweils einem
+konkreten Schritt zuordnet, dein Neuentwurf alle vier Pflichtkriterien erfüllt, die drei
+neuen Anforderungen ohne dritte Verschachtelungsebene abgebildet sind und deine
+Entscheidung in Runde 4 begründet vom Wunsch der Personalleitung abweicht oder ihn mit
+belastbaren Absicherungen annimmt.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Arbeite Runde 1 rückwärts von den Symptomen: Welcher Schritt kann elf Mails erzeugen?
+Welcher kann einen Antrag genehmigen, ohne dass jemand geantwortet hat? Die Variable
+<code>Genehmigt</code> mit Startwert <code>Ja</code> ist der gefährlichste Befund im ganzen Entwurf – sie
+bedeutet, dass Untätigkeit zur Genehmigung führt. Genau dieselbe Denkfigur begegnet dir in
+Runde 4 als offizielle Anforderung. Wer sie in Runde 1 als Fehler erkennt und in Runde 4
+akzeptiert, hat sich selbst widersprochen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Die Fundtabelle enthält mindestens acht Befunde und ordnet die
+drei Symptome konkret zu – Startwert <code>Ja</code> der Variablen führt zur Genehmigung ohne Antwort,
+die Schleife über <strong>alle</strong> Zeilen bei einem Ereignis-Trigger erzeugt Mehrfachmails, und die
+leeren Sonst-Zweige lassen Anträge spurlos verschwinden; (2) der Neuentwurf erfüllt alle
+vier Pflichtkriterien, insbesondere ein Kennzeichen je Antrag, die Prüfung vor jedem
+schreibenden Schritt, die Trennung von Antragsablauf und Erinnerungsablauf sowie ein
+Fehlerpfad mit benannter Rolle und Vertretung; (3) die drei neuen Anforderungen sind ohne
+dritte Verschachtelungsebene gelöst, Eskalation und Vertretung stammen aus einer
+Nachschlagetabelle, die Urlaubsarten aus einer Mehrfachauswahl mit Standardfall, und
+Sonderurlaub ist ausdrücklich von jeder Automatik ausgenommen; (4) die Entscheidung in
+Runde 4 wägt Liegenbleiben gegen unbegründete Genehmigung ab und liefert eine tragfähige
+Alternative wie Eskalationsstufen, Sichtbarkeit über eine Übersichtsliste und eine
+Sammelentscheidung durch die Personalleitung.</p>
+<p>Lernziel: Logikfehler in einem fremden Entwurf systematisch finden, den Ablauf mit den
+richtigen Bausteinen neu aufbauen – und erkennen, dass eine bequeme Automatik wie
+„Schweigen gilt als Zustimmung" eine fachliche Entscheidung ersetzt, die niemand
+getroffen hat.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel18/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 18 – Trigger, Aktionen und Daten">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 18 – Trigger, Aktionen und Daten
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel20/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 20 – Werkzeuglandschaft: Power Automate, Zapier, Make
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

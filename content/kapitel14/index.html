@@ -1,0 +1,1907 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel13/">
+      
+      
+        <link rel="next" href="../kapitel15/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 14 – Fallbeispiel HR - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-14-fallbeispiel-hr-personalarbeit-mit-ki-und-ihre-grenzen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 14 – Fallbeispiel HR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Block 3 · Praxis mit KI-Agenten
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 11 – Copilot in Microsoft 365: Überblick und Arbeitsweise
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 12 – KI-gestützte Textarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 13 – KI-gestützte Datenarbeit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 14 – Fallbeispiel HR
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 14 – Fallbeispiel HR
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#141-die-leitplanke-steht-am-anfang-nicht-am-ende" class="md-nav__link">
+    <span class="md-ellipsis">
+      14.1 Die Leitplanke steht am Anfang, nicht am Ende
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-stellenanzeige-und-anforderungsprofil" class="md-nav__link">
+    <span class="md-ellipsis">
+      14.2 Stellenanzeige und Anforderungsprofil
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-bewerbungssichtung-assistenz-keine-auswahl" class="md-nav__link">
+    <span class="md-ellipsis">
+      14.3 Bewerbungssichtung: Assistenz, keine Auswahl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-strukturierte-interviewleitfaden" class="md-nav__link">
+    <span class="md-ellipsis">
+      14.4 Strukturierte Interviewleitfäden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-onboarding-plan-und-mitarbeitergesprache" class="md-nav__link">
+    <span class="md-ellipsis">
+      14.5 Onboarding-Plan und Mitarbeitergespräche
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#146-personalfragen-assistent-auf-basis-interner-richtlinien" class="md-nav__link">
+    <span class="md-ellipsis">
+      14.6 Personalfragen-Assistent auf Basis interner Richtlinien
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 15 – Fallbeispiel Vertrieb
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 16 – Fallbeispiel Rechnungswesen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-14-fallbeispiel-hr-personalarbeit-mit-ki-und-ihre-grenzen">Kapitel 14 – Fallbeispiel HR: Personalarbeit mit KI und ihre Grenzen<a class="headerlink" href="#kapitel-14-fallbeispiel-hr-personalarbeit-mit-ki-und-ihre-grenzen" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Warum die Personalauswahl im <strong>EU AI Act als Hochrisiko</strong> eingestuft ist und was daraus folgt</li>
+<li>Wie du <strong>Stellenanzeige und Anforderungsprofil</strong> mit KI schärfer und diskriminierungsärmer bekommst</li>
+<li>Wie eine <strong>Sichtung von Bewerbungsunterlagen</strong> als Assistenz aussehen darf – und wo sie aufhört</li>
+<li>Wie du <strong>strukturierte Interviewleitfäden</strong> erstellst, die vergleichbare Ergebnisse liefern</li>
+<li>Wie du <strong>Onboarding-Plan</strong> und <strong>Mitarbeitergespräche</strong> vorbereitest, wie ein <strong>Personalfragen-Assistent</strong> auf internen Richtlinien funktioniert und welche Rolle <strong>Mitbestimmung</strong> dabei spielt</li>
+</ul>
+</div>
+<hr />
+<h2 id="141-die-leitplanke-steht-am-anfang-nicht-am-ende">14.1 Die Leitplanke steht am Anfang, nicht am Ende<a class="headerlink" href="#141-die-leitplanke-steht-am-anfang-nicht-am-ende" title="Permanent link">&para;</a></h2>
+<p>In den anderen Fachbereichen dieses Blocks kannst du erst arbeiten und dann prüfen. In HR nicht: Personalarbeit betrifft Entscheidungen über Menschen und ihre Erwerbsmöglichkeit. Drei Sätze musst du kennen, bevor du das erste Werkzeug öffnest. <strong>Erstens: Beschäftigtenauswahl ist Hochrisiko.</strong> Der EU AI Act stuft KI-Systeme für Einstellung, Auswahl, Beförderung oder Kündigung als <strong>Hochrisiko-Anwendung</strong> ein (Kap. 4). Daran hängen Pflichten zu Risikomanagement, Dokumentation, Datenqualität, Transparenz gegenüber Betroffenen und wirksamer menschlicher Aufsicht. Sie treffen vor allem Anbieter und betreibende Organisationen, bestimmen aber, was in deinem Unternehmen eingesetzt werden darf.</p>
+<p><strong>Zweitens: Keine automatisierte Entscheidung über Menschen.</strong> Eine Ablehnung, eine Rangfolge von Bewerbenden oder eine Eignungsbewertung darf nicht das Ergebnis eines Werkzeugs sein. Die DSGVO schützt Betroffene vor Entscheidungen, die ausschließlich auf automatisierter Verarbeitung beruhen und erhebliche Auswirkungen haben. Wer eine KI-Rangliste durchwinkt, ohne sie inhaltlich zu prüfen, entscheidet nicht – er nickt. <strong>Drittens: Bewerberdaten gehören nicht in öffentliche Werkzeuge.</strong> Ein Lebenslauf ist ein dichtes Bündel personenbezogener Daten, oft einschließlich besonderer Kategorien wie Gesundheit, Herkunft oder Religionszugehörigkeit. Ihn in ein privates Chatkonto zu kopieren, ist keine Grauzone, sondern eine unzulässige Übermittlung – auch bei „nur dem Werdegang".</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Betrifft Auswahl oder Bewertung von Menschen]) --&gt;|ja| B([Hochrisiko Regeln und Mitbestimmung pruefen])
+    A --&gt;|nein| C([Normale KI-Nutzung mit Pruefpflicht])
+    B --&gt; D([Nur Assistenz mit menschlicher Entscheidung])</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Mitbestimmung ist kein Formalismus</p>
+<p>Der Einsatz von KI-Werkzeugen in der Personalarbeit berührt Mitbestimmungsrechte des Betriebsrats – insbesondere bei technischen Einrichtungen, die zur Überwachung von Verhalten oder Leistung geeignet sind, und bei Auswahlrichtlinien. Ein Werkzeug, das Bewerbungen bewertet oder Leistungsdaten verdichtet, ist mitbestimmungspflichtig. Wer es „erst mal im Kleinen ausprobiert", schafft keine Erleichterung, sondern eine Rechtsverletzung und verbrennt das Vertrauen für alle späteren Vorhaben.</p>
+</div>
+<hr />
+<h2 id="142-stellenanzeige-und-anforderungsprofil">14.2 Stellenanzeige und Anforderungsprofil<a class="headerlink" href="#142-stellenanzeige-und-anforderungsprofil" title="Permanent link">&para;</a></h2>
+<p>Hier ist der Nutzen groß und das Risiko klein. Der entscheidende Schritt kommt vor der Anzeige: das <strong>Anforderungsprofil</strong>, also die begründete Trennung zwischen dem, was jemand wirklich braucht, und dem, was sich über Jahre eingeschlichen hat.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du bist Personalreferentin und arbeitest anforderungsbasiert.
+Aufgabe: Entwickle ein Anforderungsprofil fuer die Stelle Sachbearbeitung
+Auftragsabwicklung bei der Musterhandel GmbH.
+Kontext, Taetigkeiten laut Fachbereich: Auftraege aus Mail und Telefon erfassen
+und pruefen, Liefertermine mit Lager und Spedition abstimmen, Reklamationen
+aufnehmen und weiterleiten, monatliche Auswertung offener Auftraege in Excel.
+Format: Tabelle mit den Spalten Anforderung, Muss oder Kann, Begruendung aus
+der Taetigkeit, Nachweis im Auswahlverfahren.
+Einschraenkung: Jede Anforderung muss sich aus einer genannten Taetigkeit
+ableiten lassen. Keine Anforderungen zu Alter, Geschlecht, Herkunft, Familien-
+stand, Aussehen oder Muttersprachlichkeit. Keine Berufserfahrung in Jahren.
+</code></pre></div></td></tr></table></div>
+<p>Aus dem geprüften Profil entsteht die Anzeige. Dann folgt der Schritt, der in der Praxis fast immer fehlt: die <strong>Gegenprüfung auf Diskriminierungsrisiko</strong>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Pruefe den folgenden Anzeigentext auf Formulierungen, die Bewerbende
+mittelbar ausschliessen oder abschrecken koennten. Pruefe insbesondere
+Geschlecht, Alter, Herkunft und Sprache, Behinderung, Religion,
+Familiensituation, soziale Herkunft.
+Format: Tabelle mit den Spalten Fundstelle, Risiko, Begruendung,
+Alternativformulierung.
+Einschraenkung: Keine Stilkritik, nur Fundstellen mit konkretem Risiko. Wenn du
+nichts findest, sage das ausdruecklich.
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Formulierung</th>
+<th>Risiko</th>
+<th>Bessere Fassung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>„junges, dynamisches Team"</td>
+<td>Alter</td>
+<td>„Team mit kurzen Entscheidungswegen"</td>
+</tr>
+<tr>
+<td>„Muttersprachler Deutsch"</td>
+<td>Herkunft</td>
+<td>„sehr gute Deutschkenntnisse in Wort und Schrift"</td>
+</tr>
+<tr>
+<td>„körperlich belastbar" ohne Bezug</td>
+<td>Behinderung</td>
+<td>konkrete Tätigkeit nennen, etwa „Heben von Paketen bis 15 kg"</td>
+</tr>
+<tr>
+<td>„mindestens 10 Jahre Erfahrung"</td>
+<td>Alter, mittelbar</td>
+<td>„nachgewiesene Erfahrung in [Tätigkeit]"</td>
+</tr>
+</tbody>
+</table>
+<p>Diskriminierende Formulierungen sind meist nicht böse gemeint, sondern <strong>eingeschliffen</strong> – und genau solche sprachlichen Muster erkennt ein Sprachmodell zuverlässig. Es ersetzt keine rechtliche Prüfung, findet aber die offensichtlichen zwei Drittel in Sekunden.</p>
+<hr />
+<h2 id="143-bewerbungssichtung-assistenz-keine-auswahl">14.3 Bewerbungssichtung: Assistenz, keine Auswahl<a class="headerlink" href="#143-bewerbungssichtung-assistenz-keine-auswahl" title="Permanent link">&para;</a></h2>
+<p>Das ist die heikelste Anwendung in diesem Kapitel. Die Trennlinie verläuft zwischen <strong>Aufbereiten</strong> und <strong>Bewerten</strong> – und sie ist in der Praxis klar erkennbar: Ein Werkzeug, dessen Ausgabe man in eine Reihenfolge bringen kann, bewertet. Ein Werkzeug, dessen Ausgabe für alle Unterlagen dieselbe neutrale Struktur hat, bereitet auf.</p>
+<table>
+<thead>
+<tr>
+<th>Erlaubte Assistenz</th>
+<th>Nicht zulässig</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unterlagen in ein einheitliches Übersichtsformat bringen</td>
+<td>Rangfolge oder Punktzahl der Bewerbenden erzeugen</td>
+</tr>
+<tr>
+<td>Prüfen, ob formale Nachweise vorhanden sind</td>
+<td>Eignung oder Persönlichkeit einschätzen</td>
+</tr>
+<tr>
+<td>Fehlende Angaben und Lücken benennen</td>
+<td>Aus Lücken auf Zuverlässigkeit schließen</td>
+</tr>
+<tr>
+<td>Absageschreiben nach getroffener Entscheidung</td>
+<td>Absageentscheidung oder Ablehnungsempfehlung</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Bringe die Angaben der angehaengten Bewerbung in ein Uebersichtsformat.
+Format: Tabelle mit den Zeilen Abschluss und Qualifikation, Berufliche Stationen
+mit Zeitraeumen, Nachgewiesene Kenntnisse mit Fundstelle, Angaben zu den vier
+Muss-Anforderungen des Anforderungsprofils, Fehlende oder unklare Angaben.
+Einschraenkung: Ausschliesslich Angaben uebernehmen, die in den Unterlagen
+stehen. Keine Bewertung, keine Punktzahl, keine Rangfolge, keine Einschaetzung
+von Eignung oder Persoenlichkeit. Keine Rueckschluesse aus Luecken. Fehlende
+Angaben als fehlt markieren.
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warum eine Rangliste auch bei menschlicher Freigabe unzulässig bleibt</p>
+<p>Der häufigste Einwand lautet: „Ich prüfe die Rangliste doch nachher." Das hält der Praxis nicht stand. Wer eine Reihenfolge vorgelegt bekommt, prüft die oberen Plätze intensiv und die unteren gar nicht – das ist keine Charakterschwäche, sondern ein bekannter Ankereffekt. Die Rangliste hat die Entscheidung damit faktisch getroffen. Deshalb darf sie nicht entstehen, nicht erst nicht befolgt werden. Kommt sie als Funktion eines Bewerbermanagementsystems von außen, ist das ein Fall für Datenschutz, Mitbestimmung und Rechtsabteilung – nicht für einen Praxistest.</p>
+</div>
+<hr />
+<h2 id="144-strukturierte-interviewleitfaden">14.4 Strukturierte Interviewleitfäden<a class="headerlink" href="#144-strukturierte-interviewleitfaden" title="Permanent link">&para;</a></h2>
+<p>Unstrukturierte Interviews sind der Ort, an dem die meisten Fehlentscheidungen entstehen: Jede Person wird etwas anderes gefragt, am Ende entscheidet Sympathie, und begründen lässt sich nichts. Ein <strong>strukturierter Leitfaden</strong> stellt allen dieselben Fragen mit denselben Bewertungsankern – dieses Gerüst lässt sich gut mit KI erstellen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Rolle: Du unterstuetzt bei der Erstellung strukturierter Auswahlgespraeche.
+Aufgabe: Erstelle einen Interviewleitfaden fuer die Stelle Sachbearbeitung Auftragsabwicklung.
+Kontext: Nutze die vier Muss-Anforderungen aus dem angehaengten Anforderungsprofil.
+Gespraechsdauer 45 Minuten, zwei Gespraechsfuehrende.
+Format: Je Muss-Anforderung eine verhaltensbasierte Hauptfrage nach dem Muster Schildern Sie
+eine Situation, zwei Nachfragen zu konkretem Handeln, Beobachtungsanker fuer die Stufen
+unzureichend, ausreichend, stark. Danach ein Ablaufplan mit Zeitangaben.
+Einschraenkung: Keine Fragen zu Familienplanung, Gesundheit, Religion, Herkunft oder
+Vermoegen. Keine Fangfragen. Beobachtungsanker beschreiben Verhalten, nicht Eigenschaften.
+</code></pre></div></td></tr></table></div>
+<p>Die Bewertung schreiben die Gesprächsführenden anschließend selbst – von Hand, unabhängig voneinander, vor dem Austausch. KI hilft beim Zusammenführen der Notizen zu einem Protokoll, nicht bei der Bewertung.</p>
+<div class="admonition tip">
+<p class="admonition-title">Der Test für einen guten Beobachtungsanker</p>
+<p>Ein Anker ist brauchbar, wenn zwei Personen unabhängig voneinander dieselbe Stufe ankreuzen würden. „Wirkt strukturiert" scheitert daran; „Nennt bei der Terminabstimmung von sich aus die betroffenen Stellen und einen Zeitpunkt" funktioniert. Verlange beobachtbares Verhalten, sonst produziert das Werkzeug Eigenschaftswörter.</p>
+</div>
+<hr />
+<h2 id="145-onboarding-plan-und-mitarbeitergesprache">14.5 Onboarding-Plan und Mitarbeitergespräche<a class="headerlink" href="#145-onboarding-plan-und-mitarbeitergesprache" title="Permanent link">&para;</a></h2>
+<p>Nach der Entscheidung verschwinden die Hochrisiko-Fragen – hier ist KI ein sehr guter Assistent. Für das <strong>Onboarding</strong> ist der Hebel die Vollständigkeit: Vergessene Zugänge, fehlende Einweisungen und unklare Ansprechpersonen kosten neue Beschäftigte die ersten zwei Wochen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Erstelle einen Onboarding-Plan fuer die ersten 30 Tage einer neuen Person in der
+Auftragsabwicklung bei der Musterhandel GmbH.
+Kontext: Team von acht Personen, Einarbeitung durch Frau Berger, Notebook und Telefon,
+Fachsystem fuer Auftraege, Excel-Auswertungen, erste Kundengespraeche ab Woche drei.
+Format: Tabelle mit den Spalten Tag oder Woche, Thema, Verantwortlich, Ergebnis. Gliedere in
+vier Bereiche: Technische Ausstattung und Zugaenge, Fachliche Einarbeitung, Menschen und
+Netzwerk, Pflicht- und Sicherheitsthemen.
+Einschraenkung: Jede Zeile braucht eine verantwortliche Rolle, keine Zeile mit
+Verantwortlichkeit alle. Keine Schulungsthemen erfinden.
+</code></pre></div></td></tr></table></div>
+<p>Für <strong>Mitarbeitergespräche</strong> ist der Nutzen die Vorbereitung, nicht der Inhalt. Ein Sprachmodell hilft, Beobachtungen zu ordnen und schwierige Punkte klar zu formulieren. Es darf keine Leistungsbewertung erzeugen und keine personenbezogenen Leistungsdaten in ein Werkzeug tragen, für das es keine Freigabe gibt.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufgabe: Hilf mir, ein Jahresgespraech vorzubereiten.
+Kontext, meine eigenen Beobachtungen: fachlich sicher, uebernimmt schwierige Kundenfaelle von
+sich aus, uebergibt Aufgaben spaet mit zweimal Terminverzug im Team, moechte perspektivisch
+mehr Verantwortung uebernehmen.
+Format: Drei priorisierte Gespraechsziele, je Beobachtung eine Formulierung nach dem Muster
+Beobachtung, Wirkung, Bitte, drei offene Fragen, zwei moegliche Einwaende mit je einer
+sachlichen Reaktion.
+Einschraenkung: Keine Bewertung der Person, keine Charaktereigenschaften, keine Formulierung,
+die eine Konsequenz ankuendigt.
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Personenbezug bleibt Personenbezug</p>
+<p>„Anonymisiert" heißt nicht „Name weggelassen". In einem Team von acht Personen ist eine Beschreibung wie „übergibt Aufgaben spät, zweimal Terminverzug" oft eindeutig zuordenbar. Verwende solche Inhalte nur in freigegebenen Werkzeugen innerhalb deiner Organisation und formuliere so knapp wie möglich. Bei Leistungs- und Verhaltensdaten kommt die Mitbestimmung ins Spiel, sobald daraus eine systematische Auswertung wird.</p>
+</div>
+<hr />
+<h2 id="146-personalfragen-assistent-auf-basis-interner-richtlinien">14.6 Personalfragen-Assistent auf Basis interner Richtlinien<a class="headerlink" href="#146-personalfragen-assistent-auf-basis-interner-richtlinien" title="Permanent link">&para;</a></h2>
+<p>Der wirtschaftlich interessanteste HR-Anwendungsfall ist unspektakulär: die immer gleichen Fragen zu Urlaubsübertrag, Reisekosten, Elternzeit oder Fortbildungsantrag. Ein Assistent, der ausschließlich aus den internen Richtlinien antwortet, entlastet HR spürbar und ist rechtlich unkritisch – solange drei Bedingungen erfüllt sind: <strong>nur interne Quellen</strong> (Wissensbasis auf die freigegebene SharePoint-Bibliothek beschränkt), <strong>keine Auskunft ohne Quelle</strong> (Antwort mit Fundstelle, sonst ausdrücklich „nicht geregelt") und <strong>kein Einzelfallurteil</strong> (bei individuellen Ansprüchen an HR verweisen). In einer Instruktion sieht das so aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>Instruktion fuer den Assistenten:
+Du beantwortest Fragen von Beschaeftigten zu Personalthemen der Musterhandel GmbH und nutzt
+ausschliesslich die freigegebenen internen Richtlinien als Quelle.
+Regeln:
+- Jede Antwort nennt die Richtlinie und den Abschnitt als Fundstelle
+- Ist ein Sachverhalt nicht geregelt, antworte In den Richtlinien nicht geregelt, bitte wende
+  dich an die Personalabteilung
+- Du entscheidest keine Einzelfaelle, gibst keine Rechtsauskunft, bewertest keine Personen und
+  beantwortest keine Fragen zu anderen Beschaeftigten
+- Bei Krankheit, Behinderung, Schwangerschaft oder Konflikten verweist du unmittelbar auf die
+  Personalabteilung
+Ton: sachlich, freundlich, kurz. Maximal 120 Woerter je Antwort.
+</code></pre></div></td></tr></table></div>
+<p>Wie du so etwas als eigenen Agenten aufbaust, folgt in Kapitel 32. Die Instruktion zeigt bereits das Grundmuster jeder verantwortbaren HR-Anwendung: enge Quelle, Fundstellenpflicht, klarer Ausstiegspfad zum Menschen.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz für den ganzen Bereich</p>
+<p>In HR gilt eine Reihenfolge, von der du nicht abweichen solltest: <strong>Rechtslage prüfen, dann Mitbestimmung einbeziehen, dann Werkzeug einsetzen, dann Ergebnis verantworten.</strong></p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Personalauswahl gilt im <strong>EU AI Act als Hochrisiko</strong> (Kap. 4); daran hängen Dokumentations-, Transparenz- und Aufsichtspflichten.</li>
+<li>Eine <strong>automatisierte Entscheidung über Menschen</strong> ist unzulässig – und eine durchgewinkte KI-Rangliste ist faktisch eine solche Entscheidung.</li>
+<li><strong>Bewerberdaten gehören nie in öffentliche Werkzeuge</strong>, auch nicht auszugsweise und nicht zum Testen. Bei <strong>Stellenanzeige und Anforderungsprofil</strong> ist der Nutzen hoch: Anforderungen aus Tätigkeiten ableiten und Formulierungen auf Diskriminierungsrisiko gegenprüfen.</li>
+<li>Bei der <strong>Sichtung</strong> verläuft die Grenze zwischen Aufbereiten und Bewerten: einheitliche Struktur ja, Rangfolge und Eignungsurteil nein. <strong>Strukturierte Interviewleitfäden</strong> mit beobachtbaren Ankern machen Gespräche vergleichbar; die Bewertung bleibt beim Menschen.</li>
+<li><strong>Onboarding, Gesprächsvorbereitung und Richtlinien-Assistent</strong> sind die risikoarmen Anwendungen mit dem schnellsten Nutzen. <strong>Mitbestimmung</strong> ist bei jedem Werkzeug einzubeziehen, das Verhalten oder Leistung auswerten kann.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Erlaubte Assistenz oder verbotene Entscheidung?</summary>
+<p>Ordne jeden Vorgang ein: <strong>erlaubte Assistenz</strong>, <strong>grenzwertig und nur mit Auflagen</strong>, oder
+<strong>unzulässig</strong>. Begründe jeweils in einem Satz.</p>
+<ol>
+<li>Copilot bringt zehn Bewerbungen in ein einheitliches Übersichtsformat ohne Bewertung.</li>
+<li>Ein Werkzeug erzeugt eine Punktzahl je Bewerbung und sortiert die Liste danach.</li>
+<li>Ein Anzeigentext wird auf diskriminierende Formulierungen geprüft.</li>
+<li>Ein Lebenslauf wird in ein privates ChatGPT-Konto kopiert, um Rückfragen zu sammeln.</li>
+<li>Nach getroffener Entscheidung wird ein Absageschreiben formuliert.</li>
+<li>Ein Assistent beantwortet Fragen zum Urlaubsübertrag aus der internen Richtlinie.</li>
+<li>Aus einer Lücke im Lebenslauf wird eine Einschätzung zur Zuverlässigkeit abgeleitet.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zwei Fragen genügen fast immer: Entsteht eine Reihenfolge oder ein Urteil über einen Menschen?
+Und verlassen personenbezogene Daten den freigegebenen Datenraum?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Vorgang</th>
+<th>Einordnung</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Übersichtsformat</td>
+<td>erlaubt</td>
+<td>reine Aufbereitung, keine Bewertung, gleiche Struktur für alle</td>
+</tr>
+<tr>
+<td>2 Punktzahl und Sortierung</td>
+<td>unzulässig</td>
+<td>erzeugt eine Rangfolge und damit faktisch die Auswahlentscheidung</td>
+</tr>
+<tr>
+<td>3 Anzeigenprüfung</td>
+<td>erlaubt</td>
+<td>betrifft einen Text, keine Person, senkt Diskriminierungsrisiko</td>
+</tr>
+<tr>
+<td>4 Lebenslauf in Privatkonto</td>
+<td>unzulässig</td>
+<td>unzulässige Übermittlung personenbezogener Daten</td>
+</tr>
+<tr>
+<td>5 Absageschreiben</td>
+<td>erlaubt</td>
+<td>Entscheidung ist bereits von Menschen getroffen</td>
+</tr>
+<tr>
+<td>6 Richtlinien-Assistent</td>
+<td>erlaubt mit Auflagen</td>
+<td>nur interne Quelle, Fundstellenpflicht, Verweis an HR bei Einzelfällen</td>
+</tr>
+<tr>
+<td>7 Rückschluss aus Lücke</td>
+<td>unzulässig</td>
+<td>Eignungsurteil über eine Person und sachlich unhaltbar</td>
+</tr>
+</tbody>
+</table>
+<p>Der schwierigste Fall ist Nummer 2, weil er praktisch verlockend ist. Er bleibt auch dann
+unzulässig, wenn ein Mensch die Liste anschließend „prüft": Eine vorgelegte Reihenfolge lenkt die
+Aufmerksamkeit auf die oberen Plätze und hat die Entscheidung damit vorweggenommen. Nummer 7 ist
+zusätzlich fachlich falsch – Lücken haben Ursachen wie Pflege, Krankheit oder Kindererziehung,
+deren Bewertung direkt in Diskriminierung führt.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Anzeigentext auf Diskriminierungsrisiko prüfen</summary>
+<p>Diese Übung machst du am Werkzeug (Copilot, ChatGPT oder Claude – der Text enthält keine
+personenbezogenen Daten).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Wir suchen zum naechstmoeglichen Zeitpunkt eine Sekretaerin fuer unsere
+Geschaeftsleitung. Sie passen zu uns, wenn Sie deutsche Muttersprachlerin sind,
+mindestens 15 Jahre Berufserfahrung mitbringen und sich in unser junges,
+dynamisches Team einfuegen. Ein gepflegtes Erscheinungsbild und hohe
+Flexibilitaet, auch an Abenden und Wochenenden, sind selbstverstaendlich.
+Koerperliche Belastbarkeit wird vorausgesetzt. Wir bieten ein Umfeld fuer
+Menschen, die noch etwas erreichen wollen.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Lass den Text mit dem Prüf-Prompt aus dem Kapitel auf Fundstellen untersuchen.</li>
+<li>Ergänze selbst alle Funde, die das Werkzeug übersehen hat.</li>
+<li>Formuliere eine bereinigte Fassung, die den sachlichen Kern erhält.</li>
+<li>Notiere, welche Anforderung du <strong>gestrichen</strong> hast, weil sie sich aus keiner Tätigkeit
+   ableiten lässt.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zähle vorher, wie viele problematische Stellen du selbst findest, und vergleiche danach. Das
+Werkzeug findet die offensichtlichen Formulierungen zuverlässig, übersieht aber gern die, die
+nur mittelbar wirken.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Fundstelle</th>
+<th>Merkmal</th>
+<th>Alternative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sekretärin</td>
+<td>Geschlecht</td>
+<td>Assistenz der Geschäftsleitung, alle Geschlechter</td>
+</tr>
+<tr>
+<td>deutsche Muttersprachlerin</td>
+<td>Herkunft und Geschlecht</td>
+<td>sehr gute Deutschkenntnisse in Wort und Schrift</td>
+</tr>
+<tr>
+<td>mindestens 15 Jahre Berufserfahrung</td>
+<td>Alter, mittelbar</td>
+<td>nachgewiesene Erfahrung in vergleichbarer Assistenztätigkeit</td>
+</tr>
+<tr>
+<td>junges, dynamisches Team</td>
+<td>Alter</td>
+<td>Team mit kurzen Entscheidungswegen</td>
+</tr>
+<tr>
+<td>gepflegtes Erscheinungsbild</td>
+<td>Aussehen, mittelbar Herkunft und Religion</td>
+<td>streichen, oder konkrete Anforderung an Kundenkontakt benennen</td>
+</tr>
+<tr>
+<td>Flexibilität abends und am Wochenende</td>
+<td>Familiensituation, Religion</td>
+<td>konkret benennen, etwa Bereitschaft für zwei Abendtermine im Monat</td>
+</tr>
+<tr>
+<td>körperliche Belastbarkeit</td>
+<td>Behinderung</td>
+<td>konkrete Tätigkeit nennen oder streichen</td>
+</tr>
+<tr>
+<td>noch etwas erreichen wollen</td>
+<td>Alter</td>
+<td>streichen</td>
+</tr>
+</tbody>
+</table>
+<p>Das ist die entscheidende Beobachtung: Nach der Bereinigung bleibt von der Anzeige fast nichts
+übrig – weil sie fast ausschließlich aus Merkmalen bestand, die nichts mit der Tätigkeit zu tun
+haben. Der richtige Weg ist deshalb nicht, den Text zu reparieren, sondern beim
+Anforderungsprofil neu anzufangen: Welche Tätigkeiten fallen an, und was braucht man dafür
+wirklich? Die Anforderung „gepflegtes Erscheinungsbild" ist der klarste Streichkandidat, weil
+sie in keiner Tätigkeit begründet ist und mittelbar auf Herkunft, Religion und soziale Lage wirkt.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Interviewleitfaden mit belastbaren Beobachtungsankern</summary>
+<p>Diese Übung machst du am Werkzeug. Sie enthält keine personenbezogenen Daten.</p>
+<p>Gegeben ist dieses Anforderungsprofil für die Stelle Sachbearbeitung Auftragsabwicklung bei der
+Musterhandel GmbH:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Muss-Anforderungen:
+1. Auftraege vollstaendig und fehlerfrei erfassen, auch unter Zeitdruck
+2. Liefertermine zwischen Lager, Spedition und Kunde abstimmen
+3. Reklamationen sachlich aufnehmen und an die richtige Stelle weitergeben
+4. Auswertungen in Excel erstellen und Auffaelligkeiten erkennen
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Erstelle mit dem Prompt-Muster aus dem Kapitel einen strukturierten Interviewleitfaden für
+   45 Minuten.</li>
+<li>Prüfe jeden Beobachtungsanker mit dem Zwei-Personen-Test: Würden zwei Gesprächsführende
+   unabhängig voneinander dieselbe Stufe ankreuzen? Streiche oder ersetze alle Anker, die den
+   Test nicht bestehen.</li>
+<li>Prüfe den Leitfaden auf unzulässige Fragen und auf Fangfragen. Notiere jeden Fund.</li>
+<li>Ergänze eine kurze Regel, wie die Bewertung nach dem Gespräch abläuft, damit die Gespräche
+   vergleichbar bleiben.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Sprachmodelle formulieren Anker gern mit Eigenschaftswörtern: „wirkt souverän", „zeigt
+Teamfähigkeit", „arbeitet strukturiert". Das sind Urteile, keine Beobachtungen. Verlange in der
+Nachschärfung ausdrücklich Verhaltensbeschreibungen mit einem beobachtbaren Handeln als Subjekt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Beispiel für Anforderung 2, Terminabstimmung:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Hauptfrage: Schildern Sie eine Situation, in der ein zugesagter Termin nicht
+zu halten war. Was haben Sie konkret getan?
+Nachfrage 1: Wen haben Sie in welcher Reihenfolge informiert?
+Nachfrage 2: Woran haben Sie gemerkt, dass der Termin kippt?
+Anker unzureichend: Nennt keine Beteiligten oder wartet auf Anweisung von aussen.
+Anker ausreichend: Nennt Kunde und eine interne Stelle und einen neuen Termin.
+Anker stark: Nennt alle Beteiligten, benennt den Zeitpunkt der Erkennung, nennt
+einen konkreten Ersatzvorschlag und beschreibt die Rueckmeldung an den Kunden.
+</code></pre></div></td></tr></table></div>
+<p>Bewertungskriterien: (1) Zu jeder der vier Muss-Anforderungen gibt es genau eine
+verhaltensbasierte Hauptfrage und zwei Nachfragen, die auf Handeln und nicht auf Meinung zielen.
+(2) Alle Anker beschreiben beobachtbares Verhalten; Formulierungen wie „wirkt strukturiert" oder
+„ist belastbar" sind ersetzt. (3) Der Leitfaden enthält keine Fragen zu Familienplanung,
+Gesundheit, Herkunft, Religion, Parteizugehörigkeit oder Vermögensverhältnissen und keine
+Fangfragen. (4) Die Bewertungsregel legt fest, dass beide Gesprächsführenden unabhängig und
+vor dem Austausch bewerten, und dass die Bewertung von Menschen erfolgt.</p>
+<p>Der eigentliche Lernwert liegt in Schritt 2. Erfahrungsgemäß fallen beim ersten Durchlauf
+mindestens die Hälfte der Anker durch den Zwei-Personen-Test – und genau diese Anker sind der
+Grund, warum unstrukturierte Auswahlgespräche zu Entscheidungen führen, die niemand begründen kann.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Ein komplettes Recruiting für eine Stelle</summary>
+<p><strong>Szenario:</strong> Die Musterhandel GmbH sucht eine Person für die Sachbearbeitung
+Auftragsabwicklung. Die Vorgängerin hat gekündigt, die Stelle muss in sechs Wochen besetzt sein.
+Die letzte Ausschreibung ist elf Jahre alt, das Anforderungsprofil existiert nicht, und die
+Fachbereichsleitung sagt: „Wir brauchen einfach jemanden wie Frau Berger." Du verantwortest das
+Verfahren von der Anforderungsanalyse bis zur Absage – vollständig, dokumentiert und rechtlich
+tragfähig.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+Musterhandel GmbH, Handel mit Lager- und Bueroeinrichtung, 140 Beschaeftigte
+Team Auftragsabwicklung: 8 Personen, Leitung Frau Berger
+Taetigkeiten: Auftraege aus Mail und Telefon erfassen und pruefen,
+Liefertermine mit Lager und Spedition abstimmen, Reklamationen aufnehmen,
+monatliche Auswertung offener Auftraege in Excel
+Erwartet werden 40 bis 60 Bewerbungen
+Betriebsrat vorhanden, bisher nicht einbezogen
+Werkzeuge: Copilot in M365 freigegeben, kein Bewerbermanagementsystem
+</code></pre></div></td></tr></table></div>
+<p>Arbeite ausschließlich mit erfundenen Bewerbungsunterlagen, die du selbst anlegst – mindestens
+fünf, mit unterschiedlichen Werdegängen, davon zwei mit Lücken im Lebenslauf und eine mit
+ausländischem Abschluss. Verwende keine echten Unterlagen.</p>
+<hr />
+<p><strong>Runde 1 – Grundlage bauen.</strong> Erstelle das <strong>Anforderungsprofil</strong> mit mindestens acht
+Anforderungen, jede mit Muss- oder Kann-Einstufung, Ableitung aus einer konkreten Tätigkeit und
+geplantem Nachweis im Verfahren. Erstelle daraus die <strong>Stellenanzeige</strong> und prüfe sie mit dem
+Prüf-Prompt aus dem Kapitel auf Diskriminierungsrisiko. Erstelle außerdem das
+<strong>Sichtungsformular</strong>: das einheitliche Übersichtsformat, in das alle Unterlagen ohne Bewertung
+übertragen werden. Halte schriftlich fest, welche Werkzeuge du in welchem Schritt einsetzt.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Dein Verfahren muss <strong>alle vier</strong> Kriterien
+erfüllen. Prüfe einzeln nach und korrigiere:</p>
+<ol>
+<li>Jede Muss-Anforderung ist aus einer benannten Tätigkeit abgeleitet, und keine Anforderung
+   bezieht sich mittelbar oder unmittelbar auf Alter, Geschlecht, Herkunft, Sprache als
+   Muttersprache, Familiensituation, Aussehen, Religion oder Behinderung.</li>
+<li>Kein Schritt des Verfahrens erzeugt eine Rangfolge, eine Punktzahl oder ein Eignungsurteil
+   durch ein Werkzeug – die Sichtungsübersicht hat für alle Unterlagen dieselbe neutrale Struktur.</li>
+<li>Es liegt schriftlich fest, welche Daten in welchem Werkzeug verarbeitet werden, und
+   Bewerberdaten erscheinen in keinem öffentlichen Werkzeug – auch nicht auszugsweise.</li>
+<li>Der Einbezug des Betriebsrats ist geplant und begründet: Für welche Schritte ist er
+   erforderlich, für welche nicht, und mit welcher Begründung?</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Vier Dinge geschehen. Erstens schlägt die Fachbereichsleitung
+vor, „die Bewerbungen von Copilot vorsortieren zu lassen, damit wir nur die Top Ten lesen
+müssen" – der Zeitdruck ist echt. Zweitens fällt bei der Sichtung auf, dass eine Bewerbung mit
+ausländischem Abschluss von deinem Übersichtsformat schlecht abgebildet wird, weil das Feld
+Abschluss auf deutsche Bezeichnungen ausgelegt ist. Drittens erfährst du, dass eine
+Gesprächsführende die Bewerbung einer Person schon einmal aus einem anderen Verfahren kennt.
+Viertens meldet der Betriebsrat, dass er über den Einsatz von KI im Verfahren informiert werden
+will, bevor Gespräche stattfinden. Bearbeite alle vier Punkte: Formuliere eine Antwort auf den
+Vorsortier-Vorschlag mit einer <strong>umsetzbaren Alternative</strong>, die tatsächlich Zeit spart; überarbeite
+das Übersichtsformat; regle den Befangenheitsfall; und erstelle eine sachliche Information für
+den Betriebsrat, die Zweck, Werkzeuge, Daten und Grenzen benennt.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Nach den Gesprächen liegen zwei Personen sehr nah
+beieinander. Die Fachbereichsleitung tendiert klar zu der Person, die „am besten ins Team passt";
+die Gesprächsnotizen zeigen bei dieser Person Schwächen bei zwei von vier Muss-Anforderungen.
+Zusätzlich bittet dich die Leitung, die Absagen „von der KI schreiben zu lassen, kurz und ohne
+Begründung". Führe die Bewertung anhand deiner Beobachtungsanker zusammen, entscheide begründet,
+und <strong>widersprich</strong> mindestens einer der beiden Vorgaben mit tragfähiger Begründung. Formuliere
+anschließend die Absagen so, dass sie sachlich, wertschätzend und rechtlich unbedenklich sind.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Anforderungsprofil, geprüfte Stellenanzeige und neutrales Sichtungsformular</li>
+<li>ausgefüllte Prüfmatrix der vier Pflichtkriterien plus die schriftliche Festlegung, welche
+   Daten in welchem Werkzeug verarbeitet werden</li>
+<li>Bearbeitung aller vier Punkte aus Runde 3, darunter die Antwort auf den Vorsortier-Vorschlag
+   mit umsetzbarer Alternative und die Information für den Betriebsrat</li>
+<li>Interviewleitfaden mit Beobachtungsankern, zusammengeführte Bewertung, begründete
+   Auswahlentscheidung inklusive Widerspruch, und zwei Absageschreiben</li>
+<li>Verfahrensdokumentation, die von außen nachvollziehbar macht, wer wann was entschieden hat</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> in keinem Schritt eine maschinelle Rangfolge entstanden ist, die
+Antwort auf den Vorsortier-Vorschlag eine Alternative enthält, die den Zeitdruck wirklich
+adressiert, deine Auswahlentscheidung sich auf Beobachtungsanker und nicht auf Passung beruft,
+und deine Absageschreiben keine Begründung enthalten, die als Merkmal im Sinne des
+Gleichbehandlungsrechts gelesen werden kann.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Der Vorsortier-Vorschlag ist die realistischste und
+gefährlichste Stelle des ganzen Kapitels: Ein pauschales Nein ohne Alternative führt dazu, dass es
+jemand anders heimlich macht. Suche deshalb nach dem, was wirklich hilft – Vollständigkeitsprüfung
+der Unterlagen, einheitliche Übersicht, Vorbereitung der Rückfragen, Terminorganisation. Das spart
+echte Stunden, ohne eine Rangfolge zu erzeugen. In Runde 4 ist „passt ins Team" das schwierigste
+Argument: Es ist nicht per se falsch, aber es ist nicht überprüfbar und deckt sich erfahrungsgemäß
+häufig mit Ähnlichkeit zu den Entscheidenden. Wer ihm folgt, muss es in beobachtbares Verhalten
+übersetzen können – oder es fallen lassen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) Das Anforderungsprofil leitet jede Muss-Anforderung sichtbar aus einer
+Tätigkeit ab, die Anzeige ist nach der Prüfung frei von mittelbar ausschließenden Formulierungen,
+und das Sichtungsformular ist für alle Unterlagen identisch und bewertungsfrei; (2) die Prüfmatrix
+belegt alle vier Kriterien konkret, insbesondere die schriftliche Datenfestlegung und die
+begründete Betriebsratsplanung; (3) die Antwort auf den Vorsortier-Vorschlag lehnt die Rangfolge
+ab und liefert eine Alternative, die den Zeitdruck real reduziert, das Übersichtsformat ist für
+ausländische Abschlüsse tragfähig überarbeitet, der Befangenheitsfall ist geregelt statt
+ignoriert, und die Betriebsratsinformation benennt Zweck, Werkzeuge, Daten und Grenzen ohne
+Beschönigung; (4) die Auswahlentscheidung stützt sich auf Beobachtungsanker, benennt die Schwächen
+bei den Muss-Anforderungen ausdrücklich, widerspricht mindestens einer Vorgabe der Leitung
+begründet, und die Absagen sind sachlich ohne merkmalsbezogene Begründung; (5) die
+Verfahrensdokumentation macht Entscheidungen und Verantwortliche von außen nachvollziehbar.</p>
+<p>Lernziel: ein vollständiges Auswahlverfahren mit KI-Unterstützung durchführen, ohne die Grenze zur
+automatisierten Entscheidung über Menschen zu überschreiten – und dabei Zeitdruck, Bequemlichkeit
+und Passungsargumente als die drei realen Einfallstore für Rechtsverstöße erkennen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel13/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 13 – KI-gestützte Datenarbeit">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 13 – KI-gestützte Datenarbeit
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel15/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 15 – Fallbeispiel Vertrieb">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 15 – Fallbeispiel Vertrieb
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

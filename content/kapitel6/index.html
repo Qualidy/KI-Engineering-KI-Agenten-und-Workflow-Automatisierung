@@ -1,0 +1,1841 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel5/">
+      
+      
+        <link rel="next" href="../kapitel7/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 6 – Vom Chatbot zum Agenten - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-6-vom-chatbot-zum-agenten" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 6 – Vom Chatbot zum Agenten
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Block 2 · KI-Agenten verstehen und nutzen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 5 – Wie Sprachmodelle arbeiten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 6 – Vom Chatbot zum Agenten
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 6 – Vom Chatbot zum Agenten
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#61-chat-assistent-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Chat, Assistent, Agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-die-anatomie-eines-agenten" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Die Anatomie eines Agenten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-wissensanbindung-nachschlagen-statt-raten" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.3 Wissensanbindung: nachschlagen statt raten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-gedachtnis-was-bleibt-was-verfallt" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.4 Gedächtnis: was bleibt, was verfällt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-die-arbeitsschleife-beobachten-planen-handeln-prufen" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.5 Die Arbeitsschleife: Beobachten, Planen, Handeln, Prüfen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-autonomiestufen-und-wann-sich-ein-agent-lohnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.6 Autonomiestufen – und wann sich ein Agent lohnt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 9 – Prompt-Design: Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-6-vom-chatbot-zum-agenten">Kapitel 6 – Vom Chatbot zum Agenten<a class="headerlink" href="#kapitel-6-vom-chatbot-zum-agenten" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Worin sich <strong>Chat</strong>, <strong>Assistent</strong> und <strong>Agent</strong> unterscheiden – und warum die Grenze nicht am Produktnamen verläuft</li>
+<li>Die fünf Bausteine der <strong>Agenten-Anatomie</strong>: Ziel und Instruktion, Werkzeuge, Wissen, Gedächtnis, Arbeitsschleife</li>
+<li>Wie eine <strong>Wissensanbindung</strong> funktioniert, wenn ein Agent in eigenen Dokumenten nachschlägt</li>
+<li>Was ein Agent sich <strong>merken</strong> kann und wo das nützlich beziehungsweise heikel wird</li>
+<li>Die Schleife <strong>Beobachten – Planen – Handeln – Prüfen</strong> und warum jeder Durchlauf neue Fehlerquellen mitbringt</li>
+<li>Die <strong>Autonomiestufen</strong> von Vorschlag bis eigenständigem Handeln und wann sich ein Agent überhaupt lohnt</li>
+</ul>
+</div>
+<hr />
+<h2 id="61-chat-assistent-agent">6.1 Chat, Assistent, Agent<a class="headerlink" href="#61-chat-assistent-agent" title="Permanent link">&para;</a></h2>
+<p>In der Werbung heißt inzwischen fast alles „Agent". Für die Praxis brauchst du eine schärfere Unterscheidung. Sie hängt an einer einzigen Frage: <strong>Was kann das System außer Text erzeugen noch tun?</strong></p>
+<table>
+<thead>
+<tr>
+<th>Stufe</th>
+<th>Was es tut</th>
+<th>Was es nicht tut</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chat</strong></td>
+<td>antwortet auf Eingaben, erzeugt Text</td>
+<td>nichts abrufen, nichts auslösen</td>
+<td>ein Sprachmodell pur, wie in Kapitel 5 beschrieben</td>
+</tr>
+<tr>
+<td><strong>Assistent</strong></td>
+<td>antwortet mit Zugriff auf Kontext: geöffnetes Dokument, Postfach, Websuche</td>
+<td>nicht selbst handeln, nichts verändern</td>
+<td>Copilot fasst den E-Mail-Verlauf zusammen</td>
+</tr>
+<tr>
+<td><strong>Agent</strong></td>
+<td>verfolgt ein Ziel über mehrere Schritte, nutzt Werkzeuge, prüft Zwischenergebnisse</td>
+<td>ohne Auftrag und Grenzen arbeiten</td>
+<td>Agent sammelt Angaben, legt einen Eintrag an, benachrichtigt den Fachbereich</td>
+</tr>
+</tbody>
+</table>
+<p>Der entscheidende Sprung liegt zwischen Assistent und Agent: Ein Assistent <strong>antwortet</strong>, ein Agent <strong>arbeitet ab</strong>. Er zerlegt einen Auftrag selbst in Schritte, holt sich Informationen, ruft Werkzeuge auf und entscheidet, wann er fertig ist.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Ein Agent ist ein Sprachmodell <strong>plus</strong> vier Dinge: ein dauerhaftes Ziel, Werkzeuge, Zugang zu Wissen und eine Schleife, in der es sich selbst korrigiert. Nimm eines davon weg, ist es wieder ein Chat mit gutem Prompt.</p>
+</div>
+<hr />
+<h2 id="62-die-anatomie-eines-agenten">6.2 Die Anatomie eines Agenten<a class="headerlink" href="#62-die-anatomie-eines-agenten" title="Permanent link">&para;</a></h2>
+<p>Jeder Agent, egal ob in Copilot Studio gebaut (Kap. 32) oder als fertiges Produkt gekauft, besteht aus denselben Bausteinen.</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Ziel und Instruktion]) --&gt; E([Agent])
+    B([Werkzeuge]) --&gt; E
+    C([Wissensquellen]) --&gt; E
+    D([Gedaechtnis]) --&gt; E
+    E --&gt; F([Ergebnis und Handlung])</code></pre>
+<table>
+<thead>
+<tr>
+<th>Baustein</th>
+<th>Was er leistet</th>
+<th>Wenn er fehlt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ziel und Instruktion</strong></td>
+<td>dauerhafte Beschreibung von Aufgabe, Rolle, Tonfall, Grenzen</td>
+<td>der Agent macht bei jedem Aufruf etwas anderes</td>
+</tr>
+<tr>
+<td><strong>Werkzeuge (Tools)</strong></td>
+<td>Aktionen in anderen Systemen: suchen, rechnen, Mail senden, Datensatz anlegen</td>
+<td>der Agent kann nur reden</td>
+</tr>
+<tr>
+<td><strong>Wissensquellen</strong></td>
+<td>Zugriff auf Dokumente, Listen, Intranet, Websuche</td>
+<td>der Agent kennt dein Unternehmen nicht (Kap. 5)</td>
+</tr>
+<tr>
+<td><strong>Gedächtnis</strong></td>
+<td>Erinnerung innerhalb eines Vorgangs und über Vorgänge hinweg</td>
+<td>jedes Gespräch beginnt bei null</td>
+</tr>
+<tr>
+<td><strong>Arbeitsschleife</strong></td>
+<td>mehrere Schritte hintereinander mit Zwischenprüfung</td>
+<td>nur eine einzige Antwort, keine Korrektur</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ziel und Instruktion</strong> sind der wichtigste und zugleich am meisten unterschätzte Baustein. Sie sind kein Prompt für einen einzelnen Fall, sondern eine Dauervorgabe für alle Fälle: Wer bist du, was ist deine Aufgabe, was tust du auf keinen Fall, was tust du bei Unsicherheit. Wie du solche Instruktionen schreibst, ist Thema von Kapitel 10.</p>
+<p><strong>Werkzeuge</strong> lösen genau die Probleme aus Kapitel 5. Ein Modell kann nicht rechnen – ein Agent mit Taschenrechner-Werkzeug schon, weil er die Rechnung abgibt und nur das Ergebnis übernimmt. Ein Modell kennt den heutigen Tag nicht sicher – ein Agent mit Kalenderzugriff schon.</p>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Ein Werkzeug macht den Agenten nicht zuverlässiger, sondern nur mächtiger. Die <strong>Entscheidung</strong>, welches Werkzeug wann mit welchen Werten aufgerufen wird, trifft weiterhin das Sprachmodell – also ein statistisches System. Ein Agent, der Mails verschicken darf, verschickt irgendwann auch eine falsche. Deshalb gehören Werkzeuge mit Außenwirkung hinter eine Freigabe (Abschnitt 6.6, Kap. 33).</p>
+</div>
+<hr />
+<h2 id="63-wissensanbindung-nachschlagen-statt-raten">6.3 Wissensanbindung: nachschlagen statt raten<a class="headerlink" href="#63-wissensanbindung-nachschlagen-statt-raten" title="Permanent link">&para;</a></h2>
+<p>Damit ein Agent Fragen zu euren Unterlagen beantworten kann, muss man ihm die Unterlagen zugänglich machen. Das übliche Verfahren heißt <strong>RAG</strong> (Retrieval Augmented Generation, sinngemäß „Erzeugen mit vorgeschaltetem Suchen"). In einfachen Worten:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>1. Vorbereitung: Alle Dokumente werden in kleine Abschnitte zerlegt
+   und so abgelegt, dass man inhaltlich aehnliche Abschnitte finden kann.
+2. Frage: Der Nutzer fragt nach der Regelung fuer Auslandsreisen.
+3. Suchen: Das System sucht die passenden Abschnitte heraus,
+   zum Beispiel drei Absaetze aus der Reisekostenrichtlinie.
+4. Mitgeben: Diese Abschnitte werden zusammen mit der Frage
+   an das Sprachmodell uebergeben.
+5. Antworten: Das Modell formuliert die Antwort aus dem mitgegebenen Text
+   und nennt die Fundstelle.
+</code></pre></div></td></tr></table></div>
+<p>Der Trick ist unspektakulär und wirkungsvoll: Das Modell muss nichts wissen, es muss nur <strong>zusammenfassen, was man ihm vorlegt</strong>. Damit sinkt das Halluzinationsrisiko deutlich – nicht weil das Modell besser wird, sondern weil die Lücke kleiner wird.</p>
+<p>Gute Wissensanbindung erkennst du daran, dass der Agent <strong>Fundstellen</strong> nennt und „steht so nicht in den Unterlagen" sagt, wenn nichts passt. Antwortet er auch dann flüssig, wenn die Quelle nichts hergibt, ist die Anbindung entweder nicht aktiv oder zu schwach gewichtet – dann bekommst du wieder Textwahrscheinlichkeit statt Auskunft.</p>
+<p>Zwei Grenzen sind wichtig. Erstens ist die Antwort nur so gut wie die Ablage: Veraltete Fassungen im gleichen Ordner werden genauso gefunden wie die gültige. Zweitens gelten <strong>Berechtigungen</strong> – ein sauber eingerichteter Agent zeigt nur, was die fragende Person ohnehin sehen dürfte. Wie das bei Copilot in Microsoft 365 konkret aussieht, siehst du in Kapitel 11.</p>
+<hr />
+<h2 id="64-gedachtnis-was-bleibt-was-verfallt">6.4 Gedächtnis: was bleibt, was verfällt<a class="headerlink" href="#64-gedachtnis-was-bleibt-was-verfallt" title="Permanent link">&para;</a></h2>
+<p>Beim Gedächtnis werden regelmäßig drei Dinge verwechselt:</p>
+<ul>
+<li><strong>Kurzzeitgedächtnis</strong> ist schlicht das Kontextfenster (Kap. 5): alles, was in diesem Vorgang bisher gesagt wurde. Es endet mit dem Chat.</li>
+<li><strong>Projekt- oder Arbeitsraum-Gedächtnis</strong> ist ein abgegrenzter Bereich mit dauerhaften Anweisungen und Dateien, der für alle Gespräche darin gilt – etwa Projekte in ChatGPT oder Claude (Kap. 7).</li>
+<li><strong>Langzeitgedächtnis</strong> ist eine ausdrückliche Merkfunktion: Das Werkzeug speichert Fakten über dich („arbeitet im Einkauf", „bevorzugt kurze Antworten") und nutzt sie in späteren Chats.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Art</th>
+<th>Reichweite</th>
+<th>Nutzen</th>
+<th>Risiko</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kurzzeit</td>
+<td>ein Chat</td>
+<td>kein Wiederholen von Kontext</td>
+<td>geht verloren, verwässert bei Länge</td>
+</tr>
+<tr>
+<td>Projektraum</td>
+<td>alle Chats eines Projekts</td>
+<td>konsistente Vorgaben und Dateien</td>
+<td>falsche Altlast wirkt lange nach</td>
+</tr>
+<tr>
+<td>Langzeit</td>
+<td>alle Chats des Kontos</td>
+<td>weniger Tipparbeit</td>
+<td>speichert womöglich Vertrauliches dauerhaft</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Bevor du die Merkfunktion nutzt</p>
+<p>Alles, was gespeichert wird, wird in künftigen Antworten mitverwendet – auch dann, wenn es überholt ist oder nicht für alle Beteiligten gedacht war. Sieh dir an, was dein Werkzeug gespeichert hat, und räume regelmäßig auf. Personenbezogene Angaben über <strong>Dritte</strong> gehören nicht ins Langzeitgedächtnis (Kap. 4).</p>
+</div>
+<hr />
+<h2 id="65-die-arbeitsschleife-beobachten-planen-handeln-prufen">6.5 Die Arbeitsschleife: Beobachten, Planen, Handeln, Prüfen<a class="headerlink" href="#65-die-arbeitsschleife-beobachten-planen-handeln-prufen" title="Permanent link">&para;</a></h2>
+<p>Das eigentlich Neue an Agenten ist nicht der Zugriff auf Werkzeuge, sondern dass sie <strong>mehrfach durchlaufen</strong>, bevor sie ein Ergebnis abliefern.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Beobachten]) --&gt; B([Planen])
+    B --&gt; C([Handeln])
+    C --&gt; D([Pruefen])
+    D --&gt; A
+    D --&gt; E([Ergebnis abliefern])</code></pre>
+<p>Ein Beispiel, Schritt für Schritt: Ein Agent soll offene Rückfragen aus dem Support-Postfach zusammenstellen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Beobachten: 34 ungelesene Mails im Postfach, Zeitraum letzte 5 Tage.
+Planen:     Erst filtern nach Rueckfragen, dann je Fall Kernanliegen ziehen,
+            dann nach Dringlichkeit sortieren.
+Handeln:    Werkzeug Postfach durchsuchen aufrufen, Ergebnis 12 Treffer.
+Pruefen:    2 Treffer sind Abwesenheitsnotizen, also keine Rueckfragen.
+Beobachten: 10 relevante Faelle.
+Handeln:    Zusammenfassung je Fall erstellen, Liste sortieren.
+Pruefen:    Alle 10 Faelle enthalten Absender, Anliegen und Datum. Fertig.
+</code></pre></div></td></tr></table></div>
+<p>Diese Schleife ist der Grund für die Stärke von Agenten – und für ihre unangenehmste Eigenschaft: <strong>Fehler vervielfachen sich.</strong> Wenn Schritt 1 eine Mail falsch einordnet, baut Schritt 4 darauf auf. Ein einzelner Chat produziert eine prüfbare Antwort, ein Agent produziert eine Kette, von der du meist nur das Ende siehst.</p>
+<div class="admonition tip">
+<p class="admonition-title">Deshalb gilt bei Agenten</p>
+<p>Lass dir das <strong>Vorgehen</strong> ausgeben, nicht nur das Ergebnis: welche Quellen genutzt, welche Fälle aussortiert, welche Annahmen getroffen wurden. Ein Agent, dessen Zwischenschritte du nicht sehen kannst, ist im Betrieb kaum zu verantworten. Protokollierung und Nachvollziehbarkeit vertiefst du in Kapitel 33.</p>
+</div>
+<hr />
+<h2 id="66-autonomiestufen-und-wann-sich-ein-agent-lohnt">6.6 Autonomiestufen – und wann sich ein Agent lohnt<a class="headerlink" href="#66-autonomiestufen-und-wann-sich-ein-agent-lohnt" title="Permanent link">&para;</a></h2>
+<p>Nicht jeder Agent darf gleich viel. Es hilft, bewusst eine Stufe zu wählen, statt sie sich ergeben zu lassen.</p>
+<table>
+<thead>
+<tr>
+<th>Stufe</th>
+<th>Bezeichnung</th>
+<th>Der Mensch …</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Vorschlag</td>
+<td>fragt, entscheidet, macht alles selbst</td>
+<td>Textentwurf im Chat</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Entwurf im System</td>
+<td>prüft und schickt selbst ab</td>
+<td>Copilot schreibt den Antwortentwurf in Outlook</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Handeln mit Freigabe</td>
+<td>gibt jeden Vorgang frei</td>
+<td>Agent legt Ticket an, nach Klick auf Genehmigen</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Handeln mit Einspruchsrecht</td>
+<td>wird informiert, kann stoppen</td>
+<td>Agent verschickt Eingangsbestätigungen, Fachbereich sieht mit</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Eigenständiges Handeln</td>
+<td>kontrolliert nur Stichproben</td>
+<td>Agent sortiert Postfach vollautomatisch</td>
+</tr>
+</tbody>
+</table>
+<p>Die Stufe richtet sich nach der <strong>Fehlerfolge</strong>, nicht nach der technischen Machbarkeit. Faustregel: Je schwerer ein Fehler rückgängig zu machen ist und je mehr Außenwirkung er hat, desto niedriger die Stufe. Interne Vorsortierung darf Stufe 3 sein, Kundenkommunikation und alles mit rechtlicher Wirkung bleibt bei Stufe 1 oder 2.</p>
+<div class="admonition example">
+<p class="admonition-title">Lohnt sich hier ein Agent? Fünf Fragen</p>
+<ol>
+<li><strong>Mehrschrittig?</strong> Braucht die Aufgabe mehrere Arbeitsschritte und Quellen – oder reicht eine gute Frage im Chat?</li>
+<li><strong>Wiederkehrend?</strong> Fällt sie oft genug an, dass sich das Einrichten und Pflegen lohnt?</li>
+<li><strong>Variabel?</strong> Ist jeder Fall etwas anders? Wenn nicht, ist ein regelbasierter Ablauf besser.</li>
+<li><strong>Prüfbar?</strong> Kann jemand am Ergebnis erkennen, ob es stimmt?</li>
+<li><strong>Rückholbar?</strong> Lässt sich ein Fehler ohne Schaden korrigieren?</li>
+</ol>
+<p>Klare Absage: Wenn die Aufgabe <strong>immer gleich</strong> abläuft und keine Sprache oder Beurteilung enthält, nimm einen normalen automatisierten Ablauf – der ist billiger, schneller und vorhersehbar (Kap. 17, Kap. 29). Wenn sie <strong>einmalig</strong> ist, nimm den Chat. Ein Agent lohnt sich in der Mitte: wiederkehrend, sprachlastig, mit Varianz.</p>
+</div>
+<p>Damit ist die Landkarte gesteckt. Welche Produkte diese Bausteine heute wie umsetzen, siehst du im nächsten Kapitel; welche Rollen sich damit sinnvoll besetzen lassen, in Kapitel 8.</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Ein <strong>Chat</strong> antwortet, ein <strong>Assistent</strong> antwortet mit Kontext, ein <strong>Agent</strong> verfolgt ein Ziel über mehrere Schritte und handelt.</li>
+<li>Die Anatomie besteht aus <strong>Ziel und Instruktion, Werkzeugen, Wissensquellen, Gedächtnis und Arbeitsschleife</strong>.</li>
+<li><strong>Wissensanbindung (RAG)</strong> heißt: erst passende Textstellen suchen, dann daraus formulieren lassen – das senkt Halluzinationen, ersetzt aber keine gepflegte Ablage.</li>
+<li><strong>Gedächtnis</strong> gibt es in drei Reichweiten; das Langzeitgedächtnis ist bequem und datenschutzrechtlich heikel.</li>
+<li>Die Schleife <strong>Beobachten – Planen – Handeln – Prüfen</strong> macht Agenten stark und ihre Fehler schwerer erkennbar: Zwischenschritte sichtbar machen.</li>
+<li>Die <strong>Autonomiestufe</strong> richtet sich nach der Fehlerfolge; ein Agent lohnt sich bei wiederkehrenden, sprachlastigen Aufgaben mit Varianz – sonst genügt Chat oder ein regelbasierter Ablauf.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Chat, Assistent oder Agent?</summary>
+<p>Ordne jede Situation einer der drei Stufen zu: <strong>Chat</strong>, <strong>Assistent</strong> oder <strong>Agent</strong>.
+Begründe jeweils in einem Satz, welcher Baustein den Ausschlag gibt.</p>
+<ol>
+<li>Du lässt dir in einem Chatfenster eine Gliederung für eine Präsentation erstellen.</li>
+<li>Copilot fasst dir einen E-Mail-Verlauf mit elf Nachrichten aus deinem Postfach zusammen.</li>
+<li>Ein System nimmt eine Krankmeldung entgegen, trägt sie in die Abwesenheitsliste ein,
+   benachrichtigt die Führungskraft und meldet dir den Vollzug.</li>
+<li>Du fügst einen Vertragstext in ein Chatfenster ein und lässt dir die Kündigungsfristen nennen.</li>
+<li>Ein selbst gebauter Assistent beantwortet Fragen zur Reisekostenrichtlinie und nennt dabei
+   immer den Abschnitt, aus dem die Antwort stammt.</li>
+<li>Ein System prüft nachts alle offenen Rechnungen, erstellt Mahnentwürfe und legt sie zur
+   Freigabe in einen Ordner.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zwei Fragen führen dich sicher zur Antwort: Greift das System auf etwas zu, das du ihm nicht
+selbst hineinkopiert hast? Und tut es danach noch etwas anderes, als zu antworten?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Einordnung</th>
+<th>Ausschlaggebend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Chat</td>
+<td>kein Zugriff, keine Handlung, reine Texterzeugung</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Assistent</td>
+<td>Zugriff auf Kontext (Postfach), aber es wird nur geantwortet</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Agent</td>
+<td>mehrere Schritte, Werkzeuge, Handlung mit Außenwirkung</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chat</td>
+<td>der Kontext kommt von dir, nicht aus einem Zugriff</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Assistent</td>
+<td>Wissensanbindung mit Fundstelle, aber keine Handlung</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Agent</td>
+<td>eigenständiger Ablauf über mehrere Schritte, endet vor der Freigabe</td>
+</tr>
+</tbody>
+</table>
+<p>Beachte den Unterschied zwischen 5 und 6: Eine Wissensanbindung allein macht noch keinen
+Agenten. Erst Werkzeuge, mehrere Schritte und ein verfolgtes Ziel tun das. Und Nummer 6 zeigt,
+dass ein Agent nicht bis zum Schluss durchlaufen muss – die Freigabe bleibt bewusst beim
+Menschen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Anatomie-Skizze für einen eigenen Fall</summary>
+<p>Wähle eine wiederkehrende Aufgabe aus deinem Arbeitsalltag, die mehrere Schritte hat – zum
+Beispiel: eingehende Anfragen sortieren und beantworten, Besprechungsnotizen in Aufgaben
+überführen, oder Angebote auf Vollständigkeit prüfen.</p>
+<p>Skizziere für diese Aufgabe einen Agenten. Fülle alle fünf Bausteine aus:</p>
+<ol>
+<li><strong>Ziel und Instruktion</strong> – in zwei bis drei Sätzen, einschließlich einer Grenze
+   („tut auf keinen Fall …")</li>
+<li><strong>Werkzeuge</strong> – welche Zugriffe oder Aktionen wären nötig? Nenne mindestens zwei.</li>
+<li><strong>Wissensquellen</strong> – welche Unterlagen müsste der Agent kennen?</li>
+<li><strong>Gedächtnis</strong> – was muss er sich innerhalb eines Vorgangs merken, was darüber hinaus?</li>
+<li><strong>Autonomiestufe</strong> – welche der Stufen 0 bis 4 wählst du, und warum?</li>
+</ol>
+<p>Markiere zum Schluss den Baustein, bei dem du dir am unsichersten bist.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Denke bei den Werkzeugen nicht an Technik, sondern an Tätigkeiten: „im Postfach suchen",
+„einen Eintrag in einer Liste anlegen", „eine Nachricht senden". Ob das später ein Connector,
+ein Flow oder ein Klick ist, spielt für die Skizze keine Rolle.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Beispielhafte Bearbeitung für „eingehende Supportanfragen vorsortieren":</p>
+<table>
+<thead>
+<tr>
+<th>Baustein</th>
+<th>Ausfüllung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ziel und Instruktion</td>
+<td>Sortiert eingehende Anfragen nach Kategorie und Dringlichkeit und erstellt je Fall eine Kurzfassung. Beantwortet keine Anfrage selbst und sagt nichts zu Preisen oder Terminen zu.</td>
+</tr>
+<tr>
+<td>Werkzeuge</td>
+<td>Postfach durchsuchen, Eintrag in einer Liste anlegen, Benachrichtigung in Teams senden</td>
+</tr>
+<tr>
+<td>Wissensquellen</td>
+<td>Kategorienliste, Eskalationsregeln, Liste der zuständigen Teams</td>
+</tr>
+<tr>
+<td>Gedächtnis</td>
+<td>Im Vorgang: alle Angaben der Anfrage. Darüber hinaus: keine – Kundendaten gehören nicht ins Langzeitgedächtnis</td>
+</tr>
+<tr>
+<td>Autonomiestufe</td>
+<td>Stufe 2, weil die Zuordnung Auswirkungen auf Bearbeitungszeiten hat und Fehlzuordnungen sonst unbemerkt bleiben</td>
+</tr>
+</tbody>
+</table>
+<p>Gute Bearbeitungen erkennst du an drei Dingen: Die Instruktion enthält eine <strong>echte Grenze</strong>,
+die Werkzeuge sind als Tätigkeiten und nicht als Produkte benannt, und die Autonomiestufe ist
+mit der <strong>Fehlerfolge</strong> begründet, nicht mit dem technisch Möglichen. Wer Stufe 4 wählt, muss
+erklären können, wie ein Fehler überhaupt auffallen würde.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Wo endet der Chat, wo beginnt der Agent?</summary>
+<p>Diese Übung machst du direkt im KI-Werkzeug (Copilot, ChatGPT oder Claude).</p>
+<ol>
+<li><strong>Auftrag stellen.</strong> Gib deinem Werkzeug einen bewusst mehrschrittigen Auftrag, der Zugriffe
+   bräuchte, zum Beispiel:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Erstelle mir eine Uebersicht aller offenen Rueckfragen aus meinem Postfach
+der letzten Woche, sortiert nach Dringlichkeit, und lege zu jeder Rueckfrage
+eine Aufgabe mit Faelligkeit an.
+</code></pre></div></td></tr></table></div>
+<p>Notiere, was tatsächlich passiert: Wird nachgefragt, wird etwas erfunden, wird etwas
+   abgelehnt, wird etwas wirklich getan?</p>
+<ol>
+<li><strong>Schleife sichtbar machen.</strong> Stelle den Auftrag in einem neuen Chat noch einmal, diesmal mit:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Bearbeite das nicht. Beschreibe stattdessen, in welchen Schritten du vorgehen
+wuerdest, welche Zugriffe du je Schritt braeuchtest und woran du nach jedem
+Schritt pruefen wuerdest, ob er geklappt hat.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li><strong>Auswerten.</strong> Vergleiche die beschriebene Schleife mit dem, was in Schritt 1 tatsächlich
+   möglich war. Halte fest: Welche Bausteine der Agenten-Anatomie fehlen deinem Werkzeug für
+   diesen Auftrag? An welcher Stelle würde ein Fehler in Schritt 1 unbemerkt in Schritt 3
+   weiterwirken?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Interessant ist nicht, ob der Auftrag klappt – meistens klappt er nicht. Interessant ist, <strong>wie</strong>
+das Werkzeug scheitert: Sagt es klar, dass ihm der Zugriff fehlt, oder liefert es eine erfundene
+Übersicht, die aussieht, als käme sie aus deinem Postfach?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li><strong>Ohne Zugriff</strong> kommt entweder eine ehrliche Auskunft („ich habe keinen Zugriff auf dein
+  Postfach") oder – deutlich unangenehmer – eine erfundene Beispielübersicht mit erfundenen
+  Absendern. Letzteres ist genau die Halluzination aus Kapitel 5, nur in Tabellenform.</li>
+<li><strong>Mit Zugriff</strong> (Copilot im M365-Umfeld) klappt der erste Teil oft, der zweite scheitert am
+  fehlenden Werkzeug zum Anlegen von Aufgaben oder verlangt eine Bestätigung.</li>
+<li>Die <strong>Schrittbeschreibung</strong> aus Teil 2 ist meist sauber und plausibel. Das zeigt den Kern des
+  Kapitels: Planen kann ein Sprachmodell, Handeln nicht – dafür braucht es Werkzeuge.</li>
+</ul>
+<p>Erwartete Auswertung: Es fehlen typischerweise <strong>Werkzeuge</strong> (Postfachzugriff, Aufgaben anlegen)
+und die <strong>Prüfschritte</strong> der Schleife. Fehlerfortpflanzung: Wird in Schritt 1 eine
+Abwesenheitsnotiz als Rückfrage gewertet, entsteht am Ende eine Aufgabe zu einem Vorgang, den es
+nicht gibt – und im fertigen Ergebnis sieht man dieser Aufgabe nicht mehr an, woher sie stammt.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Agenten-Steckbrief für einen echten Anwendungsfall</summary>
+<p><strong>Szenario:</strong> Die Zentrale Verwaltung eines mittelständischen Unternehmens ertrinkt in
+Rückfragen. Beschäftigte schreiben an ein Sammelpostfach – zu Urlaub, Reisekosten,
+Bescheinigungen, Zugängen, Arbeitszeit. Drei Personen sortieren, leiten weiter und beantworten
+Standardfragen. Die Bereichsleitung hat gehört, dass „ein Agent das kann", und möchte einen
+belastbaren Steckbrief, bevor Geld ausgegeben wird.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Rund 60 Anfragen pro Tag, davon geschaetzt ein Drittel Standardfragen.
+Vorhandene Unterlagen: Intranetseiten, eine Reisekostenrichtlinie als PDF,
+eine veraltete FAQ-Liste in Word, viel Wissen nur in den Koepfen.
+Microsoft 365 vorhanden, keine Entwicklerkapazitaet.
+Du darfst das Szenario durch deinen eigenen Bereich ersetzen.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Steckbrief bauen.</strong> Erstelle einen Agenten-Steckbrief mit allen fünf Bausteinen der
+Anatomie: Ziel und Instruktion (ausformuliert, mit mindestens drei Grenzen), Werkzeuge (als
+Tätigkeiten), Wissensquellen (konkret benannt, mit Angabe wer sie pflegt), Gedächtnis (was
+innerhalb, was außerhalb eines Vorgangs) und die Arbeitsschleife (welche Schritte, welche
+Prüfung nach jedem Schritt). Ergänze eine gewählte Autonomiestufe mit Begründung.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Der Steckbrief muss <strong>alle vier</strong> Kriterien
+erfüllen:</p>
+<ol>
+<li>Zu jeder Wissensquelle ist benannt, <strong>wer sie aktuell hält</strong> und was passiert, wenn sie
+   veraltet ist.</li>
+<li>Die Instruktion enthält eine ausdrückliche Regel für den Fall, dass die Unterlagen die Frage
+   <strong>nicht</strong> beantworten.</li>
+<li>Für jedes Werkzeug mit Außenwirkung ist eine <strong>Freigabe oder eine Begründung</strong> angegeben,
+   warum keine nötig ist.</li>
+<li>Es ist benannt, <strong>wie ein Fehler auffallen würde</strong> – nicht nur, dass geprüft wird.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Beim Sichten der Unterlagen stellt sich heraus: Die FAQ-Liste
+ist zwei Jahre alt und widerspricht an drei Stellen der aktuellen Richtlinie. Außerdem sind
+etwa 20 Prozent der Anfragen Einzelfälle, die niemand nach Regeln beantworten kann. Überarbeite
+den Steckbrief: Was tust du mit widersprüchlichen Quellen? Wie erkennt der Agent, dass ein Fall
+nicht zu ihm gehört? Grenze den Anwendungsbereich neu ab und schreibe auf, welcher Anteil der
+Anfragen realistisch übrig bleibt.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Bereichsleitung möchte, dass der Agent Antworten
+<strong>direkt</strong> an die Beschäftigten schickt – Stufe 4, weil sonst „nichts gespart" werde. Lass dir
+von deinem KI-Werkzeug Argumente für beide Seiten geben. Entscheide dann selbst und
+<strong>widersprich</strong> begründet, wenn du eine niedrigere Stufe für richtig hältst. Formuliere einen
+Kompromiss, der spürbar Arbeit spart, ohne die Fehlerfolge zu ignorieren – und benenne, unter
+welcher <strong>überprüfbaren Bedingung</strong> du später auf die nächste Stufe gehen würdest.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Agenten-Steckbrief mit allen fünf Bausteinen und begründeter Autonomiestufe</li>
+<li>ausgefüllte Checkliste der vier Pflichtkriterien</li>
+<li>überarbeitete Fassung nach Runde 3, mit neu abgegrenztem Anwendungsbereich</li>
+<li>Entscheidungsnotiz aus Runde 4 mit Kompromiss und Aufstiegsbedingung</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> die Instruktion mindestens drei echte Grenzen und eine Regel für
+unbeantwortbare Fälle enthält, jede Wissensquelle eine verantwortliche Pflege hat, im Steckbrief
+steht, woran ein Fehler auffällt, und deine Entscheidungsnotiz eine Bedingung nennt, an der man
+objektiv ablesen kann, ob die nächste Autonomiestufe vertretbar wäre.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3. Fast jedes Agentenprojekt scheitert nicht an der Technik, sondern
+an der Wissensbasis: veraltete Dateien, widersprüchliche Fassungen, ungepflegte Listen. Wer das
+im Steckbrief ausklammert, plant einen Agenten für eine Welt, die es nicht gibt. In Runde 4 gilt:
+„Spart nichts" ist ein ernstzunehmendes Argument – begegne ihm mit einem Zuschnitt, der wirklich
+entlastet, statt mit einer Sicherheitsschleife um jeden Vorgang.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) alle fünf Bausteine sind konkret und auf das Szenario bezogen ausgefüllt,
+die Instruktion enthält ausformulierte Grenzen statt allgemeiner Vorsätze; (2) alle vier
+Pflichtkriterien sind erfüllt, insbesondere die benannte Pflegeverantwortung und die Frage, woran
+ein Fehler auffällt; (3) die Überarbeitung löst den Quellenwiderspruch nachvollziehbar – etwa
+durch Vorrang der Richtlinie und Aussortieren der FAQ – und grenzt den Anwendungsbereich
+ehrlich kleiner ab, inklusive realistischer Restmenge; (4) die Entscheidung wägt Entlastung gegen
+Fehlerfolge ab, übernimmt die Vorgabe Stufe 4 nicht ungeprüft und nennt eine objektiv prüfbare
+Aufstiegsbedingung.</p>
+<p>Lernziel: Einen Agenten nicht als Produktidee, sondern als Zusammenspiel aus Ziel, Werkzeugen,
+Wissen, Gedächtnis und Kontrolle entwerfen – und die Autonomiestufe aus der Fehlerfolge ableiten
+statt aus dem Wunsch nach Ersparnis.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel5/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 5 – Wie Sprachmodelle arbeiten">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 5 – Wie Sprachmodelle arbeiten
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel7/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude &amp; Co.">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

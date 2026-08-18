@@ -1,0 +1,1849 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel30/">
+      
+      
+        <link rel="next" href="../kapitel32/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 31 – Dokumentenverarbeitung automatisieren - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-31-dokumentenverarbeitung-automatisieren" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 31 – Dokumentenverarbeitung automatisieren
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Block 6 · Kombination von KI & Workflow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 29 – KI-Bausteine im Workflow: Muster und Einsatzstellen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel30/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 30 – AI Builder und KI-Aktionen in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 31 – Dokumentenverarbeitung automatisieren
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 31 – Dokumentenverarbeitung automatisieren
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311-die-dokumentenstrecke-ende-zu-ende" class="md-nav__link">
+    <span class="md-ellipsis">
+      31.1 Die Dokumentenstrecke Ende zu Ende
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312-texterkennung-ist-nicht-feldextraktion" class="md-nav__link">
+    <span class="md-ellipsis">
+      31.2 Texterkennung ist nicht Feldextraktion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#313-ein-eigenes-dokumentmodell-trainieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      31.3 Ein eigenes Dokumentmodell trainieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#314-konfidenzwerte-als-steuergroe" class="md-nav__link">
+    <span class="md-ellipsis">
+      31.4 Konfidenzwerte als Steuergröße
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#315-prufschleife-ablage-und-benennung" class="md-nav__link">
+    <span class="md-ellipsis">
+      31.5 Prüfschleife, Ablage und Benennung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#316-aufbewahrung-nachweis-und-ausnahmen" class="md-nav__link">
+    <span class="md-ellipsis">
+      31.6 Aufbewahrung, Nachweis und Ausnahmen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel33/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 33 – Agent und Workflow verbinden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel34/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 34 – Ideenwerkstatt: Use Cases finden, bewerten, priorisieren
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-31-dokumentenverarbeitung-automatisieren">Kapitel 31 – Dokumentenverarbeitung automatisieren<a class="headerlink" href="#kapitel-31-dokumentenverarbeitung-automatisieren" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wie eine Dokumentenstrecke von der Ablage bis zur Buchung <strong>Ende zu Ende</strong> aufgebaut ist</li>
+<li>Der Unterschied zwischen reiner <strong>Texterkennung</strong> und <strong>strukturierter Feldextraktion</strong></li>
+<li>Wie du in Grundzügen ein <strong>eigenes Dokumentmodell</strong> trainierst und welche Beispieldokumente es braucht</li>
+<li>Wie <strong>Konfidenzwerte</strong> zur Steuergröße werden – mit einer durchgerechneten dreistufigen Behandlung</li>
+<li>Wie du <strong>Prüfschleife, Ablage und Dateibenennung</strong> so gestaltest, dass sie im Alltag durchhalten</li>
+<li>Welche <strong>Aufbewahrungs- und Nachweispflichten</strong> deine Automatisierung mittragen muss</li>
+</ul>
+</div>
+<hr />
+<h2 id="311-die-dokumentenstrecke-ende-zu-ende">31.1 Die Dokumentenstrecke Ende zu Ende<a class="headerlink" href="#311-die-dokumentenstrecke-ende-zu-ende" title="Permanent link">&para;</a></h2>
+<p>Dokumente sind der Klassiker der Automatisierung: Sie kommen in großer Zahl, sie sind mühsam abzutippen, und die Fehler beim Abtippen sind teuer. Belege, Verträge, Formulare und Lieferscheine folgen dabei fast immer derselben Kette.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Eingang Mail oder Scan]) --&gt; B([Ablage in Bibliothek])
+    B --&gt; C([Felder extrahieren])
+    C --&gt; D([Pruefung nach Konfidenz])
+    D --&gt; E([Freigabe und Buchung])
+    E --&gt; F([Archivierung])</code></pre>
+<p>Wichtig ist die Trennung der Verantwortlichkeiten: Die Schritte am Anfang und am Ende sind vollständig deterministisch. Nur die Extraktion ist unsicher, und nur sie braucht deshalb eine besondere Behandlung – das Muster aus Kap. 29 gilt hier unverändert.</p>
+<table>
+<thead>
+<tr>
+<th>Dokumentart</th>
+<th>Wie einheitlich</th>
+<th>Was extrahiert wird</th>
+<th>Automatisierungsgrad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Eingangsrechnung</strong></td>
+<td>ähnlich aufgebaut, aber je Lieferant anders</td>
+<td>Nummer, Datum, Betrag, Steuer, Lieferant</td>
+<td>hoch</td>
+</tr>
+<tr>
+<td><strong>Lieferschein</strong></td>
+<td>meist tabellarisch</td>
+<td>Nummer, Positionen, Mengen, Bestellbezug</td>
+<td>hoch</td>
+</tr>
+<tr>
+<td><strong>Formular</strong></td>
+<td>festes Layout, wenn selbst gestaltet</td>
+<td>die vorgesehenen Felder</td>
+<td>sehr hoch</td>
+</tr>
+<tr>
+<td><strong>Vertrag</strong></td>
+<td>freier Fließtext</td>
+<td>Laufzeit, Kündigungsfrist, Vertragspartner</td>
+<td>niedrig</td>
+</tr>
+</tbody>
+</table>
+<p>Verträge sind der Grenzfall. Man kann daraus Felder ziehen, aber die Streuung ist zu groß für eine unbeaufsichtigte Verarbeitung – hier liefert die Automatisierung eine Vorbefüllung, keine Entscheidung.</p>
+<hr />
+<h2 id="312-texterkennung-ist-nicht-feldextraktion">31.2 Texterkennung ist nicht Feldextraktion<a class="headerlink" href="#312-texterkennung-ist-nicht-feldextraktion" title="Permanent link">&para;</a></h2>
+<p>Zwei Begriffe werden ständig verwechselt, obwohl sie technisch und praktisch weit auseinanderliegen.</p>
+<p><strong>Texterkennung</strong>, meist als <strong>OCR</strong> bezeichnet (optical character recognition, optische Zeichenerkennung), verwandelt ein Bild von Text in echten Text. Am Ende hast du alle Zeichen des Dokuments in Lesereihenfolge – aber ohne jede Bedeutung. Der Wert <code>1.190,00</code> ist danach eine Zeichenkette, kein Bruttobetrag.</p>
+<p><strong>Feldextraktion</strong> geht einen Schritt weiter: Sie ordnet gefundene Werte <strong>benannten Feldern</strong> zu. Erst dadurch wird aus einer Zahl auf dem Papier ein Feld <code>Bruttobetrag</code> mit dem Wert 1190,00, mit dem der Flow rechnen und vergleichen kann.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Texterkennung</th>
+<th>Feldextraktion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ergebnis</td>
+<td>Text ohne Struktur</td>
+<td>benannte Felder mit Werten</td>
+</tr>
+<tr>
+<td>Weiterverarbeitung</td>
+<td>Suche, Volltextindex</td>
+<td>Bedingungen, Buchung, Abgleich</td>
+</tr>
+<tr>
+<td>Fehlerbild</td>
+<td>falsch gelesene Zeichen</td>
+<td>richtig gelesen, falsch zugeordnet</td>
+</tr>
+<tr>
+<td>Passender Einsatz</td>
+<td>Scans durchsuchbar machen</td>
+<td>Belege vorerfassen</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle: das falsche Feld, sauber gelesen</p>
+<p>Der gefährlichere Fehler ist nicht das falsch gelesene Zeichen – der fällt meist auf. Gefährlicher ist die falsche <strong>Zuordnung</strong>: Auf einer Rechnung stehen oft mehrere Beträge, und das Modell greift statt des Bruttobetrags den Zwischensumme-Wert ab. Formal ist alles korrekt, die Zahl existiert wirklich auf dem Dokument. Genau deshalb prüfst du kritische Felder nie über die reine Konfidenz, sondern zusätzlich über eine <strong>fachliche Plausibilität</strong>, etwa den Abgleich mit der Bestellung.</p>
+</div>
+<hr />
+<h2 id="313-ein-eigenes-dokumentmodell-trainieren">31.3 Ein eigenes Dokumentmodell trainieren<a class="headerlink" href="#313-ein-eigenes-dokumentmodell-trainieren" title="Permanent link">&para;</a></h2>
+<p>Für Standardbelege reicht ein vorgefertigtes Modell (Kap. 30). Sobald es um eure eigenen Formulare oder um Lieferanten mit sehr eigenwilligen Layouts geht, lohnt sich ein eigenes Modell. Der Weg dorthin ist immer derselbe:</p>
+<table>
+<thead>
+<tr>
+<th>Schritt</th>
+<th>Was du tust</th>
+<th>Worauf es ankommt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Dokumenttyp wählen</td>
+<td>strukturiertes Formular oder frei aufgebautes Dokument</td>
+<td>die Wahl bestimmt, wie viele Beispiele du brauchst</td>
+</tr>
+<tr>
+<td>2 Felder definieren</td>
+<td>benennen, was extrahiert werden soll</td>
+<td>eindeutige, sprechende Feldnamen, keine Sammelfelder</td>
+</tr>
+<tr>
+<td>3 Beispiele sammeln</td>
+<td>echte Dokumente in der ganzen Bandbreite</td>
+<td>auch die hässlichen Fälle, nicht nur die schönen</td>
+</tr>
+<tr>
+<td>4 Markieren</td>
+<td>in jedem Beispiel die Felder zuweisen</td>
+<td>konsequent immer dasselbe Feld markieren</td>
+</tr>
+<tr>
+<td>5 Trainieren</td>
+<td>Modell rechnen lassen</td>
+<td>dauert Minuten bis Stunden</td>
+</tr>
+<tr>
+<td>6 Testen</td>
+<td>mit Dokumenten, die <strong>nicht</strong> im Training waren</td>
+<td>sonst misst du nur das Auswendiglernen</td>
+</tr>
+<tr>
+<td>7 Veröffentlichen</td>
+<td>Modell für Flows freigeben</td>
+<td>erst danach ist es als Aktion nutzbar</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Was gute Beispieldokumente ausmacht</p>
+<p>Faustregeln aus der Praxis: Rechne mit <strong>mindestens fünf Beispielen je Layout-Variante</strong>, in der Praxis eher mit zehn bis zwanzig. Entscheidend ist nicht die Menge, sondern die <strong>Vielfalt</strong>: unterschiedliche Lieferanten, unterschiedliche Seitenzahlen, Dokumente mit fehlenden Feldern, ein schlechter Scan, ein leicht schiefes Foto. Wer nur perfekte PDF-Dateien trainiert, bekommt ein Modell, das bei der ersten echten Handyaufnahme aussteigt. Und: Verwende <strong>echte</strong> Dokumente aus dem Betrieb, aber kläre vorher, ob dabei personenbezogene Daten verarbeitet werden (Kap. 4).</p>
+</div>
+<p>Schritt 6 wird am häufigsten übersprungen und ist der wichtigste. Ein Modell, das mit denselben Dokumenten getestet wird, mit denen es trainiert wurde, liefert immer glänzende Werte – und sagt nichts über die Realität aus. Halte von Anfang an ein Fünftel deiner Beispiele zurück und benutze sie ausschließlich zum Testen.</p>
+<hr />
+<h2 id="314-konfidenzwerte-als-steuergroe">31.4 Konfidenzwerte als Steuergröße<a class="headerlink" href="#314-konfidenzwerte-als-steuergroe" title="Permanent link">&para;</a></h2>
+<p>Jedes extrahierte Feld kommt mit einem <strong>Konfidenzwert</strong> zwischen 0 und 1 zurück – der Einschätzung des Modells, wie sicher es sich bei genau diesem Feld ist. Dieser Wert ist deine wichtigste Steuergröße, weil er dir erlaubt, den Aufwand dorthin zu lenken, wo er nötig ist.</p>
+<p>Der Standardaufbau ist eine <strong>dreistufige Behandlung</strong>:</p>
+<div class="admonition example">
+<p class="admonition-title">Dreistufige Behandlung, durchgerechnet</p>
+<p>Ausgangslage: 200 Eingangsrechnungen pro Woche. Geprüft werden vier Pflichtfelder: Rechnungsnummer, Rechnungsdatum, Bruttobetrag, Lieferant. Maßgeblich ist immer das <strong>niedrigste</strong> der vier Feldkonfidenzen, denn eine Rechnung ist nur so verlässlich wie ihr schwächstes Feld.</p>
+<table>
+<thead>
+<tr>
+<th>Stufe</th>
+<th>Regel</th>
+<th>Behandlung</th>
+<th>Anteil</th>
+<th>Menge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hoch</td>
+<td>niedrigste Konfidenz ab 0,90 <strong>und</strong> Betrag stimmt mit der Bestellung überein</td>
+<td>automatisch vorerfasst, Stichprobe von 5 Prozent</td>
+<td>60 %</td>
+<td>120</td>
+</tr>
+<tr>
+<td>mittel</td>
+<td>niedrigste Konfidenz zwischen 0,70 und 0,90</td>
+<td>Vorerfassung mit Prüfaufgabe, Mensch bestätigt oder korrigiert</td>
+<td>30 %</td>
+<td>60</td>
+</tr>
+<tr>
+<td>niedrig</td>
+<td>niedrigste Konfidenz unter 0,70 oder ein Pflichtfeld fehlt</td>
+<td>keine Vorerfassung, manuelle Erfassung</td>
+<td>10 %</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<p>Rechnung des Nutzens: Vor der Automatisierung wurden 200 Rechnungen von Hand erfasst. Danach werden 120 automatisch verarbeitet, 60 nur noch geprüft statt getippt, 20 bleiben wie bisher. Zusätzlich kommen 6 Stichproben aus der hohen Stufe hinzu. Die Sachbearbeitung fasst also nur noch 86 statt 200 Vorgänge an – und die 60 geprüften kosten deutlich weniger Zeit als eine Neuerfassung.</p>
+<p>Wichtig ist die zweite Bedingung in der obersten Stufe. Ohne den Abgleich mit der Bestellung würde eine sauber gelesene, aber falsch zugeordnete Zahl automatisch durchlaufen (Abschnitt 31.2).</p>
+</div>
+<p>Die Schwellen 0,90 und 0,70 sind Startwerte, keine Naturkonstanten. Nach vier bis sechs Wochen schaust du in die Prüfergebnisse: Wurden in der mittleren Stufe fast nie Korrekturen nötig, kannst du die obere Schwelle senken. Rutschten dagegen Fehler durch die hohe Stufe, hebst du sie an. Diese Nachjustierung ist kein Zeichen für einen schlechten Entwurf, sondern der Normalbetrieb.</p>
+<div class="admonition warning">
+<p class="admonition-title">Wenn die Konfidenz durchgehend mittelmäßig ist</p>
+<p>Ein häufiges Bild: Fast alle Dokumente landen zwischen 0,75 und 0,85. Dann trennt deine Schwelle nichts mehr, und du hast lediglich eine zweite Warteschlange gebaut. Die Ursache liegt fast nie an der Schwelle, sondern am Modell: zu wenige oder zu einheitliche Beispieldokumente, unscharf definierte Felder oder ein Layout, das sich stark von den Trainingsdaten unterscheidet. Repariere die Ursache, nicht den Schwellenwert.</p>
+</div>
+<hr />
+<h2 id="315-prufschleife-ablage-und-benennung">31.5 Prüfschleife, Ablage und Benennung<a class="headerlink" href="#315-prufschleife-ablage-und-benennung" title="Permanent link">&para;</a></h2>
+<p>Die Prüfschleife ist der Teil, der über Erfolg oder Scheitern entscheidet – nicht die Erkennungsqualität. Eine Prüfaufgabe muss drei Eigenschaften haben: Sie hat eine <strong>namentliche Zuständigkeit</strong>, sie zeigt das <strong>Originaldokument neben den extrahierten Werten</strong>, und sie hat eine <strong>Frist</strong>. Fehlt eines davon, wächst die Liste, bis niemand mehr hineinschaut (Kap. 27).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Aufbau einer Pruefaufgabe:
+Link auf das Originaldokument in der Bibliothek
+Extrahierte Felder als bearbeitbare Werte
+Kennzeichnung der Felder mit niedriger Konfidenz
+Zwei Aktionen: Bestaetigen oder Korrigieren und bestaetigen
+Zustaendige Person und Frist in Arbeitstagen
+</code></pre></div></td></tr></table></div>
+<p>Genauso unterschätzt wird die <strong>Dateibenennung</strong>. Sie klingt nach Kosmetik und entscheidet doch darüber, ob man ein Dokument in zwei Jahren wiederfindet. Ein bewährtes Schema setzt sich aus feststehenden Bestandteilen in fester Reihenfolge zusammen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>Schema:    JJJJ-MM-TT_Dokumentart_Lieferant_Belegnummer.pdf
+Beispiel:  2026-03-04_Rechnung_Nordlicht-Papier_RE-20719.pdf
+
+Regeln:
+Datum immer zuerst und immer im Format JJJJ-MM-TT, dann sortiert die Liste richtig
+Keine Umlaute, keine Leerzeichen, keine Sonderzeichen
+Bindestrich innerhalb eines Bestandteils, Unterstrich zwischen den Bestandteilen
+Fehlende Angabe wird durch das Wort unbekannt ersetzt, nicht weggelassen
+</code></pre></div></td></tr></table></div>
+<p>Die letzte Regel ist die wichtigste: Wenn ein Bestandteil bei fehlendem Wert einfach entfällt, verschieben sich alle folgenden Bestandteile, und jede spätere automatische Auswertung des Dateinamens bricht. Der Platzhalter <code>unbekannt</code> hält die Struktur stabil und macht die Lücke gleichzeitig sichtbar.</p>
+<p>Für die Ablage selbst gilt: Lege die Ordnerstruktur an der <strong>Suchfrage</strong> aus, nicht am Entstehungsweg. Wer später fragt „Was haben wir 2026 bei Nordlicht Papier gekauft?", braucht Jahr und Lieferant in der Struktur. Wer fragt „Wer hat das freigegeben?", braucht das nicht im Ordner, sondern als Spalte in der Bibliothek. Spalten sind Ordnern fast immer überlegen, weil man nach ihnen filtern kann, ohne die Struktur zu ändern (Kap. 25).</p>
+<hr />
+<h2 id="316-aufbewahrung-nachweis-und-ausnahmen">31.6 Aufbewahrung, Nachweis und Ausnahmen<a class="headerlink" href="#316-aufbewahrung-nachweis-und-ausnahmen" title="Permanent link">&para;</a></h2>
+<p>Bei Belegen endet die Automatisierung nicht bei der Buchung. Steuerlich relevante Dokumente unterliegen <strong>Aufbewahrungspflichten</strong> über mehrere Jahre, und sie müssen <strong>unveränderbar</strong> und <strong>jederzeit lesbar</strong> vorgehalten werden. Für deine Automatisierung folgen daraus drei Anforderungen:</p>
+<table>
+<thead>
+<tr>
+<th>Anforderung</th>
+<th>Was das konkret bedeutet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Original erhalten</strong></td>
+<td>die eingegangene Datei bleibt unverändert liegen, verarbeitet wird eine Kopie</td>
+</tr>
+<tr>
+<td><strong>Verarbeitung nachvollziehbar</strong></td>
+<td>wann wurde welches Feld mit welchem Wert und welcher Konfidenz extrahiert, wer hat bestätigt</td>
+</tr>
+<tr>
+<td><strong>Löschung geregelt</strong></td>
+<td>nach Ablauf der Frist wird geordnet gelöscht, nicht vergessen</td>
+</tr>
+</tbody>
+</table>
+<p>Die mittlere Zeile ist der Punkt, an dem KI-Verarbeitung besondere Sorgfalt verlangt. Wenn ein Betrag von einem Modell vorgeschlagen und von einem Menschen bestätigt wurde, muss beides nachvollziehbar bleiben – der Vorschlag und die Bestätigung. Speichere deshalb je Dokument einen kleinen Verarbeitungsnachweis mit Zeitpunkt, extrahierten Werten, Konfidenzen, dem eingesetzten Modell und der bestätigenden Person. Diese Protokollierung ist dieselbe, die dir in Kap. 33 für Agenten wieder begegnet.</p>
+<div class="admonition warning">
+<p class="admonition-title">Ausnahmen und schlechte Scans</p>
+<p>Jede Dokumentenstrecke braucht einen definierten Weg für Dokumente, die schlicht nicht verarbeitbar sind: unleserliche Fotos, quer eingescannte Seiten, mehrere Belege in einer Datei, Fremdsprachen, handschriftliche Ergänzungen. Diese Fälle dürfen weder den Flow abbrechen noch stillschweigend verschwinden. Der saubere Weg ist ein eigener Status wie <code>nicht verarbeitbar</code> mit Grund, Ablage im Originalordner und einer Aufgabe an die zuständige Person. Plane damit, dass es sie gibt – in der Praxis sind es je nach Eingangsweg durchaus einige Prozent, und sie kosten mehr Zeit als alle automatisch verarbeiteten Dokumente zusammen, wenn sie nicht geregelt sind.</p>
+</div>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Die Dokumentenstrecke ist außen deterministisch – nur die <strong>Extraktion</strong> ist unsicher und braucht besondere Behandlung.</li>
+<li><strong>Texterkennung</strong> liefert Zeichen ohne Bedeutung, <strong>Feldextraktion</strong> liefert benannte Felder; der gefährlichste Fehler ist der richtig gelesene, falsch zugeordnete Wert.</li>
+<li>Ein eigenes Modell entsteht in sieben Schritten; entscheidend sind <strong>vielfältige Beispieldokumente</strong> und ein Test mit zurückgehaltenen Dokumenten.</li>
+<li><strong>Konfidenzwerte</strong> steuern eine dreistufige Behandlung: automatisch, Prüfaufgabe, manuell – maßgeblich ist das schwächste Pflichtfeld plus eine fachliche Plausibilitätsprüfung.</li>
+<li><strong>Prüfaufgaben</strong> brauchen Zuständigkeit, Originalansicht und Frist; <strong>Dateinamen</strong> brauchen ein festes Schema mit Platzhalter statt Auslassung.</li>
+<li><strong>Aufbewahrung, Unveränderbarkeit und ein Verarbeitungsnachweis</strong> sind Teil der Automatisierung, ebenso ein definierter Weg für nicht verarbeitbare Dokumente.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Texterkennung oder Feldextraktion?</summary>
+<p>Entscheide für jede Anforderung, ob reine <strong>Texterkennung</strong> genügt oder ob du eine
+<strong>Feldextraktion</strong> brauchst. Begründe jeweils in einem Satz.</p>
+<ol>
+<li>Alte Projektakten sollen im Intranet durchsuchbar werden.</li>
+<li>Von jeder Eingangsrechnung sollen Betrag und Fälligkeit in eine Liste geschrieben werden.</li>
+<li>Aus Besprechungsprotokollen als Foto soll der Text kopierbar werden.</li>
+<li>Aus Lieferscheinen sollen Bestellnummer und Menge mit der Bestellung abgeglichen werden.</li>
+<li>Gescannte Verträge sollen nach dem Wort „Kündigungsfrist" durchsuchbar sein.</li>
+<li>Aus Reisekostenbelegen sollen Datum, Betrag und Händler in die Abrechnung übernommen werden.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Frage dich: Reicht es, wenn der Text irgendwo im Dokument gefunden werden kann – oder muss ein
+Wert einem benannten Feld zugeordnet werden, mit dem ein Flow anschließend arbeitet?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Anforderung</th>
+<th>Antwort</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Projektakten durchsuchbar</td>
+<td>Texterkennung</td>
+<td>es geht nur um Auffindbarkeit, nicht um einzelne Werte</td>
+</tr>
+<tr>
+<td>2 Betrag und Fälligkeit</td>
+<td>Feldextraktion</td>
+<td>die Werte müssen benannten Feldern zugeordnet in eine Liste</td>
+</tr>
+<tr>
+<td>3 Protokolltext kopierbar</td>
+<td>Texterkennung</td>
+<td>reine Umwandlung von Bild in Text</td>
+</tr>
+<tr>
+<td>4 Lieferschein abgleichen</td>
+<td>Feldextraktion</td>
+<td>ein Abgleich setzt strukturierte Felder voraus</td>
+</tr>
+<tr>
+<td>5 Verträge nach Stichwort</td>
+<td>Texterkennung</td>
+<td>eine Volltextsuche braucht keine Feldstruktur</td>
+</tr>
+<tr>
+<td>6 Reisekostenbelege</td>
+<td>Feldextraktion</td>
+<td>drei benannte Felder wandern in ein Zielsystem</td>
+</tr>
+</tbody>
+</table>
+<p>Merke: Texterkennung macht Dokumente <strong>auffindbar</strong>, Feldextraktion macht sie <strong>verarbeitbar</strong>.
+Fall 5 ist der Grenzfall: Sobald aus „Vertrag enthält das Wort Kündigungsfrist" die Anforderung
+„Kündigungsfrist als Wert in eine Übersicht" wird, wechselt er in die zweite Kategorie.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Schwellenwerte durchrechnen</summary>
+<p>Ein Team verarbeitet wöchentlich 300 Eingangsrechnungen. Aus einem Testlauf über eine Woche liegen
+die niedrigsten Feldkonfidenzen je Rechnung vor:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>ab 0,90            : 105 Rechnungen
+0,80 bis unter 0,90: 120 Rechnungen
+0,70 bis unter 0,80:  45 Rechnungen
+unter 0,70         :  30 Rechnungen
+</code></pre></div></td></tr></table></div>
+<p>Erfassung von Hand dauert etwa 4 Minuten je Rechnung, das Prüfen einer Vorerfassung etwa 1 Minute.</p>
+<ol>
+<li>Entwirf eine dreistufige Behandlung mit konkreten Schwellenwerten und begründe deine Wahl.</li>
+<li>Berechne für deine Variante den wöchentlichen Zeitaufwand und vergleiche ihn mit den 300
+   Rechnungen von Hand.</li>
+<li>Ergänze eine Stichprobenregel für die automatisch verarbeitete Stufe und rechne sie mit ein.</li>
+<li>Beantworte: Was ändert sich an deiner Empfehlung, wenn in der obersten Stufe zwei fehlerhafte
+   Rechnungen durchgelaufen sind?</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Rechne beide Varianten einmal mit der oberen Schwelle bei 0,90 und einmal bei 0,80 durch. Der
+Zeitunterschied ist groß – und genau deshalb ist die Frage nach den durchgerutschten Fehlern
+entscheidend, nicht die nach der eingesparten Zeit.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p><strong>Variante A, obere Schwelle 0,90:</strong> 105 automatisch, 165 als Prüfaufgabe, 30 manuell.
+Aufwand: 165 mal 1 Minute plus 30 mal 4 Minuten gleich 285 Minuten. Stichprobe von 5 Prozent auf
+105 Rechnungen sind rund 5 Prüfungen zu je 1 Minute, also 290 Minuten gesamt. Von Hand wären es
+1200 Minuten.</p>
+<p><strong>Variante B, obere Schwelle 0,80:</strong> 225 automatisch, 45 als Prüfaufgabe, 30 manuell.
+Aufwand: 45 plus 120 gleich 165 Minuten, plus rund 11 Minuten Stichprobe, also 176 Minuten.</p>
+<p>Variante B spart rund zwei Stunden mehr pro Woche – aber sie schiebt 120 Rechnungen aus der
+geprüften in die automatische Stufe. Genau in dieser Gruppe zwischen 0,80 und 0,90 sitzen
+erfahrungsgemäß die meisten Grenzfälle.</p>
+<p><strong>Zur vierten Frage:</strong> Zwei durchgelaufene Fehler in der obersten Stufe sind kein Anlass, die
+Schwelle nur leicht anzuheben. Wichtiger ist die Frage nach der Fehlerart. Waren es falsch
+<strong>gelesene</strong> Werte, hilft eine höhere Schwelle. Waren es richtig gelesene, aber falsch
+<strong>zugeordnete</strong> Werte, hilft sie überhaupt nicht – dann brauchst du eine fachliche Prüfung, etwa
+den Abgleich des Betrags mit der Bestellung, als zweite Bedingung für die automatische Stufe.
+Eine gute Antwort erkennt diesen Unterschied.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Extraktion testen und die Grenzen finden</summary>
+<p>Diese Übung machst du am Werkzeug. Hast du Zugang zu AI Builder, nutze die Rechnungsverarbeitung
+in einem Testflow. Andernfalls arbeitest du im Chatwerkzeug (Copilot, ChatGPT oder Claude) und
+lässt dir die Belegtexte dort erzeugen.</p>
+<ol>
+<li>Erzeuge dir vier fiktive Belegtexte:</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Erfinde vier kurze Rechnungstexte eines Papiergrosshandels als reinen Text.
+Beleg 1 vollstaendig und eindeutig.
+Beleg 2 mit zwei verschiedenen Betraegen, Zwischensumme und Gesamtbetrag.
+Beleg 3 ohne Rechnungsnummer.
+Beleg 4 mit lueckenhaftem Text, als waere der Scan schlecht.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>Lass die vier Felder Rechnungsnummer, Rechnungsdatum, Bruttobetrag und Lieferant extrahieren,
+   mit einer Sicherheitsangabe je Feld und der ausdrücklichen Regel, fehlende Werte als <code>null</code>
+   auszugeben.</li>
+<li>Prüfe jedes Ergebnis gegen den Ausgangstext. Notiere für jeden Beleg: Welcher Wert ist falsch,
+   fehlt oder wurde erfunden?</li>
+<li>Wende deine dreistufige Behandlung an: In welche Stufe fällt jeder der vier Belege?</li>
+<li>Formuliere für den problematischsten Beleg eine <strong>zusätzliche fachliche Prüfregel</strong>, die den
+   Fehler abfangen würde, ohne die Konfidenzschwelle zu verändern.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Beleg 2 ist der eigentliche Kern der Übung. Achte darauf, welchen der beiden Beträge das Werkzeug
+wählt – und mit welcher Sicherheit es das tut. Eine hohe Sicherheit bei falscher Zuordnung ist der
+Fall, gegen den keine Schwelle hilft.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li><strong>Beleg 1</strong> wird vollständig und mit hohen Sicherheiten extrahiert und landet in der obersten
+  Stufe. Das ist der Normalfall, für den die Automatisierung gebaut wird.</li>
+<li><strong>Beleg 2</strong> ist der lehrreiche Fall: Häufig wird die Zwischensumme statt des Gesamtbetrags
+  ausgegeben, und zwar mit hoher Sicherheit. Das Modell hat die Zahl korrekt gelesen, nur dem
+  falschen Feld zugeordnet. Eine Schwelle fängt das nicht ab.</li>
+<li><strong>Beleg 3</strong> liefert bei korrekter Anweisung <code>null</code> für die Rechnungsnummer. Wird stattdessen eine
+  plausibel aussehende Nummer erfunden, fehlt in deinem Auftrag die Regel für fehlende Werte.</li>
+<li><strong>Beleg 4</strong> erzeugt meist niedrige Sicherheiten und fällt in die manuelle Stufe – das ist das
+  gewünschte Verhalten.</li>
+</ul>
+<p><strong>Zusätzliche fachliche Prüfregel für Beleg 2:</strong> Der extrahierte Bruttobetrag wird gegen die
+zugehörige Bestellung geprüft, oder es wird die Rechenprobe aus Nettobetrag, Steuersatz und
+Bruttobetrag im Flow durchgeführt. Beide Prüfungen sind deterministisch und rechnen im Flow, nicht
+in der KI. Nur wenn diese Prüfung besteht <strong>und</strong> die Konfidenz hoch ist, läuft der Beleg
+automatisch durch.</p>
+<p>Ein gutes Ergebnis benennt konkret, welcher Wert bei welchem Beleg falsch war, und unterscheidet
+sauber zwischen Lesefehler und Zuordnungsfehler.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Eine Belegstrecke entwerfen, kalibrieren und absichern</summary>
+<p><strong>Szenario:</strong> Bei der Wiesgrund Gebäudetechnik GmbH landen alle Eingangsrechnungen in einem
+Sammelpostfach. Eine Mitarbeiterin lädt sie herunter, benennt sie um, legt sie in einem
+Jahresordner ab und tippt vier Felder in das Buchhaltungssystem. Die Ordnerstruktur ist über Jahre
+gewachsen, Dateinamen wie <code>RE Nordlicht neu final.pdf</code> sind die Regel. Die Steuerprüfung im letzten
+Jahr hat drei Tage gekostet, weil Belege nicht auffindbar waren. Du entwirfst die neue Belegstrecke.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmendaten:
+Etwa 300 Eingangsrechnungen pro Woche, 40 verschiedene Lieferanten.
+Rund 15 Prozent kommen als Handyfoto von der Baustelle, oft schief und dunkel.
+Etwa jede zwanzigste Datei enthaelt mehrere Belege hintereinander.
+Pflichtfelder: Rechnungsnummer, Rechnungsdatum, Bruttobetrag, Lieferant, Bestellbezug.
+Vorhanden: SharePoint-Bibliothek Eingangsbelege, Power Automate, Bestelluebersicht als Liste.
+Erfassung von Hand dauert rund 4 Minuten, Pruefen einer Vorerfassung rund 1 Minute.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Strecke und Ablage entwerfen.</strong> Zeichne die Belegstrecke vom Eingang bis zur
+Archivierung als nummerierte Schrittliste und markiere für jeden Schritt deterministisch oder KI.
+Lege außerdem fest: das Feldschema mit allen fünf Pflichtfeldern und ihren Datentypen, das
+Dateibenennungsschema mit einem ausgeschriebenen Beispiel und der Regel für fehlende Bestandteile,
+sowie die Spalten der Bibliothek, nach denen später gesucht wird. Begründe, warum du bestimmte
+Merkmale als Spalte und nicht als Ordner abbildest.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Dein Entwurf muss <strong>alle vier</strong> erfüllen:</p>
+<ol>
+<li>Eine <strong>dreistufige Behandlung</strong> nach Konfidenz ist mit konkreten Schwellenwerten festgelegt und
+   für die 300 Rechnungen durchgerechnet – inklusive Zeitvergleich zur Handerfassung.</li>
+<li>Die oberste Stufe hat neben der Konfidenz mindestens eine <strong>fachliche Prüfregel</strong>, die nicht auf
+   der KI beruht.</li>
+<li>Die <strong>Prüfaufgabe</strong> ist ausformuliert: Zuständigkeit, Frist, Eskalation, und welche Informationen
+   die prüfende Person sieht.</li>
+<li>Es gibt einen definierten Weg für <strong>nicht verarbeitbare Dokumente</strong> mit eigenem Status, Grund und
+   Verantwortlichem.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Nach vier Wochen Testbetrieb liegen drei Befunde vor:</p>
+<ul>
+<li>Die Konfidenzen liegen bei fast allen Baustellenfotos zwischen 0,72 und 0,84. Die mittlere Stufe
+  ist dadurch auf über 200 Rechnungen pro Woche angewachsen, die Prüfaufgaben stauen sich.</li>
+<li>Bei elf Rechnungen eines einzigen Lieferanten wurde durchgehend die Zwischensumme statt des
+  Bruttobetrags extrahiert – mit Konfidenzen über 0,93.</li>
+<li>Die Buchhaltung hat begonnen, Prüfaufgaben ungelesen zu bestätigen, weil „die Werte ja fast immer
+  stimmen".</li>
+</ul>
+<p>Behandle die drei Befunde getrennt. Beim ersten prüfst du ausdrücklich, ob das Problem an der
+Schwelle oder am Modell liegt – und was du an den Beispieldokumenten ändern müsstest. Beim zweiten
+entwirfst du eine Maßnahme, die ohne Änderung der Schwelle wirkt. Beim dritten entwirfst du eine
+Gegenmaßnahme, die nicht darauf beruht, an die Sorgfalt der Beteiligten zu appellieren.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die kaufmännische Leitung fordert, alle Rechnungen unter
+250 Euro künftig ohne jede Prüfung automatisch zu verarbeiten, weil das Risiko dort gering sei. Lass
+dir vom KI-Werkzeug Pro und Contra geben, entscheide begründet und <strong>widersprich</strong>, wenn die
+Argumentation nur den Einzelbetrag betrachtet und weder die Häufigkeit noch die
+Nachvollziehbarkeitspflichten berücksichtigt. Formuliere eine Alternative, die das Anliegen der
+Leitung aufnimmt.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Belegstrecke als nummerierte Schrittliste mit Feldschema, Benennungsschema und Bibliotheksspalten</li>
+<li>durchgerechnete dreistufige Behandlung mit Zeitvergleich und ausgefüllter Pflichtkriterien-Checkliste</li>
+<li>Version 2 nach Runde 3 mit getrennter Antwort auf alle drei Befunde</li>
+<li>begründete Entscheidung zur Wertgrenze inklusive Alternative und der verworfenen Variante</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> dein Benennungsschema an einem Beleg ohne Rechnungsnummer
+durchgespielt und funktionsfähig ist, deine oberste Stufe eine nicht-KI-gestützte Prüfregel enthält,
+Version 2 die Zwischensummen-Fehlzuordnung ohne Schwellenänderung abfängt und deine Entscheidung in
+Runde 4 benennt, wie viele Rechnungen pro Jahr unter die vorgeschlagene Wertgrenze fallen würden.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3. Alle drei Befunde sehen nach Schwellenwertproblemen aus und sind
+keine. Der erste ist ein Modellproblem: Wenn Baustellenfotos systematisch schlecht abschneiden,
+fehlen sie im Training. Der zweite ist ein Zuordnungsproblem, gegen das nur eine fachliche
+Plausibilitätsprüfung hilft – Rechenprobe oder Abgleich mit der Bestellung. Der dritte ist ein
+Prozessproblem: Wenn Prüfen sich nicht lohnt, wird nicht geprüft. Wirksam sind hier Stichproben mit
+Rückmeldung oder eine gezielte Prüfung nur der auffälligen Felder statt aller Werte. In Runde 4
+gilt: Ein kleiner Betrag mal einer hohen Stückzahl ist kein kleines Risiko, und die
+Nachweispflichten kennen keine Wertgrenze.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) die Belegstrecke trennt deterministische von KI-Schritten, das
+Benennungsschema ist stabil gegen fehlende Bestandteile und die Ablage stützt sich auf Spalten statt
+auf tiefe Ordner; (2) die dreistufige Behandlung ist mit den 300 Rechnungen tatsächlich
+durchgerechnet, alle vier Pflichtkriterien sind belegt, und die oberste Stufe hat eine fachliche
+Prüfregel; (3) Version 2 beantwortet die drei Befunde getrennt und richtig zugeordnet – Modell,
+Zuordnung, Prozess – ohne alles über die Schwelle lösen zu wollen; (4) die Entscheidung zur
+Wertgrenze rechnet die Stückzahl hoch, berücksichtigt die Nachweispflichten und bietet eine
+tragfähige Alternative wie eine erhöhte Stichprobenquote statt vollständiger Prüfungsfreiheit.</p>
+<p>Lernziel: eine vollständige Dokumentenstrecke entwerfen, die Erkennungsqualität, menschliche
+Prüfkapazität und Nachweispflichten gegeneinander abwägt – und Fehlerursachen richtig zuordnen,
+statt am Schwellenwert zu drehen.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel30/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 30 – AI Builder und KI-Aktionen in Power Automate">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 30 – AI Builder und KI-Aktionen in Power Automate
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel32/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 32 – Eigene Agenten bauen mit Copilot Studio">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 32 – Eigene Agenten bauen mit Copilot Studio
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

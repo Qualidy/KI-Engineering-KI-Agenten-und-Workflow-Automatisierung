@@ -1,0 +1,1820 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel7/">
+      
+      
+        <link rel="next" href="../kapitel9/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-8-rollen-grenzen-und-anwendungsbereiche" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Block 2 · KI-Agenten verstehen und nutzen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 5 – Wie Sprachmodelle arbeiten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 6 – Vom Chatbot zum Agenten
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#81-warum-eine-rolle-so-viel-bewirkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Warum eine Rolle so viel bewirkt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-sieben-rollenmuster" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Sieben Rollenmuster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-rollen-zu-einer-kette-verbinden" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Rollen zu einer Kette verbinden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-die-harten-grenzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4 Die harten Grenzen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-der-eignungs-check-fur-eine-beliebige-aufgabe" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.5 Der Eignungs-Check für eine beliebige Aufgabe
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 9 – Prompt-Design: Grundlagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 10 – Fortgeschrittenes Prompt-Design und Agenten-Instruktionen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel21/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-8-rollen-grenzen-und-anwendungsbereiche">Kapitel 8 – Rollen, Grenzen und Anwendungsbereiche<a class="headerlink" href="#kapitel-8-rollen-grenzen-und-anwendungsbereiche" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Warum eine klar zugewiesene <strong>Rolle</strong> die Qualität von KI-Ergebnissen stärker verändert als die Wahl des Werkzeugs</li>
+<li>Sieben bewährte <strong>Rollenmuster</strong> vom Rechercheur bis zum Tutor – jeweils mit einsatzfertigem Beispielprompt</li>
+<li>Wie du Rollen zu einer <strong>Kette</strong> verbindest, statt einen einzigen großen Auftrag zu stellen</li>
+<li>Die <strong>harten Grenzen</strong>: exaktes Rechnen, Aktualität, Rechtsverbindlichkeit, Vertraulichkeit, Verantwortung</li>
+<li>Einen <strong>Eignungs-Check</strong>, mit dem du für jede beliebige Aufgabe entscheidest, ob und wie KI sie übernimmt</li>
+<li>Warum die <strong>Verantwortung</strong> auch bei perfekter Ausgabe beim Menschen bleibt</li>
+</ul>
+</div>
+<hr />
+<h2 id="81-warum-eine-rolle-so-viel-bewirkt">8.1 Warum eine Rolle so viel bewirkt<a class="headerlink" href="#81-warum-eine-rolle-so-viel-bewirkt" title="Permanent link">&para;</a></h2>
+<p>Ein Sprachmodell erzeugt die wahrscheinlichste Fortsetzung deiner Eingabe (Kap. 5). Eine vage Eingabe hat viele plausible Fortsetzungen – das Ergebnis wird durchschnittlich. Eine Rollenzuweisung engt den Raum ein: „Antworte als kritischer Prüfer" führt zu anderen Fortsetzungen als „Antworte als Werbetexter", ohne dass sich am Modell irgendetwas ändert.</p>
+<p>Wichtiger als der Effekt auf die Formulierung ist aber der Effekt auf <strong>dich</strong>. Wer eine Rolle vergibt, hat vorher entschieden, was er eigentlich will: Material oder Kritik, Entwurf oder Gegenrede, Struktur oder Erklärung. Genau dieses Entscheiden ist der Hebel.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Nicht „lass die KI mal drübergehen", sondern <strong>„in welcher Rolle soll sie drübergehen"</strong>. Eine Aufgabe ohne Rolle ist eine Aufgabe ohne Erwartung – und ohne Erwartung kannst du das Ergebnis nicht bewerten.</p>
+</div>
+<hr />
+<h2 id="82-sieben-rollenmuster">8.2 Sieben Rollenmuster<a class="headerlink" href="#82-sieben-rollenmuster" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rolle</th>
+<th>Auftrag an die KI</th>
+<th>Du lieferst</th>
+<th>Du prüfst</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rechercheur</td>
+<td>Material sammeln und ordnen</td>
+<td>Fragestellung, Umfang, Quellenrahmen</td>
+<td>jede Tatsachenbehauptung</td>
+</tr>
+<tr>
+<td>Reviewer / Kritiker</td>
+<td>Schwächen im fertigen Entwurf finden</td>
+<td>den Entwurf, die Prüfkriterien</td>
+<td>ob die Kritik zutrifft</td>
+</tr>
+<tr>
+<td>Ghostwriter</td>
+<td>ausformulieren, was du inhaltlich vorgibst</td>
+<td>Inhalt, Adressat, Ton</td>
+<td>Fakten, Tonfall, Freigabe</td>
+</tr>
+<tr>
+<td>Sparringspartner</td>
+<td>widersprechen, Annahmen angreifen</td>
+<td>deine These</td>
+<td>ob der Einwand trägt</td>
+</tr>
+<tr>
+<td>Datenaufbereiter</td>
+<td>unstrukturiertes in strukturiertes Material wandeln</td>
+<td>Rohdaten, Zielformat</td>
+<td>Vollständigkeit, Zahlen</td>
+</tr>
+<tr>
+<td>Tutor</td>
+<td>erklären, abfragen, Verständnis prüfen</td>
+<td>dein Wissensstand</td>
+<td>ob die Erklärung stimmt</td>
+</tr>
+<tr>
+<td>Übersetzer</td>
+<td>zwischen Sprachen und Fachniveaus übertragen</td>
+<td>Ausgangstext, Zielgruppe</td>
+<td>Fachbegriffe, Nuancen</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rechercheur.</strong> Nützlich zum Auffächern eines Themas, nicht als Faktenquelle. Nutze diese Rolle bevorzugt mit angehängtem Material oder aktivierter Websuche.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist Rechercheur. Sammle zum Thema Einfuehrung eines digitalen
+Urlaubsantrags die typischen Argumente dafuer und dagegen.
+Ordne sie nach Beschaeftigten, Fuehrungskraeften und IT.
+Markiere jede Aussage, die du nicht belegen kannst, mit unbelegt.
+</code></pre></div></td></tr></table></div>
+<p><strong>Reviewer / Kritiker.</strong> Die unterschätzteste Rolle. Sie funktioniert, weil Kritik an vorliegendem Text kaum Wissen erfordert – das Material liegt ja vor.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist kritischer Reviewer. Pruefe den folgenden Angebotstext auf
+Verstaendlichkeit, fehlende Angaben und unklare Zusagen.
+Nenne maximal sieben Punkte, jeweils mit Textstelle und Verbesserungsvorschlag.
+Lobe nichts.
+</code></pre></div></td></tr></table></div>
+<p><strong>Ghostwriter.</strong> Der häufigste Einsatz und der mit dem größten Missverständnis: Der Inhalt kommt von dir, nur die Formulierung von der KI.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist Ghostwriter. Formuliere aus meinen Stichpunkten eine Absage an einen
+Lieferanten. Sachlich, wertschaetzend, maximal 150 Woerter, keine Begruendung
+zu Preisen. Stichpunkte: [Stichpunkte einfuegen]
+</code></pre></div></td></tr></table></div>
+<p><strong>Sparringspartner.</strong> Wirkt der Neigung entgegen, dass Werkzeuge dir zustimmen. Verlangt ausdrücklich Widerspruch.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist Sparringspartner und vertrittst die Gegenposition.
+Meine These: Wir sollten die Rechnungspruefung automatisieren.
+Nenne die drei staerksten Gegenargumente und eine Bedingung,
+unter der meine These trotzdem richtig waere.
+</code></pre></div></td></tr></table></div>
+<p><strong>Datenaufbereiter.</strong> Sprachlich unspektakulär, im Alltag der größte Zeitgewinn: aus Freitext eine Struktur machen. Beachte die Grenzen beim Rechnen (Abschnitt 8.4, Kap. 13).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist Datenaufbereiter. Wandle die folgenden Besprechungsnotizen in eine
+Tabelle mit den Spalten Aufgabe, Verantwortlich, Frist, Status.
+Uebernimm nur, was im Text steht. Fehlende Angaben: offen.
+</code></pre></div></td></tr></table></div>
+<p><strong>Tutor.</strong> Für eigenes Lernen an einem Thema, das du beurteilen kannst – sonst merkst du falsche Erklärungen nicht.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist Tutor. Erklaere mir das Thema Trigger in Power Automate in drei Stufen:
+einfach, mit Beispiel, mit typischen Fehlern.
+Stelle mir danach drei Verstaendnisfragen und warte auf meine Antworten.
+</code></pre></div></td></tr></table></div>
+<p><strong>Übersetzer.</strong> Gemeint ist nicht nur Fremdsprache, sondern auch das Übersetzen zwischen Fachniveaus.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>Du bist Uebersetzer. Uebertrage den folgenden IT-Text in eine Sprache,
+die ein Sachbearbeiter ohne IT-Hintergrund versteht.
+Behalte alle Fachbegriffe bei, erklaere jeden einmal in Klammern.
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Rollen anpassen, nicht abschreiben</p>
+<p>Die Prompts oben sind Rohlinge. Ergänze sie um deinen Kontext, dein Format und deine Einschränkungen – das systematische Vorgehen dazu lernst du in Kapitel 9. Was sich bewährt, wandert in deine Prompt-Bibliothek.</p>
+</div>
+<hr />
+<h2 id="83-rollen-zu-einer-kette-verbinden">8.3 Rollen zu einer Kette verbinden<a class="headerlink" href="#83-rollen-zu-einer-kette-verbinden" title="Permanent link">&para;</a></h2>
+<p>Ein einzelner großer Auftrag („Schreib mir ein Konzept für die Digitalisierung des Urlaubsantrags") liefert Mittelmaß, weil er alle Rollen gleichzeitig verlangt. Besser ist eine Kette aus kleinen Aufträgen mit klarer Rollenwechsel-Logik.</p>
+<pre class="mermaid"><code>flowchart LR
+    A([Rechercheur sammelt]) --&gt; B([Du waehlst aus])
+    B --&gt; C([Ghostwriter formuliert])
+    C --&gt; D([Reviewer kritisiert])
+    D --&gt; E([Du entscheidest und gibst frei])</code></pre>
+<p>Der Mensch steht bewusst zweimal in der Kette: einmal als <strong>Auswahl</strong> (was ist überhaupt relevant und richtig) und einmal als <strong>Freigabe</strong>. Dazwischen darf die KI viel tun. Genau dieses Muster findest du später als Architektur wieder, wenn KI-Bausteine in Abläufen stecken und Freigabepunkte gesetzt werden (Kap. 29, Kap. 33).</p>
+<div class="admonition example">
+<p class="admonition-title">Derselbe Auftrag, einmal als Kette</p>
+<p>Statt „Schreib ein Konzept" arbeitest du in vier Schritten: Rechercheur fächert Argumente auf → du streichst alles Unzutreffende und ergänzt eure Rahmenbedingungen → Ghostwriter formuliert daraus einen zweiseitigen Entwurf → Reviewer sucht Lücken und unklare Zusagen. Der Zeitaufwand ist ähnlich, das Ergebnis deutlich belastbarer – und du weißt an jeder Stelle, was du gerade prüfst.</p>
+</div>
+<hr />
+<h2 id="84-die-harten-grenzen">8.4 Die harten Grenzen<a class="headerlink" href="#84-die-harten-grenzen" title="Permanent link">&para;</a></h2>
+<p>Manche Grenzen verschieben sich mit besseren Modellen. Die folgenden fünf verschieben sich nicht, weil sie nicht an der Leistungsfähigkeit hängen.</p>
+<table>
+<thead>
+<tr>
+<th>Grenze</th>
+<th>Was schiefgeht</th>
+<th>Woran du es merkst</th>
+<th>Was du stattdessen tust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exaktes Rechnen</strong></td>
+<td>Summen, Prozentwerte, Fristen werden plausibel erfunden</td>
+<td>Zahlen sehen richtig aus, stimmen aber nicht</td>
+<td>Excel, Taschenrechner oder ein Werkzeug mit echter Rechenfunktion (Kap. 5, Kap. 13)</td>
+</tr>
+<tr>
+<td><strong>Aktualität</strong></td>
+<td>Stand von gestern wird als heute ausgegeben</td>
+<td>keine Quellenangabe, kein Datum</td>
+<td>Quelle selbst prüfen, Datum mitgeben, Websuche verlangen</td>
+</tr>
+<tr>
+<td><strong>Rechtsverbindlichkeit</strong></td>
+<td>erfundene Paragrafen, unzulässige Zusagen</td>
+<td>Formulierungen klingen offiziell</td>
+<td>Originaltext prüfen, Fachabteilung einbinden (Kap. 4)</td>
+</tr>
+<tr>
+<td><strong>Vertraulichkeit</strong></td>
+<td>interne Daten landen in einem externen Werkzeug</td>
+<td>fällt oft gar nicht auf</td>
+<td>anonymisieren oder freigegebenes Werkzeug (Kap. 7)</td>
+</tr>
+<tr>
+<td><strong>Verantwortung</strong></td>
+<td>niemand fühlt sich für die Ausgabe zuständig</td>
+<td>„das kam so von der KI"</td>
+<td>namentliche Freigabe, bevor etwas hinausgeht</td>
+</tr>
+</tbody>
+</table>
+<p>Zwei Sonderfälle verdienen eigene Aufmerksamkeit:</p>
+<ul>
+<li><strong>Zählen und Vollständigkeit.</strong> „Nenne alle 14 Punkte aus dem Protokoll" liefert oft zwölf oder sechzehn. Ein Sprachmodell hat keine sichere Mengenkontrolle. Zähle selbst nach, wenn die Anzahl zählt.</li>
+<li><strong>Entscheidungen über Menschen.</strong> Bewerberauswahl, Leistungsbewertung, Kreditwürdigkeit: Hier ist der Einsatz nicht nur fachlich heikel, sondern rechtlich stark reguliert (Kap. 4, Kap. 14). Unterstützung beim Formulieren ist etwas anderes als eine Entscheidungsempfehlung.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Der gefährlichste Satz im Umgang mit KI</p>
+<p>„Das sieht plausibel aus." Plausibilität ist genau das, was ein Sprachmodell optimiert – sie ist deshalb kein Prüfkriterium, sondern das Erzeugnis. Prüfe gegen die Quelle, gegen die Rechnung, gegen die Vorschrift, nicht gegen dein Bauchgefühl.</p>
+</div>
+<hr />
+<h2 id="85-der-eignungs-check-fur-eine-beliebige-aufgabe">8.5 Der Eignungs-Check für eine beliebige Aufgabe<a class="headerlink" href="#85-der-eignungs-check-fur-eine-beliebige-aufgabe" title="Permanent link">&para;</a></h2>
+<p>Bevor du eine Aufgabe an ein KI-Werkzeug gibst, gehst du fünf Fragen durch. Jede Antwort ist entweder unkritisch oder verlangt eine Maßnahme.</p>
+<table>
+<thead>
+<tr>
+<th>Frage</th>
+<th>Unkritisch</th>
+<th>Maßnahme nötig</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. <strong>Daten</strong>: Sind interne oder personenbezogene Inhalte im Spiel?</td>
+<td>nein</td>
+<td>anonymisieren oder freigegebenes Werkzeug nutzen</td>
+</tr>
+<tr>
+<td>2. <strong>Wahrheitsbedarf</strong>: Muss jede Aussage faktisch stimmen?</td>
+<td>Entwurf, Ideen</td>
+<td>Material mitgeben, Belege verlangen, gegenprüfen</td>
+</tr>
+<tr>
+<td>3. <strong>Rechnen</strong>: Hängen Zahlen am Ergebnis?</td>
+<td>nein</td>
+<td>Zahlen außerhalb rechnen und einsetzen</td>
+</tr>
+<tr>
+<td>4. <strong>Prüfbarkeit</strong>: Kann jemand erkennen, ob das Ergebnis stimmt?</td>
+<td>ja</td>
+<td>Aufgabe zerlegen, bis sie prüfbar wird</td>
+</tr>
+<tr>
+<td>5. <strong>Folgen</strong>: Was passiert bei einem unbemerkten Fehler?</td>
+<td>gering, rückholbar</td>
+<td>Freigabe durch benannte Person, Vier-Augen-Prinzip</td>
+</tr>
+</tbody>
+</table>
+<p>Fällt Frage 4 negativ aus – niemand kann beurteilen, ob das Ergebnis richtig ist – dann ist die Aufgabe <strong>nicht geeignet</strong>, unabhängig von allen anderen Antworten. Eine unprüfbare KI-Ausgabe ist keine Arbeitserleichterung, sondern ein verstecktes Risiko.</p>
+<div class="admonition info">
+<p class="admonition-title">Verantwortung lässt sich nicht delegieren</p>
+<p>Ein KI-Werkzeug ist kein Rechtssubjekt und keine Kollegin. Es haftet nicht, es entschuldigt sich nicht, und es kann nicht befragt werden, warum es etwas geschrieben hat. Wer eine Ausgabe verwendet, macht sie sich zu eigen – mit allem, was daran hängt. Das ist keine moralische Zusatzforderung, sondern die schlichte Rechtslage (Kap. 3, Kap. 4).</p>
+</div>
+<p>Der Eignungs-Check begleitet dich durch den Rest des Kurses: bei den Fallbeispielen in Block 3, beim Setzen von Freigabepunkten in Abläufen (Kap. 29) und bei der Auswahl deines eigenen Projekts (Kap. 35).</p>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Eine klare <strong>Rolle</strong> verbessert Ergebnisse, weil sie den Möglichkeitsraum einengt – und weil sie dich zwingt, deine Erwartung zu klären.</li>
+<li>Die sieben Muster <strong>Rechercheur, Reviewer, Ghostwriter, Sparringspartner, Datenaufbereiter, Tutor, Übersetzer</strong> decken den größten Teil der Bürorealität ab.</li>
+<li>Rollen als <strong>Kette</strong> einzusetzen liefert bessere Ergebnisse als ein einziger großer Auftrag; der Mensch steht bei Auswahl und Freigabe darin.</li>
+<li>Die harten Grenzen sind <strong>exaktes Rechnen, Aktualität, Rechtsverbindlichkeit, Vertraulichkeit und Verantwortung</strong> – sie verschwinden nicht mit besseren Modellen.</li>
+<li>„Sieht plausibel aus" ist kein Prüfkriterium, weil Plausibilität genau das ist, was das System erzeugt.</li>
+<li>Der <strong>Eignungs-Check</strong> prüft Daten, Wahrheitsbedarf, Rechnen, Prüfbarkeit und Fehlerfolgen; fehlende Prüfbarkeit ist ein Ausschlusskriterium.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Die passende Rolle wählen</summary>
+<p>Ordne jeder Situation das passende Rollenmuster zu: Rechercheur, Reviewer, Ghostwriter,
+Sparringspartner, Datenaufbereiter, Tutor oder Übersetzer.</p>
+<ol>
+<li>Du hast eine Betriebsvereinbarung entworfen und willst wissen, wo sie unklar ist.</li>
+<li>Aus einem einstündigen Besprechungsprotokoll soll eine Aufgabenliste werden.</li>
+<li>Du willst verstehen, wie eine Genehmigung in Power Automate funktioniert.</li>
+<li>Du hältst die geplante Umstellung auf ein neues Ticketsystem für richtig und willst wissen,
+   was dagegen spricht.</li>
+<li>Du hast Stichpunkte für eine Absage an einen Bewerber und brauchst daraus einen Brief.</li>
+<li>Ein Rundschreiben der IT ist für die Fachbereiche unverständlich formuliert.</li>
+<li>Du sollst dich in ein Thema einarbeiten, von dem du bisher nur den Namen kennst.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Frage dich bei jedem Punkt: Bringst du den Inhalt schon mit – oder brauchst du erst welchen?
+Und willst du Zustimmung, Widerspruch oder Form?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Rolle</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Reviewer</td>
+<td>Der Text liegt vor, gesucht sind Schwächen</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Datenaufbereiter</td>
+<td>Umwandlung von Freitext in eine Struktur</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tutor</td>
+<td>Erklären mit Beispiel und Verständnisprüfung</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Sparringspartner</td>
+<td>Ausdrücklich verlangt sind Gegenargumente</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ghostwriter</td>
+<td>Inhalt kommt von dir, Formulierung von der KI</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Übersetzer</td>
+<td>Übertragung zwischen Fachniveaus</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Rechercheur</td>
+<td>Material sammeln und ordnen, danach selbst prüfen</td>
+</tr>
+</tbody>
+</table>
+<p>Zwei Feinheiten: Nummer 1 und Nummer 4 wirken ähnlich, unterscheiden sich aber im Gegenstand –
+der Reviewer prüft einen <strong>Text</strong>, der Sparringspartner greift eine <strong>Position</strong> an. Und
+Nummer 7 ist die Rolle mit dem höchsten Prüfaufwand, weil das Ergebnis vollständig aus dem
+Modell stammt.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Eignungs-Check auf eigene Aufgaben anwenden</summary>
+<p>Wähle <strong>drei</strong> Aufgaben aus deinem eigenen Arbeitsalltag: eine, bei der du KI schon nutzt oder
+nutzen würdest, eine, bei der du unsicher bist, und eine, bei der du KI klar ablehnst.</p>
+<p>Wende auf alle drei den Eignungs-Check aus Abschnitt 8.5 an. Beantworte je Aufgabe alle fünf
+Fragen – Daten, Wahrheitsbedarf, Rechnen, Prüfbarkeit, Folgen – und notiere zu jeder
+kritischen Antwort die konkrete Maßnahme.</p>
+<p>Ziehe dann ein Fazit je Aufgabe:</p>
+<ul>
+<li><strong>geeignet</strong> ohne Auflagen</li>
+<li><strong>geeignet mit Maßnahmen</strong> – welche genau?</li>
+<li><strong>nicht geeignet</strong> – an welcher Frage scheitert es?</li>
+</ul>
+<p>Prüfe zum Schluss deine Ablehnungs-Aufgabe noch einmal: Gibt es einen <strong>Teilschritt</strong> darin,
+der doch geeignet wäre?</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die dritte Aufgabe ist die interessante. „Nicht geeignet" gilt fast nie für eine ganze Tätigkeit,
+sondern für einen bestimmten Schritt darin. Zerlege sie: Recherche, Aufbereitung, Formulierung,
+Bewertung, Entscheidung – welcher dieser Teile ist wirklich das Problem?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Beispielhafte Bearbeitung für „Bewerbungen vorsortieren":</p>
+<table>
+<thead>
+<tr>
+<th>Frage</th>
+<th>Antwort</th>
+<th>Maßnahme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Daten</td>
+<td>personenbezogen, besonders sensibel</td>
+<td>nur in freigegebenem Umfeld, hier: nicht verfügbar</td>
+</tr>
+<tr>
+<td>Wahrheitsbedarf</td>
+<td>hoch, jede Aussage muss belegbar sein</td>
+<td>Material mitgeben, Belege verlangen</td>
+</tr>
+<tr>
+<td>Rechnen</td>
+<td>nein</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Prüfbarkeit</td>
+<td>eingeschränkt – warum jemand aussortiert wurde, ist schwer nachvollziehbar</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Folgen</td>
+<td>erheblich, Diskriminierungsrisiko und rechtliche Wirkung</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<p>Fazit: <strong>nicht geeignet</strong> als Vorsortierung. Der Teilschritt-Test lohnt sich trotzdem: Das
+Formulieren einer Eingangsbestätigung, das Strukturieren von Interviewfragen oder das
+Zusammenfassen einer Stellenbeschreibung sind unkritisch – die <strong>Bewertung von Personen</strong> ist
+es nicht (Kap. 14).</p>
+<p>Gute Bearbeitungen erkennst du daran, dass die Maßnahmen konkret sind („Summen in Excel prüfen",
+„Namen durch Platzhalter ersetzen") und dass mindestens einmal die Frage nach der Prüfbarkeit
+ehrlich mit Nein beantwortet wurde. Wer bei allen drei Aufgaben zu „geeignet" kommt, hat den
+Check zu wohlwollend angewendet.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Eine Rollenkette durchspielen</summary>
+<p>Diese Übung machst du direkt im KI-Werkzeug. Nimm eine echte, kleine Schreibaufgabe aus deinem
+Alltag – eine Absage, eine Prozessbeschreibung, eine Einladung mit Begründung, einen kurzen
+Vorschlag an die Leitung.</p>
+<p>Arbeite die Kette aus Abschnitt 8.3 ab und <strong>speichere nach jedem Schritt das Zwischenergebnis</strong>:</p>
+<ol>
+<li><strong>Rechercheur:</strong> Lass Argumente, Aspekte oder Bestandteile sammeln, die in den Text gehören.
+   Verlange, dass Unbelegtes als unbelegt markiert wird.</li>
+<li><strong>Du:</strong> Streiche alles Unzutreffende, ergänze, was nur du weißt. Notiere, wie viele der
+   gelieferten Punkte du behalten hast.</li>
+<li><strong>Ghostwriter:</strong> Lass aus deiner bereinigten Liste den Text formulieren – mit Vorgaben zu
+   Länge, Ton und Empfänger.</li>
+<li><strong>Reviewer:</strong> Lass den Entwurf in einem <strong>neuen Chat</strong> kritisch prüfen. Gib die Prüfkriterien
+   vor und verbiete Lob.</li>
+<li><strong>Du:</strong> Entscheide, welche Kritikpunkte du übernimmst – und welche nicht. Begründe beides.</li>
+</ol>
+<p>Vergleiche am Ende: Wie unterscheidet sich das Endergebnis von dem, was ein einziger Prompt
+(„Schreib mir …") geliefert hätte? Mach den Gegentest.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der neue Chat in Schritt 4 ist kein Formalismus. Im selben Chat verteidigt das Werkzeug seinen
+eigenen Entwurf und lobt ihn eher, als es ihn zerlegt. Ohne den Entstehungsverlauf im
+Kontextfenster fällt die Kritik deutlich schärfer aus.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Typische Beobachtungen:</p>
+<ul>
+<li>In Schritt 2 behalten die meisten <strong>weniger als die Hälfte</strong> der gelieferten Punkte. Genau das
+  ist der Wert der Rolle: Der Rechercheur liefert Breite, die Auswahl bleibt bei dir.</li>
+<li>Der <strong>Ghostwriter-Text</strong> ist deutlich näher an deiner Absicht als beim Ein-Prompt-Gegentest,
+  weil er nur noch formulieren muss, was inhaltlich bereits entschieden ist.</li>
+<li>Der <strong>Reviewer</strong> findet zuverlässig formale Schwächen (unklare Zusagen, fehlende Angaben,
+  Länge) und daneben Punkte, die im konkreten Kontext falsch sind – deshalb Schritt 5.</li>
+<li>Der <strong>Gegentest</strong> liefert meist einen sprachlich passablen, inhaltlich aber flachen Text mit
+  einer oder zwei Aussagen, die du so nicht unterschreiben würdest.</li>
+</ul>
+<p>Bewertungskriterien für deine Bearbeitung: alle fünf Zwischenergebnisse liegen vor, die
+Auswahlentscheidung aus Schritt 2 ist erkennbar, mindestens ein Kritikpunkt aus Schritt 4 wurde
+<strong>begründet abgelehnt</strong>, und der Vergleich benennt einen konkreten Unterschied statt
+„war besser".</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Einsatzkatalog und Grenzen für deinen Bereich</summary>
+<p><strong>Szenario:</strong> Dein Bereich soll KI „strukturiert einsetzen". Die Leitung erwartet einen
+<strong>Einsatzkatalog</strong>: Welche Aufgaben werden künftig mit KI-Unterstützung erledigt, in welcher
+Rolle, mit welcher Prüfung und wo ist Schluss. Anlass ist ein konkreter Vorfall: In einer
+Kundenantwort stand eine Kulanzzusage, die niemand freigegeben hatte. Der Kollege hatte den
+Entwurf aus einem KI-Werkzeug übernommen und nur überflogen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Bereich frei waehlbar (Vertrieb, HR, Buchhaltung, Support, Einkauf).
+8 bis 12 Beschaeftigte, gemischte Erfahrung mit KI-Werkzeugen.
+Es gibt keine Vorgaben ausser der allgemeinen Datenschutzregel des Hauses.
+Der Katalog soll ohne Schulung verstaendlich sein.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Katalog aufbauen.</strong> Sammle <strong>mindestens zehn</strong> wiederkehrende Aufgaben deines
+Bereichs. Ordne jeder Aufgabe zu: passendes Rollenmuster (Kap. 8.2), was der Mensch liefert, was
+die KI liefert, wer prüft und woran geprüft wird. Formuliere zu <strong>mindestens vier</strong> Aufgaben
+einen einsatzfertigen Beispielprompt mit Rolle, Aufgabe, Kontextplatzhaltern in eckigen
+Klammern, Format und mindestens einer Einschränkung.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Der Katalog muss <strong>alle vier</strong> Kriterien erfüllen:</p>
+<ol>
+<li>Zu jeder Aufgabe ist die Frage <strong>Prüfbarkeit</strong> beantwortet: Woran erkennt jemand, dass das
+   Ergebnis falsch ist?</li>
+<li>Mindestens <strong>drei</strong> Aufgaben sind mit einer der harten Grenzen aus Abschnitt 8.4 verknüpft
+   und tragen die passende Gegenmaßnahme.</li>
+<li>Mindestens <strong>zwei</strong> Aufgaben stehen auf einer ausdrücklichen Negativliste, mit Begründung.</li>
+<li>Kein Prompt im Katalog enthält vertrauliche Angaben; überall stehen Platzhalter.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Der Vorfall wiederholt sich in abgewandelter Form: Eine
+Mitarbeiterin nutzt deinen Katalogprompt für Angebotstexte, das Ergebnis enthält eine
+Lieferzeitangabe, die nirgends herkam, und geht ungeprüft hinaus. Analysiere ehrlich: Lag es am
+Prompt, an der fehlenden Prüfung, an der Rollenwahl oder an der Aufgabe selbst? Überarbeite den
+betroffenen Katalogeintrag <strong>und</strong> mindestens zwei weitere Einträge, bei denen dasselbe
+passieren könnte. Ergänze eine Regel, die verhindert, dass eine Prüfung im Zeitdruck ausfällt.</p>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Die Leitung zieht die Konsequenz: „Ab sofort geht
+jeder KI-Entwurf durch das Vier-Augen-Prinzip." Lass dir von deinem KI-Werkzeug Argumente für
+und gegen diese Regel geben. Entscheide dann selbst und <strong>widersprich</strong> begründet, wenn die
+Regel deinen Bereich lahmlegen würde. Formuliere eine abgestufte Freigaberegel: Welche Ergebnisse
+gehen ohne zweite Person hinaus, welche nicht – und woran macht ihr die Grenze fest?</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>Einsatzkatalog mit mindestens zehn Aufgaben und allen Spalten</li>
+<li>vier einsatzfertige Beispielprompts mit Platzhaltern</li>
+<li>Analyse und überarbeitete Einträge aus Runde 3, inklusive Regel gegen ausgefallene Prüfungen</li>
+<li>abgestufte Freigaberegel aus Runde 4 mit Begründung</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> jede Aufgabe eine beantwortete Prüfbarkeitsfrage hat, die
+Negativliste mindestens zwei begründete Einträge enthält, die Analyse aus Runde 3 eine Ursache
+benennt statt Schuld zuzuweisen, und deine Freigaberegel an einem Beispiel zeigt, welcher
+Entwurf ohne zweite Person hinausgehen darf.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Der Lernwert liegt in Runde 3 und 4. Die bequeme Antwort auf den Vorfall lautet „besser prüfen" –
+sie ändert nichts, weil sie niemandem sagt, was konkret zu tun ist. Frage stattdessen: Hätte ein
+anderer Prompt den Fehler verhindert? Wäre eine andere Rolle richtiger gewesen? Und in Runde 4:
+Eine Regel, die alles gleich behandelt, wird bei Zeitdruck als Erstes gebrochen. Abstufung ist
+nicht Nachlässigkeit, sondern die Voraussetzung dafür, dass die wichtigen Prüfungen stattfinden.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) mindestens zehn Aufgaben mit passendem Rollenmuster, klarer Trennung
+zwischen menschlichem und maschinellem Anteil und benannter prüfender Person; (2) alle vier
+Pflichtkriterien erfüllt, insbesondere die beantwortete Prüfbarkeitsfrage und die Negativliste;
+(3) die Analyse in Runde 3 identifiziert eine konkrete Ursache und überträgt die Korrektur auf
+vergleichbare Einträge, statt nur den einen Fall zu reparieren; (4) die Freigaberegel unterscheidet
+nachvollziehbar nach Außenwirkung und Rückholbarkeit und begründet den Widerspruch zur pauschalen
+Vier-Augen-Vorgabe.</p>
+<p>Lernziel: Rollenmuster und harte Grenzen zu einem Katalog verbinden, der im Alltag benutzbar ist –
+und Verantwortung so verankern, dass sie auch unter Zeitdruck nicht stillschweigend entfällt.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel7/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude &amp; Co.">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 7 – Die Agenten-Landschaft: Copilot, ChatGPT, Claude & Co.
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel9/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 9 – Prompt-Design: Grundlagen">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 9 – Prompt-Design: Grundlagen
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

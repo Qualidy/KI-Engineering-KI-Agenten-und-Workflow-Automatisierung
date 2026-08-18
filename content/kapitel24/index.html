@@ -1,0 +1,1907 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel23/">
+      
+      
+        <link rel="next" href="../kapitel25/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 24 – Steuerung und Verzweigung in Power Automate - KI-Engineering: KI-Agenten und Workflow-Automatisierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-24-steuerung-und-verzweigung-in-power-automate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-header__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KI-Engineering: KI-Agenten und Workflow-Automatisierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 24 – Steuerung und Verzweigung in Power Automate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 1 · Einführung in KI und Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 2 · KI-Agenten verstehen und nutzen
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel11/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 3 · Praxis mit KI-Agenten
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel17/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 4 · Einstieg in Workflow-Automatisierung
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../kapitel21/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 5 · Power Automate in der Praxis
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel29/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 6 · Kombination von KI & Workflow
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../kapitel35/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Block 7 · Projektarbeit
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="KI-Engineering: KI-Agenten und Workflow-Automatisierung" class="md-nav__button md-logo" aria-label="KI-Engineering: KI-Agenten und Workflow-Automatisierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    KI-Engineering: KI-Agenten und Workflow-Automatisierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel1/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 1 · Einführung in KI und Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel5/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 2 · KI-Agenten verstehen und nutzen
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel11/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 3 · Praxis mit KI-Agenten
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel17/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 4 · Einstieg in Workflow-Automatisierung
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Block 5 · Power Automate in der Praxis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Block 5 · Power Automate in der Praxis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 21 – Einführung in Power Automate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 22 – Der erste Cloud-Flow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 24 – Steuerung und Verzweigung in Power Automate
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 24 – Steuerung und Verzweigung in Power Automate
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#241-verzweigen-bedingung-und-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.1 Verzweigen: Bedingung und Switch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#242-wiederholen-auf-jedes-anwenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.2 Wiederholen: Auf jedes anwenden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#243-listen-ohne-schleife-array-filtern-und-abfrage-auswahlen" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.3 Listen ohne Schleife: Array filtern und Abfrage auswählen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#244-struktur-und-notbremse-bereich-parallele-verzweigung-beenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.4 Struktur und Notbremse: Bereich, Parallele Verzweigung, Beenden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#245-werte-festhalten-variablen-und-verfassen" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.5 Werte festhalten: Variablen und Verfassen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#246-vor-dem-start-filtern-und-lesbar-bleiben" class="md-nav__link">
+    <span class="md-ellipsis">
+      24.6 Vor dem Start filtern und lesbar bleiben
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workshop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workshop
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 25 – Integration von Microsoft 365
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 26 – Integration externer Apps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel27/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 27 – Menschen im Prozess: Genehmigungen und Formulare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel28/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 28 – Testing, Fehlerbehandlung und Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel29/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 6 · Kombination von KI & Workflow
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../kapitel35/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Block 7 · Projektarbeit
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-24-steuerung-und-verzweigung-in-power-automate">Kapitel 24 – Steuerung und Verzweigung in Power Automate<a class="headerlink" href="#kapitel-24-steuerung-und-verzweigung-in-power-automate" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Wann du eine <strong>Bedingung (Condition)</strong> nimmst und wann ein <strong>Switch</strong> die bessere Wahl ist</li>
+<li>Wie <strong>Auf jedes anwenden (Apply to each)</strong> funktioniert und warum Power Automate die Schleife oft selbst einfügt</li>
+<li>Wie du mit <strong>Array filtern (Filter array)</strong> und <strong>Abfrage auswählen (Select)</strong> Listen ohne Schleife bearbeitest</li>
+<li>Wozu <strong>Bereich (Scope)</strong>, <strong>Parallele Verzweigung</strong> und <strong>Beenden (Terminate)</strong> gut sind</li>
+<li>Wann du <strong>Variablen</strong> brauchst, wann <strong>Verfassen</strong> genügt und warum Variablen in parallelen Schleifen gefährlich sind</li>
+<li>Wie du mit <strong>Trigger-Bedingungen</strong> filterst und wie ein Flow auch nach Monaten lesbar bleibt</li>
+</ul>
+</div>
+<hr />
+<h2 id="241-verzweigen-bedingung-und-switch">24.1 Verzweigen: Bedingung und Switch<a class="headerlink" href="#241-verzweigen-bedingung-und-switch" title="Permanent link">&para;</a></h2>
+<p>Die <strong>Bedingung (Condition)</strong> teilt den Flow in zwei Wege: <code>Wenn ja</code> und <code>Wenn nein</code>. Du fügst sie über <code>+ Neuer Schritt → Steuerung → Bedingung</code> ein. Links steht der zu prüfende Wert, in der Mitte der Vergleichsoperator, rechts der Vergleichswert.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Bedingung: Ist der Anhang ein PDF
+  Wenn ja
+    Aktion: Anhang speichern
+    Aktion: Team informieren
+  Wenn nein
+    Aktion: Verfassen Uebersprungen
+</code></pre></div></td></tr></table></div>
+<p>Beide Zweige dürfen leer bleiben. Ein leerer <code>Wenn nein</code>-Zweig ist völlig in Ordnung und heißt einfach: dann passiert nichts. Über <code>Erweiterten Modus verwenden</code> kannst du statt der Feldauswahl einen Ausdruck eintragen – nützlich, wenn du mehrere Prüfungen mit <code>and</code> oder <code>or</code> verbinden willst.</p>
+<p>Der <strong>Switch</strong> (<code>Steuerung → Schalter</code>) prüft <strong>einen</strong> Wert gegen mehrere feste Fälle und hat pro Fall einen eigenen Zweig plus einen <strong>Standardzweig</strong> für alles Übrige. Er ist die richtige Wahl, sobald du drei oder mehr Möglichkeiten hast.</p>
+<table>
+<thead>
+<tr>
+<th>Kriterium</th>
+<th>Bedingung</th>
+<th>Switch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anzahl Wege</td>
+<td>genau zwei</td>
+<td>beliebig viele plus Standard</td>
+</tr>
+<tr>
+<td>Prüfung</td>
+<td>beliebige Vergleiche, auch mehrere kombiniert</td>
+<td>ein Wert gegen feste Einzelwerte</td>
+</tr>
+<tr>
+<td>Typisch für</td>
+<td>ja/nein, größer/kleiner, leer/gefüllt</td>
+<td>Kategorie, Abteilung, Status, Priorität</td>
+</tr>
+<tr>
+<td>Grenze</td>
+<td>verschachtelt schnell unleserlich</td>
+<td>kein „größer als", keine Bereiche</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Typische Falle</p>
+<p>Drei verschachtelte Bedingungen sind der schnellste Weg zu einem unlesbaren Flow: Der Designer schiebt sie so weit nach rechts, dass du seitwärts scrollen musst, und im Ausführungsverlauf ist nicht mehr erkennbar, welcher Pfad gelaufen ist. Sobald du die zweite Verschachtelungsebene erreichst, prüfe zwei Alternativen: einen <code>Switch</code> oder eine Vorentscheidung per <code>if</code>-Ausdruck in einer <code>Verfassen</code>-Aktion (Kap. 23).</p>
+</div>
+<hr />
+<h2 id="242-wiederholen-auf-jedes-anwenden">24.2 Wiederholen: Auf jedes anwenden<a class="headerlink" href="#242-wiederholen-auf-jedes-anwenden" title="Permanent link">&para;</a></h2>
+<p><strong>Auf jedes anwenden (Apply to each)</strong> führt die enthaltenen Aktionen für <strong>jeden Eintrag einer Liste</strong> einmal aus. Du findest die Aktion unter <code>Steuerung</code>, aber meistens fügt Power Automate sie <strong>automatisch</strong> ein – und zwar genau dann, wenn du einen dynamischen Inhalt in ein Feld setzt, der aus einer <strong>Liste (Array)</strong> kommt.</p>
+<p>Das ist die Erklärung für ein Verhalten, das fast alle Anfänger überrascht: Du wählst <code>Name der Anlage</code> und plötzlich liegt deine Aktion in einer Schleifenkarte. Der Grund ist, dass eine Mail mehrere Anhänge haben kann, das Feld aber nur einen Wert aufnimmt. Power Automate löst das Problem, indem es die Aktion pro Eintrag einmal ausführt.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Auf jedes anwenden   (ueber Anlagen)
+  Bedingung: Endet der Name auf .pdf
+    Wenn ja
+      Aktion: Anhang speichern
+  Aktion: Zaehler erhoehen
+Aktion: Zusammenfassung an Team      (ausserhalb der Schleife)
+</code></pre></div></td></tr></table></div>
+<p>Auf den aktuellen Eintrag greifst du mit <code>items</code> und dem Namen der Schleife zu, wobei Leerzeichen zu Unterstrichen werden: <code>@{items('Fuer_jeden_Anhang')?['name']}</code> liefert den Namen des gerade bearbeiteten Anhangs, <code>?['size']</code> seine Größe.</p>
+<p>Unter <code>... → Einstellungen</code> der Schleifenkarte findest du die <strong>Nebenläufigkeitssteuerung (Concurrency Control)</strong>. Ist sie aus, läuft die Schleife der Reihe nach – Eintrag 1, dann 2, dann 3. Schaltest du sie ein, arbeitet Power Automate mehrere Einträge gleichzeitig ab, standardmäßig 20 auf einmal. Das ist bei 500 Listenelementen ein enormer Zeitgewinn und bei jeder Schleife mit Reihenfolge oder Zähler ein Problem.</p>
+<div class="admonition info">
+<p class="admonition-title">Merksatz</p>
+<p>Alles, was <strong>pro Eintrag</strong> passieren soll, gehört in die Schleife. Alles, was <strong>einmal pro Lauf</strong> passieren soll, gehört davor oder danach. Diese eine Frage klärt die meisten Fehler mit doppelten Mails und doppelten Dateien.</p>
+</div>
+<hr />
+<h2 id="243-listen-ohne-schleife-array-filtern-und-abfrage-auswahlen">24.3 Listen ohne Schleife: Array filtern und Abfrage auswählen<a class="headerlink" href="#243-listen-ohne-schleife-array-filtern-und-abfrage-auswahlen" title="Permanent link">&para;</a></h2>
+<p>Eine Schleife ist nicht immer nötig. Zwei Aktionen aus der Gruppe <code>Datenvorgang (Data Operation)</code> bearbeiten ganze Listen in einem Schritt und machen Flows schneller und lesbarer. <strong>Array filtern (Filter array)</strong> gibt nur die Einträge zurück, die eine Bedingung erfüllen – aus vier Anhängen werden die zwei PDF-Dateien, bevor überhaupt eine Schleife startet. <strong>Abfrage auswählen (Select)</strong> formt jeden Eintrag um: Aus einer Liste voller Objekte mit zwanzig Feldern wird eine schlanke Liste mit genau den drei Feldern, die du brauchst – ideal für eine Übersicht in einer Mail.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Aktion: Array filtern   -&gt; umbenannt in: Nur PDF-Anhaenge
+  Von: Anlagen
+  Bedingung: endsWith von name ist gleich .pdf
+Aktion: Auf jedes anwenden
+  Von: Ausgabe von Nur PDF-Anhaenge
+  Aktion: Anhang speichern
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Aktion</th>
+<th>Eingabe</th>
+<th>Ausgabe</th>
+<th>Typischer Einsatz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Array filtern</strong></td>
+<td>Liste plus Bedingung</td>
+<td>kürzere Liste, gleiche Struktur</td>
+<td>Signaturbilder aussortieren, nur offene Vorgänge behalten</td>
+</tr>
+<tr>
+<td><strong>Abfrage auswählen</strong></td>
+<td>Liste plus Feldzuordnung</td>
+<td>gleich lange Liste, neue Struktur</td>
+<td>Übersichtstabelle für eine Mail vorbereiten</td>
+</tr>
+<tr>
+<td><strong>Verfassen mit join</strong></td>
+<td>Liste</td>
+<td>ein Text</td>
+<td>Liste als Aufzählung in eine Nachricht schreiben</td>
+</tr>
+<tr>
+<td><strong>Länge über length</strong></td>
+<td>Liste</td>
+<td>Zahl</td>
+<td>prüfen, ob überhaupt etwas übrig ist</td>
+</tr>
+</tbody>
+</table>
+<p>Die Kombination <code>Array filtern</code> plus <code>length</code> löst ein Problem, das sonst still bleibt: eine <strong>Schleife über eine leere Liste</strong>. Sie erzeugt keinen Fehler, sie tut nur nichts – und danach verschickst du eine Bestätigung über null verarbeitete Dateien. Prüfe deshalb nach dem Filtern mit einer Bedingung, ob die Liste noch Einträge hat: <code>@{length(body('Nur_PDF-Anhaenge'))}</code> ist größer als 0.</p>
+<hr />
+<h2 id="244-struktur-und-notbremse-bereich-parallele-verzweigung-beenden">24.4 Struktur und Notbremse: Bereich, Parallele Verzweigung, Beenden<a class="headerlink" href="#244-struktur-und-notbremse-bereich-parallele-verzweigung-beenden" title="Permanent link">&para;</a></h2>
+<p>Ein <strong>Bereich (Scope)</strong> ist eine Klammer um mehrere Aktionen. Er tut selbst nichts, macht aber zwei Dinge möglich: Er fasst zusammengehörige Schritte optisch zu einem Block zusammen, und er hat ein gemeinsames Ergebnis – gescheitert oder erfolgreich. Genau darauf setzt eine saubere Fehlerbehandlung auf, die du in Kapitel 28 baust.</p>
+<p>Die <strong>Parallele Verzweigung</strong> fügst du über das Plus-Symbol zwischen zwei Aktionen mit <code>Parallelen Branch hinzufügen</code> ein. Beide Zweige starten gleichzeitig und laufen unabhängig voneinander – sinnvoll bei zwei voneinander unabhängigen Dingen wie Datei ablegen und Kalendereintrag erstellen, falsch, wenn der zweite Zweig ein Ergebnis des ersten braucht, denn dann ist die Reihenfolge zufällig.</p>
+<p><strong>Beenden (Terminate)</strong> aus der Gruppe <code>Steuerung</code> stoppt den Flow sofort, mit wählbarem Status <code>Erfolgreich</code>, <code>Fehlgeschlagen</code> oder <code>Abgebrochen</code>. Das ist die richtige Aktion für „hier gibt es nichts zu tun" oder „diese Eingabe ist ungültig".</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Bedingung: Ist die Liste leer
+  Wenn ja
+    Aktion: Beenden
+      Status: Erfolgreich
+  Wenn nein
+    Aktion: Auf jedes anwenden ueber die Liste
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Status bewusst wählen</p>
+<p>Ein <code>Beenden</code> mit <code>Fehlgeschlagen</code> färbt den Lauf im Ausführungsverlauf rot. Nutze das für echte Fehler, etwa eine ungültige Eingabe, die jemand nachbessern muss – dann fällt es auf. Für den völlig normalen Fall „keine passenden Daten vorhanden" nimm <code>Erfolgreich</code>, sonst gewöhnst du dich an rote Läufe und übersiehst die echten Probleme.</p>
+</div>
+<hr />
+<h2 id="245-werte-festhalten-variablen-und-verfassen">24.5 Werte festhalten: Variablen und Verfassen<a class="headerlink" href="#245-werte-festhalten-variablen-und-verfassen" title="Permanent link">&para;</a></h2>
+<p>Eine <strong>Variable</strong> ist ein benannter Behälter, dessen Inhalt sich während des Laufs ändern darf. Du brauchst sie in zwei Schritten: <code>Variable initialisieren</code> legt Name, Typ und Startwert fest und muss <strong>außerhalb</strong> jeder Schleife auf der obersten Ebene stehen. <code>Variable festlegen</code> oder <code>An Variable anfügen</code> ändert den Inhalt später.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Aktion: Variable initialisieren   Name: AnzahlGespeichert, Typ: Ganze Zahl, Wert: 0
+Aktion: Auf jedes anwenden
+  Aktion: Anhang speichern
+  Aktion: Variable inkrementieren   Name: AnzahlGespeichert, Wert: 1
+Aktion: Mail senden
+  Text: Es wurden @{variables(&#39;AnzahlGespeichert&#39;)} Dateien gespeichert.
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Frage</th>
+<th>Verfassen</th>
+<th>Variable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wert ändert sich im Lauf</td>
+<td>nein</td>
+<td>ja</td>
+</tr>
+<tr>
+<td>Anzahl der Schritte</td>
+<td>eine Aktion</td>
+<td>mindestens zwei</td>
+</tr>
+<tr>
+<td>Position im Flow</td>
+<td>überall, auch in Schleifen</td>
+<td>Initialisieren nur auf oberster Ebene</td>
+</tr>
+<tr>
+<td>Im Ausführungsverlauf sichtbar</td>
+<td>ja, als Ausgabe</td>
+<td>ja, aber nur der Wert beim Zuweisen</td>
+</tr>
+<tr>
+<td>Typischer Fall</td>
+<td>Dateiname, formatiertes Datum, Textbaustein</td>
+<td>Zähler, Sammelliste, Merker über Schleifen hinweg</td>
+</tr>
+</tbody>
+</table>
+<p>Die Faustregel: <strong>Nimm Verfassen, solange es geht.</strong> Variablen sind kein Fehler, aber sie erzeugen mehr Schritte, mehr Abhängigkeiten und einen unangenehmen Sonderfall.</p>
+<div class="admonition warning">
+<p class="admonition-title">Häufiges Missverständnis</p>
+<p>Variablen und <strong>parallele Schleifen</strong> passen nicht zusammen. Ist die Nebenläufigkeitssteuerung eingeschaltet, greifen mehrere Durchläufe gleichzeitig auf dieselbe Variable zu. Das Ergebnis ist nicht falsch berechnet, sondern <strong>unzuverlässig</strong>: Ein Zähler steht bei 8 statt bei 10, und beim nächsten Lauf bei 9. Wenn du in einer Schleife zählst oder sammelst, schalte die Nebenläufigkeit aus – oder verzichte auf die Variable und arbeite mit <code>Array filtern</code> und <code>length</code> auf der Gesamtliste.</p>
+</div>
+<hr />
+<h2 id="246-vor-dem-start-filtern-und-lesbar-bleiben">24.6 Vor dem Start filtern und lesbar bleiben<a class="headerlink" href="#246-vor-dem-start-filtern-und-lesbar-bleiben" title="Permanent link">&para;</a></h2>
+<p>Die günstigste Steuerung ist die, die den Flow gar nicht erst startet. Eine <strong>Trigger-Bedingung</strong> (<code>Trigger-Karte → ... → Einstellungen → Trigger-Bedingungen</code>) ist ein Ausdruck, der <code>true</code> oder <code>false</code> ergibt. Nur bei <code>true</code> läuft der Flow überhaupt an, und es entsteht kein Eintrag im Ausführungsverlauf.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>Nur Mails mit Anhang:
+@triggerOutputs()?[&#39;body/hasAttachments&#39;]
+Keine Antwortmails, damit der Flow sich nicht selbst ausloest:
+@not(startsWith(triggerOutputs()?[&#39;body/subject&#39;], &#39;AW:&#39;))
+Nur von zwei bestimmten Absendern:
+@or(equals(triggerOutputs()?[&#39;body/from&#39;],&#39;einkauf@firma.de&#39;),equals(triggerOutputs()?[&#39;body/from&#39;],&#39;buchhaltung@firma.de&#39;))
+</code></pre></div></td></tr></table></div>
+<pre class="mermaid"><code>flowchart TD
+    A([Mail trifft ein]) --&gt; B([Trigger Bedingung prueft])
+    B --&gt; C([Switch nach Kategorie])
+    C --&gt; D([Zweig Rechnung])
+    C --&gt; E([Zweig Bewerbung])
+    C --&gt; F([Standardzweig Sammelablage])</code></pre>
+<p>Zum Abschluss die Regeln, die einen Flow auch nach sechs Monaten und für andere Personen verständlich halten. Sie kosten beim Bauen Minuten und sparen später Stunden.</p>
+<ol>
+<li><strong>Jeden Schritt benennen</strong>, und zwar früh: <code>Nur PDF-Anhaenge</code> statt <code>Array filtern 2</code>. Die Namen erscheinen im Ausführungsverlauf und in Fehlermeldungen, und Ausdrücke, die auf einen Schritt verweisen, brechen beim späteren Umbenennen (Kap. 23).</li>
+<li><strong>Flach bleiben.</strong> Höchstens zwei Verschachtelungsebenen. Was tiefer wird, gehört in einen <code>Switch</code>, in einen vorgeschalteten Filter oder in einen eigenen Flow. Erst filtern, dann verzweigen, dann handeln – diese Reihenfolge hält die Zahl der Zweige klein.</li>
+<li><strong>Notizen an Aktionen schreiben.</strong> Jede Karte hat unter <code>...</code> den Punkt <code>Kommentar hinzufügen</code>. Nutze ihn für das <strong>Warum</strong>, nicht für das Was: „Signaturbilder ausschließen, kommen bei Weiterleitungen mit."</li>
+<li><strong>Trigger-Bedingungen dokumentieren.</strong> Sie sind im Designer unsichtbar. Schreibe sie in die Flow-Beschreibung unter <code>Details → Beschreibung</code>, sonst sucht die nächste Person stundenlang, warum der Flow „nicht auslöst".</li>
+</ol>
+<hr />
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Die <strong>Bedingung</strong> trennt zwei Wege, der <strong>Switch</strong> mehrere feste Fälle mit Standardzweig; ab der zweiten Verschachtelungsebene ist der Flow neu zu ordnen.</li>
+<li><strong>Auf jedes anwenden</strong> läuft pro Listeneintrag und wird automatisch eingefügt, sobald ein Array in ein Einzelfeld gesetzt wird; die <strong>Nebenläufigkeitssteuerung</strong> beschleunigt, zerstört aber Reihenfolge und Zähler.</li>
+<li><strong>Array filtern</strong> und <strong>Abfrage auswählen</strong> bearbeiten Listen ohne Schleife; nach dem Filtern immer mit <code>length</code> prüfen, ob überhaupt etwas übrig ist.</li>
+<li><strong>Bereich</strong> bündelt Schritte, die <strong>Parallele Verzweigung</strong> trennt Unabhängiges, <strong>Beenden</strong> stoppt bewusst – mit passend gewähltem Status.</li>
+<li><strong>Verfassen</strong> für feste berechnete Werte, <strong>Variablen</strong> nur für Werte, die sich im Lauf ändern; in parallelen Schleifen sind Variablen unzuverlässig.</li>
+<li>Eine <strong>Trigger-Bedingung</strong> verhindert Läufe, bevor sie entstehen; Lesbarkeit kommt aus Benennung, flacher Struktur, Kommentaren und einer dokumentierten Trigger-Bedingung.</li>
+</ul>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> Den richtigen Steuerungsbaustein wählen</summary>
+<p>Wähle für jede Anforderung den passenden Baustein aus: <strong>Bedingung</strong>, <strong>Switch</strong>,
+<strong>Auf jedes anwenden</strong>, <strong>Array filtern</strong>, <strong>Beenden</strong>, <strong>Trigger-Bedingung</strong> oder <strong>Variable</strong>.
+Begründe jede Wahl in einem Satz.</p>
+<ol>
+<li>Anfragen sollen je nach Abteilung im Betreff an eines von vier Teams gehen.</li>
+<li>Von zehn Anhängen sollen nur die PDF-Dateien weiterverarbeitet werden.</li>
+<li>Der Flow soll überhaupt nicht anlaufen, wenn die Mail keinen Anhang hat.</li>
+<li>Am Ende soll in der Bestätigungsmail stehen, wie viele Dateien gespeichert wurden.</li>
+<li>Wenn nach dem Filtern keine Datei übrig ist, soll der Flow ohne Fehlermeldung aufhören.</li>
+<li>Für jede Zeile einer Excel-Tabelle soll ein Listeneintrag entstehen.</li>
+<li>Ein Betrag über 5.000 Euro soll einen anderen Weg nehmen als ein Betrag darunter.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zwei Fragen entscheiden fast immer: Geht es um genau zwei Wege oder um mehrere feste Fälle? Und
+muss der Wert sich während des Laufs verändern oder steht er von Anfang an fest?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Baustein</th>
+<th>Begründung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Switch</td>
+<td>ein Wert wird gegen mehrere feste Fälle geprüft, plus Standardzweig für Unbekanntes</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Array filtern</td>
+<td>reduziert die Liste in einem Schritt, ohne Schleife und ohne Bedingung pro Eintrag</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Trigger-Bedingung</td>
+<td>filtert vor dem Start, spart einen kompletten Lauf und einen Verlaufseintrag</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Variable</td>
+<td>der Zähler verändert sich während des Laufs, das kann <code>Verfassen</code> nicht leisten</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Beenden mit Status Erfolgreich</td>
+<td>bewusster Abbruch ohne roten Lauf, weil kein Fehler vorliegt</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Auf jedes anwenden</td>
+<td>eine Aktion muss pro Listeneintrag einmal ausgeführt werden</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Bedingung</td>
+<td>genau zwei Wege mit einem Größenvergleich, den ein Switch nicht kann</td>
+</tr>
+</tbody>
+</table>
+<p>Zwei Feinheiten: Bei 4 wäre auch <code>Array filtern</code> plus <code>length</code> auf der Gesamtliste möglich – und
+sogar die robustere Lösung, weil sie ohne Variable und damit ohne Probleme bei paralleler
+Ausführung arbeitet. Bei 7 scheitert der Switch daran, dass er nur auf Gleichheit prüft und keine
+Bereiche kennt.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> Anhänge filtern statt in der Schleife prüfen</summary>
+<p>Du baust in Power Automate. Ziel ist ein Flow, der nur PDF-Anhänge ablegt und die leere Liste
+saubermacht statt sie zu ignorieren.</p>
+<ol>
+<li>Nimm den Flow aus Kapitel 22 oder baue einen neuen mit dem Trigger
+   <code>Bei Eingang einer neuen E-Mail (V3)</code>, <code>Nur mit Anlagen</code> = <code>Ja</code>, <code>Anlagen einschließen</code> = <code>Ja</code>.</li>
+<li>Füge <strong>vor</strong> der Schleife die Aktion <code>Array filtern</code> ein, benenne sie <code>Nur PDF-Anhaenge</code> und
+   filtere die Anlagen darauf, dass der Name auf <code>.pdf</code> endet.</li>
+<li>Setze die Schleife anschließend auf die <strong>Ausgabe des Filters</strong> statt auf die Anlagen.</li>
+<li>Füge nach dem Filter eine <code>Bedingung</code> ein: Ist die gefilterte Liste leer, beende den Flow über
+   <code>Beenden</code> mit Status <code>Erfolgreich</code>. Andernfalls läuft die Schleife.</li>
+<li>Teste zwei Fälle: Mail mit einem PDF und einem Bild im Anhang, Mail mit ausschließlich einem
+   Bild im Anhang. Halte fest, was im Ausführungsverlauf jeweils passiert.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Die Länge einer gefilterten Liste bekommst du mit <code>length</code> über die Ausgabe der Filteraktion.
+Achte im Ausdruck darauf, dass Leerzeichen im Schrittnamen zu Unterstrichen werden.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: 24 PDF-Filter
+  Trigger: Neue Mail mit Anlagen
+  Aktion: Array filtern   -&gt; Nur PDF-Anhaenge
+    Von: Anlagen
+    Bedingung: endsWith von name ist gleich .pdf
+  Bedingung: Sind PDF vorhanden
+    Ausdruck: @{length(body(&#39;Nur_PDF-Anhaenge&#39;))} ist groesser als 0
+    Wenn ja
+      Aktion: Auf jedes anwenden   Von: Ausgabe von Nur PDF-Anhaenge
+        Aktion: Anhang speichern
+    Wenn nein
+      Aktion: Beenden   Status: Erfolgreich
+</code></pre></div></td></tr></table></div>
+<p>Erwartete Beobachtungen: Bei der Mail mit PDF und Bild läuft die Schleife genau <strong>einmal</strong>, obwohl
+zwei Anlagen ankamen – im Verlauf steht <code>1 von 1</code> in der Schleifenkarte. Bei der Mail mit nur einem
+Bild ist die gefilterte Liste leer, der Flow endet im <code>Wenn nein</code>-Zweig und der Lauf ist trotzdem
+<strong>grün</strong>.</p>
+<p>Der Lernpunkt: Ohne die Bedingung wäre der zweite Fall ebenfalls grün gewesen – aber ohne jeden
+Hinweis darauf, dass nichts passiert ist. Eine Schleife über eine leere Liste ist der stillste
+Fehler in Power Automate, weil sie keinen Fehler erzeugt. Wer stattdessen die Prüfung auf <code>.pdf</code>
+in die Schleife legt, bekommt dasselbe Ergebnis, aber einen Verlauf voller übersprungener
+Durchläufe und keine Möglichkeit, den leeren Fall zu erkennen.</p>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Switch, Zähler und Nebenläufigkeit im Zusammenspiel</summary>
+<p>Du erweiterst den Flow aus der vorigen Übung zu einem kleinen Verteiler und untersuchst dabei das
+Verhalten von Variablen in Schleifen. Gebaut wird in Power Automate.</p>
+<ol>
+<li>Ergänze einen <code>Switch</code> auf eine Kategorie, die du aus dem Betreff ableitest. Nutze dafür eine
+   <code>Verfassen</code>-Aktion, die <code>Rechnung</code>, <code>Angebot</code> oder <code>Sonstiges</code> liefert, zum Beispiel über
+   verschachtelte <code>if</code>- und <code>contains</code>-Ausdrücke. Der Switch braucht drei Fälle und einen
+   Standardzweig, in jedem Zweig genügt eine <code>Verfassen</code>-Aktion mit dem Zielteam.</li>
+<li>Initialisiere <strong>vor</strong> der Schleife eine Variable <code>AnzahlGespeichert</code> als ganze Zahl mit 0 und
+   erhöhe sie in der Schleife nach jedem gespeicherten Anhang um 1.</li>
+<li>Schicke nach der Schleife eine Nachricht, die Kategorie und Anzahl enthält.</li>
+<li>Benenne jeden Schritt sprechend und hinterlege an mindestens zwei Aktionen einen Kommentar,
+   der das <strong>Warum</strong> erklärt.</li>
+<li>Experiment: Schalte in den Einstellungen der Schleife die <strong>Nebenläufigkeitssteuerung</strong> ein und
+   teste mit einer Mail, die vier PDF-Anhänge enthält. Führe denselben Test dreimal aus und
+   notiere den Endwert der Variable. Schalte die Nebenläufigkeit danach wieder aus und wiederhole.</li>
+</ol>
+<details class="info">
+<summary>Tipp</summary>
+<p>Erwarte beim Experiment keinen Absturz. Der Effekt ist subtiler und genau deshalb gefährlich: Der
+Zähler ist manchmal richtig und manchmal zu niedrig, ohne dass irgendetwas rot wird.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Erwartete Schrittfolge:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>Flow: 24 Verteiler
+  Trigger: Neue Mail mit Anlagen
+  Verfassen: Kategorie ermitteln
+    @{if(contains(toLower(triggerOutputs()?[&#39;body/subject&#39;]),&#39;rechnung&#39;),&#39;Rechnung&#39;,if(contains(toLower(triggerOutputs()?[&#39;body/subject&#39;]),&#39;angebot&#39;),&#39;Angebot&#39;,&#39;Sonstiges&#39;))}
+  Variable initialisieren: AnzahlGespeichert, Ganze Zahl, 0
+  Aktion: Array filtern   -&gt; Nur PDF-Anhaenge
+  Switch: Nach Kategorie verteilen   Von: Ausgabe von Kategorie ermitteln
+    Fall Rechnung   -&gt; Verfassen: Zielteam Buchhaltung
+    Fall Angebot    -&gt; Verfassen: Zielteam Vertrieb
+    Fall Sonstiges  -&gt; Verfassen: Zielteam Sekretariat
+    Standard        -&gt; Verfassen: Zielteam Sammelablage
+  Aktion: Auf jedes anwenden   Von: Ausgabe von Nur PDF-Anhaenge
+    Aktion: Anhang speichern
+    Aktion: Variable inkrementieren   AnzahlGespeichert um 1
+  Aktion: Team informieren   Text mit Kategorie und @{variables(&#39;AnzahlGespeichert&#39;)}
+</code></pre></div></td></tr></table></div>
+<p>Bewertungskriterien: (1) der Switch hat drei Fälle plus Standardzweig und wird von einer
+Verfassen-Ausgabe gespeist, nicht von einem Ausdruck direkt im Switch; (2) die Variable ist auf
+oberster Ebene initialisiert und wird in der Schleife erhöht; (3) alle Schritte tragen sprechende
+Namen und mindestens zwei Kommentare erklären eine Absicht; (4) das Experiment ist mit drei
+Messwerten je Einstellung protokolliert.</p>
+<p>Erwartetes Ergebnis des Experiments: Mit ausgeschalteter Nebenläufigkeit steht der Zähler
+zuverlässig bei 4. Mit eingeschalteter Nebenläufigkeit kommt es vor, dass er bei 3 oder 2 landet,
+und der Wert schwankt zwischen den Läufen. Ursache: Mehrere Durchläufe lesen den Variablenwert
+gleichzeitig und schreiben denselben neuen Wert zurück. Konsequenz für die Praxis: In Schleifen mit
+Zähler, Sammelliste oder Reihenfolge bleibt die Nebenläufigkeit aus – oder du ersetzt den Zähler
+durch <code>length</code> auf der gefilterten Liste und brauchst gar keine Variable.</p>
+</details>
+</details>
+<hr />
+<h2 id="workshop">Workshop<a class="headerlink" href="#workshop" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--4">Workshop</span> Der Verteiler für den Sammel-Posteingang</summary>
+<p><strong>Szenario:</strong> Eine Firma hat ein Sammelpostfach <code>info@</code>, in dem alles landet: Rechnungen,
+Bewerbungen, Angebotsanfragen, Reklamationen und Werbung. Zwei Personen sortieren jeden Morgen von
+Hand vor und leiten weiter. Das dauert täglich fast eine Stunde, und in der Urlaubszeit bleiben
+Vorgänge tagelang liegen. Du baust den Verteiler als Cloud-Flow. Am Ende des Workshops muss er
+laufen, korrekt verzweigen und nachweisbar auch mit unsauberen Eingängen umgehen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>Rahmen:
+Etwa 60 Mails pro Tag, davon rund ein Drittel mit Anhang.
+Kategorien und Zielorte:
+  Rechnung     -&gt; Ablage Rechnungen + Nachricht an Buchhaltung
+  Bewerbung    -&gt; Ablage Bewerbungen + Nachricht an Personal
+  Anfrage      -&gt; Nachricht an Vertrieb
+  Sonstiges    -&gt; Sammelablage, keine Nachricht
+Erkennungsmerkmal: Schluesselwort im Betreff, gross und klein gemischt.
+Nur Standard-Connectoren, Ablage in OneDrive oder SharePoint, Benachrichtigung in Teams oder per Mail.
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Runde 1 – Grundlage bauen.</strong> Baue den Flow in vier Etappen mit Testlauf nach jeder Etappe:
+Trigger mit sinnvollen Filtern, Kategorie über eine <code>Verfassen</code>-Aktion ermitteln, <code>Switch</code> mit
+vier Wegen inklusive Standardzweig, danach Ablage der Anhänge und Benachrichtigung. Filtere die
+Anhänge vor der Schleife mit <code>Array filtern</code>, sodass Signaturbilder nicht mitgespeichert werden.
+Lege dir sechs Testmails an, die alle vier Kategorien und beide Anhangfälle abdecken.</p>
+<p><strong>Runde 2 – Prüfung gegen Pflichtkriterien.</strong> Weise jeden der <strong>vier</strong> Punkte mit einem Lauf aus
+dem Ausführungsverlauf nach:</p>
+<ol>
+<li>Eine Mail mit <code>RECHNUNG</code> in Großbuchstaben landet im Rechnungszweig – die Erkennung ist
+   unabhängig von Groß- und Kleinschreibung.</li>
+<li>Eine Mail mit einem Betreff ohne Schlüsselwort landet im Standardzweig und löst <strong>keine</strong>
+   Benachrichtigung aus.</li>
+<li>Eine Mail mit drei Anhängen, davon einem Signaturbild, erzeugt genau zwei Dateien und genau
+   <strong>eine</strong> Benachrichtigung.</li>
+<li>Der Flow hat höchstens zwei Verschachtelungsebenen, jeder Schritt trägt einen sprechenden Namen
+   und mindestens drei Aktionen haben einen Kommentar mit einer Begründung.</li>
+</ol>
+<p><strong>Runde 3 – Die Komplikation.</strong> Nach zwei Tagen Betrieb kommen vier Beschwerden:</p>
+<ul>
+<li>Die Buchhaltung erhält jede Rechnung <strong>zweimal</strong>. Ursache ist, dass der Flow auch auf die eigenen
+  Weiterleitungen und Antworten reagiert. Stelle das über eine Trigger-Bedingung ab und weise mit
+  dem Verlauf nach, dass keine Doppelläufe mehr entstehen.</li>
+<li>An einem Tag lief der Flow 40-mal, ohne etwas zu tun, weil die Mails keine passenden Anhänge
+  hatten. Baue eine Abbruchlogik ein, die diesen Fall bewusst und nachvollziehbar beendet, statt
+  still durchzulaufen.</li>
+<li>Der Zähler in der Bestätigungsmail stimmt nicht: Bei fünf Dateien meldet der Flow drei. Finde die
+  Ursache in den Einstellungen der Schleife und löse sie auf <strong>zwei</strong> verschiedene Weisen.</li>
+<li>Eine Bewerbung mit dem Dateinamen <code>Zeugnis 2019/2020.pdf</code> hat den Flow abbrechen lassen.
+  Behebe das, ohne die Nachvollziehbarkeit des Dateinamens zu verlieren (Kap. 23).</li>
+</ul>
+<p><strong>Runde 4 – Entscheidung unter Abwägung.</strong> Zwei Vorgaben stehen gegen deine Beobachtungen. Erstens
+fordert die Fachabteilung: „Baut die Kategorien mit verschachtelten Bedingungen, das versteht jeder,
+und nehmt zwölf statt vier Kategorien." Zweitens empfiehlt dir ein KI-Werkzeug, die Nebenläufigkeit
+der Schleife auf 20 zu setzen, weil der Flow dann schneller ist. Prüfe beide Vorschläge an deinem
+gebauten Flow, entscheide begründet und <strong>widersprich</strong> mindestens einem der beiden ausdrücklich –
+mit einem Beleg aus deinem eigenen Ausführungsverlauf, nicht mit einer allgemeinen Regel.</p>
+<p><strong>Deliverable:</strong></p>
+<ol>
+<li>laufender Verteiler-Flow mit Switch, Filter, Abbruchlogik und sprechenden Schrittnamen</li>
+<li>Flow-Skizze als Schrittliste mit Einrückung, die die Verschachtelung zeigt</li>
+<li>Testprotokoll mit sechs Läufen, je Kategorie und Anhangfall einer, mit Status und Ergebnis am Zielort</li>
+<li>Entscheidungsnotiz zu Kategorienzahl und Nebenläufigkeit, inklusive des begründeten Widerspruchs</li>
+</ol>
+<p><strong>Fertig bist du erst, wenn</strong> der Verteiler aktiv ist, alle sechs Testläufe die richtige Kategorie
+und den richtigen Zielort erreichen, ein Eingang ohne erkennbares Schlüsselwort nachweislich in der
+Sammelablage landet statt den Flow abzubrechen, und deine Entscheidungsnotiz begründet, warum du
+die Zahl der Kategorien nicht einfach erhöht hast.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Runde 3 enthält genau die vier Störungen, die in echten Verteilern auftreten: Doppelausführung,
+Leerläufe, ein falscher Zähler durch parallele Schleifen und ein Sonderzeichen im Dateinamen. Der
+Zählerfehler ist der lehrreichste, weil nichts rot wird – du siehst ihn nur, wenn du das Ergebnis
+gegen die tatsächliche Anzahl der Dateien im Ordner prüfst. In Runde 4 sind beide Vorschläge nicht
+dumm, sondern nur an dieser Stelle falsch: Zwölf verschachtelte Bedingungen sind nicht wartbar, und
+Nebenläufigkeit ist genau dann schädlich, wenn eine Variable mitzählt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Bewertungskriterien: (1) der Flow verzweigt über einen Switch mit Standardzweig, die Erkennung ist
+über <code>toLower</code> unabhängig von der Schreibweise und der Standardzweig löst keine Benachrichtigung
+aus; (2) Anhänge werden vor der Schleife per <code>Array filtern</code> reduziert, die Benachrichtigung liegt
+außerhalb der Schleife und beide Punkte sind mit dem Drei-Anhänge-Lauf belegt; (3) alle vier
+Störungen aus Runde 3 sind mit Ursache und Vorher-Nachher-Nachweis behandelt – Trigger-Bedingung
+gegen Doppelläufe, <code>Beenden</code> oder Trigger-Bedingung gegen Leerläufe, Zählerfehler sowohl durch
+Abschalten der Nebenläufigkeit als auch durch <code>length</code> auf der gefilterten Liste gelöst,
+Sonderzeichen über <code>replace</code> entfernt; (4) die Entscheidungsnotiz widerspricht mindestens einer
+Vorgabe mit einem konkreten Befund aus dem eigenen Ausführungsverlauf.</p>
+<p>Lernziel: Verzweigung, Schleifen und Filter so einsetzen, dass ein Flow auch bei unsauberen
+Eingängen richtig entscheidet – und dabei lesbar bleibt, statt in verschachtelten Bedingungen zu
+erstarren.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel23/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 23 – Daten im Flow: dynamische Inhalte und Ausdrücke
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel25/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 25 – Integration von Microsoft 365">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 25 – Integration von Microsoft 365
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "navigation.indexes", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
